@@ -22,7 +22,8 @@
   --font-display:'Orbitron','JetBrains Mono',sans-serif;
   --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
   --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --oct-sm:polygon(8px 0,calc(100% - 8px) 0,100% 8px,100% calc(100% - 8px),calc(100% - 8px) 100%,8px 100%,0 calc(100% - 8px),0 8px);
+  --oct-card:url(#round-oct);   /* скруглённый октагон ДС (плиты/карточки) */
+  --oct-btn:url(#round-oct-btn); /* скруглённый октагон ДС (кнопки/чипы) */
   --maxw:720px;
 }
 [data-theme="light"]{
@@ -61,7 +62,7 @@ a:hover{text-decoration:underline}
 .brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
 .toggle{font-family:var(--font-mono);font-weight:700;font-size:.72rem;letter-spacing:.12em;
   text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 12px;
-  background:var(--card);border:1px solid var(--border);clip-path:var(--oct-sm)}
+  background:var(--card);border:1px solid var(--border);clip-path:var(--oct-btn)}
 .toggle:hover{border-color:var(--hud);color:var(--hud)}
 .crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
   text-transform:uppercase;margin-bottom:14px}
@@ -72,9 +73,9 @@ h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spac
   text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
 .section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
   text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
-.plate{position:relative;isolation:isolate;clip-path:var(--oct-sm);
+.plate{position:relative;isolation:isolate;clip-path:var(--oct-card);
   background:var(--edge,var(--hud-dim));padding:0;margin:16px 0}
-.plate::before{content:'';position:absolute;inset:1.4px;clip-path:var(--oct-sm);
+.plate::before{content:'';position:absolute;inset:1.4px;clip-path:var(--oct-inner,var(--oct-card));
   background:var(--fill,var(--glass));z-index:-1}
 [data-theme="light"] .plate::before{background:var(--card)}
 .plate .pad{padding:18px 20px}
@@ -93,8 +94,8 @@ details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
   color:var(--muted);text-transform:uppercase;margin-top:8px}
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
 .chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
-  text-transform:uppercase;padding:9px 14px;color:var(--text);background:var(--hud-dim);clip-path:var(--oct-sm)}
-.chip::before{content:"";position:absolute;inset:1.4px;clip-path:var(--oct-sm);background:var(--glass);z-index:-1}
+  text-transform:uppercase;padding:9px 14px;color:var(--text);background:var(--hud-dim);clip-path:var(--oct-btn)}
+.chip::before{content:"";position:absolute;inset:1.4px;clip-path:var(--oct-inner,var(--oct-btn));background:var(--glass);z-index:-1}
 [data-theme="light"] .chip::before{background:var(--card)}
 .chip:hover{background:var(--hud);text-decoration:none}
 .cta{--edge:var(--amber-edge);margin-top:34px}
@@ -105,9 +106,9 @@ details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
 .cta p{margin:0;color:var(--text);opacity:.9}
 .cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
   letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:var(--amber-edge);padding:15px 22px;
-  clip-path:var(--oct-sm);cursor:pointer;border:none;text-decoration:none;display:inline-block;
+  clip-path:var(--oct-btn);cursor:pointer;border:none;text-decoration:none;display:inline-block;
   text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
-.cta .btn::before{content:"";position:absolute;inset:1.4px;clip-path:var(--oct-sm);
+.cta .btn::before{content:"";position:absolute;inset:1.4px;clip-path:var(--oct-inner,var(--oct-btn));
   background:linear-gradient(180deg,rgba(45,25,4,.97),rgba(22,12,2,.98));z-index:-1}
 .cta .btn:hover{transform:scale(.98);text-decoration:none}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
@@ -121,6 +122,10 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
 </style>
 </head>
 <body class="luky-surface">
+<svg id="luky-oct-defs" width="0" height="0" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"><defs>
+<clipPath id="round-oct" clipPathUnits="objectBoundingBox"><path d="M0.105,0 L0.895,0 Q0.92,0 0.937,0.019 L0.981,0.076 Q1,0.095 1,0.12 L1,0.88 Q1,0.905 0.981,0.924 L0.937,0.981 Q0.92,1 0.895,1 L0.105,1 Q0.08,1 0.063,0.981 L0.019,0.924 Q0,0.905 0,0.88 L0,0.12 Q0,0.095 0.019,0.076 L0.063,0.019 Q0.08,0 0.105,0 Z"/></clipPath>
+<clipPath id="round-oct-btn" clipPathUnits="objectBoundingBox"><path d="M0.0287,0 L0.9713,0 Q0.979,0 0.9845,0.0424 L0.9945,0.1176 Q1,0.16 1,0.22 L1,0.78 Q1,0.84 0.9945,0.8824 L0.9845,0.9576 Q0.979,1 0.9713,1 L0.0287,1 Q0.021,1 0.0155,0.9576 L0.0055,0.8824 Q0,0.84 0,0.78 L0,0.22 Q0,0.16 0.0055,0.1176 L0.0155,0.0424 Q0.021,0 0.0287,0 Z"/></clipPath>
+</defs></svg>
 <div class="wrap">
 
   <div class="top">
@@ -215,6 +220,25 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
     var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
     root.setAttribute('data-theme',next); set(next); label();
   });
+})();
+</script>
+<script>
+/* px-true скруглённый октагон: фикс скос (px) + 3px радиус, под реальный размер. */
+(function(){
+  function rp(pts,r){var n=pts.length,d="";for(var i=0;i<n;i++){var p1=pts[i],p0=pts[(i-1+n)%n],p2=pts[(i+1)%n];
+    function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    var u0=u(p1,p0),u2=u(p1,p2),l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2);
+    var a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+    d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function ap(el,c){var w=el.offsetWidth,h=el.offsetHeight;if(w<2*c||h<2*c)return;
+    el.style.clipPath="path('"+rp(pts(w,h,c),3)+"')";
+    el.style.setProperty('--oct-inner',"path('"+rp(pts(w-2.8,h-2.8,c),3)+"')");}
+  function run(){document.querySelectorAll('.plate').forEach(function(e){ap(e,12);});
+    document.querySelectorAll('.chip,.cta .btn,.toggle').forEach(function(e){ap(e,8);});}
+  if(document.readyState!=='loading')run();else addEventListener('DOMContentLoaded',run);
+  addEventListener('load',run);var t;addEventListener('resize',function(){clearTimeout(t);t=setTimeout(run,150);});
 })();
 </script>
 </body>
