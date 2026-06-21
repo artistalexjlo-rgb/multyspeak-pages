@@ -16,15 +16,19 @@
 <style>
 :root{
   --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --glass:linear-gradient(162deg,rgba(17,26,38,0.96),rgba(7,11,18,0.98));
   --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
   --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
   --font-display:'Orbitron','JetBrains Mono',sans-serif;
   --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
   --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --oct-card:url(#round-oct);   /* скруглённый октагон ДС (плиты/карточки) */
+  --oct-btn:url(#round-oct-btn); /* скруглённый октагон ДС (кнопки/чипы) */
   --maxw:720px;
 }
 [data-theme="light"]{
   --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --glass:linear-gradient(162deg,#ffffff,#f3f7fb);
   --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
   --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
 }
@@ -45,12 +49,6 @@ body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
 .wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
 a{color:var(--hud);text-decoration:none}
 a:hover{text-decoration:underline}
-
-/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён ── */
-.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block}
-.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
-[data-theme="light"] .oct path{fill:#fff}
-
 .top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
 .brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
 .brand-row{display:flex;align-items:center;gap:12px}
@@ -62,11 +60,10 @@ a:hover{text-decoration:underline}
 .brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
   letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 .brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
-.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
-  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
-  background:transparent;border:none}
-.toggle .oct path{fill:var(--card);stroke:var(--border)}
-.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.toggle{font-family:var(--font-mono);font-weight:700;font-size:.72rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 12px;
+  background:var(--card);border:1px solid var(--border);clip-path:var(--oct-btn)}
+.toggle:hover{border-color:var(--hud);color:var(--hud)}
 .crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
   text-transform:uppercase;margin-bottom:14px}
 .crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
@@ -76,9 +73,13 @@ h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spac
   text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
 .section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
   text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
-
-.plate{position:relative;isolation:isolate;margin:16px 0}
-.plate .pad{padding:18px 20px;position:relative}
+.plate{position:relative;isolation:isolate;clip-path:var(--oct-card);
+  background:var(--edge,var(--hud-dim));padding:0;margin:16px 0}
+.plate::before{content:'';position:absolute;inset:1.4px;clip-path:var(--oct-inner,var(--oct-card));
+  background:var(--fill,var(--glass));z-index:-1}
+[data-theme="light"] .plate::before{background:var(--card)}
+.plate .pad{padding:18px 20px}
+.answer{--edge:var(--hud-dim)}
 .answer .pad{font-size:1.05rem;line-height:1.6}
 .answer strong{color:var(--hud)}
 .num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
@@ -93,21 +94,22 @@ details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
   color:var(--muted);text-transform:uppercase;margin-top:8px}
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
 .chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
-  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
-.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
-
-.cta{margin-top:34px}
-.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
-[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+  text-transform:uppercase;padding:9px 14px;color:var(--text);background:var(--hud-dim);clip-path:var(--oct-btn)}
+.chip::before{content:"";position:absolute;inset:1.4px;clip-path:var(--oct-inner,var(--oct-btn));background:var(--glass);z-index:-1}
+[data-theme="light"] .chip::before{background:var(--card)}
+.chip:hover{background:var(--hud);text-decoration:none}
+.cta{--edge:var(--amber-edge);margin-top:34px}
+.cta::before{background:linear-gradient(162deg,rgba(40,30,12,.96),rgba(18,12,4,.98))}
+[data-theme="light"] .cta::before{background:linear-gradient(162deg,#fff8ec,#fdf1d8)}
 .cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
 .cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
 .cta p{margin:0;color:var(--text);opacity:.9}
 .cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
-  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
-  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:var(--amber-edge);padding:15px 22px;
+  clip-path:var(--oct-btn);cursor:pointer;border:none;text-decoration:none;display:inline-block;
   text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
-.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
-[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn::before{content:"";position:absolute;inset:1.4px;clip-path:var(--oct-inner,var(--oct-btn));
+  background:linear-gradient(180deg,rgba(45,25,4,.97),rgba(22,12,2,.98));z-index:-1}
 .cta .btn:hover{transform:scale(.98);text-decoration:none}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
 .f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
@@ -120,6 +122,10 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
 </style>
 </head>
 <body class="luky-surface">
+<svg id="luky-oct-defs" width="0" height="0" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"><defs>
+<clipPath id="round-oct" clipPathUnits="objectBoundingBox"><path d="M0.105,0 L0.895,0 Q0.92,0 0.937,0.019 L0.981,0.076 Q1,0.095 1,0.12 L1,0.88 Q1,0.905 0.981,0.924 L0.937,0.981 Q0.92,1 0.895,1 L0.105,1 Q0.08,1 0.063,0.981 L0.019,0.924 Q0,0.905 0,0.88 L0,0.12 Q0,0.095 0.019,0.076 L0.063,0.019 Q0.08,0 0.105,0 Z"/></clipPath>
+<clipPath id="round-oct-btn" clipPathUnits="objectBoundingBox"><path d="M0.0287,0 L0.9713,0 Q0.979,0 0.9845,0.0424 L0.9945,0.1176 Q1,0.16 1,0.22 L1,0.78 Q1,0.84 0.9945,0.8824 L0.9845,0.9576 Q0.979,1 0.9713,1 L0.0287,1 Q0.021,1 0.0155,0.9576 L0.0055,0.8824 Q0,0.84 0,0.78 L0,0.22 Q0,0.16 0.0055,0.1176 L0.0155,0.0424 Q0.021,0 0.0287,0 Z"/></clipPath>
+</defs></svg>
 <div class="wrap">
 
   <div class="top">
@@ -130,7 +136,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
       </span>
       <span class="brand-sub">инфопортал · в любой стране · без воды</span>
     </div>
-    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true"><path d="M0.0287,0 L0.9713,0 Q0.979,0 0.9845,0.0424 L0.9945,0.1176 Q1,0.16 1,0.22 L1,0.78 Q1,0.84 0.9945,0.8824 L0.9845,0.9576 Q0.979,1 0.9713,1 L0.0287,1 Q0.021,1 0.0155,0.9576 L0.0055,0.8824 Q0,0.84 0,0.78 L0,0.22 Q0,0.16 0.0055,0.1176 L0.0155,0.0424 Q0.021,0 0.0287,0 Z"/></svg><span id="themeLbl">◐ Ночь</span></button>
+    <button class="toggle" id="themeBtn" aria-label="theme">◐ Ночь</button>
   </div>
 
   <nav class="crumbs">
@@ -142,7 +148,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
   <h1>Деньги и банки в Бразилии: счёт, наличные, PIX</h1>
 
   <span class="section-label">Короткий ответ</span>
-  <div class="plate answer"><svg class="oct" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true"><path d="M0.0283,0 L0.9713,0 Q0.979,0 0.9846,0.0178 L0.9945,0.0492 Q1,0.067 1,0.092 L1,0.908 Q1,0.933 0.9945,0.9508 L0.9846,0.9822 Q0.979,1 0.9713,1 L0.0283,1 Q0.0206,1 0.0155,0.9822 L0.0055,0.9508 Q0,0.933 0,0.908 L0,0.092 Q0,0.067 0.0055,0.0492 L0.0155,0.0178 Q0.0206,0 0.0283,0 Z"/></svg><div class="pad">Без <strong>CPF</strong> (местный ИНН) почти ничего не открыть — оформите его первым, бесплатно в отделении <strong>Receita Federal</strong> за <span class="num">10–30 мин</span>. Платежи внутри страны — мгновенный <strong>PIX</strong>. Наличные с карт «Мир» не снять; везите <strong>USD</strong> или USDT, меняйте по запросу «Cambio». Доллары — только новые купюры (старые берут на <span class="num">15–20%</span> хуже).</div></div>
+  <div class="plate answer"><div class="pad">Без <strong>CPF</strong> (местный ИНН) почти ничего не открыть — оформите его первым, бесплатно в отделении <strong>Receita Federal</strong> за <span class="num">10–30 мин</span>. Платежи внутри страны — мгновенный <strong>PIX</strong>. Наличные с карт «Мир» не снять; везите <strong>USD</strong> или USDT, меняйте по запросу «Cambio». Доллары — только новые купюры (старые берут на <span class="num">15–20%</span> хуже).</div></div>
 
   <h2>Частые вопросы</h2>
   <details open><summary>Как открыть счёт без ВНЖ?<span></span></summary>
@@ -164,17 +170,17 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
 
   <h2>Смежные темы</h2>
   <div class="chips">
-    <a class="chip" href="/ru/br/bureaucracy/"><svg class="oct" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true"><path d="M0.0287,0 L0.9713,0 Q0.979,0 0.9845,0.0424 L0.9945,0.1176 Q1,0.16 1,0.22 L1,0.78 Q1,0.84 0.9945,0.8824 L0.9845,0.9576 Q0.979,1 0.9713,1 L0.0287,1 Q0.021,1 0.0155,0.9576 L0.0055,0.8824 Q0,0.84 0,0.78 L0,0.22 Q0,0.16 0.0055,0.1176 L0.0155,0.0424 Q0.021,0 0.0287,0 Z"/></svg>🛂 Документы и виза</a>
-    <a class="chip" href="/ru/br/housing/"><svg class="oct" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true"><path d="M0.0287,0 L0.9713,0 Q0.979,0 0.9845,0.0424 L0.9945,0.1176 Q1,0.16 1,0.22 L1,0.78 Q1,0.84 0.9945,0.8824 L0.9845,0.9576 Q0.979,1 0.9713,1 L0.0287,1 Q0.021,1 0.0155,0.9576 L0.0055,0.8824 Q0,0.84 0,0.78 L0,0.22 Q0,0.16 0.0055,0.1176 L0.0155,0.0424 Q0.021,0 0.0287,0 Z"/></svg>🏠 Жильё и аренда</a>
-    <a class="chip" href="/ru/br/safety/"><svg class="oct" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true"><path d="M0.0287,0 L0.9713,0 Q0.979,0 0.9845,0.0424 L0.9945,0.1176 Q1,0.16 1,0.22 L1,0.78 Q1,0.84 0.9945,0.8824 L0.9845,0.9576 Q0.979,1 0.9713,1 L0.0287,1 Q0.021,1 0.0155,0.9576 L0.0055,0.8824 Q0,0.84 0,0.78 L0,0.22 Q0,0.16 0.0055,0.1176 L0.0155,0.0424 Q0.021,0 0.0287,0 Z"/></svg>🛡 Безопасность</a>
-    <a class="chip" href="/ru/br/transport/"><svg class="oct" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true"><path d="M0.0287,0 L0.9713,0 Q0.979,0 0.9845,0.0424 L0.9945,0.1176 Q1,0.16 1,0.22 L1,0.78 Q1,0.84 0.9945,0.8824 L0.9845,0.9576 Q0.979,1 0.9713,1 L0.0287,1 Q0.021,1 0.0155,0.9576 L0.0055,0.8824 Q0,0.84 0,0.78 L0,0.22 Q0,0.16 0.0055,0.1176 L0.0155,0.0424 Q0.021,0 0.0287,0 Z"/></svg>🚕 Транспорт</a>
-    <a class="chip" href="/ru/br/health/"><svg class="oct" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true"><path d="M0.0287,0 L0.9713,0 Q0.979,0 0.9845,0.0424 L0.9945,0.1176 Q1,0.16 1,0.22 L1,0.78 Q1,0.84 0.9945,0.8824 L0.9845,0.9576 Q0.979,1 0.9713,1 L0.0287,1 Q0.021,1 0.0155,0.9576 L0.0055,0.8824 Q0,0.84 0,0.78 L0,0.22 Q0,0.16 0.0055,0.1176 L0.0155,0.0424 Q0.021,0 0.0287,0 Z"/></svg>🩺 Медицина</a>
+    <a class="chip" href="/ru/br/bureaucracy/">🛂 Документы и виза</a>
+    <a class="chip" href="/ru/br/housing/">🏠 Жильё и аренда</a>
+    <a class="chip" href="/ru/br/safety/">🛡 Безопасность</a>
+    <a class="chip" href="/ru/br/transport/">🚕 Транспорт</a>
+    <a class="chip" href="/ru/br/health/">🩺 Медицина</a>
   </div>
 
-  <div class="plate cta"><svg class="oct" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true"><path d="M0.0283,0 L0.9713,0 Q0.979,0 0.9846,0.0178 L0.9945,0.0492 Q1,0.067 1,0.092 L1,0.908 Q1,0.933 0.9945,0.9508 L0.9846,0.9822 Q0.979,1 0.9713,1 L0.0283,1 Q0.0206,1 0.0155,0.9822 L0.0055,0.9508 Q0,0.933 0,0.908 L0,0.092 Q0,0.067 0.0055,0.0492 L0.0155,0.0178 Q0.0206,0 0.0283,0 Z"/></svg><div class="pad">
+  <div class="plate cta"><div class="pad">
     <h2>Не нашёл свой случай?</h2>
     <p>Твоя ситуация особая? Спроси ассистента Luky на своём языке — без воды. Базу пополняем каждый день: если по твоему вопросу есть живой опыт, он его найдёт.</p>
-    <a class="btn" href="https://t.me/luky_channel" target="_blank" rel="noopener"><svg class="oct" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true"><path d="M0.0287,0 L0.9713,0 Q0.979,0 0.9845,0.0424 L0.9945,0.1176 Q1,0.16 1,0.22 L1,0.78 Q1,0.84 0.9945,0.8824 L0.9845,0.9576 Q0.979,1 0.9713,1 L0.0287,1 Q0.021,1 0.0155,0.9576 L0.0055,0.8824 Q0,0.84 0,0.78 L0,0.22 Q0,0.16 0.0055,0.1176 L0.0155,0.0424 Q0.021,0 0.0287,0 Z"/></svg>Спросить Luky →</a>
+    <a class="btn" href="https://t.me/luky_channel" target="_blank" rel="noopener">Спросить Luky →</a>
   </div></div>
 
   <footer>
@@ -203,17 +209,36 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
 
 <script>
 (function(){
-  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
   var NIGHT="\u25d0 \u041d\u043e\u0447\u044c", DAY="\u2600 \u0414\u0435\u043d\u044c";
   function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
   function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
   var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
-  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  function label(){btn.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
   label();
   btn.addEventListener('click',function(){
     var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
     root.setAttribute('data-theme',next); set(next); label();
   });
+})();
+</script>
+<script>
+/* px-true скруглённый октагон: фикс скос (px) + 3px радиус, под реальный размер. */
+(function(){
+  function rp(pts,r){var n=pts.length,d="";for(var i=0;i<n;i++){var p1=pts[i],p0=pts[(i-1+n)%n],p2=pts[(i+1)%n];
+    function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    var u0=u(p1,p0),u2=u(p1,p2),l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2);
+    var a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+    d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function ap(el,c){var w=el.offsetWidth,h=el.offsetHeight;if(w<2*c||h<2*c)return;
+    el.style.clipPath="path('"+rp(pts(w,h,c),3)+"')";
+    el.style.setProperty('--oct-inner',"path('"+rp(pts(w-2.8,h-2.8,c),3)+"')");}
+  function run(){document.querySelectorAll('.plate').forEach(function(e){ap(e,12);});
+    document.querySelectorAll('.chip,.cta .btn,.toggle').forEach(function(e){ap(e,8);});}
+  if(document.readyState!=='loading')run();else addEventListener('DOMContentLoaded',run);
+  addEventListener('load',run);var t;addEventListener('resize',function(){clearTimeout(t);t=setTimeout(run,150);});
 })();
 </script>
 </body>
