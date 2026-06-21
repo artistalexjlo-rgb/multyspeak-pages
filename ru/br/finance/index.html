@@ -22,8 +22,6 @@
   --font-display:'Orbitron','JetBrains Mono',sans-serif;
   --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
   --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --oct-card:url(#round-oct);   /* скруглённый октагон ДС (плиты/карточки) */
-  --oct-btn:url(#round-oct-btn); /* скруглённый октагон ДС (кнопки/чипы) */
   --maxw:720px;
 }
 [data-theme="light"]{
@@ -62,8 +60,13 @@ a:hover{text-decoration:underline}
 .brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
 .toggle{font-family:var(--font-mono);font-weight:700;font-size:.72rem;letter-spacing:.12em;
   text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 12px;
-  background:var(--card);border:1px solid var(--border);clip-path:var(--oct-btn)}
-.toggle:hover{border-color:var(--hud);color:var(--hud)}
+  position:relative;isolation:isolate;background:none;border:none}
+.toggle .oct-bg{position:absolute;inset:0;width:100%;height:100%;z-index:-1;overflow:visible}
+.toggle .oct-bg path{fill:var(--card);stroke:var(--border);stroke-width:1.4;
+  vector-effect:non-scaling-stroke;stroke-linejoin:round}
+.toggle #themeLbl{position:relative}
+.toggle:hover{color:var(--hud)}
+.toggle:hover .oct-bg path{stroke:var(--hud)}
 .crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
   text-transform:uppercase;margin-bottom:14px}
 .crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
@@ -73,12 +76,11 @@ h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spac
   text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
 .section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
   text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
-.plate{position:relative;isolation:isolate;clip-path:var(--oct-card);
-  background:var(--edge,var(--hud-dim));padding:0;margin:16px 0}
-.plate::before{content:'';position:absolute;inset:1.4px;clip-path:var(--oct-inner,var(--oct-card));
-  background:var(--fill,var(--glass));z-index:-1}
-[data-theme="light"] .plate::before{background:var(--card)}
-.plate .pad{padding:18px 20px}
+.plate{position:relative;isolation:isolate;padding:0;margin:16px 0}
+.oct-bg{position:absolute;inset:0;width:100%;height:100%;z-index:-1;overflow:visible}
+.oct-bg path{stroke-width:1.4;vector-effect:non-scaling-stroke;stroke-linejoin:round}
+.plate>.oct-bg path{fill:var(--card);stroke:var(--edge,var(--hud-dim))}
+.plate .pad{padding:18px 20px;position:relative}
 .answer{--edge:var(--hud-dim)}
 .answer .pad{font-size:1.05rem;line-height:1.6}
 .answer strong{color:var(--hud)}
@@ -94,22 +96,21 @@ details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
   color:var(--muted);text-transform:uppercase;margin-top:8px}
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
 .chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
-  text-transform:uppercase;padding:9px 14px;color:var(--text);background:var(--hud-dim);clip-path:var(--oct-btn)}
-.chip::before{content:"";position:absolute;inset:1.4px;clip-path:var(--oct-inner,var(--oct-btn));background:var(--glass);z-index:-1}
-[data-theme="light"] .chip::before{background:var(--card)}
-.chip:hover{background:var(--hud);text-decoration:none}
+  text-transform:uppercase;padding:9px 14px;color:var(--text)}
+.chip>.oct-bg path{fill:var(--card);stroke:var(--hud-dim)}
+.chip:hover{text-decoration:none;color:#04121a}
+.chip:hover>.oct-bg path{fill:var(--hud);stroke:var(--hud)}
 .cta{--edge:var(--amber-edge);margin-top:34px}
-.cta::before{background:linear-gradient(162deg,rgba(40,30,12,.96),rgba(18,12,4,.98))}
-[data-theme="light"] .cta::before{background:linear-gradient(162deg,#fff8ec,#fdf1d8)}
+.cta>.oct-bg path{fill:#1a1206}
+[data-theme="light"] .cta>.oct-bg path{fill:#fff8ec}
 .cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
 .cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
 .cta p{margin:0;color:var(--text);opacity:.9}
 .cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
-  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:var(--amber-edge);padding:15px 22px;
-  clip-path:var(--oct-btn);cursor:pointer;border:none;text-decoration:none;display:inline-block;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;padding:15px 22px;
+  cursor:pointer;border:none;text-decoration:none;display:inline-block;
   text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
-.cta .btn::before{content:"";position:absolute;inset:1.4px;clip-path:var(--oct-inner,var(--oct-btn));
-  background:linear-gradient(180deg,rgba(45,25,4,.97),rgba(22,12,2,.98));z-index:-1}
+.cta .btn>.oct-bg path{fill:#160c02;stroke:var(--amber-edge)}
 .cta .btn:hover{transform:scale(.98);text-decoration:none}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
 .f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
@@ -122,10 +123,6 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
 </style>
 </head>
 <body class="luky-surface">
-<svg id="luky-oct-defs" width="0" height="0" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"><defs>
-<clipPath id="round-oct" clipPathUnits="objectBoundingBox"><path d="M0.105,0 L0.895,0 Q0.92,0 0.937,0.019 L0.981,0.076 Q1,0.095 1,0.12 L1,0.88 Q1,0.905 0.981,0.924 L0.937,0.981 Q0.92,1 0.895,1 L0.105,1 Q0.08,1 0.063,0.981 L0.019,0.924 Q0,0.905 0,0.88 L0,0.12 Q0,0.095 0.019,0.076 L0.063,0.019 Q0.08,0 0.105,0 Z"/></clipPath>
-<clipPath id="round-oct-btn" clipPathUnits="objectBoundingBox"><path d="M0.0287,0 L0.9713,0 Q0.979,0 0.9845,0.0424 L0.9945,0.1176 Q1,0.16 1,0.22 L1,0.78 Q1,0.84 0.9945,0.8824 L0.9845,0.9576 Q0.979,1 0.9713,1 L0.0287,1 Q0.021,1 0.0155,0.9576 L0.0055,0.8824 Q0,0.84 0,0.78 L0,0.22 Q0,0.16 0.0055,0.1176 L0.0155,0.0424 Q0.021,0 0.0287,0 Z"/></clipPath>
-</defs></svg>
 <div class="wrap">
 
   <div class="top">
@@ -136,7 +133,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
       </span>
       <span class="brand-sub">инфопортал · в любой стране · без воды</span>
     </div>
-    <button class="toggle" id="themeBtn" aria-label="theme">◐ Ночь</button>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct-bg" viewBox="0 0 79 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L71.00,0.00Q73.00,0.00 74.41,1.41L77.59,4.59Q79.00,6.00 79.00,8.00L79.00,26.00Q79.00,28.00 77.59,29.41L74.41,32.59Q73.00,34.00 71.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Ночь</span></button>
   </div>
 
   <nav class="crumbs">
@@ -148,7 +145,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
   <h1>Деньги и банки в Бразилии: счёт, наличные, PIX</h1>
 
   <span class="section-label">Короткий ответ</span>
-  <div class="plate answer"><div class="pad">Без <strong>CPF</strong> (местный ИНН) почти ничего не открыть — оформите его первым, бесплатно в отделении <strong>Receita Federal</strong> за <span class="num">10–30 мин</span>. Платежи внутри страны — мгновенный <strong>PIX</strong>. Наличные с карт «Мир» не снять; везите <strong>USD</strong> или USDT, меняйте по запросу «Cambio». Доллары — только новые купюры (старые берут на <span class="num">15–20%</span> хуже).</div></div>
+  <div class="plate answer"><svg class="oct-bg" viewBox="0 0 668 172" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L653.00,0.00Q656.00,0.00 658.12,2.12L665.88,9.88Q668.00,12.00 668.00,15.00L668.00,157.00Q668.00,160.00 665.88,162.12L658.12,169.88Q656.00,172.00 653.00,172.00L15.00,172.00Q12.00,172.00 9.88,169.88L2.12,162.12Q0.00,160.00 0.00,157.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Без <strong>CPF</strong> (местный ИНН) почти ничего не открыть — оформите его первым, бесплатно в отделении <strong>Receita Federal</strong> за <span class="num">10–30 мин</span>. Платежи внутри страны — мгновенный <strong>PIX</strong>. Наличные с карт «Мир» не снять; везите <strong>USD</strong> или USDT, меняйте по запросу «Cambio». Доллары — только новые купюры (старые берут на <span class="num">15–20%</span> хуже).</div></div>
 
   <h2>Частые вопросы</h2>
   <details open><summary>Как открыть счёт без ВНЖ?<span></span></summary>
@@ -170,17 +167,17 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
 
   <h2>Смежные темы</h2>
   <div class="chips">
-    <a class="chip" href="/ru/br/bureaucracy/">🛂 Документы и виза</a>
-    <a class="chip" href="/ru/br/housing/">🏠 Жильё и аренда</a>
-    <a class="chip" href="/ru/br/safety/">🛡 Безопасность</a>
-    <a class="chip" href="/ru/br/transport/">🚕 Транспорт</a>
-    <a class="chip" href="/ru/br/health/">🩺 Медицина</a>
+    <a class="chip" href="/ru/br/bureaucracy/"><svg class="oct-bg" viewBox="0 0 178 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L167.00,0.00Q170.00,0.00 172.12,2.12L175.88,5.88Q178.00,8.00 178.00,11.00L178.00,26.00Q178.00,29.00 175.88,31.12L172.12,34.88Q170.00,37.00 167.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Документы и виза</span></a>
+    <a class="chip" href="/ru/br/housing/"><svg class="oct-bg" viewBox="0 0 162 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L151.00,0.00Q154.00,0.00 156.12,2.12L159.88,5.88Q162.00,8.00 162.00,11.00L162.00,26.00Q162.00,29.00 159.88,31.12L156.12,34.88Q154.00,37.00 151.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🏠 Жильё и аренда</span></a>
+    <a class="chip" href="/ru/br/safety/"><svg class="oct-bg" viewBox="0 0 142 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L131.00,0.00Q134.00,0.00 136.12,2.12L139.88,5.88Q142.00,8.00 142.00,11.00L142.00,26.00Q142.00,29.00 139.88,31.12L136.12,34.88Q134.00,37.00 131.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛡 Безопасность</span></a>
+    <a class="chip" href="/ru/br/transport/"><svg class="oct-bg" viewBox="0 0 123 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L112.00,0.00Q115.00,0.00 117.12,2.12L120.88,5.88Q123.00,8.00 123.00,11.00L123.00,26.00Q123.00,29.00 120.88,31.12L117.12,34.88Q115.00,37.00 112.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Транспорт</span></a>
+    <a class="chip" href="/ru/br/health/"><svg class="oct-bg" viewBox="0 0 115 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L104.00,0.00Q107.00,0.00 109.12,2.12L112.88,5.88Q115.00,8.00 115.00,11.00L115.00,26.00Q115.00,29.00 112.88,31.12L109.12,34.88Q107.00,37.00 104.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🩺 Медицина</span></a>
   </div>
 
-  <div class="plate cta"><div class="pad">
+  <div class="plate cta"><svg class="oct-bg" viewBox="0 0 668 228" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L653.00,0.00Q656.00,0.00 658.12,2.12L665.88,9.88Q668.00,12.00 668.00,15.00L668.00,213.00Q668.00,216.00 665.88,218.12L658.12,225.88Q656.00,228.00 653.00,228.00L15.00,228.00Q12.00,228.00 9.88,225.88L2.12,218.12Q0.00,216.00 0.00,213.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
     <h2>Не нашёл свой случай?</h2>
     <p>Твоя ситуация особая? Спроси ассистента Luky на своём языке — без воды. Базу пополняем каждый день: если по твоему вопросу есть живой опыт, он его найдёт.</p>
-    <a class="btn" href="https://t.me/luky_channel" target="_blank" rel="noopener">Спросить Luky →</a>
+    <a class="btn" href="https://t.me/luky_channel" target="_blank" rel="noopener"><svg class="oct-bg" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Спросить Luky →</span></a>
   </div></div>
 
   <footer>
@@ -209,36 +206,17 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
 
 <script>
 (function(){
-  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
   var NIGHT="\u25d0 \u041d\u043e\u0447\u044c", DAY="\u2600 \u0414\u0435\u043d\u044c";
   function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
   function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
   var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
-  function label(){btn.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
   label();
   btn.addEventListener('click',function(){
     var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
     root.setAttribute('data-theme',next); set(next); label();
   });
-})();
-</script>
-<script>
-/* px-true скруглённый октагон: фикс скос (px) + 3px радиус, под реальный размер. */
-(function(){
-  function rp(pts,r){var n=pts.length,d="";for(var i=0;i<n;i++){var p1=pts[i],p0=pts[(i-1+n)%n],p2=pts[(i+1)%n];
-    function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
-    var u0=u(p1,p0),u2=u(p1,p2),l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2);
-    var a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
-    d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
-    return d+"Z";}
-  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
-  function ap(el,c){var w=el.offsetWidth,h=el.offsetHeight;if(w<2*c||h<2*c)return;
-    el.style.clipPath="path('"+rp(pts(w,h,c),3)+"')";
-    el.style.setProperty('--oct-inner',"path('"+rp(pts(w-2.8,h-2.8,c),3)+"')");}
-  function run(){document.querySelectorAll('.plate').forEach(function(e){ap(e,12);});
-    document.querySelectorAll('.chip,.cta .btn,.toggle').forEach(function(e){ap(e,8);});}
-  if(document.readyState!=='loading')run();else addEventListener('DOMContentLoaded',run);
-  addEventListener('load',run);var t;addEventListener('resize',function(){clearTimeout(t);t=setTimeout(run,150);});
 })();
 </script>
 </body>
