@@ -32,8 +32,12 @@
   `gemini_quota`, **RESERVE=80/ключ** проду, тайм-окно 20-23 UTC, IPv4-форс (был баг: urllib висел на IPv6).
 - **Навигация** `wire.py` + `demand.py`: манифест + матрица спроса (55 гео) → хабы/главная/чипы,
   soon **только data-backed** (порог 25). Само-сверяется.
-- **Деплой-путь:** `demand → build → wire → render --all → push → CF Pages`. Пломбинг: FAQ JSON-LD,
-  canonical/hreflang, per-page noindex, sitemap/robots, `/landing/` закрыт (`_redirects`).
+- **Деплой-путь:** `pseo/deploy.sh` — «по вызову» с ДЕСКТОПА (pull собранного с VPS → demand →
+  wire → render → push). **Push-кред только на десктопе, VPS безкредовый** (не раздаём допуски;
+  VPS-deploy-key заблокирован как персистентность — осознанно). Билд бежит на VPS, деплой триггерю я.
+  Пломбинг: FAQ JSON-LD, canonical/hreflang, per-page noindex, sitemap/robots, `/landing/` закрыт.
+  ⚠️ **Правило:** ручной фикс страницы класть на VPS-источник (`out/*.json`), не только локально —
+  иначе `deploy.sh` затрёт его при pull (дрейф источника).
 - **Наблюдаемость:** маячок билдера (`status.json`/`audit.log`/`STOP`/чирик-при-сбое) +
   **детерм. sentinel** (`sentinel.py`, cron 6ч: битые ссылки/health/builder/quota).
 - **В сети (noindex):** 8 авто-страниц + br/finance, 6 гео-хабов + главная. Adversarial-ревью
