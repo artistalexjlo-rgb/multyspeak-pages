@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>be: документы и виза — живой опыт · Luky</title>
+<meta name="description" content="Живой опыт из чатов про документы и виза в be: как есть, из первых рук. Под твой случай — у Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/ru/be/документы-и-виза/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/be/документы-и-виза/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/be/документы-и-виза/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/be/документы-и-виза/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/be/документы-и-виза/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">инфопортал · в любой стране · без воды</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Ночь</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/ru/">Главная</a> /
+    <a href="/ru/be/">be</a> /
+    <b>Документы и виза</b>
+  </nav>
+
+
+  
+  <h1>Документы и виза в be: что реально важно знать</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Реальный опыт людей из чатов по теме «документы и виза» в be — как есть, без воды. Под свой случай — <strong>спроси Luky</strong>.</div></div>
+
+  <h2>Из живого опыта</h2>
+  <ul class="qlist">
+    <li>Для записи на шенгенскую визу в Бельгию рекомендуется проверять наличие свободных мест в визовом центре несколько раз в день, так как новые слоты могут появляться неожиданно, даже на ближайшие даты поездки. Однако сроки рассмотрения могут быть длительными, поэтому наличие свободных мест для записи не гарантирует быстрое принятие решения по визе.</li>
+    <li>Бельгия не выдает туристические визы гражданам России; доступны только высокобюрократические нетуристические визы категорий C и D. Чтобы посетить Бельгию, российские туристы получают шенгенские визы других стран (например, Испании, Франции). Чтобы избежать проблем с правилом «первой страны въезда», путешественники часто летят через страну выдачи визы (например, Москва — Стамбул — Мадрид — Брюссель), хотя прямой въезд по шенгенской визе другой страны иногда проходит успешно. Оформление визы в Испанию занимает минимум 21 день, а слоты очень дефицитны перед летом.</li>
+    <li>Шенгенская виза в Бельгию для родственников: 1. Консульский сбор составляет 90 евро. 2. Срок рассмотрения составляет примерно 1 месяц. 3. Визы в основном однократные. 4. Бесплатная виза возможна только в рамках Директивы 2004/38, если заявитель является гражданином ЕС, подает документы за пределами страны своего проживания, а родственник находится на иждивении.</li>
+    <li>Российский супруг гражданина, не являющегося гражданином ЕС, переезжающего в Бельгию на работу, может подать заявление на визу воссоединения семьи (виза D). После получения этой визы супруг может работать в Бельгии без привязки к конкретному работодателю. Рекомендуется подавать на визы одновременно, если основной заявитель (например, муж) еще не получил единое разрешение (single permit). Для въезда в Шенгенскую зону с визой D имеет значение специальная пометка на визовой наклейке: «Belgie», как правило, предполагает прямой въезд в Бельгию, в то время как «Schengen staaten» позволяет въезд через любую страну Шенгена. Хотя неофициальные свидетельства говорят о некоторой гибкости, прямой въезд в Бельгию является самым безопасным вариантом, если в визе указано «Belgie».</li>
+    <li>Перевоз пожилых родителей-иждивенцев, не являющихся гражданами ЕС, в Бельгию в рамках воссоединения семьи крайне сложен. Это требует доказательства полной финансовой зависимости и демонстрации веских причин, по которым родитель не может оставаться в своей стране проживания. Потенциально более простой, хотя и более долгий путь включает в себя получение спонсором гражданства Бельгии, а затем переезд в другую страну ЕС, что может упростить воссоединение семьи согласно Директиве ЕС 2004/38.</li>
+    <li>Чтобы найти присяжного переводчика в Бельгии (traducteur juré / beëdigd vertaler), используйте официальный реестр Министерства юстиции. Поисковый запрос: &#39;Recherche d&#39;un traducteur/interprète justice&#39; (на французском) или &#39;Lijst van beëdigd vertalers/tolken&#39; (на нидерландском). Реестр позволяет фильтровать по языковой паре и почтовому индексу.</li>
+    <li>Рекомендации по заполнению заявления на шенгенскую визу для лиц, родившихся в СССР: 1. Страна рождения: указывайте «СССР», если родились до 1991 года, вне зависимости от конкретной республики. 2. Место рождения: копируйте текст точно до косой черты из паспорта. 3. Адрес: используйте адрес регистрации (прописку) вместо фактического адреса для соответствия официальным документам.</li>
+    <li>Смена фамилии после замужества в Бельгии для граждан России включает в себя: 1. Получение «справки о возможности смены фамилии» и «справки о семейном положении» в консульстве России (со ссылками на Семейный кодекс РФ). 2. Апостилирование бельгийского свидетельства о браке. 3. Нотариальный перевод свидетельства на русский язык. 4. Обновление всех российских документов (паспорт, загранпаспорт, водительское удостоверение, страховка, ИНН). Процесс может занять около 2 месяцев и связан со значительными административными сложностями.</li>
+    <li>Для воссоединения семьи в Бельгии, если брак заключен после того, как спонсор из страны, не входящей в ЕС, получил единое разрешение (Single Permit): 1. Консульская подача заявления (виза D) за пределами Бельгии: фактические сроки обработки в среднем составляют 4-6 месяцев (вопреки официальным оценкам в 9-15 месяцев). 2. Подача заявления внутри страны: супруг(а) может въехать в Бельгию по туристической визе и подать документы на месте, при условии, что брак уже заключен. Однако они не могут покидать Бельгию в течение периода обработки заявления, который занимает 6-9 месяцев до момента выдачи карты резидента.</li>
+    <li>Для подачи заявления на краткосрочную визу в Бельгию по Директиве ЕС 2004/38 EC (для членов семей граждан ЕС, проживающих в Бельгии), специальная справка из российского ЗАГСа, подтверждающая регистрацию грузинского брака в российском реестре, как правило, не является документом, требуемым бельгийскими коммунами или DVZ. Этот документ по большей части неизвестен органам, занимающимся обработкой запросов, и вряд ли будет затребован, что указывает на то, что он может не требоваться для процесса подачи заявления.</li>
+    <li>При подготовке документов для официального использования в Бельгии (таких как свидетельства о рождении или формы согласия родителей) стандартной практикой является прикрепление переводов непосредственно к оригиналу документа, а не к нотариально заверенной копии. Этот подход минимизирует расходы и обычно принимается властями.</li>
+    <li>Для подачи заявления на бельгийскую визу по воссоединению семьи с несовершеннолетним гражданином Бельгии консульства строго требуют оригиналы документов. Скан-копия согласия на поездку и проживание от второго родителя, даже выданная коммуной, часто отклоняется. Заявителям следует предоставить оригинал документа с официальными печатями/легализацией, чтобы избежать отказа на этапе подачи документов.</li>
+    <li>Для граждан России прямая выдача виз в Бельгию сейчас ограничена. Рекомендуемый подход: подавать на шенгенскую визу через Францию, Италию или Испанию (сейчас предпочтительнее Франция). Основные правила: 1. Страна выдачи визы в идеале должна покрывать 50%+ длительности поездки (в маршруте). 2. Для въезда на границе нужны действующие брони отелей и обратные билеты. 3. Избегайте запросов на долгий срок (30+ дней) для туристических виз; 14-20 дней безопаснее. 4. Пограничники могут потребовать подтверждение средств (лучше наличные евро, так как выпущенные в России карты не принимаются). 5. Официальное приглашение &#39;3bis&#39; в Бельгию доступно только для определенных категорий (например, владельцев не ежегодного вида на жительство, приглашающих близких родственников). 6. Владельцы молдавских паспортов пользуются безвизовым режимом 90/180 для въезда в Бельгию.</li>
+    <li>Граждане России могут получить рабочие визы в Бельгию. Стандартная рабочая виза обычно требует трудоустройства у конкретного работодателя в Бельгии, что означает, что обладатель визы обязан работать на условиях, предусмотренных его визой.</li>
+    <li>Для получения вида на жительство (ВНЖ) в Бельгии документы обычно требуют перевода на местный официальный язык (нидерландский, французский или немецкий, в зависимости от региона), выполненного присяжным переводчиком в Бельгии. Переводы, сделанные в других странах (например, в России) или на английский язык, часто не принимаются местными муниципалитетами (gemeente), особенно в небольших городах, таких как Алст. Хотя переводы на английский могут приниматься для визовых заявлений, местные органы власти для вида на жительство требуют переводы, сделанные сертифицированным переводчиком в Бельгии, с проставлением официальной печати и подписи. Расходы могут быть значительными; упоминаются суммы 12 000 за один документ или 55 000 за пять документов, что подчеркивает дороговизну процедуры.</li>
+    <li>Въезд в Бельгию по только что выданной шенгенской визе другой страны возможен, даже если это ваш первый въезд по данной визе. Тем не менее, существуют неоднозначный опыт и потенциальные риски. Некоторые пользователи сообщают об успешном въезде по однократным визам Франции и Италии, где пограничный контроль в основном проверял обратные билеты и не создавал существенных проблем. Другие советуют проявлять осторожность, утверждая, что авиакомпании могут отказать в посадке, а пограничники могут задать вопросы о целях въезда, особенно если Бельгия не была заявлена как основное направление при подаче на визу. Чтобы снизить риски, рекомендуется иметь при себе все брони отелей и билеты в оба конца. Поездка по суше из соседних стран, таких как Франция, также является вариантом, хотя проверки на границе могут проводиться. Хотя некоторые считают прямые перелеты с только что выданными визами рискованным предприятием, наличие подтверждающих документов и готовность объяснить свои планы поездки могут повысить шансы на беспрепятственный въезд.</li>
+    <li>Во время поездки на скоростном поезде между Парижем и Брюсселем в пределах Шенгенской зоны требуется действующая шенгенская виза. Хотя пограничный контроль на этом маршруте проводится нечасто (примерно в 10-20% случаев), официальные лица в поезде могут попросить пассажиров предъявить паспорт с визой. Некоторые бюджетные железнодорожные операторы (например, Ouigo) могут проводить проверку билетов или документов еще реже. Всегда имейте при себе действующую шенгенскую визу и паспорт.</li>
+    <li>Для воссоединения семьи согласно Директиве 2004/38/EC в Бельгии коммуна может потребовать специфическую документацию касательно свидетельства о браке. Это может включать справку из российского ЗАГСа, подтверждающую регистрацию брака, заключенного в Грузии. Уточните, являются ли апостиль и перевод обязательными для таких подтверждающих документов. Имеются неофициальные свидетельства, что в Валлонии они могут быть не строго обязательны, но рекомендуется проверить требования местной коммуны. Процесс для супругов граждан ЕС, переезжающих по данной директиве, включает подачу доказательства брака, и иногда муниципалитет может запросить дополнительные справки.</li>
+    <li>Для получения гражданства Бельгии обычно требуется минимальный период проживания 5 лет. По сравнению с некоторыми соседними странами процесс в Бельгии считается более простым, отличаясь четкими сроками, минимальной бюрократией и относительно низким требованием к владению языком (A2). Бельгия разрешает двойное гражданство, что означает, что заявители юридически не обязаны отказываться от своего предыдущего гражданства (например, российского) при получении бельгийского гражданства. Однако некоторые люди могут решить отказаться от своего предыдущего гражданства по личным моральным или этическим соображениям, несмотря на отсутствие юридических обязательств со стороны Бельгии.</li>
+    <li>Для получения краткосрочной бельгийской визы для родителей, приглашенных резидентом (включая держателей разрешения типа A), форма финансовой поддержки «3bis» (Приложение 3bis) не является строго обязательной, если гости подтверждают свою собственную финансовую состоятельность. Требуемые доказательства включают: выписки из банка, подтверждение покупки валюты (должна быть в евро) и справки с места работы из России. Эти документы, как правило, не требуют перевода на нидерландский/французский язык или апостилирования для подачи на краткосрочную визу. Стандартное финансовое требование составляет примерно 45 евро в день на человека. Электронные/сканированные приглашения с подписью, как правило, принимаются.</li>
+  </ul>
+  <h2>Смежные темы</h2>
+  <div class="chips">
+    <a class="chip" href="/ru/be/транспорт/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Транспорт</span></a>
+    <a class="chip" href="/ru/be/покупки/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛒 Покупки</span></a>
+    <a class="chip" href="/ru/be/работа-и-налоги/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💼 Работа и налоги</span></a>
+    <a class="chip" href="/ru/be/билеты-и-развлечения/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🎟 Билеты и развлечения</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Общие статьи есть — а решение для тебя?</h2>
+    <p>Спроси Luky — подскажет, что работает сейчас, — по недавним отзывам.</p>
+    <p>А ещё Luky — голосовой переводчик живого разговора: реши вопрос на ресепшене без нервов.</p>
+    <p class="ps">PS: флиртовать на свидании на чужом языке? Не вопрос 😏</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Открыть Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — живой опыт из чатов сообществ, без воды</div>
+    <nav class="f-links">
+      <a href="/ru/about/">О проекте</a>
+      <a href="/ru/be/">Все темы</a>
+      <a href="/ru/">Страны</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Ответы собраны из открытых чатов сообществ — это живой опыт людей, а не официальная консультация. Перед важными решениями проверяйте актуальность.</p>
+    <div class="f-copy">© 2026 Luky · обновлено 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 \u041d\u043e\u0447\u044c", DAY="\u2600 \u0414\u0435\u043d\u044c";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>
