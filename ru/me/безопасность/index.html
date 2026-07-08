@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Черногория: безопасность — живой опыт · Luky</title>
+<meta name="description" content="Живой опыт из чатов про безопасность в Черногория: как есть, из первых рук. Под твой случай — у Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/ru/me/безопасность/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/me/безопасность/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/me/безопасность/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/me/безопасность/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/me/безопасность/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">инфопортал · в любой стране · без воды</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Ночь</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/ru/">Главная</a> /
+    <a href="/ru/me/">Черногория</a> /
+    <b>Безопасность</b>
+  </nav>
+
+
+  
+  <h1>Безопасность: как это в Черногория — из первых рук</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Реальный опыт людей из чатов по теме «безопасность» в Черногория — как есть, без воды. Под свой случай — <strong>спроси Luky</strong>.</div></div>
+
+  <h2>Из живого опыта</h2>
+  <ul class="qlist">
+    <li>Чтобы найти чат-группы в Telegram для конкретных городов Черногории, выполните поиск по названию города. Например, «Budva expats» существует для Будвы, а «chatik Tivat» для Тивата. Некоторые специализированные группы экспатов могут иметь сниженную активность.</li>
+    <li>Подчеркните, что солнечные ожоги в Черногории происходят в основном из-за ультрафиолетового излучения, а не только из-за жары. Рекомендуйте использовать солнцезащитный крем и защитную одежду, даже во время коротких прогулок в городских или горных районах. Упомяните, что воздействие ультрафиолета представляет риск круглый год.</li>
+    <li>В Черногории все пассажиры, включая детей на задних сиденьях, по закону обязаны пристегиваться ремнями безопасности. Хотя контроль за пассажирами на задних сиденьях может быть менее строгим, чем за передними, возможны штрафы в случае остановки полицией. Рекомендуется всегда использовать детские автокресла для безопасности. Местные агентства по аренде автомобилей могут предоставлять детские кресла; уточняйте это заранее.</li>
+    <li>Между побережьем и Жабляком в Черногории может быть существенная разница температур. Прибрежные районы бывают жаркими, тогда как в Жабляке, особенно по вечерам и ночью, может быть гораздо холоднее с сильными ветрами. Рекомендуется брать с собой более теплую одежду, такую как свитеры или ветровки, для поездок в горы, даже в теплое время года. Днем на солнце может быть тепло, но после заката или в отсутствие солнца температура резко падает.</li>
+    <li>Будьте осторожны с морскими ежами в водах Будвы. Рекомендуется носить специальную обувь для плавания и смотреть под ноги, особенно в местах с галькой. На песчаных пляжах морских ежей обычно нет.</li>
+    <li>Ввоз дрона в Черногорию требует официального разрешения через сайт spiro.medigovic.gov.me. Несанкционированный ввоз влечет риск конфискации или штрафов на таможне. Хотя некоторые путешественники сообщают об успешных случаях ввоза дронов без официальной декларации, это остается юридическим риском, зависящим от конкретного сотрудника таможни.</li>
+    <li>Обсуждение присутствия акул в водах Черногории и безопасности купания. Пользователи делятся опасениями и информацией о зафиксированных случаях появления акул, включая недавнее наблюдение большой синей акулы. Запрашиваются советы по безопасным методам купания, включая время, которого следует избегать (утро/ночь), и конкретные места, известные такими случаями. Также упоминаются мелкая рыба («малек»), которая может кусаться, и прошлые инциденты, включая смертельное нападение в 1970-х годах.</li>
+    <li>При поездке в Черногорию рекомендуется приобрести туристическую страховку. Варианты включают полисы от Сбербанка, Тинькофф и ВТБ. Некоторые банковские приложения могут предлагать бесплатную годовую семейную страховку с покрытием до 100 000 рублей. Например, 27-дневный полис с покрытием 100 000 стоил 1285 рублей. Сбербанк отмечают за хорошую поддержку и доступные варианты.</li>
+    <li>Проинформируйте путешественников о потенциальных проблемах с арендой автомобилей и услугами такси в аэропорту Тивата в Черногории. Предупредите об агрессивных местных таксомоторных компаниях, пытающихся монополизировать рынок. Посоветуйте бронировать аренду и трансферы заранее через надежные источники, чтобы избежать конфликтов и обеспечить справедливые цены.</li>
+    <li>Которский серпантин — это сложный участок дороги с многочисленными крутыми поворотами, известный своей требовательностью к водителям. Хотя подъемы после Плужине также существуют, участок в Которе часто выделяют как наиболее трудный. Критически важно проверять погодные условия, так как снег в горах на больших высотах может сохраняться в зависимости от сезона. Водителям с ограниченным опытом рекомендуется ехать осторожно, в дневное время суток, и рассмотреть альтернативные виды транспорта, если безопасность вызывает серьезное беспокойство. Рекомендуется обращаться к местным ресурсам для получения информации о дорожных условиях и прогнозах погоды в реальном времени.</li>
+    <li>Агентства по аренде в Будве могут иметь минимальные сроки аренды, например 7 дней. Если для поездок в горы требуется более короткий срок аренды (например, три дня), следует рассмотреть альтернативные прокатные компании или варианты. Рекомендуется изучить страховое покрытие, например минимальную защиту, и решить, бронировать заранее или по прибытии.</li>
+    <li>В Черногории большинство российских банковских приложений (например, Сбер, Альфа) работают корректно без VPN. Однако некоторые российские государственные сайты (например, Госуслуги, РЖД, Mos.ru, Почта России) могут быть недоступны. Решения включают переключение с домашнего Wi-Fi на мобильный интернет или использование бесплатного онлайн-сервиса «VPN наоборот» для краткосрочного доступа. Заметьте, что использование VPN иногда может мешать работе банковских приложений, так как они могут обнаруживать и блокировать использование VPN. Прямой доступ без VPN, как правило, предпочтительнее для банковских операций.</li>
+    <li>Солнце в Черногории интенсивное, с высоким УФ-индексом. Рекомендуется высокий SPF (например, SPF 50), а также советуется избегать прямого воздействия солнца с 11:00 до 16:00, чтобы предотвратить солнечные ожоги. Кожа может сгореть очень быстро.</li>
+    <li>Остерегайтесь мошенничества с арендой автомобилей в Черногории; избегайте лиц, просящих депозиты на российские карты. Рекомендуемые агентства по аренде автомобилей включают Amigo и Vroom. В First Rent a Car депозит не требуется, но критически важно снять на видео весь автомобиль при получении, чтобы задокументировать его состояние и избежать споров при возврате. Могут взиматься дополнительные сборы (например, 30 евро) за доставку к вашему местоположению.</li>
+    <li>В июле прибрежная погода в Черногории может быть изменчивой. В то время как в некоторых районах, таких как Сутоморе, температура воды может составлять около 20°C, а сильные ветры (например, северные) могут вызывать похолодание, в Которском заливе вода обычно теплее из-за отсутствия апвеллинга. Условия могут меняться в течение дня, и ветры могут утихать к полудню. Рекомендуется быть готовым к перепадам температуры.</li>
+    <li>В Будве днем стоит сильная жара, достигающая 35°C. Горные районы, такие как Жабляк, предлагают более прохладную температуру. Для облегчения состояния в Будве рекомендуется посещать море после 17:00, когда температура снижается, или искать помещения с кондиционером.</li>
+    <li>Остерегайтесь мошенников, выдающих себя за других участников в Telegram-группах для экспатов. Мошенники копируют профили администраторов или экспертов и начинают личную переписку, предлагая платные услуги. Настоящие администраторы не пишут первыми, не берут деньги за помощь и никогда не предлагают частные сделки в личных сообщениях. Всегда проверяйте контакты через закрепленные сообщения в чате.</li>
+    <li>Билеты на канатную дорогу в Которе лучше покупать на месте, чтобы сохранить гибкость. Избегайте дней с пиковыми скидками, чтобы избежать длинных очередей. Раннее утро или закат — оптимальное время для посещения, чтобы избежать толп. Иногда бывают рекламные скидки (например, по картам Mastercard), но в высокий сезон они встречаются редко.</li>
+    <li>Прогноз для побережья Черногории обещает солнечную погоду с температурой около 17°C на следующий день. Однако текущие погодные условия описываются как холодные.</li>
+    <li>Путешественникам в Черногории следует избегать оплаты услуг банковскими переводами на счета третьих лиц, особенно в иностранной валюте (например, переводы в рублях за услуги в евро). Мошенники часто используют фальшивые рекомендации и предлоги «сбоя платежа», чтобы выманить повторные переводы. Всегда проверяйте поставщиков услуг через официальные ресурсы групп или закрепленные списки контактов.</li>
+    <li>Температура воды в Будве сейчас комфортна для купания детей. Вода поначалу может казаться прохладной, но становится комфортной в течение нескольких минут. Рекомендуется соблюдать осторожность из-за присутствия морских ежей на пляжах в этом году; для безопасности рекомендуются специальные аквашузы.</li>
+    <li>Канатная дорога в Которе может иметь ограничения по часам работы из-за погоды, например, грозы (например, с 16:00 до 18:00). В случае грозы не рекомендуется пользоваться канатной дорогой из-за сложных процедур эвакуации. Билеты можно приобрести на месте в специализированной кассе рядом с трассами для тобоггана (принимаются карты) или в кассе канатной дороги. Были замечены цены 12 евро и 20 евро, при этом более высокая цена, возможно, за более быструю поездку. Как дневные, так и закатные посещения предлагают живописные виды.</li>
+    <li>Морские ежи встречаются на пляже Могрен в Будве. Их распространенность может меняться в зависимости от сезона, в сентябре их потенциально меньше по сравнению с предыдущими годами.</li>
+    <li>Официальные правила для беспилотных летательных аппаратов (дронов) в Черногории требуют регистрации в Министерстве экономики. Существуют задокументированные ограничения на полеты дронов для граждан России согласно уведомлению Агентства гражданской авиации (CAA). Несанкционированное использование несет высокий риск конфискации.</li>
+    <li>В этом году на пляжах Будвы наблюдается большое количество морских ежей. Купающимся рекомендуется соблюдать осторожность и подумать о ношении защитной акваобуви, чтобы избежать травм.</li>
+    <li>Соблюдение правил дорожного движения в Черногории может быть строгим в отношении пешеходных переходов, особенно в местах с интенсивным движением, таких как Будва и Тиват. Полиция может выписать официальный штраф даже за незначительное непредоставление преимущества. В случае выписки штрафа процедура часто требует оплаты через банк, что может занять много времени у туристов, у которых запланированы скорые поездки.</li>
+    <li>Канатная дорога в Которе пережила длительную остановку из-за сильного ветра и гроз, в результате чего около 300 пассажиров застряли на верхней станции. Эвакуация включала долгое ожидание автобусов, которые прибыли поздно ночью и проследовали по непрямому маршруту через Цетине из-за того, что серпантинная дорога была непроходима. Информация о процедурах эвакуации, как сообщается, была скудной.</li>
+    <li>Черногория статистически одна из самых безопасных стран в регионе, но оппортунистические кражи (взлом машин, кражи на пляже) присутствуют, часто приписываемые скорее приезжим, чем местным жителям. Рекомендуются стандартные меры предосторожности (запирание дверей, не оставлять ценные вещи без присмотра на пляжах).</li>
+    <li>Хотя закон Черногории допускает низкое содержание алкоголя в крови (BAC) у водителей, туристам следует проявлять предельную осторожность. Допустимый законом уровень невелик, и к туристам могут применяться более строгое правоприменение и значительные штрафы по сравнению с местными жителями. Ожидается, что новые правила дорожного движения еще больше ужесточат ограничения на вождение в нетрезвом виде. Туристам рекомендуется воздержаться от вождения после употребления алкоголя и выбирать такси или альтернативные способы передвижения.</li>
+    <li>Закон Черногории о побережье предписывает открытый доступ к морю. Отели часто управляют участками пляжей с шезлонгами. Хотя доступ к воде гарантирован по закону, споры с частной охраной по поводу использования шезлонгов без оплаты случаются часто и нередко приводят к конфликтам. Ищите специально отведенные общественные пляжные зоны или бесплатные участки с песком.</li>
+    <li>Сообщите о температуре на вершине канатной дороги Ловчен на закате, отметив, что она может быть примерно на 7-10 градусов Цельсия холоднее, чем на побережье. Посоветуйте одеться теплее.</li>
+    <li>Полеты на дронах в Черногории, даже легких, таких как DJI Mini 4 Pro (до 249 г), могут требовать разрешения. Получение этого разрешения по электронной почте может быть долгим процессом без гарантии одобрения, особенно для граждан России. Хотя некоторым людям удается провозить дроны без разрешений, существует риск конфискации. Рекомендуется заранее изучить конкретные правила и процесс получения разрешения.</li>
+    <li>Настоятельно рекомендуется носить аквашузы или коралловые тапочки («коралки») во время купания на пляжах в Будве и прилегающих к ним скалистых районах Черногории. Морские ежи встречаются часто, и такая обувь обеспечивает защиту от уколов и порезов об острые камни.</li>
+  </ul>
+  <h2>Смежные темы</h2>
+  <div class="chips">
+    <a class="chip" href="/ru/me/транспорт/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Транспорт</span></a>
+    <a class="chip" href="/ru/me/билеты-и-развлечения/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🎟 Билеты и развлечения</span></a>
+    <a class="chip" href="/ru/me/документы-и-виза/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Документы и виза</span></a>
+    <a class="chip" href="/ru/me/покупки/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛒 Покупки</span></a>
+    <a class="chip" href="/ru/me/банк-и-деньги/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Банк и деньги</span></a>
+    <a class="chip" href="/ru/me/работа-и-налоги/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💼 Работа и налоги</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Поиск отвечает всем подряд — а тебе?</h2>
+    <p>Спроси Luky — соберёт ответ из свежих отзывов людей, а не из рекламных текстов.</p>
+    <p>А ещё Luky — голосовой переводчик живого разговора: и официант не перепутает заказ.</p>
+    <p class="ps">PS: познакомишься в баре с тем, кто говорит на другом</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Открыть Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — живой опыт из чатов сообществ, без воды</div>
+    <nav class="f-links">
+      <a href="/ru/about/">О проекте</a>
+      <a href="/ru/me/">Все темы</a>
+      <a href="/ru/">Страны</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Ответы собраны из открытых чатов сообществ — это живой опыт людей, а не официальная консультация. Перед важными решениями проверяйте актуальность.</p>
+    <div class="f-copy">© 2026 Luky · обновлено 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 \u041d\u043e\u0447\u044c", DAY="\u2600 \u0414\u0435\u043d\u044c";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>
