@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Маврикий: покупки — живой опыт · Luky</title>
+<meta name="description" content="Живой опыт из чатов про покупки в Маврикий: как есть, из первых рук. Под твой случай — у Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/ru/mu/покупки/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/mu/покупки/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/mu/покупки/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/mu/покупки/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/mu/покупки/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">инфопортал · в любой стране · без воды</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Ночь</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/ru/">Главная</a> /
+    <a href="/ru/mu/">Маврикий</a> /
+    <b>Покупки</b>
+  </nav>
+
+
+  
+  <h1>Покупки: как это в Маврикий — из первых рук</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Реальный опыт людей из чатов по теме «покупки» в Маврикий — как есть, без воды. Под свой случай — <strong>спроси Luky</strong>.</div></div>
+
+  <h2>Из живого опыта</h2>
+  <ul class="qlist">
+    <li>Чтобы купить багаж рядом с отелем Astroea на Маврикии без автомобиля, рассмотрите торговый центр Bo&#39;Valon или крупные местные супермаркеты — там варианты дешевле. Для покупки более качественного багажа потребуется поездка в крупные торговые центры, такие как Bagatelle Mall или Tribeca, что подразумевает необходимость транспорта, так как они находятся не в пешей доступности.</li>
+    <li>Стики Heets обычно нельзя купить на месте на Маврикии. Путешественникам рекомендуется привезти собственный запас из страны вылета.</li>
+    <li>Фабричный магазин кашемира на Маврикии, хотя часто расположен вне туристических зон, может предлагать такие услуги, как бесплатная доставка до отеля для отсутствующих в наличии товаров и скидки на покупку.</li>
+    <li>Jiva рекомендуется как место с хорошим кофе на Маврикии, в частности для таких вариантов, как флэт уайт или колд брю, согласно отзывам местных жителей.</li>
+    <li>Высококачественные шарфы из шелка и кашемира можно приобрести в специализированных магазинах Порт-Луи и других текстильных лавках. Там же можно найти льняную одежду, например мужские рубашки, причем цены в обычных магазинах могут быть ниже, чем в сувенирных лавках при отелях. Также по сниженным ценам могут быть доступны товары из Южной Африки.</li>
+    <li>Качественный кофе (в зернах или молотый) можно купить в большом продуктовом супермаркете в торговом центре Cascavelle примерно за 300 рупий. Тот же самый кофе может продаваться на рынке Порт-Луи по значительно более высокой цене, около 800 рупий. Рекомендуется сравнивать цены в разных местах.</li>
+    <li>Мавританское крафтовое пиво крайне рекомендуется. Оно доступно в крупных розничных сетях, представлено примерно 7-8 различными сортами, каждый из которых описывается как вкусный и уникальный. Это пиво считается одним из лучших, что пробовали за последние годы.</li>
+    <li>Оцените стоимость пакета «все включено» на Маврикии. Если вы планируете питаться в местных кафе и употреблять алкоголь, купленный за пределами курорта, вариант полупансиона или только завтрака может оказаться более экономичным. Оцените личные предпочтения в отношении питания и отдыха.</li>
+    <li>Плавание с китами может вызывать беспокойство из-за страха глубины. Хотя Маврикий предлагает мелководные пляжи без китов, встреча с китами в других местах обычно считается безопасной, так как это крупные неагрессивные животные. Отбойные течения обычно не являются проблемой. Рекомендуется использовать стандартную маску (не полнолицевую) для лучшей подвижности. Решение требует сопоставления желания получить этот опыт с личными страхами.</li>
+    <li>Рекомендация по еде на Маврикии: TERACA, расположенная рядом с KFC, предлагает широкий выбор вариантов завтрака. Еда описана как очень вкусная, порции большие, а цены доступные.</li>
+    <li>Рекомендую путешественникам супермаркеты Super U в Перейбере и Гранд-Бэ, Маврикий, как хороший вариант для покупки сувениров. Упомяните, что в этих магазинах часто представлен широкий выбор местных товаров и подарков.</li>
+    <li>Маврикийский ром — предмет обсуждения. Некоторые находят у него отчетливое послевкусие. Рекомендуемые бренды включают La Bourdonnais, Lasy Dodo и Chamarel, с предпочтением к выдержанным сортам. Рекомендуется посещение местных винокурен для дегустаций, чтобы определить личные предпочтения. Для пробы доступны подарочные наборы с миниатюрными бутылками.</li>
+    <li>На Маврикии кашемировые шали можно найти в отелях и некоторых магазинах по цене около 40-60 евро. Запрашивается информация о подлинности этих кашемировых изделий и советы по выявлению подделок.</li>
+    <li>Для покупки продуктов во Флик-ан-Флаке, Маврикий, главные супермаркеты — это Jumbo и Carrefour. За свежими фруктами и овощами местные советуют ходить к торговцам, расположенным у кольцевой развязки со статуей птицы Додо.</li>
+    <li>Рекомендации по сувенирам с Маврикия включают: мармелад Labourdonnais, ромовые ликеры New Grove (ванильный, кофейный, карамельный — хороши в подарок, разрешено до 10 бутылок на человека), специи, тамариндовый джем, льняную одежду (особенно мужские рубашки), а также высококачественные шарфы из шелка и кашемира. Цены на сувениры часто ниже на экскурсиях (например, возле водопадов Шамарель) по сравнению с Порт-Луи, за исключением одежды. Рекомендуемые бренды рома включают Lasy Dodo, Chamarel и La Bourdonnais, предпочтение отдается выдержанным сортам. Избегайте рома в бутылках в форме головы додо, так как он низкого качества.</li>
+    <li>Пляж в Riu Palace на Маврикии (район Ле Морн) может подвергаться сильным ветрам и волнам, из-за чего плавание становится затруднительным. Гости рекомендуют взять с собой аквашузы. Многие гости предпочитают ездить на машине на другие пляжи ради лучших условий для плавания, например, на общественный пляж Ле Морн, который считается гораздо лучше, чем частный пляж отеля.</li>
+    <li>В аэропорту Маврикия duty-free предлагает конкурентоспособные цены на косметику и алкоголь, часто на 15-20% дешевле, чем в Стамбуле. Сувениры ограничены небольшими торговыми точками у выходов на посадку. Настоятельно рекомендуется покупать местные продукты питания и чай в супермаркетах, а не в аэропорту. Доступен широкий выбор французских вин.</li>
+    <li>В Гранд-Бэй, Маврикий, для ужина рекомендуется ресторан при пятизвездочном отеле, такой как Royal Palm Beachcomber Luxury. Такие места часто предлагают дневные пляжные развлечения, плавание и возможности для снорклинга рядом с кораллами с морскими обитателями.</li>
+    <li>Дроны на Маврикии разрешены. Цены в супермаркетах сравнимы с московскими, но качество продуктов выше. Такси стоят дорого; рекомендуется аренда автомобиля (примерно 200 евро за 10 дней). Советуем привезти свою качественную маску для снорклинга, так как хорошие экземпляры на месте стоят 150-200 евро. Цены на алкогольные напитки такие же, как в России.</li>
+    <li>В отеле Dinarobin завтрак включает свежие соки из диспенсера и разнообразные фрукты, в частности папайю. Варианты для детей включают кашу, масло, сыр, вареные яйца и фрукты, что позволяет им оставаться сытыми до обеда. Варианты обеда в пляжном ресторане включают бургеры и другие угощения, а также бесплатное мороженое. Специальные запросы на такие фрукты, как папайя, часто выполняются.</li>
+    <li>Кашемир на Маврикии доступен по ценам, сопоставимым с Falconeri, но качество, как сообщается, среднее. Кофе можно купить в сети супермаркетов &#39;U&#39;.</li>
+    <li>Варианты питания на Маврикии сильно различаются в зависимости от расположения. Многие курорты в уединенных районах (например, Север/Запад) затрудняют самостоятельное приготовление пищи. Часто рекомендуется полупансион (HB) или полный пансион (FB), чтобы избежать логистических проблем с поиском ресторанов. При бронировании виллы проверьте окружающую инфраструктуру через Google Maps, прежде чем останавливаться на варианте с самостоятельным питанием.</li>
+    <li>Обсуждение покупки снаряжения для снорклинга (маски и ласты) на Маврикии. Пользователи спорят, стоит ли покупать свое, чтобы избежать проблем с гигиеной или низким качеством арендованного. Ищутся рекомендации по маскам и ластам, включая опыт использования полнолицевых масок для снорклинга с китами. Учитывается соотношение цены и качества: Tusa упоминается как премиальный бренд, также ищутся более дешевые альтернативы. Даны советы по предотвращению запотевания маски (слюна, антифог, мыло) и правильной подгонке маски.</li>
+    <li>При покупке таких товаров, как дубайский шоколад на Маврикии, помните о стоимости транзакций. Покупка одного товара стоила 2300 единиц местной валюты (вероятно, маврикийских рупий), что эквивалентно 60 дирхамам ОАЭ.</li>
+    <li>Пивной сад на Маврикии (потенциально в районе Флик-ан-Флак) предлагает 8 видов пива, включая безалкогольные и безглютеновые варианты, а также закуски и приготовленные шеф-поваром аппетайзеры для дневного приема пищи.</li>
+    <li>Электронные сигареты можно провозить на Маврикий, но их могут обнаружить при досмотре багажа по прибытии. Хотя некоторые путешественники успешно провозили их в рюкзаке незамеченными, служба безопасности аэропорта может проводить выборочную проверку багажа. Электронные сигареты также можно приобрести на острове по цене около 3500 маврикийских рупий за устройство с ресурсом 50 000 затяжек. Существуют различные варианты, наличие которых следует уточнять на месте.</li>
+    <li>Помимо кашемира, магазины рядом с Гранд-Бэ на Маврикии также предлагают текстиль, такой как рубашки-поло из высококачественного египетского хлопка и смеси шелка с хлопком.</li>
+    <li>Электрические розетки на Маврикии — типа G (три прямоугольных штырька, расположенных треугольником), такие же, как в Великобритании. Путешественникам следует взять с собой универсальный адаптер или адаптер типа G, если их устройства используют вилки другого типа (например, европейские типа C или дубайские типа D).</li>
+    <li>Покупка стручков ванили на Маврикии: приобретение напрямую в отелях стоит значительно дороже (например, 500 маврикийских рупий за 3 штуки). Более выгодные варианты можно найти в крупных супермаркетах, таких как Jumbo, Winner&#39;s или Super U.</li>
+    <li>В районе Ле-Морн на Маврикии не хватает ресторанов в пешей доступности от таких отелей, как Dinarobin. Близлежащие варианты включают деревню Ла-Голет (ограниченный выбор) или Флик-ан-Флак (примерно 45 минут на такси). Рекомендуются планы питания «все включено» или полупансион из-за отличной кухни в отелях. Шопинг предлагает хорошее соотношение цены и качества товаров. Попробуйте багеты с ягненком, которые продаются в кафе крупных сетей (около 400 рупий).</li>
+    <li>Вечера на Маврикии, включая июль, могут быть прохладными, поэтому рекомендуется взять с собой свитшот или легкую куртку. Дневные температуры, как правило, теплые.</li>
+  </ul>
+  <h2>Смежные темы</h2>
+  <div class="chips">
+    <a class="chip" href="/ru/mu/билеты-и-развлечения/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🎟 Билеты и развлечения</span></a>
+    <a class="chip" href="/ru/mu/жильё/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🏠 Жильё</span></a>
+    <a class="chip" href="/ru/mu/транспорт/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Транспорт</span></a>
+    <a class="chip" href="/ru/mu/банк-и-деньги/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Банк и деньги</span></a>
+    <a class="chip" href="/ru/mu/документы-и-виза/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Документы и виза</span></a>
+    <a class="chip" href="/ru/mu/безопасность/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛡 Безопасность</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Нужно под твою ситуацию, а не вообще?</h2>
+    <p>Спроси Luky — соберёт ответ из свежих отзывов людей, а не из рекламных текстов.</p>
+    <p>А ещё Luky — голосовой переводчик живого разговора: и гид заговорит на твоём языке.</p>
+    <p class="ps">PS: а захочешь — Luky поможет и познакомиться без языкового барьера 😉</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Открыть Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — живой опыт из чатов сообществ, без воды</div>
+    <nav class="f-links">
+      <a href="/ru/about/">О проекте</a>
+      <a href="/ru/mu/">Все темы</a>
+      <a href="/ru/">Страны</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Ответы собраны из открытых чатов сообществ — это живой опыт людей, а не официальная консультация. Перед важными решениями проверяйте актуальность.</p>
+    <div class="f-copy">© 2026 Luky · обновлено 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 \u041d\u043e\u0447\u044c", DAY="\u2600 \u0414\u0435\u043d\u044c";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>
