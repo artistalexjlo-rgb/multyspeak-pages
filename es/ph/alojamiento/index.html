@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Filipinas: Alojamiento — experiencia real · Luky</title>
+<meta name="description" content="Experiencia real de los chats sobre Alojamiento en Filipinas: tal cual, de primera mano. Para tu caso — pregúntale a Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/es/ph/alojamiento/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/ph/alojamiento/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/ph/alojamiento/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/ph/alojamiento/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/ph/alojamiento/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · cualquier país · sin relleno</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noche</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/es/">Inicio</a> /
+    <a href="/es/ph/">Filipinas</a> /
+    <b>Alojamiento</b>
+  </nav>
+
+
+  
+  <h1>Alojamiento en Filipinas: experiencia real de los chats</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiencia real de gente de los chats sobre «Alojamiento» en Filipinas — tal cual, sin relleno. Para tu caso — <strong>pregúntale a Luky</strong>.</div></div>
+
+  <h2>De la experiencia real</h2>
+  <ul class="qlist">
+    <li>Comparación de experiencias de vida en Cebú y Manila para expatriados. Un usuario encontró Cebú &#39;extremadamente aburrido&#39; con autopistas y centros comerciales, careciendo del ambiente vibrante de Bangkok o Hanói. Manila fue considerada como una alternativa, pero surgieron preocupaciones sobre la delincuencia en zonas no turísticas y la atmósfera general de &#39;picadora de carne&#39; de una ciudad densamente poblada. Algunos expatriados comentaron que Manila puede ser un &#39;agujero lúgubre&#39; comparado con Cebú, con peor clima (más humedad, tifones, lluvia). Una persona que vivió un mes en ambas prefirió Cebú. Otros encontraron agradable Makati en Manila, así como la zona de la bahía entre Intramuros y el aeropuerto.</li>
+    <li>Las tradiciones culinarias filipinas incluyen un estilo de cocina donde los alimentos se preparan hasta quedar &#39;quemados&#39;, aplicable a carnes, salchichas y pollo. Esto se considera una práctica cultural. El peinado de las mujeres a menudo implica alisar el cabello sin añadir volumen, ya que los estilos voluminosos no se consideran de moda. Además, las relaciones homosexuales son aceptadas y apoyadas por la sociedad y los padres.</li>
+    <li>Para un viaje a Bohol, se tarda aproximadamente 1,5 horas en visitar a los tarseros. La elección del alojamiento depende de la proximidad a las atracciones deseadas.</li>
+    <li>En Boracay, los desayunos de hotel suelen ser estándar (estilo americano o filipino) y puede que no valgan el costo adicional, especialmente para estancias más largas. Numerosos cafés y restaurantes frente a la playa ofrecen opciones de desayuno más diversas y económicas. Para el alojamiento, considere opciones como Marzon Beach Resort – Boracay o complejos turísticos más grandes como Fairways &amp; Bluewater Boracay, que pueden ofrecer descuentos. Utilice agregadores de reserva de hoteles y Google Maps para comparar precios y reseñas.</li>
+    <li>La isla de Balabac es accesible exclusivamente a través de tours organizados. Las opciones de alojamiento varían según la agencia y el presupuesto, desde campamentos básicos hasta casas cómodas. La isla es conocida como un paraíso natural adecuado para excursiones de un día y fotografía, con informes sobre la presencia de cocodrilos.</li>
+    <li>Los alquileres a largo plazo en Filipinas a menudo requieren pagos en efectivo debido al acceso limitado a cuentas bancarias locales o internacionales que tienen algunos propietarios. Facebook Marketplace es un recurso para encontrar alojamiento, pero la disponibilidad puede ser un problema. Algunas personas terminan alojándose en hoteles debido a las dificultades para conseguir alquileres a largo plazo.</li>
+    <li>Seguridad y atracciones en Mindanao. Un residente con experiencia descarta las preocupaciones sobre la seguridad por considerarlas obsoletas y recomienda Mindanao tanto para vivir como para hacer turismo. Entre los puntos destacados se incluyen la isla de Samal (la mayor colonia de murciélagos), Camiguin (múltiples atracciones) y sitios cerca de Davao: el Crocodile Park, el río Enchanted, las cascadas de Marilog, la Mezquita Rosa, las playas de Samal y Mati, y el Monte Apo. Aconseja no hacer caso a quienes infunden miedo, afirmando que existen zonas peligrosas en todas partes, pero que se pueden evitar usando el sentido común. Un viajero que planea un viaje de un mes a Davao busca lugares arquitectónicos y oportunidades para practicar senderismo o ciclismo, en lugar de actividades centradas en la playa.</li>
+    <li>Al considerar mudarse desde Manila a Cebú o Negros en Filipinas, ambos ofrecen ventajas distintas. Cebú es un centro importante con mejor infraestructura, incluyendo un transporte público más desarrollado (como Grab en la ciudad) y un internet potencialmente más fiable en las zonas urbanas. Ofrece un equilibrio entre la vida urbana y el acceso a atracciones naturales. Negros, por otro lado, suele percibirse como un lugar más relajado, centrado en la belleza natural y quizá con un ritmo de vida más pausado. Sin embargo, infraestructuras como Grab podrían estar menos extendidas y la conexión a internet podría ser más variable. La elección depende de si se prioriza la comodidad y accesibilidad urbana (Cebú) frente a un estilo de vida posiblemente más tranquilo y enfocado en la naturaleza (Negros).</li>
+    <li>Los extranjeros en Filipinas pueden comprar unidades de condominio, pero la propiedad extranjera total en un solo proyecto de condominio está limitada al 40%. La propiedad directa de tierras por parte de extranjeros está prohibida, lo que hace que la compra de casas independientes sea problemática. Las principales plataformas de anuncios inmobiliarios, especialmente para vendedores y agentes locales, incluyen grupos de Facebook y marketplaces. Un estudio (aprox. 30 m²) puede empezar desde 3 millones de PHP (o ~3 millones de rublos, dependiendo del contexto del tipo de cambio). Los costes adicionales incluyen tasas mensuales de asociación o corporativas y otros matices específicos de la propiedad.</li>
+    <li>En Palawan, considere alojarse en Bambu Suites. Desde allí, la playa de Nagtabon está a 40 minutos en ciclomotor, y se puede encontrar una playa aún más pintoresca y menos concurrida más adelante en el camino desde Nagtabon.</li>
+    <li>Filipinas ofrece excelentes oportunidades para el buceo y recorrer islas. Los lugares de buceo populares incluyen Dauin y la zona de Apo cerca de Cebú. Para actividades en tierra, considere explorar cascadas, lagos de montaña y bancos de arena. Alquilar una moto es una excelente manera de ver las pintorescas carreteras de Palawan, Bohol y Negros. Una excursión popular es nadar con tiburones en Oslob, lo que suele llevar un día entero. Para estancias más largas, se recomiendan Siargao y Palawan por sus experiencias auténticas y su belleza natural.</li>
+    <li>El alojamiento en las islas filipinas puede ir desde tiendas de campaña básicas hasta bungalows equipados con electricidad y ventiladores. Las instalaciones de baño compartidas, que a veces combinan ducha y retrete, son comunes. Algunos lugares pueden usar duchas de cubo en lugar de las convencionales.</li>
+    <li>El servicio hotelero en Filipinas es generalmente considerado excelente, superando a menudo las expectativas. Incluso con carteles de &#39;no molestar&#39;, las habitaciones se limpian y se ofrecen detalles de cortesía. Muchos hoteles son propiedad de extranjeros, lo que puede contribuir a los altos estándares de servicio. Una observación menor fue que, a veces, las botellas de cerveza vacías se dejaban cerca de las mesas en lugar de ser retiradas por el personal.</li>
+    <li>Las instalaciones sanitarias en Filipinas pueden variar, existiendo opciones que incluyen unidades separadas o combinadas. Algunos lugares cuentan con configuraciones de ducha únicas, como un barril grande en lugar de un cabezal de ducha estándar.</li>
+    <li>Se recomienda Moalboal, Filipinas, como destino de viaje para quienes buscan playas y actividades acuáticas. Ofrece la oportunidad de nadar con tortugas y sardinas. White Beach es una playa cercana donde se puede alquilar una tumbona por 300 pesos. Se considera una buena alternativa a hospedarse en la ciudad de Cebú.</li>
+    <li>El Nido es altamente recomendado por sus pintorescos recorridos de isla en isla, pero carece de una infraestructura terrestre significativa, lo que genera una sensación de &#39;congestión&#39; para estancias prolongadas. Boracay ofrece una mejor infraestructura, diversas opciones de playas y servicios como cines, lo que lo hace más adecuado para estadías más largas a pesar de tener un paisaje natural menos espectacular.</li>
+    <li>Para un primer viaje de 2 semanas a Filipinas, llegando a Cebú y planeando visitar Bohol, a menudo se sugiere visitar Bohol primero debido a la logística de los ferris. Para una estancia de 5 días en Bohol/Panglao, los viajeros buscan consejos sobre las mejores zonas donde alojarse, lugares esenciales que visitar y recomendaciones de playas y hoteles específicos en Panglao.</li>
+    <li>Para alquileres a largo plazo (más de 1 año) en Panglao, Filipinas, con un presupuesto de 30.000 a 40.000 PHP, priorice propiedades con excelente conectividad a internet, idealmente fibra óptica o cable, debido a los requisitos de trabajo remoto. Los agentes locales o las consultas directas a través de reservas de alojamiento existentes pueden ser recursos útiles.</li>
+    <li>Boracay y Panglao ofrecen hermosas playas y opciones de alojamiento en Filipinas. White Beach en Boracay es conocida por su arena blanca y sus servicios, donde el esnórquel puede revelar peces coloridos y posiblemente tortugas, pero no bancos de sardinas. La playa de Dumaluan destaca por tener menos gente y una tarifa de entrada de 50 PHP. Alona Beach recibe críticas mixtas, y algunos viajeros recomiendan evitarla. Panglao también tiene playas atractivas, incluida Alona, aunque las opiniones varían. Los precios del alojamiento difieren significativamente; los hoteles frente a la playa en Boracay pueden costar alrededor de 46 $ por noche para dos personas, mientras que opciones similares en Palawan o El Nido podrían rondar los 180 $. Para una experiencia más aislada, Siquijor ofrece belleza natural y tranquilidad, aunque con posibles problemas como electricidad intermitente y problemas de alcantarillado.</li>
+    <li>El salario mínimo en Filipinas es comparable al de Rusia o Ucrania. En Varsovia, las propinas suelen oscilar entre 10 y 50 PLN para un salario mínimo de 4500 PLN. Por lo tanto, es probable que una pequeña propina sea suficiente para los servicios de limpieza en Filipinas.</li>
+    <li>Al entrar en Filipinas, es aconsejable tener prueba de viaje de continuación o reservas de hotel, aunque las revisiones son poco frecuentes. Servicios como &#39;onward ticket&#39; pueden proporcionar reservas temporales y cancelables. Reservar alojamiento con antelación a través de plataformas como Trip.com puede resultar más rentable y cómodo que buscar a última hora, especialmente durante la temporada alta.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/es/ph/entradas-y-ocio/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Entradas y ocio</span></a>
+    <a class="chip" href="/es/ph/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/es/ph/documentaci-n-y-visados/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentación y visados</span></a>
+    <a class="chip" href="/es/ph/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/es/ph/banca-y-dinero/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Banca y dinero</span></a>
+    <a class="chip" href="/es/ph/preparativos-del-viaje/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Preparativos del viaje</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>¿Cansado de googlear lo mismo?</h2>
+    <p>Pregúntale a Luky — te dice qué funciona ahora — según reportes recientes.</p>
+    <p>Y Luky es un traductor de voz para conversaciones reales: y el camarero no confundirá tu pedido.</p>
+    <p class="ps">PS: entabla charla con un compañero de viaje que no habla ni una palabra del tuyo</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiencia real de chats de comunidades, sin relleno</div>
+    <nav class="f-links">
+      <a href="/es/about/">Acerca de</a>
+      <a href="/es/ph/">Todos los temas</a>
+      <a href="/es/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Las respuestas se recopilan de chats abiertos de comunidades — es experiencia real de personas, no asesoría oficial. Verifica antes de decisiones importantes.</p>
+    <div class="f-copy">© 2026 Luky · actualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noche", DAY="\u2600 D\u00eda";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

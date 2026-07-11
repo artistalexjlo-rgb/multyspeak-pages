@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brasil: SIM e Internet — experiencia real · Luky</title>
+<meta name="description" content="Experiencia real de los chats sobre SIM e Internet en Brasil: tal cual, de primera mano. Para tu caso — pregúntale a Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/es/br/sim-e-internet/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/br/sim-e-internet/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/br/sim-e-internet/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/br/sim-e-internet/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/br/sim-e-internet/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · cualquier país · sin relleno</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noche</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/es/">Inicio</a> /
+    <a href="/es/br/">Brasil</a> /
+    <b>SIM e Internet</b>
+  </nav>
+
+
+  
+  <h1>SIM e Internet en Brasil: experiencia real de los chats</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiencia real de gente de los chats sobre «SIM e Internet» en Brasil — tal cual, sin relleno. Para tu caso — <strong>pregúntale a Luky</strong>.</div></div>
+
+  <h2>De la experiencia real</h2>
+  <ul class="qlist">
+    <li>La funcionalidad de los relojes inteligentes con GPS comprados en Rusia cuando se utilizan en Brasil es incierta. Se trata de una cuestión de compatibilidad técnica que requiere información específica sobre el dispositivo y la red para poder responder.</li>
+    <li>Obtener una tarjeta SIM local en Brasil puede ser un desafío para los turistas sin un CPF (número de registro de contribuyente brasileño). Sin embargo, existen opciones: algunos proveedores como Vivo ofrecen planes para turistas por alrededor de 50 BRL, que proporcionan una cantidad sustancial de datos (por ejemplo, 25-30 GB). Las e-SIM también están disponibles, pero pueden ser más caras (alrededor de 150 BRL por 20 GB). Es recomendable investigar las opciones y requisitos de los proveedores específicos de antemano.</li>
+    <li>Al salir de Brasil, mantener un número de teléfono de Correios (Correos de Brasil) requiere una gestión proactiva para evitar la desactivación. Una recomendación común es recargar la cuenta periódicamente (por ejemplo, cada 2-3 meses) con una pequeña cantidad (15-30 BRL) para mantener el número activo. Si el saldo permanece en cero durante aproximadamente 70 días, el número puede ser desactivado. También se aconseja verificar los comandos específicos para controlar el saldo y las fechas de pago.</li>
+    <li>El número de identificación fiscal brasileño (CPF) es muy recomendable para los turistas. Sin una tarjeta SIM local, pedir un Uber es difícil porque la verificación por SMS a menudo falla con números extranjeros (por ejemplo, operadoras rusas). Las tarjetas SIM locales se pueden comprar sin CPF en quioscos de periódicos (banca de jornal), donde los vendedores las registran bajo sus propios datos, o en el aeropuerto de São Paulo (aprox. 100 BRL). 99 Taxi es una alternativa local popular a Uber. El CPF se puede emitir en el consulado brasileño en Moscú en 1 semana, o localmente en Brasil en 1 día.</li>
+    <li>Existe una tarjeta de viaje para MAPS.ME sobre Brasil, que incluye 115 ubicaciones marcadas, entre ellas puntos de interés, restaurantes y lugares para tomar fotografías. Ofrece navegación sin conexión y direcciones paso a paso. El costo es de 599 reales brasileños.</li>
+    <li>Al planificar un viaje a Brasil, tenga en cuenta posibles problemas con ciertas aerolíneas (por ejemplo, los &#39;turcos&#39;) y evite comprar tarjetas SIM en el aeropuerto debido a estafas. En cuanto a los destinos, Fortaleza ofrece excelentes experiencias de playa con temperaturas oceánicas cálidas y menos multitudes, ideal para relajarse. Río de Janeiro es más adecuado para hacer turismo con una visita más corta. En México, considere Crucecita en Oaxaca para disfrutar de playas menos concurridas y vírgenes en comparación con Cancún. Se recomienda contratar un seguro de viaje y adquirir tarjetas SIM locales. Para el transporte dentro de Brasil, los autobuses interurbanos son una opción viable y cómoda, especialmente en las rutas nocturnas entre grandes ciudades como São Paulo y Río de Janeiro. Los métodos de pago en Brasil incluyen comúnmente PIX y tarjetas de crédito; prepárese para posibles comisiones por transacciones extranjeras o restricciones en los pagos en efectivo.</li>
+    <li>Para obtener una tarjeta SIM física en Brasil, se requiere un CPF (Cadastro de Pessoa Física) reciente. Esto se puede hacer en Correios (oficina de correos). El costo de una tarjeta SIM con 35 GB de datos fue de 45 BRL en Santos.</li>
+    <li>Un mapa de viaje personalizado para MAPS.ME está disponible para Brasil, con 115 puntos de interés, incluidos lugares de interés, sitios para comer y ubicaciones para fotos. El mapa funciona sin conexión y ofrece navegación giro a giro. El costo es de 599 reales brasileños.</li>
+    <li>Es posible obtener una eSIM de Vivo en Brasil sin un CPF (Cadastro de Pessoas Físicas). Un usuario informó haber adquirido un plan eSIM de 25 GB por 55 reales, con activación mediante un código QR enviado por correo electrónico. Sin embargo, dichos planes de eSIM obtenidos sin CPF pueden considerarse temporales o destinados a turistas. Es posible que a los usuarios se les exija cambiar a un plan permanente después de obtener su CPF, lo que podría implicar obtener un nuevo número de teléfono. Además, si el plan inicial es &#39;pos pago&#39;, cambiarlo dentro de un año podría conllevar penalizaciones.</li>
+    <li>El CPF (Cadastro de Pessoas Físicas) es prácticamente esencial para la vida diaria en Brasil. Aunque no es legalmente obligatorio para visitas turísticas cortas, se requiere para tareas básicas como acceder a clínicas de salud (SUS/privadas), comprar tarjetas SIM locales, registrarse en aplicaciones locales y realizar compras en línea.</li>
+    <li>Para comprar una eSIM para Brasil utilizando tarjetas bancarias rusas, los usuarios pueden usar la versión en inglés de Trip.com. Busque &#39;esim Brazil 5G&#39; para encontrar y comprar los planes disponibles.</li>
+    <li>Si se compró una tarjeta SIM brasileña sin requerir un CPF (Cadastro de Pessoas Físicas) en áreas como Rio Grande do Sul, recargarla en línea puede presentar desafíos, ya que muchos métodos oficiales de recarga están vinculados a la verificación del CPF. Los métodos alternativos para quienes no poseen CPF podrían incluir la compra de tarjetas de recarga físicas o el uso de servicios de terceros no oficiales, aunque estos pueden conllevar riesgos o tipos de cambio menos favorables.</li>
+    <li>Para activar una tarjeta SIM de TIM en Brasil sin CPF, llame al *144, luego a la extensión 33 y proporcione los datos de su pasaporte en inglés. El CPF puede obtenerse potencialmente en línea en un día, aunque las tasas de éxito son de aproximadamente el 50%. Vivo Easy ofrece planes de datos competitivos, como 15 GB por 35 unidades, disponibles para su compra y gestión en línea a través de su aplicación.</li>
+    <li>Es posible comprar una tarjeta SIM física para turistas en Río de Janeiro en un quiosco de periódicos dentro del centro comercial RioSul sin necesidad de un CPF. El proceso implica proporcionar los detalles del pasaporte a un operador que habla inglés por teléfono, lo cual activa la tarjeta. El costo reportado fue de 70 BRL. Después de obtener la SIM, es posible que las cuentas de Uber todavía requieran verificación (foto del pasaporte y una selfie) si inicialmente solicitan el CPF o una tarjeta de crédito.</li>
+    <li>Las tarjetas SIM locales son una opción conveniente para acceder a internet en Brasil. Se puede brindar asistencia para obtener tarjetas SIM, incluso sin un CPF (número de registro de contribuyente brasileño) o una cuenta bancaria local. Es posible obtener ayuda de locales que estén dispuestos a asistir a los turistas con este proceso sin cobrar de más.</li>
+    <li>La tienda de eSIM de Kaspersky ofrece acceso a internet conveniente y rentable en más de 180 países, incluido Brasil. Los planes se pueden activar rápidamente en línea y cuentan con asistencia 24/7. El pago con tarjetas rusas está disponible y las recargas se pueden realizar fácilmente a través de la aplicación. El código promocional &#39;TRAVELASK3&#39; ofrece un 20 % de descuento en la primera compra (excluyendo el plan ilimitado).</li>
+    <li>Se ha creado un nuevo mapa de viajes sin conexión para MAPS.ME sobre Brasil, que cuenta con 115 puntos de interés, incluyendo atracciones, restaurantes y lugares para fotos, con navegación paso a paso. El mapa está disponible para su compra por 599 reales brasileños.</li>
+    <li>Para obtener una tarjeta SIM local (por ejemplo, Claro), los extranjeros pueden usar servicios de eSIM como Airalo o comprar tarjetas SIM físicas en Correios (oficinas de correos). Costo: ~35 BRL/mes. Nota: El registro de una SIM física en Brasil a menudo requiere un CPF (número de identificación fiscal brasileño). Algunos proveedores de eSIM ofrecen números de datos y voz sin necesidad de un CPF.</li>
+    <li>Las llamadas y SMS no deseados (spam) son comunes en Brasil. Los usuarios de TIM informan de frecuentes llamadas spam diarias y numerosos SMS promocionales. Se ha observado que Claro tiene menos mensajes promocionales. El spam a menudo proviene de números reciclados que pertenecían a otras personas. La eficacia de los servicios de bloqueo de spam es variable y, a veces, cambiar el número de teléfono es la única solución efectiva para el spam persistente.</li>
+    <li>El Aeropuerto de Guarulhos (GRU) ofrece wifi público gratuito limitado. El tránsito entre las terminales internacional y nacional es posible a pie (aprox. 10 minutos). Las tarjetas SIM se pueden comprar y activar en la T3, segundo piso, utilizando el pasaporte para su verificación.</li>
+    <li>En cuanto a las opciones de VPN gratuitas en Brasil, generalmente se informa que Nthlink funciona, e Icegate funciona periódicamente. Los usuarios suelen depender de buscar alternativas cuando una deja de funcionar, ya que no es común encontrar un servicio de VPN gratuito que sea consistentemente confiable.</li>
+    <li>Para los turistas que visitan Brasil, es muy recomendable comprar una eSIM con antelación para asegurar datos móviles inmediatamente al llegar. Proveedores populares y fiables entre los viajeros son Airalo y Trip.com, que ofrecen velocidades de hasta 5G. Asegúrese de que su dispositivo móvil sea compatible con eSIM antes de realizar la compra.</li>
+    <li>Para los turistas en Brasil, se recomienda el proveedor local Vivo. Las tarjetas SIM se pueden comprar en cualquier centro comercial presentando el pasaporte. Los costos comienzan aproximadamente en 30 BRL. Generalmente no se recomienda el roaming debido a sus altos costos en comparación con los planes prepagos locales.</li>
+    <li>Al comprar una tarjeta SIM de TIM en Brasil, se recomienda encarecidamente adquirirla directamente en una tienda oficial de TIM. Comprarla en tiendas o quioscos generales puede generar problemas de activación, incluso si posees un CPF. Aunque la activación podría ser posible contactando directamente al servicio de atención al cliente y proporcionando datos personales, es posible que el registro por SMS no sea una opción, y las tiendas oficiales podrían negarse a ayudar con tarjetas SIM compradas de manera no oficial.</li>
+    <li>Al acceder a las cuentas de Claro utilizando un número de CPF (Cadastro de Pessoas Físicas), los usuarios pueden observar números de teléfono asociados u otros detalles de contacto mostrados. Si aparece un número de teléfono que el usuario no registró explícitamente, podría estar vinculado a intentos previos de obtener una tarjeta SIM u otras activaciones de servicios. Es recomendable contactar directamente al servicio de atención al cliente de Claro para aclarar cualquier discrepancia o eliminar información no autorizada.</li>
+    <li>Explique los requisitos para obtener una tarjeta SIM local en Brasil. Confirme si el pasaporte es el único documento necesario. Aborde la posible necesidad de un número de identificación fiscal (CPF) y mencione que algunas tiendas de telefonía pueden emitir tarjetas SIM sin él. Además, proporcione información sobre opciones alternativas como proveedores de eSIM, por ejemplo, Airalo o Maya.</li>
+    <li>Para recargar una tarjeta SIM de Vivo en Brasil, utilice la aplicación &#39;Vivo Easy&#39;. Los usuarios pueden administrar planes y recargar sin necesidad de visitar una tienda física. Tenga en cuenta que los servicios digitales brasileños a menudo requieren un CPF (Cadastro de Pessoas Físicas) para el registro. Para los no residentes o marineros extranjeros, podrían ser necesarios métodos de pago alternativos o tarjetas de crédito internacionales dentro de la aplicación, aunque el CPF sigue siendo un obstáculo común para la funcionalidad completa.</li>
+    <li>Una solución para los turistas sin CPF que deseen comprar una tarjeta SIM física en Brasil es adquirirla en una tienda regular o en una farmacia. A menudo, el personal ayudará utilizando su propio CPF para completar el registro. Por ejemplo, una tarjeta SIM física de 15 GB puede costar alrededor de 10 BRL.</li>
+    <li>Los turistas que visiten Brasil deberían comprar una tarjeta SIM local en la ciudad en lugar de en el aeropuerto, ya que los precios en la ciudad suelen ser más económicos. Para los turistas que no tienen CPF (número de identificación fiscal brasileño), es posible comprar una tarjeta SIM en quioscos de periódicos u otros vendedores de tarjetas SIM y pedirle al vendedor que ayude con la activación, ya que ellos tienen métodos para extranjeros sin CPF.</li>
+    <li>Para acceder a Internet en Brasil, considere usar servicios de eSIM como Kaspersky eSIM Store, que opera en más de 180 países. Ofrecen pago con tarjetas rusas y recargas convenientes. El código promocional TRAVELASK ofrece un 20% de descuento en la primera compra hasta el 28 de febrero de 2026. Las tarjetas SIM locales suelen requerir un CPF (identificación fiscal brasileña). Los servicios de roaming de su proveedor nacional también son una opción, pero pueden resultar costosos.</li>
+    <li>Los servicios móviles de Vivo requieren una cuenta de tienda de aplicaciones registrada en Brasil (Apple ID o Google Play) para descargar la aplicación. El registro generalmente requiere un CPF. Los planes Vivo Easy no admiten la recepción de SMS durante el roaming en Rusia.</li>
+    <li>Para estancias prolongadas en Río de Janeiro (por ejemplo, tres meses durante el período de diciembre a febrero), es aconsejable reservar alojamiento con mucha antelación, posiblemente hasta con un año de antelación, ya que las opciones, especialmente cerca de las playas, pueden volverse limitadas. Consulte plataformas de reserva como Booking.com para conocer la disponibilidad y las tendencias de precios. Por lo general, se puede comprar internet móvil en el aeropuerto al llegar.</li>
+    <li>Los servicios de entrega de comida y comestibles más populares en Brasil incluyen iFood y Rappi para pedidos de restaurantes, y Mercado Livre para entregas de supermercado. Los usuarios pueden encontrar restricciones regionales al acceder a estas aplicaciones. Es importante descargar la versión correcta de la aplicación para clientes, y tener una cuenta brasileña local para las tiendas de aplicaciones puede mejorar la funcionalidad.</li>
+    <li>Si un usuario de tarjeta SIM Vivo en Brasil no puede iniciar sesión en la aplicación &#39;Meu Vivo&#39; o &#39;Vivo Easy&#39;, a menudo indica un registro incompleto de la tarjeta SIM en el punto de venta. La solución recomendada es volver a una tienda física de servicio de Vivo para verificar la cuenta y el registro del CPF.</li>
+    <li>Se solicita información sobre proveedores de servicios móviles y consejos de conectividad para Brasil, como parte de una publicación más amplia sobre comunicación móvil en América Latina.</li>
+    <li>Los turistas en Brasil pueden obtener una tarjeta SIM sin necesidad de un CPF. Claro ofrece una tarjeta SIM física por 55 BRL, que incluye 12 GB por un mes, y solo requiere el pasaporte para el registro. VIVO ofrece una opción de eSIM por 55 BRL, con 25 GB por 30 días, que tampoco requiere un CPF.</li>
+    <li>Si no puede recargar la aplicación Yolla con una tarjeta brasileña, se aceptan tarjetas internacionales (por ejemplo, tarjetas de Kazajistán). Esto sugiere una alternativa para resolver los problemas de pago locales.</li>
+    <li>Para viajes internacionales, considere usar tarjetas eSIM para acceder a Internet en 180 países, ofrecidas por Kaspersky a una tarifa más competitiva que el roaming tradicional. La activación es rápida (cuestión de minutos) y cuenta con soporte en línea las 24 horas del día, los 7 días de la semana. Los pagos se pueden realizar con tarjetas bancarias de la Federación Rusa y los planes de datos se pueden recargar fácilmente a través de la aplicación. Un código promocional &#39;TRAVELASK3&#39; ofrece un 20% de descuento en la primera compra (excluyendo el plan ilimitado).</li>
+    <li>Ofrezca un mapa interactivo sin conexión para MAPS.ME que cubra 115 puntos de interés en Brasil, incluida la navegación. El precio es de 599 reales brasileños.</li>
+    <li>Para tener datos móviles en Brasil al llegar, considere comprar una eSIM de Vivo o a través de plataformas de terceros como Trip.com para estancias cortas. Esto permite tener conectividad inmediata sin necesidad de visitar una tienda física.</li>
+    <li>Proporcione instrucciones claras sobre cómo encontrar su número de móvil de Claro en Brasil. Método 1: Envíe cualquier mensaje (por ejemplo, &#39;qualquer palavra&#39;) al número 35742. Recibirá su número mediante SMS. Método 2: Busque en internet &#39;Como saber o meu número da Claro?&#39; para obtener una guía en el sitio web de Claro. Aclare que el idioma es portugués, no español.</li>
+    <li>Para comprar una tarjeta SIM en Brasil como turista, visite las tiendas oficiales de los proveedores (Vivo, Claro) dentro de centros comerciales en lugar de quioscos callejeros. Las tiendas oficiales pueden registrar cuentas utilizando un pasaporte extranjero si no se dispone de CPF. Si el personal no puede ayudar, comprar una tarjeta SIM en cadenas de farmacias (como Pague Menos) y registrarla uno mismo a través de la aplicación móvil es una alternativa viable. La calidad del servicio varía significativamente entre ubicaciones.</li>
+    <li>Para los turistas de corta estancia en Brasil (por ejemplo, un par de semanas), la necesidad de obtener un CPF (Cadastro de Pessoas Físicas - registro individual de contribuyentes) es objeto de debate. Algunos lo recomiendan por conveniencia general y para transacciones en línea. Otros, basados en su experiencia personal, afirman que no es necesario a menos que uno planee utilizar servicios de entrega locales, tiendas en línea u obtener una tarjeta SIM local. El CPF se puede obtener en línea, aunque conseguirlo en Moscú de antemano podría ser difícil, pero es posible a través de embajadas en otros países.</li>
+    <li>Al llegar a São Paulo, Brasil:
+*   **Divisas y pagos:** El cambio de efectivo no siempre es necesario. El uso de plataformas de criptomonedas como Bybit con Pix para pagos mediante código QR es un método habitual (&#39;vou pagar com pix&#39;).
+*   **Traslado al aeropuerto:** Los taxis son asequibles. Uber funciona, pero las aplicaciones locales de transporte como &#39;99&#39; a menudo requieren un CPF (número de identificación fiscal) brasileño. Hay autobuses públicos desde el aeropuerto al centro de la ciudad, que cuestan alrededor de 5 BRL y que no siempre requieren CPF para su compra.
+*   **Seguridad y barrios:** Ninguna zona está totalmente libre de riesgos. Las zonas céntricas más seguras incluyen Vila Olímpia y Brooklin. Pinheiros es una zona vibrante y segura para pasear tanto de día como de noche, pero conviene evitar exhibir objetos de valor. Para los desplazamientos nocturnos lo mejor es el taxi. Para estancias largas, zonas como Vila Indiana (Butantã), cerca de la universidad USP, ofrecen espacios recreativos seguros, aunque la infraestructura circundante puede ser limitada.
+*   **Operadores de telefonía móvil:** Adquirir una tarjeta SIM local sin CPF es difícil. Las tarjetas SIM para turistas (por ejemplo, Vivo, de 10 a 25 GB) están disponibles sin CPF, pero los servicios de llamadas y SMS pueden activarse con un retraso de 24 horas. Para los planes completos de tarjeta SIM local (por ejemplo, Claro Flex ilimitado), por lo general se requiere un CPF e, incluso así, la activación puede ser problemática, a veces tomando meses de residencia. Planifique usar eSIM para turistas o depender inicialmente de la conexión Wi-Fi.</li>
+    <li>Al comprar una tarjeta SIM en Brasil, esta puede registrarse a nombre de otra persona si usted es turista y no planea vincular el número a servicios financieros. Los planes prepago están disponibles y son convenientes para estancias de corta duración. Un plan de 20 GB puede costar alrededor de 125 BRL sin requerir documentación extensa.</li>
+    <li>Las tarjetas SIM de TIM se pueden comprar en farmacias del Aeropuerto de Galeão (aprox. 120 BRL). La activación requiere CPF o una llamada de registro proporcionando los detalles del pasaporte. Las oficinas móviles de la ciudad ofrecen tarifas más baratas (por ejemplo, 85 BRL), pero requieren presencia física.</li>
+    <li>Adquiera un mapa interactivo sin conexión de Brasil para MAPS.ME, que incluye 115 puntos de interés, navegación y ubicaciones seleccionadas para turismo, gastronomía y oportunidades fotográficas. El costo es de 599 reales brasileños.</li>
+    <li>Los usuarios con una tarjeta SIM brasileña (por ejemplo, TIM) pueden experimentar problemas para recibir mensajes SMS de bancos u otros servicios cuando viajan fuera de Brasil. Es posible que la tarjeta SIM no se conecte a los operadores asociados, lo que impide la entrega de mensajes esenciales. Los usuarios buscan consejos sobre operadores brasileños que ofrezcan tarifas de roaming internacional para SMS fiables.</li>
+    <li>Los usuarios preguntan frecuentemente sobre las discrepancias en los precios de las eSIM para Brasil (por ejemplo, por qué un paquete &#39;Global&#39; de 1 GB puede ser más barato que un paquete &#39;América Latina&#39; de 1 GB que incluye Brasil). También preguntan sobre la viabilidad técnica de combinar o acumular diferentes paquetes regionales de eSIM (por ejemplo, comprar primero un &#39;Global&#39; de 1 GB y luego un &#39;América Latina&#39; de 1 GB) para cubrir las necesidades mínimas de datos para mensajería y servicios de taxi.</li>
+    <li>Para obtener una eSIM barata para Brasil sin necesidad de un CPF local, utilice Trip.com. Cambie el idioma del sitio web a inglés y busque &#39;eSim Brazil 5G&#39;. Esta opción suele ser un 50% más barata que competidores como Airalo o Yesim, y permite realizar pagos con tarjetas bancarias rusas.</li>
+    <li>Al traer un dron (incluso de menos de 250 g como el DJI Mini 3/4 Pro) a Brasil, los turistas no necesitan registro ante la ANAC o el DECEA para volar. Sin embargo, la aduana puede exigir la certificación de la ANATEL (agencia de telecomunicaciones). Los drones comprados fuera de Brasil requieren legalmente una homologación (uso propio), la cual es prácticamente imposible de obtener para los no residentes. Existe el riesgo de confiscación en la aduana si el dron es inspeccionado.</li>
+    <li>La compra de una tarjeta SIM local en Brasil requiere un CPF (Cadastro de Pessoas Físicas), que es el registro de identificación fiscal individual de Brasil. Es difícil comprar una tarjeta SIM sin un CPF válido. Algunos vendedores pueden ofrecer registrarla bajo su propio CPF, pero esta es una práctica informal.</li>
+    <li>Precios de datos móviles en Brasil: las tarifas anunciadas en línea (a menudo ~30 BRL) frecuentemente requieren sistemas de pago local &#39;Pix&#39;. Los expatriados sin una cuenta bancaria local o CPF suelen pagar tarifas minoristas (~60 BRL) en tiendas físicas (TIM, Claro, Vivo). Se recomienda visitar sucursales físicas donde el personal que habla inglés pueda facilitar la activación de la tarjeta SIM con tarjetas de crédito/débito internacionales.</li>
+    <li>Para registrar una tarjeta SIM local en Brasil, un turista extranjero debe proporcionar un pasaporte y un número de CPF (Cadastro de Pessoas Físicas). Tener estos documentos es esencial para la verificación de identidad y la recuperación de la cuenta en caso de pérdida o robo del teléfono.</li>
+    <li>El CPF (Cadastro de Pessoas Físicas) es un número de identificación fiscal individual obligatorio en Brasil para residentes y muchos no residentes. Se puede obtener en las oficinas de la Receita Federal (generalmente en 30-60 minutos). Los requisitos suelen incluir un pasaporte válido, comprobante de domicilio y los nombres completos de los padres. Están disponibles versiones electrónicas o impresas. Es necesario para tarjetas SIM locales, cuentas bancarias y registros legales.</li>
+    <li>Para internet móvil y llamadas en Brasil, se recomienda encarecidamente comprar una tarjeta SIM prepago de TIM. Las tarjetas SIM se pueden comprar fácilmente en quioscos locales (bancas de jornal) o en tiendas oficiales de la operadora.</li>
+    <li>Para los viajeros en Brasil, existen opciones de eSIM. Kaspersky eSIM Store proporciona Internet en más de 180 países, aceptando tarjetas bancarias de la Federación Rusa y ofreciendo recargas fáciles. Un código promocional &#39;TRAVELASK&#39; ofrece un 20% de descuento en la primera compra hasta el 28 de febrero de 2026. Si se requiere un número brasileño específico, Uber Chip se menciona como una opción, aunque adquirirlo sin tener ya un número puede ser un desafío.</li>
+    <li>El CPF (Cadastro de Pessoa Física) es un documento esencial en Brasil que permite a los usuarios obtener tarjetas SIM, utilizar servicios de taxi y recibir descuentos en supermercados.</li>
+    <li>No es necesario tener una tarjeta física del CPF después de recibir el número de CPF. El número por sí solo es suficiente para varios trámites, como obtener una tarjeta SIM.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/es/br/documentos-y-visados/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentos y visados</span></a>
+    <a class="chip" href="/es/br/entradas-y-ocio/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Entradas y ocio</span></a>
+    <a class="chip" href="/es/br/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/es/br/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/es/br/bancos-y-dinero/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Bancos y dinero</span></a>
+    <a class="chip" href="/es/br/seguridad/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Seguridad</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>¿La búsqueda responde a todos, pero a ti?</h2>
+    <p>Pregúntale a Luky — reportes frescos, no un artículo de hace cinco años.</p>
+    <p>Y Luky es un traductor de voz para conversaciones reales: y el guía hablará tu idioma.</p>
+    <p class="ps">PS: conoce a alguien en un bar que habla otro idioma</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiencia real de chats de comunidades, sin relleno</div>
+    <nav class="f-links">
+      <a href="/es/about/">Acerca de</a>
+      <a href="/es/br/">Todos los temas</a>
+      <a href="/es/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Las respuestas se recopilan de chats abiertos de comunidades — es experiencia real de personas, no asesoría oficial. Verifica antes de decisiones importantes.</p>
+    <div class="f-copy">© 2026 Luky · actualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noche", DAY="\u2600 D\u00eda";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

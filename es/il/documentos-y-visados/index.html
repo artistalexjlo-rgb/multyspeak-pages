@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Israel: Documentos y visados — experiencia real · Luky</title>
+<meta name="description" content="Experiencia real de los chats sobre Documentos y visados en Israel: tal cual, de primera mano. Para tu caso — pregúntale a Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/es/il/documentos-y-visados/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/il/documentos-y-visados/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/il/documentos-y-visados/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/il/documentos-y-visados/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/il/documentos-y-visados/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · cualquier país · sin relleno</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noche</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/es/">Inicio</a> /
+    <a href="/es/il/">Israel</a> /
+    <b>Documentos y visados</b>
+  </nav>
+
+
+  
+  <h1>Documentos y visados en Israel: lo que de verdad importa saber</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiencia real de gente de los chats sobre «Documentos y visados» en Israel — tal cual, sin relleno. Para tu caso — <strong>pregúntale a Luky</strong>.</div></div>
+
+  <h2>De la experiencia real</h2>
+  <ul class="qlist">
+    <li>Posibilidad de realizar los Exámenes de Estado Unificados (EGE) de Rusia desde Israel. Históricamente, era posible presentarse a los exámenes en las embajadas rusas o en los centros de Rossotrudnichestvo si estaban disponibles. Sin embargo, información reciente sugiere que podría requerirse presencia física en Rusia para asistir al examen, aunque el certificado (atestación) puede obtenerse a través de un apoderado.</li>
+    <li>Los titulares de pasaportes israelíes generalmente no tienen problemas con el tránsito simple (permanecer en la zona de tránsito internacional) a través de Qatar o Jordania. Sin embargo, si el tránsito requiere salir de la zona internacional del aeropuerto, pasar por el control de inmigración y volver a facturar para un vuelo de conexión (por ejemplo, con billetes separados), los servicios fronterizos cataríes pueden tardar una cantidad significativa de tiempo en procesar las solicitudes de entrada para los titulares de pasaportes israelíes. El tránsito por Jordania bajo tales condiciones es, por lo general, menos problemático.</li>
+    <li>Requisitos de apostilla para la inmigración a Israel: La apostilla es obligatoria solo para documentos personales de estado civil (certificados de nacimiento, certificados de matrimonio/divorcio, certificados de antecedentes penales) emitidos a partir de 1998 inclusive. Los documentos que prueban la ascendencia judía o el parentesco (registros de nacimiento/matrimonio de padres/abuelos) no requieren apostilla.</li>
+    <li>Para entrar a Israel como visitante (no repatriado), la ETA-IL (Autorización Electrónica de Viaje) es obligatoria; sin ella, se puede denegar el embarque a los pasajeros. Es recomendable contar con una carta de invitación del anfitrión, aunque no es estrictamente obligatoria, pero puede ser de ayuda ante inmigración. Otros documentos recomendados incluyen prueba de fondos suficientes, un billete de regreso y seguro de viaje (se acepta cualquier tipo). La ETA-IL se puede pagar con tarjetas de crédito extranjeras, y muchos usuarios reportan dificultades para acceder al sitio desde Rusia, por lo que se sugiere pedir ayuda a alguien en el extranjero para realizar el pago. Tenga cuidado con los sitios web fraudulentos que ofrecen servicios de ETA-IL.</li>
+    <li>La importación de plantas, semillas o frutas a Israel está estrictamente regulada. La aduana puede confiscar los artículos prohibidos e imponer multas significativas (que van desde miles de ILS). Las restricciones de importación biológica se aplican para proteger la agricultura local y prevenir la introducción de plagas o especies invasoras.</li>
+    <li>La importación de animales salvajes, como un caracal, a Israel está estrictamente prohibida. La Autoridad de Naturaleza y Parques de Israel mantiene regulaciones muy estrictas sobre la posesión e importación de fauna silvestre no doméstica. Incluso si un animal ha sido una mascota doméstica por mucho tiempo, no puede importarse legalmente sin permisos especiales que rara vez se conceden; los intentos no autorizados pueden llevar a la confiscación y deportación del animal.</li>
+    <li>Para cambiar el estatus de residencia ante el Instituto Nacional de Seguros (Bituah Leumi) en Israel, utilice el formulario en línea &#39;Tofes 629&#39; (anteriormente 627). Es esencial revisar la cuenta personal en el sitio web de Bituah Leumi para monitorear el estado de la deuda, ya que salir del país no activa automáticamente el estatus de no residente.</li>
+    <li>La terminología para los documentos de viaje israelíes (Teudat Maavar) puede resultar confusa en los sistemas de reserva internacionales. &#39;Laissez-Passer&#39; es un término coloquial común, pero los formularios oficiales pueden usar &#39;Travel Document&#39;. Elegir la categoría incorrecta en un formulario de reserva en línea puede causar problemas durante el check-in en línea. Los usuarios deben verificar cuidadosamente los tipos de documento, ya que algunas versiones del Teudat Maavar tienen restricciones de viaje específicas en comparación con el Darkon estándar (pasaporte israelí).</li>
+    <li>Al volar desde Israel con pasaporte ruso: 
+1. **Para ciudadanos israelíes:** Se requiere el permiso oficial del Ministerio del Interior (MVD), y es posible que sea necesario desbloquear los datos para la ETA IL. Es posible que se requiera un depósito potencial. Esté preparado para preguntas del personal del aeropuerto sobre el uso de un pasaporte ruso en lugar de uno israelí. Los empleados tienen derecho a hacer tales preguntas, pero volar con un pasaporte ruso está permitido de acuerdo con las reglas actuales del MVD si usted cuenta con el permiso oficial.
+2. **Para repatriados con pasaportes rusos:** Por lo general, pueden salir y entrar a Israel usando sus pasaportes rusos sin problemas, siempre que tengan una razón válida para el viaje (por ejemplo, tramitar un pasaporte internacional) y el permiso oficial del MVD. Un usuario informó una experiencia sin contratiempos en diciembre viajando con un &#39;darkon&#39; (pasaporte israelí) sin que le hicieran preguntas.
+3. **Consejo general:** Todas las interacciones en el aeropuerto, desde el ingreso hasta la puerta de embarque, pueden implicar preguntas del personal. Siempre que cumpla con las regulaciones actuales del MVD y tenga los permisos necesarios, está dentro de sus derechos.</li>
+    <li>Requisitos de entrada para un menor ruso que viaja a Israel: Se recomienda tener una traducción notariada del consentimiento para salir del país. Aunque algunos informes sugieren que solo se necesita una ETA (Autorización Electrónica de Viaje) para entrar, llevar documentación física notariada del consentimiento de viaje del menor es una práctica estándar para evitar problemas en la frontera.</li>
+    <li>El sitio web oficial de la ETA-IL (gov.il) requiere una VPN cuando se accede desde Rusia. Los usuarios informan de largos tiempos de carga (más de 10 minutos) al cargar las páginas del formulario; se requiere paciencia. Evite utilizar direcciones de correo electrónico &#39;mail.ru&#39; para el registro, ya que causan retrasos en la entrega; utilice &#39;gmail.com&#39; para una confirmación más rápida.</li>
+    <li>Los ciudadanos israelíes pueden entrar al país con un Darcon caducado. La fecha de caducidad del pasaporte no anula la ciudadanía. El proceso de entrada puede llevar un poco más de tiempo debido a la verificación adicional, pero es un procedimiento estándar y no conlleva la denegación de entrada.</li>
+    <li>Para encontrar un servicio de traducción de documentos del ruso al hebreo en Haifa, Israel. Un usuario mencionó una oficina de traducción en la calle Nordau 33 en Haifa que utilizó una vez y le resultó satisfactoria.</li>
+    <li>Los ciudadanos israelíes tienen permitido viajar dentro y fuera de Israel usando un pasaporte extranjero válido hasta el 30 de septiembre de 2026. Los viajeros deben llevar consigo su Teudat Zehut (identificación israelí) como respaldo. Se recomienda consultar el sitio web oficial de la PIBA para obtener actualizaciones sobre esta política.</li>
+    <li>Al viajar de Moscú a Italia con un Teudat Maavar (documento de viaje) israelí, las versiones no biométricas generalmente no presentan problemas en el control fronterizo italiano. Un viajero informó haber ingresado sin complicaciones a Roma desde Moscú en mayo utilizando un Maavar no biométrico.</li>
+    <li>Para obtener un código QR a través de los servicios de gov.il, utilice la aplicación MyGov. Se genera desde gov.il y funciona incluso fuera de Israel, aunque puede estar en hebreo. Asegúrese de tener una conexión a internet estable y considere usar una VPN para que la carga del pasaporte y el procesamiento de datos se realicen con éxito. El límite de tamaño de archivo para las cargas es de 2MB.</li>
+    <li>Al entrar en Israel, los turistas reciben un comprobante (permiso de entrada) que especifica la duración autorizada de la estancia. Este documento debe guardarse, ya que es necesario para registrarse en hoteles y sirve como prueba de estancia legal. Exceder el plazo del permiso, incluso por unos pocos días, puede dar lugar a la deportación o a la prohibición de entrada en el futuro.</li>
+    <li>Para la repatriación a Israel, es obligatorio contar con una apostilla en todos los documentos civiles personales (certificados de nacimiento, matrimonio, divorcio, defunción, etc.) emitidos por el ZAGS (registro civil) después del 01.01.1998, así como en el certificado de antecedentes penales, conforme a los requisitos del Ministerio del Interior de Israel (por ejemplo, comunicados por la Agencia Judía - Sokhnut). Para las personas con varios matrimonios, generalmente se requieren apostillas para los documentos que reflejan cambios de nombre, el certificado de matrimonio más reciente y el certificado «Formulario 5» del último matrimonio. Es posible que los documentos de matrimonios anteriores sin cambios de nombre no sean examinados en inmigración o por el consulado. Los fondos gastados en servicios de apostilla a menudo pueden reembolsarse a través de fondos específicos.</li>
+    <li>Los ciudadanos de la Federación Rusa se enfrentan a restricciones de entrada en países como la República Checa, Polonia y los estados bálticos, incluso para el tránsito. Se aconseja a los viajeros tener: 1. Una tarjeta bancaria no rusa para emergencias. 2. Suficiente efectivo en moneda fuerte. 3. Información actualizada sobre los requisitos de entrada en tránsito, ya que las zonas de tránsito no eximen a los viajeros de las prohibiciones nacionales de entrada.</li>
+    <li>En 2022, Israel permitió la repatriación de emergencia con visitas consulares que se llevaron a cabo dentro de Israel, simplificando el proceso para muchos. Sin embargo, los acontecimientos recientes en 2023 han provocado un descenso en los nuevos inmigrantes. Para 2025, el número proyectado de inmigrantes es de 22.500, mientras que el número estimado de personas que salen de Israel es de 69.300. Esta salida no afecta directamente a las colas consulares, pero indica una tendencia.</li>
+    <li>El Teudat Zehut (documento de identidad israelí) se emite solo a los residentes. Los no residentes no pueden obtener ni renovar un Teudat Zehut mientras vivan fuera de Israel. El derecho a la identificación se restablece una vez que la persona restablece su residencia (centro de vida) en Israel y proporciona pruebas al Ministerio del Interior.</li>
+    <li>El sitio web de la solicitud de la ETA-IL puede ser inaccesible desde ciertas ubicaciones (por ejemplo, Rusia). La tasa de éxito de conexión depende del proveedor de servicios de Internet (ISP) específico. Si el acceso falla, el método más fiable es pedir a un residente en Israel que complete la solicitud en nombre del usuario.</li>
+    <li>La validez estándar de un visado de repatriación israelí (visado de oleh) es de 6 meses desde la fecha de expedición. Las prórrogas temporales a un año fueron ajustes de política durante periodos específicos (como la pandemia o la inestabilidad regional) y ya no están en vigor. Compruebe siempre la fecha de caducidad impresa en la etiqueta del visado.</li>
+    <li>A menudo se pueden conseguir citas en el Ministerio del Interior israelí (Misrad Hapnim) para el día siguiente si uno está dispuesto a viajar a otra ciudad. Los tiempos de tramitación de los pasaportes biométricos suelen oscilar entre 2 y 4 semanas. En cuanto a los pasaportes antiguos, existe la posibilidad de solicitar que no sean cortados o invalidados, pero la decisión final recae en el funcionario del Ministerio (&#34;pkida&#34;).</li>
+    <li>Consulte los requisitos de entrada actuales para Italia y Francia para los titulares de pasaportes no biométricos. La información indica que los pasaportes no biométricos fueron aceptados el año pasado. Verifique si esta política sigue vigente.</li>
+    <li>Para que un menor viaje de Israel a Rusia acompañado por un tercero (como un abuelo), se requiere un formulario de consentimiento notariado firmado por ambos padres. Es aceptable un solo documento que contenga ambas firmas.</li>
+    <li>Para los documentos que requieren apostilla en Israel, se suelen comprobar el Formulario 5 (válido por 6 meses) y el Formulario 6 (indefinido, requerido para divorcios y matrimonios anteriores). Para Rusia, a menudo se necesita una apostilla para el certificado de antecedentes penales. Los costes de las apostillas pueden ser reembolsados a través de fondos específicos en Israel, para lo cual se requiere la presentación de visados y recibos.</li>
+    <li>A partir de julio de 2026 (contexto de la fecha de registro), no se requiere ningún registro específico para ingresar a Italia utilizando un documento Laissez-Passer sin datos biométricos para los viajeros israelíes.</li>
+    <li>Los menores que no sean ciudadanos pueden entrar a Israel con una invitación formal de un residente/ciudadano. Espere interrogatorios de seguridad (entrevistas) en el Aeropuerto Ben Gurion. Se recomienda que el menor conozca los detalles personales de sus anfitriones y tenga documentos/fotos de respaldo. Si bien algunos consejos legales sugieren realizar depósitos financieros sustanciales, la entrada sin ellos es común si los detalles de la invitación son coherentes.</li>
+    <li>Los ciudadanos israelíes que posean un pasaporte extranjero no necesitan solicitar una ETA-IL o un visado para entrar en Israel. A su llegada, deben presentar su Teudat Zehut (DNI israelí) junto con su pasaporte extranjero e informar al agente fronterizo de que son &#39;Ezrach&#39; (ciudadanos). Si un menor tiene un Darkon (pasaporte israelí) válido, tampoco necesita una ETA-IL.</li>
+    <li>Requisitos de traducción con apostilla para la verificación consular y la repatriación. Para la verificación consular inicial, generalmente no se requiere la traducción de documentos con apostilla, a menos que el cónsul lo solicite específicamente. Es posible que se necesiten aclaraciones adicionales dependiendo del propósito específico y de las regulaciones del país de destino.</li>
+    <li>Para solicitar una orden de sucesión en Israel, utilice el portal oficial en línea: &#39;בקשה למתן צו ירושה&#39; (Solicitud de Orden de Sucesión). El proceso se gestiona a través del sitio web del Ministerio de Justicia.</li>
+    <li>La tarifa oficial de la ETA-IL es de 25 ILS. Si el sitio web no es accesible, utilice una VPN para ingresar y desactívela durante la fase de pago. Es posible que las tarjetas bancarias rusas funcionen para la transacción. Si el portal sigue sin estar disponible, asegúrese de que el proveedor de VPN sea estable o considere utilizar los centros de visados autorizados.</li>
+    <li>Octubre y noviembre se consideran meses óptimos para viajar a Israel debido a las temperaturas suaves y las condiciones agradables del mar. Riesgo meteorológico: los periodos de lluvia pueden hacer que las temperaturas interiores sean incómodas debido a la falta de calefacción central en muchos edificios residenciales. Las zonas de Eilat y el Mar Muerto generalmente se mantienen más cálidas durante este periodo.</li>
+    <li>Al viajar con un pasaporte ruso y un Laissez-Passer israelí (Teudat Ma&#39;avar), compre siempre los billetes de avión utilizando el documento que tiene la intención de presentar en la frontera de destino. El control fronterizo ruso requiere el pasaporte ruso. Durante el tránsito o en el destino, utilice el Laissez-Passer israelí si se permite la entrada sin visado. Lleve siempre ambos documentos, ya que las aerolíneas pueden verificar los derechos de visado/entrada independientemente del pasaporte utilizado para realizar la reserva.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/es/il/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/es/il/entradas-y-ocio/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Entradas y ocio</span></a>
+    <a class="chip" href="/es/il/cambio-y-transferencias/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Cambio y transferencias</span></a>
+    <a class="chip" href="/es/il/banca-y-dinero/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Banca y dinero</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>¿La búsqueda responde a todos, pero a ti?</h2>
+    <p>Pregúntale a Luky — según la experiencia reciente de la gente, no manuales.</p>
+    <p>Y Luky es un traductor de voz para conversaciones reales: arréglatelas con el taxista sin gestos.</p>
+    <p class="ps">PS: hablar con alguien en un festival en el extranjero — fácil</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiencia real de chats de comunidades, sin relleno</div>
+    <nav class="f-links">
+      <a href="/es/about/">Acerca de</a>
+      <a href="/es/il/">Todos los temas</a>
+      <a href="/es/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Las respuestas se recopilan de chats abiertos de comunidades — es experiencia real de personas, no asesoría oficial. Verifica antes de decisiones importantes.</p>
+    <div class="f-copy">© 2026 Luky · actualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noche", DAY="\u2600 D\u00eda";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

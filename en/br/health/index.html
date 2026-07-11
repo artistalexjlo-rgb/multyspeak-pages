@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brazil: Health — real experience · Luky</title>
+<meta name="description" content="Real experience from chats about Health in Brazil: as it is, first-hand. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/br/health/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/br/health/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/br/health/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/br/health/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/br/health/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/br/">Brazil</a> /
+    <b>Health</b>
+  </nav>
+
+
+  
+  <h1>Health in Brazil: what actually matters to know</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of people from chats on «Health» in Brazil — as it is, no fluff. For your case — <strong>ask Luky</strong>.</div></div>
+
+  <h2>From real experience</h2>
+  <ul class="qlist">
+    <li>When traveling to Brazil for childbirth, especially with Turkish Airlines departing from Istanbul, return tickets and hotel reservations are mandatory. While the departure point is Istanbul, the return ticket destination is flexible (e.g., Argentina is an option, potentially offering lower prices). Turkish Airlines strictly checks these documents during check-in.</li>
+    <li>The debate on altitude&#39;s impact on cognitive function continues. One viewpoint suggests negative effects on brainpower above 900-1000m, especially for complex tasks. Counterarguments highlight successful individuals from high-altitude cities (La Paz, Mexico City) without cognitive deficits. Adaptation, individual differences, and the benefits for athletics versus intellectual tasks are discussed.</li>
+    <li>Dengue fever is prevalent in various regions of Brazil, not limited only to the Amazon. It is recommended to use mosquito repellent immediately upon arrival to minimize the risk of infection.</li>
+    <li>Sudden loud bangs or fireworks in Rio de Janeiro are frequently associated with local soccer matches and goals (e.g., Flamengo games) rather than dangerous incidents. Visitors are advised to check if a major game is taking place before reacting to loud noises.</li>
+    <li>Public healthcare in Brazil is accessible via the SUS (Sistema Único de Saúde) system. It covers emergency care, childbirth, and general treatments for free. Alternatively, private insurance or pay-per-visit clinics are widely available. It is recommended to register for SUS upon arrival.</li>
+    <li>When searching for daycares or kindergartens in Brazil on Google Maps, use the Portuguese term &#39;Creche&#39; instead of &#39;jardim de infância&#39; to get accurate local results.</li>
+    <li>During the COVID-19 pandemic in Brazil (2020-2022), restrictions varied by region and public spaces. General: Masks were often mandatory indoors (e.g., shops in Rio), recommended outdoors, but not strictly enforced by police in all areas. Vaccination was widely encouraged, but mandatory for specific activities (e.g., gym entry, university admission, travel to Fernando de Noronha). São Paulo: Experienced periods of severe lockdown with empty cities. Rio de Janeiro: Citizens were strict about mask-wearing in stores; beaches were closed and people were sometimes removed by police. Travel restrictions were implemented for some areas (e.g., Buzios required proof of residence). Rural/Remote Areas: Restrictions were often less strict or ignored, with people gathering without masks.</li>
+    <li>The debate on altitude&#39;s effect on the brain continues. One argument posits that hypoxia negatively impacts cognitive function due to high oxygen consumption by the brain. Counterarguments cite intellectually successful individuals from high-altitude regions (e.g., La Paz, Ethiopia) without apparent cognitive deficits. The role of physiological adaptation and individual differences is highlighted. The benefits for athletic performance are contrasted with the debated effects on intellectual tasks.</li>
+    <li>Users in Florianópolis, Brazil, are seeking recommendations for trusted dentists and information on the average cost of a dental filling. Provide local contacts if available and estimated pricing for dental services in BRL.</li>
+    <li>The CPF (Cadastro de Pessoas Físicas) requirement for tourists in Brazil can be a concern. While not always strictly enforced for basic transactions like pharmacy purchases, it may be necessary for services such as ordering taxis. Informing vendors about the lack of a CPF is often sufficient for many retail interactions.</li>
+    <li>Inquire about the requirement of a COVID-19 vaccination certificate for transit through Morocco when flying from Brazil to Russia. Based on user feedback, a certificate is not required for travel to Russia. Requirements may vary depending on the final destination and are checked at boarding, not during transit stops.</li>
+    <li>The debate on altitude&#39;s impact on cognitive function persists. One viewpoint suggests negative effects on brainpower above 900-1000m, especially for complex tasks. Counterarguments highlight successful individuals from high-altitude cities (La Paz, Mexico City) without cognitive deficits. Adaptation, individual differences, and the benefits for athletics versus intellectual tasks are discussed.</li>
+    <li>After receiving a yellow fever vaccination in Rio de Janeiro, Brazil, you will be issued a document confirming the vaccination. The official international certificate must be obtained through the gov.br portal. This process can often be facilitated by a third party if you are unable to access the portal yourself, with the electronic certificate typically being issued within 2-3 days.</li>
+    <li>Essential Brazilian emergency terms: UPA (Unidade Pronto Atendimento) for primary urgent care, Pronto Socorro for emergency rooms, and Ambulância for ambulance services.</li>
+    <li>In Brazil, Ozempic and Mounjaro are prescription-only medications. A doctor&#39;s consultation is required to obtain a prescription. Unofficial or &#39;easier&#39; methods might exist but carry risks.</li>
+    <li>Travelers flying from Brazil to countries like Thailand are often required to present a yellow fever vaccination certificate. Many airlines strictly enforce this regardless of whether the traveler visited the Amazon or urban areas. Verification can be performed via the IATA Timatic database or official Ministry of Foreign Affairs websites of the destination country. Medical exemptions (allergies) require formal, pre-approved medical documentation to be accepted by airlines.</li>
+    <li>Yellow fever vaccination is recommended for travel to Amazonian regions of Brazil but not typically for Iguazu Falls. Vaccination can be done in Russia (e.g., Moscow Polyclinic 5, Irkutsk, Samara; approx. 2000 RUB, free in some Moscow clinics by referral) or in Brazil. The certificate (International Certificate of Vaccination or Prophylaxis) issued in Brazil often requires online ordering via a gov.br profile and takes about 2 days. For transit via Morocco or Turkey, it was not reported as required as of Dec 2025/Feb 2026, but it is advised to check official requirements. When flying from Brazil to destinations like Cairo, there is a high probability of requiring the certificate.</li>
+    <li>Brazil has a healthcare system that provides services and benefits, particularly for certain categories of individuals. While specifics are not detailed, the system is described as &#39;normal&#39; and offers advantages, implying access to medical care and potentially other social support mechanisms.</li>
+    <li>To obtain a Yellow Fever certificate in Brazil, visit the official gov.br website. Locate the relevant section, fill in the required information, and the certificate is issued promptly, often within a minute.</li>
+    <li>International travel from Brazil requires awareness of Yellow Fever vaccination entry requirements for destination countries. Some countries mandate the vaccine, while others do not. Airlines may deny boarding if the itinerary includes a country requiring vaccination, even for transit passengers. If traveling from Brazil to a non-vaccine-requiring country, and then to a vaccine-requiring country, ensure the 10-day incubation period has passed since leaving Brazil before entering the second country. Proper documentation and stamps are crucial.</li>
+    <li>The debate on altitude&#39;s impact on cognitive function continues. One viewpoint suggests negative effects on brainpower above 900-1000m, especially for complex tasks. Counterarguments highlight successful individuals from high-altitude cities (La Paz, Mexico City) without cognitive deficits. Adaptation, individual differences, and the benefits for athletics versus intellectual tasks are discussed.</li>
+    <li>When traveling to Brazil from Russia, consider purchasing medical insurance. Options include: 1. Tinkoff Bank (free for Premium account holders). 2. Росгосстрах. It is recommended to choose a &#39;medium&#39; coverage amount rather than the minimum. Note that Brazil provides free public healthcare (SUS - Sistema Único de Saúde), but travel insurance can cover private medical services, emergencies, repatriation, or other unexpected events not fully covered by public options.</li>
+    <li>Public health services in Brazil (SUS) provide free vaccinations and medication. In Sao Paulo, a vaccination center is located at the Clinicas subway station. Language barriers can be bridged using translation tools.</li>
+    <li>The cost of bureaucratic assistance services in Brazil, such as obtaining a CPF or SUS, can be very high for expats. Some &#39;helpers&#39; charge tens of thousands of reals for tasks that are perceived as simple. It is recommended to research service costs, seek out more affordable options, or consider handling procedures independently if feasible. Some individuals offer their assistance for a nominal fee.</li>
+    <li>Continuing orthodontic treatment with braces in Brazil is feasible. A user who had braces fitted in Europe found clinics willing to continue the treatment in Brazil. Multiple free consultations were utilized to find a suitable orthodontist. While prior documentation (X-rays, treatment plan) is helpful, new records may be created. The primary challenge identified is the scarcity of English-speaking orthodontists, necessitating translation services or Portuguese language proficiency. Several clinics offer affordable options, including insurance plans for orthodontic care.</li>
+    <li>Tourists in Brazil needing the Yellow Fever vaccination can obtain it at vaccination centers. Having a passport and using a translator might be necessary if language is a barrier. While the international certificate is key, the color (e.g., yellow vs. white) might vary. In Russia, the vaccination costs around 2000 RUB and is now valid for life. Ensure the certificate follows international standards with proper stamps.</li>
+    <li>A Yellow Fever vaccination certificate is required for travelers exiting Brazil if their onward journey involves transit or entry into countries that demand it (e.g., Egypt/Cairo). The certificate becomes valid 10 days post-vaccination. An international certificate (yellow booklet) is issued upon vaccination and is preferred over digital photos. Morocco does not typically require a Yellow Fever certificate for transit.</li>
+    <li>A new user joins the chat inquiring about life in Brazil, including adaptation, healthcare, and childbirth experiences. Responses indicate that life in Brazil is generally positive. Healthcare quality can vary, but good private options exist. Information about childbirth is available in a separate chat. Brazil is compared to Mexico, noted as being different. It&#39;s also mentioned that electronics tend to be expensive in Brazil.</li>
+    <li>For travel to malaria-prone regions like the Amazon in Brazil: there is no malaria vaccine. Prophylactic medication can be harmful; treatment upon diagnosis is recommended. Travelers should carry malaria rapid diagnostic tests and an antimalarial drug like Coartem (artemether/lumefantrine). Upon suspected infection (fever, chills), perform a test and if positive, immediately begin treatment. Access to appropriate antimalarial drugs can be difficult outside endemic areas (e.g., in Moscow clinics). Use repellents with a high percentage of DEET. Local repellents may be more effective.</li>
+    <li>Santos, Brazil, faces challenges including heavy port/industrial activity, pollution, and aggressive panhandling near commercial areas. For administrative procedures like immigration (PF), wait times can be significant. São Paulo is often recommended as a superior alternative for medical tourism and childbirth due to high-quality hospital infrastructure.</li>
+    <li>To obtain a yellow fever vaccine certificate in Brazil when the Meu SUS app fails to update, do not rely on the app. Go directly to the gov.br portal, search for the vaccine certificate issuance page, and fill out the form manually. You will need a CPF and any valid Brazilian address. The system processes the request immediately and generates the PDF certificate. Note that SUS clinics may refuse to administer the yellow fever vaccine to individuals over 59 years old, though success varies by clinic location.</li>
+    <li>Inquire about the process for tourists to get a Yellow Fever vaccination in São Paulo, including appointment requirements, certificate issuance, and processing time. Specifically, ask if certificates are issued by pharmacies and if the process is as bureaucratic as it can be in Moscow.</li>
+    <li>Yellow fever vaccination in Brazil requires both the administration of the vaccine and official registration to obtain the International Certificate of Vaccination or Prophylaxis (CIVP). Travelers must check the official ANVISA website for pre-registration requirements and clinic locations, as the certificate is often not issued automatically without completing the digital filing process.</li>
+    <li>Accessing psychological help in Brazil can involve long waiting times (up to 4 hours) and significant language barriers, which may hinder effective support for non-Portuguese speakers. Consider these challenges when seeking mental health services.</li>
+    <li>When purchasing private health insurance, specifically Amil Ouro in Brazil, it is common for brokers to charge an activation fee equivalent to one month&#39;s premium (approx. 1000 BRL), often payable via Pix. This practice has been observed across multiple brokers.</li>
+    <li>For tourists entering Brazil, medical insurance is not mandatory. The main requirement for entry is a return or onward ticket (some airlines may have additional demands). Public healthcare services in Brazil (SUS) are free for everyone, including tourists. However, for serious medical conditions or to avoid long queues, opting for private healthcare is an option. Russian insurance policies (e.g., AlfaStrakhovanie, Tinkoff) have been reported to be functional in Brazil.</li>
+    <li>Yellow fever vaccination certificate (International Certificate of Vaccination or Prophylaxis) is required when arriving in Brazil from certain endemic countries. It is a physical yellow booklet with official stamps. Online &#39;buying&#39; of this certificate is illegal. Vaccination status is usually checked based on the travel history of the passenger.</li>
+    <li>To obtain a yellow fever vaccination certificate in Brazil without a personal CPF, a third party with a Gov.br account can request it. The Gov.br portal supports requests for certificates on behalf of other individuals.</li>
+    <li>Citonevrin is a drug available in Brazil containing B1, B6, and B12 vitamins without additional components. It can be considered an alternative for similar vitamin complex needs.</li>
+    <li>The yellow fever vaccine can be obtained in Moscow, possibly at Invitro (Voykovsky) or through emias.info for government polyclinics. Advance booking and checking vaccine availability is recommended as it&#39;s not always in stock. Vaccination during pregnancy is a consideration.</li>
+    <li>São Paulo does not have distinct Russian districts, unlike Jewish or Japanese communities. Established Russian-speakers integrate based on work, study, and budget. Temporary visitors, such as those for birth tourism, typically do not form concentrated communities.</li>
+    <li>For English-speaking running communities and coaching in Rio de Janeiro, contact coach Saman Berahmani (Instagram: @saman.berahmani). He organizes group runs and coaching sessions in English and Portuguese.</li>
+    <li>Yellow fever vaccination is not typically required to enter Brazil, but it is often mandatory for re-entry or transit in specific countries (check the official WHO or government list). Vaccination certificates become valid 10 days after the injection. Passengers lacking proof of vaccination may face boarding denial at transit hubs like Doha or Addis Ababa.</li>
+    <li>Yellow fever vaccination is officially recommended for travelers to Brazil, especially for northern and northeastern regions. It is generally not required for entry into Brazil itself, particularly for visits to São Paulo and Rio. However, an International Certificate of Vaccination (yellow card) may be required for onward travel from Brazil to certain countries (e.g., Cuba, Peru, Panama, Thailand). Travelers can obtain the vaccine in major Russian cities (e.g., CMD Novogireevo 3a in Moscow) and the certificate is valid for 10 years. The certificate booklet can be purchased online.</li>
+    <li>Public healthcare in Brazil (SUS) is free but subject to long waiting times and regional quality variations. Private health insurance costs range from 1,400 to 2,000+ BRL per month depending on coverage. Key issues include long-term contracts with high cancellation penalties and potential additional co-payments for medical services. Many expats opt for private insurance for urgent care and routine tests while utilizing SUS for major procedures.</li>
+    <li>A yellow fever vaccination certificate was not required for a recent flight from Sao Paulo, Brazil, to Istanbul, Turkey. The certificate was not checked upon arrival in Istanbul, even after leaving the airport.</li>
+    <li>In Brazil, if a yellow fever vaccination certificate (the &#39;yellow booklet&#39;) does not contain a QR code, the digital certificate can often be accessed via the official Brazilian public health application, &#39;App Meu SUS Digital&#39;. This app provides digital health records and facilitates verification for residents and visitors.</li>
+    <li>When traveling from Brazil to certain destinations (e.g., Turkey, UAE, Argentina, Chile, Cuba), a Yellow Fever vaccination certificate is legally required. Travelers often inquire about the actual enforcement of this rule. Advise travelers to comply with legal requirements, regardless of anecdotal experiences, to avoid potential issues.</li>
+    <li>Clarify the current regulations regarding the import of IQOS and e-cigarettes into Brazil, specifically if there&#39;s a ban effective from May 2024. Provide information on what alternative smoking or vaping options might be available or if they are also prohibited.</li>
+    <li>Inquire about the possibility of direct flights between Russia and Brazil in 2026. Historically, direct connections have been limited, with recent examples including flights to Venezuela and Cuba. This information is relevant for family travel planning, especially for birth tourism.</li>
+    <li>Medical care in Brazil for tourists: Private hospitals often require upfront payment or local insurance (CPF is mandatory for billing). For urgent, free emergency care, foreign residents/tourists should go directly to the nearest UPA 24h (Unidade de Pronto Atendimento) instead of calling 192 (SAMU), as dispatch services may refuse to send ambulances to tourists without a clear local address or SUS status. Private insurance (e.g., SulAmérica) is recommended until residency/SUS card (Cartão SUS) is obtained.</li>
+    <li>Citizenship by birth is a common reason for &#39;birth tourism&#39; in Brazil. The general process involves arriving, giving birth, obtaining temporary residency (VNH), waiting a year, passing a language test, and then applying for citizenship. Major cities for this purpose include Rio de Janeiro, Florianopolis, Sao Paulo, Brasilia, Curitiba, Salvador, and Recife. Costs vary significantly based on the city and desired lifestyle. Brazil has become a more attractive option than Argentina due to recent legislative changes in Argentina.</li>
+    <li>WARNING: Individuals named Kamal (Sálbiti Kamal Toganovich / Salbiev Kamalbek Toganovich) and Eva (Bekhtold Eva Ivanovna, Bekhtold Lolita Ivanovna), operating in Florianópolis, Brazil, offer services related to birth tourism and legalization for obtaining Brazilian citizenship. Community reports indicate an ongoing criminal investigation in Brazil against Kamal for document forgery. They allegedly lack a legal entity and make inflated claims about their success rate. These individuals are also reportedly wanted in Russia. Advise users strongly against engaging their services due to high risks of fraud, legal complications, and financial loss. Suggest seeking assistance from reputable, licensed legal professionals instead.</li>
+    <li>To obtain an official Yellow Fever vaccine certificate in Brazil after vaccination (e.g., in Rio or Cuiabá), you must register the vaccination data on the `gov.br` platform. The physical &#34;cartão de vacinação&#34; (vaccination card) or a simple booklet often issued locally is generally insufficient. The official certificate is a PDF document generated from `gov.br` which includes a QR code for verification. While access to `gov.br` is usually linked to a CPF, assistance from someone with `gov.br` access can facilitate the process. A photograph of a physical yellow card might be accepted in some instances, but the `gov.br` generated PDF is the most reliable document.</li>
+    <li>Discussion thread in a Brazilian chat about the impact of altitude on cognitive function. Participants debate whether living at altitudes like 1000m (Curitiba, Brasilia) affects intellectual performance, with some citing personal experiences and others drawing analogies to engine performance at lower oxygen levels. The conversation also touches upon other factors influencing cognition, such as magnetic storms and substance use. The core debate is whether altitude has a statistically significant negative impact on mental acuity for the majority of intellectually active individuals.</li>
+    <li>Travelers visiting the Amazon rainforest in Brazil should be vaccinated against yellow fever. Malaria prophylaxis is recommended; travelers should consult a medical professional for appropriate medication before departure. Long-sleeved, breathable clothing is advised to minimize mosquito bites.</li>
+    <li>The impact of high altitude on cognitive function is debated. One perspective suggests that altitudes above 900-1000 meters negatively affect brain function, particularly for complex tasks. Counterarguments cite successful individuals living and working in high-altitude cities (e.g., La Paz, Mexico City, Bogota) without apparent cognitive impairment. The discussion touches on physiological adaptation, individual differences, and the potential benefits for athletic performance versus the debated effects on intellectual activities.</li>
+    <li>Assessing the current mosquito situation in São Paulo, Brazil, and the associated risk of fever (e.g., dengue). User is concerned about potential mosquito bites and fever during a week-long stay and is seeking reassurance or information on preventative measures.</li>
+    <li>For free, urgent, non-life-threatening medical emergencies in Brazil (like stitching a wound), individuals should head to an UPA (Unidade de Pronto Atendimento), which is a public 24/7 urgent care unit.</li>
+    <li>In Copacabana, Brazil, a budget lunch without drinks costs approximately 300 RUB. Exchanging cash is generally more financially advantageous than paying by card (Visa/Mastercard). Travelers should be aware of differing hygiene standards; cockroaches are commonly observed in restaurants and supermarkets. An unusual odor in supermarket meat sections is also reported, which locals often consider normal.</li>
+    <li>When seeking residency and citizenship in Brazil, especially for birth tourism, be aware of varying processing times for &#39;visto temporário&#39; (temporary visa) and &#39;CRNM&#39; (National Migratory Registry Card). Florianópolis may have longer waits (6-8 months) but offers more Russian-speaking support. São Paulo and Rio de Janeiro have faster processing but less hand-holding. &#39;União estável&#39; (stable union) is an alternative to marriage for common-law partnerships but requires more documentation. Marriage is the most straightforward path to permanent residency. Medical care quality may not directly correlate with clinic cost; inquire about specific procedures like C-sections and doctor qualifications well in advance.</li>
+    <li>Medical facilities in Brazil known as UPA (Unidade de Pronto Atendimento) provide emergency care. They can issue prescriptions for common conditions. It is common for pharmacists to refuse antibiotics without a valid prescription. UPA units in tourist areas like Copacabana often have English-speaking staff.</li>
+    <li>Travelers flying from Brazil to Paraguay require a yellow fever vaccination certificate. The vaccine can be obtained at Brazilian public clinics. Note a mandatory 10-14 day quarantine waiting period after vaccination before travel. Digital certificates in the Meu SUS app may take over a week to synchronize due to system delays.</li>
+    <li>The debate on altitude&#39;s impact on cognitive function continues. One viewpoint suggests negative effects on brainpower above 900-1000m, especially for complex tasks. Counterarguments highlight successful individuals from high-altitude cities (La Paz, Mexico City) without cognitive deficits. Adaptation, individual differences, and the benefits for athletics versus intellectual tasks are discussed.</li>
+    <li>For direct flights between Brazil and Istanbul (Turkey), a yellow fever vaccination certificate is generally not required. This is based on recent travel experience.</li>
+    <li>Russian bank cards are generally non-functional in Brazil. UnionPay (RSCHB) works in select &#39;green&#39; ATMs. Travelers are advised to use foreign bank cards for daily operations. Premium bank subscriptions in Russia are recommended for bundled travel insurance and airport lounge access.</li>
+    <li>To access free health services (SUS) in Brazil, such as the yellow fever vaccine, follow these steps: 1. Register on the Mygov portal using your CPF to get a CNS (Cartão Nacional de Saúde) number. 2. Verify your identity at a local health center (UBS). 3. Bring your original Russian vaccination record to have your history added to the Brazilian health database.</li>
+    <li>To obtain an official vaccination certificate (Certificado Nacional de Vacinação) in Brazil after receiving a vaccine, a valid CPF number is insufficient on its own. Users must have a registered and verified account on the &#39;gov.br&#39; portal to access and download the official medical record.</li>
+    <li>Recommended arrival for pregnancy-related travel to Brazil is between 30 and 33 weeks. This timeframe balances medical safety, documentation requirements, and local integration. Always prioritize personal medical advice and individual health conditions over general recommendations.</li>
+    <li>Vaccination is strictly mandatory for children enrolling in both public and private schools/kindergartens in Brazil. Non-compliance is highly monitored and can lead to intervention by child protective services (Conselho Tutelar).</li>
+    <li>Brazil&#39;s SUS (Unified Health System) has temporarily suspended the vaccination campaign using a local version of the dengue vaccine. The suspension primarily affected healthcare workers who received this specific vaccine. Vaccination with Qdenga, an alternative dengue vaccine, continues, and it can be administered in private pharmacies that are equipped for vaccinations. It is recommended to check the availability and schedule at specific pharmacy locations.</li>
+    <li>Dengue fever is prevalent in Brazil, transmitted by mosquitoes. Travelers are advised to purchase effective mosquito repellents upon arrival. Symptoms include severe body aches and high fever (up to 40°C). Crucially, during a suspected dengue infection, patients **must avoid paracetamol (acetaminophen)** due to the risk of liver damage and exacerbation of hemorrhagic complications. Aspirin is indicated for pain and fever relief, though its effect might be temporary. Dengue vaccines are available but often scarce and primarily administered to children.</li>
+    <li>Key questions regarding travel to Brazil: 1. Layover duration: Is 5 hours sufficient for a transfer in Sao Paulo (GRU T2) with baggage re-check and border control? 2. Entry requirements: Is an ETA form required for tourist entry into Brazil? 3. Yellow fever: What are the implications of not having a yellow fever vaccination certificate for a 10-hour transit in Sao Paulo (allowing city exploration) and entry into Peru? How to restore a lost yellow fever vaccination certificate obtained in Rio de Janeiro?</li>
+    <li>Yellow fever vaccination is available in public clinics in Brazil. The digital vaccination certificate requires a CPF (Brazilian tax ID). Non-residents can obtain a CPF remotely via the Brazilian consulate or online portals. Note that the certificate synchronization with the official gov.br database may take several days post-vaccination.</li>
+    <li>Yellow fever vaccination certificates are strictly checked when flying from Brazil to specific Latin American or Asian destinations (e.g., Costa Rica, certain Asian transit hubs). Note that the certificate is legally valid only 10 days after the vaccination date. Airlines like Copa Airlines strictly enforce this rule and will deny boarding if the passenger&#39;s vaccination date is less than 10 days prior to departure. Passengers must plan at least 10–14 days ahead. In Brazil, the vaccine can be obtained cheaply (approx. 100 BRL) or for free through the public SUS healthcare system.</li>
+    <li>A yellow fever vaccination certificate is required for travelers departing from Brazil (e.g., São Paulo) to certain destinations, such as the Dominican Republic. It is not possible to obtain fraudulent or backdated vaccination certificates through the official Brazilian state system. Travelers must complete the required vaccination in advance of their travel dates if it is a mandatory entry requirement for their onward destination.</li>
+    <li>Medication availability in Brazil. User attempted to purchase Streptocide but was denied without a prescription, despite the perception of free healthcare. This highlights the need for prescriptions for certain medications.</li>
+    <li>Qatar Airways strictly enforces boarding rules for Brazil-bound flights: passengers must present a fully paid return ticket (reservations are not accepted). For pregnant passengers, Qatar Airways requires an official medical certificate (fit to fly) starting from the 28th week of pregnancy; boarding staff may request ultrasound results to verify the exact gestational age.</li>
+    <li>For orthodontic services in Rio, an experience with fitting night retainers (капы) after braces was highly positive. The clinic provided excellent service, pleasant staff, high-quality materials and execution within the agreed timeframe. Complimentary aftercare materials (container, toothpaste, brushes) were provided. The doctor communicates in English, and the reception staff utilize Google Translate to assist non-Portuguese speakers, making communication manageable.</li>
+    <li>Yellow fever vaccination certificate may or may not be required when traveling from Brazil to Turkey or UAE. Requirements can vary by airline and destination country. Some travelers report no checks when flying via Istanbul with Turkish Airlines to Sao Paulo. Others mention conflicting information from different airlines (Qatar, LATAM, Emirates) regarding flights to Cape Town. It&#39;s advisable to check with the airline and the destination country&#39;s official health authorities for the most current and accurate information.</li>
+    <li>In Brazil, there are no specific local medications for yellow fever akin to antimalarials found in Zanzibar. Yellow fever is primarily prevented through vaccination. If symptoms arise, treatment focuses on supportive care to manage fever and other symptoms.</li>
+    <li>Yellow fever vaccination is highly recommended for travelers to Brazil, particularly those visiting natural parks and the Amazon basin. In Russia, the vaccine with an international certificate is available for approximately 3,500 RUB (e.g., at the European Vaccination Center in St. Petersburg or municipal clinics in Moscow). Airlines and border control rarely ask for the certificate, but it remains essential for personal health.</li>
+    <li>Recommended health insurance providers for Brazil, based on user experience, include local options such as Intermédica and Unimed. For international coverage, &#39;Sber Premier&#39; (Sberbank Premium) is mentioned as a potentially effective option for resolving medical issues in various countries.</li>
+    <li>Yellow fever vaccination is not mandatory for entry into Brazil but is recommended for travel to the Amazon region. A certificate may be required for onward travel to certain countries. There is no malaria vaccine; precautions against mosquito bites are advised, particularly in humid areas. Dengue fever is also present.</li>
+    <li>The cost of kindergarten in Rio de Janeiro for a 3-year-old child, especially one offering English-language instruction, can range from 1500 to 3000 Brazilian Real per month. While some programs may include English as a subject, they might not be fully immersive English-speaking environments. Information on Russian-language kindergartens is less common, possibly requiring research into expat-run facilities.</li>
+    <li>Dengue fever transmission in Brazil is linked to stagnant water (pools, buckets, puddles). Vectors are day-biting mosquitoes. Prevention: use insect repellent consistently. Risk is significantly higher during the summer months; mosquito activity decreases in winter.</li>
+    <li>Finding doula support in Brazil is more feasible in Santos, where a recommended doula also serves as a translator. Information on doulas in São Paulo is scarce in online communities, though translator contacts for hospitals are available. For birth support, Santos appears to be a more accessible option based on available information.</li>
+    <li>Explain the healthcare system in Brazil, comparing its structure to Thailand and Russia. Detail the costs associated with private healthcare.</li>
+    <li>For the cleanest and most clear azure waters in Brazil, the volcanic archipelago of Fernando de Noronha is the top recommendation. Note that it is a protected national park, access is restricted, and visitors must pay a daily environmental preservation tax (TPA).</li>
+    <li>Orthodontic treatment continuation in Brazil, specifically in the South region (SP), is discussed. A user&#39;s husband, who had braces fitted in Europe, successfully found an orthodontist in Brazil to continue treatment. Multiple clinics were consulted, many offering free initial assessments. While prior medical records are beneficial, new ones were created. Finding an English-speaking orthodontist was a priority and a challenge due to language barriers, but available. Dental insurance options for orthodontic care are also mentioned as affordable.</li>
+    <li>The CPF (Cadastro de Pessoas Físicas) is a fundamental tax identification number in Brazil, essential for most official services, banking, purchasing tickets, booking accommodation, and even some retail discounts. Using a CPF that is not your own or a fake CPF is highly risky for serious transactions and official procedures. CPF can be obtained at Brazilian consulates abroad (e.g., in Moscow) by presenting a passport and the application form; the process can be quick (e.g., 15 minutes). The CPF is required for services such as the public health system (SUS).</li>
+    <li>When dealing with rental car damage (e.g., a tire puncture) in Brazil and seeking reimbursement from Tinkoff Insurance, be prepared for a potentially complex process. The rental company (e.g., Movida) may charge a fee for the damage. Tinkoff Insurance&#39;s support team will likely provide a list of potential documents required, but a specialized insurance agent will confirm the exact documentation needed. Key documents may include the payment receipt for the damage, the rental agreement, and any official reports or statements from the rental company. Given the potential for delays in connecting with a specialist and the possibility of departing Brazil soon, it&#39;s crucial to act quickly to gather all necessary paperwork from both the rental company and the incident itself. Documenting the damage with photos at the time of discovery is also highly recommended.</li>
+    <li>Clarify the requirements for a Yellow Fever vaccination certificate when flying from São Paulo, Brazil, to Dubai with a layover in Qatar, specifically with Qatar Airways. Determine if the certificate is mandatory, especially if transiting through or departing from regions like Bahia. Advise on where to obtain the certificate and check official requirements for transit and destination countries.</li>
+    <li>Medical tourism in Brazil for childbirth is common. Key regions: São Paulo (best medical infrastructure, high crime, hilly terrain, high rent) vs. Santos (popular for Russian-speaking maternity migrants, coastal, perceived as safer/calmer). Rental advice: long-term contracts in Brazil are difficult for foreigners (require local guarantors, 3+ months deposit, or bank bonds). Recommended platforms: Quinto Andar, Zap Imóveis, Viva Real, Facebook Marketplace. Monthly rent varies: simple studios in mid-range areas ~$550-$850, upscale ~1000+. Suggest taking airbnb monthly prices and subtracting 20-30% for estimated long-term rates.</li>
+    <li>While Yellow Fever vaccination is not strictly mandatory for entry to Brazil, risks of infection exist and vary by region. Travelers should assess the risk based on their specific travel locations within Brazil. Rotavirus risks also exist, particularly in areas like Rio. It is advisable to consult a healthcare professional for personalized vaccination recommendations before traveling to Brazil.</li>
+    <li>Capybaras in Brazil carry ticks that can transmit diseases like spotted fever. They are semi-aquatic animals that can be aggressive if they feel threatened. In areas like Pantanal (Mato Grosso do Sul), visitors should be cautious of wildlife, including jaguars and caimans, and follow local safety guidelines for animal observation.</li>
+    <li>For tourists in Brazil, the CPF (Cadastro de Pessoas Físicas) can be a point of contention. Some services, including certain medical treatments (even paid ones) and ride-hailing apps like Uber or 99 Taxi, may require a CPF, often with document verification. Attempts to use CPF generators for app registration may fail. However, for short-term tourism, many travelers successfully manage without a CPF by using eSIMs, pre-booked transfers, and public transport. A workaround for apps like Uber/99 can be to link a temporary card that costs around 350 RUB (value at the time of log).</li>
+    <li>The debate on altitude&#39;s impact on cognitive function continues. One viewpoint suggests negative effects on brainpower above 900-1000m, especially for complex tasks. Counterarguments highlight successful individuals from high-altitude cities (La Paz, Mexico City) without cognitive deficits. Adaptation, individual differences, and the benefits for athletics versus intellectual tasks are discussed.</li>
+    <li>When flying with Air Maroc via Casablanca, be aware that vaccination certificates, specifically for yellow fever, may be requested at check-in. While QR codes were not scanned in this instance, it is advisable to carry the necessary documentation as checks might occur upon arrival at the destination.</li>
+    <li>Travel health insurance costs for Brazil vary based on coverage depth and age. For a 3-month period, basic plans start from approximately $150-$300 depending on the provider and policy limits. Promotional codes (e.g., &#39;TravelAsk&#39;) can offer discounts up to 15%.</li>
+    <li>Brazil has a universal, free public healthcare system called SUS (Sistema Único de Saúde), which is legally accessible to everyone, including foreign tourists and undocumented migrants. In case of emergency or basic medical needs, tourists can receive free treatment and medication at public hospitals (UPA/SUS). Travel insurance is still recommended for private healthcare access, repatriation, and to avoid long queues in public facilities.</li>
+    <li>In Brazil, international vaccination certificates are issued digitally via the gov.br portal. Physical &#39;yellow booklets&#39; common in Russia are not issued by the Brazilian government; the valid format in Brazil is the electronic certificate.</li>
+    <li>Inquire about the availability of different types of insulin in Brazil for individuals with gestational diabetes who are on insulin therapy and planning to fly. This is a health-related concern for travelers.</li>
+    <li>Boldo tea (chá de boldo), made from the leaves of Peumus boldus, is an extremely effective traditional Brazilian herbal remedy for severe indigestion, bloating, and liver heavy-feeling, often experienced after eating heavy meat dishes (rodizio). It is widely available in all local supermarkets and works faster than over-the-counter enzymes.</li>
+    <li>Scammers operating in Brazil have been reported to use names like &#39;Tatiana Cherkasova&#39; (initiator) and &#39;Elena&#39; (service provider) to offer various services, including yellow fever certificates. While in one anecdotal case a user received a *valid* certificate for 5000 RUR (~$50 USD) that was accepted in São Paulo and Cairo, this is an anomaly. Scammers frequently change names and photos. Always verify contacts with official channels and avoid prepayment to unknown individuals, as positive outcomes are extremely rare and risky.</li>
+    <li>Dipirona is widely used and prescribed in Brazil for pain and fever, including for infants and breastfeeding mothers. It is a common first-line analgesic in the Brazilian healthcare system, despite its controversial status and restricted use in some other countries due to potential (though statistically very rare in Brazil) adverse reactions.</li>
+    <li>Yellow fever vaccination requirements vary by destination and transit countries. As of user reports: Turkey does not require yellow fever vaccination for travelers from Brazil; the Dominican Republic and Peru do. The yellow fever vaccination certificate is generally valid for life. The certificate is issued upon receiving the vaccine at an authorized clinic. Some travelers reportedly attempt to obtain certificates without vaccination, which is not recommended.</li>
+    <li>Post-vaccination reactions to the yellow fever vaccine vary significantly among travelers. Common reported side effects include localized soreness, mild fever (37.0–37.3°C), and chills occurring between 1 and 10 days post-injection. Standard medical advice typically suggests paracetamol for fever and antihistamines (like suparastin) for allergic reactions.</li>
+  </ul>
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/br/documents-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documents &amp; Visa</span></a>
+    <a class="chip" href="/en/br/tickets-entertainment/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🎟 Tickets &amp; Entertainment</span></a>
+    <a class="chip" href="/en/br/transport/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transport</span></a>
+    <a class="chip" href="/en/br/shopping/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛒 Shopping</span></a>
+    <a class="chip" href="/en/br/banking-money/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Banking &amp; Money</span></a>
+    <a class="chip" href="/en/br/safety/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛡 Safety</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Want an answer for you, not a lecture for everyone?</h2>
+    <p>Ask Luky — builds the answer from fresh first-hand reports, not marketing copy.</p>
+    <p>And Luky is a live voice translator for real conversations: handle the front desk without stress.</p>
+    <p class="ps">PS: flirt on a date in a foreign language? No problem 😏</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/br/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

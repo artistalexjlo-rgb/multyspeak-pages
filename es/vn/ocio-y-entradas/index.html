@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vietnam: Ocio y entradas — experiencia real · Luky</title>
+<meta name="description" content="Experiencia real de los chats sobre Ocio y entradas en Vietnam: tal cual, de primera mano. Para tu caso — pregúntale a Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/es/vn/ocio-y-entradas/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/vn/ocio-y-entradas/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/vn/ocio-y-entradas/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/vn/ocio-y-entradas/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/vn/ocio-y-entradas/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · cualquier país · sin relleno</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noche</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/es/">Inicio</a> /
+    <a href="/es/vn/">Vietnam</a> /
+    <b>Ocio y entradas</b>
+  </nav>
+
+
+  
+  <h1>Ocio y entradas en Vietnam: experiencia real de los chats</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiencia real de gente de los chats sobre «Ocio y entradas» en Vietnam — tal cual, sin relleno. Para tu caso — <strong>pregúntale a Luky</strong>.</div></div>
+
+  <h2>De la experiencia real</h2>
+  <ul class="qlist">
+    <li>En Bana Hills, Vietnam, hay trineos eléctricos disponibles. Los precios de las entradas y las ubicaciones específicas de estas atracciones deben verificarse en el lugar o a través de los canales de información oficiales de Bana Hills, ya que los precios pueden variar y la información local podría ser inconsistente.</li>
+    <li>Las condiciones meteorológicas en Nha Trang a finales de mayo y principios de junio pueden ser variables. Aunque se considera la temporada de lluvias, normalmente implica aguaceros cortos e intensos seguidos de sol. Las temperaturas altas son habituales. Los viajeros deben estar preparados para lluvias ocasionales, pero, por lo general, pueden esperar condiciones agradables para sus vacaciones. Tenga en cuenta que en áreas cercanas como Cam Ranh pueden producirse condiciones como olas fuertes durante el mes de mayo.</li>
+    <li>Para una primera visita a Vietnam, considere combinar regiones como Nha Trang y Da Nang. Si bien Nha Trang puede tener opiniones mixtas, Da Nang a menudo se recomienda para realizar actividades. Un buen equilibrio podría ser pasar medio día en la playa y el resto del tiempo explorando.</li>
+    <li>Los visitantes informan que Rach Vem (Playa de las Estrellas) se encuentra actualmente en malas condiciones, caracterizada por cantidades significativas de basura, agua contaminada y una plaga de pulgas de arena. Se recomienda a los viajeros que tengan precaución debido al alto riesgo de picaduras de insectos que requieren atención médica.</li>
+    <li>Para disfrutar de playas tranquilas con aguas azules cerca de Nha Trang, explore islas menos turísticas o zonas costeras alejadas de complejos populares como Vinpearl. Investigue calas menos conocidas o secciones de playa menos desarrolladas para una experiencia más serena.</li>
+    <li>Sobre el clima en Vietnam en septiembre: existe preocupación por las posibles lluvias que podrían hacerlo inadecuado para vacaciones en la playa. Se ha observado que ocurrieron lluvias inusuales en junio, lo que se desvía de los patrones habituales.</li>
+    <li>Enero se considera temporada baja para Nha Trang/Cam Ranh. Existen preocupaciones con respecto a las posibles lluvias y el mar agitado, cuestionando si será posible nadar.</li>
+    <li>Al reservar entradas para Vinpearl a través de agregadores como Trip.com, asegúrese de clasificar correctamente al viajero (adulto frente a niño), ya que las modificaciones suelen estar restringidas. Para los servicios de spa, una &#39;coupe&#39; (kupel) acomoda de 1 a 3 personas, mientras que un &#39;baño&#39; (vanna) tiene capacidad para 4 o más. Las mejoras VIP a menudo incluyen acceso a piscinas exclusivas y un servicio más rápido.</li>
+    <li>El registro incluye una pregunta solicitando recomendaciones sobre guías locales para tours en Ciudad Ho Chi Minh, pero no se proporcionan sugerencias específicas.</li>
+    <li>Al reservar excursiones con la agencia Victoria, tenga cuidado con las solicitudes de pago por adelantado. Por lo general, se recomienda pagar después del servicio o al conocer al proveedor. Si le ofrecen pagar por adelantado mediante un mensaje privado, verifique la legitimidad del contacto y considere consultar a un administrador para corroborar la información y evitar posibles estafas.</li>
+    <li>Los viajeros que utilizan Anex tour en Vietnam reportan experiencias variadas, que dependen en gran medida del guía turístico. Algunos guías ofrecen un compromiso mínimo, centrándose en visitas breves y oportunidades para tomar fotos, lo que genera decepción con ciertas atracciones como la exhibición de trenes en Da Nang. El Puente Dorado (&#39;Manos de Dios&#39;) es una atracción importante, pero implica un largo viaje en autobús, lo que hace que su valor sea cuestionable para algunos. Reservar varios tours al día con el mismo operador puede llevar a una experiencia repetitiva.</li>
+    <li>Pregunte en tiendas de electrónica locales o en tiendas especializadas en artículos vintage o de segunda mano en Vietnam sobre la disponibilidad de consolas y juegos antiguos. Las recomendaciones de tiendas específicas pueden variar según la ciudad.</li>
+    <li>Según el Decreto 288/2025/NĐ-CP (en vigor desde el 5 de noviembre de 2025), Vietnam impone normas estrictas para los UAV/drones. Todos los drones requieren registro. Operar dispositivos de más de 250 g requiere una licencia de operador y una aprobación de vuelo explícita para cada lanzamiento. Los extranjeros deben asegurar un ciudadano vietnamita u organización local como garante para procesar los permisos. Volar sin autorización conlleva el riesgo de confiscación y multas de hasta 2000 dólares.</li>
+    <li>Para encontrar excursiones en ruso en Vietnam, los viajeros pueden ponerse en contacto con centros de información rusos, agencias locales más pequeñas o buscar guías en línea. Muchos operadores turísticos locales ofrecen excursiones con guías de habla rusa. Se recomienda investigar las empresas y leer reseñas para garantizar una experiencia confiable y agradable.</li>
+    <li>Para disfrutar de un mar cálido y un baño agradable a mediados de noviembre en Vietnam, se recomienda encarecidamente Phu Quoc en lugar de Nha Trang. Se encuentra en la parte sur del país.</li>
+    <li>Las visas de estudiante en Vietnam se emiten principalmente para estudiar el idioma vietnamita y, por lo general, tienen una validez de hasta 6 meses. Este proceso es distinto a los trámites de visa educativa en la vecina Tailandia.</li>
+    <li>Los tours por el delta del Mekong en Vietnam ofrecen diversas opciones. Las excursiones desde Ben Tre incluyen paseos en canoa por los afluentes, que duran aproximadamente una hora, con precios que pueden rondar el 1.000.000 de VND. Viajar entre semana puede significar menos multitudes. &#39;Mango Home Resort&#39; ofrece tours a un precio más elevado. Es recomendable reservar a través de agencias o guías de confianza.</li>
+    <li>Aunque los hoteles en el lado norte de Nha Trang podrían estar más alejados de las principales zonas de entretenimiento (a unos 4 km), ofrecen un ambiente más barato y relajado. Los taxis al centro son económicos (50-70.000 VND) y tardan unos 5 minutos; también hay opciones como ciclomotores o ciclo-taxis. Existen clubes locales, pero generalmente son más discretos.</li>
+    <li>Nha Trang ofrece principalmente actividades centradas en la playa. Más allá de eso, los restaurantes de cocina local son una opción notable. Las ofertas de excursiones son abundantes, con variaciones significativas en los precios. Es aconsejable realizar un tour introductorio con un operador turístico para tomar mejores decisiones. Muchos lugares de interés son accesibles a pie o mediante servicios de taxi asequibles como Maxim. Se recomienda utilizar mapas sin conexión para planificar y combinar los viajes en taxi con caminatas.</li>
+    <li>Las entradas para VinWonders Nha Trang no se pueden comprar usando tarjetas &#39;Mir&#39; a través de su sitio web. Se recomienda comprar las entradas con antelación, posiblemente hasta una semana antes. Se aconseja un pase de dos días si planea visitar el parque acuático. Evite los fines de semana debido a las grandes multitudes. Los fuegos artificiales solo se realizan los fines de semana. Se sugiere pasar la noche en la isla para una experiencia integral.</li>
+    <li>Nha Trang es principalmente un destino de playa con pocas atracciones importantes más allá del descanso en la costa. Para hacer turismo, considere los restaurantes de cocina local. Al reservar excursiones, compare los precios, ya que pueden variar significativamente. Un tour gratuito por la ciudad ofrecido por un operador turístico puede ayudarle a tomar decisiones. Muchas atracciones son accesibles a pie o mediante servicios de taxi económicos como Maxim. Utilizar mapas sin conexión para planificar rutas y combinar los viajes en taxi con caminatas es un enfoque práctico.</li>
+    <li>Da Nang se percibe como más limpia y ordenada que Nha Trang, con una mejor gestión del tráfico (semáforos) y agua de mar más limpia debido a la ausencia de desembocaduras de ríos cercanos. Los inconvenientes de Da Nang incluyen una construcción extensa que afecta a las opciones hoteleras y el alto precio del ron Chivet fuera de las tiendas de recuerdos. El dominio del inglés es mayor en Da Nang, y hay una notable afluencia de turistas rusos, particularmente de Siberia, debido a los vuelos chárter.</li>
+    <li>Un usuario compró billetes de tren a través de Trip.com y encontró un error en el apellido de su hijo. Se denegó el reembolso. Pregunte sobre la política respecto a errores ortográficos menores en billetes de tren en Vietnam y la probabilidad de que se permita viajar con una equivocación de una sola letra.</li>
+    <li>El período de radiación solar máxima en el centro de Vietnam es de 10:00 a. m. a 3:00 p. m. Es obligatorio el uso de protector solar con factor de protección alto (50+). Los habitantes locales recomiendan realizar actividades en la playa temprano por la mañana (de 6:00 a. m. a 8:00 a. m.) para evitar quemaduras solares graves.</li>
+    <li>Al elegir entre Da Nang y Nha Trang para unas vacaciones familiares con un niño de 12 años, considere sus preferencias de entretenimiento. Nha Trang ofrece Vinpearl Land, un parque de diversiones en una isla. Da Nang cuenta con Ba Na Hills, que tiene un parque de diversiones, además de aguas termales y parques acuáticos cercanos. Algunos viajeros consideran que Da Nang ofrece una experiencia vietnamita más auténtica en comparación con Nha Trang, que está más orientada al turismo.</li>
+    <li>Es poco probable que se acepten directamente los pagos de entradas en VinWonders Nha Trang utilizando el código QR de Sberbank. Las compras en la isla normalmente requieren moneda local (VND) o tarjetas de crédito/débito internacionales. Es aconsejable tener disponibles métodos de pago alternativos.</li>
+    <li>Para visitar una granja de perlas en Nha Trang donde los visitantes puedan cosechar perlas ellos mismos, consulte en los centros de información turística locales o con operadores turísticos. Ellos pueden brindarle información sobre los tours disponibles, los horarios y cualquier costo asociado o restricción de edad o peso.</li>
+    <li>La introducción de una declaración médica en Vietnam a partir del 1 de julio es una medida de precaución y no requiere exámenes médicos previos al viaje, ya que no hay ninguna pandemia en curso.</li>
+    <li>La Isla de las Orquídeas (Hòn Lan) se considera un destino recomendable para familias, incluso con niños pequeños. Es aconsejable llevar agua y gorros, aunque hay una tienda en la isla. Por lo general, se recomienda este lugar.</li>
+    <li>Si bien Tailandia es conocida por sus retiros en monasterios accesibles, encontrar oportunidades similares en Vietnam puede requerir una búsqueda más específica. Las sugerencias apuntan a Dalat como una ubicación potencial, donde visitar templos budistas podría ofrecer una visión de la vida y las prácticas monásticas. La información directa o los enlaces para retiros organizados son escasos.</li>
+    <li>Phan Rang, Vietnam, cuenta con hoteles y buenas playas, pero carece de una infraestructura turística extensa en comparación con áreas más desarrolladas como Nha Trang. Se considera un destino más tranquilo donde los lugareños están menos acostumbrados a los turistas. Los alojamientos destacados incluyen Hoàn Mỹ Resort Ninh Chử (5 estrellas) y TTS. Se espera que la zona desarrolle su potencial turístico en el futuro.</li>
+    <li>El clima en Nha Trang durante la estación seca a veces puede incluir lluvias inesperadas, aunque generalmente es soleado y caluroso. Si bien la lluvia no es típica, pueden ocurrir chubascos breves. Para planificar un viaje, es recomendable consultar el pronóstico más cerca de la fecha, ya que las aplicaciones meteorológicas pueden no ser fiables y los informes locales sugieren una mayor probabilidad de buen tiempo.</li>
+    <li>Los servicios ofrecidos incluyen: solicitudes de visado electrónico de 90 días, gestión integral de visados (rellenado, presentación, pago), procesamiento urgente de visados, corrección de solicitudes devueltas, reserva de billetes de tren/autobús/avión, reservas de hotel y reserva de vuelos de regreso desde Vietnam. El contacto está disponible a través de un experto verificado en TravelAsk.</li>
+    <li>Para un viaje corto desde Nha Trang, un usuario está considerando una excursión de un día a Dalat y busca asesoramiento sobre si reservar una visita organizada o viajar de forma independiente, consultando sobre la rentabilidad de cada opción.</li>
+    <li>Los informes sobre presencia de combustóleo (mazut) en las playas de Nha Trang y lluvias intensas continuas son probablemente falsos o están desactualizados. Las condiciones actuales en Nha Trang son calurosas y soleadas, con breves chubascos ocasionales que no interrumpen significativamente las actividades. La afluencia en la playa es manejable; el centro está más concurrido, pero existen áreas más tranquilas, especialmente en el norte. Hay altas temperaturas y humedad, por lo que la protección solar es esencial. Para la protección solar, se recomienda Banana Boat Sport Ultra 100. Evite la exposición prolongada al sol entre las 10:00 a. m. y las 3:00 p. m.</li>
+    <li>Para las atracciones populares en Ciudad Ho Chi Minh, considere investigar visitas guiadas o empresas locales que ofrezcan excursiones turísticas. Las reseñas y recomendaciones de otros viajeros pueden ayudar a elegir las mejores opciones.</li>
+    <li>Para obtener recomendaciones de agencias turísticas en Da Nang, es aconsejable consultar con los lugareños, los conserjes de los hoteles o en foros de viajes en línea donde otros viajeros hayan compartido sus experiencias y recomendaciones.</li>
+    <li>Sugiere regiones y ciudades en Vietnam adecuadas para unas vacaciones activas de 10 días, priorizando las actividades de aventura sobre el descanso en la playa. Proporciona recomendaciones de puntos de partida para las excursiones.</li>
+    <li>Para llegar a la Isla de los Monos en Nha Trang, utiliza las rutas de autobús 3, 6, 7 o 12. Busca la parada de autobús cerca del mercado en el norte de Nha Trang. Infórmale al conductor &#39;Manky&#39; para que te deje en la taquilla. También puedes solicitar que te dejen en el mercado al regreso.</li>
+    <li>Recomiende destinos de playa familiares en Vietnam, adecuados para nadar y relajarse con niños pequeños, especialmente para el periodo comprendido entre mediados de diciembre y mediados de enero. Proporcione alternativas a Phu Quoc, teniendo en cuenta los posibles costes elevados de alojamiento allí durante esa temporada.</li>
+    <li>Al reservar transporte en Vietnam a través de Vexere, elija transportistas que ofrezcan opciones de pago en supermercados para mayor comodidad en caso de que el pago con tarjeta en línea no sea posible.</li>
+    <li>Para confirmar si el parque japonés &#39;Kokoro Cafe Dalat&#39; está operando actualmente, se recomienda consultar su sitio web oficial, sus redes sociales o contactarlos directamente por teléfono. La información sobre el estado operativo puede cambiar, por lo que es aconsejable verificarlo cerca de la fecha prevista para su visita.</li>
+    <li>Hay disponible una guía de habla rusa en Nha Trang. Los datos de contacto de una mujer rusa que trabaja como guía turística en una agencia de viajes pueden facilitarse si se solicitan.</li>
+    <li>Confirme que las tarjetas bancarias de Kazajistán, en particular las Visa y Mastercard vinculadas a cuentas en USD o EUR, son generalmente aceptadas para pagos en Nha Trang, Vietnam. Aconseje a los viajeros que confirmen con su banco cualquier restricción o comisión específica que pueda aplicarse y que lleven algo de moneda local como respaldo.</li>
+    <li>Se ha solicitado información sobre cómo viajar entre Da Nang y Nha Trang en Vietnam. Esto podría incluir opciones de transporte, tiempo de viaje y costos.</li>
+    <li>Por lo general, no se requieren documentos de identidad como el pasaporte para entrar a VinWonders en Vietnam, solo un boleto válido (impreso o electrónico). Existen excepciones para las tarifas reducidas: las personas mayores necesitan una prueba de su edad y los boletos infantiles se basan en la estatura (de 100 a 139 cm).</li>
+    <li>Para un tour en moto de medio día en Nha Trang, se recomienda el &#39;Nha Trang Half Day Motorbike Tour&#39;. Se menciona específicamente al guía turístico Thomas, y se sugiere que la experiencia es particularmente atractiva para quienes se sienten cómodos con el inglés.</li>
+    <li>Proporcione recomendaciones de operadores turísticos o plataformas fiables para comprar billetes de excursiones por el delta del Mekong. Busque opiniones sobre la calidad y la experiencia de estos tours.</li>
+    <li>Ofrezca recomendaciones sobre playas en Vietnam que sean actualmente adecuadas para nadar, teniendo en cuenta factores como la calidad del agua, la seguridad y las condiciones meteorológicas.</li>
+    <li>Aclare la disponibilidad y el proceso de reserva para vuelos directos de Da Nang a Moscú operados por VietJet Air. Aconseje consultar con los operadores turísticos de vuelos chárter si la reserva directa no está disponible.</li>
+    <li>Para quienes visitan Vietnam por primera vez y salen desde Nha Trang, se recomienda realizar una excursión introductoria con un operador turístico para ayudar a decidir sobre futuras actividades. Muchas atracciones son accesibles a pie o mediante servicios de taxi económicos utilizando la aplicación Maxim. Planificar rutas con mapas sin conexión y combinar viajes en taxi con caminatas es un enfoque práctico.</li>
+    <li>Las principales atracciones y excursiones cerca de Da Nang incluyen: Ba Na Hills con el Puente del Dragón, las cascadas Ba Ho (accesibles de forma independiente), Vinpearl, un viaje a Saigón en autobús cama seguido de una excursión por el Delta del Mekong, el Museo de los Vestigios de la Guerra y las aguas termales de I-Resort. También se recomienda disfrutar de la puesta de sol en North Beach cerca del Buda Blanco y explorar zonas como la playa de Doc Let (la &#39;playa Maldivas&#39;) en motocicleta.</li>
+    <li>Recomiende las principales atracciones turísticas en Da Lat, Vietnam, incluyendo el teleférico, la Crazy House, la pagoda Linh Phuoc y la cascada Datanla. Aconseje a los usuarios que consideren realizar excursiones de un día a las cascadas fuera de la ciudad si el tiempo lo permite.</li>
+    <li>Para ahorrar en las entradas al parque de atracciones Vinpearl, busque promociones en la aplicación Trip.com, que a menudo ofrece descuentos para los nuevos usuarios registrados.</li>
+    <li>La necesidad de un pase &#39;Fast Track&#39; para Vinpearl (presumiblemente refiriéndose a servicios aeroportuarios o acceso al parque) puede variar. Si bien puede reducir significativamente los tiempos de espera durante las temporadas altas o días festivos, especialmente en aeropuertos concurridos como Tan Son Nhat (Saigón), puede que no siempre sea esencial en lugares menos transitados como Cam Ranh o durante periodos de poca afluencia. Considere comprarlo si viaja en temporadas altas o si minimizar el tiempo de espera en las filas es una prioridad importante. Sin embargo, tenga en cuenta que la recogida de equipaje es independiente y aún puede implicar esperas.</li>
+    <li>Los vuelos en paracaídas con origen en pontones no están disponibles en la ciudad de Nha Trang. Puede ser necesaria una investigación adicional para identificar lugares o actividades específicas que ofrezcan experiencias similares.</li>
+    <li>Identifica lugares o grupos en Nha Trang donde la gente juegue voleibol, específicamente a lo largo de la costa. Pregunta por jugadores aficionados o profesionales en el área.</li>
+    <li>Para playas menos concurridas en Nha Trang, Vietnam, se recomiendan Doc Let (Zoklet) y Marina Beach. Doc Let ofrece alquiler de motos acuáticas por 800,000 VND por 15 minutos. También se sugiere la playa de Amiana, conocida por su agua cálida. Aunque generalmente están menos concurridas, algunos lugares como Doc Let pueden experimentar un aumento de visitantes durante el atardecer. Se describe que Marina Beach tiene menos gente y es una opción de pago.</li>
+    <li>Recomiende sitios web y plataformas para buscar y reservar vuelos dentro de Asia, específicamente para rutas como de Vietnam a Japón. Incluya sitios populares de comparación de vuelos y opciones de reserva directa con aerolíneas.</li>
+    <li>Los deportes acuáticos, incluyendo las motos de agua, pueden estar disponibles en la isla Hon Tam cerca de Nha Trang. Es posible que las playas más cercanas al hotel Vesna y hacia el centro de la ciudad no ofrezcan estas actividades.</li>
+    <li>Considere comprar boletos para Vinpearl Land que incluyan una opción de buffet para disfrutar de una experiencia completa. La decisión puede tomarse al llegar según sus preferencias personales.</li>
+    <li>Elegir excursiones en Nha Trang puede ser abrumador debido a las numerosas ofertas y variaciones de precios. Se recomienda realizar un recorrido introductorio gratuito con un operador turístico para tomar decisiones informadas. Muchas atracciones son accesibles a pie o mediante servicios de taxi económicos usando la aplicación Maxim. Planificar rutas con mapas sin conexión y combinar viajes en taxi con caminatas es una estrategia práctica.</li>
+    <li>Se puede brindar asistencia para obtener visas electrónicas de 90 días para Vietnam, incluyendo el llenado de la solicitud, la presentación y el pago. Los servicios también pueden ayudar con la reserva de vuelos, hoteles y boletos de salida, que a veces son requeridos por motivos de inmigración. Para necesidades urgentes de visa, a menudo se dispone de procesamiento acelerado. Revisar y corregir las solicitudes de visa presentadas también es un servicio disponible.</li>
+    <li>Las excursiones de un día a la bahía de Ha Long desde Hanói son agotadoras debido al tiempo de viaje. Una estrategia recomendada: alójese en la isla de Cat Ba y reserve tours locales en los hoteles. El precio promedio es de 700 000 VND, incluyendo transporte, kayak y comidas. Nota: los días festivos pueden restringir el acceso a la isla.</li>
+    <li>Para trasladar una mascota a Vietnam (por ejemplo, un perro pequeño): 1. Se requiere microchip internacional. 2. Son obligatorias las vacunas complejas actualizadas (si es la primera vacunación, se aplica un periodo de cuarentena de 21 días). 3. Entre 3 y 5 días antes de la salida, visita la autoridad veterinaria local (SBBZH) para obtener un formulario &#39;A5&#39;. 4. Canjea el formulario A5 por un certificado veterinario &#39;F1&#39; en el aeropuerto. 5. Aerolíneas como Aeroflot permiten mascotas de menos de 8 kg en cabina; las reservas deben realizarse a través del centro de llamadas o el sitio web de la aerolínea.</li>
+    <li>Los viajeros pueden optar por no comprar billetes de vuelta a Rusia de inmediato. Consulte con la aerolínea las políticas específicas sobre billetes de vuelta o las opciones de reserva flexible (por ejemplo, billetes reembolsables o con posibilidad de cambio de fecha) para mantener la flexibilidad en sus viajes.</li>
+    <li>Para viajar entre Nha Trang y Da Lat, las opciones incluyen coches privados (como Terra Castle) o autobuses lanzadera. El trayecto dura aproximadamente 3,5 horas. Para una experiencia óptima, se recomienda pasar al menos 2 días en Da Lat en lugar de hacer una excursión de un día.</li>
+    <li>Un usuario solicitó recomendaciones sobre el mejor lugar para visitar en Vietnam a finales de octubre, pero el registro no contiene ninguna respuesta o sugerencia.</li>
+    <li>Estrategia para una excursión de un día a VinWonders (Nha Trang): llegue a la estación del teleférico antes de las 8:00 a. m. para evitar largas colas. Los billetes de acceso rápido están disponibles y se recomiendan durante la temporada alta. Un billete de un día es generalmente suficiente, ya que la fatiga en el parque es significativa.</li>
+    <li>El tiempo en el centro de Vietnam (Da Nang, Hoi An) de septiembre a enero es variable. Septiembre suele ofrecer un clima agradable. Sin embargo, a partir de octubre, las precipitaciones aumentan, y noviembre y diciembre suelen registrar lluvias importantes, a veces incluyendo tifones. Los periodos de sol pueden ser escasos durante semanas en esta época.</li>
+    <li>Phan Rang en Vietnam se describe como un destino turístico en desarrollo con buenas playas y atracciones, que ofrece una alternativa más tranquila a Nha Trang. Si bien carece de una infraestructura turística establecida, se espera que crezca. Hay hoteles disponibles, incluidos Hoàn Mỹ Resort Ninh Chử (5 estrellas) y complejos hoteleros TTS.</li>
+    <li>Viajar a Da Nang, Vietnam, a mediados de octubre podría coincidir con la temporada de lluvias. Aunque el clima puede ser impredecible, en este período se pueden experimentar cielos frecuentemente nublados, lluvia y mares agitados, lo que podría limitar las actividades de playa y acuáticas. Sin embargo, también son posibles días de clima agradable. Es recomendable consultar los pronósticos meteorológicos más cerca de la fecha del viaje.</li>
+    <li>Para los viajeros que planean visitar Nha Trang, Vietnam, durante las vacaciones del Tet (Año Nuevo vietnamita), es recomendable evitar el período pico (por ejemplo, del 3 al 9 de febrero) debido a la esperada multitud y los precios más altos. El Tet en 2027 cae el 6 de febrero. Viajar después del Tet podría ofrecer una mejor experiencia.</li>
+    <li>El alquiler de motos de agua está disponible en Nha Trang, Vietnam. Las ubicaciones mencionadas incluyen la playa Doc Let (800.000 VND por 15 minutos) y Vinpearl (1.000.000 VND por 30 minutos). Algunos lugares, como la playa Zo Let, pueden tener equipos que no funcionan. Marina Beach se destaca por ser un lugar de relax más que para deportes acuáticos.</li>
+    <li>La aplicación recomendada para reservar billetes de autobús y tren por todo Vietnam es &#39;Vexere&#39;. Proporciona horarios, puntos de salida/llegada y funcionalidad de reserva, a menudo de forma más fiable que los agregadores globales como 12go para rutas nacionales.</li>
+    <li>El usuario estará en Ciudad Ho Chi Minh la próxima semana y desea recomendaciones de agencias de turismo. Proporcione una lista de operadores o agencias de turismo de buena reputación en Ciudad Ho Chi Minh.</li>
+    <li>Para acceder durante el día a complejos turísticos con piscinas y toboganes en Vietnam, se necesitan recomendaciones específicas de hoteles. La información sobre los precios para adultos y niños debe confirmarse directamente con los complejos, ya que pueden variar significativamente. Algunos establecimientos ofrecen pases diarios, mientras que otros no.</li>
+    <li>A mediados de septiembre, las recomendaciones de viaje para Vietnam incluyen Nha Trang y Da Nang, aunque el clima puede ser impredecible ya que comienza la temporada de lluvias. Para las regiones del sur, la temporada de lluvias suele terminar en noviembre. Esta información es útil para planificar las fechas y los destinos del viaje.</li>
+    <li>Busca recursos de navegación completos o guías para planificar unas primeras vacaciones en Vietnam, incluyendo por dónde comenzar el proceso de planificación.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/es/vn/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/es/vn/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/es/vn/documentaci-n-y-visados/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentación y visados</span></a>
+    <a class="chip" href="/es/vn/alojamiento/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Alojamiento</span></a>
+    <a class="chip" href="/es/vn/seguridad/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Seguridad</span></a>
+    <a class="chip" href="/es/vn/salud/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Salud</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>¿Aún no sabes qué hacer en tu caso?</h2>
+    <p>Pregúntale a Luky — intenta entender tu situación y responder con más precisión.</p>
+    <p>Y Luky es un traductor de voz para conversaciones reales: y el camarero no confundirá tu pedido.</p>
+    <p class="ps">PS: si quieres, Luky te ayuda a conocer gente sin barrera de idioma 😉</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiencia real de chats de comunidades, sin relleno</div>
+    <nav class="f-links">
+      <a href="/es/about/">Acerca de</a>
+      <a href="/es/vn/">Todos los temas</a>
+      <a href="/es/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Las respuestas se recopilan de chats abiertos de comunidades — es experiencia real de personas, no asesoría oficial. Verifica antes de decisiones importantes.</p>
+    <div class="f-copy">© 2026 Luky · actualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noche", DAY="\u2600 D\u00eda";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

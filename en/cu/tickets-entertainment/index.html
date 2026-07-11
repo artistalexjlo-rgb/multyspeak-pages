@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cuba: Tickets &amp; entertainment — real experience · Luky</title>
+<meta name="description" content="Real experience from chats about Tickets &amp; entertainment in Cuba: as it is, first-hand. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/cu/tickets-entertainment/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/cu/tickets-entertainment/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/cu/tickets-entertainment/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/cu/tickets-entertainment/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/cu/tickets-entertainment/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/cu/">Cuba</a> /
+    <b>Tickets &amp; entertainment</b>
+  </nav>
+
+
+  
+  <h1>Tickets &amp; entertainment: how it works in Cuba — first-hand</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of people from chats on «Tickets & entertainment» in Cuba — as it is, no fluff. For your case — <strong>ask Luky</strong>.</div></div>
+
+  <h2>From real experience</h2>
+  <ul class="qlist">
+    <li>Travelers report obtaining round-trip tickets from Moscow to Havana via Istanbul (Turkish Airlines) for approximately 124,000 RUB when booked several months in advance. Users note that flight schedule changes by the carrier are common and should be anticipated when planning itineraries.</li>
+    <li>Cuban beaches are frequently praised for their beauty, featuring fine sand, extensive shorelines, and shallow waters ideal for leisurely walks. Varadero and Guardalavaca (Holguín) are often highlighted for these attributes, along with captivating ocean views and a pleasant atmosphere enhanced by music. While infrastructure quality can differ, the unique combination of natural scenery, welcoming locals, and a sense of connection contributes to the appeal of Cuban beaches, making them a preferred destination for many travelers over other Caribbean locations.</li>
+    <li>To fly from Cuba, one can book flights through Turkish Airlines from Moscow or Kazan via Istanbul and Panama to Havana. The Panama-Havana leg is operated by Copa Airlines. It is crucial that all tickets are part of a single booking. Direct flights with one stop in Istanbul are expected to be available from October. Alternatively, one can fly to neighboring countries like the USA, Mexico, or Panama, and then onward. Visa requirements for onward travel should be considered.</li>
+    <li>In March 2026, only 250 Russian tourists arrived in Cuba. This number likely decreased in April and May, potentially to a few dozen, as flights operated by Turkish Airlines were the primary means of travel, and these might have been reduced.</li>
+    <li>Flights to Cuba originating from North American countries like the USA or Canada are often found to be more competitively priced compared to those departing from European hubs.</li>
+    <li>Travel routes to Cuba for Russian citizens include flights via Mexico, Panama, or transit through Madrid. Airlines like Air Europe and W2Fly operate flights from Madrid; while the outbound flight is direct, return flights often include a technical stop for refueling (e.g., in the Dominican Republic). Booking in advance allows for prices around 500-600 EUR.</li>
+    <li>When flying to Cuba with connecting flights via Panama, luggage is generally registered through to Havana, and passengers do not need to re-check it during the layover in Panama.</li>
+    <li>Flights to Cuba from the US Midwest exhibit significant seasonal price variations. For instance, prices were around 270 in December 2024 but rose to 470 for July-August. Prices for December flights, while sometimes favorable, can also be substantially higher depending on booking time and demand.</li>
+    <li>Cuban musical preference is diverse and highly localized. While &#39;Buena Vista Social Club&#39; is famous internationally, it is often viewed by locals as an export-oriented product. Current popular local artists include Buena Fe (university/intellectual youth), Cimafank, Los 4, El Chacal, and various Reggaeton artists like Ice Dilan. Cubans strongly favor domestic national artists over general Latin American pop music.</li>
+    <li>When flying to Cuba, airlines frequently request proof of onward or return travel. While a direct return ticket to the country of origin is standard, passengers have reported successful boarding with a confirmed ticket to a third country (e.g., Colombia) instead of a return ticket.</li>
+    <li>Cuban citizens traveling to Russia via third countries like Panama require a transit visa for Panama if their final destination is not Cuba. This requirement has been in effect for some time and has a high rate of refusal for Cubans; the only exception is for Cubans returning directly home. Additionally, upon arrival at Russian border control, Cuban tourists may be asked for a return ticket to ensure their intent to leave Russia. Absence of a return ticket can lead to denial of entry. Foreign visitors to Russia are also advised to register in the RuID application. Due to the complexities and high refusal rates for transit visas, travelers should verify all requirements directly with the relevant embassies and airlines well in advance to avoid denied boarding or entry.</li>
+    <li>Despite some perceptions, air travel to Cuba is currently accessible, with daily flights operating, indicating no major restrictions on entry via air.</li>
+    <li>Travelers flying to Cuba via Rome (Italy) must ensure they meet Schengen visa requirements for transit, depending on their nationality. This is an essential step before considering flight bookings from Europe to Cuba.</li>
+    <li>Cuba offers multiple key beach resorts and destinations for organized tourism beyond Varadero. These include major Cayos like Cayo Coco and Cayo Santa María, as well as Guardalavaca (in Holguín province), Cayo Largo del Sur, Santa Lucía (Camagüey Province), and Playa Ancón (near Trinidad). These locations cater to mass tourism, providing diverse options for beach holidays.</li>
+    <li>Travelers to Cuba are discussing flight routes involving Panama and Bogotá. Flights with layovers in Bogotá may not allow disembarking in Colombia, with passengers only seeing airport staff. Panama offers potential for exploration during layovers, with metro access near the airport. Some travelers are choosing these longer routes to experience multiple destinations or due to limited direct flight options.</li>
+    <li>When traveling to Cuba, consider bringing items like reusable mugs or thermoses, and personal hygiene items. USD is recommended for currency. Turkish Airlines generally offers good onboard catering; expect standard airline meals, potentially with Cuban-influenced dishes on return flights. Small gifts and cosmetics can be appreciated by hotel staff.</li>
+    <li>When comparing beach destinations like Cuba and the Dominican Republic, distinct differences emerge. Cuban beaches are often praised for their white sand. Dominican Republic beaches, while potentially affected by sargassum, offer clearer water and richer marine life, including fish, sea urchins, and coral reefs. Food quality is generally considered better in the Dominican Republic. For some, the Dominican Republic served as an alternative during periods of limited access to Cuba.</li>
+    <li>Travelers to Cuba now face indirect routes due to the cancellation of direct flights from many countries. Common transit points include Istanbul (Turkish Airlines) and Panama. While direct package tours are less common, independent travel is viable, with many users successfully booking flights and accommodations separately. Some hotels remain open, though occupancy might be lower than pre-pandemic levels, which some find advantageous for a more private beach experience. Currency of choice for transactions is generally USD.</li>
+    <li>Turkish Airlines flights from Kazan to Havana (via Istanbul) are often priced lower than flights departing from Moscow. When booking non-stop or through-booked tickets, be aware that cancelling only one leg of the journey usually triggers a recalculation based on higher tariffs. &#39;Stopover&#39; options in Istanbul or Kazan are common strategies to manage long travel times. Always check both the airline&#39;s official mobile application and website for consistent pricing, though usability may vary.</li>
+    <li>A traveler from Cuba reported a positive experience, spending their vacation there from December 27th to January 18th. Despite a 14-hour flight, the traveler found the experience enjoyable, especially with the right mindset. The destination also served as a convenient meeting point. The traveler expressed a desire to return and mentioned that their partner also liked Cuba.</li>
+    <li>Currently, there are no direct flights from Istanbul (Turkey) to Havana (Cuba). Flights from Russia to Havana without requiring a Schengen or US visa can be routed through Panama.</li>
+    <li>Turkish Airlines has ceased selling single transit tickets to Havana via Panama (previously codeshared with Copa Airlines). Travelers must now book flights to Panama directly and purchase the Panama-to-Havana segment separately. Payments using Russian MIR cards on the Turkish Airlines website and mobile app are only allowed if the flight departs from the Russian Federation. Alternatively, tickets can be paid for with Russian cards at physical Turkish Airlines offices in Moscow (near Dobryninskaya metro station or Vnukovo airport) and St. Petersburg (Nevsky Prospekt, 19).</li>
+    <li>Neos Air operates summer flights from Rome to Holguin, Cuba. The round-trip prices have increased significantly; a flight that cost approximately 240 in 2024 now costs around 600. Travelers should be aware of these price increases when planning their budget.</li>
+    <li>Public beaches in Cuba are often littered, while hotel beaches are regularly cleaned, sometimes with heavy machinery, to maintain a pristine appearance and gentle water entry. All beaches in Cuba are public. Local littering is a common issue in Cuban cities like Havana, despite the presence of waste bins and even some attempts at waste sorting infrastructure. This points to a cultural aspect of waste disposal in non-touristic areas.</li>
+    <li>Reparto is a contemporary style of Cuban reggaeton, characterized by its adaptation to local tastes. It is commonly found in venues frequented by local youth. Key features include simplified dance movements compared to traditional reggaeton, a rhythm that is more complex than standard reggaeton but less intricate than Rumba or Son, and often incorporates recitative rather than melodic singing. It represents a modern musical evolution within Cuban popular culture.</li>
+    <li>Travelers to Cuba have the option to bring humanitarian aid, with individuals sometimes carrying substantial amounts (e.g., 60 kg) to distribute in cities like Havana. This practice offers a unique way to engage with the local population, providing direct support and gaining a deeper cultural experience beyond traditional tourism.</li>
+    <li>When flying with Turkish Airlines to Cuba, hotel bookings (or &#39;casa particular&#39; reservations) are subject to random verification by airline staff at the point of departure. Passengers should keep physical or digital copies of their accommodation bookings ready at check-in.</li>
+    <li>A Cuban citizen needs to purchase a flight ticket to Russia (Moscow). The payment must be made from Russia using a &#39;Mir&#39; bank card. The traveler wants to avoid any complications, such as visa issues during transit.</li>
+    <li>On Cuba, there are reports of hyperinflation starting in May, with official salaries as low as $15/month potentially dropping further. There are unconfirmed rumors about a ban on US dollar circulation, which could make it difficult for tourists. Small businesses might refuse to accept pesos due to rapid devaluation. Electricity outages are frequent, reportedly up to 15 hours per day in Havana. Officially, US dollars are not accepted in &#39;dollar stores&#39; or most hotels; a local currency called MLC (obtained by exchanging cash dollars at banks) is used. However, some establishments reportedly still accept cash dollars, sometimes preferring it. It&#39;s advised for travelers to carry both USD and CUP and be prepared for currency complexities and potential restrictions.</li>
+    <li>Tickets from Kazan to Havana in autumn can be found for less than 100,000 rubles round trip. Flights from Moscow are typically more expensive.</li>
+    <li>For travelers from Russia, Cuba can be a more cost-effective destination than the Dominican Republic. Flights from Russia to Havana are often cheaper than to Dominican cities. Furthermore, independent travel planning, by booking flights and accommodations separately, can result in significant savings compared to traditional package tours. Some travelers have found that self-organized Cuban trips are more economical than pre-packaged options from tour operators.</li>
+    <li>As of May 2026, organized package tours to Cuba are reported as unavailable by some travelers. However, individual travel is possible, and hotels in Havana are confirmed to be operational. Travelers should plan independent trips.</li>
+    <li>Transit through Tocumen International Airport (PTY) in Panama offers amenities like lounges with food, rest areas, and showers. However, exiting the airport is generally restricted to passengers with layovers of 6 hours or more. Individuals with shorter layovers may face difficulties if they attempt to leave the transit area. Panama is noted to be an expensive country with prices comparable to the US.</li>
+    <li>Travel situation in Cuba: Severe infrastructure issues including intermittent electricity (often 2-4 hours/day), fuel scarcity, and lack of reliable tourist transport. Official fuel price is ~2/L (with 20L/day ration for rentals), black market is ~7-12/L. Electricity reliability varies by region (Cienfuegos is better on weekends). Tourist activity is currently low, causing many agencies and hotels to be closed. Recommended transport: local collectivos or rental scooters (prices vary: electric ~18/day, gas ~25-40/day). Flights from Russia to Havana are currently only available with connections (e.g., via Istanbul).</li>
+    <li>For flights to Cuba (e.g., via Turkish Airlines with stops in Istanbul and Panama), travelers may need to collect onward boarding passes at the transit gate. Transit passengers typically do not need to re-check baggage. A mandatory electronic entry form (QR code) is strictly verified, particularly during transit in Panama. Hand luggage is subjected to secondary security screening at Panama airport gates.</li>
+    <li>Direct flights from Moscow to Cuba have been canceled. This is due to sanctions and overdue credits, making it impossible for Russian aircraft to refuel in most countries. There were discussions about refueling stops in the Dominican Republic, Venezuela, and Mexico, but these were ultimately canceled. Concerns exist about potential confiscation of aircraft by foreign entities.</li>
+    <li>Turkish Airlines offers direct flights from Istanbul (IST) to Havana (HAV) for the autumn season starting at approximately 80,000 Russian rubles.</li>
+  </ul>
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/cu/shopping/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛒 Shopping</span></a>
+    <a class="chip" href="/en/cu/housing/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🏠 Housing</span></a>
+    <a class="chip" href="/en/cu/safety/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛡 Safety</span></a>
+    <a class="chip" href="/en/cu/banking-money/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Banking &amp; money</span></a>
+    <a class="chip" href="/en/cu/documents-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documents &amp; visa</span></a>
+    <a class="chip" href="/en/cu/currency-transfers/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Currency &amp; transfers</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Still don&#39;t know what to do in your case?</h2>
+    <p>Ask Luky — answers for your case, from recent reports, not generic articles.</p>
+    <p>And Luky is a live voice translator for real conversations: haggle at the market like a local.</p>
+    <p class="ps">PS: meet someone at a bar who speaks another language</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/cu/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

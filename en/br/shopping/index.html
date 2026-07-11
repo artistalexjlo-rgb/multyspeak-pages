@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brazil: Shopping — real experience · Luky</title>
+<meta name="description" content="Real experience from chats about Shopping in Brazil: as it is, first-hand. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/br/shopping/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/br/shopping/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/br/shopping/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/br/shopping/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/br/shopping/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/br/">Brazil</a> /
+    <b>Shopping</b>
+  </nav>
+
+
+  
+  <h1>Shopping: how it works in Brazil — first-hand</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of people from chats on «Shopping» in Brazil — as it is, no fluff. For your case — <strong>ask Luky</strong>.</div></div>
+
+  <h2>From real experience</h2>
+  <ul class="qlist">
+    <li>Electronics and appliance prices in Brazil are generally higher than in Russia, even when considering parallel imports to Russia. iPhones and MacBooks are notably expensive in Brazil. While some local brands or Chinese-made goods might seem cheaper initially, overall affordability and quality compared to Russian market prices (including parallel imports) should be carefully evaluated. For example, a simple kettle might break quickly, and even fruits like pitahaya can be relatively expensive. Consider purchasing these items in other countries like Paraguay or even Russia for better value, depending on current market conditions and import regulations.</li>
+    <li>Electronics prices in Brazil are approximately 2.5x higher than in Russia. Locals often travel to Paraguay to purchase Apple devices and other electronics at significantly lower prices to avoid local import taxes and markups.</li>
+    <li>Securing housing in Brazil is in progress, with a potential rental identified but not yet finalized. There&#39;s a tight timeline, with Airbnb accommodation ending in just over a week. Plans include purchasing a refrigerator via Avito. The identified housing lacks air conditioning, which is a concern, as many find living without AC difficult in Brazil. Portable air conditioning units are being considered as a backup.</li>
+    <li>The primary language spoken in Rio de Janeiro and Brazil is Portuguese. While English may be understood in some tourist areas, shops, and cafes, it&#39;s not universally spoken. Learning basic Portuguese phrases (&#39;hello&#39;, &#39;thank you&#39;, &#39;please&#39;) is highly recommended for tourists. Locals are generally helpful, and tools like Google Translate can bridge communication gaps. Opting for English-speaking tours is also an option, but showing effort to communicate in the local language is appreciated. Basic phrases are sufficient for most tourist interactions, including ordering food and using taxis.</li>
+    <li>Identify Russian restaurants or catering services that prepare Russian food in Rio de Janeiro. The user wants to treat local acquaintances and prefers not to cook themselves.</li>
+    <li>Registration on Mercado Livre in Brazil is no longer possible with a Russian phone number. A Brazilian residency permit (VNM) is now required for account creation.</li>
+    <li>A frequent user inquiry concerns the availability and reliability of Brazilian online stores that offer direct shipping services to Russia. This indicates a demand for comprehensive information on international e-commerce logistics routes between Brazil and Russia.</li>
+    <li>Interactive offline map of Brazil for MAPS.ME with 115 marked points of interest including attractions, dining, and photo spots. Offers turn-by-turn navigation. Price: 599 BRL.</li>
+    <li>Amazon provides delivery services to Brazil. Customs duties are applicable to imported goods, including both new and used electronics. It is recommended to check prices and shipping conditions on amazon.com.br, the local Amazon platform, to understand the total cost including potential duties.</li>
+    <li>During the COVID-19 pandemic in Brazil (2020-2022), restrictions varied by region and public spaces. General: Masks were often mandatory indoors (e.g., shops in Rio), recommended outdoors, but not strictly enforced by police in all areas. Vaccination was widely encouraged, but mandatory for specific activities (e.g., gym entry, university admission, travel to Fernando de Noronha). São Paulo: Experienced periods of severe lockdown with empty cities. Rio de Janeiro: Citizens were strict about mask-wearing in stores; beaches were closed and people were sometimes removed by police. Travel restrictions were implemented for some areas (e.g., Buzios required proof of residence). Rural/Remote Areas: Restrictions were often less strict or ignored, with people gathering without masks.</li>
+    <li>Brazil uses plug types N (three pins) and sometimes C (two pins, but often deep-set). Standard European plugs (Type C/F) may not fit into grounded Type N sockets due to the recess. Travelers should look for an &#39;adaptador de tomada&#39; (plug adapter) at local hardware stores (&#39;ferragens&#39;) or supermarkets.</li>
+    <li>In Rio de Janeiro, specifically in the Botafogo district, the Botafogo Praia Shopping mall houses a rooftop restaurant on one of its upper floors (reportedly the 9th floor). This restaurant offers a spectacular view of the bay and is noted for its affordable prices, making it a good option for dining with a view.</li>
+    <li>The CPF (Cadastro de Pessoas Físicas) requirement for tourists in Brazil can be a concern. While not always strictly enforced for basic transactions like pharmacy purchases, it may be necessary for services such as ordering taxis. Informing vendors about the lack of a CPF is often sufficient for many retail interactions.</li>
+    <li>To visit Christ the Redeemer (Corcovado) in Rio de Janeiro: 1. Purchase tickets online in advance (recommended a day prior). 2. The Corcovado Tram costs 128 BRL for a round trip including entry; search &#34;tramdocorcovado rio&#34; for tickets. Alternatively, buy a combined ticket with a shuttle bus. 3. Early morning visits (e.g., 8:00 AM) help avoid long queues for ascent, though the top will still be crowded. Expect around 20-minute queues for descent. 4. Avoid combining taxis with local buses to reach the monument. 5. Paid photographers offer 4 digital photos for 120 BRL. Souvenirs are available (e.g., 3 keychains for 20 BRL).</li>
+    <li>A notable outlet in the São Paulo area is the &#39;Premium Outlet&#39; located on the way to Campinas. It offers a free daily shuttle bus service, but online booking is required due to limited seating. Discounts are not guaranteed to be significant on all items; some current collections may be at full price. However, luxury eyewear and sneakers are frequently available at good prices.</li>
+    <li>For specific or less common groceries in Brazil, check non-budget supermarkets like Carrefour or Pão de Açúcar, rather than budget stores like Assai.</li>
+    <li>Inquire about the existence and specifics of a &#39;tax-free&#39; system for tourists in Brazil for VAT (Value Added Tax) refunds on purchased goods. Information found online may differ from chat discussions.</li>
+    <li>Traditional Russian/Eastern European products such as herring, specific types of caviar (non-imitated), black bread, and unsweetened kefir are generally difficult or impossible to find in Brazil. However, several common grains are available: buckwheat (trigo sarraceno, often unroasted and requires pre-toasting), oats (aveia em flocos finos/médios/graúdos), hulled millet (painço descascado), semolina (semolina fina/grossa, use &#39;grossa&#39; for coarser grind like semolina), and barley (cevadinha). Red and black caviar can occasionally be found in large supermarkets, but selection and type may vary. Sweetened kefir substitutes exist, but unsweetened is rare.</li>
+    <li>For purchasing coffee beans in Sao Paulo, large supermarkets offer a good selection. It&#39;s a convenient and reliable option. For more specific recommendations, consult relevant local posts or guides.</li>
+    <li>Recommend places to buy quality coffee in São Paulo, Brazil. Suggest locations such as large supermarkets or hypermarkets (e.g., Master Supermarkets) known for a wide selection and good prices. Include tips on identifying local, high-quality coffee brands and mention related products like Brazilian candies, cachaça, and local limes.</li>
+    <li>Visiting Foz do Iguaçu involves crossing borders to Paraguay (Ciudad del Este) and Argentina. Ciudad del Este is a major duty-free shopping hub. Transportation: Use Uber/99 in Brazil and Bolt in Paraguay. Crossing borders via bus is typically more efficient than taxi.</li>
+    <li>Public health services in Brazil (SUS) provide free vaccinations and medication. In Sao Paulo, a vaccination center is located at the Clinicas subway station. Language barriers can be bridged using translation tools.</li>
+    <li>To purchase a socket adapter in Rio de Janeiro, consider looking for electronics stores on Rua Barata Ribeiro. These stores are likely to offer a variety of options at reasonable prices.</li>
+    <li>IQOS/vaping sticks are prohibited in Brazil. Consequently, they are not readily available in official retail channels in Rio de Janeiro. While some individuals may find them through unofficial vendors at inflated prices or by requesting them from fellow travelers, their sale and distribution are illegal.</li>
+    <li>A new user joins the chat inquiring about life in Brazil, including adaptation, healthcare, and childbirth experiences. Responses indicate that life in Brazil is generally positive. Healthcare quality can vary, but good private options exist. Information about childbirth is available in a separate chat. Brazil is compared to Mexico, noted as being different. It&#39;s also mentioned that electronics tend to be expensive in Brazil.</li>
+    <li>Football fan t-shirts can be found at souvenir markets and along the beach promenade in Sao Paulo. They are also available at stalls near MASP on Paulista Avenue.</li>
+    <li>When considering purchasing major appliances like refrigerators, washing machines, or microwaves in Brazil, be aware that prices can be significantly higher than in Russia or other markets, even for globally recognized brands. While China dominates manufacturing, local pricing and perceived quality can vary. For example, Midea microwaves, despite global production dominance, may be more expensive in Brazil than in Russia. It&#39;s advisable to research specific models and compare prices across retailers and potentially online marketplaces like Shopee. Be prepared for a potentially lower quality of materials (e.g., plastic components instead of metal) in some appliances compared to those sold in other regions.</li>
+    <li>It is possible to obtain a Brazilian CPF (Cadastro de Pessoas Físicas - individual taxpayer registry number) online without physically being in Brazil. This method can be used, for example, to create new accounts on platforms like Mercado Livre if a previous account was blocked due to issues like Bybit Pay transactions or other financial security flags, as Mercado Livre accounts are linked to CPF.</li>
+    <li>Visiting Iguazu Falls independently is recommended over guided tours. One day is sufficient for each side (Argentinian and Brazilian). Travelers can cross the border into Ciudad del Este, Paraguay, for shopping (electronics, alcohol, perfume). Border crossing is often done without formal passport stamping, but travelers should have ID ready if requested.</li>
+    <li>In São Paulo, Brazil, there are no large shopping outlets comparable to major discount malls found in other countries, such as those near Moscow. Several &#39;Premium Outlets&#39; exist outside the city, but significant discounts are typically limited to specific categories like sports footwear and eyewear.</li>
+    <li>Helicopter tours in Rio: Optional video services (approx. 599 BRL) are often poor quality, capturing only the front-seat passenger. Doors-off flights are more intense and require securing all loose items in storage; doors-on flights are recommended for those preferring comfort and easier photography.</li>
+    <li>A new interactive travel map for Brazil is available for MAPS.ME, costing 599 rubles. It includes 115 points of interest, such as places to visit, dine, and take photos. The map supports offline use and provides step-by-step navigation.</li>
+    <li>Purchase the new MAPS.ME interactive travel map for Brazil for 599 BRL. The map includes 115 points of interest (sights, dining, photo spots) and works offline with turn-by-turn navigation.</li>
+    <li>E-commerce platforms like Mercado Livre in Brazil utilize dynamic pricing based on user profiles, device models, and browsing history. Browsing in incognito mode or using a VPN can often result in lower displayed prices.</li>
+    <li>Create a digital travel map for MAPS.ME covering 115 points of interest in Brazil, including sightseeing, dining, and photo opportunities. Ensure the map is available offline and includes turn-by-turn navigation. The map costs 599 Brazilian Reais.</li>
+    <li>Sunday business hours in Sao Paulo: Restaurants and cafes generally operate, particularly in the evening. Most shops have limited hours, with supermarkets and shopping malls being exceptions.</li>
+    <li>Upon late-night arrival at a Brazilian airport (e.g., from Istanbul), the only place to buy drinks (including alcoholic beverages) until morning might be the airport bar.</li>
+    <li>Prices for electronics like MacBooks in Brazil are significantly higher compared to countries like Paraguay (around 40% cheaper) or even Moscow. Fruits like pitahaya, despite being perceived as common, can be relatively expensive at 15 BRL/kg. Anecdotal evidence suggests that even basic appliances may have poor durability, with one user reporting a kettle breaking the day after purchase. This indicates a general trend of higher prices and potentially lower quality for consumer goods in Brazil compared to other markets.</li>
+    <li>User arriving in Brasilia via Sao Paulo airport has questions regarding: 1. Currency exchange: Should USD be exchanged to BRL at Sao Paulo airport? User notes potentially poor exchange rates and limited USD acceptance. 2. Purchasing an electrical adapter for Brazilian sockets at the airport. 3. Recommended taxi services in Brasilia and the prevalence of cash payment scams.</li>
+    <li>Recommended souvenirs from Brazil: 1. Granado (cosmetics/soaps). 2. Dengo (premium chocolate). 3. Farm (fashion apparel). 4. Havaianas (flip-flops). 5. Cachaça (local sugarcane spirit). 6. Official football merchandise.</li>
+    <li>CPF (Cadastro de Pessoas Físicas) is practically essential for daily life in Brazil. While not legally mandatory for short tourist visits, it is required for basic tasks such as accessing healthcare clinics (SUS/private), buying local SIM cards, registering in local apps, and making online purchases.</li>
+    <li>When in Rio de Janeiro, explore local culinary delights beyond delivery services. Look for traditional Brazilian dishes such as Feijoada (a hearty bean stew with various meats, usually served on Wednesdays and Saturdays), Pão de Queijo (cheese bread), Açaí (Amazonian berry bowl), Churrasco (Brazilian barbecue, often rodízio style), and Moqueca (fish or seafood stew). For restaurants and bars, explore neighborhoods like Copacabana, Ipanema, Leblon for upscale options, or Lapa for more bohemian and lively spots. Ask locals for their favorite &#39;botecos&#39; (casual bars serving snacks and drinks) for an authentic experience.</li>
+    <li>Having a CPF (Cadastro de Pessoas Físicas) in Brazil is a tax identification number and does not inherently imply a registered residential address for immigration purposes. When entering Brazil, immigration officials are unlikely to ask for proof of accommodation beyond confirming tourist status, which is usually the only question asked. If specifically questioned about accommodation, providing the address and phone number of your host or lodging is generally sufficient, even without a formal hotel booking. CPF may also be used for discounts at some Brazilian supermarkets upon registration on their respective websites.</li>
+    <li>In Brazil, official IQOS stores are not available. However, HEETS sticks for IQOS might be found in local tobacco shops (tabacarias). For example, Casa de Fumo Poço Fundo located at Rua Marechal Deodoro, 25, Centro in Tres Pontas may carry them. It is recommended to call in advance to confirm availability.</li>
+    <li>Despite being reported to grow in Brazil, longan fruit is rarely found for sale in regular supermarkets. It has been occasionally spotted in specific stores like Coopersica.</li>
+    <li>Cars in Brazil tend to have a longer lifespan and are less susceptible to rust compared to those in Russia, primarily due to climatic conditions. While coastal exposure and neglect can still cause deterioration, vehicles generally maintain better condition for extended periods. A 12-year-old car can still be in excellent shape, suggesting robust longevity for automobiles in Brazil.</li>
+    <li>Finding high-quality Brazilian coffee, especially whole beans with chocolate notes for gifts, can be challenging within Brazil, particularly in tourist areas like Copacabana. While ground coffee might be more readily available, whole bean varieties can be scarce. Some advise purchasing Brazilian coffee outside of Brazil due to perceived differences in local coffee culture and preparation standards. However, specialty coffee shops in cities like São Paulo offer tasting experiences and retail options for purchasing coffee, along with expert advice.</li>
+    <li>Finding tourist postcards in São Paulo can be challenging. They might be available in small kiosks, museums (such as the Pinacoteca), or older stationery stores. Travelers have reported better, though still limited, selections in Rio de Janeiro.</li>
+    <li>Dining options in Brazil vary greatly in price. In Guarulhos, a massive traditional local plate (Prato Feito with rice, beans, salad, and a main dish) costs around 25 BRL. Social state-subsidized restaurants named &#39;Bom Prato&#39; serve meals for approximately 1.5 BRL, though expect long queues. Standard grocery prices: 1.5 kg of beef is around 60 BRL, rice and beans cost about 5 BRL per pack, and pre-cut mixed fruits (pineapple, watermelon, passionfruit) are about 22 BRL.</li>
+    <li>Mercado Livre is a reliable platform for purchasing appliances in Brazil at prices significantly lower than brick-and-mortar retailers. Key tips for users: always filter by &#39;frete grátis&#39; (free shipping) and note that items shipped from China have taxes already included in the displayed price.</li>
+    <li>Coffee culture in Brazil varies significantly; supermarket brands like Pilao can be heavily roasted (level 8). High-quality beans are often difficult to find in local retail, leading residents to import beans via transit hubs like Addis Ababa. It is common to serve espresso with a small glass of carbonated mineral water to cleanse the palate.</li>
+    <li>When traveling in Brazil, particularly in Rio, English proficiency among locals can be limited. Communication may rely on gestures, translation apps, and basic local phrases. For example, asking for &#39;Water, please&#39; might not be understood; using the local word &#39;Água&#39; is more effective. Having a translation app or learning essential phrases in Portuguese is highly recommended for smoother interactions.</li>
+    <li>Exporting goods from Brazil has specific regulations. While coffee and alcohol can typically be exported in quantities up to 5 kg without issues, the export of many fruits is prohibited. Users have reported successfully exporting small amounts of common fruits in checked baggage, but it&#39;s advisable to verify the list of permitted fruits and quantity limits to comply with customs regulations.</li>
+    <li>Electronics and many imported branded goods in Brazil are significantly more expensive than in Russia or other countries, primarily due to high import taxes. The price difference increases with the value of the item. It is often more cost-effective to purchase such items (e.g., iPhones, PC components, quality clothing, auto parts) in Russia or neighboring countries like Paraguay, where prices are reportedly half of Brazil&#39;s for electronics (especially when paying in USD). When moving to Brazil, it&#39;s advisable to bring personal electronics and expensive household items. Customs control at airports like São Paulo is selective, but new, sealed items (like iPhones) might be subject to import duties or IMEI checks. A temporary import declaration is an option for high-value items, but many report baggage not being inspected.</li>
+    <li>In Rio de Janeiro, many establishments, including supermarkets, were closed on Christmas. A similar situation is expected on January 1st, though some businesses might remain open. Local customs and holiday traditions influence service availability.</li>
+    <li>The restaurant &#39;Sal e Brasa&#39; in Natal is highly recommended. It is a churrascaria with an all-you-can-eat meat offering for 74.90 Brazilian Reais (89.90 on weekends). Drinks and desserts are extra. The buffet also includes a large salad bar and sushi.</li>
+    <li>Purchasing local SIM cards (Vivo, TIM) in Brazil generally requires a passport and often a CPF. Activation at airport kiosks can be time-consuming; official stores may involve verbal verification over the phone. Pre-paid (prepago) data plans are widely available but may lack a phone number necessary for local app registration.</li>
+    <li>Supermarket chains in Brasília include Pão de Açúcar, Dona, Fartura, and Big Box. Users often report discrepancies in online mapping data due to local store closures or maintenance. It is recommended to verify current status via local search or asking residents.</li>
+    <li>In São Paulo, Brazil, fruits like mango, avocado, and acerola are abundant and can be found growing freely. Mushmula (loquat) is also present and sometimes sold in stores as an exotic fruit. Mushrooms, however, are considered expensive, with prices ranging from 6 to 10 BRL per 200 grams for various types. This contrasts with observations from other Brazilian regions (e.g., Florianópolis), where mangoes may not ripen and mushroom prices are perceived as normal.</li>
+    <li>Ciudad del Este (Paraguay) is a duty-free shopping hub on the Triple Frontier with Brazil and Argentina. Prices for electronics are significantly lower than in Brazil/Argentina due to tax exemptions. Recommended currency: USD cash. Expect limited fashion variety.</li>
+    <li>Users can purchase an interactive map for MAPS.ME for Brazil, costing 599 rubles. The map includes 115 points of interest, offline functionality, and step-by-step navigation, designed to help users discover tourist attractions, places to eat, and photo opportunities.</li>
+    <li>For electronics shopping in Brazil (e.g., in Rio), it is generally cheaper to purchase items in Paraguay due to lower prices, with shopping tours available. For small, inexpensive items like power banks, importing from Paraguay may not be worthwhile. Mercado Livre is a popular online marketplace in Brazil. No specific major electronics retail chains were mentioned in the log for Brazil.</li>
+    <li>A paid travel map for Brazil, advertised for MAPS.ME at 599 rubles, features 115 points of interest, offline functionality, and navigation. Users must have the MAPS.ME application installed on their device for the map to function.</li>
+    <li>In São Paulo, souvenirs (keychains, paintings, hats, t-shirts) can be found along Avenida Paulista, often in kiosks. Souvenir shops are typically located near major tourist attractions. Markets may not always have a wide selection of tourist souvenirs.</li>
+    <li>Explain the process and requirements for purchasing a television in Belo Horizonte, Brazil, for individuals without a CPF (Cadastro de Pessoas Físicas). Investigate potential alternative identification methods or stores that may allow purchases without this tax identification number, or advise on how to obtain a CPF.</li>
+    <li>McDonald&#39;s in Brazil released collectible Formula 1 toy cars that sold out within hours. These toys are now being resold on platforms like OLX for significantly higher prices (starting from 160-170 Brazilian Reais). Reports suggest that McDonald&#39;s staff may have been involved in initial bulk purchases.</li>
+    <li>To find specific meat types like turkey (peru), lamb, or duck in Brazil, use large supermarket chains: Assaí, Atacadão, or Zona Sul. For delivery, use the &#39;iFood&#39; app (be aware that verification often requires a local CPF document; sometimes a few initial small orders are needed to prevent account bans). Local street markets (feiras) also offer a wide variety of fresh meats.</li>
+    <li>Sculpting clay can typically be purchased in Sao Paulo at art supply stores (lojas de artigos para arte), craft stores (lojas de artesanato), or large stationery shops (papelarias). Online marketplaces like Mercado Livre may also offer a selection.</li>
+    <li>Popular souvenirs to bring from Brazil include: 1. Coffee: Brazilian coffee is world-renowned; look for specialty beans from regions like Minas Gerais or Espírito Santo. 2. Cachaça: A distilled spirit made from fermented sugarcane juice, often used in Caipirinha cocktails. 3. Other items may include local handicrafts, sweets (like brigadeiros), and unique fashion items.</li>
+    <li>In Brazil, &#39;Hercules&#39; (oatmeal) is available. Green buckwheat is common. Regular (roasted) buckwheat is rare and can cost around 50 BRL/kg. Pearl barley is not commonly found.</li>
+    <li>Authentic Russian-style &#39;smetana&#39; (sour cream) is difficult to find in Brazilian supermarkets. Locals often find &#39;Nata&#39;, which is not a direct culinary substitute. &#39;Creme azedo&#39; is sometimes found in specific regional chains like Covabra, but widely available &#39;creme azedo&#39; products are often flavored for snacks like nachos.</li>
+    <li>Discovering Brazilian culinary delights and local ingredients. The discussion covers traditional dishes like pork knuckle with mashed potatoes and sauerkraut, reminiscent of European cuisine. Unique local products such as pinhão (pine nuts, prepared roasted or in desserts) and atemóia (custard apple, used in smoothies and puddings) are highlighted. The unique flavors and preparation methods of these ingredients are explored, offering a taste of Brazil&#39;s diverse food culture.</li>
+    <li>To return clothing purchased in Brazil with card payment, it is generally recommended to bring your passport and the item in its original condition. The return period can vary by store, but is often within 7-30 days. It is advisable to check the specific store&#39;s return policy beforehand.</li>
+    <li>Clarify the meaning of &#39;nordeschi specificity&#39; in the context of travel in Brazil&#39;s Nordeste region. Contrast the perceptions of travelers who find it lacking in service compared to European standards and those who find it superior to other Brazilian destinations like Rio or Praia Grande, highlighting Fortaleza as a preferred location.</li>
+    <li>English proficiency in Brazil is generally low, even in international airports and hotels. Opportunities to find English speakers are higher in southern regions and among medical professionals. Spanish is more widely understood than English. Communication can be managed using online translators, image-based menu translation, and non-verbal cues for basic interactions.</li>
+    <li>The quality and availability of bread in Brazil are subjects of discussion among expatriates. While some find the bread to be of lower quality and short shelf-life, others highlight the availability of artisanal options, particularly sourdough bread, in certain areas like Florianopolis. Access to various flours, including rye and whole wheat, through local stores and online marketplaces (like Mercado Livre) allows for home baking of high-quality bread. Rye flour is available in some regions for approximately 20 BRL per kg.</li>
+    <li>During the southern hemisphere winter (June to August), Sao Paulo exhibits major temperature fluctuations. While daytime can reach up to 26°C, early mornings and nights are exceptionally cold. Travelers must pack warm layers (jackets/sweaters). Budget-conscious travelers caught unprepared can source cheap warm clothing at local second-hand stores to avoid paying 100+ BRL for basic sweaters in regular shopping malls.</li>
+    <li>The main online classifieds and peer-to-peer marketplaces in Brazil are OLX (general marketplace for all types of goods) and Enjoei (specialized in fashion, clothing, and lifestyle items).</li>
+    <li>Adapters and basic electronics in Rio de Janeiro can be found in street kiosks, local supermarkets (like Zona Sul), and markets. Shopping in large malls is generally more expensive for the same items.</li>
+    <li>To purchase professional camera lighting equipment in Florianópolis, Brazil, users are inquiring about large stores specializing in photo and video equipment for operators and bloggers. Specific store recommendations are needed.</li>
+    <li>A large Pão de Açúcar supermarket, comparable to Carrefour or Auchan, is located at Av. Conselheiro Nébias, 802 - Boqueirão, Santos. The name &#39;Pão de Açúcar&#39; (meaning &#39;Sugar Loaf&#39; or &#39;Sugar Bread&#39;) refers to the iconic Sugar Loaf Mountain in Rio de Janeiro, a famous landmark.</li>
+    <li>Purchasing a new iPhone in Brazil is significantly more expensive compared to Russia, often priced 1.5 to 2 times higher for the latest models.</li>
+    <li>Toyota vehicles are perceived as reliable but are significantly overpriced in the Brazilian market. The reputation for reliability may stem from older models, and current pricing does not seem to justify the perceived advantage compared to other brands.</li>
+    <li>Cars in Brazil generally experience less corrosion and last longer compared to Russia. While neglecting maintenance or constant exposure to coastal humidity can cause issues, vehicles in Brazil are typically more resistant to rust and degradation. This implies a longer service life for cars in Brazil than commonly observed in Russia.</li>
+    <li>Health food stores (&#39;Lojas de Produtos naturais&#39;) that offer bulk grains and spices are good places to find various specific or less common grocery items in Brazil.</li>
+    <li>&#39;Alo Bebe&#39; is a well-known chain of baby product stores in Brazil where travelers can purchase infant car seats and other baby-related travel gear.</li>
+    <li>Ready-to-eat meals are available in Carrefour supermarkets in Sao Paulo and Rio de Janeiro, as well as in other stores across Brazil. Prices vary, but daily discounts often make these meals significantly cheaper. It&#39;s a convenient and budget-friendly option for quick meals.</li>
+    <li>In Recife, &#39;Restaurante Popular Naíde Teodósio&#39; and &#39;Restaurante Popular Josué de Castro&#39; offer meals priced at 6.71 BRL per kilogram. Free meals are available upon registration with Centros POP or local prefecture social programs.</li>
+    <li>To cook delicious beans in Brazil, soak them overnight with half a lemon. In the morning, cook them in a pressure cooker or simmer for a long time. Key to flavor is a rich mix of spices, including onions, carrots, and possibly &#39;shushu&#39;. Salt should be added towards the end of cooking, as adding it early can make the beans tough. For a richer dish, meat or sausages can be added. &#39;Ervilha&#39; refers to peas, not beans.</li>
+    <li>Traditional Eastern European cottage cheese (tvorog) is generally unavailable in standard Brazilian supermarkets, with ricotta being the closest widespread alternative. However, in the southern region of Brazil (specifically Santa Catarina state, including Florianópolis and Blumenau) due to German heritage, a direct cottage cheese equivalent called &#39;queijinho&#39; is sold in local stores. Outside this region, expats must buy from local artisanal Russian/Ukrainian craft producers or make it at home. Standard cheese prices are high, with plain mozzarella costing around 40-50 BRL/kg.</li>
+    <li>To find Russian-speaking manicure specialists in Rio de Janeiro, Brazil, it is recommended to query local expat communities. Platforms such as Telegram groups (e.g., &#39;Русские в Рио&#39;), Facebook groups for Russians in Brazil, or specialized expat forums are effective resources for direct recommendations and contact information. Specific beauty salons catering to the Russian-speaking community might also be discoverable through these channels.</li>
+    <li>To find original yellow national team football jerseys in Rio de Janeiro, check official Nike stores or authorized sports apparel retailers like Centauro, which carry licensed merchandise. Avoid counterfeit items.</li>
+    <li>For short-term or long-term rentals in Brazil, if essential household items (e.g., cleaning supplies like mops, buckets, cloths) are missing, tenants usually buy small, inexpensive items themselves. If items are more substantial or specific (e.g., an electric kettle adapted to local voltage), it&#39;s common to ask the landlord. Landlords may provide such items or deduct their cost. However, if renting through platforms like QuintoAndar, direct communication with the landlord might be limited, making such requests less practical. Tenants often choose to purchase necessary items and take them when moving out, especially if they are not very cheap.</li>
+    <li>In Brazil, popular national dishes include:
+- Moqueca: A hearty stew made with fish or seafood, palm oil, and coconut milk.
+- Feijoada: A rich stew of black beans with various meats, considered a national dish.
+- Coxinhas: Fried dough dumplings shaped like chicken legs, filled with shredded chicken.
+- Pão de queijo: Small, baked cheese rolls made with cassava flour, popular nationwide.
+
+Brigadeiro is a famous Brazilian chocolate truffle, often served at parties.
+
+Jabuticaba is a peculiar fruit, often sold by street vendors, with a distinct taste that may not appeal to everyone. Its seasonality should also be considered.</li>
+    <li>In Brazil: Oatmeal is available but primarily used in desserts. Semolina (manka) can be found in baby food sections. Kefir (1%, liquid) is available and suitable for pancakes/fritters. Nata is a common substitute for sour cream.</li>
+    <li>A promotional message for an interactive offline travel map of Brazil for MAPS.ME. The card includes 115 points of interest (sights, dining, photo spots) and offers step-by-step navigation. The price is 599 Brazilian Reals.</li>
+    <li>Brazil uses both 110V and 220V power standards depending on the region and specific building infrastructure. Travelers with voltage-sensitive electronics (like Dyson hair tools or specific chargers) should verify voltage compatibility. 220V outlets are often marked with red labels to prevent damage to 110V-only devices.</li>
+    <li>Buying a car from an auction in Brazil is risky due to unknown history (accidents, mechanical issues) and limited pre-purchase inspection opportunities. Auction records can decrease resale value. It is recommended to purchase from trusted sellers or private owners.</li>
+    <li>In Brazil, acquiring items like &#39;replicas&#39; is common, with one user mentioning a purchase for 3,000 BRL. The goal of integration and assimilation into Brazilian life is a long-term dream for some, but it presents challenges due to the local economic situation. Many Brazilians face financial constraints, making assimilation more complex than initially perceived. Hospitality is offered, with a promise of accommodation for visitors.</li>
+    <li>In Brazil, specifically in Santa Luzia, various types of caviar (black, red, pollock, pike) are available. There is also a fish delicacy store offering delivery within the city. For specific store details, user may provide contacts upon request.</li>
+    <li>Inquire about the availability and common vendors of electronic cigarettes similar to IQOS in São Paulo, Brazil. Information regarding legal status and retail locations would be beneficial for travelers.</li>
+    <li>It may be possible to bring disassembled computer components (like graphics card, RAM, hard drives) to Brazil. Declare them if necessary, especially if carrying a significant amount of luggage. Customs scrutiny is typically higher for individuals with multiple bags. It might be easier to purchase a system unit locally if importing the entire PC is a concern.</li>
+    <li>Foreigners purchasing a car from dealerships in Brazil (e.g., Jeep, Kia) may face challenges. While sales staff might initially state a passport is sufficient, the RNM (Registro Nacional Migratório) is often required for vehicle registration; CPF alone may not be enough. Payment via PIX or Bybit is typically not accepted by dealerships, with Boleto being the standard payment method. It&#39;s common for initial information from Brazilian sales representatives to differ from the actual requirements during the transaction.</li>
+    <li>Importing and selling electronic cigarettes (e-cigarettes, vapes, e-liquids) is officially prohibited in Brazil. Despite this, many travelers successfully bring them into the country. Devices containing batteries should be carried in hand luggage, while e-liquids should be in checked luggage. New, packaged items may raise suspicion of commercial intent. Locally, e-cigarettes can be found for purchase online by searching &#39;comprar cigarros eletrônicos&#39; in Portuguese, with prices starting from approximately 115 BRL for a 10,000 puff device.</li>
+    <li>Offer an interactive map for MAPS.ME covering 115 points of interest in Brazil. The map includes offline functionality and turn-by-turn navigation. Available for purchase at 599 rubles.</li>
+    <li>Consumers in Brazil report significant concerns regarding the quality and durability of home appliances and auto parts. Many products, even from international brands, are noted to be of Chinese origin with inferior quality compared to similar items sold in markets like Russia. Examples include appliances with plastic components instead of metal, and items breaking shortly after purchase. Despite potentially adequate incomes, affording high-quality goods appears challenging for many residents.</li>
+    <li>Advise on where to purchase 50 kg of pure starch and a large quantity of hydrogen peroxide in Brazil. Identify local suppliers or retail options for these bulk items.</li>
+    <li>Dill (known locally as &#39;endro&#39; or &#39;dill&#39;) is highly uncommon in Brazil and frequently confused by locals with fennel (&#39;funcho&#39;). Fresh dill is rarely available in standard supermarkets. Expats seeking to grow it themselves should buy seeds from specialized gardening shops (such as in Campinas, SP at Av. Nossa Sra. de Fátima, 623) or bring seeds from abroad, as dill grows well in the Brazilian climate.</li>
+    <li>The main e-commerce platforms in Brazil are MercadoLibre (the closest equivalent to fast-delivery marketplaces, often with next-day free delivery), Amazon Brasil, and Shopee (average delivery is 7 days, offers free shipping coupons, but does not support clothing try-on or easy returns). International orders (AliExpress, Shein, Temu) are subject to customs clearance and potential import taxes.</li>
+    <li>Russian-language schools are generally unavailable in Brazil, except for one at the Embassy in the capital. Foreign children integrate well into local Portuguese schools, quickly learning the language due to friendly environment. For initial relocation, Florianópolis (Floripa) is often recommended for its safety, beauty, proximity to the ocean, and existing Russian community. Potential downsides include a relatively &#39;cold winter&#39; by Brazilian standards (starting late June).</li>
+    <li>To access promotional prices or discounts on certain items in Brazilian supermarkets, customers must provide a CPF (Cadastro de Pessoas Físicas) at the checkout. Without a CPF, items are sold at their full, non-promotional price.</li>
+    <li>Availability of traditional fish products in Brazil: Cured herring (selyodka) is generally unavailable or extremely expensive. Salmon is widely available as fresh fillets at reasonable prices, making it a better option for home-curing.</li>
+    <li>To purchase a car from a dealership in Brazil, you typically need a residence permit (VNM) and a rental agreement. Specific requirements may vary by dealership.</li>
+    <li>If your Mercado Libre account is blocked after payment and requires local documents for verification, and you cannot provide them, your order may be lost. Contact Mercado Libre support for potential solutions or to understand the process for retrieving your order or funds.</li>
+    <li>While international brands like Sephora are available in Brazil, they are generally expensive. More affordable cosmetic options exist, primarily selling Chinese and local Brazilian brands, though their stores might not be widely advertised.</li>
+    <li>Comparison between Qatar Airways and Ethiopian Airlines for travel to Brazil. User is concerned about the long travel time with Qatar Airways and the potential discomfort (cold at Addis Ababa airport at night) with Ethiopian Airlines. Seeking personal experiences, especially regarding flight duration, comfort, and food quality on Ethiopian Airlines, with a specific comparison to Emirates mentioned.</li>
+    <li>A memorable culinary experience in Latin America involved an exceptionally delicious tomato soup, described as the best the user has ever tasted. This particular soup was enjoyed multiple times in the Dominican Republic. The user has not found a comparable tomato soup elsewhere since that experience, highlighting it as a unique and satisfying dish.</li>
+    <li>When relocating to Brazil, prioritize quality items, specifically shoes and durable outerwear, as local equivalents can be expensive or low-quality. Vacuum bags reduce volume but not weight. Be cautious of humidity; clothes stored long-term in coastal areas like Floripa are prone to mold.</li>
+    <li>A promotional message offering a digital travel card for MAPS.ME featuring 115 points of interest in Brazil. The card includes offline navigation and is available for purchase for 599 Brazilian Reais. The purpose is to guide users to attractions, dining, and photo opportunities.</li>
+    <li>For cost of living estimates in Brazil, users can refer to online supermarket prices (e.g., Zonasul website) for groceries and use OLX for housing rental benchmarks. 100,000 RUB (approximately 5,500-6,000 BRL) is generally considered a survivable base budget for a single person renting a room, excluding luxury amenities.</li>
+    <li>The cost of an Uber from downtown Sao Paulo to Guaruja is dynamic. Prices typically range from 95 to 350 BRL depending on demand and availability. Users should check the app frequently to secure a lower rate.</li>
+    <li>A travel map for Brazil is available for MAPS.ME, featuring 115 points of interest for sightseeing, dining, and photography. The map includes offline functionality and turn-by-turn navigation. The cost is 599 Brazilian Reais. This interactive map can be downloaded for offline use.</li>
+    <li>CPF is the Brazilian individual taxpayer registry identification number, required for many purchases (including Google Play Store). It can be officially obtained via the Receita Federal website (gov.br) or by emailing them. For non-binding, minor online registrations, some users bypass the system using temporary CPF generators found online, though official operations require a valid, legally registered CPF.</li>
+    <li>Identify legal resources or agencies in Brazil that specialize in family law and can assist with drafting pre-nuptial agreements for international couples.</li>
+    <li>To start selling on Mercado Livre in Brazil, the user needs to register an account as a &#39;vendedor&#39;. The process involves completing a profile/questionnaire, listing the product, adding a product card, and setting the price.</li>
+    <li>In São Paulo, Brazil, the standard electrical outlets are Type N. These have three round pins. Voltage is typically 127V/220V. To power devices like laptops, you will need a compatible adapter. Adapters can be purchased in electronics stores or large shopping malls in the city.</li>
+    <li>When importing electronics such as a PC system unit into Brazil by air, be aware of potentially high customs duties, which some sources report as high as 60% of the item&#39;s value. The duty calculation may vary depending on whether the item is new or used. It is essential to research current Brazilian customs regulations for personal electronics and declare items accurately to avoid issues.</li>
+    <li>For travelers in Brazil, a new MAPS.ME travel card is available for purchase at 599 BRL. This offline map includes 115 points of interest, offering step-by-step navigation and recommendations for sightseeing, dining, and photo opportunities. It is designed to help tourists explore Brazil efficiently and avoid getting lost.</li>
+    <li>Recommend local Brazilian skincare brands suitable for oily and acne-prone skin. Highlight specific brands or products, drawing comparisons to international brands if applicable (e.g., Principia as a local equivalent to The Ordinary).</li>
+    <li>Due to high import duties, electronics and gadgets are exceptionally expensive in Brazil. Advise clients relocating to the country to purchase or upgrade their smartphones, laptops, and other personal electronics before their arrival.</li>
+    <li>On Saturdays, large flea markets operate in Guarulhos (from 10:00 to 14:00) and near the Brás bridge in São Paulo (from 14:00 to 18:00). Items like clothing and footwear (e.g., leather sneakers for ~10 BRL, jeans for 10-20 BRL) are sold directly from the ground. Bargaining is standard and expected by vendors outside of supermarkets.</li>
+    <li>Provide an estimated cost of living for two people in Florianópolis, Brazil. Include average figures for rent and food expenses, acknowledging that individual spending habits will influence the total cost.</li>
+    <li>For high-quality coffee beans in São Paulo, local enthusiasts recommend &#39;Moka Clube&#39; in the Pinheiros district. While supermarkets offer decent quality compared to mass-market options, specialty shops in districts like Pinheiros are preferred for gift-quality beans.</li>
+    <li>Specific groceries like pearl barley, buckwheat, natural kefir, and semolina can be found at &#39;Armazém Vital&#39; stores, which focus on natural products in Brazil.</li>
+    <li>To buy or sell used goods in Brazil, the primary platforms are Facebook Marketplace and OLX (olx.com.br). For more localized options, searching for city-specific Telegram or WhatsApp groups is recommended.</li>
+    <li>Black tea (chá preto) is highly uncommon in Brazilian hotels, which mostly offer herbal teas. To purchase black tea, look for the &#39;Leão&#39; brand in major supermarkets like Carrefour. High-quality loose-leaf black tea can be found in the &#39;Bistek&#39; supermarket chain, Asian stores in the Liberdade district of Sao Paulo, or ordered online. Travelers preferring black tea are advised to bring their own supply and a travel kettle.</li>
+    <li>The CPF (Cadastro de Pessoas Físicas) is a Brazilian tax identification number. It is not mandatory for tourists for simple retail transactions (like groceries or fast food). While some online platforms require it, providing a fake/random number carries a high risk of transaction failure or blocked orders. Tourists can travel, use Uber, and buy items without a CPF using cash or international credit cards.</li>
+    <li>User reports poor reliability of used cars in Brazil, noting instances of water being used instead of antifreeze and frequent engine repairs on vehicles with less than 200,000 km. This contrasts with European or Russian markets where similar engines can last 400,000-500,000 km with minimal maintenance.</li>
+    <li>For New Year&#39;s celebrations in Rio de Janeiro: Supermarkets are open until evening on December 31st. Many establishments close on January 1st, but most operations resume by January 2nd. Roads around Copacabana and Arpoador are partially closed on December 31st for the event. Finding a taxi from Copacabana at 2 AM on January 1st is possible by walking to main roads (e.g., in Botafogo direction), but expect difficulties and traffic congestion approaching midnight on Dec 31st.</li>
+    <li>Brazilian electrical outlets vary in type and voltage (110V/220V) even within the same city or different accommodations. Outlets can be standard (compatible with many international phone chargers) or narrow Type N, which may not fit larger plugs like those for laptops or travel irons. Adapters are widely available in kiosks and small shops. However, sellers may not understand the term &#39;adapter,&#39; requiring visual identification. 3-pin to 2-pin adapters are sold but pose safety risks.</li>
+    <li>Help find stores selling sports gymnastics swimwear for children in Rio de Janeiro or São Paulo, Brazil. Focus on identifying retailers that offer performance as well as decorative (e.g., with rhinestones) competition leotards. Suggest checking athletic stores like Decathlon and inquire about specialized children&#39;s sports apparel shops or dancewear stores.</li>
+    <li>For short-term tourists in Brazil (e.g., a couple of weeks), the necessity of obtaining a CPF (Cadastro de Pessoas Físicas - individual taxpayer registry) is debated. Some recommend it for general convenience and online transactions. Others, based on personal experience, state it is not necessary unless one plans to use local delivery services, online stores, or obtain a local SIM card. CPF can be obtained online, though obtaining it in Moscow beforehand might be difficult, but possible through embassies in other countries.</li>
+    <li>To find a personal shopper or forwarder in Brazil for sending goods to Russia, users should be advised to contact the chat administrator for trusted recommendations. Emphasize caution against potential scams.</li>
+    <li>Electronic cigarettes (e.g., HQD type) are generally prohibited in Brazil. While theoretically subject to confiscation at the border, this is not commonly enforced. They can sometimes be purchased illicitly from street vendors, particularly on bar streets in cities like São Paulo on Friday evenings.</li>
+    <li>A new travel card for MAPS.ME is available for Brazil, featuring 115 marked locations for attractions, dining, and photo opportunities. The card works offline and includes turn-by-turn navigation. The price is 599 Brazilian Reais.</li>
+    <li>Federal Police procedure for naturalization (filho brasileiro): Home visits are strictly to verify residence address, not for language testing. Portuguese proficiency is formally assessed during the in-person appointment at the police station when submitting original documents.</li>
+    <li>The CPF (Cadastro de Pessoas Físicas) is a fundamental tax identification number in Brazil, essential for most official services, banking, purchasing tickets, booking accommodation, and even some retail discounts. Using a CPF that is not your own or a fake CPF is highly risky for serious transactions and official procedures. CPF can be obtained at Brazilian consulates abroad (e.g., in Moscow) by presenting a passport and the application form; the process can be quick (e.g., 15 minutes). The CPF is required for services such as the public health system (SUS).</li>
+    <li>The Brazilian National Registry of Foreigners card (VNJ) is not solely an internal document. It can be used for registration on various international websites and services. However, its utility for Schengen visa applications is generally limited, as specific visa requirements usually apply regardless of Brazilian residency status.</li>
+    <li>When buying popular coffee brands in Brazilian supermarkets for personal use or as a souvenir, options include Café Pilão, Café do Ponto, Brazil Santos Coffee (noted for being a milder, washed style), and Café Melitta (notable for its very strong and dark roast profile).</li>
+    <li>The primary food delivery application in Brazil (including São Paulo) is iFood. Note that most delivery services typically require a local phone number for registration and order tracking.</li>
+    <li>For duty-free shopping during travel through Brazil and transit airports, travelers can find good options. In Lima&#39;s new airport, duty-free offers reasonable prices for items like Ray-Ban sunglasses and perfumes. In Rio de Janeiro, selection might be smaller, but stores like &#39;Brasilidades&#39; offer good souvenirs. Travelers should compare prices across different airports, including Moscow, Addis Ababa, São Paulo, Foz do Iguaçu, Rio de Janeiro, and Lima, to find the best deals on perfumes and other goods.</li>
+    <li>Travellers in Brazil may face language barriers in public transport and airports. Ticket machines and check-in systems for airlines like Latam and GOL often lack English (or other foreign language) options. While some specific tourist areas might have multilingual menus (e.g., Russian in Copacabana), this is not standard. Salvador is noted as a destination where English support is particularly scarce due to low tourist numbers. Latam is perceived as more helpful with services like baggage tag printing, while GOL is compared to a budget airline like Russia&#39;s Pobeda, offering lower comfort for lower prices.</li>
+    <li>Cars sold at auctions in Brazil are frequently damaged. A daily observation of auction car lots reveals dozens of vehicles with varying degrees of collision damage, making intact vehicles rare. Purchasing these cars is considered high-risk.</li>
+    <li>For purchasing quality Brazilian jeans in Rio de Janeiro, good clothing stores can be found on the streets parallel and perpendicular to Ipanema beach. This area is recommended for fashion shopping.</li>
+    <li>Tourists in Brazil can generally manage without a CPF (Cadastro de Pessoas Físicas) number. While it might be requested in some specific situations, such as certain automated ordering systems in cafes, it is often not strictly required for general transactions like shopping. Alternative establishments or simple non-verbal communication can often resolve any issues. For ride-sharing apps like Uber, CPF is typically not needed, and for others like 99, it might be required but can sometimes be bypassed or generated.</li>
+    <li>In Rio de Janeiro, it is possible to find shawarma (or &#39;shaverma&#39;). Several places are mentioned in the Copacabana and Ipanema areas. A Turkish restaurant named &#39;Stambul&#39; on Arpoador is also suggested as a place that may offer similar food.</li>
+    <li>Recommended budget supermarket chains in Brazil include Assaí Atacadista, Shibata, and Carrefour. Shopping at wholesale (atacadão) stores is significantly cheaper than retail markets. For transport with heavy luggage from airports or bus terminals, Uber/99 is generally more cost-effective than dedicated airport taxi services.</li>
+    <li>Fresh oysters are sold at the fish market on the far right end of Copacabana beach, near the museum entrance. Price point: approximately 7 BRL per oyster, shucking is usually included upon request.</li>
+    <li>When packing for Brazil, avoid heavy winter clothing like down jackets and boots, as they are unnecessary. Socks are readily available locally, unlike in Paraguay where they might be harder to find. Consider packing essentials like buckwheat only if strictly needed. Winter gear is generally not required unless traveling to extremely cold destinations like Antarctica via connecting flights through Sao Paulo. Items can often be purchased upon arrival if needed.</li>
+    <li>Expat comfort foods like Kefir can be purchased ready-made in major Brazilian supermarket chains such as &#34;Zona Sul&#34; and &#34;Pão de Açúcar&#34; for approximately 10 BRL per 500ml. German-style dark rye bread (&#34;Pão de alemão&#34;) is the closest local equivalent to Eastern European rye bread.</li>
+    <li>Brazil uses Type N outlets. While thin European plugs fit, thicker Schuko plugs require an adapter. Crucially, mains voltage is not standardized across Brazil: some states use 110V-127V (e.g., parts of São Paulo and Rio de Janeiro), while others use 220V (e.g., Brasília, Recife). Travelers must check local voltage before plugging in high-draw devices.</li>
+    <li>A used Philips HD6360 electric grill is available for sale. It is suitable for home use, preparing meat, fish, and vegetables. Key features include 2000W power for quick heating, removable non-stick surfaces for easy cleaning, and a grease tray. It allows for grilling with minimal oil. The price is 60 (currency not specified, likely local).</li>
+    <li>Users inquire about locations to purchase high-quality Brazilian jeans in Rio de Janeiro, indicating interest in local fashion and shopping for specific apparel.</li>
+    <li>Tropical weather forecasts often show daily rain, which is frequently misleading for travelers. Local patterns often involve short, intense showers rather than day-long storms. Always check historical climate data and real-time traveler reports rather than relying solely on automated mobile weather applications.</li>
+    <li>Investigate the availability of McDonald&#39;s Happy Meal toys, specifically car-themed ones, in Brazil. Confirm if they are currently sold, when sales are expected to start (mentioning a potential date or &#39;any day now&#39;), and the quantity available (e.g., 92,000 units for Brazil). Note that they might be sold with a special burger for an additional cost (e.g., 64 BRL). Confirm absence in certain locations like Santos.</li>
+    <li>In Brazil, when asked for a CPF (Cadastro de Pessoas Físicas) for non-essential services like public Wi-Fi or sometimes for purchases, it is possible to use a CPF generator. Websites exist that can provide valid CPF numbers with correct check digits. This can be useful for accessing services that require a CPF but do not involve critical transactions or personal identification.</li>
+    <li>Neutrogena offers exclusive skincare product lines specifically for the Latin American market. These products might be available in Brazil and other countries in the region.</li>
+    <li>Organizations like UNHCR Brazil, Caritas Brazil, and Missão Paz São Paulo offer humanitarian services including free legal aid, temporary housing, and food to those in need.</li>
+    <li>Electronics are significantly expensive in Brazil. It is advisable for individuals planning to move to Brazil to purchase necessary electronics before their arrival to save on costs.</li>
+    <li>In Brazil, buckwheat (гречка) and dill (укроп) are available in supermarkets. Semolina (манка) can be found under the name &#39;semolina&#39;. Alternatives for semolina in baking include fine oatmeal, various types of corn flour, or starch. Sweetened rice cereal can serve as a substitute for children&#39;s porridge.</li>
+    <li>To purchase clothing from local Brazilian designers in Rio de Janeiro, skip mainstream shopping malls and visit traditional street markets known as &#39;feiras&#39; (such as Feira da Glória, which takes place on Sundays). Additionally, explore local vintage and second-hand stores known as &#39;brechó&#39; for unique local fashion pieces.</li>
+    <li>Download the interactive Brazil travel map for MAPS.ME, featuring 115 points of interest including sights, dining, and photo opportunities. The map offers offline functionality and turn-by-turn navigation for 599 BRL.</li>
+    <li>Pearl barley and buckwheat are difficult to find in regular supermarkets in Brazil (e.g., Assai, and 5 other stores in a place called &#39;Brooklyn&#39;). Online ordering might be the only option.</li>
+    <li>Purchasing food and drinks from beach vendors in Brazil presents mixed opinions regarding hygiene and safety. Some warn of potential unsanitary conditions (e.g., cocktails mixed with dirty hands, unverified ingredients) and credit card skimming risks. Others argue that many items are prepared fresh on the spot (e.g., grilled cheese, cocktails, fried meat) and payment via PIX or Apple Pay can mitigate card fraud. It&#39;s advisable to observe preparation, check amounts before payment, and consider paying with digital methods or small cash to minimize risks. Using cards with daily limits and easy dispute resolution (like Wise/Revolut) is recommended.</li>
+    <li>Inquire about the possibility and methods of purchasing tickets for the Rio de Janeiro Carnival in February 2026 remotely from outside Brazil. Information on official vendors and purchase procedures is needed.</li>
+    <li>When setting up an import business (e.g., from China for agricultural equipment) in Brazil, seek legal and accounting support from local firms. For import operations, consider firms located near major ports like Santos. Active sales strategies such as cold calling and equipment demonstrations are common in Brazil, similar to other markets, but require communication in Portuguese.</li>
+    <li>Purchasing household appliances like microwaves in Brazil can be more expensive than in Russia, even for Chinese brands like Midea or Haier. While washing machines might have comparable prices, refrigerators tend to be pricier in Brazil. The overall market in Brazil offers a less diverse range of brands compared to Russia, and the higher cost is a significant factor. Consumers should be aware that while China is the primary manufacturer globally, local retail prices and availability differ considerably between countries.</li>
+    <li>Lavash (thin flatbread, also known as &#39;pão folha lavash&#39;) is available in São Paulo, Brazil. It can be found in supermarkets and online stores.</li>
+    <li>For buying or selling used vehicles in Brazil, the two most popular and widely trusted online platforms are Webmotors (specialized car marketplace) and OLX (general classifieds platform).</li>
+    <li>Used cars in Brazil often exhibit poor maintenance, with instances of water used in place of antifreeze and premature engine failures reported even on premium models. Engines that typically last 400,000-500,000 km in other regions require major repairs before 200,000 km in Brazil.</li>
+    <li>To purchase high-quality Brazilian coffee as a souvenir, avoid standard supermarkets. Instead, seek out specialty coffee shops that roast their own beans. These can be found in cities like São Paulo (e.g., in the Pinheiros neighborhood) and Rio de Janeiro. Another option is to explore coffee shops like THE COFFEE, which offer a variety of whole bean coffee options.</li>
+    <li>A new interactive travel map for MAPS.ME covering Brazil is available for 599 rubles. It includes 115 marked locations for sightseeing, dining, and photography, with offline functionality and turn-by-turn navigation.</li>
+    <li>Amazon is a reliable platform for online purchases, with a user reporting over 15-20 years of positive experiences. Customer service is effective, with the ability to reach a manager for issue resolution. This has resulted in additional reimbursements or gift cards on several occasions, reinforcing user trust in the platform&#39;s processes.</li>
+    <li>CPF (Cadastro de Pussoa Fssica) is an essential document in Brazil, enabling users to obtain SIM cards, use taxi services, and receive discounts at supermarkets.</li>
+  </ul>
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/br/documents-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documents &amp; Visa</span></a>
+    <a class="chip" href="/en/br/tickets-entertainment/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🎟 Tickets &amp; Entertainment</span></a>
+    <a class="chip" href="/en/br/transport/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transport</span></a>
+    <a class="chip" href="/en/br/banking-money/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Banking &amp; Money</span></a>
+    <a class="chip" href="/en/br/safety/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛡 Safety</span></a>
+    <a class="chip" href="/en/br/housing/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🏠 Housing</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Everywhere the same, but your case is special?</h2>
+    <p>Ask Luky — answers for your case, from recent reports, not generic articles.</p>
+    <p>And Luky is a live voice translator for real conversations: haggle at the market like a local.</p>
+    <p class="ps">PS: meet someone at a bar who speaks another language</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/br/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

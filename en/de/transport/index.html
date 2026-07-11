@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Germany: Transport — real experience · Luky</title>
+<meta name="description" content="Real experience from chats about Transport in Germany: as it is, first-hand. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/de/transport/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/de/transport/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/de/transport/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/de/transport/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/de/transport/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/de/">Germany</a> /
+    <b>Transport</b>
+  </nav>
+
+
+  
+  <h1>Transport in Germany: what actually matters to know</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of people from chats on «Transport» in Germany — as it is, no fluff. For your case — <strong>ask Luky</strong>.</div></div>
+
+  <h2>From real experience</h2>
+  <ul class="qlist">
+    <li>For a minor (16 years old) traveling alone from Russia to Germany (e.g., via Kazakhstan), a notarized consent for independent travel from one parent is sufficient. The consent must list all countries the child plans to visit. There are no specific rules restricting minors from taking night flights.</li>
+    <li>Entry into Germany with a non-EU visa and a European residence permit (issued after January 1st) requires careful attention to passport type and visa validity. National visa D, particularly for study or work, might allow travel within the EU, but official confirmation and specific country regulations should be checked. Biometric passports are strictly enforced for visas issued after January 1st, 2026.</li>
+    <li>When departing from Berlin airports with children of school age (e.g., 9 and 15 years old), authorities may inquire about their school attendance. It is advisable to carry documentation, such as a school-issued certificate, to explain the absence (e.g., school holidays, planned trip, or other valid reasons). Presenting such a document can facilitate a smooth departure process.</li>
+    <li>Friends are planning a one-week road trip to Kaliningrad from Germany. Inquire about potential issues with electronic visas at the border and other necessary preparations besides currency.</li>
+    <li>Expert services are available for pet relocation to/from Germany. Services include full documentation guidance, flight booking, vaccination recommendations, online support until arrival, and courier delivery (air and ground). Contact details for inquiries can be found in the chat&#39;s pinned messages.</li>
+    <li>When traveling to Russia with a child holding German citizenship and a parent with dual citizenship (e.g., Russian-German), a notarized consent form from the other parent may be required. An alternative is the ADAC Reisevollmacht, a standard European document that is often accepted instead of notarization.</li>
+    <li>Travel to Belarus by car can involve significant waiting times at border crossings. While some crossings have electronic queues, others experience long delays. A 6-hour wait was reported at the Kaliningrad border with 15 cars ahead. Air travel is generally considered the most convenient option, especially for short trips.</li>
+    <li>When booking flights with short layovers, especially with children, verify the connection times after any schedule changes. A 45-minute layover in Antalya, even on a single ticket with Pegasus, can be extremely difficult, particularly when dealing with luggage retrieval (like strollers) and young children. If the next available flight is significantly later, and onward travel (like a train) is booked, this can lead to major disruptions. Contacting the airline for rebooking options or accommodation is crucial, though responses can be slow.</li>
+    <li>A Schengen visa issued by Germany, even if intended for entry into Germany, can typically be used for travel to other Schengen Area countries like Croatia. Ensure you have return tickets and spend more days in Germany than in other Schengen countries if the visa is single-entry or if there are specific conditions. The type of visa (single or multiple entry) is a key factor.</li>
+    <li>A German citizen is entering Russia by car on a visa. Question about the language required for the customs declaration form for importing the vehicle. Advice given is to fill it out in the language of the foreign passport, with the registration address in Russian. Sample forms are often available at border crossings.</li>
+    <li>A valid Schengen visa permits travel between Schengen member states. Therefore, traveling from Germany to Spain and returning by air with an active Schengen visa is generally permissible without additional visa requirements for the transit.</li>
+    <li>During peak travel seasons, such as school holidays, bus travel to Kaliningrad might be a faster alternative to other modes of transport due to potentially shorter queues. Research various bus carriers operating the route to find the most suitable option. Be aware that dedicated bus queues exist.</li>
+    <li>To find car scrapyards (Autoverwertung or Schrottplatz) in Germany, use search engines with terms like &#39;Autoverwertung [city name]&#39; or &#39;Schrottplatz [city name]&#39;. There are also online platforms and directories listing such businesses.</li>
+    <li>When entering Russia by car with foreign (e.g., German) license plates, individuals with Russian residency (internal passport/registration) are required to pay a customs deposit (tax) to temporarily import the vehicle. The customs authorities may request an internal Russian passport to verify residency status. Failure to disclose residency can lead to legal issues. Consult the Federal Customs Service (FTS) of Russia for current regulations and deposit calculation.</li>
+    <li>Holders of German residence permits (Bürgergeld) generally experience smooth border crossings within the Schengen area via Germany. Routine checks involve scanning the permit and passport. However, occasional questions may arise concerning the purpose of travel, expiry and renewal of the permit, or parental consent for minors traveling alone. It is advisable to carry all relevant documents, including any required permissions for children, when crossing borders.</li>
+    <li>Hamburg is generally safe for short walks, even with a layover. Luggage storage facilities are available at the main train station (Hauptbahnhof) and bus station (ZOB). It is advisable to be mindful of your surroundings, especially in crowded areas late at night.</li>
+    <li>For travel from Germany to Moscow, consider crossing via the Polish border if queues are manageable. A common route is via Warsaw, Bialystok, Brest, Minsk, and then to Moscow. Verify current border crossing conditions and potential wait times.</li>
+    <li>A 5-year Russian international passport might be considered valid for travel within the EU/Schengen area if accompanied by a valid German or EU residence permit (e.g., according to German residency law and EU mobility law). However, border controls (especially for buses) and police checks on autobahns are frequent. Airlines may also check. Using a 5-year passport without a current 10-year passport, even with a valid residence permit, can lead to issues, including fines, if authorities deem it invalid for current travel regulations. Passengers must ensure their travel document is compliant with the latest regulations, especially if they aim to use their residence permit for identification.</li>
+    <li>Travel options from Germany to St. Petersburg include: 1. Ecolines bus services from Berlin, costing approximately 170 EUR and taking about 30 hours. 2. Flights with a layover in Istanbul.</li>
+    <li>Inquire about entry restrictions for a German citizen flying from Russia to Minsk, Belarus, and then driving to Germany. Specifically, confirm if there are any issues with a car registered in Germany and check border crossing status between Belarus and Poland/Lithuania for non-EU vehicles. Consult airlines or airport authorities for reliable information regarding flight entry.</li>
+    <li>Purchasing a car in Germany is possible, but registering it and obtaining German license plates requires a valid German address (Anmeldung). Without registration, a German citizen living abroad cannot legally operate a vehicle with German plates. Cash payments for cars from dealerships are generally limited to €10,000; private sellers might accept more but face challenges with depositing large sums. Attempting to register a car using a temporary address and then de-registering can lead to issues with fines, taxes, and mandatory vehicle inspections (TÜV every two years). Circumventing official sale prices in purchase contracts with private sellers is illegal and risky.</li>
+    <li>German citizens, especially late repatriates or digital nomads, must be aware of health insurance and tax residency rules. Compulsory health insurance is mandatory for residents. Private health insurance costs range from €350-€800/month for a 40-year-old and requires an annual gross income of approximately €74,000 to qualify. Switching from private to public insurance is difficult after age 50-57. ADAC offers medical insurance.
+Residency is typically established by spending over 180 days per year in Germany, which mandates registration (Anmeldung), GEZ payments (broadcasting fee), and tax obligations. Failure to comply can lead to significant penalties from the Finanzamt. Registration is also required for purchasing and registering a car in Germany to obtain German license plates. Cash payments for cars from dealerships are usually limited to €10,000; private sales might be more flexible but pose risks. &#39;Incoming-Versicherung&#39; (temporary insurance) for €80-€100/month is an option for temporary stays (up to 5 years) but not for German citizens or for extending residence permits.</li>
+    <li>The Deutschlandticket is a monthly subscription, valid for the calendar month of purchase. If bought on May 28th, it expires on May 31st unless a subscription is maintained. To avoid auto-renewal for June, cancel by the 10th of June. For short-term travel (3-5 days), consider weekend tickets or regional &#39;Landestickets&#39; (e.g., Ticket BW) valid within a specific German state. Specific recommendations depend on the travel destination within Germany.</li>
+    <li>Clarify the process and potential issues of paying for the DE Ticket using a foreign bank card. Determine if such payments are automatically reported to SCHUFA (credit bureau) and investigate successful payment methods, referencing successful transactions on platforms like Immobilienscout24.</li>
+    <li>For excursions in Germany, especially with a group, renting a car offers greater flexibility than trains, particularly for visiting remote attractions like Neuschwanstein Castle or Königssee. Car rentals can be booked through aggregators (e.g., Booking.com, Expedia) or directly from rental companies. While aggregators may offer lower prices, it&#39;s crucial to carefully review the terms and conditions. Opt for comprehensive insurance, either through the aggregator or directly with the rental company at the counter. Be aware of potential additional fees and ensure you have proper documentation (invoice) for all payments.</li>
+    <li>Dual citizens (RU/DE) traveling between Germany and Russia via Poland should present their German Personalausweis to EU border officials and their Russian international passport (zagranpasport) to Russian border officials. There are no systemic issues with non-biometric passports when paired with valid EU identification.</li>
+    <li>Registration for driving license conversion does not extend the validity of a foreign (Russian) license. The practical driving test must be passed before the expiration date of the current license. Theory training can be done via mobile apps in Russian, but the practical exam/instructions are in German.</li>
+    <li>A Fiktionsbescheinigung issued under §81 Abs. 4 AufenthG (German Residence Act) permits its holder to travel within the Schengen area while awaiting the final issuance of their residence permit, provided the previous permit or visa was still valid at the time of application for the new permit. This status allows entry and exit from Schengen countries (e.g., Lithuania, Poland) to third countries (e.g., Belarus) and re-entry into Schengen. It&#39;s crucial that the specific paragraph §81 Abs. 4 is marked on the Fiktionsbescheinigung.</li>
+    <li>Travelers using land transport from Germany to Minsk should expect strict baggage checks at the border. There is a high likelihood of items deemed prohibited being confiscated. This applies generally to all items, including potentially restricted goods like vape liquids.</li>
+    <li>Shipping a bicycle from Germany to Poland can be challenging. Domestic shipping within Germany is more straightforward. Train services are a possible option.</li>
+    <li>Buses still operate from Germany to Kaliningrad. However, the travel time can be extensive, exceeding 24 hours, making flights, potentially via transit countries like Istanbul, a more practical option for many travelers, especially those with limited finances and time constraints. This route is viable for individuals with residency permits.</li>
+    <li>For the Deutschlandticket in Germany, identity verification is required. While a Personalausweis (ID card) is standard, a Reisepass (passport) might also be accepted for identification. Automatic monthly payments via a German bank account are typical for the Deutschlandticket. If you are a new resident without a German ID, consult the provider for alternative identification methods, which may include your foreign passport or other valid documents.</li>
+    <li>When traveling from Germany to Kaliningrad via Poland using Fiktion §81 (4), challenges may arise with re-entry into Germany rather than the departure itself. Alternative return routes such as via Turkey or Armenia are suggested. Be prepared for potential heightened scrutiny at the Russian border, especially for non-EU/non-Ukrainian citizens, which may include detailed questioning and document checks.</li>
+    <li>German Federal Police (Bundespolizei) actively conducts random spot checks (Schleierfahndung) on passengers arriving from Strasbourg (France) to Kehl (Germany) via the cross-border tram line. Checks are most common at the first stop, Kehl Bahnhof. Travelers must carry valid ID/passport and a Schengen visa or residence permit (Aufenthaltstitel) even within the Schengen area.</li>
+    <li>Deutschlandticket (D-Ticket) is a subscription model. Cancellations must be submitted by the 10th of the current month to be effective at the end of that month. Late cancellations will result in charges for the following month.</li>
+    <li>Travel within the Schengen Area using a valid residence permit (eufat) and a valid Russian passport (including 5-year non-biometric) is generally possible without border control. However, random checks occur. Official guidance suggests that while EU-issued residence permits are accepted for entry, applicants should carry all valid travel documents to mitigate risks during random police or border authority checks.</li>
+    <li>In Germany, parking payment methods vary: use coins, city-specific apps, or EasyPark (common outside large cities). For many parking spots, especially at supermarkets and some street parking, a blue parking disc (Parkscheibe) is mandatory; absence incurs a fine of 30-40 EUR. Driving on Autobahns is free; in designated zones, there are no speed limits. Important rules: do not drive slowly in the left lane, and overtaking on the right is prohibited.</li>
+    <li>To find current schedules and purchase bus tickets for the Kaliningrad to Gdansk route, consult the official website of the Kaliningrad Bus Station (Avtovokzal).</li>
+    <li>For travel to Germany with a car, in addition to currency and insurance, prepare car insurance (OSAGO), a temporary import declaration to save time at the border, and proof of accommodation. Insurance can be obtained at a gas station after crossing the border at Grzechotki-Mamonovo.</li>
+    <li>Specialized pet relocation services for travel to and from Germany. Services include: providing a comprehensive guide to required documentation, selecting and booking flights, recommending vaccinations, offering online support throughout the process, and arranging courier delivery (air or ground). The expert is available for private consultations to discuss individual relocation needs.</li>
+    <li>Renting a car with a debit Revolut card might be problematic. Several rental agencies, including Keddy (via Discovercars) and Europcar, often require a credit card for rentals. Some may allow debit cards but could impose additional charges or require a larger deposit.</li>
+    <li>Renting a car in Germany with a Revolut card is often possible. Users report successful rentals with companies like Sixt and Hertz. A deposit may be held on the card and typically returned within a week after the vehicle is returned. Ensure sufficient funds are available on the Revolut card to cover the deposit.</li>
+  </ul>
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/de/documents-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documents &amp; Visa</span></a>
+    <a class="chip" href="/en/de/work-taxes/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💼 Work &amp; Taxes</span></a>
+    <a class="chip" href="/en/de/banking-money/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Banking &amp; Money</span></a>
+    <a class="chip" href="/en/de/shopping/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛒 Shopping</span></a>
+    <a class="chip" href="/en/de/mail-shipping/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Mail &amp; Shipping</span></a>
+    <a class="chip" href="/en/de/housing/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🏠 Housing</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Search answers everyone — but you?</h2>
+    <p>Ask Luky — tells you what works right now — from recent reports.</p>
+    <p>And Luky is a live voice translator for real conversations: figure out at the store what you&#39;re even buying.</p>
+    <p class="ps">PS: flirt on a date in a foreign language? No problem 😏</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/de/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

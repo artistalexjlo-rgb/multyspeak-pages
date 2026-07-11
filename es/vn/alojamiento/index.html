@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vietnam: Alojamiento — experiencia real · Luky</title>
+<meta name="description" content="Experiencia real de los chats sobre Alojamiento en Vietnam: tal cual, de primera mano. Para tu caso — pregúntale a Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/es/vn/alojamiento/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/vn/alojamiento/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/vn/alojamiento/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/vn/alojamiento/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/vn/alojamiento/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · cualquier país · sin relleno</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noche</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/es/">Inicio</a> /
+    <a href="/es/vn/">Vietnam</a> /
+    <b>Alojamiento</b>
+  </nav>
+
+
+  
+  <h1>Alojamiento en Vietnam: lo que de verdad importa saber</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiencia real de gente de los chats sobre «Alojamiento» en Vietnam — tal cual, sin relleno. Para tu caso — <strong>pregúntale a Luky</strong>.</div></div>
+
+  <h2>De la experiencia real</h2>
+  <ul class="qlist">
+    <li>Vietnam puede ser un país ruidoso debido a factores como las motocicletas, el karaoke y los gallos. Si la prioridad es el silencio absoluto, Vietnam podría no ser el destino ideal, y alojarse en zonas remotas, considerar ciudades como Dalat (aunque también puede haber ruido de gallos) u optar por villas lejos de los centros turísticos podrían ser soluciones. Para un silencio extremo, las zonas rurales de Rusia podrían ser más adecuadas. El nivel general de ruido en las ciudades vietnamitas es comparable, o potencialmente superior, al de muchas ciudades rusas.</li>
+    <li>Compara Nha Trang y Da Nang como posibles ciudades para vivir o reubicarse a largo plazo. Proporciona información sobre el estilo de vida, el costo de vida y la atmósfera general de cada ciudad.</li>
+    <li>Para encontrar alojamiento durante los primeros 5 a 10 días de un viaje en Vietnam, se recomiendan plataformas como Trip.com. Estos sitios ofrecen una amplia selección de hoteles y pueden ser útiles para estancias temporales mientras se busca una vivienda a largo plazo.</li>
+    <li>Para alquileres de apartamentos o condominios a largo plazo en Vietnam, se aconseja a los expatriados y visitantes de larga estancia que busquen en los chats de complejos residenciales y grupos generales de expatriados, ya que los listados directos pueden ser escasos. Estos canales suelen incluir a personas que buscan subarrendar sus contratos. Se recomienda explorar zonas alejadas de los principales centros turísticos para disfrutar de una estancia más cómoda y potencialmente asequible.</li>
+    <li>Al buscar alquileres de apartamentos a largo plazo en Vietnam, considere tanto la plataforma Chotot como Facebook Marketplace. Evalúe la seguridad y la prevalencia de estafas en Chotot y compárela con la experiencia del usuario y la confiabilidad de Facebook Marketplace para encontrar alojamiento.</li>
+    <li>Para el alojamiento en Vietnam, las opciones incluyen complejos turísticos todo incluido en Cam Ranh (por ejemplo, Selectum) y hoteles más económicos en Nha Trang (por ejemplo, Ale Nha Trang, que cuesta alrededor de 13.000 VND por semana para tres personas), los cuales pueden ser adecuados para viajeros que principalmente necesitan un lugar para dormir y planean explorar la gastronomía y las playas locales.</li>
+    <li>Es probable que pueda alquilar una cama plegable o un colchón inflable en los mercados locales de Da Nang, Vietnam. Estos mercados suelen ofrecer una gran variedad de artículos y los precios son negociables. Preguntar en tiendas de muebles o de artículos de camping también podría dar resultados.</li>
+    <li>Aunque los hoteles en el lado norte de Nha Trang podrían estar más alejados de las principales zonas de entretenimiento (a unos 4 km), ofrecen un ambiente más barato y relajado. Los taxis al centro son económicos (50-70.000 VND) y tardan unos 5 minutos; también hay opciones como ciclomotores o ciclo-taxis. Existen clubes locales, pero generalmente son más discretos.</li>
+    <li>Los usuarios solicitan recomendaciones sobre dónde alquilar motocicletas (motos) fiables en Nha Trang y Da Nang, y uno de ellos menciona haber alquilado anteriormente una Yamaha de 300 cc.</li>
+    <li>Al alquilar un apartamento a largo plazo en Vietnam, tenga en cuenta que los costos de los servicios públicos (electricidad, agua, tarifas de mantenimiento) pueden variar. Es recomendable investigar las tarifas típicas para distinguir entre cargos razonables y excesivos.</li>
+    <li>Para las personas que consideran mudarse, es importante comparar opciones de vida como Múrmansk y Nha Trang. Nha Trang ofrece un clima tropical y un estilo de vida costero, lo cual puede resultar atractivo para quienes buscan un cambio respecto a las regiones más frías.</li>
+    <li>Para quienes planeen mudarse cerca de septiembre, comparen la vida en Da Nang y Nha Trang para determinar qué ciudad se adapta mejor a sus preferencias de estilo de vida.</li>
+    <li>Los hoteles en Vietnam (por ejemplo, el Comodo en Nha Trang) rechazan frecuentemente los pagos con tarjetas de crédito virtuales o las autorizaciones previas si el nombre del titular de la tarjeta no coincide con el nombre del huésped. Pueden ignorar las modificaciones de reserva o cancelar reservas a última hora. Los viajeros deben usar Trip.com para realizar pagos con tarjeta sin problemas, seleccionar hoteles en Booking.com que no requieran datos de tarjeta de crédito o llevar suficiente efectivo para pagar localmente.</li>
+    <li>Para los nómadas digitales que buscan alojamiento a largo plazo (2-4 meses) en Vietnam, se recomienda consultar los chats de complejos residenciales y grupos de expatriados para encontrar apartamentos o condominios disponibles. Estos canales suelen tener anuncios de personas que subarriendan sus contratos. También se recomienda elegir un barrio que equilibre la comodidad con la conveniencia, posiblemente lejos de los lugares turísticos más concurridos.</li>
+    <li>Al alquilar una propiedad en Vietnam, fotografíe siempre las lecturas del contador de electricidad al mudarse y asegúrese de que queden registradas en el contrato. Los propietarios pueden cobrar basándose en estimaciones si no se documentan las lecturas iniciales, lo que puede dar lugar a posibles disputas sobre la facturación.</li>
+    <li>Da Nang se percibe como más limpia y ordenada que Nha Trang, con una mejor gestión del tráfico (semáforos) y agua de mar más limpia debido a la ausencia de desembocaduras de ríos cercanos. Los inconvenientes de Da Nang incluyen una construcción extensa que afecta a las opciones hoteleras y el alto precio del ron Chivet fuera de las tiendas de recuerdos. El dominio del inglés es mayor en Da Nang, y hay una notable afluencia de turistas rusos, particularmente de Siberia, debido a los vuelos chárter.</li>
+    <li>Proporcione presupuestos estimados para alquileres mensuales de apartamentos en Vietnam y sugiera ubicaciones alternativas además de Da Nang y Nha Trang para una estancia de 1 a 2 meses centrada en el trabajo, la relajación y el paisaje.</li>
+    <li>Un usuario comparte un servicio que utiliza para transferir fondos desde saldos de criptomonedas a una tarjeta a través de SBP (Sistema de Pagos Rápidos) en cuotas. Esto se presenta como una solución para gestionar comisiones y tipos de cambio al necesitar VND para el alquiler u otros gastos.</li>
+    <li>Aclare los requisitos de entrada para Vietnam, específicamente la necesidad de una TRC (Tarjeta de Residencia Temporal) o de una visa/sello de entrada válido para la admisión y el alojamiento.</li>
+    <li>Para aquellos que consideran mudarse a Vietnam, recopilar información completa es clave. Los recursos pueden incluir blogs de expatriados e influencers en redes sociales que comparten perspectivas sobre la vida cotidiana, pros y contras, y preparación práctica. Seguir cuentas de Instagram enfocadas en Vietnam puede proporcionar un flujo continuo de información relevante. También es crucial recibir consejos financieros prácticos, como los métodos de cambio de divisa (de rublos a dongs vietnamitas) y formas eficientes de encontrar opciones alternativas cuando los métodos preferidos no están disponibles.</li>
+    <li>Recomiende hoteles en el centro de Nha Trang, Vietnam, que estén cerca de la playa. Incluya opciones en la primera y segunda línea, y sugiera hoteles específicos como Sheraton, InterContinental, Havana Premier y Melia Vinpearl.</li>
+    <li>Para alquilar una habitación por unas horas (por ejemplo, para una ducha rápida antes de un vuelo), busca pensiones económicas locales conocidas como &#39;Nhà Nghỉ&#39; en Vietnam. Suelen ofrecer alquileres por horas, a diferencia de las cadenas hoteleras internacionales.</li>
+    <li>Los pases diarios para complejos turísticos como el Amiiana en Nha Trang, Vietnam, pueden variar de precio. Aunque algunas fuentes indican precios de entre 300.000 y 400.000 VND, otros informes sugieren costes más cercanos a los 800.000-850.000 VND. Es recomendable confirmar los precios actuales directamente con el complejo o consultar reseñas recientes para obtener la información más actualizada.</li>
+    <li>Los extranjeros no pueden adquirir propiedades en Vietnam en el sentido tradicional. En su lugar, normalmente se les conceden arrendamientos a largo plazo (hasta 50 años, con posibilidad de renovación) en lugar de la propiedad absoluta. También existen complicaciones asociadas a la compra de terrenos y viviendas. Este acuerdo no suele incluir el derecho de herencia tras el fallecimiento.</li>
+    <li>Vivir en Vietnam, concretamente en Nha Trang, es viable con conocimientos limitados de vietnamita y un nivel básico de inglés (A2). Muchos lugareños en las zonas turísticas entienden algo de inglés, y las aplicaciones de traducción pueden salvar las barreras de comunicación. Aunque saber vietnamita resulta beneficioso, no es estrictamente necesario para la vida diaria, especialmente en ciudades adaptadas a los expatriados.</li>
+    <li>Phan Rang, Vietnam, cuenta con hoteles y buenas playas, pero carece de una infraestructura turística extensa en comparación con áreas más desarrolladas como Nha Trang. Se considera un destino más tranquilo donde los lugareños están menos acostumbrados a los turistas. Los alojamientos destacados incluyen Hoàn Mỹ Resort Ninh Chử (5 estrellas) y TTS. Se espera que la zona desarrolle su potencial turístico en el futuro.</li>
+    <li>Los servicios ofrecidos incluyen: solicitudes de visado electrónico de 90 días, gestión integral de visados (rellenado, presentación, pago), procesamiento urgente de visados, corrección de solicitudes devueltas, reserva de billetes de tren/autobús/avión, reservas de hotel y reserva de vuelos de regreso desde Vietnam. El contacto está disponible a través de un experto verificado en TravelAsk.</li>
+    <li>El hotel Mövenpick en Cam Ranh ofrece una experiencia positiva al huésped con un gran terreno, buena comida y amplias tumbonas en la playa. Es una opción recomendada para una estancia cómoda.</li>
+    <li>Al buscar alojamiento a largo plazo en Vietnam, es recomendable llegar por una semana, quedarse en un hotel y realizar una búsqueda local. Pregunte directamente en los complejos residenciales o pida sugerencias de alquiler a los lugareños. Las plataformas en línea vietnamitas como Chotot (verifique las políticas para extranjeros) y los grupos de Facebook también son recursos útiles, aunque los canales de Telegram pueden implicar precios más altos.</li>
+    <li>Los extranjeros que buscan adquirir propiedades en Vietnam generalmente optan por arrendamientos a largo plazo (hasta 50 años, renovables) en lugar de una compra directa. Este acuerdo normalmente no incluye derechos de herencia. Para buscar alquileres, se recomiendan grupos de chat especializados en bienes raíces o páginas de Facebook. Tenga en cuenta posibles estafas, particularmente relacionadas con pagos por adelantado y ofertas de servicios no solicitadas. Los expertos verificados suelen estar indicados en los mensajes fijados dentro de los grupos de chat relevantes.</li>
+    <li>Explique las consecuencias de no obtener el registro temporal (permiso de residencia) en Vietnam. Clarifique el proceso de registro y las responsabilidades de los propietarios y los inquilinos.</li>
+    <li>El registro no proporciona plataformas o métodos específicos para encontrar alquileres de apartamentos a largo plazo (más de 6 meses) en Nha Trang, más allá de sugerencias generales de revisar chats inmobiliarios o Facebook.</li>
+    <li>Sugiere sitios web y plataformas para encontrar propiedades de alquiler en Vietnam para estancias de larga duración (6 meses o más), como portales inmobiliarios locales o foros de expatriados.</li>
+    <li>Obtener un permiso de residencia temporal (VNH) en Vietnam es difícil. La mayoría de los extranjeros viven haciendo &#39;visa runs&#39; (reingresando cada 45 o 90 días con un sello/visa electrónica). Un contrato de alquiler sirve principalmente como garantía para el propietario, no para fines de inmigración. Los propietarios registran a los residentes después de cada &#39;visa run&#39;.</li>
+    <li>Los extranjeros en Vietnam suelen adquirir propiedades mediante arrendamientos a largo plazo (de hasta 50 años, renovables) en lugar de mediante la propiedad absoluta, y estos arrendamientos normalmente no incluyen derechos de herencia. Para buscar propiedades, se recomienda utilizar grupos de chat especializados en bienes raíces o plataformas de Facebook. Se aconseja precaución debido a posibles estafas que implican pagos por adelantado; los expertos verificados suelen estar identificados en los mensajes fijados dentro de los grupos de chat correspondientes.</li>
+    <li>Sugiera plataformas locales para buscar alojamiento a largo plazo en Phan Thiet/Mui Ne, Vietnam, mencionando específicamente &#39;chotot.vn&#39; como un equivalente vietnamita a Avito. Aconseje a los usuarios que utilicen dichas plataformas para diversas necesidades de alquiler, incluidas villas y, potencialmente, alquileres de motocicletas si se pierden los contactos directos.</li>
+    <li>Encontrar alojamiento que admita mascotas en Vietnam (apartamentos u hoteles) es un desafío. Aunque puede ser más fácil en apartamentos, los hoteles suelen tener normas más estrictas. Incluso si los establecimientos indican que &#39;se admiten mascotas&#39;, es fundamental contactar directamente con los propietarios o la administración para confirmar los detalles, ya que la información en línea no siempre es precisa.</li>
+    <li>Clarifique las opciones de pago para las reservas de alojamiento en Vietnam. Específicamente, indique que no se pueden utilizar rublos para pagar en Booking.com, pero que Trip.com sí permite tales transacciones. Aconseje sobre posibles problemas de cambio de divisas si se paga a la llegada.</li>
+    <li>Se le aconsejó a un usuario consultar un chat dedicado del hotel para obtener información más relevante. Esto sugiere la existencia de foros o grupos especializados para reservas y reseñas de hoteles en Vietnam.</li>
+    <li>Explique que los albergues en Vietnam requieren legalmente que los huéspedes presenten un pasaporte válido y prueba de estancia legal (visa electrónica o sello de entrada) para el registro de entrada y el registro ante las autoridades locales. Confirme que este es un procedimiento estándar en todos los alojamientos.</li>
+    <li>Para encontrar alojamiento en Vietnam, considera estas estrategias: hospédate en un hotel durante una semana y busca localmente al llegar. Pregunta directamente en complejos residenciales. Consulta a los lugareños, ya que muchos tienen contactos de alquiler. Utiliza plataformas vietnamitas como Chotot (verifica si aceptan extranjeros) y grupos de Facebook. Los canales de Telegram ofrecen opciones, pero a menudo a un precio más elevado. La reserva por adelantado suele limitarse a estancias cortas a través de plataformas como Airbnb.</li>
+    <li>Asesore sobre la posibilidad de negociar modificaciones en propiedades de alquiler en Vietnam para estancias largas, tales como retirar o añadir muebles como camas, sofás y escritorios.</li>
+    <li>Los extranjeros en Vietnam generalmente adquieren propiedades mediante contratos de arrendamiento a largo plazo (hasta 50 años, renovables) en lugar de una propiedad absoluta, y estos arrendamientos usualmente no incluyen derechos de herencia. Para la búsqueda de propiedades, se recomienda utilizar grupos de chat especializados en bienes raíces o plataformas de Facebook. Se aconseja precaución debido a posibles estafas que involucran pagos por adelantado; los expertos verificados suelen estar identificados en los mensajes fijados dentro de los grupos de chat relevantes.</li>
+    <li>Aplicaciones esenciales para Vietnam: Grab (taxi, entrega de comida), Vexere (billetes de autobús y tren), Btaskee (servicios para el hogar), Shopee/Lazada (mercados) y Cho Tot (clasificados/vivienda, se recomienda la versión web con traducción automática).</li>
+    <li>Phan Rang en Vietnam se describe como un destino turístico en desarrollo con buenas playas y atracciones, que ofrece una alternativa más tranquila a Nha Trang. Si bien carece de una infraestructura turística establecida, se espera que crezca. Hay hoteles disponibles, incluidos Hoàn Mỹ Resort Ninh Chử (5 estrellas) y complejos hoteleros TTS.</li>
+    <li>En Vietnam, el check-in temprano en los hoteles suele ofrecerse de forma gratuita según la disponibilidad o no es posible en absoluto. No es común pagar por el check-in temprano. Si la habitación no está lista, los huéspedes suelen poder dejar su equipaje y regresar más tarde.</li>
+    <li>Proporcione recomendaciones de hoteles en Nha Trang, Vietnam, centrándose en la proximidad a la playa. Hable de las opciones en primera y segunda línea, y mencione posibles problemas, como fallos con el agua caliente en algunos hoteles, sugiriendo alternativas.</li>
+    <li>Las motocicletas de menos de 50cc no requieren legalmente una licencia en Vietnam, pero el uso del casco es estrictamente controlado por la policía. Para estancias largas, tenga en cuenta que muchos propietarios en ciudades como Da Nang prefieren un contrato de alquiler mínimo de 3 meses. Encontrar alquileres de un mes puede ser difícil y, a menudo, conlleva un precio más elevado.</li>
+    <li>Para acceder durante el día a complejos turísticos con piscinas y toboganes en Vietnam, se necesitan recomendaciones específicas de hoteles. La información sobre los precios para adultos y niños debe confirmarse directamente con los complejos, ya que pueden variar significativamente. Algunos establecimientos ofrecen pases diarios, mientras que otros no.</li>
+    <li>Al elegir entre Hermes y Ola Hotel en Nha Trang, investiga las reseñas recientes para conocer las condiciones y servicios actuales. Consejo sobre cambio de divisas: compara las tasas del yuan chino y del dólar estadounidense en oficinas de cambio y bancos locales para determinar cuál es más favorable en el momento de tu visita.</li>
+    <li>Solicita recomendaciones de un buen hotel en Nha Trang que ofrezca desayuno y cuente con piscina, preferiblemente ubicado en la primera o segunda línea de playa.</li>
+    <li>A mediados de septiembre, los usuarios buscan recomendaciones de hoteles e información sobre el clima en Vietnam. Las ciudades mencionadas incluyen Nha Trang y Da Nang, con notas sobre el posible inicio de la temporada de lluvias. Las regiones del sur suelen ver el final de la temporada de lluvias en noviembre.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/es/vn/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/es/vn/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/es/vn/documentaci-n-y-visados/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentación y visados</span></a>
+    <a class="chip" href="/es/vn/ocio-y-entradas/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Ocio y entradas</span></a>
+    <a class="chip" href="/es/vn/seguridad/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Seguridad</span></a>
+    <a class="chip" href="/es/vn/salud/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Salud</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>¿No encontraste tu caso?</h2>
+    <p>Pregúntale a Luky — no artículos genéricos, sino detalles para tu situación.</p>
+    <p>Y Luky es un traductor de voz para conversaciones reales: regatea en el mercado como un local.</p>
+    <p class="ps">PS: incluso con la familia de tu pareja que no habla nada del tuyo 😄</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiencia real de chats de comunidades, sin relleno</div>
+    <nav class="f-links">
+      <a href="/es/about/">Acerca de</a>
+      <a href="/es/vn/">Todos los temas</a>
+      <a href="/es/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Las respuestas se recopilan de chats abiertos de comunidades — es experiencia real de personas, no asesoría oficial. Verifica antes de decisiones importantes.</p>
+    <div class="f-copy">© 2026 Luky · actualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noche", DAY="\u2600 D\u00eda";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

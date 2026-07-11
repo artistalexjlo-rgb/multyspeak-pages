@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vietnam: Safety — real experience · Luky</title>
+<meta name="description" content="Real experience from chats about Safety in Vietnam: as it is, first-hand. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/vn/safety/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/vn/safety/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/vn/safety/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/vn/safety/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/vn/safety/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/vn/">Vietnam</a> /
+    <b>Safety</b>
+  </nav>
+
+
+  
+  <h1>Safety: how it works in Vietnam — first-hand</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of people from chats on «Safety» in Vietnam — as it is, no fluff. For your case — <strong>ask Luky</strong>.</div></div>
+
+  <h2>From real experience</h2>
+  <ul class="qlist">
+    <li>Be vigilant against scams in Vietnam. A common tactic involves individuals offering to bring items like GLO sticks, often with persuasive messages and photos, but failing to deliver. The TravelAsk chat administration advises exclusively using verified experts listed in pinned messages and refraining from sending money to unverified individuals, especially those who initiate contact via private messages. For verification, contact the safety administrator, Daria.</li>
+    <li>Need for a translator for the police in Nha Trang. Estimated market rate is 500,000 VND per hour. Difficulty in finding contacts for external cameras or identifying the hotel of suspects (Russian individuals). Previous attempts to find contacts were unsuccessful.</li>
+    <li>Recent reports from Nha Trang indicate incidents of oil/mazut pollution in coastal waters. Tourists have reported skin contamination. Residents suggest using oil to clean the residue. It is advised to check local chat updates before swimming.</li>
+    <li>Experiencing issues with MegaFon roaming in Vietnam, including inability to connect to the hotline or access the personal account due to a lack of SMS codes. Investigate potential causes and solutions for these connectivity problems.</li>
+    <li>User purchased a quality kitchen knife in Vietnam and is flying home the next day, asking if it can be carried in checked baggage and how to pack it. Advice is to place it in checked luggage, wrapped in a towel if the original packaging is lost. It&#39;s mentioned that knives have not caused issues in checked baggage from Turkey and Uzbekistan. The user also asks about selecting ripe fruits like papaya and mango for travel, with advice to buy unripe mangoes as they will ripen, and to consult fruit vendors.</li>
+    <li>Inquire about the best websites to purchase Vinpearl tickets to facilitate QR code entry and bypass queues. Once a ticket is purchased, entry is usually direct to the boarding area without further waiting.</li>
+    <li>Asian forest scorpions (Heterometrus genus) are found in Vietnam. They are characterized by a shiny black shell and large pincers. Their venom is weak and generally not lethal to healthy adults, but the sting can be very painful and cause local swelling. In case of a sting, monitor for allergic reactions.</li>
+    <li>Advise on steps to take after losing a bank card in Nha Trang, Vietnam. Suggest contacting the bank immediately to block the card. Recommend approaching the relevant stores (WinMart, MoonMilk) to inquire about CCTV footage, though acknowledge that recovering the physical card might be difficult. Advise on reporting the loss to local authorities if necessary.</li>
+    <li>Warning about a specific travel agent accused of fraud. The user advises caution against transferring money in advance, especially based on recommendations. They direct readers to a safety guide and the possibility of verifying agents with administrator Daria.</li>
+    <li>Visiting Vinpearl in Vietnam can involve significant wait times, especially for the cable car (up to 2-3 hours) and speedboats (around 40 minutes). Arriving early (around 7 AM) is advised to minimize queues. Fast track services can reduce waiting time for the cable car by 1-1.5 hours, but do not bypass queues for attractions or the water park. Speedboats are an alternative to the cable car but also have queues.</li>
+    <li>Clarify the regulations regarding the import of electronic cigarettes, such as IQOS, into Vietnam. Advise on the best way to carry them (e.g., in hand luggage) and any potential restrictions or screening procedures at airports like Cam Ranh.</li>
+    <li>Share experiences and advice on relocating cats to Vietnam, including transportation, daily care, and veterinary treatment options available in the country.</li>
+    <li>Theft incidents in massage parlors in tourist areas are common. Customers are advised to keep personal belongings with them during full-body treatments or ensure the storage area is under constant surveillance to avoid pilfering.</li>
+    <li>VinWonders Nha Trang tickets cannot be purchased using &#39;Mir&#39; cards via their website. It is recommended to buy tickets in advance, potentially up to a week before. A two-day pass is advisable if visiting the water park. Avoid weekends due to large crowds. Fireworks are only on weekends. Staying overnight on the island is suggested for a comprehensive experience.</li>
+    <li>Vaping devices and e-cigarettes (including IQOS) are prohibited in Vietnam. Airport security enforces strict screening of luggage. Possession can result in a fine of approximately 200 USD and confiscation of the device. Despite the ban, they are sometimes sold in local markets, but tourists risk fines if caught.</li>
+    <li>The White-lipped Pit Viper (Trimeresurus albolabris) is a venomous snake common in Nha Trang, particularly near hiking trails (e.g., Ba Ho waterfalls) and overgrown gardens. It is nocturnal, sedentary during the day, and easily camouflaged. Bites require immediate medical intervention (antivenom). Keep doors/windows shut at night as they hunt geckos in residential areas.</li>
+    <li>Advise on the best way to transport a mini-drone when traveling to Vietnam. Recommend checking airline and Vietnamese customs regulations regarding drone carriage. While often suggested for checked baggage, mention potential risks of confiscation and advise users to verify current rules.</li>
+    <li>When renting property in Vietnam, always photograph the electricity meter readings upon move-in and ensure they are recorded in the contract. Landlords may charge based on estimates if initial readings are not documented, leading to potential billing disputes.</li>
+    <li>When exchanging currency or making payments in Vietnam, be aware of potential scams involving counterfeit or easily confused banknotes, particularly between 20,000 and 500,000 VND, or 10,000 and 200,000 VND. It&#39;s advisable to use smaller denominations for market purchases and larger denominations or card payments in malls. Payment via QR code is also becoming more prevalent. Be cautious with card payments; some sources indicate issues with &#39;Mir&#39; cards, while UnionPay might be more widely accepted. It&#39;s generally recommended to use payment methods that have been confirmed to work reliably.</li>
+    <li>Withdrawing cryptocurrency (e.g., USDT from Bybit) to a Vietnamese bank account typically involves a peer-to-peer exchange. The buyer sends VND to the seller&#39;s Vietnamese account after receiving the crypto. This process may carry risks, and data privacy regarding transfers to Russia should be investigated with the specific platform (Bybit) and potentially local financial regulations.</li>
+    <li>Scam alert for Vietnam travel groups. Emphasizes that verified experts are in the pinned messages. Warns against transferring money or sharing personal information with unsolicited contacts. Administrator Daria never initiates contact or offers services. Report suspicious activity immediately. Do not trust recommendations in private messages; they are likely scammers.</li>
+    <li>Describe the current weather conditions in Vietnam, focusing on the rainy season affecting areas like Nha Trang and Mui Ne. Provide details on rainfall patterns (e.g., morning showers followed by clearer spells) and duration estimates.</li>
+    <li>Address concerns about insects and potential disease transmission in Nha Trang, Vietnam. Provide information on the prevalence of insects, specifically mentioning potential mosquito bites on the beach at night, and advise on necessary precautions.</li>
+    <li>Power banks are generally permitted on flights to and from Vietnam. Regulations typically allow power banks with capacities up to 20,000 mAh (or sometimes up to 30,000 mAh, though this may require airline approval) to be carried in hand luggage only. Always check with your specific airline for their most current policies.</li>
+    <li>Operating drones in Vietnam is strictly restricted. Civilian use is largely prohibited, and unauthorized flights can result in fines and equipment confiscation. Aerial space monitoring is managed by the military/police.</li>
+    <li>Traffic violations in Vietnam (e.g., riding without a helmet or license) result in administrative fines. Police may confiscate physical driver&#39;s licenses until the fine is paid. Fines are typically settled at local police stations. Avoid disputes to prevent escalation to more serious legal consequences.</li>
+    <li>Safety warning for Nha Trang: increase in pickpocketing on beaches and bag/phone snatching from moving motorbikes. Strategies include using cross-body bags and avoiding holding phones near traffic. Police reports are ineffective for petty theft due to lack of evidence and language barriers.</li>
+    <li>Provide the current weather conditions and short-term forecast for Nha Trang. Mention the unpredictability of weather during the rainy season and suggest checking local updates.</li>
+    <li>Concerns about transporting iQOS devices and sticks when departing from Vietnam (Cam Ranh). While the device may pass through easily (e.g., in a pocket), there are reports of issues with sticks being detected on X-ray scanners. It&#39;s advisable to check current regulations and be aware of potential difficulties.</li>
+    <li>The weather in Nha Trang and Da Nang can vary. Da Nang may experience overcast but dry conditions with high temperatures. Nha Trang can be very hot. While forecasts might predict rain, actual conditions may differ, with some reporting no rain for weeks and intense heat. It is advisable to check the latest weather reports before traveling.</li>
+    <li>When transporting alcohol with snakes and scorpions from Vietnam, be aware of import regulations into the Eurasian Economic Union. Such items generally require specific permits and mandatory customs declaration. Direct information on Aeroflot&#39;s specific policy for carrying these items as checked or carry-on luggage is needed, as well as the regulations for exporting them from Vietnam.</li>
+    <li>When traveling to Vietnam, carrying medications in ampoule form within a travel kit is generally permitted. However, it is advisable to carry a prescription from your doctor for any prescription medications. This can help in case of inquiries by customs or immigration officials.</li>
+    <li>Electronic devices such as vapes can generally be carried into Vietnam. They can be placed in hand luggage or checked baggage without issues. Similarly, they can be transported on domestic flights and taken out of the country without problems.</li>
+    <li>Weather in Danang, Vietnam, can be cloudy and hot, with temperatures remaining high even during overcast conditions. In Nha Trang, weather can be sunny and hot during the day, with muggy evenings. Cloudy weather may offer more comfortable temperatures. The sea is generally warm and comfortable.</li>
+    <li>Living in Vietnam, specifically in Nha Trang, is feasible with limited Vietnamese language skills and a basic level of English (A2). Many locals in tourist areas understand some English, and translation apps can bridge communication gaps. While knowing Vietnamese is beneficial, it&#39;s not strictly necessary for daily life, especially in expat-friendly cities.</li>
+    <li>Electric scooters under 4kW and 50km/h do not require a driver&#39;s license in Vietnam. For rentals, avoid leaving passports as collateral; offer a cash deposit of $200-$300. Use Google Maps with high-rated local rental agencies to avoid scams and poor-condition vehicles.</li>
+    <li>The weather in Nha Trang during the dry season can sometimes include unexpected rain, although it is generally sunny and hot. While rain is not typical, brief showers can occur. For planning a trip, it&#39;s advisable to check the forecast closer to the date, as weather apps can be unreliable, and local reports suggest a higher chance of pleasant weather.</li>
+    <li>Advise travelers whether it is advisable to bring a beach umbrella from their home country to Vietnam, considering local availability and cost.</li>
+    <li>Explain common scam tactics used by cyclo (rickshaw) drivers in Nha Trang, such as price inflation after the ride. Advise travelers to negotiate fares clearly beforehand and suggest using ride-hailing apps like inDrive for more transparent pricing.</li>
+    <li>Motorcycle school available in Danang, Hanoi, Ho Chi Minh City, Nha Trang, Dalat, and Phu Quoc. Offers training for scooters and motorcycles with manual transmission. Curriculum includes theory and practice on polygons (bike structure, figure-eight, U-turn, gravel riding) and in urban environments (traffic rules, speed limits, lane changes, underground parking). Provides motorcycle gear and a bike for training. Includes recommendations for interacting with police in Vietnam. Cost: 600,000 VND per hour.</li>
+    <li>High humidity in Vietnam can damage electronics and documents. Use specialized dehumidifying cabinets (dry cabinets) available on local e-commerce platforms like Shopee to store cameras, laptops, and important papers to prevent mold and corrosion.</li>
+    <li>Foreigners in Vietnam typically acquire property through long-term leases (up to 50 years, renewable) rather than outright ownership, and these leases usually do not include inheritance rights. For property searches, it is recommended to utilize specialized real estate chat groups or Facebook platforms. Caution is advised due to potential scams involving advance payments; verified experts are typically identified in pinned messages within relevant chat groups.</li>
+    <li>When traveling to Vietnam, it is highly recommended to rely on cash for transactions. While cards and QR codes might seem convenient, they often face issues with acceptance or may be blocked, especially for foreign visitors. Having a sufficient amount of local currency (Vietnamese Dong) or major foreign currencies like USD is crucial for smooth travel and to avoid potential payment difficulties.</li>
+    <li>User&#39;s daughter overstayed her visa by one day in Vietnam, was detained at Da Nang airport, and her phone is dead. She is 18 years old. Provide guidance on the process for visa overstays in Vietnam, including potential fines, deportation procedures, and contact information for relevant authorities or legal assistance in Da Nang. Clarify that &#39;arrest&#39; might mean detention for processing.</li>
+    <li>A strong earthquake (magnitude 7.8) has occurred in the Philippines, triggering a tsunami threat for coastal areas, including Vietnam. Reports indicate casualties and building damage in the Philippines.</li>
+    <li>Determine if customs regulations in Vietnam permit the import of smoked trout in checked luggage. Advise on potential customs checks and seizure risks.</li>
+    <li>To prevent intestinal infections in Vietnam, avoid drinking tap water. Food from supermarkets and home-cooked meals are generally safe. Hygiene standards in local eateries are comparable to those in Russia.</li>
+    <li>Clarify the regulations regarding riding a motorbike with three people (two adults and a child) in Vietnam, including potential fines and unofficial &#34;coffee money&#34; requests.</li>
+    <li>Baggage fees at Hanoi airport can range from $15-20 USD per kilogram. Prices may vary depending on the airline and flight distance. Consider consolidating items or packing lighter to avoid excess baggage charges. Some airlines may be lenient with carry-on baggage weight if it&#39;s not significantly over the limit.</li>
+    <li>The import and use of all tobacco heating systems and electronic cigarettes are prohibited by law in Vietnam. However, it appears that these restrictions are not strictly enforced, and items like IQOS are readily available from street vendors. Information on the availability of Glo sticks is less clear.</li>
+    <li>User&#39;s luggage was mistakenly taken at Nha Trang airport, and airport staff were unhelpful. They have filed an online claim. Advise them to consider filing a police report as a next step, as it might increase the chances of recovery.</li>
+    <li>To protect against Dengue-carrying mosquitoes in Vietnam, locals and experienced expats recommend using &#39;White Tiger&#39; (Белый тигр) balm, available in pharmacies like Sapphire. Applying small amounts to wrists, knees, and elbows acts as an effective repellent. Additionally, verify that your travel health insurance explicitly covers Dengue fever treatment.</li>
+    <li>Beach areas in Vietnam may have signs indicating the presence of jellyfish. It is advisable to heed these warnings and exercise caution when swimming or engaging in water activities.</li>
+    <li>Vaping devices and e-cigarettes are in a legal gray area in Vietnam. It is advised to keep devices in your pockets rather than luggage during transit. There are no body scanners for arriving passengers, but security gates are present at departure terminals. If flagged, compliance and politeness are the best strategies to avoid confiscation. Replacement heating sticks can be purchased from informal street vendors, but prices are typically inflated, and heavy bargaining is required.</li>
+    <li>For air tickets purchased from Kazan to Da Nang, the baggage allowance may be specified as &#39;hand luggage&#39; and &#39;checked baggage&#39; without explicit weight limits. Travelers should clarify the exact weight and size restrictions with the airline (e.g., Ikar Airlines) to avoid issues at the airport.</li>
+    <li>A user asked for recommendations on VPNs that work well in Russia, with a transit through an unspecified location. A suggestion was made to search for &#39;lotvpn_bot&#39; on Telegram, identified by a purple avatar, as a potentially functional VPN service.</li>
+    <li>Importing alcohol into Russia: legally permitted limit is 3 liters per adult regardless of alcohol content. Exporting from Vietnam: while some airlines allow more, airport customs regulations may vary. It is safest to pack liquids in checked baggage.</li>
+    <li>Travel fraud prevention in Vietnam: 1. Avoid paying deposits to private individuals found via social media or unverified bots. 2. Use established platforms like Trip.com for bookings. 3. If someone approaches in DMs with &#39;exclusive offers&#39;, report to community admins immediately. 4. Check for blacklists before any transaction.</li>
+    <li>Offer advice on dealing with insect bites in Vietnam. Recommend antihistamines (oral and topical, e.g., Suprastinex, Zodac, Zyrtec) for itching and pain relief. Suggest using liquid repellents and fumigators, especially for nighttime. Provide first-aid tips for sunburn, including creams like Panthenol and Biafine, and pain relief options like Ibuprofen and Nimesil (with warnings about Nimesil&#39;s liver impact).</li>
+    <li>Be prepared for baggage overweight fees at Vietnam airports. Purchasing excess baggage allowance online via the airline&#39;s website is recommended as it is cheaper than at the airport. Factor in potential queues if not using fast track services.</li>
+    <li>Long-term rental strategy in Vietnam: Book a hotel for 3-7 days upon arrival, then scout apartments in person. Avoid online prepayments due to high scam risks. Average price for a 2-bedroom apartment in Da Nang ranges from 12 to 15+ million VND depending on the district. Always inspect utility meters and record the condition of the property at move-in.</li>
+    <li>Bites in Mui Ne are often caused by sand flies or beach fleas rather than mosquitoes. Effective management includes using DEET-based repellents (20-50%), applying calamine or hydrocortisone lotion for itching, and inspecting bedding for bedbugs if bites appear in linear clusters.</li>
+    <li>Explain the reasons why Vietnamese police might photograph driving licenses. This could be for documentation purposes during traffic stops, to record violations, or as part of identity verification.</li>
+    <li>There is a reported scam ring in Nha Trang nightclubs using a distraction technique (attractive person engaging the target) to steal unattended personal belongings. Travelers are advised to keep bags within eyesight at all times.</li>
+    <li>Identify reputable places in Nha Trang, Vietnam, to purchase authentic alcoholic beverages as gifts. Recommend checking well-known stores or chains like &#39;Sapphire&#39; and advise against purchasing from unofficial street vendors to avoid counterfeit products.</li>
+    <li>E-cigarettes and vapes are restricted in Vietnam. When flying, it is highly recommended to carry electronic devices in carry-on luggage (handheld) rather than checked baggage. Airport scanners are likely to detect vaping devices in suitcases.</li>
+    <li>VinWonders (Nha Trang) day-trip strategy: arrive at the cable car station by 8:00 AM to beat long lines. Fast-track tickets are available and recommended during peak season. A single-day ticket is generally sufficient as park fatigue is significant.</li>
+    <li>Toll road charges in Vietnam, particularly on inter-city routes like between Danang and Hue, are common. Drivers may add a surcharge for using these roads. Some routes have an additional fee for airport access. Travelers can request to use free roads, which may extend travel time, but communication can be a barrier due to limited English proficiency among drivers.</li>
+    <li>Describe typical summer weather conditions in Nha Trang, Vietnam, including temperature, humidity, and sea state. Mention common insects like midges and ants, but note fewer mosquitoes. Also, provide information on water sports availability, such as jet skiing, and suggest accessible locations for renting them.</li>
+    <li>Provide advice on how to retrieve a lost item (a voice recorder) left in Da Nang, Vietnam, for someone who is returning to Moscow. Suggest methods for returning the item or recommend services that can assist.</li>
+    <li>For safe taxi services in Nha Trang, Vietnam, utilize the Grab ride-hailing application. It provides features like route tracking and driver information for enhanced safety. Even if Nha Trang isn&#39;t explicitly listed, searching for &#39;Nha Trang&#39; within the app typically yields results.</li>
+    <li>Bringing vapes and e-cigarettes into Vietnam through airports (like Cam Ranh) can lead to unofficial &#39;fines&#39; or bribe solicitations by customs officers if found in carry-on baggage. Officers may demand up to $100 but are often open to negotiation down to $20. Devices packed deep in checked luggage or carried in pockets are less likely to be inspected. Note that vapes and e-cigarettes are widely and cheaply available for purchase locally.</li>
+    <li>Reports of fuel/oil pollution (tar balls) at Nha Trang beaches (including central beach and Vinpearl island) have appeared in May 2026. While swimming remains possible, tourists are advised to wear protective footwear and bring cleaning agents like mineral spirits to remove oil stains from skin or shoes.</li>
+    <li>Traveling to Danang, Vietnam in mid-October might coincide with the rainy season. While weather can be unpredictable, this period can experience frequent cloudy skies, rain, and rough seas, potentially limiting beach and water activities. However, pleasant weather days are also possible. It&#39;s advisable to check weather forecasts closer to the travel date.</li>
+    <li>For communication with locals in Vietnam, especially for services or inquiries, using the Zalo messaging app is recommended. Google Translate can be integrated for real-time translation during conversations.</li>
+    <li>Seek comprehensive navigation resources or guides for planning a first-time vacation in Vietnam, including where to begin the planning process.</li>
+    <li>In mid-September, users are seeking hotel recommendations and information on weather in Vietnam. Cities mentioned include Nha Trang and Da Nang, with notes on the potential start of the rainy season. Southern regions typically see the end of the rainy season in November.</li>
+    <li>Biting plankton occurrences in Nha Trang and Cam Ranh are common between May and October. It is often triggered by low tides and colder water. Recommended mitigation includes swimming early in the morning or applying coconut oil to the skin before swimming.</li>
+  </ul>
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/vn/shopping/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛒 Shopping</span></a>
+    <a class="chip" href="/en/vn/transport/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transport</span></a>
+    <a class="chip" href="/en/vn/documents-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documents &amp; Visa</span></a>
+    <a class="chip" href="/en/vn/tickets-entertainment/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🎟 Tickets &amp; Entertainment</span></a>
+    <a class="chip" href="/en/vn/banking-money/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Banking &amp; Money</span></a>
+    <a class="chip" href="/en/vn/health/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🩺 Health</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Answers dance around it, but never to the point?</h2>
+    <p>Ask Luky — talks like someone just back from there — no fluff.</p>
+    <p>And Luky is a live voice translator for real conversations: chat in the lobby with travellers from other countries.</p>
+    <p class="ps">PS: chatting with someone at a festival abroad — easy</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/vn/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Argentina: Documentos y visados — experiencia real · Luky</title>
+<meta name="description" content="Experiencia real de los chats sobre Documentos y visados en Argentina: tal cual, de primera mano. Para tu caso — pregúntale a Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/es/ar/documentos-y-visados/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/ar/documentos-y-visados/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/ar/documentos-y-visados/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/ar/documentos-y-visados/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/ar/documentos-y-visados/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · cualquier país · sin relleno</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noche</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/es/">Inicio</a> /
+    <a href="/es/ar/">Argentina</a> /
+    <b>Documentos y visados</b>
+  </nav>
+
+
+  
+  <h1>Documentos y visados en Argentina: experiencia real de los chats</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiencia real de gente de los chats sobre «Documentos y visados» en Argentina — tal cual, sin relleno. Para tu caso — <strong>pregúntale a Luky</strong>.</div></div>
+
+  <h2>De la experiencia real</h2>
+  <ul class="qlist">
+    <li>En Argentina, los menores extranjeros no pueden obtener la ciudadanía automáticamente solo a través del proceso de naturalización de sus padres. La ciudadanía es un acto jurídico individual que generalmente requiere ser mayor de edad. Si bien los padres que obtienen la ciudadanía pueden otorgar a sus hijos la residencia permanente, los niños generalmente deben esperar hasta los 18 años para solicitar la ciudadanía por sí mismos, a menos que hayan nacido en Argentina.</li>
+    <li>Viaje en ferry de Montevideo a Buenos Aires: llegue al menos 1,5 horas antes de la salida para el control fronterizo. Los boletos se pueden comprar en el lugar o con antelación en línea.</li>
+    <li>Para traslados entre El Calafate (Argentina) y Puerto Natales (Chile), incluido el cruce de frontera: Busbud ofrece boletos, pero verifique los horarios cuidadosamente ya que las salidas pueden ser limitadas (por ejemplo, solo un autobús a las 8 a. m.). También hay opciones de transporte privado. Consulte sobre las opciones más convenientes y puntuales para sus fechas de viaje.</li>
+    <li>Puerto Iguazú tiene un perfil de pueblo pequeño y depende en gran medida del comercio transfronterizo con Brasil. Los residentes a menudo enfrentan largas demoras de tráfico en la frontera. El clima, aunque generalmente más cálido que el de Buenos Aires, no está exento de olas de frío, y la infraestructura es limitada para una residencia a largo plazo en comparación con los principales centros urbanos.</li>
+    <li>Al volar a Argentina, especialmente con aerolíneas como Turkish Airlines, asegúrese de cumplir con sus políticas de emisión de boletos. Algunos informes sugieren posibles problemas si el boleto de regreso no se reserva con la misma aerolínea utilizada para el viaje de ida, especialmente para estancias no turísticas. Las entradas turísticas estándar generalmente requieren un boleto de regreso independientemente de la aerolínea.</li>
+    <li>Se recomienda encarecidamente a los viajeros que ingresan a Argentina que tengan una reserva única para los vuelos de llegada y salida. Las reservas separadas se han asociado con denegaciones de entrada y un mayor escrutinio por parte del control fronterizo.</li>
+    <li>Experiencia de viaje de Astaná a Buenos Aires vía Estambul y São Paulo. Detalles del vuelo: Turkish Airlines. Requisitos: En Astaná, se verificaron los boletos de regreso y el motivo del viaje. Al llegar a Buenos Aires, una verificación exhaustiva de documentos por parte de tres inspectores durante aproximadamente 40 minutos, incluyendo pasaporte, reservas de hotel/apartamento y boletos de regreso. No se mencionaron verificaciones de vacunación ni de seguro.</li>
+    <li>Los ciudadanos rusos en Argentina pueden emitir un poder notarial para su uso en Rusia en el consulado. El proceso implica la creación de un documento de &#39;equivalencia&#39; (archivo digital). Este archivo puede enviarse por correo electrónico a un representante en Rusia, quien luego puede imprimirlo y legalizarlo ante un notario local. Las citas consulares para este servicio tienen una alta demanda y requieren reserva con mucha antelación.</li>
+    <li>Mantener el estatus legal (residencia regular/estatus de estudiante) es obligatorio durante toda la duración del proceso de naturalización. Cualquier interrupción en el estatus o en la documentación puede llevar a que un fiscal recomiende el rechazo. Las universidades deben proporcionar la &#39;constancia de inscripción&#39; y el estatus de &#39;alumno regular&#39;. En casos de errores administrativos de la universidad, los estudiantes deben buscar fundamentos legales alternativos (por ejemplo, registro de residencia laboral a través de RENURE/AFIP) o iniciar acciones legales contra la institución para mantener un rastro documental.</li>
+    <li>Prestamos servicios de legalización, traducción y apostillado de documentos de forma remota para clientes en la Federación de Rusia y países de la CEI. Los servicios incluyen apostilla en documentos educativos, certificados y documentos del registro civil (con o sin poder notarial), legalización consular para EAU, Catar, etc., obtención de certificados de antecedentes penales (desde 1 día), obtención de documentos del registro civil (con o sin poder notarial) y traducción escrita a 82 idiomas con certificación notarial. Ofrecemos formato remoto, consulta experta y consulta gratuita por video.</li>
+    <li>A los viajeros que ingresan a Argentina sin un boleto de regreso se les puede denegar la entrada. Se recomienda reservar un hotel/Airbnb y presentar el comprobante de reserva. A veces se pueden obtener reservas de vuelo temporales (a menudo válidas por 48 horas) en los mostradores de las aerolíneas en el aeropuerto como prueba de viaje posterior.</li>
+    <li>Las traducciones oficiales de documentos en Argentina deben ser realizadas por traductores públicos registrados en el Colegio de Traductores de la provincia específica donde resida el usuario. Los precios generalmente están estandarizados.</li>
+    <li>Al presentar documentos de Rusia en Argentina (por ejemplo, para la escuela o CESAC), se pueden aceptar traducciones informales. Los usuarios han utilizado con éxito traducciones escritas a mano con lápiz en los certificados. Para el traslado físico de documentos entre Rusia y Argentina, hay servicios de mensajería regulares disponibles; algunos pueden transportar hasta 10 páginas de forma gratuita.</li>
+    <li>En Argentina, el proceso de registro de defunción consta de dos pasos: 1. Obtener el &#39;Certificado de defunción&#39; (certificado médico) del médico tratante o del hospital. 2. Presentarlo ante el &#39;Registro Civil&#39; en un plazo de 48 horas para obtener el &#39;Acta de defunción&#39; oficial. Se aplica una multa pequeña por el registro tardío. Para los ciudadanos extranjeros, contactar al consulado nacional respectivo es el procedimiento estándar para obtener asistencia.</li>
+    <li>Al ingresar a Argentina, es posible que se requiera un boleto de regreso. Si vuela con Turkish Airlines, a menudo se recomienda tener un boleto de regreso con la misma aerolínea. Para otras aerolíneas, un boleto hacia un tercer país podría ser aceptable. Una ruta actualmente popular hacia Buenos Aires es a través de Marruecos y São Paulo. Sin embargo, la aplicación de esta norma puede variar; algunos viajeros con boletos de regreso y reservas de hotel informaron que no se los solicitaron al ingresar.</li>
+    <li>En Buenos Aires, puede que no existan chats dedicados exclusivamente a los padres de las escuelas secundarias públicas como grupos independientes. En cambio, las discusiones sobre temas escolares y asuntos de los niños suelen llevarse a cabo en chats comunitarios más amplios centrados en el &#39;estudio&#39; o en los &#39;niños&#39;.</li>
+    <li>Al viajar a Argentina, los oficiales de control fronterizo suelen ser flexibles con respecto al alojamiento (por lo general, basta con indicar verbalmente o mostrar una dirección escrita de amigos o familiares). Sin embargo, el personal de las aerolíneas en el punto de salida (especialmente Turkish Airlines) es muy estricto y puede exigir una prueba oficial de reserva para mitigar los riesgos de migración ilegal. Informar al personal de la aerolínea de que te alojarás con «amigos» puede provocar un escrutinio adicional. Los viajeros deberían reservar un hotel con opción de cancelación gratuita y pago en el establecimiento para presentarlo durante el registro.</li>
+    <li>Proceso para obtener la licencia de conducir en Argentina: Se requiere un curso obligatorio de 3 horas (en línea o presencial) antes de programar el examen. Se pueden presentar permisos internacionales de conducir para intentar evitar las restricciones de la licencia de «principiante». El plazo total depende de la disponibilidad de cupos para el curso y el examen, que a veces pueden tardar varias semanas. Planifica en consecuencia.</li>
+    <li>Explica los desafíos para los ingenieros de diseño con diplomas rusos que buscan empleo en Argentina. Destaca los problemas con el reconocimiento de diplomas, el alto desempleo, los problemas económicos estructurales y la importancia de los contactos locales (redes de contactos o nepotismo).</li>
+    <li>Para los menores de 18 años que solicitan la residencia en Argentina (por ejemplo, como estudiantes), se requiere la siguiente documentación: partida de nacimiento legalizada y autorización de uno de los padres, quien debe estar presente durante el proceso con un DNI (documento de identidad) válido. Aunque este requisito ha existido, su aplicación estricta puede variar. Para quienes buscan la residencia a través de estudios universitarios, son necesarias la inscripción activa y la progresión académica. Es posible que algunas instituciones no proporcionen fácilmente la documentación necesaria para fines migratorios. El proceso de legalización a través de la educación es una vía conocida, pero elegir la institución adecuada es fundamental. También se señala que, aunque el pasaporte de otro país puede servir como DNI, pueden aplicarse requisitos específicos de DNI dependiendo de la interpretación de la oficina de migraciones.</li>
+    <li>Los documentos para Argentina deben contar con una apostilla aplicada en el país de origen. Las traducciones deben ser realizadas dentro de Argentina por un traductor público matriculado. Las traducciones realizadas en el extranjero generalmente no son aceptadas para trámites oficiales.</li>
+    <li>El DNI (Documento Nacional de Identidad) es la tarjeta de identidad nacional para residentes y ciudadanos de Argentina, no es una prueba de residencia por sí misma. La residencia (temporal o permanente) es el estatus legal que otorga el derecho a solicitar un DNI. La solicitud de ciudadanía requiere dos años de residencia continua. Los pasaportes internos rusos generalmente no son requeridos para trámites administrativos en Argentina; un pasaporte internacional (zagran) válido es suficiente.</li>
+    <li>Aclare los requisitos para ingresar a Argentina con un perro pequeño, específicamente si el microchip es obligatorio o si basta con un pasaporte veterinario internacional.</li>
+    <li>Confirmación de que las autoridades argentinas actualmente no sellan los pasaportes al ingresar, una práctica observada en múltiples cruces fronterizos.</li>
+    <li>A la fecha de este registro, no existen certificados de vacunación obligatorios ni certificados de salud específicos exigidos por ley para viajar entre Argentina (AR) y Brasil (BR) en ninguna de las dos direcciones.</li>
+    <li>Con respecto a los requisitos de entrada de Brasil a Argentina, la información sugiere que, por lo general, no se requieren certificados de vacunación. Aunque puede haber informes contradictorios o avisos regionales específicos, los usuarios que han viajado recientemente entre estos países informan que no existen tales requisitos. Siempre es recomendable consultar los últimos avisos oficiales de viaje del gobierno tanto para Brasil como para Argentina antes de su viaje, ya que las regulaciones pueden cambiar.</li>
+    <li>Si Migraciones ya ha tomado una decisión sobre la emisión del DNI pero la tarjeta física aún está en proceso (lo cual lleva muchos meses), las personas pueden entrar y salir de Argentina presentando una copia impresa de la notificación de dicha decisión. Esto es particularmente relevante para quienes están preocupados por los plazos de solicitud de ciudadanía, ya que salir del país puede reiniciar estos plazos. La decisión impresa sirve como prueba del proceso en curso y facilita el reingreso.</li>
+    <li>En Argentina, las estancias sin visado suelen durar 90 días. Aunque algunos interpretan las normas como un reinicio de 90 días solo cada 180 días, limitando los &#39;visa runs&#39; inmediatos, otros reportan haber reingresado con éxito tras breves periodos (por ejemplo, 11 días fuera del país) y recibir un nuevo sello de 90 días. A veces se pueden obtener prórrogas de estancia ante las autoridades migratorias (&#39;migración&#39;), lo que puede proporcionar una prueba documentada de estancia legal extendida. Sin embargo, la aplicación de las normas y la facilidad para obtener prórrogas o realizar &#39;visa runs&#39; exitosos pueden variar, y las experiencias pasadas no garantizan resultados futuros. Los usuarios reportan niveles de éxito variables tanto con las prórrogas gratuitas como con las de pago.</li>
+    <li>Un billete de vuelta no es obligatorio por ley en todos los casos, pero las aerolíneas suelen exigirlo para garantizar el cumplimiento de los requisitos de entrada. Se dice que Turkish Airlines es la más estricta en cuanto a la prueba de regreso o de viaje a un tercer destino. Un billete a un tercer país suele ser aceptado por inmigración como prueba de la intención de abandonar Argentina.</li>
+    <li>A la fecha de este registro, la vacuna contra la fiebre amarilla generalmente NO es necesaria para ingresar a Argentina si viaja desde Brasil. Sin embargo, podría ser necesaria para continuar viaje hacia otros países latinoamericanos como Bolivia.</li>
+    <li>Para los ciudadanos tayikos que deseen solicitar una visa de turista para Argentina para una clase magistral o evento alrededor del 17 de junio de 2026: infórmense sobre los lugares de presentación de solicitudes, el proceso exacto de solicitud, los documentos requeridos, si es necesaria la presencia personal, las fechas de citas disponibles más cercanas y los tiempos de procesamiento estimados. La información específica sobre las solicitudes de visa de ciudadanos tayikos para Argentina es escasa; se aconseja consultar los canales oficiales o contactar a otros ciudadanos tayikos que hayan pasado por este proceso. Tenga en cuenta que los ciudadanos rusos no requieren visa para Argentina, por lo que la información dirigida a ellos no será relevante.</li>
+    <li>Detalle las vías de regularización en Argentina, mencionando específicamente las visas de estudio y las visas de jubilado, señalando que las visas de estudio generalmente ofrecen más oportunidades.</li>
+    <li>La multa por excederse en un permiso de turista de 90 días en Argentina es de 40,000 ARS. El pago generalmente puede realizarse en el aeropuerto al momento de la salida, aunque se recomienda aclarar el proceso con la Dirección Nacional de Migraciones si la persona se encuentra en proceso de solicitar la residencia legal.</li>
+    <li>En Argentina, las facturas de servicios públicos pueden alcanzar los $200 al mes. Los productos electrónicos y los productos importados conocidos son significativamente más caros. El alquiler de viviendas con servicios puede costar más de $1000 al mes. La mayoría de la gente elige las escuelas públicas gratuitas; las escuelas privadas se consideran una opción para los ricos o para aquellos que priorizan aspectos educativos específicos.</li>
+    <li>Para ingresar a Argentina, se requieren boletos de regreso. Si vuela con una aerolínea distinta a Turkish Airlines, existe el riesgo de que lo envíen a un tercer país si no tiene un boleto de regreso. También es recomendable tener reservas de hotel.</li>
+    <li>El proceso para obtener la residencia permanente (DNI) en Argentina puede variar significativamente en duración, desde un mes hasta dos años. Si bien los canales oficiales pueden no ofrecer un procesamiento acelerado, algunos sugieren presentar quejas. Los problemas prácticos derivados de la falta de DNI, como la imposibilidad de abrir cuentas bancarias, podrían servir como medida de presión, aunque los canales oficiales pueden no priorizarlos. Los servicios esenciales como la atención médica y la capacidad de trabajar con un permiso temporal (Precaria) están generalmente disponibles.</li>
+    <li>La validez de la Residencia Precaria (permiso de residencia temporal) en Argentina se ha reducido a un mes. Esto requiere chequeos médicos mensuales para su renovación, lo cual puede afectar la capacidad de obtener o mantener una licencia de conducir o realizar otros trámites administrativos que dependan de este permiso.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/es/ar/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/es/ar/banca-y-dinero/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Banca y dinero</span></a>
+    <a class="chip" href="/es/ar/cambio-y-transferencias/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Cambio y transferencias</span></a>
+    <a class="chip" href="/es/ar/entradas-y-ocio/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Entradas y ocio</span></a>
+    <a class="chip" href="/es/ar/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/es/ar/trabajo-e-impuestos/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Trabajo e impuestos</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>¿La búsqueda responde a todos, pero a ti?</h2>
+    <p>Pregúntale a Luky — responde para tu caso, según reportes recientes, no artículos genéricos.</p>
+    <p>Y Luky es un traductor de voz para conversaciones reales: resuelve en recepción sin estrés.</p>
+    <p class="ps">PS: pon Luky en un altavoz portátil en una fiesta y habla con todos a la vez</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiencia real de chats de comunidades, sin relleno</div>
+    <nav class="f-links">
+      <a href="/es/about/">Acerca de</a>
+      <a href="/es/ar/">Todos los temas</a>
+      <a href="/es/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Las respuestas se recopilan de chats abiertos de comunidades — es experiencia real de personas, no asesoría oficial. Verifica antes de decisiones importantes.</p>
+    <div class="f-copy">© 2026 Luky · actualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noche", DAY="\u2600 D\u00eda";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vietnam: Shopping — real experience · Luky</title>
+<meta name="description" content="Real experience from chats about Shopping in Vietnam: as it is, first-hand. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/vn/shopping/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/vn/shopping/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/vn/shopping/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/vn/shopping/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/vn/shopping/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/vn/">Vietnam</a> /
+    <b>Shopping</b>
+  </nav>
+
+
+  
+  <h1>Shopping in Vietnam: what actually matters to know</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of people from chats on «Shopping» in Vietnam — as it is, no fluff. For your case — <strong>ask Luky</strong>.</div></div>
+
+  <h2>From real experience</h2>
+  <ul class="qlist">
+    <li>Sberbank&#39;s Mir card users in Vietnam can make payments via QR codes. Ensure the Sberbank app is updated to the latest version. Scan the vendor&#39;s QR code, input the amount in VND, and the payment will be debited in rubles with no conversion fees and a favorable exchange rate. This method is effective even in small shops lacking traditional terminals, providing a convenient alternative to carrying large amounts of cash.</li>
+    <li>For full functionality with local services like Shopee or TikTok Shop and for opening local bank accounts, a SIM card purchased and registered at a telecom store is required, rather than a tourist SIM. Local bank accounts also need a local SIM.</li>
+    <li>Sports nutrition stores in central Nha Trang can typically be found in major shopping malls or on streets with a high concentration of retail outlets, often situated near fitness centers or gyms.</li>
+    <li>Recommendations for sushi restaurants in Nha Trang, Vietnam include Wada Sushi, praised for its quality but noted as not being 24/7. Another suggestion is a restaurant with sushi on the upper floor of hotels, possibly Maple Leaf, though its availability and name require confirmation. Marina Club is mentioned as a place with good ambiance, but it&#39;s a paid venue and lacks the specific sushi focus.</li>
+    <li>The log includes a question asking for recommendations on local guides for tours in Ho Chi Minh City, but no specific suggestions are provided.</li>
+    <li>Explain how to purchase Vietnamese SIM cards and top-up scratch cards (e-vouchers) for mobile phone plans. Clarify the process of using these cards for payment within apps or for topping up accounts, and mention that local stores usually sell them.</li>
+    <li>When booking excursions with the Victoria agency, be cautious about advance payment requests. It is generally recommended to pay after the service or upon meeting the provider. If offered advance payment via private message, verify the legitimacy of the contact and consider consulting an administrator for verification to avoid potential scams.</li>
+    <li>When purchasing electronics such as power banks in Vietnam, it is advisable to buy from reputable stores or department stores (similar to &#39;M.Video&#39; in Russia) to ensure product quality and certification. Look for products that meet international standards. For travel through China, ensure power banks comply with their customs regulations, potentially requiring CCC certification. Online marketplaces like Lazada may offer delivery options, but verify product specifications and seller reputation.</li>
+    <li>For authentic Vietnamese cuisine in Nha Trang, consider dining near Panama hotel or at &#39;Artichoke&#39; chain restaurants. Asking locals for recommendations is a reliable way to discover delicious and authentic food spots.</li>
+    <li>Electronics may be available at lower prices in Vietnam than in Russia. For specific items like laptops, consider checking official brand stores or major electronics retailers. Online platforms like CellphoneS can provide price comparisons.</li>
+    <li>When purchasing cashews or other edible souvenirs in Vietnam, consider local markets and specialty stores for better prices. Prices can vary, but for cashews, expect rates around 200,000-300,000 VND per kilogram, though this can fluctuate. Pistachios might offer better value depending on market conditions and availability. It&#39;s advisable to compare prices at different vendors before making a purchase.</li>
+    <li>For affordable dining in Nha Trang, consider areas in the North, which tend to be cheaper. A dinner including a kilogram of oysters, a second dish, and drinks can cost around 284,000 VND.</li>
+    <li>Using a Thai Baht-denominated card (e.g., from Bangkok Bank) in Vietnam is possible for direct purchases. The exchange rate&#39;s competitiveness depends on the source of the Baht funds; if acquired via cryptocurrency, it might be comparable to USD. However, withdrawing cash from such a card in Vietnam is generally less favorable. Be aware that card acceptance is not universal, and a 3% surcharge may apply for card payments.</li>
+    <li>Authentic Nike products and tailored suits at significantly low prices (e.g., T-shirts for ~700 RUB, suits for ~4000 RUB) are unlikely to be found in Vietnam. Prices for genuine branded clothing and custom suits are generally comparable to international standards. If such prices are advertised, it is highly probable that the items are counterfeit or replicas. For quality suits, consider reputable tailors, but expect prices to be considerably higher than the mentioned figures.</li>
+    <li>Recommend stores in Nha Trang, Vietnam, that sell high-quality, branded sunglasses. Advise on where to find alternatives to poor-quality street vendors.</li>
+    <li>Importing IQOS and e-cigarettes into Vietnam is subject to strict regulations and potential penalties. Confiscation and fines of up to $100 USD are possible. While some travelers have reported success in bringing these items, it is risky. It is advisable to purchase such items locally in Vietnam or leave them at home to avoid issues at customs. Nicotine sticks like Terea are also best purchased locally.</li>
+    <li>To purchase a phone case with a magnetic ring in Vietnam, explore electronics stores, mobile accessory shops, and online marketplaces. Popular areas for such accessories include shopping malls and street markets.</li>
+    <li>Inquire at local electronics stores or specialized vintage/second-hand shops in Vietnam for the availability of old game consoles and games. Specific shop recommendations may vary by city.</li>
+    <li>There is no strong tipping culture (&#39;cult of tips&#39;) in Vietnam. Locals are generally appreciative of any amount given as a tip, rather than expecting a specific percentage or sum.</li>
+    <li>Provide current weather information for Cam Ranh, Vietnam, including temperature and forecasts for the upcoming days. Also, advise on dining options near Wyndham Garden hotel, suggesting that travel to the city might be necessary and recommending the use of Google Maps to find restaurants.</li>
+    <li>The log contains a question about purchasing photo frames with Vietnamese symbols, but no specific information or recommendations are provided.</li>
+    <li>Finding official Ray-Ban sunglasses stores in Vietnam may be difficult. While branded sunglasses are sold in various shops, authentic Ray-Ban products are typically found in authorized dealers or high-end department stores. It is advisable to verify authenticity when purchasing.</li>
+    <li>User purchased a quality kitchen knife in Vietnam and is flying home the next day, asking if it can be carried in checked baggage and how to pack it. Advice is to place it in checked luggage, wrapped in a towel if the original packaging is lost. It&#39;s mentioned that knives have not caused issues in checked baggage from Turkey and Uzbekistan. The user also asks about selecting ripe fruits like papaya and mango for travel, with advice to buy unripe mangoes as they will ripen, and to consult fruit vendors.</li>
+    <li>There is a well-known fruit vendor on Nha Trang&#39;s central beach who is recognized for singing &#39;Kalina Malina&#39;. She is frequently spotted around the central beach area and occasionally near the northern part of the city (near Oceanus apartment complex).</li>
+    <li>Fruit vendors in Vietnam often provide delivery services directly to hotels. Customers can place orders via WhatsApp (in Russian), specify quantities, and request specialized packaging for flights (baskets/boxes).</li>
+    <li>Refunds on Shopee Vietnam cannot be credited to foreign or international UnionPay cards. To secure a refund, buyers must either provide bank details of a Vietnamese bank account (which can be opened in 30 minutes at local banks) or accept store credit via ShopeePay vouchers.</li>
+    <li>The log includes requests for items like construction tools, dumbbells, resistance bands, and charcoal lighters in Nha Trang, but provides no specific store recommendations.</li>
+    <li>Vaping devices and IQOS are strictly prohibited for import in Vietnam. Law enforcement and customs officials strictly confiscate these items if found during luggage scanning. Fines for possession or import range from 2,000,000 VND to over 100 EUR. Tourists often report increased scrutiny on IQOS due to specific packaging shapes compared to regular cigarettes.</li>
+    <li>When purchasing a power bank in Vietnam for travel through China, ensure it is certified, possibly with a CCC (China Compulsory Certification) mark. Look for reputable electronics stores or department stores that stock certified products. It is advisable to check the specific regulations regarding electronics and power banks enforced by Chinese customs prior to your departure.</li>
+    <li>The log contains a question about purchasing a DJI Mini Pro 4 drone in Nha Trang, but no specific store locations or recommendations are provided.</li>
+    <li>Upon late-night arrival in Hanoi, with hotel check-in only in the morning and no airport hotels available, currency exchange options are limited. Airport exchange rates may be higher, but were reported to be comparable to city exchange offices on May 22nd (26350 VND per USD). It&#39;s advisable to use new USD bills for better rates. UnionPay cards, particularly Ruble-denominated ones, are accepted for payments, offering favorable exchange rates. Withdrawing cash from ATMs is not recommended due to high fees and poor exchange rates.</li>
+    <li>Ordering from Chinese marketplaces like Pinduoduo or Taobao to Vietnam involves specific procedures for customs clearance and delivery. It is recommended to research reliable shipping agents or logistics companies that specialize in cross-border e-commerce between China and Vietnam. These agents can assist with customs declarations, taxes, and delivery to the final destination.</li>
+    <li>Identify locations of fruit stalls with reasonable prices in Cam Ranh, Vietnam, that would allow visitors to avoid traveling to Nha Trang for fresh fruit.</li>
+    <li>Describe artichoke tea as a local Vietnamese product, noting its potential health benefits (e.g., for the pancreas, as a cholagogue) and flavor profile (often sweetened with stevia). Advise users that it&#39;s an acquired taste.</li>
+    <li>The log includes requests for items like construction tools, dumbbells, resistance bands, and charcoal lighters in Nha Trang, but provides no specific store recommendations.</li>
+    <li>To order a flower bouquet for hotel delivery in Nha Trang, it is recommended to use the Grab app. Further details or alternative methods may be available.</li>
+    <li>Electronics, such as Dyson products, may be available at slightly lower prices in Vietnam compared to Russia. For specific items like laptops, visiting official brand stores is recommended. Online price comparison sites like CellphoneS can also be useful for checking prices.</li>
+    <li>Good department stores offering original merchandise in Danang are located within the city limits. Use online maps or ask locals for directions to specific stores or brands.</li>
+    <li>Importing electronic cigarettes and vapes into Vietnam is officially prohibited. While many travelers pass through carry-on without issues, airport customs (especially at CXR/Cam Ranh) conduct random baggage checks specifically targeting e-cigarettes, which can lead to confiscation or fines up to $200.</li>
+    <li>Renting a folding bed or inflatable mattress in Danang, Vietnam can likely be done at local markets. These markets usually offer a wide variety of goods, and prices are negotiable. Inquiring at furniture or camping supply stores might also yield results.</li>
+    <li>Clarify the regulations regarding the import of electronic cigarettes, such as IQOS, into Vietnam. Advise on the best way to carry them (e.g., in hand luggage) and any potential restrictions or screening procedures at airports like Cam Ranh.</li>
+    <li>Explain the price difference between two coffee options, one priced at 300 and the other at 130. Clarify currency and potential reasons for the price disparity (e.g., size, quality, type).</li>
+    <li>Payment methods in Vietnam for Russian travelers can be inconsistent. &#39;Mir&#39; cards may face issues, while UnionPay might have better acceptance. QR code payments, particularly from Sberbank, have been reported to work in some locations, but acceptance can be selective. For example, QR codes might not work at Gold Coast mall. Withdrawal from VRB ATMs using &#39;Mir&#39; cards is possible. It is advisable to confirm current card acceptance policies and have backup payment methods, such as cash or other card types, readily available.</li>
+    <li>Recommended payment methods in Vietnam for Russian tourists include: 1) UnionPay cards (enter 00 before the PIN if needed), 2) MIR cards at VRB (Vietnam-Russia Bank) ATMs, and 3) QR payments. For currency exchange, local gold shops often offer better rates than banks. USDT-to-VND exchange services are widely used by the expat community.</li>
+    <li>Provide recommendations for purchasing local coffee (both beans and instant) in Nha Trang, Vietnam, as gifts. Additionally, suggest seafood restaurants near Premier Havana and Hyatt Regency hotels that offer good value for money.</li>
+    <li>When traveling to Vietnam, you can generally bring a laptop, though it may be subject to inspection. For cigarettes, the allowed quantity is typically one carton (200 sticks). Electronic cigarettes may face restrictions or be prohibited. If you wish to purchase cigarettes locally, be aware that the quality of Vietnamese-produced cigarettes may differ from what you are accustomed to. Exchange rates at Cam Ranh Airport are usually less favorable than those found in local exchange offices or jewelry stores within the city.</li>
+    <li>If you wish to visit Vinpearl attractions in Nha Trang without using the rides or water park, consider purchasing a general entrance ticket that may include amenities like sunbeds, water, and towels, potentially at a lower cost than accessing them through a hotel like TTS. For dining, there are local cafes outside the hotel area that offer more affordable options compared to the hotel&#39;s restaurants (priced around 350-500 VND). Exploring public beaches like Zoklet may also be a more cost-effective alternative, with amenities available for a fraction of the hotel&#39;s price.</li>
+    <li>Recommended shopping locations in Nha Trang include Gold Coast and another shopping center on the opposite side. Directions for taxi drivers should specify &#39;Gold Coast&#39;.</li>
+    <li>Russian tourists in Vietnam can use VRB (Vietnam-Russia Joint Venture Bank) ATMs to withdraw cash with &#39;Mir&#39; cards. For everyday payments, UnionPay cards from Russian banks (e.g., RSHB) are widely accepted in restaurants and supermarkets. Alternative payment methods include QR-code transfers via Russian banking apps (Sber, Tinkoff, MTS). US dollars (even older bills) are typically exchanged at local jewelry stores.</li>
+    <li>Russian Mir cards are not directly accepted in Vietnam. However, QR code payments via Sberbank, VTB, Bybit, and Binance apps are a functional alternative. Scan the vendor&#39;s QR code, enter the amount in VND, and rubles will be debited with no conversion fees and a favorable rate. Ensure the Sberbank app is updated. For cash withdrawals, VRB ATMs are available but scarce, especially on islands. UnionPay cards are recommended for general use, but QR payments from Russian cards offer a convenient fallback.</li>
+    <li>The log does not provide information on where to purchase blank t-shirts in Vietnam, either with low prices and good quality from markets or directly from factories without branding.</li>
+    <li>The log contains a question about purchasing a DJI Mini Pro 4 drone in Nha Trang, but no specific store locations or recommendations are provided.</li>
+    <li>At Cam Ranh Airport duty-free shops, prices are typically listed in USD. While USD is widely accepted, they may also accept Vietnamese Dong (VND). It is advisable to have both currencies or confirm accepted payment methods upon arrival.</li>
+    <li>The log contains several specific requests for items available in Nha Trang, but without definitive answers: a DJI Mini Pro 4 drone, charcoal lighters (not via Lazada or Shopee), blood pressure monitors (suggested to be available in supermarkets), and dumbbells/resistance bands (sports equipment). The availability and specific locations for these items remain unconfirmed within the provided text.</li>
+    <li>Nha Trang primarily offers beach-focused activities. Beyond that, local cuisine restaurants are a notable option. Excursion offerings are plentiful, with significant price variations. It&#39;s advisable to take an introductory tour from a tour operator for better decision-making. Many sights are accessible by foot or via affordable taxi services like Maxim. Utilizing offline maps for planning and combining taxi rides with walking is a recommended approach.</li>
+    <li>Vaping devices and e-cigarettes (including IQOS) are prohibited in Vietnam. Airport security enforces strict screening of luggage. Possession can result in a fine of approximately 200 USD and confiscation of the device. Despite the ban, they are sometimes sold in local markets, but tourists risk fines if caught.</li>
+    <li>Drones (UAVs) in Vietnam are strictly regulated. Importing a drone without prior permits from the Ministry of Defense is illegal. Confiscation at the airport is common for tourists bringing DJI Mini or similar models.</li>
+    <li>For authentic cosmetics in Vietnam, explore major shopping centers in Ho Chi Minh City such as Saigon Central (Takashimaya), Vincom Center Dong Khoi, Parkson, and Crescent Mall. These locations stock international brands, including Victoria&#39;s Secret.</li>
+    <li>Two food vouchers for Ba Na Hills, each worth 300,000 VND, are available for sale at half price in Nha Trang. They are valid for 4 more days. Inquire about purchasing them.</li>
+    <li>If you need to exchange dollars for Vietnamese Dong in Cam Ranh, do not rely solely on your guide&#39;s advice. You can typically exchange currency at hotel reception desks and in jewelry stores. Additionally, consider using QR code payment options through Russian banking apps (Sberbank, VTB) or cryptocurrency platforms if available and accepted.</li>
+    <li>The log includes requests for items like construction tools, dumbbells, resistance bands, and charcoal lighters in Nha Trang, but provides no specific store recommendations.</li>
+    <li>The log contains a question about purchasing a DJI Mini Pro 4 drone in Nha Trang, but no specific store locations or recommendations are provided.</li>
+    <li>The importation of electronic cigarettes and disposable vapes into Vietnam is officially prohibited, although they are widely sold locally. Travelers may face fines (around $100 USD) if caught with these items during customs inspection. While some individuals have reported confiscation of devices like IQOS or fines for vape sticks, lenient enforcement has also been observed, sometimes influenced by nationality. It is advisable to avoid bringing them to prevent potential penalties.</li>
+    <li>When exchanging currency or making payments in Vietnam, be aware of potential scams involving counterfeit or easily confused banknotes, particularly between 20,000 and 500,000 VND, or 10,000 and 200,000 VND. It&#39;s advisable to use smaller denominations for market purchases and larger denominations or card payments in malls. Payment via QR code is also becoming more prevalent. Be cautious with card payments; some sources indicate issues with &#39;Mir&#39; cards, while UnionPay might be more widely accepted. It&#39;s generally recommended to use payment methods that have been confirmed to work reliably.</li>
+    <li>Bringing cigarettes into Vietnam may be subject to inspection, though bringing a reasonable quantity for personal use (e.g., two blocks) might be acceptable with proper explanation. Cigarettes are significantly cheaper in Vietnam than in Russia, with local brands and analogs of international brands widely available. It is advisable to check current regulations on import limits to avoid issues.</li>
+    <li>Cigarette prices in Vietnam are significantly lower than in Russia, with packs costing approximately 50-70 RUB (17-50 VND). While local brands and analogs of international brands like Marlboro and Kent are available and of acceptable quality, some specific brands like Parliament may differ from Russian versions. It is generally more cost-effective to purchase cigarettes in Vietnam.</li>
+    <li>To find competitive prices for laptops in Vietnam, it is recommended to check official brand stores or major electronics retailers. Online platforms such as CellphoneS can also be a good resource for price comparisons and availability.</li>
+    <li>Danang is perceived as cleaner and more orderly than Nha Trang, with better traffic management (traffic lights) and cleaner sea water due to the absence of nearby river outlets. Downsides of Danang include extensive construction impacting hotel choices and the high price of Chivet rum outside of souvenir shops. English proficiency is higher in Danang, and there&#39;s a noticeable influx of Russian tourists, particularly from Siberia, due to charter flights.</li>
+    <li>E-SIMs and Glo sticks can be purchased in Nha Trang. Prices for Glo sticks are reported to be cheaper than in Russia, and they can often be found on the streets after 10 PM.</li>
+    <li>The log contains numerous requests for specific items and services across various Vietnamese cities (Nha Trang, Mui Ne, Da Nang, Ho Chi Minh City, Phu Quoc). These include: motorcycle parts, phone repair, electronics (DJI drones), medications, building tools, cigarettes, specific clothing brands (Uniqlo, Zara, H&amp;M), coffee, sporting goods (dumbbells, resistance bands), and charcoal lighters. It also includes requests for specialized services like IT job vacancies, gastroenterologists, and AI instructors. However, the log does not provide concrete answers or recommendations for most of these specific inquiries.</li>
+    <li>Mobile phones purchased in Vietnam, such as Samsung models, are generally compatible with Russian networks after a language setting adjustment. It is advisable to request the installation of the Russian language pack at the point of sale. While prices might be slightly higher than in Russia for some models, they offer a viable purchasing option. Ensure the phone is unlocked for international use.</li>
+    <li>The log contains a question about purchasing a DJI Mini Pro 4 drone in Nha Trang, but no specific store locations or recommendations are provided.</li>
+    <li>The Amiana hotel in Cam Ranh, Vietnam, offers a luxurious experience with a spacious buffet dining area, a small pool, a children&#39;s play area, and entertainment programs. Food and drinks are served throughout the property, including several cafes. The hotel is noted for its well-maintained facilities and evening entertainment.</li>
+    <li>Pearl shops in Nha Trang, Vietnam, include &#39;Moskva&#39; store, which is reportedly a good option. It is advisable to be cautious about quality and authenticity when purchasing pearls, especially from local markets. Seeking recommendations from locals or visiting reputable establishments is recommended.</li>
+    <li>Regarding North Face products in Nha Trang: Official stores are likely located in Hanoi or Ho Chi Minh City. While replicas are common in Nha Trang, original items are rare. This is based on personal observation.</li>
+    <li>Birthday candles in Nha Trang, Vietnam, can be purchased at bakeries like ABC Bakery, which may also sell cakes. For late-night purchases (after midnight), checking 24-hour convenience stores is recommended. Local markets might also have options, and sometimes vendors on bicycles sell various small items, potentially including candles.</li>
+    <li>Vape products are restricted in Vietnam. They are often sold illegally by street vendors, motorbike taxi drivers, or cigarette sellers. Prices for disposable vapes are approximately 350,000 VND. Caution is advised as these sales are unofficial and black market-based.</li>
+    <li>Payment methods in Vietnam include cash, QR code payments (Sberbank is a viable option, VTB may have a less favorable rate), and cryptocurrency (e.g., via Bybit). Other Russian banks may not be widely accepted. Having local currency (VND) is advisable, but digital payment options are also increasingly available.</li>
+    <li>Russian bank apps (Sberbank/VTB) often facilitate payments in Vietnam via QR codes (typically through the VRB bank network). This is an alternative to physical cash or unsupported UnionPay cards, though availability is limited to specific merchants.</li>
+    <li>Russian tourists visiting Vietnam can pay via QR codes using Russian banking apps (such as SberBank Online, VTB Online, and My MTS). This works at merchants displaying VietQR or VNPAY codes. The transaction automatically converts VND to RUB. Internet connection is required, and some smaller venues may not support this, so carrying cash as a backup is advised.</li>
+    <li>Identify jewelry stores in Nha Trang, Vietnam, mentioning &#39;Angkor Treasures&#39; as a potential option with an exchange rate of approximately 26,200.</li>
+    <li>To purchase fruits with a basket for travel in Cam Ranh, inquire at local fruit stands or markets. Some vendors may offer packaging options for takeaway or travel purposes.</li>
+    <li>For purchasing sports equipment like a Mikasa volleyball in Nha Trang, FPT Shop or other large electronics and sporting goods retailers are potential options. Checking their inventory online or visiting their stores is recommended.</li>
+    <li>Cam Ranh has limited shopping facilities, primarily consisting of a few minimarkets. For a wider selection of goods, including access to shopping malls, traveling to Nha Trang is recommended.</li>
+    <li>In Vietnam, payment methods can be inconsistent. While Mir cards are generally not accepted, UnionPay works for most purchases except street markets. QR codes from Tinkoff Bank have mixed results; updating the app and having a premium account may improve success rates. It is advisable to carry multiple payment options.</li>
+    <li>For branded sneakers in Hoi An, consider visiting large shopping centers in nearby Da Nang, such as AEON Mall, which typically houses a variety of sports and fashion brands. Direct availability of major international brands within Hoi An itself might be limited.</li>
+    <li>Payment with Vietnamese Dong (VND) at the Duty-Free shop in Nha Trang is generally not accepted. Purchases are typically made using foreign currencies like USD or EUR.</li>
+    <li>In Vietnam, currency exchange rates for old vs. new US dollars may slightly differ, but often a fixed rate is applied. It is generally more advantageous to exchange USD or EUR in cash. While some Russian bank cards may work, QR code payments via Sberbank are a viable option, though VTB might offer a less favorable exchange rate. Having cash on hand is recommended.</li>
+    <li>Finding authentic Tom Yum soup in Nha Trang, Vietnam is a popular quest among travelers. Recommended locations include &#39;Moryachok&#39; cafe and restaurants in the &#39;Artichoke&#39; chain. For those near Havana hotel, local eateries are suggested. Inquiring with locals or checking online reviews can help locate delicious Tom Yum.</li>
+    <li>Advise travelers whether it is advisable to bring a beach umbrella from their home country to Vietnam, considering local availability and cost.</li>
+    <li>Importing IQOS devices and heat sticks into Vietnam is strictly prohibited. Customs often search baggage for these items. Confiscation is common, and fines are approximately 100 USD. Travelers attempting to bypass this frequently experience harassment during luggage screening and inspection.</li>
+    <li>Bringing faux leather bags, belts, and wallets purchased on the street into Russia is unlikely to cause issues, especially if they are not genuine exotic leather and lack official receipts. These items are generally considered personal belongings.</li>
+    <li>To purchase IQOS sticks in Vietnam, specifically in Nha Trang, look for street vendors (women with carts) who sell them for approximately 40,000-60,000 VND. Be cautious of scams, especially those requesting prepayment. If you are in Cam Ranh, availability might be lower.</li>
+    <li>Users are seeking information on where to purchase vapes in Vietnam, including specific shops or Telegram channels that offer delivery. Initial searches via Google Maps were not fruitful in some locations.</li>
+    <li>For purchasing pearls and clothing in Nha Trang, besides shopping malls, exploring local markets and specialized shops can offer a wider variety and potentially better prices. Researching specific areas known for pearl jewelry and textile sales is recommended.</li>
+    <li>A local Vietnamese SIM card is often required for registration on platforms like Lazada. Any local operator&#39;s SIM will suffice. Obtaining a Vietnamese bank card without a residence permit (WНЖ) is highly unlikely; consider asking local acquaintances to make online purchases with cash on your behalf. Cryptocurrency offers an alternative payment method, but ensure your Russian bank cards are compatible with crypto exchanges, as compatibility can change, and some cards may be blocked.</li>
+    <li>The log includes requests for items like construction tools, dumbbells, resistance bands, and charcoal lighters in Nha Trang, but provides no specific store recommendations.</li>
+    <li>Importing IQOS or Glo devices into Vietnam is illegal and frequently results in customs fines of approximately 100 USD. While travelers attempt to conceal devices in personal belongings, there is no official exemption, and confiscation or fines are common at the airport.</li>
+    <li>High humidity in Vietnam can damage electronics and documents. Use specialized dehumidifying cabinets (dry cabinets) available on local e-commerce platforms like Shopee to store cameras, laptops, and important papers to prevent mold and corrosion.</li>
+    <li>Regarding Japanese restaurants in Nha Trang, Vietnam: Wada Sushi is highly recommended for its quality, although it&#39;s not open 24/7. The user also inquired about sushi restaurants located on upper floors of hotels, mentioning Maple Leaf and Marina Club. Marina Club is described as having a pleasant ambiance and warm water, but it&#39;s a paid venue and may not be a sushi specialist.</li>
+    <li>When traveling to Vietnam, it is highly recommended to rely on cash for transactions. While cards and QR codes might seem convenient, they often face issues with acceptance or may be blocked, especially for foreign visitors. Having a sufficient amount of local currency (Vietnamese Dong) or major foreign currencies like USD is crucial for smooth travel and to avoid potential payment difficulties.</li>
+    <li>Confirm the presence of Russian supermarket chains like Pyaterochka and Perekrestok in Vietnam, specifying locations like Nha Trang and Ho Chi Minh City.</li>
+    <li>QR code payments are widely accepted in Vietnam through applications like Sberbank, VTB, Bybit, and Binance. Credit/debit card acceptance is limited to establishments with terminals, and a surcharge of 3-5% may apply.</li>
+    <li>Finding good sportswear stores in Nha Trang, Vietnam, such as those selling Patagonia, can be challenging. Major shopping malls may have limited selections. It is advisable to explore department stores or specialized sports retailers. Local markets might offer options, but careful selection is necessary to ensure quality.</li>
+    <li>Identify major electronics retailers in Vietnam, such as FPT and CellphoneS, where new laptops can be purchased. Advise users to check online prices on the retailers&#39; websites for comparison with prices in other countries.</li>
+    <li>Inquire about the availability and pricing of iPhone 15 Pro Max in Vietnam, comparing it to prices in Russia to determine if purchasing locally is cost-effective.</li>
+    <li>The log contains a query about stroller rental availability at VinWonders park in Nha Trang for a 6-month-old baby, requiring a reclined position. No information is provided to answer this question.</li>
+    <li>Suitcases can be purchased in Nha Trang, Vietnam at various locations. Shopping malls may offer a selection but at higher prices. Markets provide a wider variety of options at potentially lower costs, where bargaining is expected. Prices can range significantly, with some suitcases costing around 500,000 VND.</li>
+    <li>In Hanoi Airport (HAN) duty-free shops, travelers can pay via QR-code payment systems (using Russian banking apps for instant conversion) even if prices are listed in USD.</li>
+    <li>When using Russian bank cards like RSB in Vietnam, cash is often preferred, especially for taxis. UnionPay cards are accepted in larger establishments. For RSB, payments can be made in cafes that accept them. It&#39;s advisable to have both US dollars (new or old, though old may have a slightly worse exchange rate) and Vietnamese Dong readily available. While card payments are possible, cash transactions are more common for smaller purchases and services.</li>
+    <li>Determine if customs regulations in Vietnam permit the import of smoked trout in checked luggage. Advise on potential customs checks and seizure risks.</li>
+    <li>Tax-free shopping refunds are not available at Cam Ranh Airport (Nha Trang). Limited refund services exist at Tan Son Nhat Airport (Ho Chi Minh City), but they do not operate 24/7.</li>
+    <li>To purchase sun-protective clothing (SPF clothing) in Vietnam, such as in Nha Trang, look in large shopping malls or specialized stores. Sportswear shops and tourist shops often carry items like swimwear, long-sleeved tops, arm sleeves, and pants with sun protection. Local marketplaces like Shopee may also have options, but carefully review product descriptions and reviews.</li>
+    <li>Recommend stores or locations in Vietnam (Nha Trang, Phu Quoc) where original sneakers from brands like Puma, ASICS, and New Balance can be purchased.</li>
+    <li>Electronic cigarettes (&#39;e-cigarettes&#39; or &#39;vapes&#39;) are available in Vietnam, often sold in convenience stores or specialized shops. Prices for disposable vapes can range from approximately 400,000 to 650,000 VND, with potential for negotiation. To inquire about vapes, you can simulate the act of vaping or use specific terms like &#39;vape&#39; or &#39;e-cigarette&#39;. Be aware that while selling is common, regulations on import and sale might exist, and product authenticity can vary.</li>
+    <li>User with a foreign card linked to Alipay is asking if they can use the Alipay QR scanner to pay in Vietnam at cafes, supermarkets, and local vendors.</li>
+    <li>The log contains a question about purchasing a DJI Mini Pro 4 drone in Nha Trang, but no specific store locations or recommendations are provided.</li>
+    <li>Payments in Vietnam for Russian tourists can be made via QR codes in local banking apps (e.g., Sber). Average exchange rate is approximately 1 RUB = 335 VND. For cash, jewelry stores in Nha Trang are the most reliable places to exchange Russian Rubles for Dong. International bank cards with Apple Pay/Google Pay are widely accepted at POS terminals.</li>
+    <li>Kanekalon (synthetic hair extensions) can likely be found on Vietnamese marketplaces such as Shopee. Additionally, check large shopping malls or stores specializing in hair accessories or craft supplies.</li>
+    <li>The import and use of all tobacco heating systems and electronic cigarettes are prohibited by law in Vietnam. However, it appears that these restrictions are not strictly enforced, and items like IQOS are readily available from street vendors. Information on the availability of Glo sticks is less clear.</li>
+    <li>Provide practical information about Chợ Đầm market in Nha Trang, Vietnam. Include details on public transportation options (bus routes) from the northern part of the city, operating hours, and potentially tips for navigating the market.</li>
+    <li>The log includes a request for recommendations on excursion organizers or trusted service providers in Muine, but no specific suggestions are offered.</li>
+    <li>For goods unavailable in physical stores (like large shoe sizes or specific gear), use local marketplaces Shopee and Lazada. They function as the primary retail channels for a wide variety of products in Vietnam.</li>
+    <li>The log includes requests for items like construction tools, dumbbells, resistance bands, and charcoal lighters in Nha Trang, but provides no specific store recommendations.</li>
+    <li>In Nha Trang, disposable vapes are available despite restrictions. Prices vary: private sellers might offer them around 330,000 VND per piece for convenience/quality, while street vendors often sell them for 200,000-250,000 VND per piece. Local availability is high from small shops or street sellers.</li>
+    <li>Bybit Pay can be used to scan and pay local VietQR codes at various merchants in Vietnam. No physical or virtual Bybit card is required; transactions are processed directly via the Bybit Pay feature in the app. If a specific QR terminal fails, try asking the merchant for an alternative QR code.</li>
+    <li>Regarding fruit purchases in Cam Ranh (specifically near Amiana resort): There is a small local market within a five-minute walk along the beach towards the mountains. This market offers various fruits and smoothies, with prices slightly higher than in Nha Trang.</li>
+    <li>For authentic goods and electronics in Danang, Vietnam, shopping malls are recommended. For specific items like Glo sticks, the Shopee marketplace is a viable option, though registration often requires a local Vietnamese SIM card. Obtaining a local bank card without a long-term visa (WНЖ) is difficult; consider asking Vietnamese friends to purchase items online with cash. For digital purchases where local payment methods are needed, cryptocurrency can be an alternative, but ensure you have compatible Russian bank cards.</li>
+    <li>For repairing a Dyson vacuum cleaner battery in Nha Trang, inquire at electronics stores or service centers like Technohub, which may have Russian-speaking staff.</li>
+    <li>Vaping devices and e-cigarettes are in a legal gray area in Vietnam. It is advised to keep devices in your pockets rather than luggage during transit. There are no body scanners for arriving passengers, but security gates are present at departure terminals. If flagged, compliance and politeness are the best strategies to avoid confiscation. Replacement heating sticks can be purchased from informal street vendors, but prices are typically inflated, and heavy bargaining is required.</li>
+    <li>Inquire about the best places in Nha Trang to purchase coffee, tea, dried fruits, and similar items for taking home, considering price and quality.</li>
+    <li>The log includes requests for purchasing items such as construction tools, dumbbells, resistance bands, and charcoal lighters in Nha Trang. However, no specific store recommendations or information are provided.</li>
+    <li>A specific coffee shop, &#39;Thang long coffee&#39;, is mentioned as a recommendation. However, the context and location within Vietnam are not detailed.</li>
+    <li>Finding affordable yet quality women&#39;s sneakers in Nha Trang, Vietnam can be a challenge. While large shopping centers offer options, prices might be high. Markets provide a wider selection with bargaining opportunities, but quality can be inconsistent. It is advisable to look for specialized stores or known brands.</li>
+    <li>For travelers looking for decent local alcohol in Vietnam, recommend &#39;Rhum Chauvet&#39; (available in 0.7L and 1L bottles) as a high-quality local rum option, which is superior to cheaper local brands like ISC or Asia.</li>
+    <li>For groceries like meat, chicken, fish, rice, and oatmeal in Vietnam, consider purchasing from local markets for fresh produce and from supermarkets like GO for staples.</li>
+    <li>To go cashless and pay by QR code in Nha Trang, consider opening a local bank account or using the Bybit platform. Bybit allows for USDT payments via QR code directly from the app. Avoid tourist-inflated prices in malls and opt for local shops for better deals.</li>
+    <li>Vietnam entry tips: 1) One-way tickets are common but check current visa-free duration (45 days for RF). 2) Immigration officers may ask about the purpose of the visit; stick to &#39;tourism&#39;. 3) If carrying substantial hardware, do not mention work or business activity to avoid customs/tax issues; emphasize personal use. 4) Always carry physical proof of family relations (birth certificate) if traveling with a child with a different surname.</li>
+    <li>A user asked for advice on where to buy original products in Vietnam, noting that even official stores in malls often sell counterfeit items and emphasizing the importance of checking markings.</li>
+    <li>Identify official stores or authorized retailers selling Nike, Adidas, and Apple products in Nha Trang. Specify locations, such as shopping malls, and advise on how to distinguish genuine products from counterfeits.</li>
+    <li>The log includes requests for items like construction tools, dumbbells, resistance bands, and charcoal lighters in Nha Trang, but provides no specific store recommendations.</li>
+    <li>For genuine cosmetics in Ho Chi Minh City, explore major shopping centers. Saigon Central (Takashimaya) offers luxury brands. Watsons provides more affordable options. Vincom Center Dong Khoi, Parkson, and Crescent Mall are also recommended. Victoria&#39;s Secret and Bath &amp; Body Works are likely available in these locations.</li>
+    <li>For custom eyeglasses in Nha Trang, consider the store at Duong 2 Thang 4, 858. They offer eye tests and same-day fabrication of prescription glasses, including progressive lenses, for approximately 1.5 million VND. Delivery to hotels may be available.</li>
+    <li>In Vietnam, it&#39;s common for vendors to sell unsold market produce from the morning in the evening. This practice allows for the redistribution of food and can offer a way to purchase items at a potentially lower price.</li>
+    <li>Regulations regarding the import of alcohol containing snakes and scorpions into Vietnam can be complex and subject to interpretation. While some sources suggest it might be permissible under certain conditions (e.g., with proper documentation), there are also reports of confiscation and administrative penalties. Travelers should verify the latest customs regulations and be prepared for potential scrutiny.</li>
+    <li>There are reports of PS5 Pro consoles being in short supply in Nha Trang, with many online listings showing &#39;coming soon&#39; or &#39;sold out&#39;. The average price for a PS5 Pro is estimated around 17,000,000 VND, while a PS5 Slim might be inquired about for pricing.</li>
+    <li>For meat and seafood in Vietnam, markets are a good source. For staples like rice and oatmeal, large supermarkets such as GO are recommended.</li>
+    <li>Seek information on whether Belagroprombank (Visa) and Belkart cards from Belagroprombank and Belarusbank are currently functional for transactions in Vietnam, including in shopping malls and stores.</li>
+    <li>Importing alcohol into Russia: legally permitted limit is 3 liters per adult regardless of alcohol content. Exporting from Vietnam: while some airlines allow more, airport customs regulations may vary. It is safest to pack liquids in checked baggage.</li>
+    <li>To exchange Russian rubles for Vietnamese dong or USD in Vietnam, use jewelry stores for the best rates, especially for older USD bills. Pharmacies also exchange money, but with a lower rate for small denominations. RosSelkhozBank ATMs are available in many shops. Card payments are accepted where terminals are present. QR code payments via Russian banking apps (Sberbank, VTB) are a viable alternative where terminals are absent, with no commission and favorable conversion rates. Ensure your Sberbank app is updated to the latest version before traveling.</li>
+    <li>To assess the quality and value of buying coffee beans (whole or ground) at Cho Dam Market in Nha Trang, Vietnam, it is advisable to compare prices and quality with other local markets or specialty coffee shops. Consumer experience at markets can vary, so direct inspection and comparison are recommended.</li>
+    <li>Importing and purchasing tobacco products in Vietnam can be subject to regulations. While common cigarette brands are available, the quality might differ from what you are used to. Specific products like chewing tobacco (snus) may not be readily available or could be restricted. It&#39;s advisable to check official import regulations and local availability before relying on finding specific tobacco products. For personal use, carrying a reasonable amount within the duty-free allowance is generally acceptable, but be aware of any local prohibitions.</li>
+    <li>Finding designer brands like Armani in Nha Trang is difficult. However, New Balance shoes are available, with women&#39;s original sneakers found for 9000 VND. Options for perfumes and gold also exist, but the overall retail selection is limited compared to European standards.</li>
+    <li>Finding authentic running shoes (Asics, Nike, Adidas) in European sizes (42-44) in Nha Trang, Vietnam can be challenging. While some shopping centers like Gold Coast may offer shoe stores, they often carry replicas or shoes not suitable for serious running. Sales are infrequent. It is advisable to purchase running shoes before traveling or explore larger outlet stores if available.</li>
+    <li>Lego sets and model kits can be found in Vietnam. In Nha Trang, check MY Kingdom stores located in shopping malls; their locations can be found on maps. Ho Chi Minh City also offers various options for model enthusiasts. It is advisable to research specific model availability online in advance due to potential variations in stock.</li>
+    <li>Identify stores in Nha Trang, Vietnam, that sell LEGO construction sets. Also, provide information on where to find compatible Chinese-made alternatives, particularly for sports car series.</li>
+    <li>For purchasing phones in Nha Trang, explore reputable electronics stores like FPT Shop or The Gioi Di Dong. These stores offer a wide range of smartphones and accessories. It&#39;s advisable to compare prices and check warranty conditions before making a purchase.</li>
+    <li>Compare the cost and practicality of buying computer hardware (including multiple monitors and workstations) in Vietnam versus bringing it from home. Advise on the availability and pricing of computer components and used laptops in Vietnam, and mention the existence of online marketplaces with fast delivery.</li>
+    <li>While official regulations on e-cigarettes in Vietnam may seem restrictive, they are available for purchase in various locations, including tourist areas like Mui Ne. It is likely possible to find them through informal channels in other cities as well.</li>
+    <li>Vapes and IQOS devices are frequently confiscated at Vietnamese airports. Import of these items can lead to customs fines and loss of equipment; travelers are advised against bringing them into the country.</li>
+    <li>For travel to Vietnam, it is recommended to carry new US dollar bills as they are more widely accepted and may offer a better exchange rate compared to older notes. Some establishments may offer lower rates or refuse older bills. Card payments are possible, with UnionPay (especially a Ruble-denominated card) being a viable option to avoid double conversion.</li>
+    <li>Compare the pros and cons of purchasing smartphones in Vietnam (Nha Trang/Da Nang) versus Russia. Provide information on typical pricing for high-end models in Vietnam (e.g., iPhone 17 Pro Max around 42 million VND), noting limited discounts in retail stores. Advise users to compare prices and warranty conditions before making a purchase decision.</li>
+    <li>Advise travelers on the regulations for bringing a new laptop into Vietnam, including customs procedures, declaration requirements, and considerations regarding original packaging, especially when transiting through other countries like China.</li>
+    <li>Video game consoles can be purchased in Vietnam. In Nha Trang, look in major shopping centers, such as Delta (reportedly on the second floor). For locations near specific hotels like Liberty, inquire locally or check maps. Markets may also have options, but the authenticity of goods might be questionable.</li>
+    <li>For purchasing electronics like a PlayStation 5 in Nha Trang, reputable electronic stores such as FPT Shop are recommended. It&#39;s advisable to check their official websites or visit their physical locations for current stock and pricing.</li>
+    <li>The popular Fino hair mask can be found in commercial centers in Vietnam. For specific locations, such as within Vin Wonders park or other shopping areas, inquire at local information desks or major retail hubs. Availability may vary, so checking at larger establishments is advisable.</li>
+    <li>Finding specific baby food items like Russian brands of cottage cheese (&#39;tvorozhki&#39;) and kefir might be challenging in Vietnam due to different dietary preferences and product availability. Look for international brands or locally available options like Fruto Nyanya (which offers dairy-based products suitable for infants) or other brands of meat purees. It is recommended to check supermarkets and hypermarkets for baby food sections.</li>
+    <li>AirPods can be purchased in Nha Trang, Vietnam. Major shopping centers, such as the main mall&#39;s Delta store (reportedly on the second floor), are potential locations. It is advisable to seek official stores or trusted retailers to ensure authenticity and avoid counterfeit products.</li>
+    <li>Vietnam does not have a dedicated PlayStation Store region. To purchase games, use accounts from other regions (e.g., India, Turkey) and fund them with gift cards. Vietnamese bank cards may not be accepted for direct payment.</li>
+    <li>For original Crocs footwear in Da Nang, visit the brand&#39;s store located in the Lotte Mart shopping center. Authenticity may vary, so inspect carefully.</li>
+    <li>Consider purchasing Vinpearl Land tickets that include a buffet option for a comprehensive experience. The decision can be made upon arrival based on personal preference.</li>
+    <li>Identify reputable places in Nha Trang, Vietnam, to purchase authentic alcoholic beverages as gifts. Recommend checking well-known stores or chains like &#39;Sapphire&#39; and advise against purchasing from unofficial street vendors to avoid counterfeit products.</li>
+    <li>There is no VAT (tax) refund service available at Cam Ranh International Airport (CXR), which serves the Nha Trang area. Travelers planning to claim tax refunds on large purchases must do so only when departing from major international airports that support the service (e.g., Ho Chi Minh City/Tan Son Nhat).</li>
+    <li>In Nha Trang, finding original coffee can be difficult, as many places sell imitations. Look for reliable sources to purchase authentic coffee.</li>
+    <li>Offer practical travel advice for Vietnam, covering luggage handling on sleeper buses (cabin vs. checked), the presence of intermediate stops, and airport security procedures (lack of human metal detectors at Cam Ranh Airport). Also include information on purchasing local tobacco products, including typical prices and bargaining tips.</li>
+    <li>Essential apps for Vietnam: Grab (taxi, food delivery), Vexere (bus and train tickets), Btaskee (home services), Shopee/Lazada (marketplaces), and Cho Tot (classifieds/housing, web version with auto-translate recommended).</li>
+    <li>In Nha Trang, custom eyeglasses can be ordered at optical shops like Mắt Kính Huy Trí Nha Trang or a store located at Duong 2 Thang 4, 858. These places offer eye tests and same-day fabrication, with some even providing hotel delivery.</li>
+    <li>Seek recommendations for the best places in Nha Trang to buy coffee, tea, dried fruits, and similar items to take home as souvenirs, focusing on price-quality ratio.</li>
+    <li>While exporting fruits from Vietnam (up to 5kg is generally allowed), be aware of import restrictions for alcohol into Russia. Consult current regulations for specific limits.</li>
+    <li>Bringing vapes and e-cigarettes into Vietnam through airports (like Cam Ranh) can lead to unofficial &#39;fines&#39; or bribe solicitations by customs officers if found in carry-on baggage. Officers may demand up to $100 but are often open to negotiation down to $20. Devices packed deep in checked luggage or carried in pockets are less likely to be inspected. Note that vapes and e-cigarettes are widely and cheaply available for purchase locally.</li>
+    <li>For souvenirs, tea, and coffee in Cam Ranh, consider shopping at GO (formerly Big C) for better prices. While large supermarkets offer variety, smaller shops might have more competitive pricing.</li>
+    <li>When purchasing souvenirs in Vietnam, a suitcase can be a useful item. Markets offer a wide selection of suitcases at negotiable prices, often more affordable than in shopping malls. Bargaining is common and recommended to get the best deals. Consider the size and durability needed for your souvenirs.</li>
+    <li>The user mentions that Lazada is a local marketplace in Vietnam where one might find certain items. This implies Lazada is an active e-commerce platform in the country.</li>
+    <li>UnionPay cards, particularly those denominated in Rubles, are widely accepted in Vietnamese commercial centers and supermarkets, offering favorable exchange rates. It is advisable to use cards for payments rather than withdrawing cash from ATMs due to high fees and poor exchange rates. While &#39;Mir&#39; cards may not be functional, UnionPay cards have shown compatibility.</li>
+    <li>Identify shopping opportunities for souvenirs in Vietnam, specifically mentioning the Duty-Free shop at Cam Ranh Airport as a last-minute option.</li>
+    <li>A local Vietnamese SIM card is required to register on Vietnamese marketplaces like Lazada. Any operator&#39;s SIM will work. Obtaining a local bank card without a residence permit (WНЖ) is extremely difficult, making it more practical to have local contacts handle online purchases with cash.</li>
+    <li>Nha Trang offers limited options for high-end fashion brands like Armani. However, athletic wear brands such as New Balance are available, with original women&#39;s sneakers found for 9000 VND. Perfume and gold items can also be found, though the overall selection might not meet European standards.</li>
+    <li>Provide recommendations for stores or markets in Nha Trang and Cam Ranh, Vietnam, where traditional Vietnamese clothing (Ao Dai) and Japanese Kimonos can be purchased.</li>
+    <li>Nha Trang and Cam Ranh beaches occasionally experience seasonal tar/oil spills, which appear as tiny dark crumbs in the water and stick to skin/swimwear. The tar can be easily dissolved and wiped off skin using body/suntan oil. For shoes or stubborn stains, white spirit or nail polish remover is effective.</li>
+    <li>For communication with locals in Vietnam, especially for services or inquiries, using the Zalo messaging app is recommended. Google Translate can be integrated for real-time translation during conversations.</li>
+    <li>E-cigarettes, vapes, and e-liquids are banned in Vietnam starting from early 2025. Vape shops have ceased normal operations; only disposable vapes are occasionally sold illegally (&#39;under the counter&#39;) in street cigarette stalls. Customs officers at airports (specifically Cam Ranh) scan all luggage on arrival to confiscate e-cigarettes and vapes.</li>
+    <li>To purchase artichokes and coffee in Hoi An, Vietnam, for souvenirs or personal use, explore local shops and markets specializing in such products. Inquire at tourist-oriented stores for the best selection.</li>
+    <li>Users are discussing the installation and usage of the WYN app (a map application similar to Yandex.Maps) and payment methods on platforms like Lazada and Shopee, including the possibility of cash-on-delivery.</li>
+    <li>For winter clothing in Nha Trang, try the &#39;Sportmaster&#39; store on the 3rd line. For general warm clothing, there are shops near the Poseidon Hotel or on the 3rd line further past the hotel. Online platforms like Shein are also suggested.</li>
+  </ul>
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/vn/transport/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transport</span></a>
+    <a class="chip" href="/en/vn/documents-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documents &amp; Visa</span></a>
+    <a class="chip" href="/en/vn/tickets-entertainment/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🎟 Tickets &amp; Entertainment</span></a>
+    <a class="chip" href="/en/vn/banking-money/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Banking &amp; Money</span></a>
+    <a class="chip" href="/en/vn/safety/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛡 Safety</span></a>
+    <a class="chip" href="/en/vn/health/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🩺 Health</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Still don&#39;t know what to do in your case?</h2>
+    <p>Ask Luky — not generic articles, but specifics for your situation.</p>
+    <p>And Luky is a live voice translator for real conversations: sort things out with the taxi driver, no gestures.</p>
+    <p class="ps">PS: have a voice chat with a friend abroad like they&#39;re right next to you</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/vn/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

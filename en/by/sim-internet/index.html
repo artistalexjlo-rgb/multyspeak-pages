@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Belarus: SIM &amp; Internet — real experience · Luky</title>
+<meta name="description" content="Real experience from chats about SIM &amp; Internet in Belarus: as it is, first-hand. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/by/sim-internet/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/by/sim-internet/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/by/sim-internet/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/by/sim-internet/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/by/sim-internet/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/by/">Belarus</a> /
+    <b>SIM &amp; Internet</b>
+  </nav>
+
+
+  
+  <h1>SIM &amp; Internet: how it works in Belarus — first-hand</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of people from chats on «SIM & Internet» in Belarus — as it is, no fluff. For your case — <strong>ask Luky</strong>.</div></div>
+
+  <h2>From real experience</h2>
+  <ul class="qlist">
+    <li>The most popular messengers in Belarus are Viber, WhatsApp, and Telegram. Viber is widely used for community groups and general communication.</li>
+    <li>When using a Belarusian MTS SIM card in Russia with a Russian passport, internet access in roaming may not function, although calls and SMS will work. This is an MTS Belarus network feature for non-residents. To enable internet access, adjust the Access Point Name (APN) settings on your device. Ensure sufficient time (over 24 hours) has passed since registering in the Russian network or that a network verification has been completed.</li>
+    <li>Belarusian SIM cards typically require activity (calls, SMS) or a small top-up every six months to remain active and avoid deactivation. Simply topping up without usage might not suffice for some operators. If deactivated due to inactivity, reactivation might not be possible, and funds may be lost.</li>
+    <li>Registration for non-residents in the Belarusian payment app &#39;Oplati&#39; is active. Users must visit a Belinvestbank branch in person with their ID to activate the account. Online pre-booking of the appointment is recommended to avoid queues.</li>
+    <li>MTS Belarus SIM cards, when registered under a Russian passport, may experience issues with internet access in Russian roaming. While calls and SMS typically function, data connectivity might require specific APN (Access Point Name) settings on the device to be enabled. Contacting MTS Belarus support or adjusting these settings is often necessary.</li>
+    <li>If using a Beeline SIM card in Belarus, ensure roaming is activated or consider purchasing a local Belarusian eSIM for internet access. Compare the costs of roaming with your Beeline plan against the price of a local Belarusian SIM/eSIM to find the most economical option.</li>
+    <li>Roaming service from the Russian operator &#39;Life&#39; might experience issues in Belarus, potentially requiring re-registration with local networks like MTS. Problems with data transfer have been reported, even when calls are functional. Depending on the region in Russia, roaming partners might differ, affecting connectivity. It&#39;s suggested to check if the roaming package has expired or if there are network registration issues.</li>
+    <li>Using a Belarusian SIM card for internet access in Russia (e.g., for Telegram, YouTube) is possible but expensive due to roaming charges. Some operators offer daily internet packages (e.g., Life at 5 BYN/day), but these are still roaming services. Paid VPNs can function, but their availability is not guaranteed. Purchasing a Russian SIM card is the most cost-effective and reliable solution.</li>
+    <li>In Belarus, mobile operators (MTS, A1, Life) generally require a user to be at least 18 years old to sign a SIM contract. Minors (17 and under) typically cannot purchase a SIM card independently; parental or legal guardian presence is mandatory. Tourists should expect to be denied service at most retail locations.</li>
+    <li>Russian bank cards (Mir, etc.) can be used in Belarus for certain services. Sberbank Online allows payments for Belarusian services (e.g., sanatoriums) via bank operators. Mobile top-ups can be managed through EPIP (ERIP) via Paritet Bank or directly through mobile operators&#39; apps from Russia.</li>
+    <li>If you are using a Belarusian SIM card (e.g., Life) in Russia and experience &#39;no network&#39; issues, ensure that roaming is enabled in your phone&#39;s settings. Some Belarusian operators might automatically connect to Russian networks (like MTS to Megafon). If manual connection is needed, try selecting a network manually or contact your mobile operator for assistance. It is also recommended to check if a specific roaming package needs to be activated for uninterrupted service.</li>
+    <li>Purchasing a Belarusian e-SIM (virtual SIM card) while in Russia is difficult. Belarusian mobile applications typically require a Belarusian phone number (starting with +375) for registration. It is generally necessary to be in Belarus to acquire a local SIM card or e-SIM.</li>
+    <li>To activate a Russian SIM card, it must be done within Russia&#39;s network (home network). Activation cannot be completed while the SIM card is in Belarus. Visiting a border city like Smolensk might be a practical solution if immediate activation is required.</li>
+    <li>Inquire about the most affordable mobile plans for temporary SIM cards (guest SIMs) available for a one-month duration from Belarusian mobile operators.</li>
+    <li>For mobile internet in Belarus, consider your data usage. If you need around 5 GB, roaming with your Russian MTS provider might be more cost-effective than buying a local Belarusian SIM card. For heavier usage, purchasing a Belarusian SIM card is recommended. SIM cards can be obtained at service centers or sometimes at transportation hubs. Note that if you are not personally able to register a SIM card, a power of attorney (duly certified according to the Minsk Convention) may be required for registration.</li>
+    <li>Using a Belarusian SIM card (e.g., Life, MTS) in Russia will result in high roaming charges for calls and data. While some plans offer daily unlimited internet for a fee (approx. 5 BYN), it&#39;s generally more expensive than a local Russian SIM. To keep a Belarusian SIM active, periodic top-ups or activity (calls/SMS) are required. For cost-effectiveness, purchase a Russian SIM card.</li>
+    <li>Mobile roaming signals near the Lithuanian and Polish borders in Belarus are generally not an issue. While Polish radio signals may be detectable in border cities like Brest, phones typically do not switch to foreign networks automatically. Mobile operators like MTS generally maintain stable service within Belarus without unintended roaming charges.</li>
+    <li>To top up a Russian MTS mobile balance from Belarus: 1. Use Sberbank Online. 2. Utilize the ERIP system for transfers to Sberbank. Further clarification on the exact steps for ERIP transfers may be needed.</li>
+    <li>MTS Belarus SIM cards registered with a Russian passport may experience issues with internet roaming in Russia. While calls and SMS typically function, data may be unavailable until the APN (Access Point Name) settings are adjusted. Additionally, internet access might be restricted for the first 24 hours after network registration in Russia or until a verification process is completed.</li>
+    <li>Samsung phones may experience mobile internet issues in Belarus with certain Russian operators (e.g., Tele2) due to the phone&#39;s reliance on specific servers for internet verification. These servers might be blocked by the operator, preventing internet access. Using a different phone brand or a different mobile operator is a potential solution.</li>
+    <li>Internet and GPS signal coverage along the Bryansk-Roslavl-Dubovichi route in Belarus can be unreliable. Mobile data speeds may be slow, and GPS accuracy might be affected. Using a Samsung device is suggested over an iPhone for potentially better compatibility. Rely on offline maps if necessary.</li>
+    <li>Purchasing a Belarusian SIM card is straightforward, even with a Russian passport, and offers affordable rates, particularly for data. Consider options like Trip.com for data-only plans.</li>
+    <li>Payments for Belarusian services (utilities, mobile providers like A1) can be made directly via Russian banking apps (e.g., Sberbank) by searching for &#39;Pay A1 Belarus&#39; or using the &#39;ERIP&#39; service. Direct transfers between Russian and Belarusian cards are generally not possible.</li>
+    <li>When traveling by car in Belarus, be aware of potential fuel shortages in neighboring regions like Pskov Oblast, where many gas stations are closed. Road conditions within Belarus vary, with ongoing repairs; follow GPS navigation for the most time-efficient routes, which often pass through villages. Border guards may inspect fuel carried in canisters; a full tank plus one canister is generally advised. Mobile connectivity can sometimes be an issue. Mosquitoes can be prevalent, especially near water bodies, though higher floors in buildings might offer relief.</li>
+    <li>Russian mobile subscribers using roaming services in Belarus, such as Tele2, may experience slow internet speeds. This can be due to network limitations or potential blocking of websites restricted in Russia. To ensure reliable internet access, it is recommended to purchase a local Belarusian SIM card or utilize Wi-Fi networks. Russian-based VPNs may also be ineffective due to geo-restrictions.</li>
+    <li>Mobile roaming in Belarus requires active &#39;roaming&#39; status on Russian SIM cards. Some carriers (like MTS) require manual activation via mobile app/customer support. A1 (Belarus) typically offers better rural coverage compared to MTS (Belarus). 4G/LTE is standard; 5G availability is limited.</li>
+    <li>For reliable mobile service in Belarus, consider using local operators A1 or Life. These providers do not impose restrictions on non-residents and their SIM cards remain active with timely top-ups. Using a local SIM card for over six years has proven to be trouble-free for some users.</li>
+    <li>A Belarusian SIM card will not provide internet service in Russia. Mobile data will function only as roaming, with calls and messages potentially available based on the plan. Direct internet access for Belarusian SIM cards is not available in Russia.</li>
+    <li>Near the Brest fortress, a Belarusian SIM card might accidentally pick up signals from Polish mobile operators. To avoid roaming charges, manually select your Belarusian network provider instead of using automatic network selection.</li>
+    <li>Russian mobile roaming in Belarus can suffer from connection instability where only specific websites load and VPNs fail to connect. Troubleshooting steps: 1) Manually switch network operators in phone settings; 2) Purchase a local e-sim (e.g., Trip.com packages) for data to avoid high roaming costs and connectivity issues.</li>
+    <li>It is not possible to order a Belarusian SIM card with a regional number from Russia, as Russian mobile operators have no connection to Belarusian operators. Mobile internet will work in Russia as roaming, but Belarusian SIM cards cannot be obtained directly from Russian providers.</li>
+    <li>Upon arrival in Minsk, currency exchange can be done at Belorusbank exchange offices, including those at the train station. SIM cards and public transport cards (BSK) for metro and bus travel can be purchased at the &#39;Galileo&#39; shopping center or at Minsktrans/metro ticket offices. BSK cards offer various tariffs based on the number of trips or days.</li>
+    <li>Using Russian SIM cards in Belarus generally works with roaming. Upon crossing the border and connecting to a Russian network (indicated by the network name), a confirmation SMS with a link for a &#39;captcha&#39; or verification process is usually sent. Completing this captcha (e.g., solving a puzzle, entering text) activates data services. Russian mobile operators offer roaming packages for Belarus, with prices varying. Some users report that if the SMS doesn&#39;t arrive, manual verification can be done via the operator&#39;s website. It&#39;s essential to have roaming enabled with your Russian provider. Purchasing a local Belarusian SIM card is also an option, though it might require registration and can be purchased at mobile stores.</li>
+    <li>Kufar (popular Belarusian classifieds site) requires a local phone number for account verification, which can only be obtained in person at a Belarusian mobile operator&#39;s office using a valid passport. There is no remote verification process. Users may request others to reveal contact details from listings or use &#39;Kufar Travel&#39; for short-term rentals which may not require full account verification.</li>
+  </ul>
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/by/transport/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transport</span></a>
+    <a class="chip" href="/en/by/documents-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documents &amp; Visa</span></a>
+    <a class="chip" href="/en/by/tickets-entertainment/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🎟 Tickets &amp; Entertainment</span></a>
+    <a class="chip" href="/en/by/housing/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🏠 Housing</span></a>
+    <a class="chip" href="/en/by/shopping/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛒 Shopping</span></a>
+    <a class="chip" href="/en/by/banking-money/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Banking &amp; Money</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Tired of googling the same thing?</h2>
+    <p>Ask Luky — answers for your case, from recent reports, not generic articles.</p>
+    <p>And Luky is a live voice translator for real conversations: chat in the lobby with travellers from other countries.</p>
+    <p class="ps">PS: even with your partner&#39;s family who don&#39;t speak a word of yours 😄</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/by/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

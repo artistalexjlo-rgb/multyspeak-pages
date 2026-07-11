@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sri Lanka: Entradas y ocio — experiencia real · Luky</title>
+<meta name="description" content="Experiencia real de los chats sobre Entradas y ocio en Sri Lanka: tal cual, de primera mano. Para tu caso — pregúntale a Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/es/lk/entradas-y-ocio/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/lk/entradas-y-ocio/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/lk/entradas-y-ocio/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/lk/entradas-y-ocio/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/lk/entradas-y-ocio/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · cualquier país · sin relleno</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noche</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/es/">Inicio</a> /
+    <a href="/es/lk/">Sri Lanka</a> /
+    <b>Entradas y ocio</b>
+  </nav>
+
+
+  
+  <h1>Entradas y ocio en Sri Lanka: lo que de verdad importa saber</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiencia real de gente de los chats sobre «Entradas y ocio» en Sri Lanka — tal cual, sin relleno. Para tu caso — <strong>pregúntale a Luky</strong>.</div></div>
+
+  <h2>De la experiencia real</h2>
+  <ul class="qlist">
+    <li>Para los viajeros que salen del Aeropuerto de Colombo (CMB) en Sri Lanka, se recomienda la sala VIP &#39;Alfa Only&#39; por su comodidad y porque suele estar menos concurrida en comparación con otras salas como &#39;Shagal&#39; o &#39;Malevich&#39;. Se encuentra en la Terminal C (salidas internacionales) y ofrece una experiencia relajante antes del vuelo.</li>
+    <li>De mayo a julio, las estaciones meteorológicas en Sri Lanka cambian significativamente. Las costas oeste y suroeste (por ejemplo, Bentota, Hikkaduwa, Unawatuna) experimentan la temporada de monzones, caracterizada por océanos agitados y fangosos, olas altas y lluvias frecuentes (principalmente por la noche o por la mañana). Por el contrario, la costa este (Trincomalee, Pasikudah, Arugam Bay) entra en su principal estación seca. Trincomalee es muy recomendable para familias debido a sus playas tranquilas sin olas y suficientes restaurantes. Arugam Bay es el centro principal para el surf y la vida nocturna durante este período.</li>
+    <li>La isla de Sri Lanka tiene una superficie aproximada de 65 610 km², comparable al tamaño de Letonia o Lituania. Esto es considerablemente mayor que Moscú, que abarca 2561 km² (incluidos sus territorios anexionados). Por lo tanto, recorrer toda la isla en solo 14 días no es realista.</li>
+    <li>La Comisión Nacional de Transporte de Sri Lanka ha puesto en marcha un programa piloto de reserva en línea para autobuses interurbanos. Los centros clave incluyen Makumbura, Galle y Kandy. Las reservas se pueden realizar a través del sitio web oficial o llamando al 0112001266. Se aplica una tarifa de servicio adicional de aproximadamente 30 LKR y se aceptan pagos con tarjeta.</li>
+    <li>La isla de Delft, en Sri Lanka, ofrece una experiencia rústica con condiciones mixtas. Las playas no son prístinas, a menudo están descuidadas y pueden estar llenas de aves. Sin embargo, la isla cuenta con una fauna diversa, flora endémica como el aloe y formaciones coralinas únicas que se utilizan para la construcción local. El alojamiento es básico y está orientado a la naturaleza. Los visitantes deben tener cuidado con el coral afilado bajo los pies y estar atentos a la fauna, como los caballos salvajes y las aves oportunistas.</li>
+    <li>En septiembre, la costa suroeste de Sri Lanka (Hikkaduwa, Unawatuna) experimenta olas altas debido a la temporada de monzones. Las playas protegidas por arrecifes en estas áreas siguen siendo aptas para nadar. La costa este (Trincomalee, Batticaloa) es generalmente más tranquila en septiembre, pero ofrece significativamente menos servicios turísticos y vida nocturna en comparación con el suroeste.</li>
+    <li>Las atracciones clave en Kandy incluyen el Real Jardín Botánico, el Templo del Diente de Buda (Dalada Maligawa, entrada de pago), el Templo Bahirawakanda (que cuenta con un gran Buda y vistas de la ciudad, a veces solicita donaciones o una pequeña tarifa) y Asgiri Maha Vihara Pirivena (un templo budista gratuito con hermosos interiores).</li>
+    <li>A los turistas que llegan a Sri Lanka generalmente no se les examina rigurosamente por cantidades de productos de tabaco para uso personal, como los sticks de IQOS. Los pasajeros han informado que han logrado traer cartones completos de sticks tanto en el equipaje de mano como en el facturado. Los dispositivos IQOS (que contienen baterías) deben colocarse en el equipaje de mano. Fumar está permitido y los salones de shisha son comunes.</li>
+    <li>Al planificar un viaje a Sri Lanka, considere lugares conocidos por sus hermosas puestas de sol. Si bien algunas áreas como Ahungalla pueden ofrecer vistas al océano solo desde las piscinas, otros lugares como Mawiya, Heritance y los hoteles Riu brindan oportunidades para disfrutar de las puestas de sol directamente desde la playa o sus instalaciones. Parrot Rock Island también es un lugar recomendado para ver la puesta de sol, ofreciendo una experiencia menos concurrida.</li>
+    <li>Los viajeros a Sri Lanka generalmente recomiendan un itinerario tipo &#39;sándwich&#39;: descanso en la playa -&gt; exploración del interior (Sigiriya, triángulo cultural) -&gt; descanso en la playa. Comenzar un tour de varios días inmediatamente después de un vuelo de larga distancia se considera físicamente agotador. Para viajes cortos, priorice la región más cercana a su punto de llegada/salida para minimizar el tiempo de tránsito.</li>
+    <li>La duración recomendada para visitar Galle Fort varía. Algunos sugieren 3 horas para ver los puntos clave como el fuerte, el faro, el paseo marítimo y el bastión con una pausa para almorzar. Otros defienden una visita más larga (un día completo o más) para explorar la histórica iglesia protestante con su antiguo órgano, disfrutar de paseos al atardecer, observar la fauna (pavos reales, monos, varanos, loros), visitar museos y descubrir patios escondidos de mercados y cafés.</li>
+    <li>Encontrar vuelos baratos a Sri Lanka puede ser un reto. Los precios de alrededor de 30 000 RUB por trayecto desde San Petersburgo se consideran relativamente bajos. Consejos para encontrar billetes más baratos: controlar grupos especializados que comparten ofertas de vuelos y reservar con aproximadamente 14-5 días de antelación a la salida, buscando ofertas de último minuto. Se recomienda suscribirse a canales relevantes para descubrir estas oportunidades.</li>
+    <li>Para unas vacaciones relajantes en la playa en Sri Lanka, se recomiendan las playas de Nilaveli y Uppuveli por su tranquilidad. Arugam Bay, por otro lado, es conocida por el surf, las olas y los encuentros con la vida silvestre, lo que la hace más adecuada para viajeros activos. Si busca una experiencia de playa tranquila, Arugam Bay no es la opción ideal. La venta de alcohol en algunas regiones del norte de Sri Lanka puede estar restringida, contando las tiendas con bares.</li>
+    <li>Para los vuelos de Aeroflot que salen de Colombo (Sri Lanka), una franquicia de equipaje adicional de 23 kg cuesta aproximadamente 170 USD (según informes recientes). Seis meses antes, costaba 150 USD. Un usuario también mencionó 150 EUR. El pago se realiza normalmente en el mostrador de facturación, a menudo en USD o EUR.</li>
+    <li>El debate sobre el turismo en Sri Lanka destaca dos enfoques: excursiones de ritmo rápido frente a estancias regionales de varios días. La optimización popular de los itinerarios incluye días dedicados a Sigiriya y Dambulla, combinados con experiencias locales como visitas a aldeas y clases de cocina, en lugar de apresurarse entre los sitios.</li>
+    <li>Condiciones para el surf en Arugam Bay, Sri Lanka: los puntos de surf principales incluyen Main Point (tres picos), Peanut Farm (fiable), Coconut (corrientes fuertes) y Light House. La mejor temporada para la costa este es, por lo general, de mayo a septiembre.</li>
+    <li>Buceo en Hikkaduwa: 95 USD por una inmersión en arrecife para principiantes, 125 USD por un naufragio (avanzado), 75 USD por una inmersión sencilla para buceadores certificados. Cursos PADI: OWD 500 USD, AOWD 450 USD. Los servicios de vídeo suelen cobrarse aparte (aprox. 30 USD). El pago por adelantado suele ser de 25-50 USD.</li>
+    <li>Para los viajeros que buscan infraestructura, cafeterías, bares y buenas playas en Sri Lanka, se mencionan zonas como Ahungalla y Mirissa. Ahungalla ofrece numerosas opciones gastronómicas y proximidad a faros. Sin embargo, el océano en estas zonas puede estar picado, lo que podría afectar a las condiciones para nadar.</li>
+    <li>Clima reciente en Trincomalee: el 13 de mayo estuvo nublado con pequeñas lloviznas durante todo el día, pero el mar permaneció tranquilo, claro y cálido. En los últimos 10 días, el clima varió; las lluvias solían comenzar después de las 4 p. m., con días soleados o nublados. Los aguaceros fuertes fueron poco frecuentes y generalmente ocurrieron por la noche.</li>
+    <li>Durante la temporada de monzones en la costa suroeste (típicamente de mayo a septiembre), busque mares tranquilos en la costa este de Sri Lanka. Trincomalee y Pasikudah son las principales recomendaciones para disfrutar de condiciones de nado tranquilas durante este periodo.</li>
+    <li>Jaffna, Sri Lanka, ofrece atracciones culturales que incluyen el Templo Nallur Kandaswamy (parcialmente bajo renovación) y el Templo Kirimalai Naguleswaram con elementos iluminados y fuentes de agua natural. El Museo Arqueológico de Jaffna contiene artefactos, monedas y otros objetos con descripciones en inglés. Aunque la fortaleza está en reparación y el paseo marítimo está sucio, el Fox Jaffna de Fox Resorts es un lugar recomendado para alojarse.</li>
+    <li>El clima en Sri Lanka, especialmente durante el verano, puede ser impredecible. Aunque los pronósticos pueden mostrar fuertes lluvias, las condiciones reales a menudo cambian rápidamente, con frecuentes cambios entre sol y nubes. Los chubascos, si ocurren, suelen ser breves y no duran más de una hora. Las temperaturas altas son comunes, y se aconseja a los viajeros no depender demasiado de los pronósticos meteorológicos, ya que las condiciones en tiempo real pueden variar significativamente.</li>
+    <li>Algunas aerolíneas, incluida Flydubai, operan rutas a Colombo con una parada técnica en Malé (MLE). Estas paradas pueden durar tan solo una hora. Los viajeros informan de riesgos significativos de perder las conexiones y de un gran agotamiento físico. A menudo se recomiendan los vuelos directos a pesar de los costes más elevados en comparación con los itinerarios con varias escalas.</li>
+    <li>La tarifa de entrada al orfanato de elefantes de Pinnawala es de aproximadamente 6000 LKR. Las actividades incluyen el baño de los elefantes, alimentación y fotografía. Nota: Existen santuarios de elefantes privados en las cercanías, pero a menudo enfrentan críticas éticas con respecto al bienestar animal y la solicitud agresiva de turistas.</li>
+    <li>Para los viajeros que buscan observar una vida silvestre diversa en Sri Lanka, el Parque Nacional Yala es un destino recomendado. Generalmente está abierto durante septiembre. Para una experiencia óptima, los visitantes deben verificar los horarios de apertura específicos y los posibles cierres.</li>
+    <li>Enero es generalmente un buen mes para unas vacaciones en la playa en la costa sur de Sri Lanka, con condiciones meteorológicas favorables. Aunque los patrones monzónicos pueden ser impredecibles y ocurrir en cualquier mes, enero se considera típicamente temporada alta para el sur. La costa este podría estar más tranquila, pero el sur también es una opción viable. La lluvia, si ocurre, suele ser por la tarde. Por lo tanto, es recomendable planificar unas vacaciones en la playa en la costa sur durante enero.</li>
+    <li>La playa de Unawatuna se considera ampliamente el mejor lugar para practicar esnórquel y observar tortugas marinas en libertad en comparación con Mirissa. Evite los criaderos de tortugas que mantienen a los animales en tanques o en cautiverio.</li>
+    <li>Batticaloa se sugiere como una alternativa auténtica y rentable a los pueblos costeros saturados de turistas para estancias de larga duración en Sri Lanka. Cuenta con una mejor infraestructura local, conexiones regulares de tren a Colombo y una cocina regional distintiva (específicamente platos a base de carne de res).</li>
+    <li>Para la observación de la vida silvestre en Sri Lanka, a menudo se sugiere el Parque Nacional Kumana como una alternativa menos concurrida a Yala o Udawalawe, destacándose específicamente por una menor densidad de vehículos y una experiencia más auténtica.</li>
+    <li>Precios de vuelos a Sri Lanka (desde Moscú): 1. Los vuelos directos (ej. Aeroflot) cuestan entre 64,000 RUB y 130,000 RUB por persona dependiendo de la temporada (la temporada alta de finales de diciembre/enero es la más cara). 2. Los vuelos con escala (ej. vía China) se pueden encontrar por ~58,000 RUB por persona incluyendo equipaje (23 kg). 3. El tiempo total de viaje con escalas cortas (3-5 horas) es de aproximadamente 20-21 horas.</li>
+    <li>La escena de entretenimiento de Sri Lanka difiere de destinos como Turquía o las Maldivas. Los programas de animación, noches de discoteca y juegos organizados en la playa generalmente no son frecuentes. La música en vivo, como presentaciones de piano o saxofón, puede estar disponible en algunos hoteles. Para actividades más diversas, los grupos comunitarios locales o foros de viaje específicos podrían ofrecer información. Las principales atracciones de Sri Lanka son sus paisajes naturales, incluidos el océano y las playas, lo que fomenta la exploración de diferentes lugares en lugar de depender del entretenimiento dentro del hotel.</li>
+    <li>Mirissa, situada en la costa sur de Sri Lanka, disfruta de buen tiempo alrededor del período de Año Nuevo, pero a menudo se caracteriza por lluvias diurnas frecuentes durante varios días consecutivos. La zona suele estar muy concurrida en esta época. El clima de Sri Lanka puede cambiar rápidamente en un solo día.</li>
+    <li>Ayurveda Isiwara Paura Sigiriya - Healthy side of your life es un spa ayurvédico recomendado en Sigiriya. Ofrecen programas que incluyen un masaje de 1,5 horas con tratamiento facial (mascarilla herbal/cosmético) y una pequeña sala de vapor (&#39;hamam&#39;). Los masajes de pies para niños están disponibles por 5500 LKR por 30 minutos, con un 10% de descuento para grupos (por ejemplo, 8 personas).</li>
+    <li>Los pronósticos meteorológicos en regiones tropicales (por ejemplo, Sri Lanka) suelen ser generalizados y poco fiables, ya que predicen lluvia con frecuencia. Sin embargo, la lluvia suele ser localizada, breve o se produce por la noche. Las precipitaciones importantes y generalizadas suelen ocurrir solo durante los ciclones, como el ciclón &#39;Ditwa&#39; en noviembre, que causó inundaciones graves en partes de Sri Lanka pero dejó otras regiones secas. La lluvia tropical suele ser cálida y puede proporcionar alivio del calor, a diferencia de la lluvia de climas templados.</li>
+    <li>Al visitar la región de Sigiriya, considere escalar la roca vecina de Pidurangala en lugar de, o además de, la Roca del León. Pidurangala ofrece una vista panorámica superior de la propia Roca del León, está menos concurrida y cuesta menos. Tenga cuidado con los guías locales agresivos en la Roca del León de Sigiriya, quienes pueden ofrecer servicios repetidamente por hasta 10,000 LKR.</li>
+    <li>Visitar las minas de piedra lunar (por ejemplo, en Meetiyagoda) se considera generalmente una experiencia turística de una sola vez. Ofrece un vistazo a los métodos de extracción locales y a la vida cotidiana, pero carece de un valor significativo para volver a visitarlas.</li>
+    <li>En Sri Lanka, los conductores de tuk-tuk de la calle suelen cobrar de más a los turistas, pidiendo entre 500 y 600 LKR por viajes que cuestan 300 LKR. Utilice la aplicación PickMe para comprobar el precio local justo y, a continuación, negocie con los conductores de la calle utilizando esta tarifa exacta como referencia. Dado que los conductores de PickMe a menudo cancelan o no llegan, este método de negociación híbrido es el que mejor funciona. Intercambie números de teléfono con conductores de confianza para futuras reservas directas.</li>
+    <li>Se recomienda Sigiriya por su importancia histórica, sus antiguas piscinas, cuevas y embalses, con una entrada que cuesta aproximadamente 2300 LKR. Pidurangala Rock ofrece una alternativa más asequible con vistas panorámicas de Sigiriya al amanecer o al atardecer. La torre Ambuluwawa requiere entrada de pago, pero alojarse en el hotel Altitude Ambuluwawa en el mismo lugar otorga acceso gratuito y las 24 horas, lo que resulta ideal para visitarla durante el amanecer o el atardecer fuera del horario habitual. Dambulla ofrece un famoso Templo de la Cueva (entrada de pago).</li>
+    <li>Los vuelos de Air Arabia en rutas de Oriente Medio (incluidos los traslados a Sri Lanka) han sufrido importantes cancelaciones, con suspensiones prorrogadas hasta el 31 de mayo. Los sistemas de reserva automatizados de la aerolínea pueden seguir vendiendo billetes a pesar de las cancelaciones activas de vuelos. Otras grandes compañías regionales, como Emirates y Aeroflot, han mantenido sus operaciones programadas.</li>
+    <li>En junio, la costa suroeste (Hikkaduwa, Unawatuna) experimenta condiciones de temporada baja con olas altas. La costa sur (Tangalle) es pintoresca pero brava; Dikwella (específicamente la sección entre Dickwella Beach Hotel y Hiriketiya) se recomienda para nadar con mayor seguridad. La bahía de Arugam, en la costa este, es el destino principal para los surfistas y cuenta con mejores condiciones meteorológicas durante este periodo.</li>
+    <li>La playa de Nilaveli en Sri Lanka ofrece un largo tramo de costa, con secciones más tranquilas disponibles, especialmente durante los días laborables. El agua es poco profunda y generalmente tranquila, adecuada para familias. Sin embargo, la limpieza puede ser un problema, con informes de basura, redes de pesca y botes cerca de la orilla. La claridad del agua varía y la playa puede llenarse de gente local los fines de semana. Para una experiencia más prístina, se recomiendan las áreas cercanas a hoteles como el Cardamon Hotel Nilaveli.</li>
+    <li>En el Aeropuerto Internacional Bandaranaike de Colombo (CMB), hay un control de seguridad secundario justo antes de las puertas de embarque. En este punto, todos los líquidos, incluidas las botellas de agua compradas dentro del área de Duty Free, serán confiscados a menos que estén sellados en bolsas autorizadas STEB. Las áreas de espera de las puertas de embarque carecen de baños y tiendas, y los precios del agua allí son elevados (aprox. 350 LKR). Indique a los viajeros que no entren demasiado pronto en el área de espera de la puerta (las puertas suelen abrir 2 horas antes de la salida) para evitar quedarse sin servicios, pero adviértales que dejen suficiente tiempo para la cola en el control de seguridad de la puerta. Nota: Las cervezas locales (Lion, Tiger) no se venden en las tiendas Duty Free del aeropuerto, aunque se puede encontrar ron local por alrededor de 23 dólares estadounidenses.</li>
+    <li>Al reservar alojamiento en Sri Lanka, especialmente villas privadas o apartamentos, considere plataformas como Booking.com, Agoda y Airbnb. Reservar directamente con los propietarios de las propiedades también puede ser beneficioso, ya que a menudo proporcionan información detallada y fotos de antemano. Utilizar plataformas de redes sociales como Facebook e Instagram para listados locales también es una estrategia viable. Para paquetes turísticos, los agregadores como Level Travel pueden ofrecer opciones competitivas. Para estancias prolongadas, explorar contratos de alquiler directos o plataformas locales podría generar mejores ofertas.</li>
+    <li>Las clases de surf en Weligama, Sri Lanka, muestran una diferencia de precio significativa entre las escuelas dirigidas por extranjeros (60-120 USD por sesión) y los instructores locales (15-20 USD por sesión). Weligama es citada como el centro principal para principiantes.</li>
+    <li>Para una visita a Ella, generalmente se considera suficiente entre 1 y 2 días o un par de noches para explorar los alrededores escénicos y las atracciones principales.</li>
+    <li>Las autopistas de Sri Lanka prohíben estrictamente las motocicletas y los vehículos de tres ruedas (tuk-tuks). El acceso está restringido únicamente a vehículos de 4 ruedas. Las aplicaciones de navegación a menudo sugieren rutas alternativas más largas para que los motociclistas eviten estas autopistas.</li>
+    <li>Los safaris en jeep en el Parque Nacional Yala deben reservarse con antelación. Los jeeps se alquilan a una tarifa fija, independientemente del número de pasajeros. La práctica común de buscar grupos en el lugar, en la entrada del parque, no es confiable y se desaconseja para los viajeros que van solos. Procedimiento recomendado: contactar a los organizadores turísticos a través de canales de la comunidad local o la recepción del hotel con antelación para asegurar una reserva. Los tours matutinos (que comienzan temprano, a menudo antes del amanecer) ofrecen una mayor actividad de vida silvestre.</li>
+    <li>Los precios de los boletos de avión a Sri Lanka pueden fluctuar significativamente. Actualmente, los boletos de ida para salida inmediata cuestan alrededor de 9,000 RUB, con boletos de regreso estimados en 40,000 RUB. La flexibilidad con las fechas de viaje puede llevar a opciones de regreso más asequibles, potencialmente alrededor de 30,000 RUB. Se aconseja a los viajeros buscar ofertas, ya que las reservas espontáneas o flexibles pueden generar ahorros significativos.</li>
+    <li>Ahangama, Sri Lanka, ofrece una experiencia agradable con numerosos cafés con vistas al océano y playas recónditas. El clima en julio es generalmente favorable, aunque son posibles chubascos ocasionales. Para el alojamiento, considere opciones como Luminara Sky Lounge. Esté preparado para posibles problemas con la reserva, tales como renovaciones no anunciadas o alojamientos compartidos. Contratar a un guía turístico privado para las excursiones puede proporcionar flexibilidad e itinerarios personalizados.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/es/lk/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/es/lk/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/es/lk/documentos-y-visados/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentos y visados</span></a>
+    <a class="chip" href="/es/lk/alojamiento/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Alojamiento</span></a>
+    <a class="chip" href="/es/lk/seguridad/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Seguridad</span></a>
+    <a class="chip" href="/es/lk/salud/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Salud</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>¿No encontraste tu caso?</h2>
+    <p>Pregúntale a Luky — según la experiencia reciente de la gente, no manuales.</p>
+    <p>Y Luky es un traductor de voz para conversaciones reales: pide indicaciones y entiende la respuesta de verdad.</p>
+    <p class="ps">PS: conoce a alguien en un bar que habla otro idioma</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiencia real de chats de comunidades, sin relleno</div>
+    <nav class="f-links">
+      <a href="/es/about/">Acerca de</a>
+      <a href="/es/lk/">Todos los temas</a>
+      <a href="/es/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Las respuestas se recopilan de chats abiertos de comunidades — es experiencia real de personas, no asesoría oficial. Verifica antes de decisiones importantes.</p>
+    <div class="f-copy">© 2026 Luky · actualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noche", DAY="\u2600 D\u00eda";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

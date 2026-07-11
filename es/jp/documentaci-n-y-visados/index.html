@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Japón: Documentación y visados — experiencia real · Luky</title>
+<meta name="description" content="Experiencia real de los chats sobre Documentación y visados en Japón: tal cual, de primera mano. Para tu caso — pregúntale a Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/es/jp/documentaci-n-y-visados/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/jp/documentaci-n-y-visados/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/jp/documentaci-n-y-visados/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/jp/documentaci-n-y-visados/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/jp/documentaci-n-y-visados/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · cualquier país · sin relleno</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noche</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/es/">Inicio</a> /
+    <a href="/es/jp/">Japón</a> /
+    <b>Documentación y visados</b>
+  </nav>
+
+
+  
+  <h1>Documentación y visados: cómo es en Japón — de primera mano</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiencia real de gente de los chats sobre «Documentación y visados» en Japón — tal cual, sin relleno. Para tu caso — <strong>pregúntale a Luky</strong>.</div></div>
+
+  <h2>De la experiencia real</h2>
+  <ul class="qlist">
+    <li>Respecto a una solicitud de visado japonés en la que una persona patrocina a otra (su madre). La pregunta es si el extracto bancario y el certificado de empleo del patrocinador son suficientes, o si también es necesario presentar el certificado de empleo de la persona patrocinada, especialmente si está cerca de la jubilación y tiene un salario bajo.</li>
+    <li>Los requisitos para el visado de turista en Japón han cambiado; generalmente no se requieren reservas de hotel para la presentación, pero el nombre, la dirección y el número de teléfono del hotel deben figurar en el itinerario de estancia. Los formularios escritos a mano suelen ser rechazados; es obligatorio prepararlos digitalmente. Varios solicitantes pueden ser representados por una sola persona en el centro de visados mediante un poder notarial.</li>
+    <li>Para las solicitudes de visa japonesa, se recomienda no solicitarla antes de 90 días previos a la fecha prevista de viaje e idealmente alrededor de un mes antes de la salida. Solicitarla demasiado pronto podría generar complicaciones, mientras que solicitarla demasiado tarde conlleva el riesgo de perder el plazo de viaje debido a los tiempos de procesamiento.</li>
+    <li>Se ofrecen servicios de solicitud de visa para Japón, que incluyen la preparación de documentos, la presentación sin necesidad de visitas personales al centro de visas y asistencia con planes de viaje y cartas de motivación. Los servicios están disponibles para ciudadanos de todas las regiones de Rusia. Se presentan varios paquetes y opciones de precios.</li>
+    <li>Clarifique los requisitos para obtener una visa japonesa. Especifique el presupuesto diario recomendado (por ejemplo, 200 USD por día), el saldo bancario requerido para un viaje de 12 días (por ejemplo, 160.000-170.000 JPY) y si las reservas de hotel son obligatorias o recomendadas. Además, confirme el proceso de solicitud actual (por ejemplo, centro de visas frente a presentación directa en la embajada) y los tiempos de procesamiento típicos.</li>
+    <li>El pasaporte de un viajero, que contiene una visa japonesa válida, resultó ligeramente dañado por agua (se cayó un jarrón sobre él). Todos los datos, incluidos los sellos de la visa, son legibles. Evalúe la probabilidad de que el pasaporte y la visa sean aceptados para viajar a Japón y aconseje si son necesarias medidas de emergencia (como la reemisión del pasaporte/visa).</li>
+    <li>Cómo indicar que se alojará con amigos o familiares en lugar de en un hotel en una solicitud de visado para Japón. Se busca información sobre los formularios y procedimientos necesarios, especialmente si se solicita desde fuera de Rusia.</li>
+    <li>Para obtener un visado para Japón, se ofrecen servicios de preparación y presentación de documentos sin necesidad de que los solicitantes visiten los centros de visados o Moscú. Esto incluye la creación de itinerarios de viaje y cartas de motivación para visados de entradas múltiples. Algunos servicios ofrecen la revisión y presentación de documentos por una tarifa, con pagos a menudo estructurados como un porcentaje tras la aprobación del visado. Una tarifa fija de 8000 rublos por persona cubre el proceso completo, incluida la preparación de documentos, la presentación y la reserva de vuelos si fuera necesario. Está disponible una tarifa más baja de 5000 rublos para la presentación de documentos previamente preparados.</li>
+    <li>Para la recogida del pasaporte tras una solicitud de visado japonés, no dependa exclusivamente de las notificaciones por SMS o correo electrónico, ya que a menudo no se envían. Es recomendable llamar al Centro de Solicitud de Visados (VAC) aproximadamente 7 días después de la entrega. Si el verificador de estado en línea no funciona, se recomienda contactar directamente con el VAC. Los servicios de notificación por SMS pueden no ser fiables y suponen un coste adicional.</li>
+    <li>Es posible obtener un visado japonés en un plazo breve (12-14 días). Existen servicios que pueden ayudar con la preparación de documentos, la presentación de solicitudes sin necesidad de visitas personales al centro de visados y la planificación del itinerario. Los costes oscilan entre 5.000 y 8.000 yenes por persona, dependiendo del nivel de servicio. Los requisitos clave incluyen un certificado de trabajo y, potencialmente, las reservas de vuelo. La preparación temprana y el uso de servicios urgentes pueden ayudar a cumplir los plazos ajustados.</li>
+    <li>Al presentar una solicitud de visa japonesa en nombre de otra persona (por ejemplo, un cónyuge), generalmente basta con un formulario de poder simple y sin notarizar. Por lo general, el formulario oficial se puede descargar desde el sitio web del centro de solicitud de visas. Asegúrese de que el formulario esté actualizado, ya que los requisitos pueden cambiar.</li>
+    <li>Al usar Visit Japan Web, registrar a menores de edad requiere prestar especial atención a los ajustes iniciales de activación. Los usuarios no deben asumir que los niños se vinculan automáticamente al código QR del adulto. Para obtener códigos QR individuales para cada miembro de la familia, asegúrese de que todos los dependientes estén agregados dentro de la cuenta del adulto y seleccionados antes de generar los códigos. Si el sistema no muestra varios códigos, a menudo se trata de un problema de configuración al inicio del formulario de registro.</li>
+    <li>Para los viajeros que planean cruceros que implican entrar a Japón, salir hacia un tercer país (por ejemplo, Corea del Sur) y volver a entrar a Japón, una visa de entrada única no es suficiente. Al solicitar una visa japonesa, uno debe solicitar explícitamente una visa de entrada &#39;doble&#39; o &#39;múltiple&#39; en la solicitud y proporcionar un itinerario de viaje detallado que cubra todos los puntos de entrada. Simplemente enumerar el itinerario del crucero en el programa de viaje suele ser insuficiente si el tipo de visa solicitado en el formulario de solicitud es &#39;única&#39;.</li>
+    <li>Los servicios de solicitud de visado para Japón están disponibles de forma remota, lo que elimina la necesidad de acudir personalmente a los centros de visados o consulados en Moscú. Los servicios incluyen la preparación de documentos, la presentación de la solicitud de visado y la obtención del visado sin que el solicitante tenga que viajar. Este proceso está cubierto por un contrato que garantiza la transparencia y el pago tras la aprobación del visado. Se han procesado más de 1800 visados de esta manera.</li>
+    <li>Para solicitar una visa japonesa siendo trabajador autónomo con bajos ingresos, el patrocinio es una estrategia viable. Se requiere una carta de patrocinio en formato libre. Los centros de visados son eficientes y cuentan con personal amable. Las solicitudes lograron obtener una visa de 30 días cuando se habían solicitado 22 días. Se denegaron las visas de entrada múltiple para solicitantes que tramitaban la visa por primera vez. Es necesario contar con billetes de avión de regreso al país de origen y, si no están disponibles en el momento de la solicitud, es posible que el centro de visados contacte al solicitante más tarde.</li>
+    <li>Se recomienda a los viajeros que ingresan a Japón utilizar el portal &#39;Visit Japan Web&#39; para generar códigos QR para inmigración y aduanas. Es posible registrar a varios miembros de la familia bajo una misma cuenta principal utilizando la función &#39;añadir miembro de la familia&#39; al finalizar el proceso de registro. Completar esto en línea ahorra mucho tiempo en comparación con rellenar formularios en papel al llegar.</li>
+    <li>Por lo general, los solicitantes de visa de Rusia a Japón deben presentar una prueba de solvencia económica. Un punto de referencia común es al menos 150 dólares por día de estancia, con un saldo total en la cuenta no inferior a 200 000 RUB. Al completar las solicitudes, el país de nacimiento para aquellos nacidos en la URSS debe ingresarse manualmente como &#39;URSS&#39; si no aparece en la lista desplegable de autocompletar.</li>
+    <li>Los solicitantes de un visado japonés que hayan nacido en Crimea, las regiones recién anexionadas de Ucrania, Osetia del Sur, Abjasia o las islas Kuriles se enfrentan a un riesgo significativamente mayor de rechazo del visado. Se les recomienda encarecidamente que no compren billetes de avión no reembolsables hasta que el visado sea aprobado oficialmente.</li>
+    <li>Las alertas de tifón y las consiguientes cancelaciones de vuelos están causando una interrupción significativa para los viajeros en Japón. Muchos están tratando desesperadamente de volver a reservar vuelos, y algunos recurren a comprar billetes nuevos a precios más altos para cumplir con las fechas límite de sus visados. Se aconseja a los viajeros que controlen las previsiones meteorológicas y las notificaciones de las aerolíneas, y que se pongan en contacto de forma proactiva con sus aerolíneas o agentes de viajes para conocer las opciones de reserva. Tenga en cuenta las fechas de caducidad de los visados y las posibles sanciones por exceder la estancia. Considere rutas o aerolíneas alternativas si los vuelos directos no están disponibles o han sido cancelados.</li>
+    <li>Para las solicitudes de visado a Japón, un proceso estándar suele llevar alrededor de una semana, pero es aconsejable solicitarlo con mucha antelación a las fechas del viaje para evitar estrés y posibles problemas. Factores como los antecedentes del solicitante y su historial de viajes pueden influir en los tiempos de tramitación. Aunque el seguro de viaje no siempre es obligatorio, puede proporcionar protección financiera contra imprevistos como cancelaciones de vuelos.</li>
+    <li>Para entrar a Japón, complete la tarjeta de inmigración con antelación y tome una foto clara de la misma; esta información es necesaria para completar los formularios de llegada posteriores. Los pasajeros también deben priorizar el registro de sus datos biométricos (fotos/huellas dactilares) en quioscos dedicados antes de unirse a la fila principal de inmigración para agilizar el proceso.</li>
+    <li>El seguro de viaje en Japón es esencial, ya que los servicios médicos son costosos y no están cubiertos por el estatus de turista. Las pólizas deben ser individuales; no es posible depender de la cobertura local de familiares o amigos. Los bancos y compañías de seguros rusos más populares (Tinkoff, Ingosstrakh, Alfa) ofrecen pólizas de viaje. Los costos son de aproximadamente 3.000 a 5.000 RUB para un viaje estándar. Verifica siempre la cobertura para las actividades planificadas, como los deportes.</li>
+    <li>Aclaración sobre el costo de la visa japonesa. Aunque se informa que la tarifa consular está exenta, existe una tarifa de servicio para el centro de visas (alrededor de 970 RUB). Se recomienda reservar las citas con antelación a través del sitio web del centro de visas.</li>
+    <li>Existen informes sobre un próximo aumento en la tasa consular para visados de corta duración de entrada única a Japón para ciudadanos rusos. Se espera que la tarifa suba de 3,000 JPY a 15,000 JPY (aproximadamente 13,700 rublos) a partir del 1 de julio. Para otros países, la tasa para un visado de entrada múltiple puede ser significativamente mayor, alrededor de 30,000 JPY. Algunas fuentes sugieren que la tasa para los ciudadanos rusos podría permanecer en 0 JPY, posiblemente debido a acuerdos bilaterales específicos, pero esto está sujeto a confirmación.</li>
+    <li>Para las solicitudes de visado japonés, si su fecha de viaje aún no está fijada al rellenar el formulario de solicitud, puede añadir la fecha manualmente (por ejemplo, en el «programa de estancia») en un documento impreso. Esto suele aceptarse en Moscú, aunque las políticas pueden variar según el consulado.</li>
+    <li>Si solicita un visado de 20 días para Japón, el visado emitido será de 30 días, permitiendo una estancia de 16 días dentro de ese periodo. Si solicita una estancia más larga (17-31 días), se concederá un visado de 30 días. El visado permite la entrada hasta el último día de su validez, comenzando a partir de entonces un periodo de estancia de 15 o 30 días, independientemente de la duración inicial solicitada.</li>
+    <li>El sistema Visit Japan Web es una plataforma en línea para realizar trámites previos al viaje, pero los formularios en papel siguen estando disponibles y se pueden rellenar en el aeropuerto al llegar. Aunque utilizar Visit Japan Web puede ahorrar tiempo, algunos consideran que los formularios del aeropuerto son más sencillos y hacen menos preguntas.</li>
+    <li>Es posible solicitar un visado japonés utilizando un pasaporte antiguo de 5 años. El requisito principal es que el pasaporte sea válido por al menos 6 meses a partir de la fecha de solicitud. Esta información se puede confirmar en el sitio web del centro de solicitud de visados.</li>
+    <li>Al solicitar un visado japonés, es importante asegurarse de que toda la documentación sea precisa y esté completa. Los solicitantes deben evitar frases específicas en su solicitud, como declarar que visitan a amigos o familiares, si esto no coincide con el verdadero propósito de su viaje. Los solicitantes procedentes de territorios en disputa o aquellos que trabajen en sectores sensibles pueden enfrentarse a un mayor escrutinio.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/es/jp/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/es/jp/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/es/jp/entradas-y-ocio/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Entradas y ocio</span></a>
+    <a class="chip" href="/es/jp/cambio-y-transferencias/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Cambio y transferencias</span></a>
+    <a class="chip" href="/es/jp/banca-y-dinero/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Banca y dinero</span></a>
+    <a class="chip" href="/es/jp/correo-y-paqueter-a/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Correo y paquetería</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Hay artículos genéricos — ¿pero una solución para ti?</h2>
+    <p>Pregúntale a Luky — responde para tu caso, según reportes recientes, no artículos genéricos.</p>
+    <p>Y Luky es un traductor de voz para conversaciones reales: pide indicaciones y entiende la respuesta de verdad.</p>
+    <p class="ps">PS: entabla charla con un compañero de viaje que no habla ni una palabra del tuyo</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiencia real de chats de comunidades, sin relleno</div>
+    <nav class="f-links">
+      <a href="/es/about/">Acerca de</a>
+      <a href="/es/jp/">Todos los temas</a>
+      <a href="/es/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Las respuestas se recopilan de chats abiertos de comunidades — es experiencia real de personas, no asesoría oficial. Verifica antes de decisiones importantes.</p>
+    <div class="f-copy">© 2026 Luky · actualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noche", DAY="\u2600 D\u00eda";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

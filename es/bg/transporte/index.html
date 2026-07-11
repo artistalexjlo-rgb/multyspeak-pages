@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bulgaria: Transporte — experiencia real · Luky</title>
+<meta name="description" content="Experiencia real de los chats sobre Transporte en Bulgaria: tal cual, de primera mano. Para tu caso — pregúntale a Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/es/bg/transporte/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/bg/transporte/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/bg/transporte/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/bg/transporte/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/bg/transporte/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · cualquier país · sin relleno</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noche</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/es/">Inicio</a> /
+    <a href="/es/bg/">Bulgaria</a> /
+    <b>Transporte</b>
+  </nav>
+
+
+  
+  <h1>Transporte: cómo es en Bulgaria — de primera mano</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiencia real de gente de los chats sobre «Transporte» en Bulgaria — tal cual, sin relleno. Para tu caso — <strong>pregúntale a Luky</strong>.</div></div>
+
+  <h2>De la experiencia real</h2>
+  <ul class="qlist">
+    <li>Para el transporte público en Bulgaria (autobuses, tranvías), considere comprar un abono mensual si planea viajar con frecuencia. Si no tiene una tarjeta bancaria búlgara, es posible que una aplicación móvil no sea una opción de pago adecuada. Verifique si existen tarjetas de suscripción que ofrezcan viajes ilimitados por un periodo fijo.</li>
+    <li>El estacionamiento de pago en Nesebar varía de precio, con tarifas diarias reportadas de 15 EUR y 24 EUR. Por lo general, se considera que las tarifas por hora son consistentes en todos los estacionamientos de pago.</li>
+    <li>Las rutas de autobús desde el aeropuerto de Estambul a Bulgaria (por ejemplo, Arda Tur) a menudo aparecen en agregadores como Obilet con recogida en el &#34;aeropuerto&#34;, pero en realidad, muchos autobuses no entran en las instalaciones del aeropuerto. Es más fiable tomar un servicio de traslado Havaist a la estación principal de autobuses (otogar) y salir desde allí. Los autobuses directos desde el aeropuerto son muy poco frecuentes (por ejemplo, 05:45, 15:30 para algunas compañías) y no se debe depender de ellos si no coinciden con el horario de viaje.</li>
+    <li>Se permite viajar dentro de la zona Schengen con un visado búlgaro de entrada única. Por lo general, no hay control de pasaportes en los vuelos dentro del espacio Schengen, pero los viajeros deben llevar un justificante de viaje posterior a Bulgaria para cumplir con posibles controles fronterizos.</li>
+    <li>Los ciudadanos búlgaros pueden viajar dentro de la UE utilizando un pasaporte válido o un documento nacional de identidad (lichna karta), incluso si su periodo de validez está próximo a expirar. El requisito fundamental es que el documento no esté caducado en el momento del viaje. Para una planificación a largo plazo, existen pasaportes con una validez de 10 años.</li>
+    <li>Los usuarios solicitan indicaciones para encontrar el autobús de Nishli desde el Aeropuerto de Estambul, mencionando específicamente la &#39;plataforma 19, Salida B&#39;. Se trata de una petición de información fáctica que requiere datos de ubicación específicos.</li>
+    <li>Mudarse a Bulgaria con mascotas requiere entender regulaciones veterinarias específicas. Los pasos clave incluyen la vacunación contra la rabia, seguida de una prueba de anticuerpos al menos un mes después. El viaje solo está permitido tres meses después de que la prueba de anticuerpos arroje un resultado positivo (superior a 0,5 UI/ml). Algunos viajeros optan por transporte privado o autobuses, negociando las condiciones con los transportistas por adelantado. Los traslados al aeropuerto desde Estambul hasta Burgas pueden ser costosos; se recomienda buscar recomendaciones en comunidades de dueños de mascotas. Tenga en cuenta las regulaciones de tránsito a través de Turquía, que oficialmente requieren una documentación similar. A veces, los viajeros asumen riesgos personales si las limitaciones de tiempo impiden cumplir con el periodo de espera completo de tres meses, lo que a menudo requiere la firma de exenciones que reconocen este riesgo. Verifique siempre los requisitos actuales con fuentes oficiales, ya que las normas pueden cambiar.</li>
+    <li>No hay servicio directo de autobús público desde el Aeropuerto de Varna (VAR) hasta Sunny Beach (Slanchev Bryag). Los viajeros primero deben tomar la línea de autobús 409 desde el Aeropuerto de Varna hasta la Estación Central de Autobuses de Varna (Avtogara), y desde allí, tomar otro servicio de autobús hacia Sunny Beach.</li>
+    <li>Arda Tur opera rutas de autobús desde el aeropuerto de Estambul a Varna. Los billetes se pueden reservar a través de su sitio web oficial. El pago suele requerir una tarjeta bancaria internacional.</li>
+    <li>Para viajar de Varna a Nesebar con equipaje, la opción más económica es el autobús desde la estación central, que tarda aproximadamente 2 horas. Hay servicios de taxi disponibles, que cuestan entre 100 y 120 BGN, mientras que los servicios de traslado privado cuestan entre 80 y 100 BGN. Los servicios directos de autobús podrían ser más caros.</li>
+    <li>Dos servicios de autobús operan desde el Nuevo Aeropuerto de Estambul hasta Sunny Beach: uno a las 6:00 a. m. y otro alrededor de las 3:30 p. m. El autobús se detiene en la gasolinera Shell en Sunny Beach, ubicada cerca del cruce E87. El autobús también se detiene en la misma estación Shell cuando viaja desde Varna. Es recomendable llegar a la parada de autobús un poco antes de la hora de salida programada.</li>
+    <li>No existe una aplicación de taxi universal para toda Bulgaria. En su lugar, los servicios de taxi están localizados. Para ciudades como Varna, &#39;Triumph Taxi&#39; es una aplicación local recomendada. Los viajeros deben investigar las aplicaciones de taxi específicas de cada ciudad o estar preparados para detener taxis en la calle o llamarlos directamente.</li>
+    <li>Los tiempos de cruce fronterizo entre Turquía y Bulgaria (por ejemplo, en Kapitan Andreevo/Kapıkule, Malko Tarnovo/Dereköy) varían significativamente. Los factores que influyen en los tiempos de espera incluyen:
+*   **Hora del día:** A primera hora de la mañana y al mediodía a veces puede haber menos vehículos.
+*   **Día de la semana:** Los fines de semana y días específicos pueden tener más tráfico.
+*   **Festivos nacionales:** Tanto los días festivos turcos como los búlgaros pueden causar retrasos significativos.
+*   **Medio de transporte:** Los traslados individuales o los coches privados a menudo experimentan esperas más cortas en comparación con los autobuses, especialmente si hay varios autobuses.
+*   **Dirección del viaje:** Los tiempos de espera pueden variar dependiendo de si usted entra a Turquía o a Bulgaria.
+Los informes recientes variaron de 20 minutos (traslado individual) a 1,5 horas (autobús) en fechas específicas, contradiciendo los rumores de esperas de 7 horas.</li>
+    <li>Para viajar desde el Aeropuerto de Estambul (IST) a Bulgaria, existen varias opciones. Hay autobuses operados por compañías como Nişli disponibles. Los billetes se pueden comprar a través de obilet.com o, en algunos casos, reservarse mediante WhatsApp (aunque la disponibilidad de reserva puede ser limitada). El coste es de aproximadamente 30 EUR, pagaderos con tarjetas bancarias extranjeras. Aunque Obilet pueda mostrar los precios en TRY, el pago a menudo requiere una tarjeta no rusa. La ruta de autobús Havaist-5 va a la terminal principal de autobuses de Estambul (Otogar); los billetes cuestan entre 330 y 336 TRY y pueden pagarse con una tarjeta extranjera o Istanbulkart. Es posible que no sea posible la compra directa al conductor. Para aquellos que necesiten pagar en liras turcas, hay cambio de divisas disponible en el aeropuerto.</li>
+    <li>Ruta del servicio de autobús Nishikli: del Aeropuerto de Estambul (IST) a los complejos turísticos búlgaros. Punto de embarque principal: Piso -2, Columna 19. Frecuencia: Dos veces al día (aprox. 05:45 y 15:30). Métodos de reserva: Mostrador en el lugar o a través del sitio web/aplicación de Obilet. Pago: Liras turcas, EUR o USD. Duración: ~7-8 horas dependiendo de los tiempos de espera en el cruce fronterizo.</li>
+    <li>En Bulgaria, concretamente en Burgas, los servicios de alquiler de coches ofrecen vehículos adecuados para viajar a través de la frontera a Grecia y Rumanía. El coste diario aproximado es de 40-50 EUR. Verifique los términos específicos para viajes internacionales con la empresa de alquiler.</li>
+    <li>Al cruzar la frontera entre Bulgaria y Turquía en Malko Tarnovo, si posee dos pasaportes, asegúrese de que el pasaporte utilizado para entrar en Turquía tenga al menos 120 días de validez restante. Los procedimientos de salida de Bulgaria pueden permitir la partida con un pasaporte próximo a caducar, pero los requisitos de entrada de Turquía son más estrictos. Por lo general, se recomienda utilizar el mismo pasaporte para salir de Bulgaria y entrar en Turquía si ambos países lo reconocen. Sin embargo, si la validez del pasaporte para Turquía es un problema, se puede presentar un segundo pasaporte válido al entrar en Turquía. Las experiencias locales sugieren cierta flexibilidad en Malko Tarnovo, pero las normas oficiales exigen una validez suficiente del pasaporte para la entrada en Turquía.</li>
+    <li>Para viajar desde el aeropuerto de Varna a Sunny Beach (Bulgaria), utilice los autobuses desde la estación central de autobuses de Varna. La ruta 409 es un servicio regular. Consulte el horario en el sitio web oficial de la estación de autobuses de Varna. Si hace tránsito a través de Estambul, opera un servicio de transporte desde el nuevo aeropuerto hasta la estación central de autobuses (aproximadamente 40 minutos). Desde allí, diversas compañías de autobuses, incluida Arda Tur, ofrecen servicios. No siempre es necesario reservar los billetes de autobús con antelación, aunque a veces se ofrece un seguro de viaje contra la denegación de visado al comprar el billete.</li>
+    <li>Ruta de transporte público desde Pomorie hasta el Mall Galleria en Burgas: tome un autobús interurbano, bájese en la parada &#39;Zornitsa&#39; cerca del parque Sveta Troitsa y camine unos 10 minutos a través del parque hasta el centro comercial, evitando la ruta de autobús más larga que pasa por la estación de autobuses de Burgas (Autogara Yug).</li>
+    <li>Aconseje a las personas con residencia y visados búlgaros que planean viajar a Italia durante una semana antes de dirigirse a Bulgaria. Pregunte sobre posibles problemas en el aeropuerto de Roma y al solicitar un nuevo visado posteriormente. Tenga en cuenta que el control fronterizo en Roma suele ser permisivo.</li>
+    <li>Para obtener información sobre los vuelos regulares desde el Aeropuerto de Burgas durante la temporada de otoño/invierno, consulte el sitio web oficial del Aeropuerto de Burgas, que suele ofrecer horarios hasta el 1 de noviembre. Tenga en cuenta que el Aeropuerto de Burgas puede tener operaciones limitadas o nulas durante los meses de invierno, mientras que el Aeropuerto de Varna ofrece una gama más amplia de destinos.</li>
+    <li>Al salir de Bulgaria en autobús, especialmente en rutas hacia Turquía (por ejemplo, &#39;Nishikli&#39; desde Sunny Beach hasta Estambul), es posible que las autoridades fronterizas búlgaras realicen controles de equipaje. A pesar de la creencia común de que los controles solo ocurren al entrar, un usuario informó que su equipaje fue revisado en el lado búlgaro al salir en marzo.</li>
+    <li>Los cruces fronterizos terrestres de Bulgaria a Turquía implican exhaustivos controles de seguridad en el lado turco. Los pasajeros deben esperar que su equipaje pase por escáneres de rayos X y es posible que se registren los autobuses, lo que puede provocar retrasos de al menos 1 hora más allá del tiempo estándar de procesamiento en la frontera.</li>
+    <li>La entrada a Bulgaria para vehículos con matrícula rusa está generalmente restringida debido a las sanciones. Aunque algunos vehículos antiguos con matrícula rusa pueden estar presentes en Bulgaria (por haber entrado antes de las restricciones), la entrada actual es difícil y arriesgada, pudiendo conllevar la incautación del vehículo o multas importantes.</li>
+    <li>El viaje en autobús entre Bulgaria (Sunny Beach) y el Aeropuerto de Estambul (IST) dura aproximadamente entre 8 y 9 horas en total. El tiempo de procesamiento en la frontera fluctúa entre 1 y 3 horas debido a la inestabilidad del sistema aduanero (toma de huellas dactilares/fotos). Los billetes de autobús Nishiqli cuestan 1500 TRY y deben comprarse en la taquilla oficial del aeropuerto, no al conductor. Los autobuses suelen salir desde la gasolinera Shell en Sunny Beach.</li>
+    <li>Cruzar la frontera hacia Serbia y volver a entrar en Bulgaria con un coche matriculado en Bulgaria utilizando un poder notarial emitido en Bulgaria es generalmente posible. Sin embargo, los detalles, especialmente en lo que respecta a los posibles problemas si el propietario permanece en Turquía y el coche se libera con dificultad, requieren una verificación cuidadosa. Aunque un poder notarial facilita la conducción del vehículo, las normativas de salida y reentrada, particularmente en lo referente a la propiedad y la residencia, pueden ser complejas. Es aconsejable consultar a las autoridades aduaneras búlgaras y serbias o a foros especializados en normativas transfronterizas de vehículos para obtener una orientación definitiva, ya que los problemas con la propiedad del vehículo y el movimiento transfronterizo pueden dar lugar a complicaciones, especialmente si el propietario no está presente.</li>
+    <li>Para viajar entre Estambul y ciudades búlgaras como Burgas, hay autobuses interurbanos disponibles desde la principal estación de autobuses de Estambul (Otogar). El último autobús sale alrededor de las 20:15 y el siguiente a las 5 de la mañana. No hay autobuses nocturnos. El trayecto desde el aeropuerto Sabiha Gökçen (SAW) hasta la estación de autobuses de Estambul en metro dura aproximadamente 1,5 horas con dos transbordos. Una alternativa es tomar un autobús al nuevo aeropuerto de Estambul y luego hacer transbordo, o alojarse en hoteles cerca de la estación de metro de Yenikapı para pasar la noche.</li>
+    <li>El cruce fronterizo entre Bulgaria y Turquía es impredecible. La aduana búlgara puede realizar o no revisiones físicas del equipaje. La aduana turca generalmente requiere que el equipaje pase por escáneres de rayos X. Se producen retrasos significativos (de hasta 9 horas) debido a entrevistas prolongadas en la frontera. No hay cruces peatonales entre Polonia y Bielorrusia; el viaje se realiza estrictamente en autobús o vehículo privado.</li>
+    <li>Para el transporte desde el aeropuerto de Burgas (BOJ) a ciudades turísticas como Sveti Vlas o Sunny Beach, hay servicios de taxi disponibles, con un costo típico de entre 220 y 240 EUR. Una alternativa es llegar a la frontera y luego organizar el transporte local.</li>
+    <li>Para reservar boletos de autobús de Estambul a Sunny Beach, el sitio web de Nishikli puede no ser confiable. Una plataforma alternativa que funciona bien es obilet.com.</li>
+    <li>Si su visa nacional búlgara vence el 8 de julio, puede cruzar legalmente la frontera búlgaro-turca el 8 de julio, ya que la fecha de vencimiento es inclusiva. Por mayor precaución, salir el 7 de julio también es una opción.</li>
+    <li>Para viajar al lago Ohrid en Macedonia del Norte desde Sofía, Bulgaria, en transporte público, normalmente sería necesario encontrar conexiones de autobús o tren. Sería aconsejable consultar en la estación central de autobuses o trenes de Sofía sobre las rutas más directas o convenientes.</li>
+    <li>Evalúe la seguridad y los posibles problemas de volar a Burgas vía Múnich con un visado búlgaro de entrada única. Específicamente, pregunte sobre los procedimientos de control fronterizo alemán y las posibles preguntas al entrar. Confirme si se permite la entrada dado que el viajero posee una propiedad y cuenta con todos los documentos necesarios. Evalúe el riesgo de una escala de 1 hora y 15 minutos con los nuevos procedimientos de control de seguridad.</li>
+    <li>Los precios de la gasolina en Bulgaria se ven influenciados por factores como los bajos impuestos especiales, la logística eficiente y los subsidios estatales, con el objetivo de mantener los costes del combustible asequibles debido a los menores ingresos medios del país dentro de la UE. A pesar de que Bulgaria dejó oficialmente de importar petróleo ruso directamente en marzo de 2024, dependiendo de fuentes como Kazajistán e Irak, persisten los debates sobre posibles importaciones indirectas. Por el contrario, Rusia está experimentando problemas de suministro de combustible y largas colas en las gasolineras.</li>
+    <li>Los viajeros han preguntado sobre la aceptación de pasaportes extranjeros con 5 años de validez para cruzar la frontera entre Turquía y Bulgaria. Aunque la información actual sugiere que se aceptan, existe incertidumbre sobre las normativas de entrada con pasaportes de 5 años más allá de 2027, lo que lleva a considerar la obtención de pasaportes de 10 años.</li>
+    <li>Viber es la aplicación de mensajería más utilizada en Bulgaria, con una penetración estimada de más del 90% de la población. Es el estándar para comunicarse con proveedores de servicios locales, taxistas y agentes inmobiliarios.</li>
+    <li>Arda Tur opera servicios de autobús desde Estambul hasta ciudades búlgaras, incluida Varna. La parada final en Varna es la estación principal de autobuses (Avtogara Varna).</li>
+    <li>Para servicios de taxi a lo largo de la costa búlgara, se menciona a &#39;Evgeniy Taxi&#39; como proveedor. Los traslados a Estambul desde la costa suelen tener precios similares, alrededor de 220-240 BGN por coche.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/es/bg/documentaci-n-y-visados/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentación y visados</span></a>
+    <a class="chip" href="/es/bg/banca-y-dinero/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Banca y dinero</span></a>
+    <a class="chip" href="/es/bg/cambio-y-transferencias/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Cambio y transferencias</span></a>
+    <a class="chip" href="/es/bg/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/es/bg/alojamiento/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Alojamiento</span></a>
+    <a class="chip" href="/es/bg/entradas-y-ocio/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Entradas y ocio</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>¿La búsqueda responde a todos, pero a ti?</h2>
+    <p>Pregúntale a Luky — intenta entender tu situación y responder con más precisión.</p>
+    <p>Y Luky es un traductor de voz para conversaciones reales: pide indicaciones y entiende la respuesta de verdad.</p>
+    <p class="ps">PS: incluso con la familia de tu pareja que no habla nada del tuyo 😄</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiencia real de chats de comunidades, sin relleno</div>
+    <nav class="f-links">
+      <a href="/es/about/">Acerca de</a>
+      <a href="/es/bg/">Todos los temas</a>
+      <a href="/es/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Las respuestas se recopilan de chats abiertos de comunidades — es experiencia real de personas, no asesoría oficial. Verifica antes de decisiones importantes.</p>
+    <div class="f-copy">© 2026 Luky · actualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noche", DAY="\u2600 D\u00eda";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brazil: Housing — real experience · Luky</title>
+<meta name="description" content="Real experience from chats about Housing in Brazil: as it is, first-hand. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/br/housing/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/br/housing/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/br/housing/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/br/housing/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/br/housing/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/br/">Brazil</a> /
+    <b>Housing</b>
+  </nav>
+
+
+  
+  <h1>Housing in Brazil: what actually matters to know</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of people from chats on «Housing» in Brazil — as it is, no fluff. For your case — <strong>ask Luky</strong>.</div></div>
+
+  <h2>From real experience</h2>
+  <ul class="qlist">
+    <li>To find rental apartments in Rio de Janeiro for a couple of months outside of major platforms like Airbnb or Booking.com, explore local real estate websites such as Zap (zapimoveis.com.br), OLX, and Facebook Marketplace. Direct negotiation for longer-term rentals might be possible. Exercise caution by thoroughly inspecting the property and verifying documentation before making any payments, especially if the price seems significantly lower than market rates. Engaging with local real estate channels or community groups may provide access to listings from residents.</li>
+    <li>Airbnb account blocking: Reasons can include linked IP addresses, phone numbers, and payment methods associated with previous accounts. Users have reported blocks even when accessing from Brazil. Strategies to consider include creating a new account, using VPNs, or alternative devices. Inquire about the specific reason for the block.</li>
+    <li>Cities in Brazil at higher altitudes, such as Curitiba and Belo Horizonte (around 900m), offer cooler climates. Campos do Jordão is at 1600m. Curitiba has an average temperature forecast of 22°C but requires travel to the coast. These cities can be considered for their size and infrastructure, appealing to those seeking urban environments with potential for business development.</li>
+    <li>São Paulo is generally considered better for living, working, and cultural integration in Brazil due to its developed infrastructure, higher number of museums, theaters, cultural centers (e.g., SECS, Instituto Tomie Ohtake, Batman Alley), free Portuguese courses (Bibli-ASPA), clean metro, and diverse shopping options. It offers better job prospects and higher salaries. However, for tourists, São Paulo&#39;s city center can appear less appealing due to visible homelessness, potential safety concerns, and general urban grit, leading some tourists to prefer Rio de Janeiro for its perceived &#39;atmosphere&#39; despite similar issues with homelessness. Rio is often favored by tourists and digital nomads for leisure. Both cities have safety challenges and homelessness in central areas.</li>
+    <li>Rental costs in Brazil are compared. One user pays R3000 for a fully furnished apartment &#39;all-inclusive,&#39; fitting their budget. Another highlights that in their tourist village, condo prices (including utilities) exceed city rates due to high condo fees. Unfurnished options at lower prices are also mentioned.</li>
+    <li>Discussion about accommodation prices in Rio de Janeiro, specifically near Copacabana. Prices vary significantly based on season and booking platform. Recommendations include Airbnb, Agoda, Booking (especially with foreign cards), and Trip.com. On-site hotel searching is also mentioned as an option.</li>
+    <li>In Brazil, a simple private purchase agreement (contrato particular) is generally insufficient to transfer full property ownership for properties valued over 48,000 BRL. While it can confirm intent and payment, true ownership is established only after executing a public deed (escritura pública de compra e venda) before a notary and registering it with the local Cartório de Registro de Imóveis. Failing to follow this legal process exposes buyers to risks such as double sales, difficulties in property registration, and issues during resale.</li>
+    <li>The impact of immigrant communities on local Brazilian life is discussed. One view suggests that a high concentration of migrants, particularly Russians in Florianopolis, can lead to social issues, unless it&#39;s a large metropolis like São Paulo. Conversely, the Florianopolis Russian community is praised as &#39;excellent and fun.&#39; The influx of people (&#39;ponaehi&#39;) in tourist areas like the Northeast is also noted as potentially disruptive.</li>
+    <li>Long-term rentals in major Brazilian cities (São Paulo, Rio, Florianópolis) often exceed $1000/month and require heavy bureaucracy (CPF, proof of income, guarantor/fiador, or large deposits). However, mid-sized cities (e.g., Blumenau, Joinville) or states like Bahia offer drastically lower prices ($200–$650/month) with negotiable terms and no deposit required if negotiated directly with landlords. Airbnb can also be cost-effective for short-to-medium stays (e.g., ~$425/month for a small studio in São Paulo) if booked for multiple months.</li>
+    <li>Climate challenges in southern Brazil, including humidity, mold, and cold drafts requiring warm clothing, are discussed. Housing quality issues, such as poor insulation, drafts, and mold, are highlighted. While solutions like underfloor heating exist, they are impractical for renters. The tendency of locals to dress too warmly in cooler temperatures (around 20°C) is also noted.</li>
+    <li>For entry into Brazil, proof of hotel accommodation (including pay-at-property bookings from platforms like Booking.com) is generally accepted by airlines and immigration authorities. Airline check-in systems do not verify payment status of hotel reservations.</li>
+    <li>In São Paulo GRU Airport, Terminal 2, the &#39;Business Gol&#39; lounge offers basic snacks and is generally not crowded late at night. However, it lacks recliner chairs for full rest. For long layovers requiring sleep, consider an airport hotel instead of relying on the lounge for extended comfort. Other lounges like &#39;The West&#39; also exist, but specific details on comfort are not provided.</li>
+    <li>When searching for rental housing in Brazil, popular platforms include Olx, Zap Imóveis, and Quinto Andar. Directly renting without an agency is uncommon. Quinto Andar offers an alternative to traditional 3-month deposits, sometimes requiring a smaller, non-refundable fee (e.g., 1500 BRL) and income proof. By law, rental agencies in Brazil typically charge fees to the landlord, not the tenant.</li>
+    <li>For an overnight stay near São Paulo&#39;s GRU airport between flights, Hampton by Hilton is a recommended option, typically within a budget of up to 8000 RUB per night. It offers a convenient 24-hour shuttle service to and from the airport.</li>
+    <li>When considering purchasing land or real estate in Brazil, especially comparing properties like an apartment within a city (e.g., São Paulo) versus land with a house outside city limits (e.g., near Curitiba), pricing varies significantly based on location, specific neighborhood, and the condition of the property. It is crucial to engage with a local real estate agent or expert to understand the nuances of pricing and market dynamics.</li>
+    <li>When choosing between Rio de Janeiro and João Pessoa (JP) for relocation to Brazil, consider the following: Rio offers iconic beauty but comes with higher costs. João Pessoa, located in the Northeast, is generally more affordable and considered one of the calmer state capitals in the region. While northern Brazil can be perceived as warmer but potentially more prone to crime, southern regions might be cooler but safer. For accommodation, look beyond Airbnb for potentially better deals on rental platforms.</li>
+    <li>Electric showers (chuveiro elétrico) are common in Brazil. Common issues include: 1) Burnt heating coil or oxidized contacts, often due to low water pressure on &#39;winter&#39; setting. 2) Short circuit (КЗ - Korotkoye Zamykaniye) tripping the circuit breaker. First, check the main electrical panel (щиток) for tripped breakers (tumbler in down position); flip it up. If the issue persists, the heating element may be faulty. Replacement electric showers are available at supermarkets like Carrefour for approximately 100 BRL and are typically easy to install.</li>
+    <li>When seeking accommodation in Brazil, start with popular platforms like Airbnb and Booking.com for temporary stays. For long-term housing, after initial booking, you can negotiate with hosts directly on these platforms or explore other real estate websites. This approach helps in securing both short-term and long-term lodging.</li>
+    <li>Vietnam is perceived as having lower living costs compared to Brazil, especially for remote workers targeting specific audiences. Brazil is experiencing rapid price increases due to immigration influx, potentially closing the cost gap. For individuals seeking more affordable living while working remotely, Vietnam may currently offer a more economical option.</li>
+    <li>The Belmont Hotel is located in a prime spot near the Iguazu Falls on the Brazilian side. It is described as an &#39;extra-luxurious five-star hotel&#39; with views of the falls and the ability to access the park without visitors in the morning and evening. However, it is known for being very expensive and having high occupancy rates.</li>
+    <li>For long-term rentals in Brazil, expect to pay three security deposits and 3-4 months&#39; rent upfront, typically under a 3-year contract. It is highly recommended to use short-term rentals like Airbnb for the first few months to scout for suitable long-term options.</li>
+    <li>Provide an estimated average rental price range for a 2-bedroom apartment or small house in Florianópolis for a medium-term rental (e.g., 6 months). Mention factors influencing price, such as location (condo fees, neighborhood) and duration. Suggest resources for finding accommodation and potentially highlight top neighborhoods based on common preferences.</li>
+    <li>Cost of living in Brazil compared to Russia varies. Groceries can be more expensive or cheaper depending on the item. Integration into local life can lead to cost savings. Housing prices: a house in Caraguatatuba starts from 400,000 BRL, and a 12-acre plot of land is around 150,000 BRL. Local economic status varies, with some affluent individuals present. Overall, many locals face financial challenges.</li>
+    <li>For accommodation in Brazil, Airbnb is often recommended due to a potentially better price-quality ratio compared to hotels, which are sometimes perceived as having lower standards, especially in older establishments. Newer hotels are improving, but Airbnb offers diverse options.</li>
+    <li>To find the best hotel deals in Brazil, particularly in popular locations like Copacabana, compare prices across platforms such as Trip.com. Actively search for promotional codes and discounts to secure the most advantageous rates.</li>
+    <li>Cost of living and pricing for foreigners can vary significantly across Brazil. While some regions like Bahia may not exhibit overt price discrimination against non-Portuguese speakers, other tourist areas might have higher costs for visitors. States like Santa Catarina, particularly Florianópolis, have a noticeable Russian-speaking population, but pricing can be a factor. A comprehensive comparison of expenses, including housing, services, and transport, is necessary to understand the true cost of living in different Brazilian regions.</li>
+    <li>For travelers with a 12-hour layover at Sao Paulo GRU Airport, hotels are available within terminals 1 and 3. Alternative options nearby include Hampton by Hilton (10-15 min transfer, hourly service, breakfast from 5 AM) and the 5-star Pullman hotel. Linx Galeao hotel also offers complimentary transfers from Terminal 2 every 20 minutes.</li>
+    <li>The development and security of Brazilian suburbs are discussed. Questions arise about the initial purpose of some suburbs as crime-deterrent zones and concerns about potential future issues stemming from urban expansion. The impact of new condominium constructions on property values is also mentioned.</li>
+    <li>In Brazil, rental obligations end immediately upon the formal return of keys to the landlord. Repairs identified after the handover should be handled as separate compensation claims and do not justify charging additional rent. To protect against invalid charges, tenants should document the state of the property with photos/videos, ensure the key return is acknowledged in writing, and keep all correspondence regarding the move-out date.</li>
+    <li>Rio de Janeiro is highly rated as a top city in Latin America for family life, offering beautiful beaches, pleasant weather, diverse architecture, and cultural vibrancy. While Sao Paulo (SP) is preferred for business networking and serves as a major transportation hub (USA, Europe, Africa, Turkey), Rio is favored for its lifestyle. Florianopolis is also mentioned as a good option.</li>
+    <li>When employing local independent renovation workers (pedreiros) in Brazil, never pay the full contract amount before completion to avoid project abandonment. If a contractor delays work indefinitely, legal leverages used by locals include threatening to file a police report (Boletim de Ocorrência), requesting a bank chargeback/reversal, and reporting the worker to tax authorities for tax evasion.</li>
+    <li>To reach Porto de Galinhas from Recife Airport (REC), use ride-sharing services like Uber or 99 (Recife is a major city where these operate). A pre-booked transfer via services like Trip.com may cost around 3700 RUB, while a local taxi to the airport could be 220 BRL. Accommodation: Apartments with kitchen facilities (stove, microwave, kettle, coffee machine, refrigerator) are a common option. Dining: On the beach, one can order food to use umbrellas and chairs (e.g., 130-180 BRL for a dish for two). Different beach vendors might share a common kitchen. Beach quality and crowds: Porto de Galinhas is a popular tourist destination and can be very crowded, especially near the center and on weekends. While the main swimming beach is to the left of the center, walking 300-500 meters can lead to fewer people. Expectations: Do not expect deserted beaches similar to Southeast Asia. February in Rio typically has the warmest sea, contrary to some perceptions. If seeking fewer crowds and warmer water, consider other options like Florianópolis (Floripa), as &#39;good beach holiday&#39; expectations vary and Brazil might not always align with notions of quiet, pristine beaches.</li>
+    <li>In Brazil, be aware of potential restrictions on hotel amenities, particularly in São Paulo. Some buildings, especially those managed as condominiums, may limit access to facilities like rooftop pools or gyms based on the floor level of the booked room (e.g., requiring guests to be on the 5th floor or higher). While similar issues have not been widely reported in Rio de Janeiro, it is advisable to clarify amenity access policies with the hotel or host before booking, especially if these facilities are a priority.</li>
+    <li>A sailor, a navigator, is seeking recommendations for accommodation in Rio de Janeiro for a 10-day period before returning home. They have requested a &#39;liability waiver&#39; to explore the city. Initial impressions from Google Maps suggest that popular areas like Copacabana and Ipanema may not be very appealing. Suggestions for less &#39;sad&#39; areas include Tijuca/Vila Isabel, or the city center which offers markets and cafes.</li>
+    <li>São Paulo does not have distinct Russian districts, unlike Jewish or Japanese communities. Established Russian-speakers integrate based on work, study, and budget. Temporary visitors, such as those for birth tourism, typically do not form concentrated communities.</li>
+    <li>Climate challenges in southern Brazil, including humidity, mold, and cold drafts requiring warm clothing, are discussed. Housing quality issues, such as lack of heating and prevalence of drafts and mold, are highlighted. While solutions like underfloor heating exist, they are impractical for renters. The tendency of locals to dress too warmly in cooler temperatures (around 20°C) is also noted.</li>
+    <li>Standard ceiling heights in Brazilian budget apartments (economico) range from 2.40 to 2.60 meters. &#39;Alto padrão&#39; (high-end) properties offer 2.70 to 3.00 meters. Rental market property area calculations exclude walls and internal structures. Electrical safety standards (e.g., grounding, load distribution) can be inconsistent, often requiring independent inspection.</li>
+    <li>For visa or entry purposes to Brazil, when invited by a Brazilian citizen without an hotel reservation, an invitation letter must include: 1. Full name, passport number, and contact details of both the inviter and the invited. 2. The exact period of stay. 3. A detailed daily itinerary including addresses, presented as a travel plan or table, to serve as proof of accommodation.</li>
+    <li>For safe and central accommodation in São Paulo, consider these areas:
+- Barra Funda: Good transport hub, generally cheaper than Paulista, and close to major attractions.
+- Paulista, Jardins, Ibirapuera: Also recommended for safety and proximity to sights.
+- Specific hotel recommendation: Comfort Ibirapuera.</li>
+    <li>Fortaleza, with a population of about 2.5 million, is highly praised for its ocean, beaches, and waterfront, making it an excellent destination for beach vacations. However, cleanliness varies, and garbage piles can be found. The Russian-speaking community in Fortaleza is small, estimated at around 20 people. It is considered a good option for those seeking a beach-centric lifestyle and a relaxed atmosphere.</li>
+    <li>Real estate prices in Rio de Janeiro vary by project stage and location. A budget of 1 million BRL is considered substantial for residential property in Brazil, often sufficient for houses depending on the region, whereas buying finished 3-bedroom apartments in prime areas for 200,000 USD is increasingly difficult.</li>
+    <li>A young immigrant (19 years old) found himself in Brazil with refugee status, no job, and limited funds after a failed immigration plan with a partner. He was paying 700 USD/month for rent in Recife, which is considered very high for his situation. Advice from the community includes: prioritize survival jobs (construction, delivery), reduce housing costs significantly (aim for under 1500 BRL/month), utilize social restaurants for cheap/free food, and avoid risky &#39;job opportunities&#39; in favelas. Remote work from Russia was suggested but access to equipment was a concern. The importance of realistic financial planning and avoiding high-cost living without stable income is highlighted.</li>
+    <li>Airlines like Turkish Airlines may conduct document checks at the boarding gate for flights to Brazil (Guarulhos). Ensure passengers have printed or accessible digital proof of accommodation for the entire duration of their stay. Being able to demonstrate a full itinerary is crucial to avoid boarding issues.</li>
+    <li>In Salvador, Bahia, when booking 4-star hotels, it is not always guaranteed that Wi-Fi will be available in the room. Many hotels provide Wi-Fi primarily in common areas. It is recommended to confirm the availability of in-room Wi-Fi directly with the hotel before booking.</li>
+    <li>If rental property conditions do not match the listing (Airbnb), contact support immediately to request a relocation. Document all issues with photos.</li>
+    <li>Airbnb may impose restrictions on user accounts not solely based on payment methods but also on perceived &#39;connections to Russia&#39;. This can occur even for users living abroad who use Russian-language websites or VPN services associated with Russia. While Airbnb support may manually lift these restrictions, the process is not always straightforward. The platform&#39;s data collection and use regarding users&#39; connections to Russia raise questions about data privacy and sourcing.</li>
+    <li>Florianopolis experiences a significant cooling trend in June and July with high humidity and no central heating in most residential buildings. Temperatures can drop to around 10°C at night and reach 20°C during the day. Locals recommend spring and autumn as the best seasons for visiting or living due to better weather and fewer tourists.</li>
+    <li>Provide practical tips for drying clothes in humid climates like Brazil, especially when outdoor drying is not feasible due to rain. Suggest methods such as using a fan (ventilador) to circulate air indoors, utilizing dehumidifiers if available, or exploring indoor drying racks. Mention that some apartments might have specific laundry facilities or drying areas.</li>
+    <li>Transferring funds to Brazil for real estate purchase involves several methods with varying pros and cons:
+1. **Tinkoff (Russia):** Offers favorable exchange rates (approx. 15.4 RUB/BRL), but funds arrive as internal TED transfers, potentially causing issues with Brazilian banks regarding proof of origin and IOF tax.
+2. **Armenian Bank (SWIFT to Santander):** Higher exchange rate (approx. 16.7 RUB/BRL) but ensures clear fund provenance.
+3. **Cryptocurrency (e.g., USDT):** Potential for large, legal withdrawals without P2P transactions needs thorough investigation regarding bank acceptance and proof of origin.
+4. **Multi-currency Cards/Services:** Explore options for direct USD to USD transfers if the seller accepts, or services that facilitate low-loss international payments. Note that Brazilian regulations generally require payments to be settled in BRL.</li>
+    <li>When searching for rental apartments in Brazil via the website quitoandar, prices are typically listed in Brazilian Reals (BRL) per month. These listings generally pertain to long-term rental contracts, often for a year or more.</li>
+    <li>Curitiba ranked 1st in quality of life among Brazilian capitals in 2026 based on the IPS Brazil study, which measures health, safety, education, housing, and environmental factors.</li>
+    <li>Discussions cover land purchasing and development in Brazil, including land auctions and the potential for new condominium projects increasing property values. Safety aspects of suburban development, originally designed to deter crime, are also touched upon. The idea of building a &#39;fazenda&#39; (farm/estate) outside the city for tranquility is considered, alongside concerns about its security.</li>
+    <li>In São Paulo, Jardins and areas around Avenida Paulista are generally considered safe for tourists. In Rio de Janeiro, the Zona Sul region, including Leme, Copacabana (especially near Arpoador), Ipanema, Leblon, and Barra da Tijuca, are recommended for safety. When choosing accommodation, it&#39;s advisable to observe local activity in the evenings: presence of families with children or dog walkers indicates a safer environment. Avoid areas with only homeless people or deserted streets at night.</li>
+    <li>In Brazil, &#39;condominium&#39; (condo) refers to a monthly fee associated with properties in residential complexes. Unlike standard utilities, this fee covers communal services and amenities such as security, swimming pool maintenance, gymnasium access, gardening services, and often includes property taxes. The cost of condominium fees varies significantly based on the property&#39;s location, the range of services provided, and the luxury level of the complex, typically ranging from 100 to 5000 Brazilian Reais (BRL) per month.</li>
+    <li>For safe accommodation near the sea in Rio de Janeiro, Barra da Tijuca is considered very safe but can be &#39;boring&#39;. Other recommended options include Copacabana and Ipanema (classic choices), Flamengo, and Botafogo. Santa Teresa is mentioned as a potentially controversial but acceptable option.</li>
+    <li>Hotels in Brazil, particularly Rio de Janeiro, may not provide basic amenities like toothbrushes and slippers, even in 4-star establishments. A significant deposit, potentially exceeding the room rate, might be required. Users report this experience at various hotels, including Hilton Rio Copacabana. It&#39;s suggested that Brazilians do not typically use slippers.</li>
+    <li>Inquire about user experiences booking hotels in Sao Paulo via Yandex.Travel, specifically concerning check-in issues when booking at the airport.</li>
+    <li>When looking for rental apartments in Rio de Janeiro for a medium-term stay (e.g., two months) outside of platforms like Airbnb or Booking.com, consider utilizing local real estate portals such as Zap (zapimoveis.com.br), OLX, and Facebook Marketplace. Direct communication with property owners or local agents is often possible. Be aware of potential scams; always inspect the property in person and avoid making advance payments until satisfied with the conditions and legitimacy. Additionally, community channels and real estate-focused groups on platforms like Telegram may offer direct listings from residents.</li>
+    <li>When looking for budget accommodation in Copacabana, Rio de Janeiro, travelers can easily find currency exchange points (&#34;casas de câmbio&#34;) as they are prevalent in the area. The Ibis Copacabana Posto 2 hotel is mentioned as a satisfactory option by some travelers seeking a budget stay near the metro. While the Ibis chain&#39;s quality can vary (e.g., some rooms might lack windows), it can offer a reliable budget choice.</li>
+    <li>The convenience of living away from major Brazilian cities is discussed. Key points include access to airports, cultural events, and essential services. Some argue that occasional trips for necessities are manageable and outweighed by the tranquility of rural life. Others find frequent travel due to a lack of local infrastructure burdensome, preferring the practicality of city living despite potential traffic issues.</li>
+    <li>Users are comparing Rio de Janeiro and Sao Paulo, discussing infrastructure, tourist experience vs. resident experience, and the definition of a &#39;good city&#39; for visitors. Key points include: Sao Paulo&#39;s perceived better infrastructure, Rio being a &#39;city for people&#39; vs. Sao Paulo being &#39;people for the city&#39;. The core of the discussion is about differentiating tourist perspectives from immigrant experiences when evaluating cities.</li>
+    <li>Regional climate differences in Brazil are discussed. Southern regions below the Tropic of Capricorn are described as cold, humid, prone to mold and drafts, making them uncomfortable and contrary to expectations of a tropical climate. Northern regions are implied to be more favorable weather-wise.</li>
+    <li>Transit hotels near GRU airport (e.g., Comfort, Sleep Inn, Slaviero) provide free shuttle services from Terminal 2. Alternatively, Uber is a safe and reliable transport option within Sao Paulo, often costing around 90 BRL for city center access. Note that airport transfers may not run 24/7, so check schedules in advance.</li>
+    <li>Clarify mobile plan options in Brazil. Explain the difference between prepaid (&#39;prepaid&#39;) and monthly subscription (&#39;monthly plan&#39;) mobile services. Advise whether it&#39;s possible to change from an annual or monthly plan to a different monthly plan after initial purchase, and the conditions or potential penalties for changing plans (e.g., annual plans might require cancellation fees).</li>
+    <li>When planning a trip to Rio de Janeiro, timing is crucial. If tourists want to avoid massive crowds, high prices, and fully booked accommodations, they should avoid February (the Carnival period and its immediate aftermath). Late January is a better option for a relatively calmer atmosphere, though it is still part of the hot, humid summer season (December to March) with occasional rains.</li>
+    <li>Trip.com offers hotel discounts of up to 25%, stackable with other promotions, for users who have purchased flight tickets through their platform. This can result in significant savings compared to other booking sites like Booking.com.</li>
+    <li>In Rio de Janeiro, few 5-star hotels genuinely meet international 5-star standards, with Copacabana Palace often cited as an exception. Hilton Copacabana receives mixed reviews regarding its 5-star rating. Sheraton is controversial: some criticize its dated condition, proximity to favelas, and &#39;Soviet-style&#39; pool, suggesting Laghetto Lifestyle as an alternative. Others praise Sheraton&#39;s pool, breakfast, lounge amenities, and comfortable beds. Fairmont is also recommended. General advice suggests managing expectations and focusing on enjoying the city&#39;s atmosphere over strict hotel standards.</li>
+    <li>Finding rental accommodation in Brazil without agency fees can be challenging. Popular platforms include Olx and Facebook, though options may be limited. Airbnb is often considered expensive. Websites like Quinto Andar require local documentation and proof of income. Many expats find success through local contacts or by accepting less-than-ideal options initially.</li>
+    <li>For long-term rentals in Rio de Janeiro, common local platforms include Zap Imóveis (zapimoveis.com.br), OLX (olx.com.br), and QuintoAndar (quintoandar.com.br) which are alternatives to Airbnb for cheaper, long-term options.</li>
+    <li>Recommended residential/tourist areas in Salvador, Bahia for safety: Rio Vermelho (popular, police presence), Pituba (residential), and Barra (tourist-heavy). General advice: avoid walking in small, empty alleys at night and use ride-sharing services like Uber.</li>
+    <li>In Brazil, acquiring items like &#39;replicas&#39; is common, with one user mentioning a purchase for 3,000 BRL. The goal of integration and assimilation into Brazilian life is a long-term dream for some, but it presents challenges due to the local economic situation. Many Brazilians face financial constraints, making assimilation more complex than initially perceived. Hospitality is offered, with a promise of accommodation for visitors.</li>
+    <li>When choosing a city in Brazil, consider regional differences in climate, safety, and lifestyle. The North offers stable warm weather and is perceived as safer, with lower humidity leading to fewer mosquitoes. Rio de Janeiro and São Paulo are often seen as less desirable due to higher crime rates. Florianópolis (Floripa) is attractive for its beauty and ocean access but experiences distinct &#39;seasons&#39; with rain and winds that some find less appealing. Overall, the choice depends on personal preferences for climate variety, safety perception, and proximity to major water bodies.</li>
+    <li>When entering Brazil, immigration officials typically ask only if you are a tourist. Proof of accommodation is rarely requested. If asked, providing the address and phone number of your host or a temporarily booked accommodation (even a free cancellation on platforms like Booking.com) is generally sufficient. Formal hotel bookings are not always mandatory for entry.</li>
+    <li>Users often seek Russian-speaking realtors in major Brazilian cities like Rio de Janeiro and Florianópolis. This indicates a demand for specialized linguistic support in real estate transactions for Russian-speaking expatriates or investors.</li>
+    <li>Rental costs in Brazil represent a significant portion of living expenses, particularly in major cities. Unlike in Russia where property ownership might eliminate rent, Brazil typically requires renters to pay for accommodation. Even basic condominiums can be costly. While smaller towns and rural areas offer cheaper housing, employment opportunities are often limited there. Securing affordable housing is a critical factor for a comfortable life in Brazil.</li>
+    <li>Climate challenges in southern Brazil, including humidity, mold, and cold drafts requiring warm clothing, are discussed. Housing quality issues, such as poor insulation, drafts, and mold, are highlighted. While solutions like underfloor heating exist, they are impractical for renters. The tendency of locals to dress too warmly in cooler temperatures (around 20°C) is also noted.</li>
+    <li>Discussion revolves around the perceived quality of life and safety in Florianópolis (Floripa), Brazil. Key themes include: 1.  **Safety:** Generally considered high compared to other Brazilian cities, with significantly lower crime rates. While incidents (theft, violence) do occur, the overall environment is perceived as safer, allowing for more relaxed behavior like leaving belongings unattended on the beach or in cafes. However, the existence of favelas and some violent incidents are acknowledged. 2.  **Community:** A large and active Russian-speaking community is present, facilitating social interactions, services, and leisure activities. There&#39;s a strong sense of local community where neighbors know and help each other. 3.  **Lifestyle:** Described as having an &#39;island culture,&#39; offering a distinct lifestyle with seasonal changes and cooler temperatures. The city is compared favorably to other regions in Brazil, with some even calling it &#39;almost Europe.&#39; 4.  **Contrasting Views:** While many praise Floripa, some users act as &#39;devil&#39;s advocate,&#39; highlighting negative incidents and arguing against overly positive portrayals to provide a balanced perspective. This includes mentioning specific violent events and the presence of favelas, while acknowledging that such issues are not pervasive across the entire island.</li>
+    <li>When seeking apartment rentals in Brazil for a medium-term stay (e.g., a couple of months) outside of platforms like Airbnb or Booking.com, consider local real estate portals such as Zap, OLX, and zapimoveis. Facebook Marketplace may also have listings. Exercise extreme caution due to a high prevalence of scams. Always inspect the property in person before making any payments, and never pay advances for bookings, especially if the price seems too good to be true. Asking for landlord or agent credentials and verifying them is recommended. Local community groups or real estate channels might offer direct listings from residents.</li>
+    <li>For cost of living estimates in Brazil, users can refer to online supermarket prices (e.g., Zonasul website) for groceries and use OLX for housing rental benchmarks. 100,000 RUB (approximately 5,500-6,000 BRL) is generally considered a survivable base budget for a single person renting a room, excluding luxury amenities.</li>
+    <li>The average salary in Brazil is around $700 USD. While some goods may be cheaper than in Russia, rent is a significant expense. Finding well-paying work without Portuguese proficiency is difficult, especially for unskilled labor. Many expats find it challenging to live comfortably on local wages compared to their home countries, unless they have remote work or a high-demand skill. The decision to move to Brazil is often based on factors beyond just salary, such as lifestyle, safety, culture, or climate.</li>
+    <li>To travel from São Paulo to Ilhabela, consider using ride-sharing apps like Blablacar for groups under 5 people, with potential fares under 50 BRL. There are also reports of guesthouses in Ilhabela offering free accommodation, often with English-speaking owners.</li>
+    <li>Building a large property like a castle or a multi-story villa can be extremely labor-intensive to maintain. Owners often require significant staffing or advanced cleaning solutions (like robotic vacuums) to manage the upkeep. The initial building process is costly, and ongoing maintenance presents a substantial challenge, often requiring dedicated personnel.</li>
+    <li>Traveler spent two weeks in Rio de Janeiro, Brazil. Felt safe walking at night with a phone, including visiting bars. Hired a guide for a tour of the Rocinha favela through a local travel agency for 220 reais, which included hotel pickup and drop-off. Stayed at Ibis Posto 2 on Copacabana, paying around 80 euros per night for a breakfast-included room.</li>
+    <li>Climate challenges in southern Brazil, including humidity, mold, and cold drafts requiring warm clothing, are discussed. Housing quality issues, such as poor insulation, drafts, and mold, are highlighted. While solutions like underfloor heating exist, they are impractical for renters. The tendency of locals to dress too warmly in cooler temperatures (around 20°C) is also noted.</li>
+    <li>Climate challenges in southern Brazil, including humidity, mold, and cold drafts requiring warm clothing, are discussed. Housing quality issues, such as poor insulation, drafts, and mold, are highlighted. While solutions like underfloor heating exist, they are impractical for renters. The tendency of locals to dress too warmly in cooler temperatures (around 20°C) is also noted.</li>
+    <li>In Brazil, if an external pipe (e.g., in a condominium&#39;s common area like parking) breaks and causes damage, even if a rental contract only covers internal apartment utilities, the tenant should inform the condominium administration and the rental agency. These parties are typically responsible for resolving such issues.</li>
+    <li>Provide an estimated cost of living for two people in Florianópolis, Brazil. Include average figures for rent and food expenses, acknowledging that individual spending habits will influence the total cost.</li>
+    <li>CPF (Cadastro de Pessoas Físicas) is a mandatory 11-digit taxpayer ID in Brazil. It is essential for opening bank accounts, buying property, and accessing government services. It can be obtained at the Federal Police (Polícia Federal) or via gov.br. While technically an ID number, it is treated as a primary identity credential for almost all administrative procedures in the country.</li>
+    <li>Portable air conditioners are being considered as an alternative to central air conditioning in Brazil. A user shared an experience in Paris where a portable unit with an external vent (gofr) was used successfully. However, the effectiveness of these units is limited, particularly for larger spaces, with lower power output compared to standard ACs. Adapters for window installation are also available.</li>
+    <li>Debate on urban vs. rural living costs in Brazil continues. One user claims finding a furnished two-bedroom apartment in a village for R3000-3500 (all-inclusive) is cheaper than city living. Another counters that prices vary by region and tourism, with their village&#39;s condo (including amenities) being more expensive. The cost of condo fees in tourist areas is also noted as a significant factor.</li>
+    <li>Recommended hotels in Rio de Janeiro (Copacabana area): Windsor Palace, Windsor Martinique, Mercure, Pestana (noted for rooftop pool/view), Augusto’s Rio Copa (budget, location not ideal for beach). For a quieter atmosphere, consider Leblon district. Note: Hotel quality in Brazil can be inconsistent; Airbnb is a common alternative.</li>
+    <li>It is practically impossible to purchase property on Fernando de Noronha as one would in mainland Brazil. The land is state-owned, and private ownership is virtually non-existent. Permits or concessions for land use are granted instead of outright ownership. Daily fees may apply, even for residents.</li>
+    <li>Barra da Tijuca in Rio de Janeiro offers better and cheaper hotels compared to Copacabana and Ipanema, alongside much higher safety for evening walks. However, it is located far from major tourist attractions (at least 30-40 minutes by Uber), making it less convenient for sightseeing-heavy trips.</li>
+    <li>When arriving in São Paulo, Brazil:
+*   **Currency &amp; Payments:** Cash exchange is not always necessary. Using cryptocurrency platforms like Bybit with Pix for QR code payments is a common method (&#39;vou pagar com pix&#39;).
+*   **Airport Transfer:** Taxis are affordable. Uber is functional, but local ride-hailing apps like &#39;99&#39; often require a Brazilian CPF (tax ID). Public buses from the airport to the city center are available, costing around 5 BRL, and may not always require a CPF for purchase.
+*   **Safety &amp; Neighborhoods:** No area is entirely risk-free. Safer central areas include Vila Olimpia and Brooklin. Pinheiros is a vibrant area safe for daytime and evening walks, but avoid overt display of valuables. Nighttime travel is best done by taxi. For long-term stays, areas like Vila Indiana (Butanta), near USP university, offer safe recreational spaces, though surrounding infrastructure might be limited.
+*   **Mobile Operators:** Acquiring a local SIM card without a CPF is challenging. Tourist SIM cards (e.g., Vivo, 10-25 GB) are available without CPF, but calls and SMS services may activate after a 24-hour delay. For full local SIM plans (e.g., Claro Flex unlimited), a CPF is generally required, and even then, activation can be problematic, sometimes taking months of residency. Plan to use tourist eSIMs or rely on Wi-Fi initially.</li>
+    <li>Belmond Hotel das Cataratas (Iguazu Falls, Brazil) offers prime location directly adjacent to the falls, allowing for unique sunrise and sunset experiences. While not all rooms have direct waterfall views, some (e.g., 2nd floor, central, left of main entrance) do, with the central tower offering the best vantage points. Due to proximity, noise from the falls can be present. The hotel grounds are rich in wildlife including large butterflies, toucans, various birds, monitor lizards, coatis, monkeys, and capybaras. A taxi to the Argentine side of Iguazu Falls park costs approximately $100 USD for a round trip with waiting, suitable for four people. The Bird Park (Parque das Aves) is conveniently located near the hotel entrance.</li>
+    <li>When searching for apartments online in Brazil, platforms like Olx and Facebook are common, though may have limited listings. Airbnb is considered expensive. Quinto Andar is an option but typically requires local proof of income and documentation. Agencies often have more listings but charge fees.</li>
+    <li>For extended stays in Rio de Janeiro and São Paulo, hostels are a viable accommodation option. While specific recommendations require further detail, hostels generally offer a budget-friendly and social environment for travelers.</li>
+    <li>Popular platforms for renting and buying property in Brazil include &#39;QuintoAndar&#39; (especially for Rio de Janeiro) and &#39;OLX&#39; (a nationwide platform similar to Avito/Cyan). Market availability varies significantly by city, and price points depend heavily on location and proximity to the coastline.</li>
+    <li>Accommodation costs in Rio de Janeiro, particularly in Copacabana, increase by 300-400% during peak seasons (New Year&#39;s, Carnival) compared to off-peak or advance bookings. Booking at least 6 months in advance is recommended to avoid significant price hikes.</li>
+    <li>Rental agreements in Brazil often include a clause allowing tenants to terminate the contract within the first 7 days of occupancy if the property is uninhabitable. Review your rental contract for specific terms and conditions regarding this clause.</li>
+    <li>Explain key Brazilian long-term rental contract rules: standard duration is 36 months, annual inflation indexation is mandatory, insurance is typically required, and tenants usually pay condo fees (condomínio) and property tax (IPTU). Advise conducting a highly detailed photo/video inspection (vistoría) at move-in. Highlight that tenant protection laws are strong, and contracts can be negotiated.</li>
+    <li>Brazil enforces a strong vaccination schedule. Refusal to vaccinate a child is difficult and may lead to intervention by local social services (Conselho Tutelar). Documentation of vaccination is typically required for school enrollment and daycare access. The path to citizenship requires long-term residency (approximately 3 years), making it impossible to avoid local health regulations during that period.</li>
+    <li>Organizations like UNHCR Brazil, Caritas Brazil, and Missão Paz São Paulo offer humanitarian services including free legal aid, temporary housing, and food to those in need.</li>
+    <li>The discussion explores the paradox of needing warm clothing in tropical Brazil due to humidity and cold, questioning the overall benefit. It highlights issues with housing quality, including poor insulation, drafts, and mold, particularly in southern states. While potential solutions are mentioned, renters find extensive home improvements impractical.</li>
+    <li>When booking hotels in Rio de Janeiro, be aware that reviews, even for 5-star establishments, sometimes mention issues with pests such as bedbugs. Thoroughly check recent reviews and photos to make an informed decision about accommodation.</li>
+    <li>In Brazil, there is ample job availability, but local salaries might not meet everyone&#39;s expectations. Proficiency in the Portuguese language is essential for working with locals. Accommodation is readily available at various price points. Note that many organizations do not hire individuals with only a temporary residence permit (VNH), while some employ undocumented workers.</li>
+    <li>Recommended safer areas for tourists in Rio de Janeiro are located in the South Zone, including Flamengo, Botafogo, Copacabana, Ipanema, Leblon, and Jardim Botanico. Arpoador is also suggested as a comfortable option, balancing proximity to lively Copacabana with the calmer atmosphere of Ipanema, and featuring a high police presence. Botafogo is praised for its convenient metro access but its beaches are not ideal for swimming. Copacabana offers direct beach access but tends to be more expensive for accommodation.</li>
+    <li>Purchasing property in Brazil involves significant non-purchase costs: ITBI (municipal transfer tax), notary fees (escritura), and registry office (cartório) fees. These costs are often not disclosed by real estate agents upfront. Maintenance fees (condomínio) vary heavily by location and amenities, ranging from 200 BRL for studios to 700+ BRL for apartments with facilities like pools or security.</li>
+    <li>For scooter and motorcycle rentals in Florianopolis, and for accommodation options beyond Airbnb, explore user-submitted listings available through this resource. It may offer alternative rental and housing solutions.</li>
+    <li>For budget-friendly and convenient accommodation in Foz do Iguaçu for visiting Iguazu Falls, consider &#39;Hotel Coroados Foz Express&#39;. It is located approximately 20-30 minutes by taxi from the Bird Park (near Iguazu National Park) and has nearby dining options and a grocery store. The hotel offers clean, spacious rooms and decent breakfasts. &#39;Manacá Hotel&#39; is another option that has been booked by a user. Both are considered good value for a two-day visit.</li>
+    <li>Brazil&#39;s regional diversity is stark. The South (Santa Catarina, Paraná) is characterized by cooler climates, European influence, and higher organized infrastructure. The Northeast (Bahia, Paraíba) is tropical with a slower pace of life, distinct local cuisine (farofa, vatapá), and lower literacy rates compared to the South. Social integration and expectations regarding service and education vary significantly between these regions.</li>
+    <li>For visitors staying with residents instead of booking hotels in Brazil, an invitation letter (carta de convite) is required for immigration purposes. This document must be notarized by a Brazilian notary (cartório) to be legally valid. It should contain the host&#39;s full contact details, address, and confirmation of accommodation for the entire stay period.</li>
+    <li>Climate challenges in southern Brazil, including humidity, mold, and cold drafts requiring warm clothing, are discussed. Housing quality issues, such as poor insulation, drafts, and mold, are highlighted. While solutions like underfloor heating exist, they are impractical for renters. The tendency of locals to dress too warmly in cooler temperatures (around 20°C) is also noted.</li>
+    <li>When filing the first annual income tax return (DIRPF) as a Brazilian tax resident, individuals must declare all global assets owned prior to obtaining residency. The Receita Federal does not initially require proof of origin for these pre-existing assets. Declaring them in the first tax return ensures that subsequent transfers of these funds into Brazil will not be taxed as new income. However, Brazilian banks processing large inbound transfers for real estate purchases will likely request supporting documents, such as foreign bank statements and prior property sales contracts.</li>
+    <li>User states that their homes have 220V outlets, and all Russian appliances work fine, including a 220V electric shower. They acknowledge that the availability of 220V outlets varies by location. While Rio de Janeiro (Copacabana, older buildings) reportedly lacks them, they were present in the state of Para and Curitiba. User suggests it depends on the specific property and potentially newer constructions.</li>
+  </ul>
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/br/documents-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documents &amp; Visa</span></a>
+    <a class="chip" href="/en/br/tickets-entertainment/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🎟 Tickets &amp; Entertainment</span></a>
+    <a class="chip" href="/en/br/transport/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transport</span></a>
+    <a class="chip" href="/en/br/shopping/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛒 Shopping</span></a>
+    <a class="chip" href="/en/br/banking-money/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Banking &amp; Money</span></a>
+    <a class="chip" href="/en/br/safety/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛡 Safety</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Generic articles exist — but a solution for you?</h2>
+    <p>Ask Luky — fresh reports, not a five-year-old article.</p>
+    <p>And Luky is a live voice translator for real conversations: talk to locals directly.</p>
+    <p class="ps">PS: a voice call with that person from another country — also Luky</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/br/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

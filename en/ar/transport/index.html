@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Argentina: Transport — real experience · Luky</title>
+<meta name="description" content="Real experience from chats about Transport in Argentina: as it is, first-hand. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/ar/transport/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/ar/transport/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/ar/transport/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/ar/transport/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/ar/transport/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/ar/">Argentina</a> /
+    <b>Transport</b>
+  </nav>
+
+
+  
+  <h1>Transport in Argentina: real experience from chats</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of people from chats on «Transport» in Argentina — as it is, no fluff. For your case — <strong>ask Luky</strong>.</div></div>
+
+  <h2>From real experience</h2>
+  <ul class="qlist">
+    <li>When renting from Hertz in Argentina (e.g., El Calafate), consider picking up the car at a city office rather than the airport to avoid extra airport fees. To reduce costs, use corporate codes (CDP) and try changing the residency country in the booking form to a developing nation, as pricing varies by market and is rarely checked at the counter.</li>
+    <li>A traveler is seeking advice on a 2-hour layover at Sao Paulo (GRU) airport. They are concerned about the short transfer time but are reassured that if booked on a single ticket, the airline will arrange for the next available flight in case of delays. It&#39;s advised not to book separate flight segments for such a connection.</li>
+    <li>Motorbike Rental Difficulty: Renting a motorbike in Argentina is very challenging due to high theft rates. Car rental is also difficult, but motorbikes are significantly harder to find for rent.
+&#34;Motochorros&#34; Crime: This refers to thieves on motorbikes who approach victims, often violently, to steal their motorbikes or belongings.
+Theft Statistics (2024):
+- National Insurance Superintendence (SSN): 47,168 insured motorbikes stolen nationwide (approx. 129 per day).
+- Buenos Aires Province (PBA) Prosecutor&#39;s Office: 87,453 criminal cases for motorbike theft.
+High-Risk Area: Over 70% of thefts occur in the Metropolitan Area of Buenos Aires (AMBA).
+Conclusion: Motorcyclists are considered highly vulnerable targets, making rental services rare.</li>
+    <li>When traveling on a single ticket with the same airline (e.g., Aerolíneas Argentinas) for connecting flights, if the layover duration is significantly shortened (e.g., from 3.5 hours to 1 hour), the airline is responsible for ensuring the passenger reaches the final destination. In Buenos Aires Aeroparque (AEP), while the airport is small, passport control queues can be an issue. If faced with a tight connection, passengers should immediately inform airport staff. If a missed connection occurs due to the airline&#39;s schedule change, the airline is obligated to rebook the passenger on the next available flight at no additional cost. It is often possible to avoid re-entering security/registration if the flights are on a single ticket and from the same terminal, but immigration might be required depending on domestic-to-international transfer. Inquire with the airline about free changes to an earlier flight if the connection is deemed too short.</li>
+    <li>Ferry travel from Montevideo to Buenos Aires: arrive at least 1.5 hours before departure for border control. Tickets can be purchased on-site or in advance online.</li>
+    <li>Importing a vehicle to Argentina requires residency (temporary or permanent), extensive documentation handled by a broker, and significant shipping costs. Local car prices are high; neighboring countries like Paraguay or Chile offer cheaper alternatives. Traffic regulations differ, including speed limits, parking customs, and the specific use of hazard lights (turn signals are used to indicate parking or temporary stops, not just for emergencies).</li>
+    <li>When flying internationally from Buenos Aires (Ezeiza - Pistarini), it is advisable to allow ample time due to the potential for flight cancellations, delays, and rescheduling, which are reported to be relatively common, especially for domestic connections. While international flights may experience fewer disruptions than domestic ones, it is prudent to build in a significant buffer, ideally arriving well in advance or even departing for the airport the day before. A 3-4 hour layover might be insufficient given these potential issues.</li>
+    <li>For transfers between El Calafate (Argentina) and Puerto Natales (Chile), including border crossing: Busbud offers tickets, but check schedules carefully as departures might be limited (e.g., only one bus at 8 AM). Private transport options are also available. Inquire about the most convenient and timely options for your travel dates.</li>
+    <li>When flying to Argentina, particularly with airlines like Turkish Airlines, ensure compliance with their ticketing policies. Some reports suggest potential issues if the return ticket is not booked with the same airline used for the outbound journey, especially for non-tourist stays. Standard tourist entries typically require a return ticket regardless of the airline.</li>
+    <li>Flybondi baggage policy: &#39;Personal item&#39; size and weight (6kg) are strictly enforced; checking for size is frequent. Registration at the airport incurs a fee; online check-in is recommended. Weight is often checked more strictly than dimensions.</li>
+    <li>Logistics for visiting Iguazu Falls from the Argentine side: 1) Buses from Puerto Iguazú airport to the city center accept cash. 2) Regular buses to the national park depart from the city&#39;s central bus terminal (terminal de ómnibus); a round-trip ticket costs approximately 20,000 ARS per person. 3) Taxis are subject to a local monopoly and are financially viable only for groups of 3 or more people. 4) Boat tours getting close to the waterfalls require raincoats due to extreme mist and splashing.</li>
+    <li>Travelers entering Argentina without a return ticket may be denied entry. It is recommended to book an hotel/Airbnb and present the reservation proof. Temporary flight reservations (often valid for 48 hours) can sometimes be obtained from airline counters at the airport as proof of onward travel.</li>
+    <li>Route options between Buenos Aires and Montevideo: 1. Direct ferry (approx. 3 hours travel time, cost ~$130 round trip). 2. Ferry to Colonia del Sacramento + bus to Montevideo (cheaper but significantly longer). Bus travel between these cities is also possible but varies in time (2.5 to 8 hours).</li>
+    <li>Required Documents:
+- **International Driving Permit (IDP):** Essential.
+- **Credit Card:** Primarily required for rental.
+- **Foreign Debit Card:** May be accepted if it does not explicitly state &#34;debit&#34; on the card face.
+- **Russian Driving License:** Reportedly accepted without issues in combination with IDP.
+Process: Even if pre-filled online, expect a lengthy paperwork process at the rental counter.
+Provider Example: Hertz (used with corporate account and Belarusian card).
+Potential Issues: Card acceptance (especially debit cards) can be a point of contention.</li>
+    <li>When flying within Argentina, baggage allowance and overweight fees vary by airline. For Aerolineas Argentinas, the standard included baggage allowance can be 15 kg. Overweight fees can be substantial; for example, 6 kg overweight on a 15 kg allowance cost 21,000 ARS in November 2025 for a flight from Mar del Plata to Buenos Aires. Jetsmart typically offers 23 kg. Always check the specific airline&#39;s policy before flying.</li>
+    <li>Taxi fare from Ezeiza Airport (EZE) to Buenos Aires city center can be around 40 USD. For other locations like El Calafate or Puerto Iguazu, consider airport shuttle services. In Ushuaia, walking from the airport might be an option depending on the distance.</li>
+    <li>When traveling to Argentina, border control officers are generally relaxed about accommodation (verbally stating or showing a written address of friends/family is usually sufficient). However, airline staff at departure (especially Turkish Airlines) are highly strict and may demand official proof of booking to mitigate illegal migration risks. Advising airline staff that you are staying with &#39;friends&#39; can trigger extra scrutiny. Travelers should book a refundable hotel with a pay-at-property option to present during check-in.</li>
+    <li>Verification of return tickets at check-in is highly subjective and depends on the airline policy, the specific airport of departure, and individual ground staff. While some airlines (e.g., Turkish Airlines) are perceived as more rigorous, no airline guarantees a hassle-free boarding without a return ticket if it is a requirement for entry into the destination country.</li>
+    <li>Ethiopian Airlines office in Buenos Aires is located at Carlos Pellegrini 1135, 10th floor. Verify current location via their official WhatsApp contact, as addresses in the city may change and outdated information circulates online.</li>
+    <li>Public transport in Buenos Aires accepts bank card payments. Buses operate 24/7, and fare payment can be made using a bank card without issues.</li>
+    <li>Buenos Aires offers several transportation options. The metro system is efficient and affordable for traveling across the city. Ride-sharing services like Uber are available, though it&#39;s recommended to book &#39;comfort&#39; or higher-tier services to potentially avoid issues with drivers refusing rides. Walking can be enjoyable for shorter distances but may become tiring for extensive travel. Taxis are also an option, but be aware of potential traffic congestion and occasional driver discretion regarding fares or destinations.</li>
+    <li>A return ticket is not mandatory by law in all cases, but airlines often require it to ensure compliance with entry requirements. Turkish Airlines is reported as the most stringent regarding proof of return or onward travel. A ticket to a third country is generally accepted by immigration as proof of intent to leave Argentina.</li>
+    <li>Airline reliability in Argentina varies. Budget carriers like JetSMART and Flybondi frequently experience flight delays or cancellations. Aerolíneas Argentinas is generally considered more stable, though not immune to scheduling issues.</li>
+    <li>When booking the La Ventana tango show in Buenos Aires, compare prices on Trip.com, as it can be cheaper than the official website. Avoid booking their official transfer service; using Uber is significantly cheaper.</li>
+    <li>When a flight involves a connection with the same airline or partner alliance, luggage is typically checked through to the final destination unless otherwise specified. Even if a ticket indicates a need to collect and re-register baggage during a short layover (e.g., 2h 10m), this often refers to automated airline procedures where the passenger does not need to exit the transit area.</li>
+    <li>Primary platforms for purchasing used vehicles in Argentina include Mercado Libre, Facebook Marketplace, and the Kavak dealership network. Be aware that Marketplace listings often display down-payment amounts rather than total vehicle prices. Registration is often required to view full listings.</li>
+    <li>Regional gas supply issues (GNC) in Buenos Aires are linked to supply cuts by Camuzzi Gas. This affects vehicle fuel availability and residential pressure. The issue is not uniform across all Argentine provinces.</li>
+    <li>For up-to-date community reports on boarding denials and Argentine border control scrutiny, refer to the specialized Russian-language Telegram chat named &#39;Сняты с рейса в Аргентину&#39; (Denied boarding to Argentina).</li>
+    <li>Hertz is a reliable car rental option in Buenos Aires. Requirements include a credit card (must not be a debit card) for the booking/deposit.</li>
+    <li>Exact departure times for cruise ships from Ushuaia are not typically listed on public websites. Such data is available via commercial maritime tracking services like MarineTraffic, which requires a paid subscription to view real-time port logs and precise scheduling.</li>
+    <li>Users occasionally report issues purchasing tickets on the Flybondi website. A common workaround is to attempt access from a different device (e.g., another computer or mobile phone), as the website may block access from certain IPs or devices due to perceived security reasons.</li>
+    <li>When flying with Turkish Airlines and having a long layover (e.g., over 24 hours) in Istanbul, passengers may need to register for their onward flight in Istanbul. Having return tickets within the same booking and the same route is generally acceptable, but be prepared for questions regarding your destination and purpose of travel. Have hotel reservations and other relevant documents readily available.</li>
+    <li>Travel between Argentina and Uruguay via Buquebus ferry. A round-trip ticket can cost approximately 11,000 RUB. The one-way journey duration is about 3 hours. Tickets can be purchased directly on the official Buquebus website.</li>
+    <li>Foreigners without a DNI can purchase a vehicle in Argentina by obtaining a CDI (Clave de Identificación) from the tax authority (AFIP). Legally, foreign driver&#39;s licenses are valid for 90 days post-entry. However, local car insurance and vehicle impound retrieval usually require a valid local license (DNI/licencia de conducir). Paying insurance premiums without a local credit card can be challenging.</li>
+    <li>Strikes are a recurring event in Argentina and can significantly impact travel plans, including flight delays. Information about upcoming strikes typically becomes available a couple of days in advance. If a strike occurs at the airport, it will affect international flights. Travelers should stay informed about potential disruptions.</li>
+    <li>Ferry travel between Buenos Aires and Uruguay involves passport control for both countries before departure from Argentina. Uruguayan entry stamps are placed upon arrival. For extending stay in Argentina, visit Migración to pay a fee and officially extend for 1.5 months, which can be done multiple times.</li>
+    <li>For travel between Iguazu Falls and Buenos Aires, it is more efficient to depart from Puerto Iguazu (Argentina) rather than Brazilian airports. There are over 10 daily direct flights available from Puerto Iguazu to Buenos Aires (AEP/EZE).</li>
+    <li>SUBE card tariffs in Buenos Aires are subject to monthly inflation-linked increases. Users should verify current fares via the official app, as prices vary based on distance. &#39;Social tariffs&#39; (discounts) are restricted to specific local groups (seniors, low-income, etc.) via ANSES and are not applicable to the average tourist or expat.</li>
+    <li>Entry into Argentina can be restricted by airlines rather than border control. Passengers using multi-leg tickets or different carriers for return flights often face scrutiny from airline check-in staff. It is recommended to have a clear onward travel plan and return tickets on the same airline alliance or carrier to avoid being denied boarding.</li>
+    <li>Domestic flight luggage allowances in Argentina vary significantly by airline and tariff (often 15kg vs 23kg). Aggregators clearly display specific baggage limits for each fare. It is common for airlines to prohibit pooling baggage weight between multiple passengers.</li>
+    <li>Immigration officers at the Argentinian border rarely prioritize checking onward tickets, but airlines often enforce this requirement during check-in to avoid fines. Travelers should be prepared with proof of onward travel from Argentina.</li>
+    <li>Commonly Asked Documents (for Flights to Argentina with Transit):
+- **Return Tickets:** May be requested at Moscow departure, during transit (Doha, Sao Paulo), or upon arrival in Argentina. It&#39;s advisable to have them.
+- **Hotel Reservations:** Often checked upon arrival in Buenos Aires.
+Yellow Fever Vaccination (Brazil Transit):
+- **Requirement:** Generally required for entry into Brazil.
+- **Transit Exception:** Some sources suggest it might not be required for short transits (2-3 hours) without leaving the airport, but this is debated.
+- **Recommendation:** It&#39;s safer to have the vaccination certificate, especially since it&#39;s hard to predict individual officer discretion. Print out reservations and vaccination certificates.
+General Rule: Document checks can be inconsistent; it&#39;s best to be prepared with all necessary documents (printed copies are recommended).</li>
+    <li>Travelers often encounter issues paying for bus tickets on platforms like Andesmar, Busbud, and Platforma10 using foreign credit/debit cards (e.g., non-local Visa). Common error messages include &#39;invalid data&#39; or &#39;payment failed&#39;. Solutions include: 1) Linking the foreign card to a mobile payment system such as Apple Pay or Google Pay and completing the purchase through them. 2) Using country-specific versions of the platforms (e.g., &#39;andesmarchile&#39; for routes in Chile) and selecting local payment options like &#39;debito y credito (webpay)&#39; which may process foreign cards more reliably.</li>
+    <li>When traveling with Argentine airlines, individual luggage allowances (e.g., 15kg) generally do not automatically stack into a single 23kg bag. Passengers should check for an &#39;upgrade&#39; or &#39;extra weight&#39; option on the airline&#39;s official website prior to arrival at the airport, as pre-purchasing additional allowance is significantly cheaper than paying for excess weight at the check-in counter.</li>
+    <li>Domestic flights in Argentina: Strollers are generally transported for free as oversized baggage. No strict weight or size limits typically apply, provided the stroller is foldable. Passengers should proceed to the oversized baggage counter at the airport for check-in.</li>
+    <li>Flight prices from Moscow to Buenos Aires can vary significantly. Direct flights with Turkish Airlines might cost around 170,000 RUB round trip for February 2027. Alternative routes via Tashkent or through Africa (Morocco, Ethiopia) can be cheaper, potentially around 100,000-105,000 RUB. Summer months might offer lower prices but with colder weather. Booking in advance and comparing various routes and airlines is recommended.</li>
+    <li>Travelers can be hired to transport documents, parcels, and luggage between Argentina (Buenos Aires) and Russia/Belarus. Typical costs mentioned are $10 for documents, $15 for parcels, and $20 for a suitcase. Medications (with receipt and original packaging) and electronics can be transported on a case-by-case basis. This service can be a viable alternative to traditional shipping methods.</li>
+  </ul>
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/ar/documents-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documents &amp; visa</span></a>
+    <a class="chip" href="/en/ar/banking-money/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Banking &amp; money</span></a>
+    <a class="chip" href="/en/ar/tickets-entertainment/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🎟 Tickets &amp; entertainment</span></a>
+    <a class="chip" href="/en/ar/exchange-transfers/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Exchange &amp; transfers</span></a>
+    <a class="chip" href="/en/ar/shopping/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛒 Shopping</span></a>
+    <a class="chip" href="/en/ar/safety/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛡 Safety</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Answers dance around it, but never to the point?</h2>
+    <p>Ask Luky — tries to understand your situation and answer more precisely.</p>
+    <p>And Luky is a live voice translator for real conversations: chat in the lobby with travellers from other countries.</p>
+    <p class="ps">PS: meet someone at a bar who speaks another language</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/ar/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

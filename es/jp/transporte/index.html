@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Japón: Transporte — experiencia real · Luky</title>
+<meta name="description" content="Experiencia real de los chats sobre Transporte en Japón: tal cual, de primera mano. Para tu caso — pregúntale a Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/es/jp/transporte/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/jp/transporte/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/jp/transporte/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/jp/transporte/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/jp/transporte/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · cualquier país · sin relleno</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noche</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/es/">Inicio</a> /
+    <a href="/es/jp/">Japón</a> /
+    <b>Transporte</b>
+  </nav>
+
+
+  
+  <h1>Transporte: cómo es en Japón — de primera mano</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiencia real de gente de los chats sobre «Transporte» en Japón — tal cual, sin relleno. Para tu caso — <strong>pregúntale a Luky</strong>.</div></div>
+
+  <h2>De la experiencia real</h2>
+  <ul class="qlist">
+    <li>Consulta acerca de sitios web o plataformas para comprar billetes de tren de Matsumoto a Osaka, ya que Trip.com no parece ofrecer esta ruta directamente.</li>
+    <li>Las tarjetas ICOCA/Suica tienen un límite máximo de saldo de 20.000 JPY. Las tarjetas se pueden recargar varias veces después de haber gastado el saldo. Son ampliamente aceptadas en tiendas de conveniencia (konbini) y cadenas de restaurantes, sirviendo como complemento al efectivo para los turistas que no disponen de tarjetas bancarias internacionales.</li>
+    <li>Viajar a Japón durante la &#39;Silver Week&#39; (una serie de festivos en septiembre) provoca aglomeraciones importantes y una gran demanda de alojamiento y transporte. Es fundamental reservar hoteles, billetes de Shinkansen y entradas para atracciones populares con suficiente antelación, posiblemente con meses de antelación, para asegurar la disponibilidad y evitar precios inflados. Considere ajustar sus fechas de viaje para evitar este periodo de máxima afluencia.</li>
+    <li>Planificación de viajes a Japón: Compre los billetes de Shinkansen y de autobús (por ejemplo, a Kawaguchiko) con antelación, especialmente durante la temporada alta. Aunque algunos billetes pueden comprarse en el momento, se recomienda reservar con antelación. El Japan Rail Pass puede resultar rentable para viajes largos. Para el tránsito en Shanghái, confirme la información de la terminal y complete las tarjetas de llegada con antelación.</li>
+    <li>Para la ruta del Shinkansen de Kioto a Tokio, elija el asiento &#39;E&#39; (lado izquierdo) para disfrutar de las mejores vistas del Monte Fuji. Si busca un vagón más cálido, busque los vagones designados con aire acondicionado reducido; estos suelen estar señalizados en los andenes. Tenga en cuenta que los trenes japoneses tienen una dirección fija, por lo que los asientos son girados manualmente por el personal al final de la línea.</li>
+    <li>Las cañas de pescar en tubos rígidos que superen las dimensiones estándar deben facturarse como equipaje sobredimensionado o frágil. Los pasajeros deben dirigirse al mostrador de facturación especializado del aeropuerto para artículos de gran tamaño.</li>
+    <li>Si sale de una estación en una parada distinta a la designada en su billete físico, utilice las máquinas de &#39;Ajuste de tarifa&#39; (Norikoshi) situadas dentro de las puertas de acceso antes de salir. Alternativamente, pague la diferencia al personal de la estación. Las tarjetas IC gestionan los ajustes de tarifa automáticamente.</li>
+    <li>Para reservar billetes de autobús y tren en los Alpes japoneses, considere utilizar Japanbusonline y Trip.com. Hay rutas específicas disponibles, como Osaka-Takayama y Takayama-Shirakawa-go. Tenga en cuenta que no hay autobuses directos de Takayama a Kamikochi; es necesario hacer transbordo en Hirayu. Trip.com también ofrece rutas combinadas, como Osaka-Takayama con parada en Shirakawa-go.</li>
+    <li>Los coches de alquiler deberían incluir una tarjeta ETC para las carreteras de peaje. El aparcamiento es mayoritariamente de pago, pero existen plazas gratuitas cerca de atracciones turísticas (templos, parques) y supermercados; revise la señalización cuidadosamente. Los límites de velocidad en Japón son estrictos; el exceso de velocidad (más de 20-30 km/h por encima del límite) puede llevar a la revocación de la licencia, incluso para los turistas. Verifique la compatibilidad de los convenios de su permiso de conducir (Ginebra frente a Viena) antes del alquiler.</li>
+    <li>Existen vuelos nacionales dentro de Japón para viajar a islas como Okinawa, ya que no hay conexión de Shinkansen. Se pueden utilizar plataformas de reserva como Trip.com para encontrar y comprar billetes para estos vuelos internos. Es importante comprender el proceso de reserva para los viajes aéreos nacionales en Japón.</li>
+    <li>Las tarjetas IC físicas (Suica/Pasmo) dejan de funcionar una vez que se transfieren a Apple Wallet o a una billetera digital. Las tarjetas digitales pueden recargarse en las máquinas de las estaciones equipadas con lectores sin contacto o en tiendas de conveniencia como 7-Eleven. Aplicaciones como «CardReader» pueden ayudar a consultar el saldo si los métodos de recarga oficiales no están disponibles.</li>
+    <li>Planear un viaje a Japón implica crear un itinerario y establecer un presupuesto. Los viajeros a menudo diseñan sus propias rutas utilizando recursos como Google Maps, Trip.com y Visit Japan. Los costos pueden variar significativamente según las opciones de vuelo y alojamiento. Es importante priorizar los destinos y las actividades para maximizar la experiencia de viaje dentro del tiempo y presupuesto disponibles.</li>
+    <li>Si el JR Kansai-Hiroshima Pass no está disponible en línea, puede comprarlo en persona presentando su pasaporte en agencias de viajes autorizadas, como NTA TiS Osaka (estación de Umeda). Esto evita problemas con el canje digital.</li>
+    <li>Comer y beber en los Shinkansen (trenes bala) en Japón no solo es aceptable, sino habitual. Las cajas bento y las bebidas, incluidas opciones alcohólicas como cerveza, sake y vinos importados, se pueden comprar fácilmente en las estaciones y en el tren. Aunque generalmente está bien llevar tu propio alcohol, comprarlo a bordo es una opción cómoda.</li>
+    <li>Los billetes para el Shinkansen (trenes bala) comprados sin asiento reservado suelen ser válidos para cualquier tren de la ruta y fecha especificadas, siempre que se utilicen en vagones sin reserva. No está limitado a una hora de salida concreta. Sin embargo, si el billete incluye un asiento reservado, solo será válido para ese tren y horario específicos.</li>
+    <li>Para reservar billetes de autobús exprés hacia o desde Kawaguchiko, utilice el sitio web recomendado Japanbusonline. Evite reservar al azar en cualquier sitio, ya que la plataforma JapanBusonline se considera fiable para este servicio.</li>
+    <li>El registro en línea de Air China generalmente solo está disponible para boletos reservados directamente a través de su sitio web. Si se reserva a través de agencias de terceros, el registro debe completarse en el mostrador del aeropuerto. Air China aplica un estricto límite de peso de 23 kg por maleta facturada, a diferencia de otras aerolíneas que pueden considerar el peso total del pasajero.</li>
+    <li>Aunque Japón es tecnológicamente avanzado, el efectivo sigue siendo ampliamente preferido y a menudo necesario para ciertas transacciones, especialmente para los pases de transporte. Es posible que las tarjetas de crédito no se acepten en todas partes. Lleve siempre suficiente efectivo, especialmente para el transporte local y compras pequeñas.</li>
+    <li>Un itinerario de 21 días por Japón puede optimizarse equilibrando los destinos populares con excursiones de un día. Las consideraciones clave incluyen asignar suficiente tiempo a las principales ciudades como Osaka y Tokio, posiblemente dividiendo las noches en Tokio para facilitar el acceso a los alrededores como Nikko o Yokohama. Aunque es factible hacer excursiones de un día a lugares como Himeji y Nara, es importante gestionar el tiempo de viaje y evitar una planificación excesiva para prevenir la fatiga. Explorar opciones como Kanazawa o Kōbe puede añadir variedad al itinerario.</li>
+    <li>Las alertas de tifón y las consiguientes cancelaciones de vuelos están causando una interrupción significativa para los viajeros en Japón. Muchos están tratando desesperadamente de volver a reservar vuelos, y algunos recurren a comprar billetes nuevos a precios más altos para cumplir con las fechas límite de sus visados. Se aconseja a los viajeros que controlen las previsiones meteorológicas y las notificaciones de las aerolíneas, y que se pongan en contacto de forma proactiva con sus aerolíneas o agentes de viajes para conocer las opciones de reserva. Tenga en cuenta las fechas de caducidad de los visados y las posibles sanciones por exceder la estancia. Considere rutas o aerolíneas alternativas si los vuelos directos no están disponibles o han sido cancelados.</li>
+    <li>Comparación de la rentabilidad del viaje en tren frente al taxi para el transporte entre Osaka y Kioto. Se estima que las tarifas de taxi son significativamente más altas (alrededor de 20.000-25.000 JPY) en comparación con los trenes locales.</li>
+    <li>Explique la gran demanda de alquiler de barcas en el desfiladero de Takachiho. Proporcione detalles sobre cómo reservar billetes, el plazo típico de reserva (por ejemplo, «agotarse en 10 minutos») y las implicaciones de no conseguir alquilar una barca para la experiencia general, teniendo en cuenta el tiempo de viaje.</li>
+    <li>Los precios de los vuelos a Japón pueden fluctuar significativamente. Aunque históricamente se podían encontrar billetes de ida y vuelta por unos 40 000 rublos, los precios actuales suelen ser más altos, oscilando a menudo entre los 50 000 y los 55 000 rublos. Algunas ofertas, como las de 38 000 rublos, pueden aparecer en vuelos con escala (por ejemplo, a través de China). A menudo se mencionan aerolíneas como Hainan Airlines, China Eastern y Air China. Se recomienda reservar con 3 o 4 meses de antelación, aunque a veces pueden aparecer ofertas de última hora aproximadamente un mes antes de la salida.</li>
+    <li>En el transporte público japonés, los asientos prioritarios están disponibles para cualquiera cuando están vacíos, pero deben dejarse libres inmediatamente para pasajeros ancianos, discapacitados o embarazadas. Los lugareños pueden declinar las ofertas de asientos de los extranjeros por una cuestión de orgullo cultural. Si una persona mayor necesita un asiento, normalmente se acercará a la zona prioritaria. Se anima a los extranjeros a seguir el ejemplo local: sentarse si hay asientos libres, pero permanecer atentos y listos para cederlos.</li>
+    <li>Un itinerario completo de 21 días para Japón puede mejorarse optimizando la distribución de los días entre las regiones clave. Las sugerencias incluyen dedicar dos días a Osaka y sus alrededores (Kobe, Himeji), incorporar ciudades como Kanazawa y Hikone, y posiblemente extender la estancia cerca del monte Fuji. También se recomiendan estancias de una noche en Nikko y Kamakura para una exploración más profunda. Aunque es imposible verlo todo, una planificación estratégica puede maximizar la experiencia de viaje y mitigar el temor a perderse algo (FOMO).</li>
+    <li>Si sale del Aeropuerto Internacional de Kansai (KIX) a las 9:08 a. m., el primer tren desde Namba alrededor de las 5:15 a. m. es suficiente. Llega a Osaka alrededor de las 6:00 a. m., lo que proporciona tiempo suficiente y elimina la necesidad de un taxi.</li>
+    <li>Los vuelos económicos entre Tokio y Osaka pueden ser significativamente más baratos que los boletos del Shinkansen. Sin embargo, el Shinkansen suele ser más eficiente para viajar entre los centros de las ciudades, ya que evita el tiempo y los costos asociados con los traslados al aeropuerto, los controles de seguridad y los procedimientos de embarque.</li>
+    <li>Para quienes viajan a Japón por primera vez, depender del efectivo y de una tarjeta IC local (como Suica o Pasmo) para el transporte y las pequeñas compras es una alternativa viable a las tarjetas de crédito internacionales. El efectivo es ampliamente aceptado y las tarjetas IC simplifican los pagos donde las tarjetas bancarias podrían no serlo. Se recomienda investigar las opciones para obtener una tarjeta IC al llegar.</li>
+    <li>El alquiler de patinetes eléctricos en Japón suele requerir un permiso de conducir internacional válido. Sin la licencia adecuada, su uso puede estar restringido. Encontrar opciones de alquiler que acepten pagos en efectivo o que operen fuera de las plataformas digitales estándar podría ser una solución para los viajeros que no dispongan de tarjetas extranjeras.</li>
+    <li>El pase JR Kansai &amp; Hiroshima Area Pass (5 días, ~17,000 JPY) es altamente rentable y cubre en su totalidad el tren bala Nozomi entre Osaka y Hiroshima, así como el expreso al aeropuerto Haruka. Sin embargo, no es válido para la línea de Shinkansen entre Osaka y Kioto; para ese tramo se deben utilizar las líneas regulares de JR o trenes de servicio rápido.</li>
+    <li>Las tarjetas Suica pueden comprarse en los quioscos del aeropuerto usando billetes grandes (10,000 JPY). Para viajes de menos de 28 días, se recomienda la Welcome Suica, ya que no requiere depósito. Se pueden almacenar saldos de hasta 20,000 JPY en la tarjeta.</li>
+    <li>Los servicios de envío de equipaje (takkyubin) son altamente fiables en Japón. Los viajeros deben solicitar al recepcionista del hotel que organice la recogida. La entrega suele tardar de 1 a 2 días, dependiendo de la distancia. Verifique siempre la fecha de entrega prevista con el personal antes de realizar el envío, especialmente si viaja a una ciudad nueva.</li>
+    <li>El transbordo del Shinkansen (línea Tokaido) al Narita Express (N&#39;EX) en la estación de Tokio es sencillo y suele llevar de 10 a 15 minutos, incluso con equipaje. Siga las señales de &#39;JR Lines&#39; y &#39;Narita Express (N’EX)&#39; dentro del mismo complejo de la estación. No salga por los torniquetes principales; en su lugar, utilice los torniquetes de transbordo. El billete del Shinkansen será devuelto por el torniquete. Los andenes del N&#39;EX suelen estar bajo tierra. Reserve al menos 20 minutos para el transbordo, especialmente si no está familiarizado con la estación. El viaje alternativo a Narita es posible mediante los trenes eléctricos regulares de JR, que son más lentos pero funcionan hasta más tarde.</li>
+    <li>Al utilizar los autobuses limusina de aeropuerto en Okinawa, es aconsejable comprobar con antelación si es necesario reservar con antelación o si los billetes se pueden comprar in situ. Esta información suele encontrarse en el sitio web oficial de la compañía de autobuses o contactando con su servicio de atención al cliente. Se puede recomendar la reserva previa durante las temporadas altas de viaje o para rutas específicas para garantizar la disponibilidad.</li>
+    <li>El traslado entre la Terminal 2 y la Terminal 1 del Aeropuerto Internacional de Kansai (KIX) requiere el uso de un autobús lanzadera (aproximadamente 15 minutos). En caso de conexiones por cuenta propia, se recomienda un mínimo de 3 horas para tener en cuenta los trámites de inmigración, la recogida de equipaje y el traslado entre terminales. Si se viaja con un solo billete, la aerolínea se encargará de reprogramar las conexiones perdidas debidas a sus propios retrasos.</li>
+    <li>Japón no tiene restricciones sobre la cantidad de líquidos permitidos en el equipaje de mano. Esto fue confirmado por un viajero que pasó por el control de seguridad previo al embarque con una botella de alcohol de un litro sin terminar, sin ningún problema. El mismo viajero también informó haber traído con éxito varias botellas pequeñas de sake y una botella de vino de 700 ml sin que se le confiscaran ninguno de los artículos.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/es/jp/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/es/jp/documentaci-n-y-visados/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentación y visados</span></a>
+    <a class="chip" href="/es/jp/entradas-y-ocio/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Entradas y ocio</span></a>
+    <a class="chip" href="/es/jp/cambio-y-transferencias/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Cambio y transferencias</span></a>
+    <a class="chip" href="/es/jp/banca-y-dinero/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Banca y dinero</span></a>
+    <a class="chip" href="/es/jp/correo-y-paqueter-a/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Correo y paquetería</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>¿Buscaste y sigues sin estar seguro?</h2>
+    <p>Pregúntale a Luky — no artículos genéricos, sino detalles para tu situación.</p>
+    <p>Y Luky es un traductor de voz para conversaciones reales: y el guía hablará tu idioma.</p>
+    <p class="ps">PS: pon Luky en un altavoz portátil en una fiesta y habla con todos a la vez</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiencia real de chats de comunidades, sin relleno</div>
+    <nav class="f-links">
+      <a href="/es/about/">Acerca de</a>
+      <a href="/es/jp/">Todos los temas</a>
+      <a href="/es/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Las respuestas se recopilan de chats abiertos de comunidades — es experiencia real de personas, no asesoría oficial. Verifica antes de decisiones importantes.</p>
+    <div class="f-copy">© 2026 Luky · actualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noche", DAY="\u2600 D\u00eda";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

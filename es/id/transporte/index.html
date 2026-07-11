@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Indonesia: Transporte — experiencia real · Luky</title>
+<meta name="description" content="Experiencia real de los chats sobre Transporte en Indonesia: tal cual, de primera mano. Para tu caso — pregúntale a Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/es/id/transporte/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/id/transporte/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/id/transporte/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/id/transporte/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/id/transporte/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · cualquier país · sin relleno</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noche</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/es/">Inicio</a> /
+    <a href="/es/id/">Indonesia</a> /
+    <b>Transporte</b>
+  </nav>
+
+
+  
+  <h1>Transporte en Indonesia: experiencia real de los chats</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiencia real de gente de los chats sobre «Transporte» en Indonesia — tal cual, sin relleno. Para tu caso — <strong>pregúntale a Luky</strong>.</div></div>
+
+  <h2>De la experiencia real</h2>
+  <ul class="qlist">
+    <li>Las carreteras de peaje en Bali no aceptan efectivo. El pago se realiza exclusivamente mediante una «tarjeta de peaje» (por ejemplo, e-Toll, e-Money). Estas tarjetas se pueden comprar directamente a los asistentes en las cabinas de peaje, normalmente por 100.000 IDR, lo que incluye un saldo inicial. También pueden ser compatibles los pagos sin contacto como Apple Pay (con tarjetas extranjeras) o los sistemas QRIS locales, pero una tarjeta de peaje física es el método más fiable.</li>
+    <li>Los tipos de cambio en el aeropuerto de Bali suelen ser peores que en la ciudad. Sin embargo, la diferencia podría no ser crítica para cantidades pequeñas necesarias para una tarjeta SIM o un taxi. Para sumas mayores, es recomendable cambiar dinero en la ciudad durante los días laborables.</li>
+    <li>La validez del pasaporte debe ser de al menos 6 meses en el momento de entrar en Indonesia. Para el tránsito internacional, especialmente con billetes separados, los viajeros deben asegurarse de que la política de la aerolínea permita el embarque, ya que las aerolíneas son estrictamente responsables de transportar a pasajeros con una validez de pasaporte insuficiente para su destino final.</li>
+    <li>La aplicación electrónica de la ley de tráfico (ETLE) se ha implementado en Ubud, dirigida al estacionamiento ilegal en la calle (específicamente en Jalan Raya Ubud). Los infractores recibirán una multa digital. Los arrendatarios de automóviles o motocicletas deben usar espacios de estacionamiento designados para evitar multas, las cuales serán enviadas a los dueños de los alquileres y cargadas al depósito del arrendatario.</li>
+    <li>Conducir sin una licencia válida en Indonesia conlleva el riesgo de confiscación del vehículo y multas oficiales. Durante las redadas policiales, negociar con los agentes suele ser ineficaz y puede llevar a la incautación del vehículo. Use siempre casco y vístase de forma recatada para llamar menos la atención de las autoridades de tráfico.</li>
+    <li>Conducir un scooter en Indonesia requiere un permiso de conducir internacional con una categoría &#39;A&#39; (motocicleta) válida. Las licencias de conducir locales de Indonesia para turistas sin KITAS suelen ser ilegales o no válidas en caso de accidente. Conducir sin la categoría de licencia correcta le hace legalmente responsable de cualquier accidente e invalida la cobertura del seguro.</li>
+    <li>Bali no es un destino transitable a pie. El transporte depende en gran medida de scooters/motos y taxis (Grab/Gojek). Los tiempos de viaje son significativamente más largos de lo que sugieren las distancias debido a la intensa congestión del tráfico, particularmente en centros turísticos como Canggu. Espere más de 1.5 horas para distancias relativamente cortas durante las horas punta.</li>
+    <li>Para encontrar un instructor de motocicletas en el área de Badung en Bali, busque escuelas de conducción locales o instructores particulares. Muchos &#39;maestros&#39; locales ofrecen lecciones asequibles, a menudo en inglés. Se recomienda preguntar a través de grupos comunitarios locales o buscar en línea &#39;lecciones de conducción de motocicletas Bali&#39; o &#39;lecciones de scooter Badung&#39; para encontrar contactos. Algunos particulares también ofrecen instrucción.</li>
+    <li>Tener un billete de salida o de regreso es un requisito legal para entrar en Indonesia. Aunque algunos viajeros logran evitar los controles mediante las puertas automáticas, las aerolíneas suelen denegar el embarque en los puntos de salida si no se presenta un comprobante de viaje de continuación. Además, los agentes de inmigración realizan controles manuales con frecuencia, especialmente a las familias. Los viajeros deben disponer de un billete de avión de continuación válido o de una reserva verificable para evitar que se les deniegue la entrada.</li>
+    <li>Es posible que se puedan utilizar patinetes eléctricos en Bali incluso sin licencia de categoría A, pero las normativas pueden variar. Se recomienda consultar las normas locales y las políticas de la empresa de alquiler.</li>
+    <li>Es menos probable que la policía te detenga en moto en Bali si llevas casco, vistes adecuadamente y sigues las normas de tráfico. Si conduces de forma imprudente (por ejemplo, sin camiseta, saltándote los semáforos en rojo), la probabilidad de ser detenido aumenta considerablemente. Hay zonas específicas donde la policía suele establecer controles.</li>
+    <li>Los usuarios están debatiendo el costo y la necesidad de reparar daños menores, como rasguños, en scooters alquiladas en Bali. Hay un debate sobre si estos se consideran desgaste normal o si requieren pago.</li>
+    <li>El lago Yeh Malet en Karangasem ha reabierto oficialmente a los visitantes después de una gran operación de limpieza que eliminó décadas de sedimentos y maleza. Es seguro para nadar y pescar localmente, y ofrece vistas claras y panorámicas del monte Agung. Sirve como una excelente parada alternativa para los viajeros que se dirigen hacia o desde Amed.</li>
+    <li>No existe un servicio de taxi tradicional en Nusa Penida. Los medios de transporte principales son el alquiler de scooters o la contratación de un conductor privado por una tarifa diaria (típicamente entre 800.000 y 1.000.000 de IDR por una duración aproximada de 10 horas).</li>
+    <li>Los operadores de lanchas rápidas en el puerto de Padang Bai (Bali) y Lombok suelen inflar los precios de los boletos para quienes llegan sin reserva. Verifique siempre los precios en los sitios web oficiales de los operadores o en 12go.asia de antemano; presentar estas tarifas en línea a los agentes de venta reduce el precio al instante (por ejemplo, de 1.000.000 IDR a 600.000 IDR para dos personas). Además, las aplicaciones de transporte como Gojek y Grab no operan en Nusa Penida. Los conductores locales del puerto cobran tarifas fijas elevadas (un mínimo de 100.000 IDR por viajes cortos), lo que hace que el alquiler de scooters previamente acordado y entregado en el puerto sea la opción más rentable.</li>
+    <li>A partir del 10 de junio de 2026, los precios del combustible en Indonesia han sido ajustados. El precio de Pertamax aumentó aproximadamente un 30%, alcanzando los 16,250 IDR por litro. El combustible subsidiado Pertalite se mantiene estable en 10,000 IDR por litro. Las autoridades locales describen esto como un ajuste de costos regular.</li>
+    <li>Las autoridades de inmigración en Indonesia pueden realizar &#39;controles administrativos&#39; en el aeropuerto durante la salida. Incluso con visas válidas (por ejemplo, 33g), el historial de visas anterior o problemas con la empresa patrocinadora pueden provocar restricciones de entrada o salida. Se recomienda verificar el estado de la visa con agentes profesionales antes de viajar y asegurarse de que todos los cierres de visas anteriores se hayan gestionado correctamente.</li>
+    <li>Scooter NMAX en alquiler, modelo del año 2025, con 4 meses de uso. Disponible para alquiler a largo plazo por 1,6 millones al mes. Contacte por mensaje privado.</li>
+    <li>Durante la temporada alta de sequía en agosto y septiembre, Bali experimenta temperaturas más frescas y vientos fríos por la noche provocados por las masas de aire invernal que vienen de Australia. La temperatura del agua del mar también disminuye unos pocos grados. Los viajeros que planeen paseos en scooter por la noche o que se alojen cerca de zonas costeras deben llevar chaquetas ligeras o sudaderas.</li>
+    <li>Para encontrar alquileres de motos asequibles en Bali, busque &#34;bike rent&#34; en Google Maps. Muchos anuncios incluyen números de WhatsApp o sitios web, lo que le permite encontrar opciones como motos Yamaha nuevas por aproximadamente 3 millones de IDR al mes sin necesidad de pagar depósito.</li>
+    <li>El nuevo plan de gestión de tráfico para Uluwatu (Ungasan/Pecatu) comienza el 1 de junio de 2026 para combatir la congestión cerca de la intersección de Nirmala. Espere cambios en las rutas de tráfico en los principales cruces.</li>
+    <li>Al viajar a Nusa Penida desde Padangbai, llevar una motocicleta alquilada en el ferry requiere el documento de registro original del vehículo (STNK) y una licencia válida, a pesar de que las agencias de alquiler aseguren que las copias son suficientes. Los ferris suelen sufrir retrasos de 3 horas o más. La alternativa recomendada es viajar en lancha rápida como pasajero y alquilar una motocicleta en Nusa Penida por aproximadamente 100.000 a 200.000 IDR al día.</li>
+    <li>Se aconseja a los viajeros que visiten las islas Gili o Nusa Penida que guarden su equipaje grande en su hotel de Bali o en instalaciones de &#39;autoalmacenaje&#39; (Self Storage) dedicadas (por ejemplo, en Padang Bai). Llevar maletas grandes en los barcos o a las islas es difícil debido a la logística y al terreno. Las instalaciones de almacenamiento en Padang Bai suelen estar ubicadas a menos de 500-700 metros de los puntos de salida de ferris y barcos.</li>
+    <li>Los servicios de lanchas rápidas desde Bali (Serangan) hasta Java (Banyuwangi) son operados por Express Bahari, con cuatro salidas por semana. Sin embargo, es posible que los horarios y las opciones de reserva no estén disponibles directamente en su sitio web. Se recomienda verificar las rutas disponibles y la información sobre la compra de boletos.</li>
+    <li>Los precios de los taxis estándar desde el aeropuerto de Bali están significativamente inflados; se recomienda encarecidamente utilizar aplicaciones de transporte como Grab o Gojek para evitar cobros excesivos (el precio justo típico ronda los 100k-160k IDR). Los mostradores oficiales de taxis del aeropuerto son otra alternativa más segura para evitar extorsiones.</li>
+    <li>Conducir una motocicleta en Bali sin experiencia previa es sumamente peligroso debido a las condiciones del tráfico. Requisitos esenciales: licencia de conducir motocicletas válida (Categoría A) y permiso internacional de conducir. Sin una licencia, las pólizas de seguro de viaje generalmente no cubren los gastos médicos relacionados con accidentes, los cuales pueden ser extremadamente altos. Se recomienda encarecidamente tomar lecciones de conducción profesional antes de intentar circular entre el tráfico.</li>
+    <li>Los viajeros informan frecuentes estafas relacionadas con agentes de boletos externos fraudulentos para los traslados desde Bali hacia otras islas. Verifique las agencias de venta de boletos a través de fuentes oficiales o compre directamente en los mostradores del puerto para evitar estafas por &#39;ausencia de pasajero&#39; donde las reservas son inválidas o inexistentes.</li>
+    <li>Conducir en Bali presenta desafíos debido a las calles estrechas, la congestión del tráfico, la gran cantidad de motocicletas, el tráfico por la izquierda y el volante a la derecha. Aunque las motocicletas son comunes, los automóviles pueden ofrecer una experiencia de conducción más relajada.</li>
+    <li>Para viajar en ferry de Padang Bai a las islas Gili, elija ferrys grandes y estables como Eka Jaya, evitando los barcos de madera. Los ferrys que salen de Sanur o Serangan podrían ser una opción más larga pero más barata y cómoda si llega en taxi.</li>
+    <li>La reconstrucción de la carretera del tramo clave de 8 km entre Sampalan y Toyapakeh en Nusa Penida comenzó a mediados de 2026 y está programada para durar 240 días. Espere fuertes retrasos por tráfico y malas condiciones de la carretera en el lado oeste de la isla.</li>
+    <li>El coste diario medio del alquiler de un coche con conductor privado en Bali oscila entre 700 000 y 800 000 IDR. Esta tarifa suele cubrir el combustible y los servicios del conductor para las rutas estándar por toda la isla.</li>
+    <li>Registrarse en Gojek/Grab con tarjetas SIM extranjeras puede ser problemático. Una solución es utilizar números de teléfono indonesios virtuales a través de servicios como 5sim. Después de registrarse, no cambie el número de teléfono por el suyo principal, ya que esto a menudo deshabilita las funciones de pago con tarjeta dentro de las aplicaciones.</li>
+    <li>Se requiere un Permiso Internacional de Conducción (PIC) para conducir vehículos en Bali. Si alquila una moto, asegúrese de que el permiso incluya la categoría de motocicleta. Para los coches, el PIC debe cubrir el alquiler de automóviles. La policía local puede interrogar a los conductores incluso con un PIC válido.</li>
+    <li>Para guardar el equipaje y estacionar una motocicleta de forma segura en Nusa Penida, considere dejar su maleta en su hotel o utilizar instalaciones de almacenamiento de equipaje. Para el estacionamiento de motocicletas, puede haber opciones disponibles cerca del puerto de Sanur si viaja desde allí.</li>
+    <li>Al utilizar servicios de taxi como Gojek en Bali para llegar al aeropuerto, la tarifa de entrada (estacionamiento/peaje) generalmente no está incluida en el precio del viaje que se muestra en la aplicación. Los conductores pueden solicitar al pasajero que pague este monto adicional (aprox. 15,000 IDR) al ingresar al área del aeropuerto.</li>
+    <li>La importación de aparatos electrónicos nuevos en su empaque original de venta minorista a Indonesia puede generar aranceles aduaneros de hasta el 40%. Los dispositivos que contienen baterías deben llevarse en el equipaje de mano para cumplir con las normas de seguridad de las aerolíneas y evitar un escrutinio adicional durante los escaneos de equipaje.</li>
+    <li>Puede obtener licencias de conducir balinesas locales para automóviles o motocicletas, válidas por 5 años y listas al día siguiente. Esto le permite conducir de manera segura y evitar multas. Comuníquese al +62 817 9677-771 para obtener asistencia.</li>
+    <li>El transporte en Bali es caro para los turistas que utilizan taxis estándar o aplicaciones de transporte para largas distancias. Alquilar un coche con conductor para un día completo (8-10 horas) cuesta entre 700.000 y 950.000 IDR. El alquiler de motocicletas es significativamente más barato, pero requiere un permiso de conducir internacional (IDP) y una licencia de categoría A.</li>
+    <li>Para una estancia de 14 días en Bali, se puede encontrar alojamiento económico en casas de huéspedes. Los costes estimados de alimentación para dos adultos durante 14 días pueden oscilar entre 2,8 millones de IDR (aproximadamente 100.000 IDR por persona al día) si se consume comida local, o más si se opta por cocina europea. Los costes de transporte varían, pero el alquiler de scooters es generalmente asequible.</li>
+    <li>El transporte público en Bali no existe. Los visitantes dependen de aplicaciones de transporte (Gojek, Grab) o de alquiler de coches privados para viajar de un punto a otro. Un coche con conductor para todo el día suele costar alrededor de 700.000 IDR.</li>
+    <li>Promoción de alquiler de coches en Bali por BaliMotion: silla de coche para niños o elevador gratis con el alquiler del vehículo hasta el 25 de junio. Usa el código promocional SAFETY. El alquiler comienza desde 350.000 IDR por día. Las ofertas incluyen: coches en excelentes condiciones, entrega, soporte en ruso 24/7, y seguro contra daños y robos.</li>
+    <li>Conducir un scooter sin una licencia válida en Bali conlleva una multa oficial de 1.000.000 IDR. Los controles policiales son frecuentes, especialmente durante las redadas. Las licencias de conducir locales válidas por 5 años se pueden obtener a través de agentes autorizados, proporcionando cobertura legal en todas las naciones de la ASEAN y evitando frecuentes intentos de soborno.</li>
+    <li>Hay mostradores oficiales de taxis disponibles a la salida del aeropuerto de Bali. Se pueden utilizar aplicaciones como Grab y Gojek para el transporte. Una tarjeta SIM local (aprox. 10 USD) simplifica el uso de las aplicaciones, aunque es posible registrarse mediante correo electrónico. Evita los precios elevados de los traslados del hotel si es posible.</li>
+    <li>Los tiempos de espera en el aeropuerto de Bali (Aeropuerto Internacional Ngurah Rai) son impredecibles y oscilan entre 40 minutos y 2 horas. Reserve tiempo suficiente para las salidas.</li>
+    <li>Waterboom Bali es un parque acuático ubicado en el corazón de Kuta, Bali. Cuenta con toboganes para todos los niveles, incluido el tobogán tipo cápsula &#39;Climax&#39;. Se recomienda comprar las entradas en línea para evitar colas y organizar traslados.</li>
+    <li>Para viajar de Bali a Lombok por agua, la opción principal es el ferry público desde Padang Bai. Adicionalmente, diversos servicios de lanchas rápidas también operan entre Bali y Lombok, ofreciendo traslados más rápidos pero generalmente más costosos.</li>
+    <li>Los gastos de viaje en Bali varían significativamente según el estilo de vida. Las comidas locales básicas (warungs) cuestan entre 30 mil y 50 mil IDR. Comer en restaurantes estéticos de gama media cuesta entre 200 mil y 500 mil IDR por persona. Los masajes oscilan entre los 100 mil IDR y más de 2 millones de IDR en spas de lujo. El presupuesto debe considerar los impuestos (usualmente entre el 15% y el 21% en restaurantes) y el tiempo de transporte, ya que la congestión vehicular puede impactar significativamente los costos de traslado entre distritos como Uluwatu y Ubud.</li>
+    <li>Las principales atracciones en Ubud incluyen el Bosque de los Monos, el Sendero de los Artistas, el Parque de Reptiles y Aves, los mercados de recuerdos, y las cascadas y terrazas de arroz cercanas, como Tegalalang. Aunque algunas atracciones como los templos están dentro del centro, la mayoría requiere transporte (taxi o motocicleta). Caminar no es práctico para la mayoría de los lugares de interés fuera del centro inmediato.</li>
+    <li>Las multas de tráfico en Indonesia están reguladas por la Ley N.º 22 de 2009. Multas de tráfico locales comunes: Conducir sin licencia: 1,000,000 IDR. Conducir sin casco: 250,000 IDR por persona. Conducir en sentido contrario o sobre las aceras: 500,000 IDR. Aunque los pagos &#39;en el acto&#39; son comunes, técnicamente son prácticas informales o corruptas. La falta de una licencia de conducir adecuada (Categoría A para motocicletas) invalida la mayoría de las pólizas de seguro de viaje en caso de accidente.</li>
+    <li>Bali ofrece numerosas tiendas con ropa de lino y algodón de buena calidad y a precios asequibles tanto para hombres como para mujeres. Aunque se recomienda llevar algunas prendas básicas, puedes encontrar artículos adecuados en la isla, lo que podría ahorrarte peso en el equipaje. Los precios de una camisa de lino de manga larga para hombre pueden variar, pero se espera que sean razonables.</li>
+    <li>El precio del alquiler mensual de un scooter NMAX oscila entre 1.8 y 2.2 millones (moneda no especificada, probablemente IDR). El precio depende del estado del scooter.</li>
+    <li>En puertos como Padang Bai, los cárteles de taxis locales restringen el uso de servicios de transporte compartido mediante aplicaciones (Grab/Gojek). Los viajeros a menudo se ven obligados a negociar precios elevados con los conductores locales. Para evitar confrontaciones y poder usar estas aplicaciones, se recomienda caminar varios cientos de metros lejos de la zona principal de llegada del puerto hacia una calle más tranquila o un café cercano.</li>
+    <li>Para conectividad móvil en Indonesia: 1. Las tarjetas SIM locales (Telkomsel) son generalmente más baratas y necesarias para registrar aplicaciones locales de taxi/transporte compartido. 2. Las eSIM (a través de Trip.com) son convenientes para una activación instantánea al llegar. 3. 5-10 GB de datos son suficientes para un viaje de 2 semanas si no se incluye la transmisión de video.</li>
+    <li>Las aerolíneas de bajo costo indonesias (por ejemplo, Batik, Lion Group) son propensas a retrasos y cancelaciones, a veces sin notificación previa. Para vuelos con conexión por cuenta propia, se recomienda una escala mínima de 10 horas para mitigar riesgos. Considere llegar un día antes para conexiones críticas. Los retrasos no planificados pueden provocar pérdidas financieras, vuelos perdidos y problemas con el vencimiento de la visa.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/es/id/documentaci-n-y-visados/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentación y visados</span></a>
+    <a class="chip" href="/es/id/entradas-y-ocio/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Entradas y ocio</span></a>
+    <a class="chip" href="/es/id/salud/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Salud</span></a>
+    <a class="chip" href="/es/id/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/es/id/seguridad/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Seguridad</span></a>
+    <a class="chip" href="/es/id/cambios-y-transferencias/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Cambios y transferencias</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Hay artículos genéricos — ¿pero una solución para ti?</h2>
+    <p>Pregúntale a Luky — habla como alguien recién llegado de allí — sin relleno.</p>
+    <p>Y Luky es un traductor de voz para conversaciones reales: habla con los locales directamente.</p>
+    <p class="ps">PS: una llamada de voz con esa persona de otro país — también Luky</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiencia real de chats de comunidades, sin relleno</div>
+    <nav class="f-links">
+      <a href="/es/about/">Acerca de</a>
+      <a href="/es/id/">Todos los temas</a>
+      <a href="/es/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Las respuestas se recopilan de chats abiertos de comunidades — es experiencia real de personas, no asesoría oficial. Verifica antes de decisiones importantes.</p>
+    <div class="f-copy">© 2026 Luky · actualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noche", DAY="\u2600 D\u00eda";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

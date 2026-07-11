@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brazil: SIM &amp; Internet — real experience · Luky</title>
+<meta name="description" content="Real experience from chats about SIM &amp; Internet in Brazil: as it is, first-hand. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/br/sim-internet/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/br/sim-internet/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/br/sim-internet/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/br/sim-internet/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/br/sim-internet/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/br/">Brazil</a> /
+    <b>SIM &amp; Internet</b>
+  </nav>
+
+
+  
+  <h1>SIM &amp; Internet in Brazil: real experience from chats</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of people from chats on «SIM & Internet» in Brazil — as it is, no fluff. For your case — <strong>ask Luky</strong>.</div></div>
+
+  <h2>From real experience</h2>
+  <ul class="qlist">
+    <li>The functionality of smartwatches with GPS purchased in Russia when used in Brazil is uncertain. This is a technical compatibility question that requires specific device and network information to answer.</li>
+    <li>Obtaining a local SIM card in Brazil can be challenging for tourists without a CPF (Brazilian taxpayer registry number). However, options exist: some providers like Vivo offer tourist plans for around 50 BRL, providing substantial data (e.g., 25-30 GB). e-SIMs are also available but can be more expensive (around 150 BRL for 20 GB). It&#39;s advisable to research specific provider options and requirements beforehand.</li>
+    <li>SIM cards in Brazil: 1) Obtaining a physical SIM without a CPF is possible but inconsistent. 2) Recommended strategy: Visit large shopping malls (shoppers centers) or multi-carrier retail kiosks rather than small service offices. 3) Claro offers prepaid plans (e.g., ~40 BRL for 12GB/30 days) that can sometimes be registered with a foreign passport. 4) eSIMs are often easier to register without a CPF.</li>
+    <li>When leaving Brazil, maintaining a Correios (Brazilian Post) phone number requires proactive management to avoid deactivation. A common recommendation is to top up the account periodically (e.g., every 2-3 months) with a small amount (15-30 BRL) to keep the number active. If the balance remains zero for approximately 70 days, the number may be deactivated. Checking for specific commands to monitor balance and payment dates is also advised.</li>
+    <li>iPhones purchased through parallel import channels, even with receipts, can be unknowingly listed on the international GSMA Blacklist (e.g., reported as stolen/lost by foreign operators). While these devices may function normally in countries not connected to the GSMA database (like Russia), they will be blocked by local network providers in countries that enforce the blacklist (like Brazil) once a local SIM is inserted. It is advisable to check IMEI status for international blacklists before relying on such devices abroad.</li>
+    <li>Discussion on the mobile network coverage and performance of different operators in Brazil, including TIM, Claro, and Vivo. Users report poor signal strength with TIM in certain areas of Salvador and Bahia. Recommendations include consulting coverage maps or seeking local advice to determine the best operator for specific regions, with Vivo often cited as having good coverage.</li>
+    <li>To purchase and activate a prepaid mobile SIM card in Brazil without an official tax registration number (CPF), travelers can use online Brazilian CPF generators (&#39;generator cpf brasil&#39;) to bypass the verification step.</li>
+    <li>Tourists in Brazil, about 1.5 years ago, could purchase a local SIM card (&#39;chip&#39;) for internet access without needing a CPF (Brazilian tax ID). These tourist SIMs typically lasted around two weeks, after which a new one could be purchased. Current regulations may vary, so it&#39;s advisable to check with local providers upon arrival.</li>
+    <li>The Brazilian tax ID (CPF) is highly recommended for tourists. Without a local SIM, ordering Uber is difficult because verification SMS often fails on foreign numbers (e.g., Russian carriers). Local SIM cards can be purchased without a CPF at newspaper kiosks (banca de jornal) where sellers register them under their own details, or at São Paulo airport (approx. 100 BRL). 99 Taxi is a popular local alternative to Uber. CPF can be issued at the Brazilian consulate in Moscow in 1 week, or locally in Brazil within 1 day.</li>
+    <li>Starlink hardware prices in Brazil are currently lower than in the US, with the Mini terminal priced around 799 BRL for the &#39;Travel&#39; plan. Be aware that cheaper hardware options often come with annual service contracts that do not allow for plan suspension. Always verify the service agreement for &#39;fidelidade&#39; (loyalty/commitment period) before purchase.</li>
+    <li>For eSIMs covering Brazil and South America, consider options from Trip.com and Tripster. A 20GB eSIM for 77 countries, usable across most of South America (excluding Uruguay), can be purchased for approximately 2500 RUB via Trip.com (website and app). Tripster is also a recommended provider for eSIMs.</li>
+    <li>In many Brazilian shopping malls, mobile network operator kiosks (selling SIM cards) often do not accept cash and require a local debit/credit card for payment. Travelers without local cards may need to ask someone else to pay for the purchase or seek alternative methods like online top-ups if available.</li>
+    <li>A travel card for MAPS.ME is available for Brazil, featuring 115 marked locations including points of interest, dining spots, and photo opportunities. It offers offline navigation and turn-by-turn directions. The cost is 599 Brazilian Real.</li>
+    <li>When planning travel to Brazil, be aware of potential issues with certain airlines (e.g., &#39;Turks&#39;) and avoid purchasing SIM cards at the airport due to scams. For destinations, Fortaleza offers excellent beach experiences with warm ocean temperatures and fewer crowds, ideal for relaxation. Rio de Janeiro is more suitable for sightseeing with a shorter visit. In Mexico, consider Oaxaca&#39;s Crucecita for less crowded, pristine beaches compared to Cancun. Travel insurance and local SIM cards are recommended. For transportation within Brazil, intercity buses are a viable and comfortable option, especially overnight routes between major cities like São Paulo and Rio de Janeiro. Payment methods in Brazil commonly include PIX and credit cards; be prepared for potential foreign transaction fees or restrictions on cash payments.</li>
+    <li>To obtain a physical SIM card in Brazil, a recent CPF (Cadastro de Pussoa Fssica) is required. This can be done at Correios (post office). The cost for a SIM card with 35 GB of data was 45 BRL in Santos.</li>
+    <li>A custom travel map for MAPS.ME is available for Brazil, featuring 115 points of interest including sights, dining spots, and photo locations. The map works offline and provides turn-by-turn navigation. The cost is 599 Brazilian Reais.</li>
+    <li>It is possible to obtain an eSIM from Vivo in Brazil without a CPF (Cadastro de Pessoas Físicas). A user reported acquiring a 25GB eSIM plan for 55 Reals, with activation via a QR code sent to email. However, such eSIM plans obtained without CPF may be considered temporary or tourist-oriented. Users might be required to change to a permanent plan after obtaining their CPF, which could involve getting a new phone number. Additionally, if the initial plan is &#39;pos pago&#39; (postpaid), changing it within one year might incur penalties.</li>
+    <li>CPF (Cadastro de Pessoas Físicas) is practically essential for daily life in Brazil. While not legally mandatory for short tourist visits, it is required for basic tasks such as accessing healthcare clinics (SUS/private), buying local SIM cards, registering in local apps, and making online purchases.</li>
+    <li>To purchase an eSIM for Brazil using Russian bank cards, users can use the English version of Trip.com. Search for &#39;esim Brazil 5G&#39; to find and buy available plans.</li>
+    <li>If a Brazilian SIM card was purchased without requiring a CPF (Cadastro de Pessoas Físicas) in areas like Rio Grande do Sul, topping it up online might present challenges as many official top-up methods are linked to CPF verification. Alternative methods for non-CPF holders might include purchasing physical top-up cards or using unofficial third-party services, though these may carry risks or poorer exchange rates.</li>
+    <li>To activate a TIM SIM card in Brazil without SPF, call *144, then extension 33, and provide passport details in English. SPF can potentially be acquired online within 1 day, though success rates are approximately 50%. Vivo Easy offers competitive data plans, such as 15GB for 35 units, available for online purchase and management via their application.</li>
+    <li>It is possible to purchase a physical tourist SIM card in Rio de Janeiro at a newspaper kiosk inside the RioSul shopping mall without a CPF. The process involves providing passport details to an English-speaking operator via phone, which activates the card. The reported cost was 70 BRL. After obtaining the SIM, Uber accounts may still require verification (passport photo and selfie) if they initially ask for CPF or a credit card.</li>
+    <li>Local SIM cards are a convenient option for internet access in Brazil. Assistance can be provided for obtaining SIM cards, even without a CPF (Brazilian taxpayer registry number) or a local bank account. It&#39;s possible to get help from locals who are willing to assist tourists with this process without overcharging.</li>
+    <li>The Kaspersky eSIM Store offers convenient and cost-effective internet access in over 180 countries, including Brazil. Plans can be activated quickly online and provide 24/7 support. Payment with Russian cards is available, and top-ups can be done easily through the app. A promotional code &#39;TRAVELASK3&#39; offers a 20% discount on the first purchase (excluding the unlimited plan).</li>
+    <li>A new offline travel map for MAPS.ME has been created for Brazil, featuring 115 points of interest including attractions, dining, and photo spots, with turn-by-turn navigation. The map is available for purchase at 599 Brazilian Reais.</li>
+    <li>MTS roaming may not work immediately in Sao Paulo, Brazil. Troubleshooting steps include: 1. Ensure roaming and relevant packages (e.g., &#39;Zabugorishche&#39;) are active. 2. Try restarting the device after turning it off for 15-30 minutes. 3. Manually select a local network operator in the phone&#39;s settings instead of using automatic selection. 4. Some users report similar issues with Beeline and suggest manual network selection. It may take several hours for the connection to establish.</li>
+    <li>For Royal Air Maroc flights with long layovers (8-15 hours) in Casablanca, the airline may provide complimentary hotel accommodation and meals. Proceed through passport control, then descend to the baggage claim area. Turn left towards the exits, then left again towards the trains. Ascend to the 2nd floor to the Royal Air Maroc transit passenger office. Present your passport and boarding passes to receive a hotel voucher. Take the shuttle from outside the airport (look for RELAX and SKY hotel signs). Return shuttles operate on a schedule. Airport Wi-Fi is available in 10-15 minute increments. Luggage storage is not available. An express train runs to Casablanca city center (50 minutes).</li>
+    <li>In Brazil, major telecom brand stores rarely sell mobile plans to tourists without local residency (CPF/VNJ). To obtain a prepaid SIM card (&#39;chip pré-pago&#39;), buy it at a street newsstand (banca de jornal) for around 20 BRL. It is highly recommended to activate it immediately with the seller&#39;s help to verify it works. Balance top-ups can be done at local pharmacies.</li>
+    <li>To purchase a local SIM card in Brazil, a CPF (Cadastro de Pessoas Físicas - Brazilian individual taxpayer registry identification) is mandatory. Travelers without a CPF can either obtain one remotely before the trip or visit large shopping malls (e.g., RioSul) where store employees may assist in activation. eSIM is suggested as a more convenient alternative for short-term tourists.</li>
+    <li>Checking mobile balance for the Vivo carrier in Brazil via their official app or website often fails due to authentication errors and looping login pages. Local customer service representatives jokingly but practically suggest that the easiest way to know your balance has run out is when your mobile internet stops working entirely.</li>
+    <li>To obtain a SIM card in Brazil, a CPF (Cadastro de Pessoas Físicas, Brazilian individual taxpayer registry identification) is usually required. Option 1 (Without CPF): Some operators, like TIM, may offer tourist SIM cards that can be activated using just a passport. It&#39;s essential to specify you are an foreigner and need a SIM activated with a passport. However, availability can vary by store. Option 2 (With CPF): If a tourist SIM is not available, obtaining a CPF is a viable solution. One user successfully obtained a CPF in one day at an office located in a shopping mall in São Paulo, even without speaking Portuguese. Address: R. Cel. Xavier de Toledo, 23 - 3o Piso - Loja 224 - Centro Histórico de São Paulo, São Paulo - SP, 01048-900, Brasil. After obtaining the CPF, a SIM card can be purchased from any operator. The process generally requires only a passport and the CPF. It is advisable to visit the location and ask for assistance, even without prior online registration, as help might be provided on-site.</li>
+    <li>Purchasing local SIM cards (Vivo, TIM) in Brazil generally requires a passport and often a CPF. Activation at airport kiosks can be time-consuming; official stores may involve verbal verification over the phone. Pre-paid (prepago) data plans are widely available but may lack a phone number necessary for local app registration.</li>
+    <li>To maintain a Brazilian Vivo SIM card outside Brazil, users face several challenges:
+- Official methods often require: Biometrics via Senasa (needs valid Brazilian ID), SMS codes (requires active network connection), or Brazilian bank accounts (requires valid ID).
+- Alternative solutions include:
+  - Asking a trusted Brazilian resident to top up the number via their bank app.
+  - Using third-party websites like Eneba (user experience varied, confirmation needed).
+- Key takeaway: Direct official top-up from abroad without Brazilian documents/active service is difficult.</li>
+    <li>To get a local SIM card (e.g., Claro), foreigners can use eSIM services like Airalo or purchase physical SIMs at Correios (post offices). Cost: ~35 BRL/month. Note: Physical SIM registration in Brazil often requires a CPF (Brazilian tax ID). Some eSIM providers offer data+voice numbers without needing a CPF.</li>
+    <li>Spam calls and SMS are common in Brazil. TIM users report frequent daily spam calls and numerous promotional SMS. Claro is noted to have fewer promotional messages. Spam often comes from recycled numbers previously owned by others. The effectiveness of spam-blocking services is variable, and sometimes changing the phone number is the only effective solution for persistent spam.</li>
+    <li>Guarulhos Airport (GRU) provides limited free public Wi-Fi. Transit between international and domestic terminals is possible on foot (approx. 10 minutes). SIM cards can be purchased and activated at T3, 2nd floor, using a passport for verification.</li>
+    <li>For free VPN options in Brazil, Nthlink is generally reported to work, and Icegate works periodically. Users often rely on finding alternatives when one stops working, as a consistently reliable free VPN service is not commonly found.</li>
+    <li>For tourists visiting Brazil, buying an eSIM beforehand is highly recommended to secure mobile data immediately upon arrival. Popular and reliable providers among travelers are Airalo and Trip.com, offering up to 5G speeds. Ensure the mobile device physically supports eSIM before making a purchase.</li>
+    <li>For tourists in Brazil, the local provider Vivo is recommended. SIM cards can be purchased at any shopping mall with a passport. Costs start from approximately 30 BRL. Roaming is generally not recommended due to high costs compared to local prepaid plans.</li>
+    <li>When purchasing a TIM SIM card in Brazil, it is highly recommended to buy it directly from an official TIM store. Buying from general shops/kiosks can lead to activation issues, even if you possess a CPF. While activation might be possible by contacting customer service directly and providing personal details, SMS-based registration may not be an option, and official stores might refuse to assist with SIMs purchased unofficially.</li>
+    <li>When accessing Claro accounts using a CPF (Cadastro de Pessoas Físicas) number, users may observe associated phone numbers or other contact details displayed. If a phone number is displayed that the user did not explicitly register, it could be linked to previous attempts to obtain a SIM card or other service activations. It is advisable to contact Claro customer service directly to clarify any discrepancies or remove unauthorized information.</li>
+    <li>To find a Claro SIM card phone number in Brazil: 1) Check &#39;Settings&#39; -&gt; &#39;Phone&#39; on iOS devices. 2) Monitor the initial SMS messages sent by Claro upon card activation. 3) If those fail, make a test call to another phone nearby.</li>
+    <li>Explain the requirements for obtaining a local SIM card in Brazil. Confirm if a passport is the only required document. Address the potential need for a taxpayer identification number (CPF) and mention that some phone stores may issue SIM cards without it. Also, provide information on alternative options like eSIM providers such as Airalo or Maya.</li>
+    <li>To top up a Vivo SIM card in Brazil, use the &#39;Vivo Easy&#39; application. Users can manage plans and top up without needing a physical store visit. Note that Brazilian digital services often require a CPF (Cadastro de Pessoas Físicas) for registration. For non-residents or foreign sailors, alternative payment methods or international credit cards within the app may be required, though CPF remains a common bottleneck for full functionality.</li>
+    <li>For a cheap physical SIM card in Brazil, buy &#39;Correios Celular&#39; at any Correios (post office) for around 35 BRL. For eSIM, travelers recommend using the &#39;Every&#39; app as a reliable option.</li>
+    <li>In Rio de Janeiro, it is possible to buy a prepaid SIM card without a local ID by asking at newsstands (gazetnye kioski). It&#39;s crucial to request activation on-site, as it might not work immediately. Popular operators like Vivo and Tim are generally similar in terms of connection quality.</li>
+    <li>Purchasing physical SIM cards in Brazil often requires a CPF (Brazilian tax ID). Without it, some providers refuse service or charge high fees. For tourists, international eSIM solutions (Airalo, Trip.com) are recommended for immediate, hassle-free internet access without local documentation.</li>
+    <li>Discuss the activation and usability of Brazilian SIM cards and eSIMs for international travelers. Information suggests Kaspersky eSIM Store offers global coverage with Russian card payment options and a discount code &#39;TRAVELASK&#39;. However, there are conflicting reports on whether Brazilian SIM cards can be activated outside Brazil, with some stating service is restricted to Brazil post-activation and SMS reception abroad might be an issue.</li>
+    <li>To purchase a physical local SIM card in Brazil, a CPF (Cadastro de Pessoas Físicas) number is mandatory. For travelers, obtaining an eSIM online prior to arrival is a more efficient alternative to avoid local bureaucracy.</li>
+    <li>A workaround for tourists without a CPF to buy a physical SIM card in Brazil is to purchase it at a regular store or pharmacy. Often, staff will assist by using their own CPF to complete the registration. For example, a 15 GB physical SIM card can cost around 10 BRL.</li>
+    <li>Key practical tips for traveling in Brazil include: 1. Transportation: For the 99 app, a CPF (Brazilian taxpayer ID) is required; Uber operates without it. Uber payments can be cash-based, but be aware of potential fare adjustments or outstanding charges. In Rio Airport, 99 pickups are on the 2nd floor, while Uber is a short walk from the exit. 2. SIM Cards: SIM cards can be purchased without a CPF at RioSul mall (around 70 BRL), typically at newsstands. 3. Currency Exchange: Airport exchange rates are unfavorable (approx. 3.6 BRL/USD); ATM withdrawals offer better rates (approx. 4.2 BRL/USD with fees). 4. Safety: Areas like Copacabana, Ipanema, and downtown Rio are generally considered safe, even in the evening, provided basic vigilance is maintained and phones are put away promptly after use. 5. Guided Tours: Hiring a guide is recommended for experiences like favela tours or helicopter rides. 6. Food: Explore exotic fruits at São Paulo&#39;s Municipal Market. 7. Iguazu Falls: Visit the bird park; a day is sufficient for the Argentinian side, but note the last train schedule to &#39;Devil&#39;s Throat&#39;.</li>
+    <li>The CPF (Brazilian taxpayer registry number) is frequently required for various services in Brazil, including obtaining SIM cards, paying for parking, and using payment systems like Pix with certain platforms. While workarounds like CPF generators and tourist SIM cards exist, lacking a CPF can present significant hurdles for foreigners.</li>
+    <li>In Brazil, it is possible to purchase SIM cards and rent accommodation through platforms like Booking.com or Airbnb without possessing a CPF (Cadastro de Pessoas Físicas) number. This information is directly relevant for foreigners navigating administrative procedures.</li>
+    <li>Options for tourist eSIMs in Brazil include local carriers like Vivo (requires international credit card for online purchase) or international aggregators like Trip.com. Some travelers report inconsistent service with global providers like Airalo.</li>
+    <li>For tourists visiting Brazil, obtaining a local SIM card is a common practice for communication. Major providers like Vivo, Claro, and TIM offer prepaid (pre-pago) and postpaid (pos-pago/control) plans. Prepaid options generally require less documentation (sometimes just a passport) and can be topped up as needed. Postpaid plans may require a CPF number and a deposit, offering monthly bundles of data and calls. Roaming services on international SIM cards can be expensive, making a local SIM card more cost-effective for extended stays or heavy usage.</li>
+    <li>Clarify mobile plan options in Brazil. Explain the difference between prepaid (&#39;prepaid&#39;) and monthly subscription (&#39;monthly plan&#39;) mobile services. Advise whether it&#39;s possible to change from an annual or monthly plan to a different monthly plan after initial purchase, and the conditions or potential penalties for changing plans (e.g., annual plans might require cancellation fees).</li>
+    <li>To register a SIM card (e.g., Vivo) in Brazil, a passport and CPF number are mandatory. CPF can be generated online. Expect the process to take ~2 hours due to system complexities. Costs are approximately 13 BRL for the card plus a monthly plan (~55 BRL). Be prepared to pay in cash if non-Brazilian credit cards are rejected.</li>
+    <li>Tourists visiting Brazil should purchase a local SIM card in the city rather than at the airport, as city prices are generally cheaper. For tourists without a CPF (Brazilian tax ID), it is possible to buy a SIM card at newspaper stands or other SIM card vendors and ask the seller to assist with activation, as they have methods for foreigners without a CPF.</li>
+    <li>For internet access in Brazil, consider using eSIM services like Kaspersky eSIM Store, which operates in over 180 countries. They offer payment via Russian cards and convenient top-ups. A promo code TRAVELASK provides a 20% discount on the first purchase until February 28, 2026. Local SIM cards usually require a CPF (Brazilian taxpayer ID). Roaming services from your home provider are also an option, but can be expensive.</li>
+    <li>Vivo mobile services require a Brazilian-registered app store account (Apple ID or Google Play) to download the app. Registration typically requires a CPF. Vivo Easy plans do not support SMS reception while roaming in Russia.</li>
+    <li>For long-term stays in Rio de Janeiro (e.g., three months during the December-February period), it is advisable to book accommodation well in advance, potentially up to a year ahead, as options, especially near beaches, can become limited. Check booking platforms like Booking.com for availability and pricing trends. Mobile internet can typically be purchased at the airport upon arrival.</li>
+    <li>Popular food and grocery delivery services in Brazil include iFood and Rappi for restaurant orders, and Mercado Livre for supermarket deliveries. Users may encounter regional restrictions when accessing these apps. It&#39;s important to download the correct customer version of the app, and having a local Brazilian account for app stores can enhance functionality.</li>
+    <li>If a Vivo SIM card user in Brazil is unable to log into the &#39;Meu Vivo&#39; or &#39;Vivo Easy&#39; app, it often indicates an incomplete registration of the SIM card at the point of sale. The recommended solution is to return to a physical Vivo service store to verify the account and CPF registration.</li>
+    <li>Information is requested regarding mobile service providers and connectivity tips for Brazil, as part of a broader post on mobile communication in Latin America.</li>
+    <li>Tourists in Brazil can obtain a SIM card without a CPF. Claro offers a physical SIM card for 55 BRL, including 12 GB for one month, requiring only a passport for registration. VIVO provides an eSIM option for 55 BRL, offering 25 GB for 30 days, also without requiring a CPF.</li>
+    <li>If unable to top up Yolla app with a Brazilian card, international cards (e.g., Kazakh cards) are accepted. This suggests a workaround for local payment issues.</li>
+    <li>For international travel, consider using eSIMs for internet access in 180 countries, offered by Kaspersky at a more competitive rate than traditional roaming. Activation is quick (minutes), with 24/7 online support. Payments can be made with Russian Federation bank cards, and data plans can be topped up easily via the app. A promotional code &#39;TRAVELASK3&#39; offers a 20% discount on the first purchase (excluding the Unlimited plan).</li>
+    <li>Offer an interactive offline map for MAPS.ME covering 115 points of interest in Brazil, including navigation. The price is 599 Brazilian Real.</li>
+    <li>To get mobile data in Brazil upon arrival, consider purchasing an eSIM from Vivo or third-party platforms like Trip.com for short-term stays. This allows for immediate connectivity without physical store visits.</li>
+    <li>Difficulty in purchasing a SIM card from Claro due to issues with CPF (Cadastro de Pessoas Físicas). Possibility that the CPF is not recognized immediately after issuance or that different types of CPF exist. Alternative options include purchasing a SIM card at Correios (post office) for 40 reais, or considering an eSIM for short-term use.</li>
+    <li>To register for PIX in Brazil, individuals who have obtained their CPF in Moscow can purchase PIX at newsstands. The approximate cost is around $20 USD. Haggling with the vendor may also result in obtaining an activated SIM card.</li>
+    <li>CPF (Cadastro de Pessoas Físicas) is a Brazilian taxpayer registry identification. It is essential for various transactions in Brazil, including purchasing a local SIM card, buying intercity bus tickets, and some financial operations. It is often required for non-residents for these purposes. Obtaining a CPF can be done in Brazil or through Brazilian embassies abroad. Historically, remote applications were possible, but current procedures often require in-person presence or specific embassy channels.</li>
+    <li>Brazilian telecommunications providers often prioritize long-term contracts with termination fees over customer service. To resolve disputes or switch to prepaid plans without issues, users are advised to file complaints with Anatel (National Telecommunications Agency). Common tactics include auto-renewing contracts when updating plans and limited access to live human support.</li>
+    <li>Provide step-by-step instructions for obtaining a CPF (Cadastro de Pessoas Físicas) upon arrival in Sao Paulo. Explain the process and location (e.g., tax office - &#39;receita federal&#39;). Once CPF is obtained, advise on where to purchase a SIM card, mentioning that it can be done in any shopping mall.</li>
+    <li>CPF (Cadastro de Pessoas Físicas) is a mandatory tax ID for most digital services in Brazil, including local SIM registration, food delivery apps (iFood), ride-sharing (Uber), and ticketing (Ticketmaster). Online registration via Receita Federal is possible but inconsistent; local branches often require personal visits to resolve &#39;invalido&#39; status.</li>
+    <li>Travelers can either purchase an eSIM online for convenience or buy a physical SIM card at the airport upon arrival. If buying a physical SIM, ask airport staff to activate it for you.</li>
+    <li>A new travel map for MAPS.ME is available for Brazil, featuring 115 points of interest including places to visit, walk, eat, and take photos. The map offers offline functionality and turn-by-turn navigation. It can be purchased for 599 Brazilian Reals.</li>
+    <li>Provide clear instructions on how to find one&#39;s Claro mobile number in Brazil. Method 1: Send any message (e.g., &#39;qualquer palavra&#39;) to the number 35742. The number will be received via SMS. Method 2: Search online for &#39;Como saber o meu número da Claro?&#39; for a guide on the Claro website. Clarify that the language is Portuguese, not Spanish.</li>
+    <li>To purchase a SIM card in Brazil as a tourist, visit official provider stores (Vivo, Claro) inside shopping malls rather than street kiosks. Official stores can register accounts using a foreign passport if a CPF is not available. If staff cannot assist, buying a SIM in pharmacy chains (like Pague Menos) and self-registering via the mobile app is a viable alternative. Service quality varies significantly between locations.</li>
+    <li>For short-term tourists in Brazil (e.g., a couple of weeks), the necessity of obtaining a CPF (Cadastro de Pessoas Físicas - individual taxpayer registry) is debated. Some recommend it for general convenience and online transactions. Others, based on personal experience, state it is not necessary unless one plans to use local delivery services, online stores, or obtain a local SIM card. CPF can be obtained online, though obtaining it in Moscow beforehand might be difficult, but possible through embassies in other countries.</li>
+    <li>For mobile internet in Brazil, users are exploring cost-effective plans. Tim offers a plan around 30 BRL, but satisfaction is low. Claro is mentioned as a potentially cheaper and good option. Vivo&#39;s &#39;Easy&#39; plan is recommended, allowing users to purchase data as needed. One user finds 2GB per month for 16 BRL sufficient due to primary reliance on Wi-Fi.</li>
+    <li>When arriving in São Paulo, Brazil:
+*   **Currency &amp; Payments:** Cash exchange is not always necessary. Using cryptocurrency platforms like Bybit with Pix for QR code payments is a common method (&#39;vou pagar com pix&#39;).
+*   **Airport Transfer:** Taxis are affordable. Uber is functional, but local ride-hailing apps like &#39;99&#39; often require a Brazilian CPF (tax ID). Public buses from the airport to the city center are available, costing around 5 BRL, and may not always require a CPF for purchase.
+*   **Safety &amp; Neighborhoods:** No area is entirely risk-free. Safer central areas include Vila Olimpia and Brooklin. Pinheiros is a vibrant area safe for daytime and evening walks, but avoid overt display of valuables. Nighttime travel is best done by taxi. For long-term stays, areas like Vila Indiana (Butanta), near USP university, offer safe recreational spaces, though surrounding infrastructure might be limited.
+*   **Mobile Operators:** Acquiring a local SIM card without a CPF is challenging. Tourist SIM cards (e.g., Vivo, 10-25 GB) are available without CPF, but calls and SMS services may activate after a 24-hour delay. For full local SIM plans (e.g., Claro Flex unlimited), a CPF is generally required, and even then, activation can be problematic, sometimes taking months of residency. Plan to use tourist eSIMs or rely on Wi-Fi initially.</li>
+    <li>When purchasing a SIM card in Brazil, it may be registered under another person&#39;s name if you are a tourist and not planning to link the number to financial services. Prepaid plans (prepago) are available and convenient for short-term stays. A 20GB plan can cost around 125 BRL without requiring extensive documentation.</li>
+    <li>TIM SIM cards can be purchased at pharmacies at Galeão Airport (approx. 120 BRL). Activation requires CPF or a registration call providing passport details. City-based mobile offices offer cheaper rates (e.g., 85 BRL) but require physical presence.</li>
+    <li>Purchase an interactive offline map of Brazil for MAPS.ME, featuring 115 points of interest, navigation, and curated locations for sightseeing, dining, and photo opportunities. The cost is 599 Brazilian Reals.</li>
+    <li>Users with a Brazilian SIM card (e.g., TIM) may experience issues receiving SMS messages from banks or other services when traveling outside Brazil. The SIM card might not connect to partner operators, preventing the delivery of essential messages. Users seek advice on Brazilian operators offering reliable international SMS roaming tariffs.</li>
+    <li>To purchase and register a local SIM card in Brazil, a valid CPF (taxpayer registry number) matching your date of birth is normally required. If you do not have a CPF, you can try buying a prepaid SIM card (e.g., Vivo) in physical operator stores by asking the staff to bypass the requirement, which costs around 18 BRL for the card and 30 BRL for a top-up.</li>
+    <li>MAPS.ME offline travel card for Brazil is available for purchase. It includes 115 curated locations (sights, food, photo spots) and offers turn-by-turn navigation. The card costs 599 Brazilian Reals. It is designed for offline use.</li>
+    <li>To maintain a Brazilian mobile number while abroad and receive SMS, regular small top-ups are required (e.g., 15-30 BRL every 2-3 months) to prevent deactivation after 70 days of zero balance. Vivo&#39;s &#39;Easy&#39; prepaid tariff supports incoming SMS in roaming without extra charges. Information from AI models might be inaccurate regarding prepaid roaming capabilities; direct verification with operators is recommended. Postpaid plans also work but are more expensive.</li>
+    <li>A local prepaid SIM card in Brazil (e.g., TIM) is very affordable (approx. 20 BRL/month) and can be bought at newspaper kiosks (&#39;banca&#39;) or border pharmacies (e.g., in Foz do Iguaçu). However, activation requires a CPF (Brazilian tax ID). Advise travelers to register for a CPF online prior to their trip or seek help from local residents for activation. Note that TIM&#39;s coverage can sometimes be spotty in certain areas.</li>
+    <li>A new offline travel map for Brazil is available for MAPS.ME, featuring 115 points of interest including sights, dining, and photo opportunities. The map includes step-by-step navigation and functions offline. The price is 599 Brazilian Real.</li>
+    <li>Foreigners face difficulties acquiring a local SIM card in Brazil without a physical Brazilian identification document. Options include:
+1. Asking a local resident to register a SIM card in their name. This has been successfully done, sometimes for free.
+2. Obtaining a CPF (Cadastro de Pessoas Físicas) and registering the SIM card independently for long-term stays.
+3. A workaround reported by one user involved generating a fake CPF online after their legitimate CPF was rejected, which successfully activated the SIM.
+4. Using an eSIM is also a convenient alternative.</li>
+    <li>In Brazil, SIM cards can be purchased from various outlets. One user reported buying a 15GB SIM card for 10 BRL at a pharmacy. Another option is Vivo stores, offering a 25GB data plan for 55 BRL, available as either an eSIM or a physical SIM card with a passport requirement.</li>
+    <li>To acquire a Brazilian SIM card without a CPF:
+1. Physical SIM: Attempt to buy from small kiosks or metro vendors; some may register it using their own CPF (reliability varies).
+2. eSIM: Purchase an eSIM online from platforms like Trip.com for internet access, which typically does not require a CPF.</li>
+    <li>To obtain a local Brazilian SIM card, it is highly recommended to first acquire a CPF (Cadastro de Pessoas Físicas), which is the individual taxpayer registry number. A CPF can typically be obtained within a few days after arrival in Brazil. While it&#39;s occasionally possible to get a SIM without a CPF, having one ensures a smoother process.</li>
+    <li>When experiencing connectivity issues with a Brazilian SIM card, contact their WhatsApp support. They can deactivate the faulty SIM and issue a new one to resolve the problem. Troubleshooting steps like restarting the device and checking settings may not be sufficient.</li>
+    <li>Prepaid SIM cards in Brazil often require a CPF (Cadastro de Pessoas Físicas) for full functionality, including international calls and advanced account management. Tourists buying SIMs without a personal CPF (often registered under a shop employee&#39;s ID) frequently face restricted plans that cannot be upgraded or configured for roaming/international access without an official tax ID update.</li>
+    <li>Users frequently inquire about eSIM pricing discrepancies for Brazil (e.g., why a &#39;Global&#39; 1GB package might be cheaper than a &#39;Latin America&#39; 1GB package that includes Brazil). They also ask about the technical feasibility of combining or stacking different regional eSIM packages (e.g., purchasing a &#39;Global&#39; 1GB first, then a &#39;Latin America&#39; 1GB) to meet minimal data needs for messaging and taxi services.</li>
+    <li>To get a cheap eSIM for Brazil without needing a local CPF, use Trip.com. Switch the website language to English and search for &#39;eSim Brazil 5G&#39;. This option is often about 50% cheaper than competitors like Airalo or Yesim, and allows payments using Russian bank cards.</li>
+    <li>When bringing a drone (even under 250g like DJI Mini 3/4 Pro) to Brazil, tourists do not need registration with ANAC or DECEA to fly. However, customs may demand ANATEL (telecommunications agency) certification. Drones purchased outside Brazil legally require homologation (uso próprio), which is virtually impossible to obtain for non-residents. There is a risk of confiscation at customs if the drone is inspected.</li>
+    <li>Purchasing a local SIM card in Brazil requires a CPF (Cadastro de Pessoas Físicas), which is a Brazilian individual taxpayer registry identification. It is difficult to buy a SIM without a valid CPF. Some vendors may offer to register it under their own CPF, but this is informal practice.</li>
+    <li>Mobile data pricing in Brazil: Online advertised rates (often ~30 BRL) frequently require local &#39;Pix&#39; payment systems. Expats without a local bank account or CPF usually pay retail rates (~60 BRL) in physical stores (TIM, Claro, Vivo). It is recommended to visit physical branches where English-speaking staff can facilitate SIM card activation with international credit/debit cards.</li>
+    <li>To register a local SIM card in Brazil, a foreign tourist must provide a passport and a CPF (Cadastro de Pessoas Físicas) number. Having these documents is essential for identity verification and account recovery in case of phone loss or theft.</li>
+    <li>CPF (Cadastro de Pessoas Físicas) is a mandatory individual tax ID in Brazil for residents and many non-residents. It can be obtained at Receita Federal offices (usually 30-60 minutes). Requirements typically include a valid passport, proof of address, and parents&#39; full names. Electronic or printed versions are available. It is required for local SIM cards, bank accounts, and legal registration.</li>
+    <li>For mobile internet and calls in Brazil, purchasing a TIM prepaid SIM card is highly recommended. SIM cards can be bought easily at local newsstands (bancas de jornal) or official operator stores.</li>
+    <li>For travelers in Brazil, eSIM options are available. Kaspersky eSIM Store provides internet in over 180 countries, accepting Russian Federation bank cards and offering easy top-ups. A promo code &#39;TRAVELASK&#39; offers a 20% discount on the first purchase until February 28, 2026. If a specific Brazilian number is required, Uber Chip is mentioned as an option, though acquiring it without an existing number might be challenging.</li>
+    <li>CPF (Cadastro de Pussoa Fssica) is an essential document in Brazil, enabling users to obtain SIM cards, use taxi services, and receive discounts at supermarkets.</li>
+    <li>A physical CPF card is not required after receiving the CPF number. The number itself is sufficient for various procedures, such as getting a SIM card.</li>
+  </ul>
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/br/documents-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documents &amp; Visa</span></a>
+    <a class="chip" href="/en/br/tickets-entertainment/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🎟 Tickets &amp; Entertainment</span></a>
+    <a class="chip" href="/en/br/transport/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transport</span></a>
+    <a class="chip" href="/en/br/shopping/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛒 Shopping</span></a>
+    <a class="chip" href="/en/br/banking-money/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Banking &amp; Money</span></a>
+    <a class="chip" href="/en/br/safety/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛡 Safety</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Didn&#39;t find your case?</h2>
+    <p>Ask Luky — gives what you actually need: real experience of people who went through it.</p>
+    <p>And Luky is a live voice translator for real conversations: figure out at the store what you&#39;re even buying.</p>
+    <p class="ps">PS: flirt on a date in a foreign language? No problem 😏</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/br/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

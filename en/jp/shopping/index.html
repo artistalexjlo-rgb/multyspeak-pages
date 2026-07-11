@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Japan: Shopping — real experience · Luky</title>
+<meta name="description" content="Real experience from chats about Shopping in Japan: as it is, first-hand. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/jp/shopping/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/jp/shopping/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/jp/shopping/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/jp/shopping/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/jp/shopping/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/jp/">Japan</a> /
+    <b>Shopping</b>
+  </nav>
+
+
+  
+  <h1>Shopping in Japan: what actually matters to know</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of people from chats on «Shopping» in Japan — as it is, no fluff. For your case — <strong>ask Luky</strong>.</div></div>
+
+  <h2>From real experience</h2>
+  <ul class="qlist">
+    <li>Tax-free in Japan is handled at the point of sale. You must present your passport at the register. The store clerk will process the documentation, and the tax will either be deducted from the price immediately, refunded in cash, or processed through a specific app. You cannot claim tax refunds at the airport upon departure for items purchased online or at local shops.</li>
+    <li>For purchasing used electronics in Japan, Hard Off stores are recommended. The Hard Off Sakai Shinkanaoka branch in Osaka is highlighted for its good prices and selection. Generally, stores located further from tourist areas tend to offer better value.</li>
+    <li>ICOCA/Suica cards have a maximum balance limit of 20,000 JPY. Cards can be recharged multiple times after the balance is spent. They are widely accepted in convenience stores (konbini) and chain restaurants, serving as a supplement to cash for tourists without international bank cards.</li>
+    <li>When transporting a MacBook from Japan to Russia via China, consider the following: 1. Personal Use: Carrying the device without its original box and without activating it may help present it as personal use to customs. 2. Tax-Free Purchases: Tax-free refunds are often processed at export. Keep receipts and the item itself for inspection. For electronics like laptops, inquire about specific customs regulations for both export from Japan and import into Russia and China. Some retailers may offer tax-free options, but it&#39;s crucial to understand the implications for customs declarations.</li>
+    <li>In Japan, tax-free shopping usually requires scanning the entry stamp in a physical passport. However, some stores support scanning a QR code generated via the &#39;Visit Japan Web&#39; service. This is not universally supported by all retailers, so retailers&#39; policies may vary.</li>
+    <li>For currency exchange in Japan: 1. Okinawa: Use Bank of Okinawa exchangers, often found in FamilyMart, which accept USD. 2. Tokyo: Exchange rates vary; check arrival terminals (e.g., 153.73 JPY at international arrivals). 3. Asakusa/Kamakura/Kyoto: Look for reputable exchangers like &#39;Ninja exchanger&#39; during business hours. 4. Payment methods: While UnionPay is not universally accepted (e.g., 7-Eleven), it works at Lawson, hotels, and taxis. Be prepared for &#39;cash only&#39; establishments. Consider carrying sufficient cash.</li>
+    <li>When traveling to Japan, travelers may need voltage converters or power adapters. Japan uses 100V, and outlets are Type A (two flat pins). Devices designed for 220-240V may require a voltage converter. Adapters may be needed for plugs with different configurations. Some electronic stores in Akihabara may sell these items, or travelers can research specific needs for their devices.</li>
+    <li>Japan uses Type A (two-pin non-polarized) plugs, 100V. Most modern mobile and laptop power bricks support 100-240V, meaning no voltage transformer is required, only a physical plug adapter. High-power appliances (e.g., Dyson hair dryers) may require a step-up voltage transformer.</li>
+    <li>Starting from iOS 16, the Japanese iPhone camera shutter sound is location-dependent and disables automatically outside Japan (upon changing geo/SIM). Apple Stores in Japan no longer offer Tax Free. New models (Pro/Pro Max) are rarely available in stock during release seasons due to high reseller demand. Japan-market models (starting from iPhone 17) may transition exclusively to dual eSIMs.</li>
+    <li>First-time travelers to Japan can benefit from advice on customs, currency exchange, transportation, and shopping. Key recommendations include: no liquid restrictions in carry-on, utilizing currency exchange offices like Ninja Exchange for favorable rates, using Google Maps and ICOCA cards for public transport, and choosing appropriate stores for specific purchases (e.g., Don Quijote for sweets, drugstores for cosmetics). Be aware of potential luggage inspections in transit countries.</li>
+    <li>Japanese sunscreen (SPF 50+) is widely available in drugstores like Cocokarafine or 7-Eleven, typically priced at 800–1500 JPY, but usually comes in small containers (approx. 100ml). Specialized after-sun care (like Panthenol-based products) is rare in Japanese pharmacies. Tourists should bring their own soothing creams for sunburns, as local pharmacy alternatives are either limited to aloe gels or tiny therapeutic ointments.</li>
+    <li>For visitors to Japan, Kyoto is recommended for historical sites and atmosphere, best visited early morning. Osaka is preferred for nightlife, modern shopping, and as a central hub for day trips to Nara, Kyoto, and Kobe.</li>
+    <li>For portable appliances like Dyson hair dryers, travelers may need a voltage converter if their device operates on a higher voltage (e.g., 220-240V) than Japan&#39;s standard 100V. A travel-specific model like the Dyson Supersonic Travel is designed for portability and may negate the need for a separate converter. Alternatively, purchasing a local appliance might be more practical.</li>
+    <li>ATB UnionPay cards work in Japan but may require specific ATM handling. If a 4-digit PIN is not accepted, try adding two zeros at the end of the code (6-digit format). When paying at stores, if the card is declined, inform staff it is &#39;Chugoku no kado&#39; (China UnionPay) to ensure they select the correct payment terminal mode.</li>
+    <li>Russian-issued cards (specifically UnionPay) have limited acceptance in Japan; they work for cash withdrawals at 7-11 ATMs and some major retail stores but are unreliable for general contactless payments. Russian travel aggregators (Ostrovok, Trip.com) accept Russian-issued cards for hotel and transport bookings.</li>
+    <li>Russian Agricultural Bank (RSXHB) UnionPay cards are effectively non-functional in Japan due to sanctions. Offline payments and ATM withdrawals are consistently declined. ATB (Automated Trading Bank) cards are currently cited as the only reliable option for Russian citizens in Japan.</li>
+    <li>Tax-free refunds in Japan (e.g., Uniqlo) are technically possible for already purchased items. The process usually requires the passport used for the original purchase, the receipt, and the item(s). Some stores may require returning all items from the transaction and performing a new sale. Note that some stores explicitly state that all tax-free purchases are final, so individual store policy prevails.</li>
+    <li>Clarification on the regulations regarding the use of items purchased under Japan&#39;s tax-free scheme before they are exported. Specifically, whether non-consumable items like clothing can be worn or used in Japan prior to departure.</li>
+    <li>Explain the limitations of using Apple Pay in Japan, particularly in certain stores and with specific terminals. Advise on how to withdraw cash using Apple Pay or alternative methods for converting funds from Russian cards, such as P2P platforms or specific exchange services available in Osaka. Mention the importance of having physical cards as a backup.</li>
+    <li>In addition to Tax-Free refunds, tourists can get extra discounts in stores like Don Quijote or Big Camera using apps like &#39;Payke&#39; or &#39;JapanTravel (Navitime)&#39;. These typically provide up to 5-7% off for tourists; users must present their passport and the app coupon at checkout.</li>
+    <li>In Japan, if individual items purchased under tax-free status are under 100,000 JPY, they generally do not require customs declaration upon export, even if carried in hand luggage, provided they are for personal use. The declaration requirement is typically based on the total value of goods and specific item categories, not just the sum of individual tax-free items.</li>
+    <li>Key travel insights from Japan: Currency exchange is best at dedicated exchange offices like Ninja Exchange in Shinjuku for optimal rates. For shopping, Don Quijote is good for sweets and alcohol, Tom&#39;s for cosmetics, and Ginza Karen for luggage. Google Maps is highly recommended for navigation. Notably, there are no restrictions on liquids in carry-on baggage at Japanese airports, allowing for the transport of items like alcohol. Tax-free shopping procedures and purchasing electronics are also mentioned.</li>
+    <li>Duty-free items purchased in Japanese stores (Don Quijote, etc.) are sealed in special bags. These bags must not be opened until leaving the country. Regulations are expected to change significantly as of November 2026, which will affect the current tax-free shopping system.</li>
+    <li>In Japan, tax-free purchases are categorized into general goods (clothing, electronics) and consumable goods (cosmetics, food, drugs). Consumables are often sealed in clear anti-tamper bags which technically should not be opened until leaving the country. General goods do not require such sealing. Customs checks on these bags at departure are rare for tourists unless quantities are suspicious (bulk/resale). Most travelers open packages for luggage optimization without consequences.</li>
+    <li>Discussing the prevalence of cash-only payments in Japan and the potential unreliability of foreign cards. Emphasizing the importance of carrying some cash for transactions, especially given potential ATM or card acceptance issues.</li>
+    <li>Bic Camera is recommended as a more organized alternative to Don Quijote for last-minute shopping in Japan. It stocks a wide variety of goods, including electronics, cosmetics, food items, and souvenirs, with better customer service and less crowding.</li>
+    <li>Eating and drinking on Shinkansen (bullet trains) in Japan is not only acceptable but common. Bento boxes and beverages, including alcoholic options like beer, sake, and imported wines, are readily available for purchase at stations and on the train. While bringing your own alcohol is generally fine, purchasing it onboard is a convenient option.</li>
+    <li>For technical literature in Japan, consider large bookstores like Maruzen, which often have extensive sections for specialized academic and scientific fields. University libraries and campus bookstores are also excellent resources for niche publications. Some may offer limited access or the ability to photograph specific pages.</li>
+    <li>When purchasing electronics in Japan, look for tax-free options. Items like iPhones, headphones, and watches may be available. Check store websites for availability, and items can sometimes be transferred between stores.</li>
+    <li>Travelers in Tokyo looking for affordable luggage often find deals in Asakusa (near Senso-ji Temple) and Akihabara. Typical prices for M-size luggage range from 3,500 to 5,000 JPY, with L-size around 6,900 JPY.</li>
+    <li>Inquire about the cost-effectiveness of purchasing Apple products in Japan compared to other regions, such as Russia. Research current pricing and potential tax differences.</li>
+    <li>During typhoon warnings in Okinawa, transportation services (ferries/flights) are often suspended. Tourists are advised to monitor official weather data via sites like JMA or NERV, stock up on provisions, and verify that their accommodation has a backup power generator in case of utility outages.</li>
+    <li>Don Quijote (Donki) stores in Japan are large-scale discount chains, often operating 24/7. They function as a &#39;one-stop&#39; shop selling a wide range of goods, including cosmetics, groceries, electronics, luggage, and novelty items. Many locations in tourist areas (like Shinjuku or Asakusa) maintain 24-hour service, making them convenient for late-night shopping.</li>
+    <li>Early August in Japan is characterized by extreme heat and high humidity. Travelers are advised to use sun umbrellas, portable fans, and maintain hydration. A light layer is necessary indoors, as air conditioning in public transport and shopping centers is set to very low temperatures.</li>
+    <li>Japan is a hybrid economy. While many shops, cafes (Starbucks Shibuya), and transport services are cashless-only or prefer IC cards (Suica/Pasmo), traditional local businesses and vending machines still favor or exclusively accept cash. Travelers should carry both a reliable foreign-issued card (or UnionPay like ATB) and Japanese yen banknotes for emergencies.</li>
+    <li>While Japan is increasingly cashless, cash is still required for some small shops, temples, and local buses. Travelers are advised to carry 10,000 JPY in cash as a backup. IC cards (Suica, Pasmo, etc.) are highly recommended for transport and occasional small payments.</li>
+    <li>Welcome Suica: Free to issue, non-refundable, expires after 28 days. Best for short-term tourists. Standard Suica: Costs 500 JPY deposit, refundable, valid for 10 years from last use. Both act as digital wallets for transit and convenience stores.</li>
+    <li>While some shops seal Tax-Free clothing in restricted bags, Japanese customs rarely inspect these items at departure. Tax-Free status is generally granted to tourists for items exceeding 5000 JPY.</li>
+    <li>Photography film, such as Kodak and Fujifilm, and development services can be found in Japan. For example, Tokiwa Camera in Den Den Town, Osaka, offers film at competitive prices, with Kodak film reportedly being significantly cheaper than in some other countries. It&#39;s advisable to check specific store availability and pricing.</li>
+    <li>How to purchase an iPhone 17 Pro Max in Tokyo, given that official dealers require a Japanese phone number for online purchases and availability might be limited.</li>
+    <li>For musical instruments like blockflutes (Mollenhauer) in Tokyo, one potential location is Shimamura Music Shinjuku Pepe. This store is located on the 6th floor of a large shopping center and might require some effort to find.</li>
+    <li>For specialized shopping in Osaka, the Denden Town area is highly recommended. Major chains like Hard Off, Hobby Off, and Tower Records offer a wide range of new and second-hand electronics, media, and collectibles, often at better price points than tourist-focused spots in Tokyo.</li>
+    <li>Shopping advice for Japan: The flagship Uniqlo store on Ginza can be overwhelming due to crowds and disorganized product placement, making it difficult to shop effectively. Don Quijote is recommended for purchasing sweets, spices, and alcohol. For cosmetics and vitamins, drugstores like Tomod&#39;s offer a more relaxed environment for browsing and testing products.</li>
+    <li>Provide advice on finding clothing that fits well in Japan for individuals of varying heights and body types. Discuss the challenges of finding suitable sizes in both men&#39;s and women&#39;s sections of popular stores like Uniqlo and Levi&#39;s. Suggest specific brands or store sections that might cater to taller, larger, or shorter individuals, and mention the availability of XXL sizes and custom tailoring options.</li>
+    <li>While Japan is technologically advanced, cash is still widely preferred and often required for certain transactions, especially for transportation passes. Credit cards may not be accepted everywhere. Always carry sufficient cash, particularly for local transport and smaller purchases.</li>
+    <li>In Japan, while Tax Free is standard for tourists, some luxury retailers may refuse service or Tax Free processing for Russian passport holders. If Tax Free is denied, the item may still be purchasable at full price. From autumn 2026, Japan is planning to implement a new digital tax-free system linked to passports/Visit Japan Web.</li>
+    <li>Inquire about places in Tokyo to purchase men&#39;s suits, particularly for those needing European sizes. Suggestions for stores like Uniqlo are mentioned, with comments on the style (casual vs. classic) and quality of their formal wear.</li>
+    <li>Disk Union and Tower Records are primary sources for vinyl records in Japan. Used records are common and typically maintained in excellent condition, often indistinguishable from new items.</li>
+    <li>Good quality Japanese knives for everyday use can be purchased in Osaka and Tokyo within a budget of 8,000-12,000 JPY. In Tokyo, Yodobashi stores offer a wide selection starting from 3,000 JPY. In Osaka, explore the street dedicated to ceramics and kitchenware near Namba. A user reported buying a satisfactory knife for 5,000 JPY in Akihabara, Tokyo, which has held up well after multiple flights.</li>
+    <li>Bic Camera offers tax-free purchases on electronics like iPhones, headphones, and watches. Items may be unopened. Availability can be checked online, and items can be transferred between stores. Some items may be available for purchase before travel.</li>
+    <li>iPhone battery replacement at official Japan Apple Stores costs approx. 11,200 JPY. Appointments are made via getsupport.apple. Note: Due to regional software restrictions, battery health statistics may not reset correctly after replacement if the Apple ID is tied to a Russian region.</li>
+    <li>Clarification on whether an adapter is needed for electronics chargers in Japan due to lower voltage. Information is sought on checking power supply compatibility (100V support) and the type of plug adapter required (European to American/Japanese).</li>
+    <li>For travel to Japan, durable and affordable luggage options are available. Good quality suitcases can be purchased for around 6,000 JPY (approx. $40 USD), capable of handling significant weight and multiple flights. Stores like Don Quijote in Osaka offer a wide selection. Budget-friendly options, such as carry-on suitcases for 2,000 JPY (approx. $13 USD), can be found at stores like 3coins in Kyoto. While character-themed luggage (e.g., Pokémon) is available and visually appealing, prioritize durability and functionality over aesthetics for long-term use.</li>
+    <li>Tax-free in Japan requires the original passport with the entry sticker. Copies or scans are generally not accepted. If a store refuses service based on nationality or documentation, it is often store-specific; attempting a purchase at a different branch is recommended.</li>
+    <li>Information is requested on where to buy AirPods and find a Lego store with a good selection in Tokyo. Previous recommendations mentioned Yodobashi and Bic Camera.</li>
+    <li>Clarification on Japanese tax-free shopping regulations. Specifically, whether wearable items like sneakers purchased tax-free can be used in Japan before export. Differentiating between consumable and non-consumable items regarding usage before export.</li>
+    <li>Nama chocolate (Royce) contains high fat/cream content. It requires refrigeration or thermal insulation (cooler bag with ice packs) during transit. It is best purchased at duty-free in airports, where specialized cooling packaging is provided.</li>
+    <li>Ginza Karen is a store in Tokyo, with multiple locations, that offers good quality luggage at competitive prices. It was recommended by a traveler who purchased two suitcases there.</li>
+    <li>For purchasing used electronics in Japan, several chains are recommended: Hard Off, Book Off, and Janpara. Hard Off in Osaka (Sakai Shinkanaoka) is highlighted for its good selection and prices. Yodobashi Camera Akiba in Tokyo also sells used items, but at higher price points.</li>
+    <li>For first-time travelers to Japan, relying on cash and a local IC card (like Suica or Pasmo) for transportation and small purchases is a viable alternative to international credit cards. Cash is widely accepted, and IC cards simplify payments where cards might not be. Researching options for obtaining an IC card upon arrival is recommended.</li>
+    <li>Japanese summer (June-August) is characterized by high humidity (often 30°C+). A major challenge for travelers is the temperature difference between outdoor heat and indoor air conditioning, which is often set very cold. Recommended clothing: light, breathable long trousers (e.g., synthetic technical fabrics) rather than heavy jeans, and a compact, lightweight windbreaker for indoor areas and public transport. High UV protection (SPF) is essential due to the intense sun.</li>
+    <li>Compare the prices of Apple products in Japan with those in Russia to determine if purchasing in Japan is more cost-effective. Consider potential differences in taxes and import duties.</li>
+    <li>Electronics with batteries must be carried in hand luggage for safety reasons. Standard retail stores (off stores) typically do not offer tax-free refunds for these items. Customers should verify tax-free eligibility and procedures with the retailer, especially at large electronics stores, as specific policies may apply.</li>
+    <li>Budget-friendly suitcases in Tokyo can be purchased around the Ameyoko market (near Ueno Station) for around 9,000-10,000 JPY for large sizes, or in Akihabara tax-free stores for 3,500-4,500 JPY (medium/small sizes). For late-night emergency purchases, Don Quijote (Donki) is the go-to option.</li>
+    <li>Affordable luggage options are available in Japan, particularly in areas like Shinjuku. Stores such as Yodobashi and general department stores offer suitcases for approximately 3,000-5,000 JPY, suitable for single-trip use or occasional travel. Even budget options have proven durable enough for flights.</li>
+  </ul>
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/jp/transport/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transport</span></a>
+    <a class="chip" href="/en/jp/documents-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documents &amp; Visa</span></a>
+    <a class="chip" href="/en/jp/tickets-entertainment/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🎟 Tickets &amp; Entertainment</span></a>
+    <a class="chip" href="/en/jp/banking-money/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Banking &amp; Money</span></a>
+    <a class="chip" href="/en/jp/exchange-transfers/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Exchange &amp; Transfers</span></a>
+    <a class="chip" href="/en/jp/safety/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛡 Safety</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Tired of googling the same thing?</h2>
+    <p>Ask Luky — from people&#39;s recent experience, not from manuals.</p>
+    <p>And Luky is a live voice translator for real conversations: haggle at the market like a local.</p>
+    <p class="ps">PS: chatting with someone at a festival abroad — easy</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/jp/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

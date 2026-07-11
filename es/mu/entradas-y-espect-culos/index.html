@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mauricio: Entradas y espectáculos — experiencia real · Luky</title>
+<meta name="description" content="Experiencia real de los chats sobre Entradas y espectáculos en Mauricio: tal cual, de primera mano. Para tu caso — pregúntale a Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/es/mu/entradas-y-espect-culos/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/mu/entradas-y-espect-culos/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/mu/entradas-y-espect-culos/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/mu/entradas-y-espect-culos/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/mu/entradas-y-espect-culos/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · cualquier país · sin relleno</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noche</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/es/">Inicio</a> /
+    <a href="/es/mu/">Mauricio</a> /
+    <b>Entradas y espectáculos</b>
+  </nav>
+
+
+  
+  <h1>Entradas y espectáculos: cómo es en Mauricio — de primera mano</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiencia real de gente de los chats sobre «Entradas y espectáculos» en Mauricio — tal cual, sin relleno. Para tu caso — <strong>pregúntale a Luky</strong>.</div></div>
+
+  <h2>De la experiencia real</h2>
+  <ul class="qlist">
+    <li>Septiembre es generalmente un buen mes para visitar Mauricio, marcando la transición del invierno a la primavera. El clima suele ser agradable, con menor humedad y menos precipitaciones. El norte de la isla generalmente experimenta más sol y mares más tranquilos, lo que lo convierte en una opción popular para el alojamiento y las actividades. El sur ofrece paisajes más espectaculares y está menos desarrollado. Considere sus actividades y el ambiente que prefiere al elegir entre el norte y el sur.</li>
+    <li>Para los vuelos de Moscú a Mauricio vía Dubái con Emirates (por ejemplo, saliendo de Moscú a las 16:25 con un tránsito de 1h 40m para el vuelo de las 02:30 a Mauricio): si los pasajeros pierden la conexión debido a retrasos, la política de Emirates es volver a reservarlos en el siguiente vuelo disponible por la mañana y proporcionar un vale de hotel para la estancia de tránsito.</li>
+    <li>Google Maps es una herramienta valiosa para navegar por Mauricio e identificar puntos de interés, especialmente cuando se viaja en coche. Si experimenta problemas con Google Maps, considere utilizar otras aplicaciones de mapas. Asegúrese de que su dispositivo tenga la conectividad adecuada o investigue las posibles limitaciones de la red local.</li>
+    <li>El esnórquel es una actividad popular en Mauricio. En Flic-en-Flac, un arrecife cercano sugiere que las excursiones en barco son comunes para llegar a los mejores lugares para practicar esnórquel. No se proporcionaron detalles específicos sobre la calidad de los lugares para practicar esnórquel desde la costa.</li>
+    <li>Las principales atracciones de Mauricio incluyen cascadas, destacadas por su belleza y el juego de colores bajo el sol. La capital, Port Louis, es un destino popular. Casela Park es una opción, aunque el acceso podría estar restringido en ciertos días debido a reservas privadas. Se anima a los visitantes a explorar más allá de las playas para conocer los diversos paisajes de la isla. También se recomiendan las excursiones a las islas orientales y los safaris.</li>
+    <li>Para comprar equipaje cerca del Hotel Astroea en Mauricio sin coche, considere el centro comercial Bo&#39;Valon Mall o grandes supermercados locales para opciones más económicas. Para equipaje de mayor calidad, será necesario viajar a centros comerciales más grandes como Bagatelle Mall o Tribeca, lo que implica que se requerirá transporte, ya que no se encuentran a una distancia que permita ir caminando.</li>
+    <li>Las excursiones de snorkel en Trou aux Biches se pueden organizar directamente con operadores de barcos locales en la playa por precios significativamente más bajos que reservando a través de agregadores turísticos internacionales. Las tarifas son negociables; las excursiones estándar a menudo incluyen avistamiento de delfines y snorkel en el arrecife.</li>
+    <li>Para reservar recorridos en helicóptero o hidroavión en Mauricio, busque proveedores en Google Maps. &#39;Lagoon Flight&#39; es uno de esos servicios disponibles. Asegúrese de verificar la reputación de la empresa y los procedimientos de reserva.</li>
+    <li>La observación de ballenas en Mauricio ofrece una experiencia memorable, pero conlleva desafíos. El viaje en barco puede ser agitado debido a las fuertes olas. Los participantes deben ser buenos nadadores y ser capaces de entrar y salir del barco rápidamente. Para aquellos propensos al mareo, puede resultar difícil. Se sugiere reservar un tour privado, ya que ofrece una mejor oportunidad para ver y nadar con ballenas/delfines debido a que hay menos participantes a bordo.</li>
+    <li>Notas sobre hoteles en Mauricio: Dinarobin Beachcomber cuenta con calefacción estacional en la piscina (normalmente activa en invierno, puede estar apagada en octubre). La zona de Le Morne es recomendable para hacer esnórquel y avistar tortugas. Los escarpines de coral son esenciales debido a los escombros y rocas en el lecho marino. Conducir por la isla es manejable, aunque las carreteras del sur tienen tramos serpenteantes.</li>
+    <li>Le Morne Brabant, en Mauricio, ha sido declarado oficialmente cerrado debido a un accidente mortal ocurrido en el pasado (un extranjero cayó desde la cima hace 1 o 2 años). Este cierre suele percibirse como una exención de responsabilidad por parte de las autoridades. A pesar del cierre oficial, el acceso está disponible de forma extraoficial y los guías locales pueden seguir llevando grupos a la cima. Los turistas suelen ignorar las señales de cierre oficial.</li>
+    <li>Para Mauricio, alojarse en la costa oeste es logísticamente óptimo. Atracciones clave: los tours de observación de ballenas salen desde Flic-en-Flac; Casela Nature Parks (safari) se encuentra cerca de Cascavelle.</li>
+    <li>El parque Casela en Mauricio es una atracción altamente recomendada. Los visitantes pueden participar en actividades como recorridos en eco-rider y alimentar a las jirafas. Es posible interactuar con animales como cebras y jirafas (por ejemplo, alimentándolas con la mano).</li>
+    <li>Al reservar tours de nado con ballenas en Mauricio, tenga cuidado con los precios excepcionalmente bajos, ya que pueden indicar negligencia y hacinamiento por parte del operador. Un incidente reportado involucró a un turista que sufrió una lesión grave a causa de la hélice de un barco, mientras el operador negaba su responsabilidad y afirmaba que el motor estaba apagado, a pesar de las pruebas en video de lo contrario. Los operadores de buena reputación deben priorizar la seguridad, asegurarse de que los motores estén apagados cuando los pasajeros entren o salgan del agua y proporcionar instrucciones de seguridad claras. Verifique siempre la reputación y las normas de seguridad del operador. En caso de lesión, los operadores deben proporcionar primeros auxilios, cubrir los gastos médicos y reembolsar el costo del tour.</li>
+    <li>Las playas de Mauricio a menudo tienen lagunas poco profundas debido al arrecife de coral protector que rodea la isla. Las áreas para nadar con mayor profundidad son limitadas. Las ubicaciones recomendadas para mejores condiciones de nado incluyen Trou aux Biches (playa de arena amplia) y Paradis (península de Le Morne). Se recomienda encarecidamente usar escarpines (zapatos de agua) debido a la posible presencia de erizos de mar y restos de coral. El acceso a las playas públicas está permitido incluso en los hoteles; los visitantes pueden colocar toallas cerca de la orilla del agua, pero deben evitar el uso de tumbonas e infraestructura privadas de los hoteles.</li>
+    <li>Al reservar billetes de avión, considere la diferencia en las políticas de reembolso y cambio entre las reservas directas con la aerolínea y las agencias de viajes online (OTA). Emirates, aunque a veces es más lenta con los reembolsos (hasta 30 días), ofrece opciones de pago directo como el pago en oficina y transferencias bancarias, y generalmente gestiona los cambios sin problemas. Las OTA como KupiBilet y Trip.com han mostrado resultados mixtos: KupiBilet tardó 7 días en reembolsar vuelos y 30 días en las mejoras de asiento, mientras que Trip.com logró reprogramar una reserva de hotel no reembolsable. A menudo se recomienda reservar directamente con las aerolíneas para una resolución de problemas más sencilla. Es posible que las tarjetas rusas Mir no sean aceptadas para compras directas con algunas aerolíneas como Emirates.</li>
+    <li>Está prohibido compartir directamente los contactos de los operadores turísticos en el chat. Para encontrar contactos, los usuarios deben buscar en el chat palabras clave relevantes (por ejemplo, &#39;ballena&#39;, &#39;delfín&#39;, &#39;helicóptero&#39;) o fotos relacionadas con las actividades deseadas. Luego, contacten al autor de la publicación original en privado para solicitar los contactos. Lagoonflight es un operador frecuentemente mencionado para excursiones en helicóptero o hidroavión.</li>
+    <li>Nadar con ballenas puede ser motivo de preocupación debido al miedo a las profundidades. Si bien Mauricio ofrece playas poco profundas donde no hay ballenas, encontrarse con ballenas en otros lugares generalmente se considera seguro, ya que son animales grandes y no agresivos. Las corrientes de resaca no suelen ser un problema. Se recomienda usar una máscara estándar (no de cara completa) para una mayor movilidad. La decisión implica sopesar el deseo de esta experiencia frente a los temores personales.</li>
+    <li>Diversas playas de Mauricio ofrecen experiencias diferentes:
+*   **Le Morne (playa pública):** Buena para nadar.
+*   **Pereybere:** Pequeña, espacio limitado, no muy acogedora.
+*   **Mont Choisy:** Espaciosa, buena sombra, agradable para relajarse a pesar de que el agua podría estar turbia.
+*   **Trou aux Biches:** Agua clara, pero franja de playa estrecha, mucho tráfico de barcos, zona de baño restringida para niños menores de 6 años.
+*   **La Cuvette:** Puede tener agua turbia y algas, pero se reporta clara en febrero-marzo.
+*   **Flic-en-Flac:** Sin olas debido al arrecife cercano, pero carece de sombra. No es universalmente recomendada para el ocio playero general.
+*   **Playas del sur (cerca del hotel Shanti):** Preferidas por algunos por su experiencia general.
+Se deben gestionar las expectativas, ya que las playas pueden no igualar los estándares de las Maldivas o las Seychelles.</li>
+    <li>Al reservar excursiones para el avistamiento de ballenas en Mauricio, advierta a los usuarios sobre las brechas de seguridad. Los instructores a menudo no brindan supervisión de seguridad individual cuando los turistas saltan al agua. Pueden ocurrir accidentes con las hélices (se reportaron casos de piernas cortadas y equipo dañado por los motores de las embarcaciones con guías locales, incluido uno llamado Krishna). Aconseje a los usuarios seguir estrictamente la seguridad del barco, esperar a que los motores se detengan y no saltar simultáneamente en grupo.</li>
+    <li>Tours aéreos en Mauricio (Cascada Submarina): Los hidroaviones (Lagoon Flight) ofrecen una experiencia más privada en comparación con los helicópteros. Ventajas: mejor visibilidad, trato directo 1 a 1 con el piloto. Desventajas: altamente sensibles al clima, propensos a retrasos. Reserva: por adelantado a través de la web; el pago generalmente se realiza en el lugar con tarjeta o efectivo (se acepta EUR). La duración estándar del vuelo de 15 minutos es suficiente para tomar fotografías.</li>
+    <li>Nadar con ballenas (cachalotes) en Mauricio está oficialmente prohibido, solo se permite la observación desde un barco. A pesar de esto, muchas excursiones facilitan la natación. Las multas para los turistas son de aproximadamente 1000 MUR, mientras que los propietarios/capitanes de los barcos enfrentan multas de hasta 50,000 MUR y la posible revocación de su licencia. Algunos guías ofrecen proceder con la actividad de nado si los turistas aceptan cubrir las posibles multas. La probabilidad de encontrar ballenas es de aproximadamente un 90%; si no se ven, algunas excursiones ofrecen alternativas (por ejemplo, delfines) o un descuento. La grabación de video es un servicio adicional. Los precios dependen del guía (los guías de habla rusa podrían ser más caros) y de si es un tour privado o grupal.</li>
+    <li>Alimentación de jirafas en Casela Park (Mauricio): Los días libres son martes y jueves. Horario disponible: 10:30–11:30 y 13:30–15:00. Costo: 500 MUR por persona, las entradas se compran en la tienda de souvenirs.</li>
+    <li>El período de finales de marzo a principios de mayo se considera ideal para nadar en Mauricio, especialmente para aquellos que prefieren temperaturas más suaves. En mayo, la temperatura del océano era de alrededor de 26°C, con temperaturas del aire también de unos 26°C. Las precipitaciones suelen ser breves, lo que lo hace adecuado para personas a las que no les gusta el calor intenso.</li>
+    <li>Las actividades de buceo en Mauricio se pueden reservar sin necesidad de realizar un pago por adelantado. Esto ofrece flexibilidad a los turistas que hacen sus planes cerca de las fechas de su viaje.</li>
+    <li>Durante la temporada baja (acercándose al invierno) en Mauricio, las lluvias intermitentes pueden provocar una reducción en la claridad del agua, lo que hace que playas como Mont Choisy parezcan verdes y turbias. Las condiciones del agua suelen ser más claras durante otras estaciones.</li>
+    <li>Para reservar un encuentro con rinocerontes en Casela Nature Parks, no confíe en la reserva estándar en línea. Envíe una solicitud a la dirección de correo electrónico oficial del parque. Ellos le proporcionarán disponibilidad y un enlace de pago directo. La tarifa de reserva suele incluir la entrada al parque.</li>
+    <li>En el parque Casela, en Mauricio, hay varias actividades disponibles. Un &#39;ecorider&#39; para dos personas, que incluye la entrada al parque, cuesta 10,250 rupias mauricianas (MUR) y comienza a las 9:15 a. m., lo que ofrece una experiencia menos concurrida. Alimentar a las jirafas cuesta 1,000 MUR para dos personas, y las entradas pueden comprarse en el quiosco de recuerdos del lugar. Según se informa, las sesiones de alimentación están programadas solo los martes y jueves. La experiencia de &#39;desayuno con jirafas&#39; requiere reserva previa y puede estar totalmente reservada con semanas de antelación; un usuario mencionó que la siguiente plaza disponible era el 17 de mayo. Para garantizar un lugar para el desayuno con jirafas, se recomienda comunicación directa por correo electrónico con el parque. Alimentar a las jirafas sin desayuno puede adquirirse en el lugar. El coste por alimentar a las jirafas es de 500 MUR por persona. Algunos visitantes consideran que la experiencia del desayuno vale la pena por su exclusividad y ambiente, mientras que otros la consideran menos valiosa que la actividad de alimentación por sí sola, sugiriendo que 10-15 minutos para alimentar y tomar fotos son suficientes. El parque ofrece una experiencia de &#39;ecorider&#39; y una bajada en montaña rusa está incluida con la entrada. El tiempo total empleado en estas actividades puede ser de alrededor de 4 horas. Para caminar con leones, se recomienda reservar con antelación, aunque es posible que se pueda comprar en el lugar.</li>
+    <li>Al reservar excursiones en Mauricio, es recomendable hacerlo directamente a través de los sitios web oficiales para atracciones como el Parque Casela. Para los recorridos en helicóptero, se sugiere el uso de agregadores para particulares.</li>
+    <li>Avistamiento de ballenas en Mauricio: las excursiones para nadar suelen costar entre 4500 y 6000 MUR por persona en grupos, siendo los tours privados significativamente más caros. Logística clave: lleve dos toallas, medicamentos contra el mareo y considere comenzar después de las 9:00 a. m. para evitar la mayor congestión de embarcaciones. Verifique siempre los protocolos de seguridad con los guías antes de entrar al agua, ya que se han reportado accidentes con motores de barcos.</li>
+    <li>En el Parque Casela en Mauricio, comprar boletos para actividades como alimentar jirafas puede implicar largas colas. Es posible que no siempre se acepten pagos en efectivo para la compra de boletos, y se ha consultado sobre la aceptación de tarjetas bancarias específicas (RSB). Las experiencias de safari están disponibles dentro del parque y se pueden reservar por separado.</li>
+    <li>Al reservar vuelos a Mauricio, particularmente con opciones de código compartido como Air Mauritius operando en aviones de Emirates, tenga en cuenta posibles escenarios de sobreventa. En caso de sobreventa, los pasajeros que tengan boletos comprados directamente a la aerolínea operadora (Emirates en este caso) suelen tener prioridad para el embarque. El riesgo de sobreventa es generalmente bajo con aerolíneas importantes como Emirates, pero es un factor a considerar si hay una diferencia de precio significativa. La atención al cliente de algunas aerolíneas, como Air Mauritius, puede ser menos sólida, lo que podría causar problemas con reembolsos o cambios de reserva si ocurren interrupciones. Para ahorros significativos (por ejemplo, 100,000 unidades), el riesgo podría valer la pena considerarlo, pero para diferencias menores (10-15 unidades), puede no ser recomendable. Verifique siempre las políticas de reembolso y soporte del agente de emisión de boletos y de la aerolínea.</li>
+    <li>Para cenar en Grand Baie, Mauricio, se recomienda un restaurante de hotel de 5 estrellas como el Royal Palm Beachcomber Luxury. Estos lugares suelen ofrecer actividades de día en la playa, natación y oportunidades de practicar esnórquel cerca de corales con vida marina.</li>
+    <li>Al reservar vuelos a través de agregadores de terceros como Trip.com, especialmente con aerolíneas como Emirates, sea consciente de los posibles problemas con cambios y cancelaciones de vuelos. Es fundamental verificar los detalles del vuelo y las opciones de cambio de reserva directamente en el sitio web oficial o el servicio de atención al cliente de la aerolínea. Los agregadores pueden tener políticas y tiempos de respuesta diferentes, lo que podría dar lugar a complicaciones y cargos inesperados. Consultar el portal de la aerolínea para cambiar la reserva podría ofrecer una solución sin cargos adicionales.</li>
+    <li>Cuidado con las estafas en la reserva de excursiones en la playa de Flic en Flac (específicamente un individuo llamado Jay, que emite recibos, pide depósitos de unos 50 EUR y cancela las excursiones sin reembolsar el dinero). Al reservar excursiones de avistamiento de ballenas, dé prioridad a grupos más reducidos por motivos de seguridad y asegúrese de que los motores de las embarcaciones estén completamente apagados antes de entrar en el agua.</li>
+    <li>Mauricio ofrece paquetes de luna de miel y reservas de villas con regalos del hotel válidos hasta 9 meses después de la boda. Aunque es comparable a las Seychelles en cuanto a opciones de celebración, el periodo de «luna de miel» y las ofertas específicas pueden variar. Se recomiendan las celebraciones anuales independientemente del destino.</li>
+    <li>Las experiencias recientes de vuelos a Mauricio desde Estambul (Turkish Airlines) y Moscú (Emirates) sugieren vuelos generalmente llenos, aunque algunos pasajeros experimentaron interrupciones. El &#39;Plan Kover&#39; (que probablemente se refiere a restricciones del control de tráfico aéreo o medidas de seguridad) ha causado retrasos y cancelaciones en los vuelos entre Moscú y Estambul, provocando pernoctaciones en Estambul para algunos. Sin embargo, los vuelos de conexión a Mauricio a menudo salieron a tiempo con ocupación completa. Los vuelos desde Moscú, incluso con retrasos iniciales, generalmente han permitido a los pasajeros realizar sus conexiones, y las aerolíneas brindan servicios de alojamiento y reserva cuando es necesario. Hubo informes de alertas de ataque aéreo en los EAU el 4 de mayo, a las que los pasajeros parecen haberse adaptado. A pesar de estos problemas potenciales, el consenso general es que viajar a Mauricio es factible, con las aerolíneas gestionando las interrupciones de manera efectiva.</li>
+    <li>Air Mauritius tiene antecedentes de procesamiento lento de reembolsos y un servicio al cliente deficiente, con algunos pasajeros informando retrasos incluso después de sus fechas de viaje y dificultades en la comunicación (por ejemplo, barreras idiomáticas). Se aconseja a los viajeros que investiguen las reseñas sobre experiencias de reembolso y sean conscientes de los posibles problemas. Asociarse con aerolíneas como Emirates podría ofrecer cierta mitigación del riesgo, pero los problemas directos con Air Mauritius persisten.</li>
+    <li>Aeroflot suele realizar ventas anuales de billetes para las rutas a Seychelles/Mauricio en la tercera semana de noviembre. Los precios rondan los 50.000 rublos para un viaje de ida y vuelta, incluyendo equipaje. Recomendaciones: supervise el canal oficial de Telegram de Aeroflot para ver anuncios y utilice datos históricos (patrones de años anteriores) para anticipar las ventanas de reserva.</li>
+    <li>Las atracciones y los proveedores de actividades en Mauricio suelen ser flexibles respecto a la verificación de la edad de los niños. Es raro que pidan el pasaporte. Si un niño es capaz de realizar la actividad (como montar en quad), los proveedores rara vez exigen documentos de identidad estrictos.</li>
+    <li>En el Parque Casela de Mauricio, las entradas para el safari Eco Rider se compran directamente en la entrada del parque, junto con las entradas generales.</li>
+    <li>El acceso a la cima de Le Morne Brabant en Mauricio actualmente requiere, según se informa, una tarifa de aproximadamente 20 dólares por persona, lo cual incluye un guía obligatorio. Esto parece ser un esfuerzo reciente de monetización por parte de los lugareños. El primer mirador, que es gratuito, cuenta con gatos residentes a los que los visitantes pueden alimentar.</li>
+    <li>Nadar con ballenas en Mauricio es oficialmente ilegal. Los protocolos de seguridad dictan que los motores de los barcos deben estar completamente apagados cuando los pasajeros entran o salen del agua. En caso de una lesión relacionada con un barco: 1. Busque atención médica inmediata y haga documentar la lesión (solicite un informe médico). 2. Comuníquese con su seguro de viaje de inmediato. 3. Si presenta una denuncia ante la policía, tenga en cuenta que las autoridades locales pueden mostrarse reacias a ayudar; insista en presentar un informe, incluso si está fuera de su jurisdicción específica. 4. Asegúrese siempre de que el capitán esté presente y asuma la responsabilidad de la seguridad de los pasajeros.</li>
+    <li>Al planificar una excursión para nadar con ballenas en Mauricio, es posible encontrar ballenas (incluyendo cachalotes) rápidamente (en menos de una hora) y tener múltiples oportunidades para bucear. Busque excursiones con buen historial en la localización eficiente de ballenas.</li>
+    <li>Empresa para realizar excursiones en hidroavión en Mauricio: Lagoon Flight. Coste aproximado: 350 EUR para dos personas. La ubicación está cerca de Le Morne. Por lo general, los cigarrillos electrónicos no son confiscados en los escáneres de seguridad del aeropuerto si se llevan en los bolsillos, ya que son mayoritariamente de plástico, pero su introducción sigue siendo un riesgo normativo.</li>
+    <li>Los vuelos panorámicos (hidroavión/hidroplano) para ver la cascada submarina en Mauricio tienen límites de peso estrictos por pasajero. Para pasajeros que pesen unos 100 kg o más, los operadores suelen requerir la división en vuelos diferentes. Es obligatorio reservar con antelación debido a la limitada capacidad de la flota (3 hidroaviones, 1 helicóptero).</li>
+    <li>Evite pagar depósitos del 50% por excursiones o actividades en Mauricio a personas conocidas en grupos de chat. Estas son estafas comunes donde falsos organizadores de excursiones desaparecen tras recibir el pago o proporcionan direcciones de oficinas inexistentes. Utilice Google Maps para encontrar proveedores legítimos con reseñas verificables y dé prioridad a aquellos que permitan el pago el día del servicio. Verifique a cualquier individuo consultando a los administradores de la comunidad antes de transferir fondos.</li>
+    <li>En Mauricio, es ilegal nadar con ballenas y acercarse a ellas a menos de 500 metros en barco. Por lo general, los operadores turísticos no están dispuestos a facilitar este tipo de actividades. Sin embargo, nadar e interactuar con delfines es algo permitido y legal.</li>
+    <li>Al planificar una visita a Casela Park en Mauricio, consulte el sitio web oficial (booking.caselaparks.com) para conocer los precios actuales de la entrada y las actividades. La tarifa de entrada suele estar separada de los costos de las actividades, aunque algunos paquetes específicos (como el desayuno con jirafas o alimentar a los rinocerontes) podrían incluirla. Los usuarios confirmaron que la entrada se pagó por separado incluso al realizar un safari en Jeep. Se recomienda consultar el sitio para conocer los costos específicos por familia.</li>
+    <li>Una ruta de vuelo recomendada y fiable hacia Mauricio desde Rusia es vía Estambul. Los viajeros informaron haber volado con Aeroflot de San Petersburgo a Estambul y luego con Turkish Airlines para el resto del trayecto. Se aconseja reservar una escala más larga en Estambul para tener en cuenta posibles retrasos o interrupciones.</li>
+    <li>Pautas de seguridad para nadar con ballenas o tiburones: 1. Utilice guías privados de buena reputación para evitar aglomeraciones. 2. La visibilidad del océano es alta (aprox. 30 m), pero las corrientes son fuertes. 3. Evite usar chalecos salvavidas si es un nadador experimentado, ya que restringen el movimiento y la velocidad, elementos esenciales para la seguridad. 4. Utilice siempre aletas para mejorar la movilidad. 5. Tenga en cuenta que en la zona hay presencia de &#39;longimanus&#39; (tiburones oceánicos de puntas blancas).</li>
+    <li>Casela Nature Parks en Mauricio requiere reservas por separado para la entrada, los paseos con leones y los eco-recorridos. Los paseos con leones deben priorizarse por la mañana para evitar el calor. Reserve aproximadamente 1,5 horas para la experiencia del eco-recorrido. El parque ofrece servicios de transporte interno que operan cada 30 minutos.</li>
+    <li>Al hacer senderismo en Le Morne Brabant en Mauricio, tome el sendero de la derecha; el de la izquierda lleva a un sitio histórico relacionado con la esclavitud. Comience antes de las 9 de la mañana para evitar las piedras calientes. El camino se considera intuitivo y suele haber muchos excursionistas.</li>
+    <li>Para los safaris en el Parque Casela en Mauricio, la opción del autobús generalmente no se recomienda debido a la interacción limitada y la distancia respecto a los animales. Las alternativas preferidas incluyen eco-riders, jeeps o quads. Los recorridos en jeep pueden ser costosos, pero ofrecen una experiencia exclusiva con un guía. Los recorridos en quad podrían ofrecer grupos más pequeños o privados. Reservar jeeps puede requerir contactar al Parque Casela directamente por correo electrónico o a través de un guía, ya que es posible que las opciones no aparezcan completamente listadas en su sitio web.</li>
+    <li>Una excursión para avistar ballenas en Mauricio fue altamente recomendada por un turista. La experiencia con un guía local de habla rusa fue descrita como inolvidable, con fuertes emociones al ver a las ballenas en su hábitat natural. El guía también fue elogiado específicamente.</li>
+    <li>Al visitar el parque Casela en Mauricio, es aconsejable reservar ciertas actividades adicionales, como el &#39;Desayuno con jirafas&#39;, con antelación, especialmente durante la temporada alta. Para la mayoría de las otras actividades, a menudo es posible reservar el mismo día al llegar, particularmente si se visita temprano (por ejemplo, a las 10 a. m.). Todas las reservas se pueden realizar y pagar en línea a través del sitio web oficial del parque Casela. Una estrategia sugerida para recorrer el parque es comenzar por las atracciones más alejadas (por ejemplo, el encuentro con jirafas, el safari) para optimizar la visita.</li>
+    <li>Al reservar excursiones para nadar con ballenas en Mauricio (que suelen salir de la costa oeste), el peligro físico principal son las lesiones provocadas por las hélices de los barcos, más que los tiburones. Se aconseja a los usuarios elegir operadores con límites de grupos pequeños (máximo 6-7 personas por barco) para un mejor control de la seguridad. &#39;Lux Voyage&#39; se menciona como una agencia local confiable para avistamientos exitosos de cachalotes.</li>
+    <li>Nadar con ballenas en Mauricio puede ser una experiencia extraordinaria. Asegúrese de que su operador turístico proporcione instrucciones claras y priorice la seguridad, especialmente para los nadadores con menos experiencia. Los buenos guías ofrecen una sensación de seguridad y capturan fotos y vídeos de alta calidad. Sea precavido con las reseñas que podrían ser autopromocionales.</li>
+    <li>El precio de referencia para contratar un coche privado con conductor local para una excursión de un día completo por la isla (aprox. de 09:00 a 17:00) en Mauricio es de unos 4500 MUR.</li>
+    <li>Si se rechaza una tarjeta de crédito extranjera en el sitio web de Casela Park, los visitantes pueden pagar en efectivo en la taquilla de entrada para la entrada general y la mayoría de las actividades. El desayuno con jirafas debe reservarse y pagarse por adelantado. Alternativamente, envíe un correo electrónico directamente al parque para solicitar instrucciones de pago.</li>
+    <li>Debate sobre la compra de equipo de esnórquel (máscaras y aletas) para Mauricio. Los usuarios debaten si es mejor comprar el propio para evitar problemas de higiene o la mala calidad del alquiler. Se buscan recomendaciones de máscaras y aletas, incluidas experiencias con máscaras de cara completa para hacer esnórquel con ballenas. Se considera la relación precio-calidad, mencionándose Tusa como una marca premium y buscando alternativas más económicas. Se comparten consejos sobre cómo evitar que la máscara se empañe (saliva, soluciones antivaho, jabón) y cómo ajustarla correctamente.</li>
+    <li>Las entradas para el Casela Park en Mauricio se pueden comprar en la taquilla del lugar al llegar. La mejor hora para visitar es por la mañana, ya que la mayoría de las actividades y eventos tienen lugar antes de las 13:00. Hay varias opciones de paquetes disponibles para adaptarse a diferentes intereses.</li>
+    <li>Los tiempos de conexión cortos (alrededor de 1,5 horas) en el Aeropuerto Internacional de Dubái (DXB) para los vuelos de Emirates son generalmente manejables gracias a la asistencia del personal, pero resultan arriesgados en caso de retrasos en los vuelos. Los pasajeros deberían considerar utilizar opciones de traslado de larga distancia o seleccionar vuelos con un margen de más de 3 horas para evitar perder las conexiones, especialmente durante las temporadas altas o condiciones políticas/meteorológicas inestables.</li>
+    <li>El avistamiento de ballenas o los recorridos en helicóptero en Mauricio dependen mucho del clima. Las cancelaciones debido al viento son comunes. Los proveedores de servicios pueden citar &#39;problemas técnicos&#39; para justificar retrasos en la reprogramación. Verifique siempre los pronósticos de viento locales a través de plataformas como windy.com y mantenga fechas de viaje flexibles.</li>
+    <li>Principales operadores de helicópteros en Mauricio: Corail Hélicoptères (con base en Triolet, enfocados en recorridos panorámicos) y Mauritius Helicopter Ltd (con base en el aeropuerto internacional, enfocados en traslados y recorridos). Alternativa: Lagoon Flight. Duración típica del vuelo para los recorridos de la &#39;cascada submarina&#39;: 15-20 minutos. Precio promedio: 150-160 EUR por persona. Se recomienda reservar a través de WhatsApp con pago en el lugar debido a las frecuentes cancelaciones y problemas técnicos.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/es/mu/alojamiento/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Alojamiento</span></a>
+    <a class="chip" href="/es/mu/actividades-y-ocio/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Actividades y ocio</span></a>
+    <a class="chip" href="/es/mu/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/es/mu/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/es/mu/documentos-y-visados/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentos y visados</span></a>
+    <a class="chip" href="/es/mu/seguridad/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Seguridad</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>¿La búsqueda responde a todos, pero a ti?</h2>
+    <p>Pregúntale a Luky — responde para tu caso, según reportes recientes, no artículos genéricos.</p>
+    <p>Y Luky es un traductor de voz para conversaciones reales: resuelve en recepción sin estrés.</p>
+    <p class="ps">PS: pon Luky en un altavoz portátil en una fiesta y habla con todos a la vez</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiencia real de chats de comunidades, sin relleno</div>
+    <nav class="f-links">
+      <a href="/es/about/">Acerca de</a>
+      <a href="/es/mu/">Todos los temas</a>
+      <a href="/es/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Las respuestas se recopilan de chats abiertos de comunidades — es experiencia real de personas, no asesoría oficial. Verifica antes de decisiones importantes.</p>
+    <div class="f-copy">© 2026 Luky · actualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noche", DAY="\u2600 D\u00eda";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

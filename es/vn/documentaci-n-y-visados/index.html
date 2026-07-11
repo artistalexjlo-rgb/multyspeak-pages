@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vietnam: Documentación y visados — experiencia real · Luky</title>
+<meta name="description" content="Experiencia real de los chats sobre Documentación y visados en Vietnam: tal cual, de primera mano. Para tu caso — pregúntale a Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/es/vn/documentaci-n-y-visados/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/vn/documentaci-n-y-visados/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/vn/documentaci-n-y-visados/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/vn/documentaci-n-y-visados/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/vn/documentaci-n-y-visados/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · cualquier país · sin relleno</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noche</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/es/">Inicio</a> /
+    <a href="/es/vn/">Vietnam</a> /
+    <b>Documentación y visados</b>
+  </nav>
+
+
+  
+  <h1>Documentación y visados en Vietnam: experiencia real de los chats</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiencia real de gente de los chats sobre «Documentación y visados» en Vietnam — tal cual, sin relleno. Para tu caso — <strong>pregúntale a Luky</strong>.</div></div>
+
+  <h2>De la experiencia real</h2>
+  <ul class="qlist">
+    <li>El registro incluye una discusión sobre viajar con apellidos diferentes en los billetes, específicamente en relación con el control fronterizo ruso y vietnamita. Aunque algunos testimonios sugieren que podría ser manejable, particularmente para la entrada a Vietnam, no se detallan consejos definitivos ni procedimientos oficiales.</li>
+    <li>Un usuario que llega a Nha Trang, Vietnam, busca servicios de seguro turístico e información sobre cómo obtener una visa de turista. También mencionó la necesidad de una visa para abrir una cuenta bancaria. Esto destaca los requisitos procesales para turistas y posibles residentes.</li>
+    <li>Al volar desde Nha Trang a través de Guangzhou, es recomendable consultar las normas aduaneras relativas a la declaración de bolsos de piel de cocodrilo para evitar problemas.</li>
+    <li>Al salir del aeropuerto de Da Nang en un vuelo temprano por la mañana (alrededor de las 6:30 a. m.), las colas para el control de pasaportes pueden ser considerables. Es recomendable llegar al aeropuerto con suficiente antelación antes del vuelo para prever posibles retrasos en inmigración.</li>
+    <li>Si encuentra errores al completar la tarjeta de llegada a Vietnam, intente volver a enviar el formulario varias veces, ya que pueden producirse fallos en el sistema incluso con la información correcta.</li>
+    <li>Los ciudadanos rusos disfrutan actualmente de una entrada sin visado de 45 días a Vietnam. Se requiere un visado electrónico (e-visa) para estancias de hasta 90 días. Consulte siempre las directrices oficiales más recientes de la embajada antes de viajar.</li>
+    <li>A partir de junio de 2026, los ciudadanos rusos que ingresan a Vietnam por turismo no necesitan completar registros electrónicos ni declaraciones de códigos QR. Un pasaporte válido es suficiente. Verifique si hay actualizaciones repentinas en las políticas locales, pero actualmente, la entrada es estándar.</li>
+    <li>Cambiar su apellido después del matrimonio no invalida inmediatamente su pasaporte para viajar, especialmente para destinos sin visado como Vietnam. Si bien la ley rusa permite seis meses para actualizar los documentos, muchas personas viajan con su pasaporte existente hasta su vencimiento sin problemas en inmigración. Mostrar el pasaporte válido es el requisito principal. Se recomienda llevar el certificado de matrimonio como medida de precaución, aunque puede que no sea estrictamente necesario para ingresar a Vietnam.</li>
+    <li>Según el Decreto 288/2025/NĐ-CP (en vigor desde el 5 de noviembre de 2025), Vietnam impone normas estrictas para los UAV/drones. Todos los drones requieren registro. Operar dispositivos de más de 250 g requiere una licencia de operador y una aprobación de vuelo explícita para cada lanzamiento. Los extranjeros deben asegurar un ciudadano vietnamita u organización local como garante para procesar los permisos. Volar sin autorización conlleva el riesgo de confiscación y multas de hasta 2000 dólares.</li>
+    <li>Actualmente, rellenar la tarjeta de llegada electrónica PAI no es obligatorio para entrar en Vietnam, y los códigos QR no son necesarios en el control fronterizo, tal y como ha confirmado la Embajada de Rusia. Sin embargo, este requisito podría ser obligatorio en el futuro en los aeropuertos de Hanói, Ciudad Ho Chi Minh, Cam Ranh y Phu Quoc. Si el sitio web oficial del formulario no está accesible, no se preocupe, ya que se trata de un problema temporal. Manténgase informado a través de los anuncios oficiales de la embajada.</li>
+    <li>Las visas de estudiante en Vietnam se emiten principalmente para estudiar el idioma vietnamita y, por lo general, tienen una validez de hasta 6 meses. Este proceso es distinto a los trámites de visa educativa en la vecina Tailandia.</li>
+    <li>Natalia, una experta en visas con 15 años de experiencia en Vietnam, ofrece servicios que incluyen el procesamiento de visas estándar y urgentes, viajes de visa (Camboya, Laos, China) y servicios de vía rápida en el aeropuerto. Ella garantiza tiempos de procesamiento, pagos seguros y asistencia integral. Sus servicios se adaptan a la situación particular de cada persona.</li>
+    <li>Cuando un menor (por ejemplo, de 15 años) viaja al extranjero con uno de sus padres y tiene un apellido diferente, por lo general no se requiere una carta de consentimiento notariada del padre ausente para el tránsito por países como China o la entrada a Vietnam, especialmente si el menor tiene su propio pasaporte. Tampoco suele ser necesaria una partida de nacimiento traducida. Sin embargo, las regulaciones pueden variar, por lo que siempre es mejor confirmar con los consulados o las autoridades de inmigración pertinentes de los países involucrados.</li>
+    <li>Obtener una licencia de conducir de Categoría A (motocicleta) en Vietnam no es sencillo para los extranjeros. Los métodos legales suelen implicar la obtención de una visa de trabajo o estudio de larga duración y demostrar dominio del idioma vietnamita. Esto indica un obstáculo burocrático para los expatriados que buscan conducir motocicletas.</li>
+    <li>Aclare las regulaciones relativas a la importación de cigarrillos electrónicos, como IQOS, a Vietnam. Asesore sobre la mejor manera de llevarlos (por ejemplo, en el equipaje de mano) y sobre cualquier posible restricción o procedimiento de control en aeropuertos como el de Cam Ranh.</li>
+    <li>Por lo general, las tarjetas bancarias rusas no se aceptan para los pagos de visas electrónicas en Vietnam. Es posible que se requieran métodos de pago alternativos, como tarjetas virtuales emitidas internacionalmente.</li>
+    <li>Para estancias de larga duración en Vietnam, se pueden emplear varias estrategias de visado. Una opción es organizar varios visados electrónicos antes de la llegada y realizar un &#34;visa run&#34; (viaje para renovar el visado) el mismo día al vencimiento de cada uno. Alternativamente, uno puede entrar con un sello de exención de visado de 45 días y realizar &#34;visa runs&#34; cada 45 días, o alternar entre visados electrónicos y &#34;visa runs&#34;. Entrar con un visado electrónico de 90 días y gestionar el siguiente visado mientras se está en otro país es también una posibilidad.</li>
+    <li>Al importar mascotas a Vietnam, asegúrese de que las vacunas sean reconocidas internacionalmente. Las marcas populares utilizadas por los expatriados incluyen Nobivac. Las clínicas veterinarias en Rusia deben proporcionar certificados oficiales. Los dueños de mascotas desaconsejan algunas marcas locales o de menor categoría debido a posibles efectos secundarios durante el viaje.</li>
+    <li>Confirme el requisito actual de la tarjeta de llegada electrónica en Vietnam, teniendo en cuenta que, aunque se anunció para todos los aeropuertos a partir del 22 de junio, la aplicación puede variar al llegar.</li>
+    <li>Un usuario compró billetes de tren a través de Trip.com y encontró un error en el apellido de su hijo. Se denegó el reembolso. Pregunte sobre la política respecto a errores ortográficos menores en billetes de tren en Vietnam y la probabilidad de que se permita viajar con una equivocación de una sola letra.</li>
+    <li>El registro menciona opciones de &#39;visa run&#39; a Camboya, Laos y China, haciendo énfasis en &#39;rutas verificadas sin cancelaciones ni sorpresas desagradables&#39;. No se proporcionan detalles específicos sobre estas rutas o cómo organizarlas, más allá de la mención de un experto que las facilita.</li>
+    <li>Aclare los requisitos de entrada para Vietnam, específicamente la necesidad de una TRC (Tarjeta de Residencia Temporal) o de una visa/sello de entrada válido para la admisión y el alojamiento.</li>
+    <li>Al viajar a Vietnam, generalmente está permitido llevar medicamentos en forma de ampollas dentro de un kit de viaje. Sin embargo, es recomendable llevar una receta de su médico para cualquier medicamento sujeto a prescripción. Esto puede ayudar en caso de preguntas por parte de los funcionarios de aduanas o inmigración.</li>
+    <li>Desde abril de 2026, todos los viajeros que ingresen a Vietnam (incluidos los que no necesitan visa) deben completar una tarjeta de llegada digital. Complétela en prearrival.immigration.gov.vn dentro de las 72 horas previas a su llegada. Es gratuito y está disponible en varios idiomas. Guarde una captura de pantalla del código QR, ya que la red Wi-Fi del aeropuerto no es fiable.</li>
+    <li>Al ingresar a Vietnam para una estancia prolongada (por ejemplo, un mes) con una reserva de tour corto inicial, generalmente es suficiente presentar los detalles del tour reservado y un billete de salida en inmigración. Varios viajeros han informado haber ingresado con éxito con billetes de solo ida, lo que indica que tener una prueba de la salida prevista es fundamental. Las autoridades de inmigración quieren ver principalmente que usted tiene planes de abandonar el país.</li>
+    <li>Los viajeros que ingresen a Vietnam deben completar la tarjeta de llegada electrónica (e-Arrival) en &#39;prearrival.immigration.gov.vn&#39; dentro de las 72 horas previas a la salida. El sistema genera un código QR que debe guardarse como captura de pantalla o PDF para presentarlo en el control migratorio.</li>
+    <li>Al llegar a los aeropuertos de Vietnam, especialmente cuando aterrizan varios vuelos internacionales simultáneamente, espera posibles largas colas en inmigración. Algunos viajeros han informado esperas de más de 2,5 horas. Es posible que existan servicios de vía rápida, pero su eficacia puede variar.</li>
+    <li>La introducción de una declaración médica en Vietnam a partir del 1 de julio es una medida de precaución y no requiere exámenes médicos previos al viaje, ya que no hay ninguna pandemia en curso.</li>
+    <li>Expertos con experiencia ofrecen servicios de visado para Vietnam, los cuales pueden ayudar con solicitudes de visado estándar y urgentes, incluida la tramitación superurgente (desde 1 hora, fines de semana incluidos). También se ofrecen gestiones de «visa run» a Camboya, Laos y China con rutas verificadas. Se proporcionan servicios de vía rápida (Fast Track) en los aeropuertos a la llegada, que incluyen recepción y trámites migratorios acelerados. Los pagos se procesan de forma segura en rublos a una entidad legal, lo que garantiza una experiencia fiable y respaldada durante todo el proceso de obtención del visado.</li>
+    <li>Los «visa runs» en Vietnam implican salir del país (por ejemplo, a Laos o Camboya) para activar un nuevo visado. Los viajeros pueden solicitar varios visados electrónicos (e-visas) mientras están fuera de Vietnam. No es posible solicitar un visado nuevo mientras se está dentro de Vietnam. Por lo general, las autoridades toleran el trabajo remoto si se realiza de forma discreta.</li>
+    <li>Quedarse en Vietnam tras la expiración del visado, aunque sea por un solo día, puede acarrear sanciones importantes. En las fronteras terrestres, lo más probable es que se le deniegue la entrada por haber excedido el tiempo de estancia. En los aeropuertos, existe la posibilidad de pagar una multa a la salida, pero es posible que le remitan a la oficina de inmigración. Las multas pueden oscilar desde un millón de VND en adelante, dependiendo del criterio de los funcionarios de inmigración. Se recomienda encarecidamente respetar la duración del visado para evitar complicaciones.</li>
+    <li>Los servicios ofrecidos incluyen: solicitudes de visado electrónico de 90 días, gestión integral de visados (rellenado, presentación, pago), procesamiento urgente de visados, corrección de solicitudes devueltas, reserva de billetes de tren/autobús/avión, reservas de hotel y reserva de vuelos de regreso desde Vietnam. El contacto está disponible a través de un experto verificado en TravelAsk.</li>
+    <li>Es poco probable que llevar bolsos, cinturones y carteras de cuero sintético comprados en la calle a Rusia cause problemas, especialmente si no son de cuero exótico auténtico y carecen de recibos oficiales. Estos artículos generalmente se consideran pertenencias personales.</li>
+    <li>Se necesita información sobre el proceso de importación de un gato y un conejo a Vietnam. Las clínicas veterinarias brindan información contradictoria y los recursos en línea están desactualizados. Existen desafíos específicos con los conejos debido a los diferentes requisitos de vacunación en comparación con los perros y gatos.</li>
+    <li>Explique las consecuencias de no obtener el registro temporal (permiso de residencia) en Vietnam. Clarifique el proceso de registro y las responsabilidades de los propietarios y los inquilinos.</li>
+    <li>Traer una mascota a Vietnam requiere un microchip y un pasaporte veterinario. El proceso puede ser complejo y puede requerir la preparación de la documentación con hasta tres meses de antelación. Es crucial consultar las fuentes oficiales para conocer los requisitos más actuales y detallados.</li>
+    <li>Obtener un permiso de residencia temporal (VNH) en Vietnam es difícil. La mayoría de los extranjeros viven haciendo &#39;visa runs&#39; (reingresando cada 45 o 90 días con un sello/visa electrónica). Un contrato de alquiler sirve principalmente como garantía para el propietario, no para fines de inmigración. Los propietarios registran a los residentes después de cada &#39;visa run&#39;.</li>
+    <li>Para viajes internacionales, incluidos los vuelos que salen o llegan a Vietnam, a menudo se requiere un pasaporte con una validez mínima de 6 meses más allá de la estancia prevista. A los viajeros se les puede negar el embarque o la entrada si su pasaporte no cumple con este requisito de validez. Se aconseja verificar las regulaciones específicas de la aerolínea y de inmigración antes del viaje.</li>
+    <li>A partir del 22 de julio, es posible que se necesite un código QR, obtenido tras completar un formulario de declaración de salud, para ingresar a Vietnam. Este código facilita el registro y el acceso a los datos. También puede aparecer en los boletos de avión. Confirme los requisitos más recientes antes de su vuelo.</li>
+    <li>Se debe obtener una visa electrónica (E-visa) de 90 días antes de entrar a Vietnam. Si se entra con una estancia sin visa, no se puede cambiar a una E-visa desde dentro del país; los viajeros deben salir y volver a entrar tras solicitar la E-visa desde el extranjero.</li>
+    <li>Por lo general, no se requieren documentos de identidad como el pasaporte para entrar a VinWonders en Vietnam, solo un boleto válido (impreso o electrónico). Existen excepciones para las tarifas reducidas: las personas mayores necesitan una prueba de su edad y los boletos infantiles se basan en la estatura (de 100 a 139 cm).</li>
+    <li>Los requisitos de declaración médica en Vietnam (Decisión n.º 165/2026/NĐ-CP) son específicos para las llegadas internacionales a ciertos lugares (por ejemplo, la isla de Phu Quoc). Los turistas habituales que visitan Nha Trang y otros centros importantes no requieren actualmente un código QR de tarjeta de llegada electrónica.</li>
+    <li>La hija del usuario se quedó en Vietnam un día más de lo permitido por su visado, fue detenida en el aeropuerto de Da Nang y su teléfono no tiene batería. Tiene 18 años. Proporcione orientación sobre el proceso por exceso de estancia con visado en Vietnam, incluidas las posibles multas, los procedimientos de deportación y la información de contacto de las autoridades pertinentes o asistencia legal en Da Nang. Aclare que el término &#39;arresto&#39; podría referirse a una detención para procesar el caso.</li>
+    <li>Proceso de solicitud de visa para tratamiento médico (dental) en Vietnam. Los requisitos incluyen presentar la información de contacto de la clínica, un billete de avión a Vietnam y una reserva de regreso. Las solicitudes repetidas de la misma información sugieren posibles problemas con la revisión de la solicitud.</li>
+    <li>Determine si las regulaciones aduaneras en Vietnam permiten la importación de trucha ahumada en el equipaje facturado. Informe sobre los posibles controles aduaneros y los riesgos de confiscación.</li>
+    <li>Los requisitos de entrada a Vietnam varían según el punto de control fronterizo. Aunque algunos viajeros informan de que no hay controles, prepárese siempre para posibles solicitudes de declaraciones de salud y pruebas de viaje posterior (billete de vuelta o reserva), especialmente para los titulares de visados de entrada única. Los sitios web oficiales son la única fuente fiable para obtener los formularios actualizados.</li>
+    <li>Confirme los procedimientos de entrada para el Aeropuerto de Cam Ranh, específicamente con respecto a la necesidad de completar un formulario de entrada dentro de las 72 horas previas a la llegada, de forma similar a los procedimientos en Tailandia.</li>
+    <li>Al utilizar un servicio Fast Track en el Aeropuerto de Cam Ranh (CXR), especialmente a través de operadores turísticos como Anex, es importante aclarar con el proveedor del servicio el punto y la hora de encuentro exactos. Es posible que los representantes no estén presentes antes de la hora oficial de facturación. Si llega con mucha antelación, confirme cuándo y dónde reunirse con el agente. Alternativamente, los servicios Fast Track a menudo pueden reservarse a través de plataformas de viaje como Trip.com.</li>
+    <li>Para los viajeros que ingresan a Vietnam con una visa electrónica y planean quedarse más tiempo, el boleto de regreso no es obligatorio al salir de su país de origen. Los viajeros pueden hacer los preparativos para su regreso o viaje posterior una vez que lleguen.</li>
+    <li>Respecto a la tarjeta de llegada digital (e-Arrival) para Vietnam: Inicialmente, era obligatoria solo para la ciudad de Ho Chi Minh. Hay informes de que a partir del 1 de junio podría ser obligatoria para todas las provincias. Sin embargo, para Cam Ranh específicamente existe incertidumbre, ya que algunas informaciones sugieren que actualmente no es obligatoria, pero podría implementarse a partir de julio. El sitio web oficial se puede encontrar a través de una búsqueda en Google. Las consecuencias por incumplimiento no están claras para otras provincias aparte de la ciudad de Ho Chi Minh.</li>
+    <li>Los requisitos de entrada a Vietnam para ciudadanos rusos no exigen explícitamente billetes de vuelta en la legislación nacional, pero las aerolíneas aplican la prueba de &#39;viaje de continuación&#39; basándose en Timatic. Las aerolíneas pueden denegar el embarque en el aeropuerto de salida si no se presenta una prueba de salida. Se aconseja a los viajeros tener un billete de salida o una reserva ficticia para cumplir con las políticas de las aerolíneas.</li>
+    <li>Determine si las licencias de navegación rusas (incluidos los códigos QR digitales para hidroalas y rutas marítimas) son aceptadas para alquilar motos de agua en Phan Thiet, Vietnam. Informe sobre los requisitos específicos o posibles problemas.</li>
+    <li>Los &#39;visa runs&#39; (viajes para renovar el visado) son un método común para extender la estancia en Vietnam. Las rutas populares incluyen viajes a Laos o Camboya. El proceso generalmente implica salir de Vietnam, obtener una nueva visa (a menudo facilitada por agentes para mayor rapidez, a veces en pocas horas) y volver a entrar. No es posible solicitar una nueva visa permaneciendo dentro de Vietnam. Los tiempos oficiales de procesamiento de visas pueden variar de 1 a 3 días, mientras que los realizados con ayuda de agentes pueden ser significativamente más rápidos.</li>
+    <li>Cuando viaje al extranjero con un niño que tiene un apellido diferente, asegúrese de tener la documentación de respaldo. Aunque la inmigración vietnamita puede no ser rigurosa en sus controles, el control fronterizo ruso podría solicitar un certificado de nacimiento para confirmar el parentesco. Es recomendable llevar el certificado de nacimiento del niño, especialmente si los apellidos son distintos, para evitar posibles complicaciones en la frontera.</li>
+    <li>Explique que las extensiones de visa en Vietnam no pueden procesarse mientras se permanece en el país. Para renovar una visa, uno debe salir de Vietnam, solicitarla externamente y esperar la aprobación. Mencione que los agentes de visas a menudo facilitan este proceso, incluidas las salidas a la frontera.</li>
+    <li>Importación de mascotas a Vietnam: 1) Microchip obligatorio. 2) Vacunación contra la rabia al menos 30 días después del chip. 3) Certificado veterinario (Formulario 1) emitido dentro de los 5 días previos al viaje, convertido al estándar internacional en la oficina de aduanas del aeropuerto. La inspección física en la frontera vietnamita es poco común, pero los requisitos del país de origen son estrictos.</li>
+    <li>Proporciona información detallada sobre los requisitos para transportar mascotas (específicamente gatos) desde Moscú a Vietnam. Incluye detalles sobre las vacunas obligatorias (por ejemplo, Multisel 4, Irobilfel), certificados de salud, regulaciones específicas de las aerolíneas y procedimientos de cuarentena.</li>
+    <li>Al viajar a través de Singapur hacia Vietnam, asegúrese de completar el formulario de llegada, incluso si no se solicita explícitamente. También es aconsejable tener un billete de salida hacia un tercer país en inglés, ya que podrían solicitarlo.</li>
+    <li>A partir del 1 de julio de 2026, Vietnam implementará un sistema de tarjeta de llegada. Los viajeros deben completar el formulario de llegada en línea dentro de las 72 horas previas a su llegada para obtener un código QR. Se recomienda tener una copia digital o impresa lista para el control fronterizo, aunque la aplicación de esta medida puede variar según el aeropuerto.</li>
+    <li>Explique los requisitos para obtener una licencia de conducir vietnamita, incluyendo la necesidad de contar con una Tarjeta de Residencia Temporal (TRC) y demostrar dominio del idioma vietnamita para aprobar el examen.</li>
+    <li>Para entrar en Vietnam en un &#39;visa run&#39;, generalmente no se requiere tener un billete de vuelta. Sin embargo, las aerolíneas en el punto de salida podrían solicitarlo. Si esto sucede, se recomienda reservar un billete reembolsable o utilizar un servicio de reserva de billetes. También se sugiere reservar un billete barato a un país vecino como respaldo.</li>
+    <li>Cuando los viajeros completan los registros con código QR para fines de inmigración, sus datos se ingresan directamente en el sistema del Departamento de Inmigración. Esto significa que los funcionarios pueden tener acceso a la información del viajero, lo que potencialmente reduce la necesidad de controles de documentación adicionales.</li>
+    <li>Las aerolíneas (especialmente las de bajo costo como Jin Air o VietJet) en los centros de salida/tránsito (por ejemplo, en Corea del Sur) verifican estrictamente los boletos de salida de Vietnam antes de abordar. El control fronterizo vietnamita suele ser flexible, pero la aerolínea puede denegar el embarque a pasajeros que no tengan un boleto de continuación. Los viajeros pueden comprar reservas de boletos verificadas (comprobables en los sitios web de las aerolíneas) o boletos totalmente reembolsables para presentar durante el registro.</li>
+    <li>Se puede brindar asistencia para obtener visas electrónicas de 90 días para Vietnam, incluyendo el llenado de la solicitud, la presentación y el pago. Los servicios también pueden ayudar con la reserva de vuelos, hoteles y boletos de salida, que a veces son requeridos por motivos de inmigración. Para necesidades urgentes de visa, a menudo se dispone de procesamiento acelerado. Revisar y corregir las solicitudes de visa presentadas también es un servicio disponible.</li>
+    <li>Un usuario solicitó una visa electrónica de 90 días para él y sus hijos desde Rusia, pero recibió un rechazo que exige el contacto de una agencia de viajes y un boleto de regreso, los cuales no tiene. Le preocupa su próximo vuelo. El consejo sugiere volver a presentar la solicitud con el aeropuerto de llegada como el aeropuerto de salida y un lugar provisional para el alojamiento. Los rechazos múltiples son comunes y la persistencia podría llevar a la aprobación. Se observa que obtener una visa &#39;a la llegada&#39; en el aeropuerto normalmente solo otorga un sello de 45 días, no una visa para estancias más largas.</li>
+    <li>Los servicios de vía rápida (Fast Track) en los aeropuertos, particularmente en Vietnam, agilizan principalmente el proceso de inmigración y control de pasaportes. Esto puede ser muy beneficioso en centros concurridos como el Aeropuerto Internacional Tan Son Nhat (SGN) en Ciudad Ho Chi Minh, donde las colas pueden ser largas (hasta 1.5 horas). Sin embargo, el servicio normalmente no incluye reclamo de equipaje ni despacho de aduanas acelerado. En aeropuertos menos congestionados como Hanói (HAN) o Nha Trang (CXR), el beneficio del Fast Track puede ser menos significativo. Es recomendable evaluar los posibles tiempos de espera según el aeropuerto y la hora del viaje.</li>
+    <li>Para trasladar una mascota a Vietnam (por ejemplo, un perro pequeño): 1. Se requiere microchip internacional. 2. Son obligatorias las vacunas complejas actualizadas (si es la primera vacunación, se aplica un periodo de cuarentena de 21 días). 3. Entre 3 y 5 días antes de la salida, visita la autoridad veterinaria local (SBBZH) para obtener un formulario &#39;A5&#39;. 4. Canjea el formulario A5 por un certificado veterinario &#39;F1&#39; en el aeropuerto. 5. Aerolíneas como Aeroflot permiten mascotas de menos de 8 kg en cabina; las reservas deben realizarse a través del centro de llamadas o el sitio web de la aerolínea.</li>
+    <li>Las solicitudes de visado electrónico (E-visa) para Vietnam pueden ser denegadas o retrasadas con una petición de información adicional si el solicitante no presenta la declaración de residencia (la declaración de residencia debe hacerse durante la estancia en Vietnam). Los solicitantes deben asegurarse de proporcionar un documento de residencia válido por parte del hotel o del propietario del apartamento para resolver la retención.</li>
+    <li>Para los ciudadanos rusos que entran en Vietnam, generalmente se requiere un pasaporte válido con al menos 6 meses de vigencia restante. Si su pasaporte caduca dentro de este periodo, puede enfrentar problemas en inmigración. Aunque algunas pruebas anecdóticas sugieren flexibilidad o confianza en los billetes de vuelta y reservas de hotel, es un riesgo significativo. Las autoridades de inmigración vietnamitas tienen la última palabra. Se recomienda encarecidamente renovar el pasaporte antes de viajar para evitar una posible denegación de entrada o ser retenido en inmigración por exceder el tiempo de estancia y enfrentar sanciones. Si no puede renovarlo, consulte a la embajada o consulado de Vietnam para obtener la orientación más actual y oficial.</li>
+    <li>El registro incluye una discusión sobre viajar con apellidos diferentes en los billetes, específicamente en relación con el control fronterizo ruso y vietnamita. Aunque algunas pruebas anecdóticas sugieren que podría ser manejable, particularmente para la entrada a Vietnam, no se detallan consejos definitivos ni procedimientos oficiales.</li>
+    <li>Vietnam ha implementado un sistema de registro electrónico previo (PAI) obligatorio para los turistas extranjeros que llegan a través de los aeropuertos de Hanói, Ciudad Ho Chi Minh y Phu Quoc. Se espera que este sistema se aplique en todos los aeropuertos a partir del 22 de junio.</li>
+    <li>El tiempo de tramitación de un visado vietnamita de 90 días puede variar, siendo normalmente de 5 a 7 días, aunque a veces es menor. Es recomendable solicitarlo con mucha antelación a la fecha del viaje, ya que pueden producirse retrasos. Solicitarlo cerca de la fecha de salida podría ser arriesgado si el visado no se tramita a tiempo.</li>
+    <li>Un ciudadano de Uzbekistán pregunta sobre la necesidad de obtener un visado para Vietnam con antelación o si es posible obtener un visado a la llegada al aeropuerto. Esto requiere información sobre las políticas de visado de Vietnam para nacionalidades específicas.</li>
+    <li>El Aeropuerto Internacional de Da Nang experimenta una gran congestión en horas punta, debido sobre todo a los grandes grupos de turistas. A menudo, en la propia zona de control de pasaportes, se ofrecen servicios de acceso rápido oficiales o semioficiales por unos 10 USD por persona, lo que permite a los viajeros evitar las largas colas.</li>
+    <li>A los viajeros que se dirigen a Vietnam se les puede solicitar una prueba de viaje de continuación (billete de vuelta o de salida) en el mostrador de facturación de la aerolínea en su país de origen, especialmente cuando viajan sin visado o bajo políticas de entrada de corta duración. Aunque rara vez se solicita en el control fronterizo vietnamita, no presentarla durante la facturación puede provocar que la aerolínea le deniegue el embarque.</li>
+    <li>Al volar de Rusia a Vietnam (por ejemplo, con Aeroflot a Cam Ranh), normalmente no se solicitan billetes de vuelta ni declaraciones de salud/códigos QR al salir de Rusia. En el aeropuerto de Cam Ranh, los funcionarios de control fronterizo generalmente no solicitan estos documentos, ya que la información puede estar ya en su sistema.</li>
+    <li>A los viajeros con un exceso de estancia breve con visado (por ejemplo, 8 horas) en el aeropuerto de Saigón se les puede permitir pasar por inmigración sin penalización ni registro formal si se dirigen a los funcionarios con antelación (5-6 horas antes del vuelo) y con una actitud educada. A veces son dirigidos a canales prioritarios o diplomáticos para evitar las filas habituales.</li>
+    <li>Los requisitos de entrada para Vietnam, incluida la necesidad de un formulario de declaración electrónica y un código QR, pueden cambiar. Aunque algunas fuentes sugieren que es obligatorio a partir de cierta fecha, la aplicación práctica puede variar según el destino (por ejemplo, Hanói/Ciudad Ho Chi Minh frente a Nha Trang). Es recomendable consultar las últimas normativas oficiales antes de la llegada para garantizar el cumplimiento y un proceso de inmigración fluido.</li>
+    <li>Explique la viabilidad y los requisitos para abrir depósitos bancarios en Vietnam como turista. Aclare las tasas de interés y especifique qué bancos podrían ofrecer dichos servicios. Tenga en cuenta cualquier restricción relacionada con el estatus de la visa.</li>
+    <li>El servicio &#39;Fast Track&#39; en los aeropuertos vietnamitas tiene como objetivo agilizar los trámites de inmigración y seguridad, reduciendo el estrés posterior al vuelo y permitiendo a los viajeros llegar más rápido a la piscina de su hotel. Ayuda a evitar la espera habitual de 2 horas en el aeropuerto.</li>
+    <li>Para programar una cita en el Consulado de Rusia en Hanói para una solicitud de pasaporte, consulta el sitio web oficial del consulado para conocer los procedimientos de reserva.</li>
+    <li>Al completar una solicitud de visa para Vietnam, si se le solicita un número de visa que no existe, puede deberse a la entrada sin visa para ciertas nacionalidades como la rusa. Asegúrese de seleccionar correctamente los países exentos de visa o las opciones correspondientes en la solicitud. En algunos casos, el control fronterizo puede no requerir una etiqueta de visa si el solicitante proviene de un país exento de visa y presenta un código QR.</li>
+    <li>Al solicitar una visa electrónica para Vietnam, el campo &#39;dirección de residencia actual&#39; debe completarse con su lugar de residencia actual real (por ejemplo, su dirección en el país donde vive actualmente, no necesariamente la dirección de registro de su pasaporte interno ruso). El campo &#39;contacto de emergencia&#39; es una sección separada destinada a una persona con la que se pueda contactar en caso de emergencia.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/es/vn/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/es/vn/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/es/vn/ocio-y-entradas/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Ocio y entradas</span></a>
+    <a class="chip" href="/es/vn/alojamiento/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Alojamiento</span></a>
+    <a class="chip" href="/es/vn/seguridad/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Seguridad</span></a>
+    <a class="chip" href="/es/vn/salud/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Salud</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>¿Buscaste y sigues sin estar seguro?</h2>
+    <p>Pregúntale a Luky — intenta entender tu situación y responder con más precisión.</p>
+    <p>Y Luky es un traductor de voz para conversaciones reales: habla con el médico y entiende lo que te dijo.</p>
+    <p class="ps">PS: conoce a alguien en un bar que habla otro idioma</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiencia real de chats de comunidades, sin relleno</div>
+    <nav class="f-links">
+      <a href="/es/about/">Acerca de</a>
+      <a href="/es/vn/">Todos los temas</a>
+      <a href="/es/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Las respuestas se recopilan de chats abiertos de comunidades — es experiencia real de personas, no asesoría oficial. Verifica antes de decisiones importantes.</p>
+    <div class="f-copy">© 2026 Luky · actualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noche", DAY="\u2600 D\u00eda";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

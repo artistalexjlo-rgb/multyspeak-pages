@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>South Korea: Banking &amp; Money — real experience · Luky</title>
+<meta name="description" content="Real experience from chats about Banking &amp; Money in South Korea: as it is, first-hand. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/kr/banking-money/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/kr/banking-money/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/kr/banking-money/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/kr/banking-money/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/kr/banking-money/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/kr/">South Korea</a> /
+    <b>Banking &amp; Money</b>
+  </nav>
+
+
+  
+  <h1>Banking &amp; Money in South Korea: real experience from chats</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of people from chats on «Banking & Money» in South Korea — as it is, no fluff. For your case — <strong>ask Luky</strong>.</div></div>
+
+  <h2>From real experience</h2>
+  <ul class="qlist">
+    <li>To withdraw South Korean won using a Russian UnionPay card: 1) KB Kookmin Bank ATMs are recommended for lower commission fees. 2) When using the ATM, select &#39;Global&#39; interface and choose Russian language if available. 3) Expect fees around 3,500 KRW per transaction. Alternatively, loading funds onto a Wowpass/Namane card via cash deposit machines can be more cost-effective.</li>
+    <li>Exchanging USD to KRW in South Korea is generally more favorable than exchanging in Russia. Look for exchange offices in city centers, such as Myeongdong, for better rates compared to airport exchange bureaus. Older USD bills are usually accepted, though potentially at a slightly lower exchange rate.</li>
+    <li>Incheon Airport procedures for SIM cards and currency exchange: SIM cards are readily available and easy to purchase in the airport after baggage claim, with numerous stalls. eSIM is an alternative if supported. Currency exchange rates at the airport are generally poor; it&#39;s advisable to exchange only a small amount for immediate needs and the rest in Seoul. T-money and Wowpass are also more conveniently acquired or topped up in the city.</li>
+    <li>Exchanging Russian Rubles for Korean Won in Seoul can be done at exchange offices like Moneybox, which often offer competitive rates. It&#39;s advisable to compare rates at various small exchange points, especially in areas like Myeongdong.</li>
+    <li>Payment with Russian UnionPay cards in South Korea is inconsistent. While some users report successful transactions in various stores (e.g., Olive Young, Daiso, clothing stores), many experience difficulties or outright rejections. Cards are generally more reliable for ATM cash withdrawals. The success rate may vary depending on the specific bank and merchant. It is advisable to have alternative payment methods, such as USD cash for exchange or a local Korean card.</li>
+    <li>To activate a WOWPASS, perform the physical registration at a kiosk. Then, in the WOWPASS mobile app, select &#39;Add Card&#39; and scan the barcode on the back of the physical card. If the app fails to scan the passport, manually input details or retry at the kiosk.</li>
+    <li>Transport and payment cards in South Korea: 1. WowPass cards have T-Money functionality embedded. 2. WowPass acts as a debit/prepaid card for shops, while T-Money is strictly for public transport. 3. Remaining balance on T-Money can be refunded at convenience stores (e.g., 7-Eleven, CU) for amounts under 20,000 KRW. Larger refunds require a T-Money office. 4. If an app indicates a card is already issued, you can perform a card re-issue at a physical kiosk in metro stations.</li>
+    <li>Russian bank cards, particularly those from banks not under sanctions, may have limited functionality in South Korea. UnionPay cards from specific Russian banks like Rosselkhozbank and Asia-Pacific Bank are mentioned as potentially working for cash withdrawals. QR code payments, which are common in China, are generally not functional with Russian bank cards in Korea due to political and banking restrictions.</li>
+    <li>T-money is the standard public transport card in South Korea, purchasable and reloadable at convenience stores. Wowpass cards include a T-money chip, but they require separate balance management. The Climate Card offers unlimited travel and is available at subway station information desks and select convenience stores.</li>
+    <li>Entry requirements for South Korea: 1. Cash (approx. $100/day) is mandatory for proof of funds; bank statements are often insufficient. 2. A return ticket (ideally to the country of citizenship/residency) is required. 3. Detailed travel itinerary and hotel booking confirmation (must match the K-ETA application) should be ready if questioned. 4. Printed copy of K-ETA is required at the point of departure.</li>
+    <li>Russian payment cards, particularly UnionPay from banks like RSB, may have limited acceptance in South Korea, including at some Apple Stores in Seoul. ATM withdrawals are generally possible. It is advisable to use newer US dollar bills for exchange, as older notes may not be accepted everywhere. Smaller exchange offices, such as those in Myeongdong, often offer more favorable rates than major banks.</li>
+    <li>Wowpass cards can be topped up at dedicated terminals using cash or a card. Some Russian bank cards, like those from RosSelkhozbank, may be functional. If app top-ups fail, locate a terminal. The exchange rate used at terminals aligns with the app&#39;s rate, which can be more advantageous than local exchange offices, especially when exchanging older US dollar bills.</li>
+    <li>In South Korea, currency units can be confusing for tourists. Prices labeled as &#39;man&#39; refer to units of 10,000 KRW (e.g., 2 man = 20,000 KRW). Always clarify the numerical value before payment to avoid overpaying.</li>
+    <li>Currency exchange and ATM availability on Jeju Island: Banks and exchange offices exist but are less numerous than in Seoul and require a specific trip. Wowpass terminals were scarce (2 for the whole island previously). Nonghyup and NH Bank offer good exchange rates without needing ID, often better than airport or Wowpass ATMs. Woori Bank ATMs might be found in transport companies. Local staff can often assist in locating ATMs.</li>
+    <li>Wowpass terminals in South Korea offer a convenient way to exchange currency at a unified rate and claim tax refunds. While exchange booths are available, their rates may be slightly less favorable (around 10 KRW difference). Tax refunds are also possible on purchases made at official Apple stores when using Wowpass or other eligible methods.</li>
+    <li>User lost their wowpass card in Korea and wants to know if they can get a new one using the same passport. Instructions on how to replace a lost wowpass card should be provided, including information on whether it can be done via the app and if the same passport can be used.</li>
+    <li>While South Korea has embraced cashless payments, carrying some local currency (South Korean Won - KRW) is still advisable. Cash is particularly useful for transactions at traditional markets, street food vendors, and occasionally for taxis, especially on islands like Jeju. Although payment cards and services like Wowpass are widely accepted, occasional exceptions occur. Having cash on hand provides a backup in case of card issues, withdrawal limits, or specific merchant policies that favor cash payments.</li>
+    <li>WOWPASS is a prepaid card and T-money (transport card) in one. Using the mobile app might require a VPN if accessing from abroad. It is recommended to purchase and top-up at machines in the city rather than the airport due to long queues. Converting USD to KRW at independent exchange offices (e.g., Money Box) before topping up the card provides a better exchange rate than direct USD conversion in the terminal.</li>
+    <li>UnionPay cards issued in Russia have very limited acceptance in South Korea. Reliability: 1. Direct payment at POS terminals is rare (mostly Daiso, Olive Young, NICE terminals). 2. ATM cash withdrawals (Woori Bank is reported as reliable) are the primary use case. 3. For stable payments, consider using Wowpass (can be topped up via intermediaries) or international cards issued in CIS countries.</li>
+    <li>Exchanging Russian Rubles (RUB) to South Korean Won (KRW) in Busan can be done at exchange offices. While specific &#39;advantageous&#39; locations are not detailed, generally, exchange rates fluctuate. It&#39;s advisable to compare rates at different exchange points, particularly in areas with high tourist traffic like Myeongdong (in Seoul, though similar principle applies in Busan), where multiple small exchange offices often offer competitive rates compared to larger institutions. Using currency exchange comparison websites or apps before visiting an exchange office can help secure a better rate.</li>
+    <li>Wowpass card key constraints and features: 1. Maximum balance limit is 1,000,000 KRW at any single time (total turnover is unlimited). 2. Wowpass balance and integrated T-Money balance are separate. To transfer funds from the Wowpass account to T-Money, users must use the Wowpass mobile app, go to the T-Money section, select Top-up, and hold the physical card against the phone&#39;s NFC reader. 3. Wowpass kiosks at Incheon Airport (ICN) only accept cash KRW for initial card purchase/top-up, whereas kiosks in Seoul city, Gimpo (GMP), and Jeju (CJU) airports accept foreign currencies like USD.</li>
+    <li>Users may have issues with Woori Bank Pass card balance not reflecting in the app after a top-up. This can be due to display errors. Balance can be checked via the web version of the app or metro terminals. Using a Russian phone number for verification is possible.</li>
+    <li>Consider ordering a combined WoWpass card and SIM package for convenience. Inquire about the acceptance of UnionPay for payments related to this package.</li>
+    <li>Exchange rates at Incheon Airport are generally less favorable compared to those found in Myeongdong. It is advisable to exchange only a small amount of currency at the airport for immediate needs like transportation. For larger exchanges, Myeongdong offers better rates due to a higher concentration of exchange offices.</li>
+    <li>For Russians traveling to South Korea, Russian bank cards, including UnionPay, have very limited acceptance. It&#39;s advisable to carry cash (USD/EUR) or obtain a foreign-issued card. UnionPay from the Asia-Pacific bank is mentioned as working better with AliPay. Kazakh cards like Kaspi are reported to be widely accepted. ATB UnionPay is also suggested for cash withdrawal and potential use in Japan and EU. Cash is generally recommended as a backup, with US dollars being a common choice.</li>
+    <li>The Wowpass card can be obtained either in advance via the app or upon arrival at Incheon Airport. Pre-ordering (at least 24 hours prior) is recommended for potential convenience, with options for pickup at airport CU stores or dedicated counters (if a SIM package is included). Alternatively, cards can be acquired from Wowpass machines located throughout the city. While airport exchange rates for topping up may be less favorable, cash exchange is still possible for initial travel needs.</li>
+    <li>While South Korea does not have a strict official minimum cash requirement for entry, carrying approximately $100 USD per day per person is a commonly accepted guideline. This is primarily to demonstrate financial self-sufficiency. If your accommodation is prepaid and your stay is short, minor discrepancies are usually not an issue. However, significant shortfalls may raise concerns. For currency exchange, Moneybox on Myeongdong or other smaller exchange offices offer favorable rates.</li>
+    <li>Users unable to open the Sberbank app after registration may find a solution by accessing the web version of the application through a browser.</li>
+    <li>Financial tips for Korea: 1. Wowpass kiosks at Incheon Airport accept only KRW cash for loading; convert cash at the airport and top up the card in the city. 2. Samsung Pay/Apple Pay compatibility is limited; local Korean-firmware phones are often required for full Samsung Pay functionality. 3. Always carry some physical cash as a backup for markets and small shops.</li>
+    <li>Multiple major South Korean banks offer Russian language interfaces at their ATMs. Confirmed banks with Russian UI options include Kookmin Bank (KB), Hana Bank, Woori Bank, and Shinhan Bank.</li>
+    <li>UnionPay cards, particularly those issued by the Asia-Pacific bank and linked to the UnionPay app or AliPay, generally work well in China. In South Korea, UnionPay acceptance is limited, with ATB UnionPay being useful for cash withdrawals. It&#39;s recommended to have local currency or alternative payment methods.</li>
+    <li>To withdraw KRW using a Russian UnionPay card (e.g., RSHB) at Global ATMs in South Korea: 1. Select &#39;Cash withdrawal&#39;. 2. If prompted for a 6-digit PIN, enter your 4-digit PIN followed by &#39;00&#39; (e.g., 123400). 3. Typical fees are approximately 7,000 KRW per 1,000,000 KRW withdrawal.</li>
+    <li>Currency exchange in Seoul: Airport booths and standard kiosks (Wowpass) offer less competitive rates. Local exchange shops, particularly those in the Myeong-dong area (e.g., Moneybox), provide better exchange rates for foreign currency to KRW.</li>
+    <li>To open a bank account in South Korea, a SIM card registered to an ID card is likely required, rather than one registered to a Russian foreign passport.</li>
+    <li>For individuals planning to study in South Korea on a D-4 or D-2 visa, it is important to note that an existing K-ETA may need to be canceled. Various agencies offer comprehensive services for visa applications, including university selection, document preparation, submission to universities and embassies, and assistance with obtaining resident cards, SIM cards, and bank accounts. Accurate information matching your study objectives is crucial for a successful application.</li>
+    <li>Vietnamese Dong (VND) can be exchanged for Korean Won (KRW) at Incheon Airport, but the exchange rate is typically less favorable than in central Seoul. It is recommended to exchange only a small amount at the airport for immediate needs and then proceed to money exchange services in Seoul (e.g., Myeongdong) for better rates. There is usually no minimum exchange amount.</li>
+    <li>In South Korea, WOWPASS cards require tapping upon entry and exit for fare payment. Each traveler needs their own WOWPASS if traveling together. For public transport, a separate Tmoney card can also be used.</li>
+    <li>Users report issues using Russian UnionPay cards (e.g., Rosselkhozbank) in South Korea. Payment terminals sometimes prompt for a 6-digit code after the PIN, and card usage may become restricted after multiple attempts. ATM withdrawals might also fail. Customer support suggests resetting PIN via ATM balance inquiry, but this is not always effective. Workarounds mentioned include entering &#39;00&#39; after the PIN or using Yandex Browser.</li>
+    <li>Opening a bank account in South Korea requires a local Alien Registration Card (ARC/ID). A local phone number is often a prerequisite for a bank account, and some carriers require a bank account for SIM contracts. Non-residents may struggle to open accounts. Long-term absence may lead to service suspension; users should inquire about suspension/dormant status options for both SIM and bank accounts.</li>
+    <li>To ensure successful entry into South Korea, advise travelers of the following rules: 1) Carry physical cash (around $100 USD per day of stay); bank statements might not be accepted. 2) Have a return ticket to the country of citizenship or residence. 3) Prepare a logical daily tourist itinerary. 4) Ensure K-ETA information matches actual plans (e.g., do not declare tourism if visiting friends). Highly competitive exchange rates are available at Myeongdong exchange offices, such as Moneybox.</li>
+    <li>In South Korea, T-Money cards can be topped up with cash at any convenience store (CU, GS25). Wowpass card machines for currency exchange and top-up are widely available, including 24/7 options in areas like Myeongdong (check the Wowpass app for locations). Exchange rates outside the airport, especially in popular tourist areas like Myeongdong, can often be more favorable than airport rates. Wowpass cannot be topped up online; only physical top-up at machines is possible. For Union Pay cards (e.g., RSKHB), it&#39;s possible to withdraw cash from ATMs (like Woori Bank) and then use the cash to load the Wowpass.</li>
+    <li>Train tickets from Seoul to Busan can be purchased at the train station counter (e.g., Seoul Station) to avoid high service fees from online travel agencies. Counter staff typically speak English. For off-peak days, tickets are usually available, though booking early is recommended for specific departure times.</li>
+    <li>For travel to South Korea, it&#39;s recommended to have some Korean Won for initial expenses like airport transportation. US Dollars or Chinese Yuan are suggested for larger amounts, as exchanging USD to KRW within Korea can be difficult. Bus tickets to the airport can be purchased with T-money card or cash directly on the bus (around 17,000 KRW). Russian UnionPay cards may encounter issues, sometimes requiring additional digits after the PIN or facing blockages.</li>
+    <li>When comparing Wowpass and CU cards in South Korea, Wowpass offers integrated T-Money transport functionality, cashback, and discounts, making it generally preferred by tourists. CU cards primarily serve as transport cards. While both can be topped up, Wowpass allows for multi-currency top-ups via its app and terminals, which might be more convenient than CU&#39;s options. Not all terminals and shops universally accept both.</li>
+    <li>Wowpass is a prepaid card widely accepted at most retail terminals in South Korea. It is recommended as a reliable payment method for tourists, particularly for those whose foreign bank cards may be intermittently declined. It is not accepted at cash-only venues such as some traditional markets.</li>
+    <li>Gmoneytrans is a remittance service that can be used from Korea with a passport and a Korean phone number for initial registration. While a Korean number is needed for setup, it might be possible to change it later. A physical Gmoney card (Quick card) can be obtained with a Russian passport, allowing cash withdrawals even if the Korean phone number becomes inactive. There&#39;s a 1500 won withdrawal fee, and the card functions as a transport card.</li>
+    <li>UnionPay cards issued in Russia have limitations in South Korea. CNY-denominated cards are generally more cost-effective due to better conversion rates compared to RUB-denominated cards. Reliability for direct POS payment is low; primary utility is ATM cash withdrawal.</li>
+    <li>WOWPASS is widely accepted across South Korea, but it may have issues with older (pre-1996) USD banknotes. While foreign cards (like Kazakhstan-issued cards) work for payments, they cannot be used to top up T-money transportation cards directly; cash is often needed for T-money top-ups at kiosks. Carrying some local currency (KRW) is essential for small shops, rural areas, or Jeju Island, where card payments may not be supported.</li>
+    <li>When traveling to South Korea, it&#39;s advisable to have cash on hand (around $100 per day), even if you have foreign bank cards. Old US dollar bills might be accepted, especially if exchanged through services like Wowpass which offers a decent exchange rate. For withdrawing Korean Won, consider using banks like Woori or KB-bank. Cards like RSB UnionPay with a Yuan account may also be usable for withdrawals. Money can be exchanged at various locations, including dedicated exchange offices in areas like Myeongdong.</li>
+    <li>Public transport cards in Seoul can be purchased and topped up at machines. A 500 KRW deposit is refundable upon returning the card to a designated machine. For iPhone users, transferring funds between T-Money and Wowpass may require specific application procedures or direct card usage at machines. Issues with card reading at turnstiles might require assistance from transport staff.</li>
+    <li>Wowpass is a tourist card with two distinct wallets: 1) A prepaid balance for retail purchases (via chip). 2) An integrated T-money balance for public transport. Deposits must be allocated to the correct wallet. Withdrawing excess T-money balance is restrictive; often requires visiting a T-money main service center if the amount exceeds retail convenience store capacity.</li>
+    <li>For currency exchange in South Korea, checking the daily rates between the WOWPASS kiosk and local MoneyBox exchange offices (e.g., in Myeong-dong) is recommended. Often, local currency exchange offices offer better rates than the card kiosk conversion.</li>
+    <li>Wowpass registration troubleshooting: ensure password complexity (upper/lower case, digits, special characters). If the &#39;Register&#39; button remains inactive, try changing the region settings to Russia and disabling VPN. Wowpass is an offline payment card, not a wallet for external cards; it can be topped up at kiosks using cash or UnionPay.</li>
+    <li>Withdrawing cash from ATMs in South Korea is generally possible using UnionPay cards at major Korean bank ATMs (Shinhan, NH, Woori, Hana). Russian bank cards like RosSelkhozbank might work, but it&#39;s advisable to confirm conditions beforehand. For currency exchange, particularly for older US dollar bills, it&#39;s recommended to use exchange offices in city centers like Myeongdong, as rates are typically better than at the airport. Exchange offices may offer slightly less favorable rates for older USD bills compared to newer ones, but it remains a viable option.</li>
+    <li>WOWPASS cards can be topped up using Russian UnionPay cards (like RSHB), but it is hardware-dependent; not all terminals work. The standard top-up fee is 12,000 KRW. Cash remains the most reliable fallback option.</li>
+    <li>Wowpass cards can be topped up at some metro station kiosks using foreign-issued UnionPay cards. When using the kiosk, select the credit card payment option instead of cash. This provides a digital-friendly way to load the card without carrying physical won notes.</li>
+    <li>Belarusian bank cards, specifically dollar-denominated cards from BSB Bank and Alfa-Bank, are reported to work in South Korea. Users have successfully made payments using these cards.</li>
+    <li>Opening a bank account in South Korea with a D-10 visa: Hana Bank may require proof of employment and clear income source. Woori Bank is reported to be more lenient and provides account opening services with fewer requirements for D-10 visa holders.</li>
+    <li>Wowpass refill: some kiosks accept international bank cards (e.g., UnionPay). Kiosks are not explicitly marked in the app; users rely on photos of the machines to identify compatible ones. A known location is AK Plaza in Hongdae. Standard commission is ~2,000 KRW per 50,000 KRW deposit.</li>
+    <li>Virtual T-money cards can be created in the T-money mobile app and added to Apple Wallet. When signing up/refilling in the app, users must select the &#39;Foreigner&#39; option to avoid authorization issues. Foreign credit cards (Mastercard/Visa) may be accepted for top-ups depending on the bank and app version.</li>
+    <li>WOWPASS account recovery: If an account is lost or access is forgotten, a new card cannot be issued to the same passport without linking the old account. The user must contact WOWPASS customer support directly or restore access to the original account using the registered passport verification process.</li>
+    <li>It is permissible to use older U.S. dollar bills in South Korea for currency exchange. However, expect a slightly less favorable exchange rate compared to newer bills, with potential differences around 1-2% or approximately 100 KRW per 100 USD. For practical purposes, especially when immediate local currency is needed, this minor difference in exchange rate is often negligible.</li>
+    <li>For exchanging foreign currency to KRW in South Korea, &#39;Moneybox&#39; (e.g., in Myeong-dong, Seoul) offers competitive rates. Travelers should avoid airport exchange counters for large sums. It is advised to research local private exchange booths for the best possible rates.</li>
+    <li>For Russian UnionPay cards (like RSHB) in South Korea: 1) Use specific ATMs, preferably Woori Bank or Hana Bank with &#39;Global ATM&#39; signage. 2) If the ATM interface supports the Russian language, the card is more likely to be accepted. 3) If asked for a 6-digit PIN, enter the 4-digit PIN followed by &#39;00&#39;.</li>
+    <li>For late-night arrivals at Incheon International Airport (ICN): 1. Use Naver Map or Kakao Map to check real-time night bus schedules by adjusting the departure time. 2. Accommodation near the airport (1-2 metro stops away) is generally more cost-effective than staying directly at the airport. 3. Airport currency exchange rates are poor; consider exchanging only minimal amounts.</li>
+    <li>To obtain foreign bank cards, options include using intermediaries for a fee or traveling to countries like Belarus, Kazakhstan, Uzbekistan, or Kyrgyzstan. For infrequent travel, consider using cash or UnionPay from banks like RSB/ATB.</li>
+    <li>Wowpass top-up in South Korea has limitations. Card top-ups from the app are capped at 1 million KRW per month. Visa cards may require PayPal for top-ups, which can be restricted for certain nationalities. Mastercard is generally more compatible. Physical card insertion into terminals is a reliable method. For those without a physical card or facing international card issues, consider using local payment methods or services that facilitate purchases if available.</li>
+    <li>Using Wowpass in South Korea: It&#39;s convenient for exchanging USD to KRW, accepting old dollar bills. Funds can be loaded at terminals, with automatic conversion to KRW. T-money cards can have a child fare applied using a passport at top-up stations. If you have a foreign Visa card (from a non-Russian bank), it&#39;s widely accepted and might negate the need for a Wowpass.</li>
+    <li>For travelers arriving at Incheon Airport (ICN) with an immediate onward journey to Busan via KTX, timing is crucial. A flight arriving at 11:35 might make catching the 14:28 KTX train challenging. It may be advisable to book a later train, such as the 15:45 service, to allow ample time for airport procedures, including purchasing T-Money cards (essential for children with specific tariffs) and potentially obtaining a Wowpass. KTX tickets can be purchased at user-friendly machines located at the airport.</li>
+    <li>For currency exchange in Seoul, look for &#39;Moneybox&#39; exchange offices (e.g., in Myeong-dong). They offer competitive rates compared to airport kiosks. Always carry cash for entry requirements, as border officers prioritize physical cash over bank statements or card balances.</li>
+    <li>WOWPASS kiosk locations can be found via the official mobile app. The app provides photos for each location, which is crucial for navigation in complex areas like Seoul Station. Kiosks are often located near luggage storage lockers.</li>
+    <li>Foreign Visa cards (e.g., from Kyrgyzstan) and UnionPay cards from Russian banks (likeРСХБ) can be used for payments in Seoul. UnionPay might be more suitable for smaller purchases in certain shops like Daiso or Olive Young. Kyrgyz Visa cards have been reported to work widely and reliably, reducing the need for cash.</li>
+    <li>The Namane card functions similarly to Woopaass, offering its own app for managing funds. For children aged 18 and under, obtaining a separate T-money card and applying for a youth tariff by presenting the child&#39;s passport at the top-up counter is recommended for discounted fares. A T-money card can be purchased independently of the Woopaass or Namane cards.</li>
+    <li>A single Wowpass card is linked to one T-money account. For multiple travelers, one Wowpass can be used, with additional T-money cards purchased separately for other family members. To obtain discounted fares for minors (under 18), a child&#39;s passport is required when applying for a youth tariff at a T-money top-up station. If seamless cashless payments are desired for everyone, consider that only one Wowpass can be integrated with a T-money account.</li>
+    <li>The number of WOWPASS machines in Daegu, South Korea, may be limited because it is not a primary tourist destination compared to cities like Seoul or Busan. Tourists may find fewer service points in less frequented cities. It is advisable to check the availability of WOWPASS machines in advance if planning to rely on them in Daegu.</li>
+    <li>WOWPASS cards can sometimes be purchased or topped up using foreign credit cards, including UnionPay, at specific terminals. However, availability and compatibility can vary. Airport terminals may have different currency policies for top-ups; Incheon Airport (ICN) generally requires KRW for top-ups at WOWPASS machines, although some machines might accept USD. It&#39;s best to check the specific machine or airport information for current details.</li>
+    <li>Opening a bank account in South Korea currently requires a formal ID card, such as an Alien Registration Card (ARC). While some foreign residents may have been able to open accounts with less documentation in the past, most banks now strictly adhere to requiring a valid ID. Consider obtaining a prepaid card like GmoneyTrans as an interim solution.</li>
+    <li>UnionPay cards, including those issued by Rosselkhozbank (РСХБ), have been reported to work in South Korea for transactions, including K-ETA payments and potentially ATM withdrawals. However, acceptance can be inconsistent, and it&#39;s advisable to have alternative payment methods available.</li>
+    <li>The Namane card is a versatile payment option in South Korea, functioning as both a general payment card (&#39;Pay Balance&#39;) and a public transport card (&#39;T-money&#39;). It is accepted at most retailers and for taxi fares. Funds can be added via Namane kiosks or CU convenience stores. The accompanying mobile application allows for balance transfers, custom card designs, and potentially access to exclusive offers.</li>
+    <li>The Namane card is a viable alternative to Wowpass in South Korea, accepted widely for various transactions. It functions with two balances: &#39;Pay Balance&#39; for general purchases and &#39;T-money&#39; for public transportation and taxis. Funds can be topped up via Namane kiosks or CU convenience stores. The associated app offers convenient fund management, customization options for card design, and potential discounts or cashback.</li>
+    <li>To exchange Chinese Yuan (CNY) for South Korean Won (KRW) in South Korea, one can visit currency exchange bureaus. Moneybox is mentioned as a service, and it is suggested that smaller exchange offices near Moneybox locations, particularly in areas like Myeongdong, may offer more favorable rates. It is advisable to compare rates across different exchange points for the best deal.</li>
+    <li>It may be difficult to open a traditional bank account in South Korea with only a temporary receipt or immigration slip. While some banks might have offered this in the past, current regulations often require a formal Alien Registration Card (ARC) or Korean ID. Consider alternative options like prepaid cards or digital wallets if immediate access to banking services is needed.</li>
+    <li>Inquire whether a Rosselkhozbank UnionPay card works in South Korea and if it can be used to purchase tickets at NOL World, or if a Korean card is required.</li>
+  </ul>
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/kr/documents-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documents &amp; Visa</span></a>
+    <a class="chip" href="/en/kr/transport/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transport</span></a>
+    <a class="chip" href="/en/kr/shopping/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛒 Shopping</span></a>
+    <a class="chip" href="/en/kr/tickets-entertainment/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🎟 Tickets &amp; Entertainment</span></a>
+    <a class="chip" href="/en/kr/safety/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛡 Safety</span></a>
+    <a class="chip" href="/en/kr/currency-transfers/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Currency &amp; Transfers</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Want an answer for you, not a lecture for everyone?</h2>
+    <p>Ask Luky — what search won&#39;t show and not every blogger will tell.</p>
+    <p>And Luky is a live voice translator for real conversations: handle the front desk without stress.</p>
+    <p class="ps">PS: a voice call with that person from another country — also Luky</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/kr/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

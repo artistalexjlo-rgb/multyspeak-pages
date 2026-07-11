@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Montenegro: Transporte — experiencia real · Luky</title>
+<meta name="description" content="Experiencia real de los chats sobre Transporte en Montenegro: tal cual, de primera mano. Para tu caso — pregúntale a Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/es/me/transporte/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/me/transporte/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/me/transporte/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/me/transporte/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/me/transporte/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · cualquier país · sin relleno</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noche</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/es/">Inicio</a> /
+    <a href="/es/me/">Montenegro</a> /
+    <b>Transporte</b>
+  </nav>
+
+
+  
+  <h1>Transporte: cómo es en Montenegro — de primera mano</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiencia real de gente de los chats sobre «Transporte» en Montenegro — tal cual, sin relleno. Para tu caso — <strong>pregúntale a Luky</strong>.</div></div>
+
+  <h2>De la experiencia real</h2>
+  <ul class="qlist">
+    <li>Las dimensiones oficiales del equipaje de mano de FlyOne son 50x40x25 cm. Aunque el cumplimiento no siempre se aplica estrictamente (muchos pasajeros suben a bordo con una altura de 55 cm sin problemas), la aplicación estricta depende del criterio del personal del aeropuerto. Es obligatorio realizar el registro online.</li>
+    <li>Proporcione información actual sobre el estado de la carretera E762 cerca de Bukovac, Montenegro. Tenga en cuenta cualquier problema reportado en la carretera o túneles y posibles desvíos. La información sugiere que la carretera está operativa, pero puede tener cierres temporales debido a obras viales o problemas en túneles. Son relevantes los detalles específicos sobre las obras de asfaltado que provocan cierres diarios de 11:00 a 17:00 en el tramo Zabljak-Jasenovo Polje.</li>
+    <li>El depósito de equipaje está disponible en la estación de autobuses de Kotor, con un precio de 1 € por hora por maleta (&#39;Garderober&#39;). No hay instalaciones de depósito de equipaje en la estación de autobuses de Tivat.</li>
+    <li>Los autobuses de Budva a Tivat generalmente llegan a la estación de autobuses. Desde Kotor, puede ser posible llegar directamente al centro de la ciudad. Confirme la ruta y el destino específicos antes de subir.</li>
+    <li>Los vehículos con matrícula rusa que entran en Bosnia y Herzegovina desde Montenegro requieren una póliza de &#39;seguro fronterizo&#39; por separado, ya que Rusia ya no forma parte del sistema de Carta Verde. El seguro montenegrino local (por ejemplo, Lovcen) no es válido en Bosnia y Herzegovina. Tenga en cuenta los cierres de bancos/oficinas durante los días festivos locales. El seguro a menudo se puede obtener en los pasos fronterizos (por ejemplo, Klobuk) hasta las 18:00 hora local.</li>
+    <li>Al alquilar un coche en Montenegro, tenga en cuenta los posibles períodos mínimos de alquiler (por ejemplo, 7 días) e infórmese sobre las opciones de seguro, como la protección básica. Se recomienda investigar las empresas de alquiler en la ubicación deseada y aclarar todos los términos y condiciones, incluidos la cobertura del seguro y los métodos de pago, antes de realizar la reserva.</li>
+    <li>En Montenegro, conducir una motocicleta o un escúter con una cilindrada superior a 50cc (como 125cc) requiere un permiso de conducir de categoría A. Aunque las empresas de alquiler pueden sugerir lo contrario y la policía podría pasar por alto a los turistas, es un requisito legal. Conducir un escúter de menos de 50cc generalmente está permitido con una licencia de categoría B. Si se ve involucrado en un incidente, especialmente un accidente, conducir sin la licencia correcta puede tener consecuencias legales graves.</li>
+    <li>Al reservar taxis o traslados en Montenegro, especialmente para servicios de aeropuerto, se recomienda reservar con antelación. Confiar en servicios preestablecidos a través de hoteles o plataformas especializadas puede ayudar a evitar precios inflados y garantizar la fiabilidad, abordando las preocupaciones sobre posibles retrasos para viajes posteriores.</li>
+    <li>Los taxis en Montenegro operan principalmente en efectivo. Aunque algunos servicios como Red Taxi podrían haber tenido terminales para tarjeta en el pasado, no está garantizado. Para pagar con tarjeta internacional, se recomienda confirmar antes con las compañías de taxi específicas.</li>
+    <li>Al alquilar un coche en Montenegro (por ejemplo, un Mini Cooper por unos 40 EUR al día más la tarifa de entrega), es crucial grabar un video del estado del vehículo al recogerlo. Esto puede ayudar a resolver disputas sobre daños al devolver el vehículo, especialmente si una persona diferente realiza la inspección de devolución. El sitio web mencionado es firstrentacar.me.</li>
+    <li>Los precios de los taxis desde el aeropuerto de Podgorica (TGD) hasta Budva pueden alcanzar los 50-60 EUR. Hay una parada de autobús cerca del aeropuerto que ofrece transporte significativamente más barato (alrededor de 15 EUR para dos personas). Verifique siempre si el transporte público en autobús está disponible como alternativa a los taxis reservados con antelación o los que se encuentran en el aeropuerto.</li>
+    <li>Una ruta de autobús local en Tivat, que posiblemente se origine en Ostrovo Cvijeca, viaja hacia el centro de la ciudad, incluyendo una parada cerca de la &#39;escuela&#39; (área central). Esta ruta probablemente pasa por la carretera del aeropuerto.</li>
+    <li>Los autobuses operados por &#39;Blue Line&#39; circulan desde Lepetane hacia Tivat y Kotor. La frecuencia es aproximadamente cada hora. Los horarios se pueden encontrar en el sitio web de Blue Line en la sección &#39;gradski prevoz&#39;.</li>
+    <li>Para los menores (de 18 años) que viajan entre Montenegro y Serbia, especialmente sin ambos padres, es recomendable verificar las políticas específicas de la aerolínea. Si bien el control fronterizo montenegrino puede no aplicar rigurosamente los requisitos de consentimiento para ciudadanos extranjeros, algunas aerolíneas pueden exigir un formulario de consentimiento parental notariado (&#39;punomoćje&#39; o &#39;saglasnost&#39;) que permita al menor viajar. En Serbia, las personas de 16 años en adelante generalmente no requieren consentimiento parental para viajar.</li>
+    <li>Informe a los viajeros que no tengan permiso de conducir sobre las opciones de transporte en Montenegro, incluidos los traslados organizados y otras posibles formas de transporte de alquiler que no requieran licencia. Se recomienda consultar los recursos locales y grupos de turistas para obtener información específica.</li>
+    <li>Para alquilar vehículos que permitan viajar a Bosnia, consulte las políticas específicas de las agencias de alquiler. Algunas agencias pueden ofrecer vehículos adecuados para cruzar la frontera, pero es esencial confirmarlo con antelación.</li>
+    <li>Cuando los vuelos se desvían a Podgorica en lugar de Tivat, los viajeros tienen opciones como taxis o autobuses. Los precios de los taxis pueden oscilar entre los 20-25 EUR (estándar) y los 35 EUR (servicios de traslado premium). Puede haber servicios de &#39;minibús&#39; por unos 10 EUR por persona. Es recomendable utilizar servicios de taxi acreditados (por ejemplo, &#39;Red Taxi Tivat&#39;) y estar atento a posibles tácticas agresivas de los taxistas locales en Podgorica. Se recomienda reservar traslados con antelación o comprobar los datos de contacto de empresas de taxi específicas.</li>
+    <li>Ruta de conducción recomendada para Zabljak - Sarajevo - Herceg Novi: 1) De Zabljak a Sarajevo, viaje a través del paso fronterizo de Foča (Šćepan Polje). 2) De Sarajevo a Herceg Novi, utilice el paso fronterizo de Klobuk (ruta panorámica, buenas carreteras) o el paso de Sitnica (puede estar más concurrido y tener inspecciones más estrictas).</li>
+    <li>En Budva se pueden encontrar numerosas agencias de alquiler de coches buscando en Google Maps. Estas empresas ofrecen diversas condiciones y precios. Se recomienda contactar directamente con ellas por teléfono, Viber o a través de sus sitios web para consultar sobre periodos de alquiler específicos (por ejemplo, tres días) y opciones de seguro.</li>
+    <li>El trayecto de Tivat a Durmitor incluye carreteras de montaña con curvas, especialmente el anillo de Durmitor. Aunque es pintoresco, estas carreteras pueden resultar difíciles para conductores inexpertos. Es aconsejable comprobar las condiciones meteorológicas, ya que puede haber nieve en las montañas dependiendo de la época del año. Considere conducir durante las horas de luz y hacer descansos. Para conductores menos experimentados, las opciones de transporte alternativas o las visitas guiadas pueden ser más seguras. La carretera de curvas de Kotor también se considera un tramo difícil.</li>
+    <li>Alquilar una motocicleta en Montenegro solo con el carné de clase B puede ser problemático. Aunque algunas agencias de alquiler pueden afirmar que las motos de 125cc están permitidas, legalmente se requiere el carné de clase A para motores de más de 50cc. Por lo general, está permitido conducir un ciclomotor de 50cc. Conducir sin el carné correcto conlleva riesgos legales.</li>
+    <li>Las carreteras en Montenegro son, en general, buenas para conducir. La ruta a través del túnel de Sozina es fluida. La ruta por Cetiña también es aceptable, aunque es más montañosa. Los conductores experimentados, incluso aquellos que no tienen experiencia conduciendo en el extranjero, deberían poder manejar estas rutas sin problemas.</li>
+    <li>Para llegar al aeropuerto de Podgorica desde la estación de autobuses, las opciones incluyen tomar un taxi o posiblemente un tren, aunque los taxis son el método más común y directo.</li>
+    <li>Los controles de registro de vehículos y de turistas en las fronteras montenegrinas pueden ser inconsistentes. Si bien algunos viajeros informan de controles regulares en las fronteras terrestres (por ejemplo, con Serbia), otros no han experimentado ningún control en las salidas del aeropuerto, ya que la información puede estar disponible en los sistemas digitales. Si falta el sello de entrada en la frontera, es recomendable regresar y obtenerlo o buscar asistencia en la Inspección de Extranjería para el registro. Esté preparado para posibles controles selectivos.</li>
+    <li>Los billetes de autobús para viajar por Montenegro se pueden comprar en línea a través de busticket4.me. Esta plataforma ofrece información sobre rutas y horarios.</li>
+    <li>Las operaciones de vuelo desde Podgorica pueden sufrir retrasos significativos debido a condiciones meteorológicas adversas, como granizo y poca visibilidad. Las aerolíneas intentan encontrar ventanas meteorológicas favorables para las salidas. Los pasajeros pueden experimentar largos tiempos de espera e incertidumbre con respecto a sus planes de viaje.</li>
+    <li>Teleférico de Kotor: los billetes cuestan 25 EUR por un viaje de ida y vuelta, con un suplemento de 12 EUR para el tobogán. Hay opciones de acceso rápido disponibles por 20 EUR. Los servicios oficiales de transporte desde Tivat, Kotor y Budva se pueden reservar a través de su sitio web. En caso de mal tiempo, las operaciones pueden suspenderse, lo que puede provocar retrasos en la evacuación o el descenso. Para obtener las mejores vistas de la bahía, camine 800 metros desde el bar &#39;Monte 1350&#39; hasta el mirador &#39;Best View of Kotor&#39;.</li>
+    <li>Consejos de viaje para trayectos en tren por los Balcanes. Se discuten las rutas ferroviarias de Podgorica a Belgrado y Sarajevo. El tren a Belgrado puede tardar 11 horas y sufrir retrasos de hasta 6 horas. Se recomienda viajar durante el día o reservar un compartimento de primera clase en los trenes nocturnos. Sarajevo no es accesible en tren desde Podgorica; solo hay autobuses disponibles. Se menciona un autobús pequeño (12 pasajeros) desde Podgorica a Sarajevo, pero circula por una carretera difícil y llega a las afueras. Se sugiere viajar primero a la costa y luego tomar autobuses regulares a Sarajevo. Se cuestiona el propósito de visitar Belgrado; se recomienda para ir de compras pero no necesariamente solo para hacer turismo.</li>
+    <li>La carretera de Kotor a Lovćen es una serpentina histórica y estrecha. Aunque es generalmente segura para conductores experimentados, requiere precaución debido a las limitaciones de anchura y al tráfico turístico. Los conductores deben utilizar los apartaderos designados y estar preparados para dar marcha atrás. Durante la temporada alta, pueden aplicarse normas de tráfico temporales (por ejemplo, intervalos de sentido único); consulte el estado de las carreteras locales.</li>
+    <li>Los billetes de autobús de Mostar a Budva se pueden comprar en la estación de autobuses, incluso si la disponibilidad en línea es limitada. Es recomendable comprar los billetes directamente en la estación, ya que generalmente no se permite viajar de pie en el autobús. Se recomienda realizar la compra a primera hora de la mañana para obtener una mayor disponibilidad.</li>
+    <li>Los autobuses de Budva (especialmente el servicio de las 22:30 h) y de Podgorica a Sarajevo pueden tomar una ruta diferente a través de Serbia, lo cual puede resultar complicado. Se recomienda optar por salidas más tempranas o considerar la posibilidad de interrumpir el viaje con una pernoctación en Mostar. El viaje desde Podgorica dura aproximadamente 6 horas y la ruta puede ser más difícil.</li>
+    <li>Para viajar de Budva a Kotor, tome un autobús desde la estación de autobuses. Informe al vendedor de billetes de que necesita ir al teleférico, y deberían dejarle en la parada adecuada situada al final del paseo marítimo, en el lado derecho en dirección a Kotor.</li>
+    <li>Los viajeros en Montenegro a menudo reportan problemas con las tarifas de los taxis (la falta de aplicaciones como Uber o Bolt conlleva precios abusivos), cargos ocultos por servicios (tarifas de limpieza no informadas en los presupuestos iniciales) y requisitos burocráticos rígidos para viajar en autobús (se requieren boletos impresos). El impuesto turístico es obligatorio, pero los anfitriones locales suelen trasladar la carga del registro a los huéspedes. El turismo alcanza su punto máximo en julio; los precios de alojamiento y traslados aumentan considerablemente.</li>
+    <li>Los autobuses operan diariamente desde Sarajevo hacia Tivat y Kotor, saliendo habitualmente por la mañana y sin pasar por Croacia. Los boletos se pueden comprar en la estación principal de autobuses de Sarajevo o en línea a través de busticket4.me.</li>
+    <li>El acceso al Parque Nacional Lovcen desde la carretera serpentina de Kotor podría estar restringido antes de que el parque abra oficialmente. La carretera donde se cobran las tarifas podría estar cerrada fuera del horario de funcionamiento.</li>
+    <li>Las obras en la carretera entre Budva y Tivat parecen haber concluido, sin que se reporten retrasos significativos en el tráfico. El trayecto suele durar entre 30 y 40 minutos en condiciones normales.</li>
+    <li>El traslado desde Tivat al aeropuerto de Podgorica supone una distancia considerable. Aunque hay servicios de taxi disponibles, se recomienda encarecidamente reservar con antelación para obtener un precio razonable y garantizar la fiabilidad. Espere costes más elevados si se reserva de forma improvisada. Considere preguntar a su proveedor de alojamiento sobre posibles opciones de traslado.</li>
+    <li>La mayoría de los servicios de taxi en Montenegro operan solo en efectivo. Aunque algunas compañías podrían ofrecer opciones de pago con tarjeta, no es lo habitual. Confirme los métodos de pago con antelación, especialmente si tiene la intención de pagar con una tarjeta internacional. Los taxis del aeropuerto pueden tener procedimientos o requisitos de pago específicos.</li>
+    <li>Para transportar botellas de vidrio (vino) en el equipaje facturado, envolverlas con plástico de cocina estándar (film transparente) aplicado en 10 a 15 capas proporciona suficiente protección contra roturas.</li>
+    <li>Los taxis en Montenegro se piden principalmente mediante llamadas telefónicas, WhatsApp o Viber. Los números suelen encontrarse en los pines de los grupos locales. La aplicación &#39;Monte go&#39; es una alternativa, pero no siempre es fiable.</li>
+    <li>Aconseje sobre la mejor manera de llegar a Petrovac, concretamente en lo que respecta al transporte público desde el casco antiguo y a lo largo de la carretera. Confirme si hay servicio de autobús urbano disponible y cuál es su recorrido.</li>
+    <li>La mayoría de los servicios de taxi en Montenegro operan solo en efectivo. Aunque algunas empresas como &#39;Tesla&#39; o &#39;Nash Taxi&#39; pueden ofrecer opciones de pago con tarjeta, a menudo es necesario confirmarlo con antelación, y a veces estos servicios solo están disponibles fuera de las zonas del aeropuerto.</li>
+    <li>Teleférico de Kotor: ascenso de 11 minutos. Hay entradas disponibles en línea para evitar colas. El servicio de transporte sale de la estación de autobuses de Kotor (se requiere efectivo en la estación, pero se puede pagar en línea para otras salidas). La montaña rusa alpina en la cima es muy popular; para las visitas al atardecer, llegue antes de las 17:00 para gestionar las colas de la montaña rusa antes de contemplar la puesta de sol.</li>
+    <li>Los triciclos (scooters de tres ruedas) pueden conducirse con un permiso de conducir estándar de categoría B en Montenegro. Se consideran más estables en las carreteras de montaña sinuosas que los scooters tradicionales.</li>
+    <li>Para traslados entre el aeropuerto de Tivat y Herceg Novi / Igalo, recomiendo el servicio de transporte compartido &#39;Boka Sun&#39;. Cuesta aproximadamente 10 EUR por persona, incluye el cruce en ferry y puede dejar a los pasajeros cerca de su destino. Número de contacto: +382 67 301 272.</li>
+    <li>El transporte público en el norte de Montenegro (Žabljak, Prokletije) es limitado. Se recomienda encarecidamente alquilar un coche para explorar los parques nacionales y las pintorescas carreteras de montaña como el paso de Sedlo, ya que las rutas de autobús son escasas y no permiten hacer turismo con flexibilidad.</li>
+    <li>Informe a los viajeros sobre posibles problemas con los alquileres de coches y los servicios de taxi en el aeropuerto de Tivat, en Montenegro. Advierta sobre las empresas de taxi locales agresivas que intentan monopolizar el mercado. Aconseje reservar los alquileres y traslados con antelación a través de fuentes fiables para evitar conflictos y garantizar precios justos.</li>
+    <li>La serpentina de Kotor es un tramo de carretera desafiante con numerosas curvas cerradas, conocido por ser exigente para los conductores. Aunque también hay ascensos después de Plužine, el tramo de Kotor suele destacarse como el más difícil. Es fundamental comprobar las condiciones meteorológicas, ya que la nieve puede persistir en las montañas a mayor altitud dependiendo de la estación. Para los conductores con poca experiencia, se recomienda conducir con precaución durante las horas de luz y considerar medios de transporte alternativos si la seguridad es una preocupación importante. Se recomienda consultar los recursos locales para conocer el estado de las carreteras y los pronósticos meteorológicos en tiempo real.</li>
+    <li>Los autobuses de Budva a Petrovac operan según un horario. Los viajeros deben consultar el horario de autobuses para las salidas desde la estación de Budva hacia Petrovac.</li>
+    <li>El puente de Djurdjevic Tara está actualmente en obras. El tráfico está restringido: cerrado para vehículos de carga, con tráfico alterno/reversible para turismos y autobuses turísticos. Espere retrasos importantes. El puente es generalmente accesible para los peatones. Las tirolinas que cruzan el cañón siguen operativas. No se espera que las obras terminen antes del otoño.</li>
+    <li>En Tivat y sus alrededores en Montenegro, la aplicación &#39;MonteGO&#39; es una herramienta funcional para pedir taxis. Aunque la interfaz es anticuada, se reporta que es efectiva. Lleve siempre 50 EUR en efectivo para pequeños vendedores o situaciones de emergencia con taxis donde no se acepten pagos con tarjeta.</li>
+    <li>Al alquilar un coche en Tivat, ten en cuenta la dinámica del mercado local. Algunas empresas locales pueden tener prácticas agresivas. Se recomienda investigar y reservar con antelación en empresas de buena reputación o a través de plataformas de confianza para garantizar una experiencia de alquiler sin problemas.</li>
+    <li>Air Montenegro ha experimentado retrasos en sus vuelos y cambios de aeropuerto de llegada. Algunos pasajeros han informado de un retraso de 4 horas en un vuelo y de un cambio de aeropuerto de llegada de Tivat a Podgorica. Es aconsejable comprobar el estado del vuelo con regularidad y tener planes de viaje flexibles al volar con Air Montenegro. Algunos viajeros sugieren que Air Serbia podría ser una alternativa más fiable para vuelos a Montenegro.</li>
+    <li>En Montenegro, los servicios de taxi suelen estar restringidos por comunidad. Los taxis registrados en una comunidad (por ejemplo, Zeta o Vuk) solo pueden prestar servicio si el trayecto se origina en dicha comunidad. Es posible que no puedan recoger pasajeros en otra comunidad para el viaje de regreso. Esta práctica puede ser legalmente cuestionable, pero a veces se aplica.</li>
+    <li>Por lo general, está permitido llevar queso y melones en el equipaje facturado al volar desde Montenegro. Sin embargo, es fundamental asegurar un embalaje adecuado para evitar daños o derrames. En el caso de los melones, envuélvalos bien en papel film y colóquelos en una bolsa resistente. Aunque no están explícitamente prohibidos, siempre es aconsejable consultar con su aerolínea sobre cualquier restricción de equipaje para productos frescos. Algunas aerolíneas pueden tener reglas específicas respecto a artículos perecederos.</li>
+    <li>Para viajar por carretera entre Montenegro, Bosnia y Herzegovina, y Serbia, utilice los principales pasos fronterizos (Sitnica, Klobuk, Deleuša, Gostun). Compruebe las cámaras de las fronteras 1 o 2 horas antes de cruzar. Los conductores no necesitan un permiso de conducir internacional, ya que estos países son miembros de la Convención de Viena sobre el Tráfico por Carretera. Verifique siempre que la ruta esté asfaltada y que se trate de un paso fronterizo internacional válido antes de confiar únicamente en las aplicaciones de navegación.</li>
+    <li>Las opciones de transporte por Tivat y la bahía de Kotor incluyen autobuses locales y taxis. Los autobuses entre Tivat y Kotor pueden sufrir congestión de tráfico y carecer de aire acondicionado. Los taxis están disponibles, pero también están sujetos al tráfico. El autobús Blueline ofrece una ruta panorámica a lo largo de la bahía con menor riesgo de retrasos por tráfico. Los autobuses a Perast desde Kotor no salen de la estación principal de autobuses, sino de una parada específica, cuestan alrededor de 2 EUR y pasan aproximadamente cada hora.</li>
+    <li>Existen servicios de autobús entre Risan y Herceg Novi. Los horarios de funcionamiento deben confirmarse localmente, ya que pueden variar, especialmente por la noche.</li>
+    <li>Alquilar un coche en Serbia para conducir hasta Montenegro es una práctica común. Las agencias de alquiler suelen permitir viajes transfronterizos si se notifica con antelación para poder tramitar el seguro correspondiente. Es posible devolver el vehículo en un país distinto al de origen, pero por lo general conlleva tarifas elevadas.</li>
+    <li>La policía de tráfico en Montenegro realiza patrullas y detiene a los conductores por infracciones. Aunque existen pruebas anecdóticas de corrupción, esta es altamente desaconsejada. Las sanciones por infracciones de tráfico (como cruzar líneas amarillas dobles) pueden ser severas, incluyendo multas o la revocación de la licencia.</li>
+    <li>Las tarifas de los taxis desde los aeropuertos de Montenegro (Tivat/Podgorica) son muy variables. Si es posible, evite las paradas oficiales de taxi del aeropuerto. Los traslados reservados con antelación o los grupos de traslado verificados en Telegram ofrecen tarifas significativamente mejores. Estrategia de negociación estándar: 20-25 EUR suele ser un objetivo realista para traslados cortos o medianos (por ejemplo, de Tivat a Luštica/Budva) frente a los 50 EUR que se suelen pedir a los turistas.</li>
+    <li>Los permisos de conducir rusos estándar son válidos para conducir en Montenegro y en la mayoría de los países vecinos, ya que son signatarios de la Convención de Viena sobre el Tráfico Vial. No se requieren permisos de conducir internacionales.</li>
+    <li>No existe un servicio de autobús directo desde la estación de autobuses de Podgorica al aeropuerto de Podgorica. Los viajeros suelen utilizar taxis o, posiblemente, el tren (aunque es menos común para esta ruta específica).</li>
+    <li>Los taxis están fácilmente disponibles en el aeropuerto de Podgorica para traslados a destinos como Budva. Por lo general, es sencillo encontrar un taxi a cualquier hora. Reservar un taxi con antelación o utilizar aplicaciones de transporte compartido también podrían ser opciones, aunque la disponibilidad puede variar.</li>
+    <li>Informe sobre las opciones de tiendas outlet en Podgorica, Montenegro. Aclare que &#39;Big Fashion&#39; es el centro comercial principal, pero tiene una selección limitada de marcas y no es un verdadero centro comercial outlet. Desaconseje viajar desde Budva exclusivamente para ir de compras allí.</li>
+    <li>Para las rutas de autobuses locales dentro de Tivat, consulte el sitio web de Blueline para ver los horarios. Aunque puede que no haya un mapa completo disponible en línea, los grupos locales de Telegram para Tivat a menudo pueden proporcionar información sobre las ubicaciones de las paradas de autobús y las rutas.</li>
+    <li>La cumbre programada en Tivat (4 y 5 de junio de 2026) implica cierres totales periódicos de carreteras en la autopista del Adriático (desde el aeropuerto hasta el centro de la ciudad) y posibles interrupciones en el ferry Kamenari-Lepetane. Se recomienda a los pasajeros que vuelen desde Tivat llegar con mucha antelación. Los viajeros que crucen a Croacia deberían considerar pasar la noche cerca de la frontera para evitar perder sus vuelos.</li>
+    <li>Para viajar desde el Aeropuerto de Podgorica (TGD) hasta Sveti Stefan en transporte público: 1. Toma un taxi (aprox. 15 EUR) o un autobús local desde el aeropuerto hasta la estación de autobuses de Podgorica. 2. Desde la estación de autobuses de Podgorica, toma un autobús interurbano hacia Budva (aprox. 7 EUR). 3. En Budva, haz transbordo a un autobús local hacia Sveti Stefan; estos suelen pasar cada 20 minutos.</li>
+    <li>Los domingos, los autobuses de &#39;Blueline&#39; entre Kotor y Tivat circulan aproximadamente cada dos horas. Ten en cuenta que los retrasos por tráfico pueden afectar el horario.</li>
+    <li>El túnel hacia Kotor está operativo, a pesar de que Google Maps pueda indicar lo contrario. Es posible que se dirija a los viajeros por una ruta alternativa a lo largo de la bahía, pero lo más probable es que el túnel esté abierto. Es aconsejable verificar el estado actual si se depende de los servicios de mapas.</li>
+    <li>Tenga cuidado con las estafas de alquiler de coches en Montenegro; evite a las personas que soliciten depósitos a tarjetas rusas. Entre las agencias de alquiler de coches recomendadas se encuentran Amigo y Vroom. En First Rent a Car no se requiere depósito, pero es fundamental grabar en vídeo el coche completo durante la recogida para documentar su estado y evitar disputas al devolverlo. Pueden aplicarse cargos adicionales (por ejemplo, 30 EUR) por la entrega en su ubicación.</li>
+    <li>En julio, el tiempo en la costa de Montenegro puede ser variable. Aunque algunas zonas como Sutomore pueden experimentar temperaturas del agua de alrededor de 20 °C y vientos fuertes (por ejemplo, vientos del norte) que provocan condiciones frías, la bahía de Kotor suele tener aguas más cálidas debido a la ausencia de afloramientos. Las condiciones pueden cambiar a lo largo del día y es posible que los vientos disminuyan por la tarde. Es aconsejable estar preparado para fluctuaciones de temperatura.</li>
+    <li>LocalRent funciona como un agregador para varios proveedores de alquiler de coches. Aunque el proceso de mediación de LocalRent suele ser eficiente, la calidad del servicio puede variar significativamente según la empresa de alquiler específica que figure en la plataforma. Las reservas directas con algunos proveedores pueden conllevar mayores riesgos de recibir un servicio deficiente en comparación con el uso del soporte de la plataforma.</li>
+    <li>Yandex Navigator puede tener una funcionalidad o cobertura de datos limitada en Montenegro. Por lo general, se recomienda utilizar aplicaciones de mapas sin conexión como MAPS.ME o Google Maps con áreas descargadas previamente para la navegación en Montenegro, ya que son más fiables y a menudo ofrecen mejor cobertura.</li>
+    <li>No se recomiendan las excursiones de un día desde la costa de Montenegro (por ejemplo, Risan/Budva) a Mostar, Bosnia y Herzegovina, durante la temporada alta de verano. El tiempo de viaje es largo (más de 2,5 horas por trayecto), sumado a los retrasos en el cruce de fronteras. Se recomienda una estancia de al menos 2 o 3 días para evitar el agotamiento y aprovechar al máximo el tiempo en el destino.</li>
+    <li>Los costos de taxi desde el Aeropuerto de Tivat hasta Budva suelen oscilar entre 35 y 50 EUR. Los traslados privados concertados con antelación suelen ser más fiables que tomar taxis en la parada del aeropuerto. Los viajeros con presupuesto ajustado pueden caminar unos 20 minutos hasta la estación de autobuses de Tivat y tomar un autobús público por un precio significativamente menor.</li>
+    <li>El Aeropuerto de Tivat puede experimentar aglomeraciones considerables, especialmente durante la temporada alta. Varios vuelos despegan y aterrizan frecuentemente (cada 5-10 minutos), lo que genera congestión. Esto es algo normal durante los periodos de mayor afluencia.</li>
+    <li>El tren diurno estacional &#39;Tara&#39; (1130/1131) opera entre Bar (Montenegro) y Subotica (Serbia) desde el 13 de junio hasta el 14 de septiembre. Los viajeros deben hacer transbordo en la estación de Bijelo Polje para realizar los procedimientos fronterizos. La reserva de asiento es obligatoria (costo: 3 EUR). Los boletos están disponibles a través del sitio web oficial de los Ferrocarriles de Montenegro.</li>
+    <li>La ruta de autobús de Mostar a Budva opera diariamente. El viaje suele durar alrededor de 7,5 horas, incluyendo una parada de 1 hora en Trebinje. La ruta del autobús cubre varios puntos en Bosnia (Sarajevo, Mostar, Trebinje) antes de entrar en Montenegro (Herceg Novi, Budva y a lo largo de la costa). Se recomienda comprar los billetes con antelación, especialmente durante la temporada alta, para asegurar un asiento y posiblemente obtener mejores precios. Se recomienda verificar el horario exacto y las opciones de reserva con la compañía de autobuses.</li>
+    <li>El aeropuerto de Tivat (TIV) tiene una capacidad limitada, lo que provoca colas durante la temporada alta. Se recomienda llegar al menos 2-3 horas antes de la salida. Para las llegadas, pasar el control de pasaportes rápidamente depende de la posición de la aeronave y la velocidad para llegar a la terminal. El control de pasaportes es el principal cuello de botella.</li>
+    <li>En Montenegro, las aplicaciones de taxi tradicionales como Uber no son comunes. Se recomienda utilizar Viber o WhatsApp para contactar con los servicios de taxi locales. La información de contacto suele encontrarse en los mensajes fijados del grupo. Ejemplo: Taxi Calaja Ulcinj, +382 68 019 761, puede ser contactado vía WhatsApp.</li>
+    <li>Aparcar en Kotor, Montenegro, puede ser caro y limitado, especialmente dentro o cerca del casco antiguo. Es aconsejable investigar con antelación las opciones de aparcamiento y sus costes asociados. Las empresas de alquiler de coches pueden ofrecer orientación sobre soluciones de aparcamiento o puntos de devolución específicos.</li>
+    <li>En Montenegro, los billetes de autobús para viajes interurbanos (por ejemplo, Tivat-Budva, Tivat-Kotor) se pueden comprar en las taquillas de las estaciones de autobuses. No existe una plataforma de reserva en línea ampliamente promocionada para todas las rutas, pero algunos sitios web de terceros podrían ofrecer información o reservas para servicios específicos. Por lo general, se recomienda comprar los billetes directamente en la estación.</li>
+    <li>Al alquilar un coche en Montenegro para realizar viajes a regiones montañosas como Kolašin, un coche diésel estándar de tracción delantera, como un Toyota Yaris, se considera generalmente adecuado. La consideración principal debe ser el estado de los neumáticos, recomendándose neumáticos para todas las estaciones para condiciones variadas. Aparcar en ciudades turísticas como Kotor puede ser difícil y costoso.</li>
+    <li>Encontrar un horario oficial en línea de los autobuses de Herceg Novi al aeropuerto de Tivat puede ser difícil. Aunque servicios como busticket4.me pueden ofrecer información sobre rutas a la estación de autobuses de Tivat, es posible que el servicio directo al aeropuerto no aparezca. La estación de autobuses de Tivat está aproximadamente a 1 km del aeropuerto, por lo que es una distancia que se puede recorrer a pie o en un breve trayecto adicional en taxi.</li>
+    <li>Para los traslados desde el aeropuerto de Tivat a Bečići, Montenegro, reservar con antelación a través de plataformas como GetTransfer o &#39;Poputchik&#39; es una opción. Los precios de un taxi pueden oscilar aproximadamente entre 35 € y 45 €. Para los traslados al puerto de Tivat, también es posible tomar un taxi al llegar, pero reservar con antelación podría ofrecer una tarifa más fija y potencialmente más fiable.</li>
+    <li>Es posible viajar en transporte público desde Montenegro (por ejemplo, Kotor) hasta Mostar, Bosnia y Herzegovina. Esto suele implicar rutas de autobús, que pueden requerir transbordos. La información sobre rutas y horarios específicos se puede obtener a través de las oficinas de información de las estaciones de autobuses o plataformas de venta de billetes en línea.</li>
+    <li>Para consultar las multas de tráfico en Montenegro, no existe un portal en línea fácilmente accesible para el público. La información suele obtenerse visitando las oficinas del MUP (Ministerio del Interior). El marco legal y de aplicación para las infracciones de tráfico está evolucionando.</li>
+    <li>Los autobuses salen con frecuencia desde la estación de autobuses de Tivat hacia Kotor. Se recomienda comprar los billetes con antelación. Consulte el sitio web de Blueline o la información de la estación de autobuses local para ver los horarios y rutas.</li>
+    <li>Un viaje en barco de 1,5 horas en Rijeka Crnojevića cuesta alrededor de 95 EUR por barco, variando los precios según la ruta y la duración. No es necesario reservar con antelación y hay aparcamiento gratuito disponible. Cerca de allí, la bodega Vukmirovich ofrece vino rosado. El punto de partida recomendado para los barcos es cerca del puente viejo en Rijeka Crnojevića.</li>
+    <li>Al alquilar un coche en Montenegro, tenga en cuenta que algunas agencias de alquiler locales, como Avis en el aeropuerto de Tivat, pueden presionar para contratar su propio seguro, el cual puede ser significativamente más caro que el coste del alquiler en sí. Esto puede ser obligatorio independientemente de si ya cuenta con un seguro a todo riesgo contratado previamente.</li>
+    <li>Se recomienda a los turistas que no utilicen Podgorica como base para excursiones de un día a la costa si no tienen pensado alquilar un coche. La distancia a la costa es de unos 66 km. Los taxis cuestan alrededor de 25 EUR por trayecto (50 EUR ida y vuelta), y los autobuses públicos pueden ser poco fiables. Por lo general, Podgorica se considera menos interesante para los turistas, aunque ofrece una oferta gastronómica más barata y de mayor calidad que las ciudades costeras.</li>
+    <li>Para el transporte en autobús en Montenegro, utilice el sitio web &#39;busticket4.me&#39; (a menudo requiere una VPN si se accede desde Rusia). Sin embargo, suele ser más fiable y preciso comprar los billetes directamente en las principales estaciones de autobús en persona. Las rutas de autobús locales, incluidos los servicios de transporte al aeropuerto, suelen tener horarios que no se reflejan completamente en los agregadores en línea.</li>
+    <li>Es posible viajar de Kotor a Perast en autobús. Los autobuses no siempre cumplen estrictamente el horario. Los autobuses de Kotor a Perast paran cerca del casco antiguo y también en una estación para Risan. Para viajar de Tivat a Kotor, espere posibles retrasos y la falta de aire acondicionado en los autobuses. Hay taxis disponibles, pero también se ven afectados por el tráfico; consulte los mensajes fijados del chat para obtener números de taxi locales. Considere el autobús Blueline, que recorre la bahía y es menos propenso a los atascos.</li>
+    <li>Los autobuses operan desde Tivat hasta Herceg Novi. El viaje puede implicar un cruce en ferry (por ejemplo, Lepetane-Kamenari) o una ruta más larga alrededor de la bahía. Compruebe los horarios y los precios de los billetes con antelación.</li>
+    <li>Los autobuses locales Blueline operan desde la zona de Dobrota, con una frecuencia aproximada de una vez por hora hasta Kotor. Viajar a Herceg Novi desde esta zona normalmente requiere un transbordo, probablemente en Kotor.</li>
+    <li>Si los billetes en línea para el autobús de Mostar a Budva no están disponibles, diríjase a la estación de autobuses el día del viaje para comprarlos directamente. Aunque es posible que no se permita viajar de pie, la compra directa suele asegurar las plazas disponibles. Intente comprar el billete a primera hora de la mañana (por ejemplo, a las 6 a. m.) para tener más probabilidades.</li>
+    <li>Conducir sin una licencia de conducir física en Montenegro es ilegal. La policía no acepta copias digitales ni versiones de aplicaciones de la licencia. Los conductores detenidos sin una licencia física se enfrentan a multas y al riesgo de que su vehículo sea confiscado.</li>
+    <li>El transporte público en autobús en Montenegro suele ser poco fiable durante la temporada alta debido al tráfico. Los autobuses &#39;BlueLine&#39; cubren las rutas costeras (por ejemplo, Kotor-Tivat-Perast). Los horarios pueden cambiar y la frecuencia los domingos es significativamente menor. Se recomienda utilizar las estaciones de autobuses para los viajes interurbanos para mayor comodidad y fiabilidad en comparación con las paradas en la calle.</li>
+    <li>Para vuelos a primera hora de la mañana (por ejemplo, 5:00 a. m.) desde Tivat o Kotor, se recomienda encarecidamente reservar un taxi o un traslado la noche anterior. Confiar en encontrar un taxi disponible bajo demanda a esa hora es arriesgado, ya que la disponibilidad es limitada y es posible que los conductores no estén activos.</li>
+    <li>Es posible que la estación de autobuses de Tivat no siempre muestre los horarios con claridad. La información podría ser limitada y las horas de salida podrían ser poco frecuentes. Para obtener horarios y venta de boletos precisos, es recomendable consultar recursos en línea o preguntar directamente al personal disponible.</li>
+    <li>Las carreteras alrededor del Parque Nacional Durmitor y la zona del puente de Đurđevića Tara suelen ser accesibles para vehículos. Aunque las condiciones específicas de las rutas pueden variar, el acceso habitual permite el viaje en coche. Las operaciones de tirolina en el puente son estacionales y se debe confirmar su disponibilidad para las fechas específicas del viaje.</li>
+    <li>Los cierres de carreteras en Kotor y Tivat pueden producirse por diversos motivos, incluidos actos oficiales como cumbres o mantenimiento de las vías. Tras eventos como las cumbres, las carreteras suelen reabrirse rápidamente. Es aconsejable consultar las actualizaciones locales sobre el tráfico o utilizar aplicaciones de navegación que ofrezcan información en tiempo real, ya que las condiciones de las carreteras pueden cambiar rápidamente.</li>
+    <li>Los usuarios pueden intentar tomar un autobús cerca del aeropuerto de Tivat. Hay una parada donde hacer señas al autobús podría funcionar, pero depende del conductor. Alternativamente, caminar hasta la estación principal de autobuses (aprox. 1,2 km, 15 minutos) es una opción fiable para tomar autobuses a destinos como Budva. Tenga en cuenta posibles retrasos incluso desde la estación principal.</li>
+    <li>Las carreteras de montaña en Montenegro, como la ruta de Plužine a Žabljak, son generalmente transitables para vehículos estándar que no sean 4x4. Si bien algunas secciones pueden incluir curvas cerradas (serpentinas) que podrían causar mareos, las carreteras suelen ser lo suficientemente anchas para un tránsito seguro. Es recomendable estar preparado para los tramos sinuosos y considerar tomar medicamentos contra el mareo si es propenso a ello.</li>
+    <li>Aconseje a los viajeros evitar agosto en Montenegro debido al calor extremo y las multitudes. Recomiende septiembre como una alternativa mucho mejor para disfrutar de una experiencia de viaje cómoda.</li>
+    <li>Durante las cumbres internacionales en Montenegro (como la cumbre UE-Balcanes Occidentales), las carreteras principales, incluida la autopista del Adriático (Jadranska magistrala), están sujetas a cierres intermitentes sin previo aviso. Los viajeros deben llegar al aeropuerto de Tivat (TIV) mucho antes de los horarios de cierre anunciados (a menudo antes de las 08:30 a. m.). Se pueden utilizar rutas alternativas como el desvío de Plantaze cerca de Podgorica. Hay consignas de equipaje disponibles en las estaciones de autobuses, pero no en el aeropuerto. Monitorear los chats locales de Telegram o las páginas oficiales de redes sociales del aeropuerto es la forma más fiable de recibir actualizaciones en tiempo real.</li>
+    <li>Para servicios de taxi nocturnos desde Budva, especialmente para viajar a zonas como Reževići alrededor de las 10 p. m., las personas deben buscar aplicaciones de taxi disponibles o números de contacto con antelación.</li>
+    <li>El transporte público en autobús en Montenegro está fragmentado entre más de 30 empresas privadas. Los agregadores en línea (por ejemplo, busticket4.me) son intermediarios y no garantizan el cumplimiento de los horarios. Los retrasos por tráfico son comunes durante la temporada alta. Por lo general, se requieren boletos en papel y el procesamiento manual en las estaciones de autobuses es la práctica estándar.</li>
+    <li>Transporte público en Montenegro: los billetes comprados en las estaciones de autobús incluyen una tarifa de terminal/andén, lo que los hace más caros (aprox. 4,8 EUR frente a 2,5 EUR). Subir a los autobuses en paradas locales evita estos cargos adicionales. Utilice aplicaciones como &#39;busticket4.me&#39; o FlixBus para conocer los horarios, pero tenga en cuenta que el pago a bordo suele ser solo en efectivo.</li>
+    <li>Tener un pasaporte sin sellos de entrada/salida previos (un pasaporte &#39;vacío&#39;) generalmente no es un problema para ingresar a Montenegro. Sin embargo, al transitar por otros países como Turquía, las aerolíneas pueden exigir una prueba de viaje posterior (por ejemplo, un billete de vuelta), independientemente de los sellos del pasaporte.</li>
+    <li>Un servicio de transporte opera desde la estación de autobuses de Kotor hasta el teleférico. Se pueden comprar billetes para el transporte y el teleférico (ida y vuelta) con un coste aproximado de 30 EUR. El transporte circula cada 30-60 minutos. Es posible que no haya billetes de solo ida, así que planifique en consecuencia si tiene la intención de viajar desde el teleférico a otro destino como Perast o Kotor sin regresar al punto de origen del transporte.</li>
+    <li>El servicio directo de autobús desde el aeropuerto de Tivat a Kotor es limitado. Por lo general, se recomienda tomar un autobús desde la estación principal de autobuses de Tivat hasta Kotor. Hay taxis disponibles en el aeropuerto. Alternativamente, se puede tomar un autobús de Tivat a Kotor y, posteriormente, un autobús local o un taxi a zonas específicas dentro de Kotor. Algunos sugieren que los conductores de autobús podrían detenerse en las paradas designadas fuera de la estación principal si se les hace señas, pero usar la estación de autobuses es más fiable.</li>
+    <li>Al conducir un vehículo con matrícula ucraniana por Montenegro, especialmente si el conductor no es el propietario, generalmente se recomienda llevar un poder notarial. Aunque los controles fronterizos pueden ser variables, tener este documento puede evitar problemas, particularmente si el propietario no está presente en el vehículo. La traducción al inglés no es estrictamente necesaria, pero puede ser útil. Confirme los requisitos actuales con los funcionarios fronterizos.</li>
+    <li>Las aplicaciones de taxi públicas como Yandex no son habituales en Montenegro. El método principal para reservar un taxi es a través de Viber. Los usuarios deben enviar su ubicación directamente a las compañías de taxi locales. Algunos proveedores de taxi importantes en el aeropuerto de Tivat son Vuk Taxi y Zeta Taxi. Las tarifas generalmente se acuerdan a través del chat.</li>
+    <li>Explorar Montenegro sin coche es viable utilizando el transporte público (autobuses) y caminando. Algunas ciudades clave a considerar como base incluyen Budva por su ubicación céntrica y acceso a las playas, Kotor por su importancia histórica y Herceg Novi. Es posible realizar excursiones de un día a Bosnia, siendo Mostar un destino popular accesible en autobús. Si bien un coche ofrece más flexibilidad para explorar zonas remotas y parajes naturales, un itinerario bien planificado utilizando transporte público puede brindar una experiencia completa de la historia y la cultura de Montenegro.</li>
+    <li>Los permisos de conducir rusos son generalmente aceptados para el alquiler de coches en Montenegro. Es posible que no se requiera estrictamente un Permiso Internacional de Conducir (IDP), pero puede ser útil como documento complementario.</li>
+    <li>La excursión a la Cueva Azul desde Kotor puede verse afectada por las condiciones meteorológicas, particularmente por el viento, que puede restringir el acceso a mar abierto. La policía puede aplicar medidas de seguridad. Si las condiciones son desfavorables, puntos de salida alternativos como las playas de Žanjic o Mirista podrían ofrecer excursiones en barco. Actualmente, puede ser temporada baja, lo que potencialmente limita la disponibilidad. Históricamente, estas cuevas ofrecen un fenómeno natural único, pero la seguridad y la accesibilidad dependen del clima. Compruebe las condiciones locales y a los operadores turísticos para conocer la disponibilidad y viabilidad actual.</li>
+    <li>La carretera serpenteante de Kotor-Njegusi opera bajo un régimen de tráfico de sentido único desde el 25 de mayo hasta el 15 de octubre. Horarios: 08:00–14:00 (solo subida), 15:00–19:00 (solo bajada). Fuera de este horario, se permite el tráfico bidireccional.</li>
+    <li>El transporte en autobús en Montenegro suele estar sujeto a retrasos y congestión de tráfico. Utilice &#39;busticket4.me&#39; para consultar los horarios. El transporte público puede ser poco fiable si viaja con niños o durante periodos de calor intenso (30°C+). Un trayecto directo de Tivat a Kotor lleva entre 15 y 20 minutos, mientras que de Kotor a Budva toma aproximadamente una hora, dependiendo del tráfico.</li>
+    <li>Para un mantenimiento urgente del coche, como un pinchazo en un vehículo de alquiler sin rueda de repuesto, localice una &#39;Šlep Služba&#39; (servicio de grúa) en la ciudad más cercana. Contactar con ellos es el método principal para obtener asistencia, que puede incluir la reparación o sustitución del neumático. Este servicio funciona bajo demanda mediante llamada.</li>
+    <li>Los servicios de taxi en Montenegro, especialmente desde los aeropuertos, pueden ser costosos si se contratan en el momento. Se recomienda reservar con antelación a través de canales oficiales o servicios de terceros fiables para asegurar mejores tarifas. Tenga cuidado con posibles sobreprecios, especialmente en zonas turísticas.</li>
+    <li>Evite utilizar agregadores de autobuses de terceros como FlixBus o Busticket4.me para rutas nacionales en Montenegro, ya que a menudo cobran comisiones elevadas (hasta 7-10 EUR por billete). Compre los billetes directamente en la estación de autobuses local (autobuska stanica) o al conductor. Los precios reales de los billetes (por ejemplo, Podgorica-Kotor) rondan los 9,5 EUR.</li>
+    <li>El transporte público de Budva a Sveti Stefan se detiene en las paradas de autobús urbanas (no necesariamente en la estación principal), lo que lo hace más cómodo. Para rutas como Tivat-Budva, comprar billetes por internet suele ser innecesario debido a la frecuencia de las salidas, y los viajeros a menudo tienen que pagar de todos modos una tasa por el uso de la estación. El efectivo es el rey para los pagos en autobuses locales y pequeñas compras en mercados.</li>
+    <li>Desde el aeropuerto de Podgorica no hay servicios directos de tren a las ciudades cercanas. El transporte se realiza principalmente en autobús o taxi. Los traslados precontratados o los taxis del aeropuerto son opciones comunes. Los autobuses son una opción más económica para llegar a ciudades como Budva o Kotor.</li>
+    <li>La tirolina en el puente de Đurđevića Tara estaba operativa a mediados de junio. Las condiciones de la carretera para los vehículos que se dirigían al puente eran, en general, despejadas y no se informaron cierres importantes.</li>
+    <li>Se discuten las rutas de vuelo y opciones de aeropuertos óptimas para Montenegro, específicamente Tivat frente a Podgorica. Las consideraciones clave incluyen posibles retrasos y cancelaciones de vuelos, especialmente dada la reputación del aeropuerto de Tivat. Las estrategias recomendadas implican reservar con una sola aerolínea (por ejemplo, Turkish Airlines vía Estambul a Podgorica) para minimizar los riesgos asociados con los traslados. También se mencionan rutas alternativas, como volar a Tirana, Albania, aunque es menos directa para quienes se dirigen directamente a destinos como Budva. Se destaca la fiabilidad de diferentes aerolíneas y la importancia de contar con tiempo de margen para las conexiones. Los consejos prácticos incluyen comprobar el estado de las carreteras y considerar aeropuertos alternativos basados en los horarios de vuelo actuales y las políticas de las aerolíneas.</li>
+    <li>Los precios promedio de los taxis desde el aeropuerto de Podgorica a Budva rondan los 60-70 EUR. Desde el aeropuerto de Tivat a Kotor, los conductores suelen pedir 40 EUR; se recomienda reservar los traslados con antelación para evitar precios excesivos en temporada alta.</li>
+    <li>Al llegar a Bečići en autobús, tenga en cuenta que los autobuses procedentes de Budva paran más cerca del mar que los que vienen de la estación principal de autobuses. Hay mucho alojamiento disponible. La zona ofrece aguas cristalinas y alquiler de tumbonas (alrededor de 15 €). Los inconvenientes incluyen un paseo marítimo mal mantenido y vendedores persistentes. La superficie de la playa puede calentarse mucho.</li>
+    <li>Aparcar en Kotor puede resultar caro. A fecha de junio, las tarifas por hora pueden llegar a los 7 EUR. Pueden existir opciones de aparcamiento gratuito, pero son difíciles de encontrar.</li>
+    <li>No hay autobús directo de Tivat a Perast. Los autobuses viajan de Tivat a Kotor y, después, tendría que tomar otro autobús a Perast. Algunos autobuses de Tivat a Herceg Novi pueden pasar por Perast; algunas rutas utilizan el transbordador.</li>
+    <li>Consejos para el tren Belgrado-Bar (tren 433): 1) Los billetes deben comprarse en la estación de tren (con hasta 60 días de antelación). Se recomienda encarecidamente reservar en primera clase y hacerlo con antelación. 2) Los retrasos son extremadamente comunes y pueden oscilar entre 30 minutos y 6 horas debido al estado de las vías. 3) Hay dos controles fronterizos durante la noche, cada uno de unos 40 minutos de duración.</li>
+    <li>El efectivo es ampliamente aceptado y preferido en Montenegro. Es recomendable llevar billetes de baja denominación (10-20 EUR) para gastos menores, como la tarifa de equipaje en los autobuses (aprox. 1 EUR). Las tarjetas bancarias bielorrusas, incluso las de bancos sancionados, funcionan generalmente para realizar pagos en Montenegro. Los dólares estadounidenses generalmente no se aceptan para pagos directos en tiendas; se requiere la moneda local (euro).</li>
+    <li>Recopile experiencias y opiniones de usuarios sobre vuelos con Fly One, especialmente aquellos que incluyen una escala en Ereván. Incluya consejos sobre el registro en línea para evitar una multa de 40 unidades.</li>
+    <li>Al volar a Tivat, considere rutas a través de Serbia, Armenia o Estambul. Armenia suele ser más asequible, mientras que Estambul es una alternativa común. También hay vuelos disponibles a través de Bakú. Tenga en cuenta que las escalas cortas (2-3 horas) conllevan el riesgo de perder los vuelos de conexión debido a posibles retrasos en el trayecto inicial.</li>
+    <li>Si un vuelo es desviado de Tivat a Podgorica, las opciones de transporte de regreso a Tivat incluyen autobuses, taxis o traslados reservados con antelación. Buscar compañeros de viaje en chats específicos de Telegram (&#39;poputn&#39;, &#39;Montenegro Poputchiki&#39;) también es una opción. Los horarios de los autobuses en Montenegro pueden ser poco fiables, con posibles retrasos o cancelaciones, aunque esto no es lo habitual.</li>
+    <li>Los traslados al aeropuerto en Montenegro (Tivat y Podgorica) son muy recomendables frente a los autobuses públicos, que requieren caminar mucho desde las terminales. No existen aplicaciones de transporte como Uber en Montenegro. Reservar un traslado privado con antelación es siempre más rentable y fiable que utilizar los taxis de la calle, conocidos por cobrar de más a los turistas.</li>
+    <li>Para viajar de Lepetani a Tivat o Kotor en Montenegro, el servicio de autobuses Blue Line está disponible aproximadamente cada hora. Los billetes cuestan alrededor de 2-3 EUR. Para ir a Kotor, el autobús circula en dirección opuesta a la de Tivat. El sitio web oficial de Blue Line, en la sección &#39;gradski prevoz&#39;, proporciona los horarios.</li>
+    <li>Los horarios de autobús en Montenegro, particularmente para rutas interurbanas, se pueden encontrar en plataformas como busticket4.me. Sin embargo, las horas reales de llegada y salida pueden variar, y los autobuses ocasionalmente podrían saltarse paradas designadas, especialmente si la parada está mal señalizada o el autobús está lleno. Es aconsejable llegar a la parada de autobús con mucha antelación y estar preparado para posibles retrasos o desviaciones inesperadas de la ruta.</li>
+    <li>Las tarifas de los taxis en Montenegro pueden variar significativamente. Los taxis organizados por hoteles o los conductores privados pueden cobrar tarifas elevadas (por ejemplo, 20 euros por 2 km). Se recomienda utilizar compañías de taxis oficiales con taxímetro y comparar precios. Reservar un taxi con antelación para un servicio temprano por la mañana podría resultar en tarifas más bajas. Las tarifas típicas pueden variar desde unos 2,5 euros por la bajada de bandera hasta 8 euros por unos pocos kilómetros con un conductor privado, variando los costes por kilómetro.</li>
+    <li>Aparcar en Budva puede ser complicado, especialmente cerca de zonas residenciales o apartamentos sin estacionamiento propio. Las opciones pueden incluir aparcamientos públicos de pago o estacionamiento en la calle, aunque la disponibilidad puede ser limitada. Algunos residentes podrían ofrecer plazas de aparcamiento privadas por una tarifa. Infórmese localmente sobre las opciones disponibles o considere utilizar el transporte público o ir a pie si es viable.</li>
+    <li>Viajar solo por Montenegro es, por lo general, seguro y manejable. El inglés se habla ampliamente en las zonas turísticas y también es común encontrar hablantes de ruso. Aunque orientarse puede presentar pequeños desafíos, especialmente en áreas remotas, los mapas sin conexión y las habilidades básicas de comunicación (incluidos los gestos) suelen ser suficientes. El país se considera seguro para quienes viajan solos.</li>
+    <li>La ruta ferroviaria Belgrado-Bar es pintoresca, pero propensa a sufrir retrasos considerables. Los billetes para el tren diurno deben comprarse con antelación en la estación, ya que la disponibilidad es limitada durante la temporada alta de verano. Por lo general, no se recomiendan los coches con literas de 6 plazas por una cuestión de comodidad.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/es/me/entradas-y-ocio/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Entradas y ocio</span></a>
+    <a class="chip" href="/es/me/documentaci-n-y-visado/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentación y visado</span></a>
+    <a class="chip" href="/es/me/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/es/me/registro-y-estancia/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Registro y estancia</span></a>
+    <a class="chip" href="/es/me/banca-y-finanzas/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Banca y finanzas</span></a>
+    <a class="chip" href="/es/me/seguridad/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Seguridad</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>¿Cansado de googlear lo mismo?</h2>
+    <p>Pregúntale a Luky — responde para tu caso, según reportes recientes, no artículos genéricos.</p>
+    <p>Y Luky es un traductor de voz para conversaciones reales: y el camarero no confundirá tu pedido.</p>
+    <p class="ps">PS: entabla charla con un compañero de viaje que no habla ni una palabra del tuyo</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiencia real de chats de comunidades, sin relleno</div>
+    <nav class="f-links">
+      <a href="/es/about/">Acerca de</a>
+      <a href="/es/me/">Todos los temas</a>
+      <a href="/es/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Las respuestas se recopilan de chats abiertos de comunidades — es experiencia real de personas, no asesoría oficial. Verifica antes de decisiones importantes.</p>
+    <div class="f-copy">© 2026 Luky · actualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noche", DAY="\u2600 D\u00eda";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

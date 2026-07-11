@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>South Korea: Shopping — real experience · Luky</title>
+<meta name="description" content="Real experience from chats about Shopping in South Korea: as it is, first-hand. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/kr/shopping/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/kr/shopping/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/kr/shopping/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/kr/shopping/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/kr/shopping/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/kr/">South Korea</a> /
+    <b>Shopping</b>
+  </nav>
+
+
+  
+  <h1>Shopping: how it works in South Korea — first-hand</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of people from chats on «Shopping» in South Korea — as it is, no fluff. For your case — <strong>ask Luky</strong>.</div></div>
+
+  <h2>From real experience</h2>
+  <ul class="qlist">
+    <li>During the Chuseok holiday, major tourist sites like palaces are often free to enter, though guided tours may be limited. Most large retail chains stay open, while small private businesses may close. Booking transportation (trains/buses) in advance is essential due to high demand.</li>
+    <li>Tax-free refund kiosks at Incheon Airport (ICN) are located in the center of the hall, typically marked between gates G and H. Users should check the map provided with their tax refund receipts for the exact location.</li>
+    <li>Importing cosmetics from South Korea to Russia/other countries: customs generally allow personal quantities. Avoid commercial-looking shipments (e.g., dozens of identical items). If carrying large quantities, distribute items among several travelers to avoid triggering customs inspections for commercial intent.</li>
+    <li>To navigate the Korean cosmetics market, use the Hwahae app to analyze ingredient safety. Popular retail chains like Olive Young are the primary spots for trending items. Professional skin analysis in local beauty clinics is recommended for a personalized skincare regimen.</li>
+    <li>South Korea features several prominent supermarket chains. Emart operates as large hypermarkets offering a broad product selection. Emart24 functions as convenience stores, akin to 7-Eleven, for smaller, quicker purchases. Additional chains like TOP MART are also present. Discount retailers such as NO BRAND should be approached with caution regarding product quality versus price. Utilizing mapping services to search for &#39;MART&#39; can help identify nearby grocery stores.</li>
+    <li>Importing food items like buckwheat (grechka), bulgur, or millet into South Korea is generally permissible in reasonable quantities as checked baggage. Buckwheat is also available for purchase within South Korea, though availability and variety may differ.</li>
+    <li>Apple product pricing in South Korea can be competitive, especially when considering tax refunds (Tax Free). While official Apple Store prices might seem high, options like student discounts (sometimes loosely enforced) or purchasing through the official website with in-store pickup can lead to savings. For instance, a MacBook Neo could be purchased for approximately $540-$640 USD after accounting for potential discounts and tax refunds. Comparing prices across different retailers and factoring in the tax refund process is recommended for the best deals.</li>
+    <li>Luggage prices in Seoul: Large (L) size suitcases can be found for around 70,000 KRW, particularly in areas like Myeongdong. Haggling is common and can lead to a lower final price.</li>
+    <li>Tax Refund at Incheon Airport: Allow at least 60 minutes for the process due to potential queues at terminals and redemption points. It is advised to have itemized receipts and passport ready. Some travelers successfully use self-service kiosks, but high-value or specific items may require manual processing at the counter.</li>
+    <li>Travelers to South Korea often face challenges with luggage due to extensive shopping. Some have had to leave items behind or deal with overweight baggage. Purchasing an additional suitcase upon arrival is a common strategy, especially for cosmetics which are significantly cheaper. Limousine buses generally accept two checked suitcases without extra charge.</li>
+    <li>Purchasing custom Apple hardware in South Korea is difficult for tourists as local online stores often require a local phone number and bank card. Stock of non-standard configurations (e.g., 64GB RAM) in physical stores is rare. Buying via Coupang&#39;s official store is a potential alternative if delivery timelines permit.</li>
+    <li>Tax refund process in South Korea: New terminals allow for on-the-spot tax refunds in participating stores. Alternatively, refunds can still be processed at the airport. If using multiple passports or non-passport purchases, manage refund terminal usage efficiently to avoid queues before security, especially in busy airports. Passport-registered purchases are pre-loaded into the airport system for refund processing.</li>
+    <li>Professional hair dyes from brands like L&#39;Oréal Professional may not be available in typical drugstores or online platforms like Coupang in Seoul. Specialized beauty supply stores or professional salons might carry these products.</li>
+    <li>When purchasing Apple laptops in Seoul, consider the availability of US keyboard layouts and the tax-free option. Check estimated delivery times for custom configurations. While Korean layouts are an alternative, US layouts can be ordered, potentially offering cost savings after tax refunds.</li>
+    <li>In South Korea, while some elderly individuals might offer unsolicited opinions on clothing, particularly regarding exposed shoulders or décolletage, the general trend is towards greater acceptance of diverse fashion choices. Modern Korean society, especially in urban centers like Seoul, is largely tolerant of Western-style attire, including sleeveless tops and short dresses. Unlike in some other cultures or historical periods, there are no strict legal or pervasive cultural prohibitions against such clothing. This is often compared to similar generational differences in dress code opinions observed in other countries. The emphasis is on personal comfort and the prevailing social norms which, for the most part, do not restrict individual clothing choices.</li>
+    <li>Sulwhasoo products are available outside of duty-free shops in Seoul. Recommend checking major department stores and flagship boutiques in Bukchon and Gangnam for standard retail prices.</li>
+    <li>Wowpass terminals in South Korea offer a convenient way to exchange currency at a unified rate and claim tax refunds. While exchange booths are available, their rates may be slightly less favorable (around 10 KRW difference). Tax refunds are also possible on purchases made at official Apple stores when using Wowpass or other eligible methods.</li>
+    <li>WOWPASS is a highly recommended prepaid card for tourists in South Korea. It can be used for public transport and general retail purchases. Cards are funded via kiosks using cash (USD or other currencies). It is a reliable alternative to credit cards for visitors.</li>
+    <li>While South Korea has embraced cashless payments, carrying some local currency (South Korean Won - KRW) is still advisable. Cash is particularly useful for transactions at traditional markets, street food vendors, and occasionally for taxis, especially on islands like Jeju. Although payment cards and services like Wowpass are widely accepted, occasional exceptions occur. Having cash on hand provides a backup in case of card issues, withdrawal limits, or specific merchant policies that favor cash payments.</li>
+    <li>When processing tax-free refunds at Korean airports, expect a detailed inspection for high-value items (around $1,000 USD each), such as phones, lenses, or jewelry. These items must be kept in your carry-on luggage and presented to customs officials. For lower-value purchases like cosmetics, clothing, or souvenirs, inspections are generally less strict, and even multiple large luggage items are usually not an issue. The key is to ensure your total purchases do not appear to be a commercial quantity, which could raise questions.</li>
+    <li>Consider ordering a combined WoWpass card and SIM package for convenience. Inquire about the acceptance of UnionPay for payments related to this package.</li>
+    <li>Payment on Coupang using foreign bank-issued Visa cards, such as those from Kyrgyzstan (e.g., Bakai Bank), may encounter issues. Users have reported difficulties completing payments with such cards.</li>
+    <li>For Russians traveling to South Korea, Russian bank cards, including UnionPay, have very limited acceptance. It&#39;s advisable to carry cash (USD/EUR) or obtain a foreign-issued card. UnionPay from the Asia-Pacific bank is mentioned as working better with AliPay. Kazakh cards like Kaspi are reported to be widely accepted. ATB UnionPay is also suggested for cash withdrawal and potential use in Japan and EU. Cash is generally recommended as a backup, with US dollars being a common choice.</li>
+    <li>Electronic cigarettes, such as IQOS, can be purchased in South Korea at electronics stores or dedicated brand outlets. Prices vary by model, with simpler devices costing around 10,000 KRW and more advanced ones up to 20,000 KRW. Popular locations for purchase include major cities like Seoul and Busan. While smoking is often tolerated in busy public areas, especially in the evenings, it&#39;s advisable to be discreet if locals are not smoking.</li>
+    <li>To claim tax-free refunds in South Korea, both the purchase receipt and the goods themselves must be presented. Items can be packed in checked luggage if the total purchase amount per receipt does not exceed 1 million KRW. For immediate discounts at the point of sale or for amounts exceeding the limit, it&#39;s advisable to check the specific store&#39;s policy, as some may require the goods to be shown at departure.</li>
+    <li>Financial tips for Korea: 1. Wowpass kiosks at Incheon Airport accept only KRW cash for loading; convert cash at the airport and top up the card in the city. 2. Samsung Pay/Apple Pay compatibility is limited; local Korean-firmware phones are often required for full Samsung Pay functionality. 3. Always carry some physical cash as a backup for markets and small shops.</li>
+    <li>To purchase a MacBook with a US keyboard layout in Seoul, consider ordering directly from an official Apple store. Tax-free refunds may be available for such purchases. Note that local electronics retailers might primarily offer Japanese or Korean layouts. Confirm the ordering process and tax-free eligibility with the store directly.</li>
+    <li>Cosmetics in South Korea are significantly cheaper than in Russia, with prices for items like cleansing oil being roughly half. Travelers are advised to bring large suitcases or purchase new ones locally to accommodate shopping. Other items that are cost-effective include clothing, shoes, perfumes, and various goods from stores like Daiso and university campuses.</li>
+    <li>For purchasing luggage (size L/XL) in Seoul, consider stores on Myeongdong offering Korean brands priced around 3,000-5,000 RUB, known for being lightweight. The Artbox chain offers luggage from approximately 2,000 RUB, though potentially with slightly lower quality. In Busan, Namdaemun Market might have XL suitcases for around 4,000 RUB, with bargaining possible.</li>
+    <li>Tax Free refunds at Korean airports are generally automated via kiosks in the check-in area. Physical inspection of goods is rare unless high-value items (like luxury electronics) are involved. The process requires scanning receipts at the kiosk before or after passing security, depending on the store type.</li>
+    <li>Recommended Korean souvenirs include various types of rice crackers, vegetable chips, chocolate-coated &#39;turtle&#39; chips, jelly with liquid centers, pickled perilla leaves, instant curry, honey cookies (Yakgwa), and glazed nuts. Mini hair straighteners are also available in stores like Olive Young.</li>
+    <li>Some Russian UnionPay debit cards may work in South Korea, primarily at select retailers like Olive Young, 7-Eleven, and Nike stores, as well as at specific ATMs for cash withdrawals. Acceptance can be inconsistent, and Apple Pay with foreign-linked cards has limited compatibility.</li>
+    <li>Recommended mid-range/mass-market Korean cosmetic brands include Anua, Apeu, and Derma Factory. Premium anti-aging brands include The History of Whoo, O HUI, and Sum:37. For hard-to-find items, check the Coupang online marketplace.</li>
+    <li>At Incheon Airport, Tax Free refund kiosks are located near check-in counters J and L. Counter L typically has shorter queues. The process involves scanning the passport and receipts at the kiosk, then collecting the cash refund at Gate 28 after security. Expensive goods may require inspection at staffed counters near the kiosks.</li>
+    <li>Finding non-Korean food options in South Korea can be challenging. Convenience stores may offer unexpected flavor combinations (e.g., potato and strawberry jam in sandwiches), so carefully check labels or use a translation app. While Korean eateries often provide delicious and affordable dishes like tonkatsu, miyeok-guk (seaweed soup), or Korean BBQ, opting for hotel breakfasts can ensure access to familiar European-style options. If dining out for breakfast, expect prices to start around 30,000 KRW per person. Alternatively, purchasing food from convenience stores for consumption in your room can be a convenient solution, especially for early departures.</li>
+    <li>Disposable vapes can be purchased at convenience stores like 7-Eleven, CU, and GS25 in Incheon, South Korea, directly at the cashier. Legally, sales are restricted to individuals aged 19 and above, though ID might be requested if the buyer appears younger. Specialized vape shops also exist, such as one located at 15 Hambagan-ro 220beon-gil, Yeonsu-gu, Incheon. Prices are comparable to cigarettes, around 5,000 KRW, but checking online stores for current pricing is recommended.</li>
+    <li>Purchasing Apple devices in South Korea: 1. Prices are competitive with Russia, but Tax Free refunds significantly reduce the final cost. 2. Device compatibility is universal. 3. Camera shutter sound on iPhones is determined by the region/country associated with the Apple ID, not the hardware&#39;s purchase location.</li>
+    <li>Tax Refund (Tax Free) in South Korea: Requires a minimum purchase amount. Receipts must be scanned at airport kiosks. It is recommended to keep track of scanned vs. unscanned receipts. Refunds can be collected in various currencies (KRW, USD, CNY, JPY) at designated airport counters.</li>
+    <li>If you need to purchase a non-iPhone mobile phone in Busan, South Korea, head to official Samsung stores or other major electronics retailers. It&#39;s advisable to inquire about the phone&#39;s version (global or Asian) as local models may be region-locked. Global versions can typically switch to Russian language settings in the phone&#39;s menu. Prices might be more competitive than in Russia, especially with tax-free services. Simpler, older models are also available.</li>
+    <li>Tax refund at Incheon Airport: Goods eligible for tax refund do not strictly need to be carried in hand luggage for inspection. Customs officers rarely conduct physical checks at the airport for standard tax-free claims.</li>
+    <li>For budget luggage in Seoul, check the &#39;Shoopen&#39; store chain. Alternatives include local underground metro shops and the Myeong-dong area, where bargaining is possible. Prices typically range from 60,000 to 130,000 KRW for large suitcases.</li>
+    <li>If a shop provides an instant tax refund at the point of purchase, the discount is applied immediately. It is not necessary to scan these receipts at the airport tax-refund kiosks, as the transaction has already been cleared.</li>
+    <li>Shopping strategy in South Korea: 1. Olive Young is convenient but often priced for tourists. 2. For better deals on cosmetics, check large grocery chains (Lotte Mart, E-mart) or local discount shops. 3. Tax-free shopping is available at major supermarkets directly at the checkout. 4. Coupang is a reliable platform for local prices.</li>
+    <li>Olive Young is a major Korean beauty retailer chain. Popular local brands like Anua, VT Cosmetics, and Derma Factory are significantly cheaper here compared to international retail prices. Look for &#39;1+1&#39; deals and bundle sets to maximize savings.</li>
+    <li>Inquire about the availability of Russian audio guides at the National Museum of Korea. If not available, check for Russian language support in the museum&#39;s official app or alternative resources.</li>
+    <li>For grocery delivery in South Korea beyond Coupang, &#39;Zetta&#39; is the dedicated delivery app for Lotte Mart. Users recommend it for better variety and specific store discounts.</li>
+    <li>When paying in South Korea, be prepared for card acceptance variability. Russian bank cards, especially UnionPay (even from banks like Rosselkhozbank - RSB), have limited acceptance, primarily for ATM withdrawals. Larger retailers like Lotte may decline standard Visa Gold but accept Visa Platinum. Smaller shops, cafes, and laundromats might accept the same cards without issue. Foreign cards typically have daily withdrawal limits (around 700,000 KRW) and transaction fees. For significant purchases, plan to split payments across days and locate compatible ATMs. Carrying local currency (KRW) is advisable, especially for markets and street food. For transportation, the T-money card is essential and can be topped up via the Wowpass app or convenience stores (CU, GS25, 7/11). The Wowpass tourist card is widely accepted but has reportedly failed in taxis on Jeju Island, making cash a safer bet there.</li>
+    <li>Essential mobile applications for traveling in South Korea include: Naver Map (recommended over Google Maps for navigation), Wowpass (for a local payment card), Subway (for public transport), and Kakao Taxi/K.Ride (for ride-hailing services). It is also advisable to set up KakaoTalk before arrival, as registration codes may experience delays.</li>
+    <li>When comparing Wowpass and CU cards in South Korea, Wowpass offers integrated T-Money transport functionality, cashback, and discounts, making it generally preferred by tourists. CU cards primarily serve as transport cards. While both can be topped up, Wowpass allows for multi-currency top-ups via its app and terminals, which might be more convenient than CU&#39;s options. Not all terminals and shops universally accept both.</li>
+    <li>Dress codes in South Korea are generally informal and liberal; tourists can wear open shoulders, mini-skirts, or casual clothes without judgment. However, sun protection is advised due to strong UV rays, and light layers are recommended for indoor air conditioning.</li>
+    <li>Wowpass is a prepaid card widely accepted at most retail terminals in South Korea. It is recommended as a reliable payment method for tourists, particularly for those whose foreign bank cards may be intermittently declined. It is not accepted at cash-only venues such as some traditional markets.</li>
+    <li>To claim a Tax Free refund at Incheon Airport: 1) Scan receipts at the automated kiosks located near the check-in counters. 2) Be prepared to show high-value items (typically over $1000) if requested by customs. 3) After passing security, visit the refund office (often located near gate 28) to collect the cash refund or process it to your card.</li>
+    <li>To receive discounts at Lotte Mart, customers typically need a store loyalty card or a specific membership program. Inquire at the customer service desk about obtaining a temporary card or if any current promotions apply without one. Some discounts may also be linked to payment methods.</li>
+    <li>Buying unlocked smartphones (e.g., iPhone) in South Korea does not require carrier contracts. Purchases can be made at official stores. Tax Free is applicable for foreign tourists; keep the receipt and the device packaging, as customs officers at the airport may request to verify the item before processing the tax refund.</li>
+    <li>To purchase a new mobile phone in Busan, South Korea, visit official Samsung stores or other major electronics retailers. Inquire about the phone&#39;s version (global vs. Asian) as local models might not support Russian language settings. Global versions can typically be switched to Russian. Prices may be lower than in Russia, especially with tax-free options. Older, more basic models are also available.</li>
+    <li>Hair services in Seoul: haircuts are generally safe, but chemical treatments like coloring have mixed reviews and potential for hair damage. Recommended to look for foreigner-friendly salons or academy-run locations like Juno Academy. Average price for a haircut and color session is around 150,000 KRW.</li>
+    <li>Optical stores in Seoul (e.g., Davich Optical) offer rapid eyeglass assembly, typically within 40-60 minutes. Standard pricing for frames and lenses starts around 120,000 KRW. Most stores are equipped with diagnostic equipment for vision testing. It is recommended to bring an existing prescription if possible to save time.</li>
+    <li>WOWPASS is widely accepted across South Korea, but it may have issues with older (pre-1996) USD banknotes. While foreign cards (like Kazakhstan-issued cards) work for payments, they cannot be used to top up T-money transportation cards directly; cash is often needed for T-money top-ups at kiosks. Carrying some local currency (KRW) is essential for small shops, rural areas, or Jeju Island, where card payments may not be supported.</li>
+    <li>For early breakfast in Seoul, look for bakery chains like Paris Baguette or Tous Les Jours. They offer salads, sandwiches, and pastries. Prices for a light breakfast for two are approximately 20,000–22,000 KRW.</li>
+    <li>It is possible to purchase mobile phones in South Korea using Russian bank cards, particularly at official Samsung stores or major electronics retailers. Ensure you specify if a global version is needed for Russian language support, as local models might be region-specific. Stores can usually assist with language settings. Prices may be more competitive than in Russia, especially when utilizing tax-free options.</li>
+    <li>Union Pay cards from Russian banks have low acceptance in South Korean retail stores and taxis. Cash is essential. ATMs at Hana Bank and Shinhan Bank are known to support withdrawals, but users report transaction fees (e.g., ~5,700 KRW for a 200,000 KRW withdrawal).</li>
+    <li>While some users report negative experiences with Trip.com, particularly regarding hotel bookings (overbooking, room discrepancies), others have had consistently positive experiences with booking flights, accommodation, and tours. It is advised to check the availability and pricing on different aggregators as prices can vary.</li>
+    <li>Sunscreens (SPF products) are widely available in South Korea. They can be purchased at cosmetic stores like Olive Young and Penny-Job, as well as convenience stores like 7-Eleven. Various formulations for face, body, and general use are offered in different sizes. For sunburn relief, products containing Panthenol or Aloe Vera are recommended and can be found in pharmacies or stores like Daiso.</li>
+    <li>UnionPay cards, especially those issued by Russian banks (e.g., Rosselkhozbank - RSB), have extremely limited acceptance in South Korea. Their functionality is primarily restricted to specific ATMs for cash withdrawals. Point-of-sale transactions are generally unreliable. Travelers should rely on alternative payment methods like international Visa or Mastercard, or carry sufficient South Korean Won (KRW) for transactions.</li>
+    <li>Specific grocery store for Russian/Eastern European products in Seoul: &#39;Medovik&#39; store located in the Dongdaemun area offers items like sour cream (smetana), cottage cheese (tvorog), condensed milk, sprats, and familiar types of bread/flour products.</li>
+    <li>It&#39;s possible to find Uzbek cuisine in Seoul, with one traveler discovering an Uzbek neighborhood. While some claim Uzbek restaurants are available in all Korean cities, another user did not find them in Busan. Restaurant locations may vary, with some previously being situated on Texas Street.</li>
+    <li>Oatmeal and baby fruit purees are allowed through South Korean customs in checked baggage. When traveling with toddlers, purees can also be carried in hand luggage. Exporting processed local oils (like perilla oil) and spices from South Korea in checked baggage is fully permitted.</li>
+    <li>The usability of Russian Rosel&#39;khozbank UnionPay cards for payments in Seoul varies. While generally functional for cash withdrawals from ATMs, their acceptance for purchases in stores is inconsistent. Some users report successful transactions in various retail environments, while others find them only partially accepted or not at all. It is advisable to carry alternative payment methods such as USD cash for exchange or a local Korean card.</li>
+    <li>The Wowpass card is a convenient payment method for tourists in Seoul, offering an alternative to carrying large amounts of cash. It can be topped up with USD or KRW and includes T-Money functionality for public transport. While widely accepted, cash may still be preferred at smaller establishments and markets. Ensure your Wowpass is topped up accordingly, or have a small amount of cash for such situations.</li>
+    <li>Korean cosmetics (e.g., Round Lab, Medipeel, VT Cosmetics, AESTURA) are significantly cheaper in Korea, specifically at Olive Young. Bundles often include free travel-sized samples or refill packets. Consulting with in-store staff is recommended for personalized skin-type matching.</li>
+    <li>The Korean Tourist Pass, obtainable for free at Incheon Airport or online, allows visitors to collect stamps at cultural sites and receive rewards upon departure. A list of participating attractions is available.</li>
+    <li>Locating non-Korean dining options in South Korea requires strategic planning. While convenience stores offer some variety, their offerings might not align with Western preferences. Hotel breakfasts are a consistent choice for familiar meals. For dining out, target established international restaurants or specific cuisines. Local eateries, though potentially simple in appearance, can offer affordable and tasty non-Korean dishes. Breakfast prices outside hotels typically start around 20,000 KRW. Menu translation or seeking recommendations can aid in finding suitable options.</li>
+    <li>When purchasing iPhones in South Korea, inquire about the SIM card version. Some versions might be eSIM-only, similar to mainland China, which could impact usability in other countries for physical SIM card users.</li>
+    <li>Student discounts in South Korea (e.g., Apple Store, museums, local transport) typically require a local South Korean student ID. International student cards or ID cards from foreign colleges are generally not accepted for local government or commercial discount programs.</li>
+    <li>Purchasing supplements (vitamins, minerals) in South Korea without a local ID can be challenging on platforms like Coupang or iHerb. Many local supplements, particularly magnesium, are of the oxide form with low bioavailability. It is recommended to look for supplements on iHerb if possible, or explore purchasing from pharmacies, which often stock over-the-counter supplements at competitive prices. For online purchases requiring an ID, consider using a local contact or a purchasing agent service.</li>
+    <li>When searching for specific products in Seoul, such as children&#39;s cream (e.g., Mustela) or collagen and vitamins, local markets like Gwangsijang Market are often good places to start. For branded cosmetics or health supplements, explore large department stores like Lotte or specialized beauty retailers like Olive Young. Pharmacies can also be a viable option for certain items. If you have a specific brand in mind, checking online platforms for its availability can help locate physical stores. Remember to utilize local search engines or apps to pinpoint exact retail locations.</li>
+    <li>Apple products in Seoul can be purchased not only at official brand stores but also at numerous smaller, independent shops. LG products are available in shopping malls.</li>
+    <li>Foreign Visa cards (e.g., from Kyrgyzstan) and UnionPay cards from Russian banks (likeРСХБ) can be used for payments in Seoul. UnionPay might be more suitable for smaller purchases in certain shops like Daiso or Olive Young. Kyrgyz Visa cards have been reported to work widely and reliably, reducing the need for cash.</li>
+    <li>Sunscreen is widely available in South Korea at cosmetic stores like Olive Young and convenience stores. For after-sun care, Panthenol or Aloe Vera gels are recommended. Large Aloe Vera containers can be found at Daiso, and Panthenol is available at pharmacies. Asking for &#39;panthenol cream&#39; (판테놀 크림 주세요) and indicating sunburn will help.</li>
+    <li>Foreign cosmetic brands like No. 7 are not widely available in Seoul, particularly in areas like Myeongdong. Popular Korean cosmetic brands such as Hera, Clio, and Jung Saem Mool are readily available and recommended, with the Jung Saem Mool cushion being a notable product.</li>
+    <li>The popular Puma Speedcat Ballet shoes may be available in South Korea, with potential sightings reported in the Myeongdong district. Checking stores like ABC Mart is also recommended for shoe purchases.</li>
+    <li>Apple Pay is functional in South Korea, particularly with newer terminals found in large retail chains, shopping malls, and restaurants. However, it may not be accepted at establishments with older payment terminals, such as smaller shops, taxis, or family-run eateries. It is advisable to carry alternative payment methods like foreign-issued credit/debit cards and cash.</li>
+    <li>Key shopping locations in Seoul include Goto Mall, an extensive underground shopping area located beneath Express Bus Terminal station, featuring over 600 shops. The Songpa district is known for its pop-up stores and brand outlets such as Gentle Monster, Blue Elephant, Tamburins, Dior, and Tir Tir.</li>
+    <li>Inquire about the availability of Japanese cooling sprays and scarves in South Korean stores such as Daiso or Olive Young. While cooling sprays might be available, the availability of cooling scarves is less certain and potentially limited to Japan.</li>
+    <li>Returns at Olive Young in South Korea are subject to their return policy. Generally, items can be returned if they are in their original condition and packaging. For electronics like power banks, the original packaging and any accompanying accessories should be intact. For Tax-Free purchases, items generally do not need to be sealed, but the purchased goods must be presented to customs officials upon departure. It&#39;s advisable to keep all receipts and original packaging for returns.</li>
+    <li>To make purchases on Joonggonara, a Korean classifieds website, a Korean ID is typically required for registration. If a user lacks a Korean ID, they may need to utilize proxy buying services or &#39;buy-for-me&#39; agents who can facilitate the transaction on their behalf.</li>
+    <li>Purchasing a suitcase late at night in South Korea may be limited to 24-hour convenience stores or large supermarkets that offer extended hours. Specialty luggage stores typically have fixed operating hours. It is advisable to check the operating hours of nearby stores in advance or consider online shopping platforms that offer rapid delivery options.</li>
+    <li>Items purchased from duty-free shops like Lotte Duty Free in South Korea can be collected by a designated recipient in Moscow. The price for this service is approximately 70,000 KRW. It is important to arrange for the collection and delivery well in advance, especially if the items are to be included as part of checked luggage.</li>
+    <li>Tourists can now purchase new Samsung mobile phones in South Korea. It is recommended to visit official Samsung stores or electronics departments in large shopping malls. Availability may vary, and some items might need to be ordered from a warehouse. This is a change from previous years when purchasing new phones as a tourist was more difficult.</li>
+    <li>In Seoul, markets can still be a good place to find fashionable clothing, particularly styles from the 90s and Y2K era. Korean consumers often embrace these retro trends. For vintage clothing, checking Instagram for addresses and exploring shops in areas like Hongdae is recommended.</li>
+    <li>Russian UnionPay cards, such as those issued by Rosselkhozbank, may have limited acceptance in South Korea. While some terminals, like those for Wowpass top-ups, might accept them, transit systems (subway, bus, taxi) and some retail points may not. Payment success can be inconsistent across different merchants and payment systems. It is recommended to have alternative payment methods, such as cash or a local transit card, readily available.</li>
+    <li>Recommended Korean beauty products include: Parnell Cicamanu skin fit foundation (lightweight, SPF 30, shade 0.5-21) and cushions from Laneige and Tir Tir. Another user mentioned Clio cushions in a glass jar, noting they provide a dewy finish and good skin appearance, though they are not heavily full-coverage.</li>
+    <li>For those seeking Korean cotton fabrics for patchwork in Seoul, there is a large handicraft market located at 266, Jong-ro, Jongno-gu, Seoul. While cotton is not grown in Korea, this market is likely to offer a variety of materials suitable for crafting and patchwork.</li>
+    <li>The Namane card is a versatile payment option in South Korea, functioning as both a general payment card (&#39;Pay Balance&#39;) and a public transport card (&#39;T-money&#39;). It is accepted at most retailers and for taxi fares. Funds can be added via Namane kiosks or CU convenience stores. The accompanying mobile application allows for balance transfers, custom card designs, and potentially access to exclusive offers.</li>
+    <li>Inquire about the existence of an official Stanley store in Seoul. A user saw a corner display in a sports store on Myeongdong and is curious if there&#39;s a dedicated standalone shop.</li>
+    <li>In South Korea, large cups of Americano in private coffee shops can be purchased for approximately 2,000 KRW (around $1.50 USD), and in chain coffee shops like Compose Coffee, for about 1,500 KRW. This pricing is notably inexpensive.</li>
+    <li>When choosing between T-Money and Climate Card for public transport in Seoul, consider their functionalities. Climate Card is generally cheaper but restricted to Seoul&#39;s administrative boundaries and only usable for transport. T-Money, while potentially more expensive, is more versatile, usable for transport, in convenience stores, and shops like Daiso, and covers a wider area including transport to/from Incheon Airport.</li>
+    <li>The Namane card is a viable alternative to Wowpass in South Korea, accepted widely for various transactions. It functions with two balances: &#39;Pay Balance&#39; for general purchases and &#39;T-money&#39; for public transportation and taxis. Funds can be topped up via Namane kiosks or CU convenience stores. The associated app offers convenient fund management, customization options for card design, and potential discounts or cashback.</li>
+    <li>Inquire about the density and coverage of Clio cushions. A user mentioned liking the dewy finish and overall appearance provided by Clio cushions, particularly a pink variant, but noted they are not heavily full-coverage.</li>
+    <li>For extensive walking in Seoul during summer, consider the weather. While sneakers (e.g., New Balance, Nike) are popular, they can cause sweaty feet in humid conditions or get wet during rain. Rubber sandals or Crocs are recommended for hot, humid, or rainy weather to prevent discomfort and blisters. Sneakers are essential for hiking or walking on uneven terrain. The New Balance 530 model is suggested for summer due to its breathable mesh.</li>
+    <li>The swimming season in South Korea typically begins in July. Popular beach destinations like Jeju Island and Gangneung are suitable for swimming. Busan&#39;s waters may still be cool in early July. While locals might opt for full-coverage swimwear (like rash guards), tourists can wear standard swimsuits without issue. Swimming beyond designated safety buoys is prohibited and may result in being asked to return to shore.</li>
+  </ul>
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/kr/documents-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documents &amp; Visa</span></a>
+    <a class="chip" href="/en/kr/transport/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transport</span></a>
+    <a class="chip" href="/en/kr/banking-money/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Banking &amp; Money</span></a>
+    <a class="chip" href="/en/kr/tickets-entertainment/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🎟 Tickets &amp; Entertainment</span></a>
+    <a class="chip" href="/en/kr/safety/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛡 Safety</span></a>
+    <a class="chip" href="/en/kr/currency-transfers/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Currency &amp; Transfers</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Search answers everyone — but you?</h2>
+    <p>Ask Luky — gives what you actually need: real experience of people who went through it.</p>
+    <p>And Luky is a live voice translator for real conversations: figure out at the store what you&#39;re even buying.</p>
+    <p class="ps">PS: if you like, Luky helps you meet people with no language barrier 😉</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/kr/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

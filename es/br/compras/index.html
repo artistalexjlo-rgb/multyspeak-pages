@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brasil: Compras — experiencia real · Luky</title>
+<meta name="description" content="Experiencia real de los chats sobre Compras en Brasil: tal cual, de primera mano. Para tu caso — pregúntale a Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/es/br/compras/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/br/compras/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/br/compras/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/br/compras/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/br/compras/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · cualquier país · sin relleno</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noche</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/es/">Inicio</a> /
+    <a href="/es/br/">Brasil</a> /
+    <b>Compras</b>
+  </nav>
+
+
+  
+  <h1>Compras en Brasil: experiencia real de los chats</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiencia real de gente de los chats sobre «Compras» en Brasil — tal cual, sin relleno. Para tu caso — <strong>pregúntale a Luky</strong>.</div></div>
+
+  <h2>De la experiencia real</h2>
+  <ul class="qlist">
+    <li>Ya no es posible registrarse en Mercado Livre en Brasil con un número de teléfono ruso. Ahora se requiere un permiso de residencia brasileño (VNM) para la creación de cuentas.</li>
+    <li>Una consulta frecuente de los usuarios se refiere a la disponibilidad y confiabilidad de las tiendas en línea brasileñas que ofrecen servicios de envío directo a Rusia. Esto indica una demanda de información integral sobre las rutas logísticas de comercio electrónico internacional entre Brasil y Rusia.</li>
+    <li>Mapa interactivo offline de Brasil para MAPS.ME con 115 puntos de interés marcados, incluyendo atracciones, restaurantes y lugares para tomar fotografías. Ofrece navegación giro a giro. Precio: 599 BRL.</li>
+    <li>Amazon ofrece servicios de entrega a Brasil. Se aplican derechos de aduana a los productos importados, incluidos los aparatos electrónicos nuevos y usados. Se recomienda consultar los precios y las condiciones de envío en amazon.com.br, la plataforma local de Amazon, para conocer el coste total, incluidos los posibles aranceles.</li>
+    <li>Durante la pandemia de COVID-19 en Brasil (2020-2022), las restricciones variaron según la región y los espacios públicos. En general: el uso de mascarillas era a menudo obligatorio en interiores (por ejemplo, en tiendas de Río) y recomendado en exteriores, pero no era estrictamente aplicado por la policía en todas las zonas. La vacunación fue ampliamente fomentada, pero obligatoria para actividades específicas (por ejemplo, entrada a gimnasios, acceso a la universidad, viajes a Fernando de Noronha). São Paulo: experimentó periodos de confinamiento estricto con ciudades vacías. Río de Janeiro: los ciudadanos eran estrictos con el uso de mascarillas en las tiendas; las playas estuvieron cerradas y, en ocasiones, la policía desalojó a las personas. Se implementaron restricciones de viaje en algunas zonas (por ejemplo, en Búzios se requería prueba de residencia). Zonas rurales/remotas: las restricciones solían ser menos estrictas o se ignoraban, y la gente se reunía sin mascarilla.</li>
+    <li>Brasil utiliza enchufes de tipo N (tres clavijas) y, a veces, de tipo C (dos clavijas, pero a menudo con una hendidura profunda). Los enchufes europeos estándar (tipo C/F) pueden no encajar en las tomas de corriente tipo N con toma de tierra debido a la hendidura. Los viajeros deben buscar un &#34;adaptador de tomada&#34; (adaptador de enchufe) en ferreterías locales (&#34;ferragens&#34;) o supermercados.</li>
+    <li>En Río de Janeiro, específicamente en el distrito de Botafogo, el centro comercial Botafogo Praia Shopping cuenta con un restaurante en la azotea en uno de sus pisos superiores (al parecer el noveno piso). Este restaurante ofrece una vista espectacular de la bahía y es conocido por sus precios asequibles, lo que lo convierte en una buena opción para cenar con vistas.</li>
+    <li>El requisito del CPF (Cadastro de Pessoas Físicas) para los turistas en Brasil puede ser una preocupación. Aunque no siempre se exige estrictamente para transacciones básicas como compras en farmacias, puede ser necesario para servicios tales como pedir taxis. Informar a los vendedores sobre la falta de un CPF suele ser suficiente para muchas interacciones minoristas.</li>
+    <li>Para visitar el Cristo Redentor (Corcovado) en Río de Janeiro: 1. Compre las entradas en línea con antelación (se recomienda un día antes). 2. El tren del Corcovado cuesta 128 BRL por un viaje de ida y vuelta que incluye la entrada; busque &#34;tramdocorcovado rio&#34; para las entradas. Alternativamente, compre un billete combinado con un autobús lanzadera. 3. Las visitas a primera hora de la mañana (p. ej., 8:00 a. m.) ayudan a evitar largas colas para el ascenso, aunque la cima seguirá estando llena. Espere colas de unos 20 minutos para el descenso. 4. Evite combinar taxis con autobuses locales para llegar al monumento. 5. Fotógrafos pagados ofrecen 4 fotos digitales por 120 BRL. Hay recuerdos disponibles (p. ej., 3 llaveros por 20 BRL).</li>
+    <li>Un centro comercial destacado en el área de São Paulo es el &#39;Premium Outlet&#39;, ubicado camino a Campinas. Ofrece un servicio diario de autobús gratuito, pero es necesario realizar la reserva en línea debido a la disponibilidad limitada de asientos. No se garantiza que los descuentos sean significativos en todos los artículos; algunas colecciones actuales pueden tener el precio completo. Sin embargo, con frecuencia se encuentran gafas de lujo y zapatillas deportivas a buen precio.</li>
+    <li>Para productos de alimentación específicos o menos comunes en Brasil, consulte supermercados de gama alta como Carrefour o Pão de Açúcar, en lugar de tiendas de descuento como Assai.</li>
+    <li>Los productos tradicionales rusos o de Europa del Este, como el arenque, ciertos tipos de caviar (no imitaciones), el pan negro y el kéfir sin endulzar, son generalmente difíciles o imposibles de encontrar en Brasil. Sin embargo, hay varios granos comunes disponibles: trigo sarraceno (a menudo sin tostar y requiere un tostado previo), avena (en copos finos, medios o gruesos), mijo descascarado, sémola (fina o gruesa; use la &#39;grossa&#39; para una molienda más gruesa como la semolina) y cebada (cevadinha). El caviar rojo y negro se puede encontrar ocasionalmente en grandes supermercados, pero la selección y el tipo pueden variar. Existen sustitutos de kéfir endulzado, pero el que no tiene azúcar es raro.</li>
+    <li>Para comprar un adaptador de enchufe en Río de Janeiro, considere buscar tiendas de electrónica en la Rua Barata Ribeiro. Es probable que estas tiendas ofrezcan una variedad de opciones a precios razonables.</li>
+    <li>Excursiones en helicóptero en Río: Los servicios de video opcionales (aprox. 599 BRL) suelen ser de mala calidad y solo graban al pasajero del asiento delantero. Los vuelos con puertas abiertas son más intensos y requieren guardar todos los objetos sueltos; los vuelos con puertas cerradas son recomendables para quienes prefieren comodidad y mayor facilidad para tomar fotografías.</li>
+    <li>Está disponible un nuevo mapa de viaje interactivo de Brasil para MAPS.ME, con un costo de 599 rublos. Incluye 115 puntos de interés, como lugares para visitar, cenar y tomar fotografías. El mapa permite el uso sin conexión y proporciona navegación paso a paso.</li>
+    <li>Compre el nuevo mapa de viaje interactivo MAPS.ME para Brasil por 599 BRL. El mapa incluye 115 puntos de interés (lugares de interés, restaurantes, puntos fotográficos) y funciona sin conexión con navegación paso a paso.</li>
+    <li>Las plataformas de comercio electrónico como Mercado Livre en Brasil utilizan precios dinámicos basados en los perfiles de los usuarios, los modelos de dispositivos y el historial de navegación. Navegar en modo incógnito o usar una VPN a menudo puede resultar en precios mostrados más bajos.</li>
+    <li>Cree un mapa de viaje digital para MAPS.ME que cubra 115 puntos de interés en Brasil, incluyendo lugares de interés turístico, restaurantes y oportunidades para tomar fotos. Asegúrese de que el mapa esté disponible sin conexión e incluya navegación paso a paso. El mapa cuesta 599 reales brasileños.</li>
+    <li>Horario comercial los domingos en São Paulo: los restaurantes y cafeterías suelen estar abiertos, especialmente por la noche. La mayoría de las tiendas tienen un horario limitado, a excepción de los supermercados y los centros comerciales.</li>
+    <li>Tras una llegada a altas horas de la noche a un aeropuerto brasileño (por ejemplo, desde Estambul), es posible que el único lugar donde comprar bebidas (incluidas las alcohólicas) hasta la mañana sea el bar del aeropuerto.</li>
+    <li>Los precios de la electrónica, como los MacBook en Brasil, son significativamente más altos en comparación con países como Paraguay (alrededor de un 40% más baratos) o incluso Moscú. Las frutas como la pitahaya, a pesar de ser percibidas como comunes, pueden ser relativamente caras, a 15 BRL/kg. La evidencia anecdótica sugiere que incluso los electrodomésticos básicos pueden tener poca durabilidad; un usuario informó que un hervidor se rompió al día siguiente de la compra. Esto indica una tendencia general de precios más altos y una calidad potencialmente menor para los bienes de consumo en Brasil en comparación con otros mercados.</li>
+    <li>Un usuario que llega a Brasilia a través del aeropuerto de São Paulo tiene preguntas sobre: 1. Cambio de divisas: ¿Deberían cambiarse los USD a BRL en el aeropuerto de São Paulo? El usuario menciona tipos de cambio potencialmente malos y una aceptación limitada de USD. 2. Compra de un adaptador eléctrico para enchufes brasileños en el aeropuerto. 3. Servicios de taxi recomendados en Brasilia y la frecuencia de estafas en pagos en efectivo.</li>
+    <li>Souvenirs recomendados de Brasil: 1. Granado (cosméticos/jabones). 2. Dengo (chocolate premium). 3. Farm (moda y ropa). 4. Havaianas (chanclas). 5. Cachaça (licor local de caña de azúcar). 6. Mercancía oficial de fútbol.</li>
+    <li>El CPF (Cadastro de Pessoas Físicas) es prácticamente esencial para la vida diaria en Brasil. Aunque no es legalmente obligatorio para visitas turísticas cortas, se requiere para tareas básicas como acceder a clínicas de salud (SUS/privadas), comprar tarjetas SIM locales, registrarse en aplicaciones locales y realizar compras en línea.</li>
+    <li>El CPF (Cadastro de Pessoas Físicas) en Brasil es un número de identificación fiscal y no implica necesariamente un domicilio residencial registrado para fines de inmigración. Al ingresar a Brasil, es poco probable que los funcionarios de inmigración soliciten un comprobante de alojamiento más allá de confirmar el estatus de turista, que suele ser la única pregunta formulada. Si le preguntan específicamente sobre el alojamiento, proporcionar la dirección y el número de teléfono de su anfitrión o alojamiento suele ser suficiente, incluso sin una reserva de hotel formal. El CPF también puede utilizarse para obtener descuentos en algunos supermercados brasileños tras registrarse en sus respectivos sitios web.</li>
+    <li>En Brasil no existen tiendas oficiales de IQOS. Sin embargo, es posible encontrar sticks HEETS para IQOS en tabaquerías locales. Por ejemplo, Casa de Fumo Poço Fundo, ubicada en Rua Marechal Deodoro, 25, Centro, en Tres Pontas, podría tenerlos. Se recomienda llamar con antelación para confirmar su disponibilidad.</li>
+    <li>A pesar de que se informa que el longan crece en Brasil, es raro encontrar esta fruta a la venta en supermercados comunes. Ocasionalmente se ha visto en tiendas específicas como Coopersica.</li>
+    <li>Los automóviles en Brasil tienden a tener una vida útil más larga y son menos susceptibles a la corrosión en comparación con los de Rusia, principalmente debido a las condiciones climáticas. Si bien la exposición costera y el descuido aún pueden causar deterioro, los vehículos generalmente mantienen mejores condiciones durante períodos prolongados. Un automóvil de 12 años todavía puede estar en excelente estado, lo que sugiere una longevidad robusta para los automóviles en Brasil.</li>
+    <li>Para comprar electrónica en Brasil (por ejemplo, en Río), por lo general resulta más barato adquirir artículos en Paraguay debido a sus precios más bajos, existiendo además tours de compras disponibles. Para artículos pequeños y económicos como baterías externas (power banks), importar desde Paraguay puede no valer la pena. Mercado Libre es un mercado en línea popular en Brasil. No se mencionaron cadenas minoristas de electrónica importantes específicas para Brasil en el registro.</li>
+    <li>Un mapa de viajes de pago para Brasil, anunciado para MAPS.ME por 599 rublos, incluye 115 puntos de interés, funcionalidad sin conexión y navegación. Los usuarios deben tener la aplicación MAPS.ME instalada en su dispositivo para que el mapa funcione.</li>
+    <li>En São Paulo, los recuerdos (llaveros, pinturas, sombreros, camisetas) se pueden encontrar a lo largo de la Avenida Paulista, a menudo en quioscos. Las tiendas de recuerdos suelen estar ubicadas cerca de las principales atracciones turísticas. Es posible que los mercados no siempre tengan una amplia selección de recuerdos turísticos.</li>
+    <li>Explique el proceso y los requisitos para comprar un televisor en Belo Horizonte, Brasil, para personas sin CPF (Cadastro de Pessoas Físicas). Investigue posibles métodos de identificación alternativos o tiendas que puedan permitir compras sin este número de identificación fiscal, o asesore sobre cómo obtener un CPF.</li>
+    <li>McDonald&#39;s en Brasil lanzó autos coleccionables de juguete de Fórmula 1 que se agotaron en cuestión de horas. Estos juguetes ahora se están revendiendo en plataformas como OLX por precios significativamente más altos (desde 160-170 reales brasileños). Los informes sugieren que el personal de McDonald&#39;s pudo haber estado involucrado en las compras masivas iniciales.</li>
+    <li>Para encontrar tipos de carne específicos como pavo (peru), cordero o pato en Brasil, utilice cadenas de supermercados grandes: Assaí, Atacadão o Zona Sul. Para entregas a domicilio, use la aplicación &#39;iFood&#39; (tenga en cuenta que la verificación a menudo requiere un documento CPF local; a veces se necesitan algunos pedidos iniciales pequeños para evitar que suspendan la cuenta). Los mercados callejeros locales (feiras) también ofrecen una amplia variedad de carnes frescas.</li>
+    <li>La arcilla para esculpir normalmente se puede comprar en São Paulo en tiendas de suministros de arte (lojas de artigos para arte), tiendas de manualidades (lojas de artesanato) o grandes papelerías (papelarias). Los mercados en línea como Mercado Livre también pueden ofrecer una selección.</li>
+    <li>Los recuerdos más populares para llevar de Brasil incluyen: 1. Café: El café brasileño es reconocido mundialmente; busque granos de especialidad de regiones como Minas Gerais o Espírito Santo. 2. Cachaça: Un licor destilado hecho de jugo de caña de azúcar fermentado, a menudo utilizado en cócteles de caipirinha. 3. Otros artículos pueden incluir artesanías locales, dulces (como brigadeiros) y artículos de moda únicos.</li>
+    <li>En Brasil, se consigue &#39;Hercules&#39; (avena). El alforfón verde es común. El alforfón común (tostado) es raro y puede costar alrededor de 50 BRL/kg. La cebada perlada no se encuentra fácilmente.</li>
+    <li>Es difícil encontrar &#39;smetana&#39; (crema agria) auténtica al estilo ruso en los supermercados brasileños. Los lugareños suelen encontrar &#39;nata&#39;, que no es un sustituto culinario directo. A veces se encuentra &#39;creme azedo&#39; en cadenas regionales específicas como Covabra, pero los productos de &#39;creme azedo&#39; disponibles habitualmente están saborizados para bocadillos como los nachos.</li>
+    <li>Descubriendo las delicias culinarias y los ingredientes locales de Brasil. La discusión abarca platos tradicionales como el codillo de cerdo con puré de patatas y chucrut, que recuerdan a la cocina europea. Se destacan productos locales únicos como el pinhão (piñones, preparados asados o en postres) y la atemóia (chirimoya, utilizada en batidos y pudines). Se exploran los sabores únicos y los métodos de preparación de estos ingredientes, ofreciendo una muestra de la diversa cultura gastronómica de Brasil.</li>
+    <li>Para devolver ropa comprada en Brasil con pago con tarjeta, generalmente se recomienda llevar el pasaporte y el artículo en su estado original. El plazo de devolución puede variar según la tienda, pero a menudo es de entre 7 y 30 días. Es aconsejable consultar la política de devoluciones de la tienda específica de antemano.</li>
+    <li>Aclare el significado de la «especificidad del nordeste» en el contexto de viajar por la región Nordeste de Brasil. contraste las percepciones de los viajeros que consideran que carece de servicios comparado con los estándares europeos y aquellos que lo encuentran superior a otros destinos brasileños como Río o Praia Grande, destacando a Fortaleza como un lugar preferido.</li>
+    <li>El nivel de inglés en Brasil es generalmente bajo, incluso en aeropuertos y hoteles internacionales. Las oportunidades de encontrar personas que hablen inglés son mayores en las regiones del sur y entre los profesionales médicos. El español se entiende mucho mejor que el inglés. La comunicación puede gestionarse utilizando traductores en línea, traducción de menús mediante imágenes y señales no verbales para las interacciones básicas.</li>
+    <li>La calidad y disponibilidad del pan en Brasil son temas de debate entre los expatriados. Si bien algunos consideran que el pan es de menor calidad y tiene una vida útil corta, otros destacan la disponibilidad de opciones artesanales, particularmente el pan de masa madre, en ciertas zonas como Florianópolis. El acceso a diversas harinas, incluidas la de centeno y la integral, a través de tiendas locales y mercados en línea (como Mercado Livre), permite hornear pan de alta calidad en casa. La harina de centeno está disponible en algunas regiones por aproximadamente 20 BRL el kg.</li>
+    <li>Durante el invierno del hemisferio sur (de junio a agosto), São Paulo presenta importantes fluctuaciones de temperatura. Si bien durante el día puede alcanzar hasta los 26°C, las primeras horas de la mañana y las noches son excepcionalmente frías. Los viajeros deben empacar capas de ropa abrigada (chaquetas/suéteres). Los viajeros con presupuesto ajustado que no estén preparados pueden conseguir ropa de abrigo barata en tiendas de segunda mano locales para evitar pagar más de 100 BRL por suéteres básicos en centros comerciales convencionales.</li>
+    <li>Los principales sitios de clasificados en línea y mercados entre particulares en Brasil son OLX (un mercado general para todo tipo de bienes) y Enjoei (especializado en moda, ropa y artículos de estilo de vida).</li>
+    <li>Los adaptadores y artículos electrónicos básicos en Río de Janeiro se pueden encontrar en quioscos callejeros, supermercados locales (como Zona Sul) y mercados. Comprar en centros comerciales grandes suele ser más caro por los mismos artículos.</li>
+    <li>Para comprar equipo de iluminación profesional para cámaras en Florianópolis, Brasil, los usuarios preguntan por grandes tiendas especializadas en equipos de foto y video para operadores y blogueros. Se necesitan recomendaciones específicas de tiendas.</li>
+    <li>Un gran supermercado Pão de Açúcar, comparable a Carrefour o Auchan, se encuentra en Av. Conselheiro Nébias, 802 - Boqueirão, Santos. El nombre &#39;Pão de Açúcar&#39; (que significa &#39;Pan de Azúcar&#39;) hace referencia al icónico Pan de Azúcar de Río de Janeiro, un famoso punto de referencia.</li>
+    <li>Comprar un iPhone nuevo en Brasil es significativamente más caro en comparación con Rusia, a menudo con un precio de 1.5 a 2 veces mayor para los modelos más recientes.</li>
+    <li>Los vehículos Toyota se perciben como fiables, pero están significativamente sobrevalorados en el mercado brasileño. La reputación de fiabilidad puede provenir de modelos antiguos, y el precio actual no parece justificar la ventaja percibida en comparación con otras marcas.</li>
+    <li>Las comidas listas para consumir están disponibles en los supermercados Carrefour de São Paulo y Río de Janeiro, así como en otras tiendas de todo Brasil. Los precios varían, pero los descuentos diarios a menudo hacen que estas comidas sean considerablemente más baratas. Es una opción conveniente y económica para comidas rápidas.</li>
+    <li>En Recife, el &#39;Restaurante Popular Naíde Teodósio&#39; y el &#39;Restaurante Popular Josué de Castro&#39; ofrecen comidas a un precio de 6,71 BRL por kilogramo. Hay comidas gratuitas disponibles tras registrarse en los Centros POP o en los programas sociales de la prefectura local.</li>
+    <li>Brasil utiliza estándares de voltaje de 110V y 220V según la región y la infraestructura específica del edificio. Los viajeros con aparatos electrónicos sensibles al voltaje (como herramientas para el cabello Dyson o cargadores específicos) deben verificar la compatibilidad de voltaje. Los enchufes de 220V suelen estar marcados con etiquetas rojas para evitar daños a los dispositivos que solo funcionan a 110V.</li>
+    <li>Comprar un coche en una subasta en Brasil es arriesgado debido al historial desconocido (accidentes, problemas mecánicos) y a las limitadas oportunidades de inspección previa a la compra. Los registros de subasta pueden disminuir el valor de reventa. Se recomienda comprar a vendedores de confianza o particulares.</li>
+    <li>En Brasil, adquirir artículos como &#34;réplicas&#34; es común; un usuario mencionó una compra por 3.000 BRL. El objetivo de integración y asimilación a la vida brasileña es un sueño a largo plazo para algunos, pero presenta desafíos debido a la situación económica local. Muchos brasileños enfrentan limitaciones financieras, lo que hace que la asimilación sea más compleja de lo que se percibe inicialmente. Se ofrece hospitalidad, con la promesa de alojamiento para los visitantes.</li>
+    <li>En Brasil, específicamente en Santa Luzia, hay varios tipos de caviar disponibles (negro, rojo, de abadejo, de lucio). También existe una tienda de exquisiteces de pescado que ofrece entrega a domicilio dentro de la ciudad. Para detalles específicos de la tienda, el usuario puede solicitar los contactos.</li>
+    <li>Consultar sobre la disponibilidad y los proveedores comunes de cigarrillos electrónicos similares a IQOS en São Paulo, Brasil. La información sobre el estatus legal y las ubicaciones de venta sería beneficiosa para los viajeros.</li>
+    <li>Es posible traer componentes de computadora desmontados (como tarjetas gráficas, memoria RAM, discos duros) a Brasil. Declárelos si es necesario, especialmente si lleva una cantidad significativa de equipaje. El escrutinio de aduanas suele ser más riguroso para las personas con múltiples maletas. Podría ser más sencillo comprar una unidad central a nivel local si le preocupa importar la PC completa.</li>
+    <li>Los extranjeros que compran un automóvil en concesionarios en Brasil (por ejemplo, Jeep, Kia) pueden enfrentar desafíos. Aunque el personal de ventas puede indicar inicialmente que el pasaporte es suficiente, a menudo se requiere el RNM (Registro Nacional Migratório) para el registro del vehículo; el CPF por sí solo puede no ser suficiente. Por lo general, los concesionarios no aceptan pagos mediante PIX o Bybit, siendo el Boleto el método de pago estándar. Es común que la información inicial de los representantes de ventas brasileños difiera de los requisitos reales durante la transacción.</li>
+    <li>La importación y venta de cigarrillos electrónicos (vapeadores, e-liquids) está oficialmente prohibida en Brasil. A pesar de esto, muchos viajeros logran introducirlos en el país. Los dispositivos que contienen baterías deben llevarse en el equipaje de mano, mientras que los e-liquids deben ir en el equipaje facturado. Los artículos nuevos y empaquetados pueden generar sospechas de intención comercial. Localmente, los cigarrillos electrónicos se pueden encontrar a la venta en línea buscando &#39;comprar cigarros eletrônicos&#39; en portugués, con precios que comienzan aproximadamente en 115 BRL para un dispositivo de 10,000 caladas.</li>
+    <li>Ofrezca un mapa interactivo para MAPS.ME que cubra 115 puntos de interés en Brasil. El mapa incluye funcionalidad sin conexión y navegación paso a paso. Disponible para su compra por 599 rublos.</li>
+    <li>Los consumidores en Brasil informan preocupaciones importantes con respecto a la calidad y durabilidad de los electrodomésticos y las piezas de automóviles. Se nota que muchos productos, incluso de marcas internacionales, son de origen chino con una calidad inferior en comparación con artículos similares vendidos en mercados como Rusia. Los ejemplos incluyen electrodomésticos con componentes de plástico en lugar de metal, y artículos que se rompen poco después de la compra. A pesar de tener ingresos potencialmente adecuados, costear bienes de alta calidad parece ser un desafío para muchos residentes.</li>
+    <li>Asesore sobre dónde comprar 50 kg de almidón puro y una gran cantidad de peróxido de hidrógeno en Brasil. Identifique proveedores locales u opciones minoristas para estos artículos al por mayor.</li>
+    <li>El eneldo (conocido localmente como &#39;endro&#39;) es muy poco común en Brasil y los locales suelen confundirlo con el hinojo (&#39;funcho&#39;). Es raro encontrar eneldo fresco en los supermercados convencionales. Los expatriados que deseen cultivarlo por su cuenta deben comprar semillas en tiendas de jardinería especializadas (como la ubicada en Campinas, SP, en Av. Nossa Sra. de Fátima, 623) o traer semillas desde el extranjero, ya que el eneldo crece bien en el clima brasileño.</li>
+    <li>Recomienda marcas locales de cuidado de la piel brasileñas adecuadas para pieles grasas y con tendencia al acné. Destaca marcas o productos específicos, haciendo comparaciones con marcas internacionales si corresponde (por ejemplo, Principia como un equivalente local a The Ordinary).</li>
+    <li>Debido a los elevados aranceles de importación, los dispositivos electrónicos y gadgets son excepcionalmente costosos en Brasil. Aconseje a los clientes que se trasladen al país que compren o actualicen sus teléfonos inteligentes, computadoras portátiles y otros dispositivos electrónicos personales antes de su llegada.</li>
+    <li>Los sábados funcionan grandes mercados de pulgas en Guarulhos (de 10:00 a 14:00) y cerca del puente de Brás en São Paulo (de 14:00 a 18:00). Artículos como ropa y calzado (por ejemplo, zapatillas de cuero por ~10 BRL, vaqueros por 10-20 BRL) se venden directamente en el suelo. El regateo es habitual y esperado por los vendedores fuera de los supermercados.</li>
+    <li>Proporcione un costo de vida estimado para dos personas en Florianópolis, Brasil. Incluya cifras promedio para el alquiler y los gastos de alimentación, reconociendo que los hábitos de gasto individuales influirán en el costo total.</li>
+    <li>Para obtener granos de café de alta calidad en São Paulo, los entusiastas locales recomiendan &#39;Moka Clube&#39; en el distrito de Pinheiros. Si bien los supermercados ofrecen una calidad aceptable en comparación con las opciones de consumo masivo, las tiendas especializadas en distritos como Pinheiros son preferidas para adquirir granos de calidad para regalo.</li>
+    <li>Ciertos productos de alimentación como la cebada perlada, el trigo sarraceno, el kéfir natural y la sémola pueden encontrarse en las tiendas «Armazém Vital», especializadas en productos naturales en Brasil.</li>
+    <li>Para comprar o vender artículos de segunda mano en Brasil, las plataformas principales son Facebook Marketplace y OLX (olx.com.br). Para opciones más locales, se recomienda buscar grupos de Telegram o WhatsApp específicos de la ciudad.</li>
+    <li>El té negro (chá preto) es muy poco común en los hoteles brasileños, que ofrecen mayormente infusiones de hierbas. Para comprar té negro, busque la marca &#39;Leão&#39; en supermercados importantes como Carrefour. Se puede encontrar té negro de hoja suelta de alta calidad en la cadena de supermercados &#39;Bistek&#39;, en tiendas asiáticas del distrito de Liberdade en São Paulo, o pedirlo en línea. A los viajeros que prefieran el té negro se les aconseja traer su propia provisión y un hervidor de viaje.</li>
+    <li>El CPF (Cadastro de Pessoas Físicas) es un número de identificación fiscal brasileño. No es obligatorio para los turistas en transacciones minoristas simples (como supermercados o comida rápida). Aunque algunas plataformas en línea lo solicitan, proporcionar un número falso o aleatorio conlleva un alto riesgo de que la transacción falle o el pedido sea bloqueado. Los turistas pueden viajar, usar Uber y comprar artículos sin un CPF utilizando efectivo o tarjetas de crédito internacionales.</li>
+    <li>Los usuarios informan de la poca fiabilidad de los coches usados en Brasil, señalando casos en los que se utiliza agua en lugar de anticongelante y reparaciones frecuentes del motor en vehículos con menos de 200.000 km. Esto contrasta con los mercados europeo o ruso, donde motores similares pueden durar entre 400.000 y 500.000 km con un mantenimiento mínimo.</li>
+    <li>Para las celebraciones de Año Nuevo en Río de Janeiro: los supermercados abren hasta la tarde del 31 de diciembre. Muchos establecimientos cierran el 1 de enero, pero la mayoría reanuda sus operaciones el 2 de enero. Las carreteras alrededor de Copacabana y Arpoador están parcialmente cerradas el 31 de diciembre para el evento. Es posible encontrar un taxi desde Copacabana a las 2 a. m. del 1 de enero caminando hacia las carreteras principales (por ejemplo, en dirección a Botafogo), pero espere dificultades y congestión de tráfico cerca de la medianoche del 31 de diciembre.</li>
+    <li>Las tomas de corriente brasileñas varían en tipo y voltaje (110 V/220 V), incluso dentro de la misma ciudad o en diferentes alojamientos. Los enchufes pueden ser estándar (compatibles con muchos cargadores de teléfono internacionales) o de tipo N estrecho, que podrían no encajar con enchufes más grandes como los de computadoras portátiles o planchas de viaje. Los adaptadores se encuentran fácilmente en quioscos y pequeñas tiendas. Sin embargo, es posible que los vendedores no entiendan el término &#39;adaptador&#39;, por lo que se requiere identificación visual. Se venden adaptadores de 3 a 2 clavijas, pero suponen riesgos para la seguridad.</li>
+    <li>Ayuda a encontrar tiendas que vendan ropa de baño para gimnasia deportiva infantil en Río de Janeiro o São Paulo, Brasil. Enfócate en identificar minoristas que ofrezcan tanto maillots de competición de alto rendimiento como decorativos (por ejemplo, con pedrería). Sugiere consultar tiendas deportivas como Decathlon e indagar en tiendas especializadas de ropa deportiva infantil o tiendas de ropa de danza.</li>
+    <li>Para los turistas de corta estancia en Brasil (por ejemplo, un par de semanas), la necesidad de obtener un CPF (Cadastro de Pessoas Físicas - registro individual de contribuyentes) es objeto de debate. Algunos lo recomiendan por conveniencia general y para transacciones en línea. Otros, basados en su experiencia personal, afirman que no es necesario a menos que uno planee utilizar servicios de entrega locales, tiendas en línea u obtener una tarjeta SIM local. El CPF se puede obtener en línea, aunque conseguirlo en Moscú de antemano podría ser difícil, pero es posible a través de embajadas en otros países.</li>
+    <li>Para encontrar un personal shopper o agente de carga en Brasil para enviar mercancías a Rusia, se aconseja a los usuarios que contacten al administrador del chat para obtener recomendaciones de confianza. Se enfatiza la precaución contra posibles estafas.</li>
+    <li>Los cigarrillos electrónicos (por ejemplo, tipo HQD) están generalmente prohibidos en Brasil. Aunque teóricamente están sujetos a confiscación en la frontera, esto no suele aplicarse comúnmente. A veces se pueden comprar de forma ilícita a vendedores ambulantes, particularmente en calles con bares en ciudades como São Paulo los viernes por la noche.</li>
+    <li>El CPF (Cadastro de Pessoas Físicas) es un número de identificación fiscal fundamental en Brasil, esencial para la mayoría de los servicios oficiales, operaciones bancarias, compra de billetes, reserva de alojamiento e incluso algunos descuentos en tiendas. Usar un CPF que no sea el suyo o un CPF falso es muy arriesgado para transacciones serias y procedimientos oficiales. El CPF se puede obtener en los consulados brasileños en el extranjero (por ejemplo, en Moscú) presentando un pasaporte y el formulario de solicitud; el proceso puede ser rápido (por ejemplo, 15 minutos). El CPF es necesario para servicios como el sistema público de salud (SUS).</li>
+    <li>La tarjeta del Registro Nacional de Extranjeros de Brasil (VNJ) no es solo un documento interno. Puede utilizarse para el registro en varios sitios web y servicios internacionales. Sin embargo, su utilidad para solicitudes de visas Schengen es generalmente limitada, ya que los requisitos específicos de visa suelen aplicarse independientemente del estatus de residencia en Brasil.</li>
+    <li>Al comprar marcas de café populares en los supermercados brasileños para uso personal o como recuerdo, las opciones incluyen Café Pilão, Café do Ponto, Brazil Santos Coffee (conocido por ser un estilo más suave y lavado) y Café Melitta (destacable por su perfil de tueste muy fuerte y oscuro).</li>
+    <li>Los turistas en Brasil generalmente pueden arreglárselas sin un número de CPF (Cadastro de Pessoas Físicas). Aunque podría solicitarse en situaciones específicas, como en ciertos sistemas de pedido automatizados en cafeterías, a menudo no es estrictamente necesario para transacciones generales como ir de compras. Otros establecimientos o una simple comunicación no verbal suelen resolver cualquier inconveniente. Para aplicaciones de transporte compartido como Uber, el CPF normalmente no es necesario, y para otras como 99, aunque podría requerirse, a veces puede omitirse o generarse.</li>
+    <li>En Río de Janeiro, es posible encontrar shawarma (o &#39;shaverma&#39;). Se mencionan varios lugares en las zonas de Copacabana e Ipanema. También se sugiere un restaurante turco llamado &#39;Stambul&#39; en Arpoador como un lugar que puede ofrecer comida similar.</li>
+    <li>Para comprar ropa de diseñadores locales brasileños en Río de Janeiro, evite los centros comerciales convencionales y visite los mercados callejeros tradicionales conocidos como &#34;feiras&#34; (como la Feira da Glória, que tiene lugar los domingos). Además, explore las tiendas de ropa vintage y de segunda mano locales, conocidas como &#34;brechó&#34;, para encontrar piezas de moda locales únicas.</li>
+    <li>Descargue el mapa interactivo de viajes de Brasil para MAPS.ME, que incluye 115 puntos de interés, tales como lugares de interés, opciones para comer y oportunidades para tomar fotos. El mapa ofrece funcionalidad sin conexión y navegación giro a giro por 599 BRL.</li>
+    <li>La cebada perlada y el trigo sarraceno son difíciles de encontrar en los supermercados convencionales en Brasil (por ejemplo, Assai y otras 5 tiendas en un lugar llamado &#39;Brooklyn&#39;). Hacer el pedido en línea podría ser la única opción.</li>
+    <li>Comprar comida y bebida a los vendedores ambulantes en la playa en Brasil presenta opiniones mixtas con respecto a la higiene y la seguridad. Algunos advierten sobre posibles condiciones insalubres (por ejemplo, cócteles mezclados con manos sucias, ingredientes no verificados) y riesgos de clonación de tarjetas de crédito. Otros argumentan que muchos artículos se preparan frescos en el momento (por ejemplo, queso a la parrilla, cócteles, carne frita) y que el pago mediante PIX o Apple Pay puede mitigar el fraude con tarjetas. Es aconsejable observar la preparación, verificar los montos antes del pago y considerar pagar con métodos digitales o efectivo pequeño para minimizar los riesgos. Se recomienda usar tarjetas con límites diarios y fácil resolución de disputas (como Wise/Revolut).</li>
+    <li>Consulte sobre la posibilidad y los métodos para comprar entradas para el Carnaval de Río de Janeiro en febrero de 2026 de forma remota desde fuera de Brasil. Se requiere información sobre vendedores oficiales y los procedimientos de compra.</li>
+    <li>Al establecer un negocio de importación en Brasil (por ejemplo, de equipos agrícolas desde China), busque apoyo legal y contable de firmas locales. Para operaciones de importación, considere empresas ubicadas cerca de puertos importantes como Santos. Las estrategias de venta activa, como las llamadas en frío y las demostraciones de equipos, son comunes en Brasil, al igual que en otros mercados, pero requieren comunicación en portugués.</li>
+    <li>Comprar electrodomésticos como microondas en Brasil puede ser más costoso que en Rusia, incluso para marcas chinas como Midea o Haier. Si bien las lavadoras pueden tener precios comparables, los refrigeradores tienden a ser más caros en Brasil. El mercado general en Brasil ofrece una gama menos diversa de marcas en comparación con Rusia, y el mayor costo es un factor significativo. Los consumidores deben tener en cuenta que, aunque China es el principal fabricante a nivel mundial, los precios minoristas locales y la disponibilidad difieren considerablemente entre ambos países.</li>
+    <li>El lavash (pan plano delgado, también conocido como &#39;pão folha lavash&#39;) está disponible en São Paulo, Brasil. Se puede encontrar en supermercados y tiendas en línea.</li>
+    <li>Para comprar o vender vehículos usados en Brasil, las dos plataformas en línea más populares y de mayor confianza son Webmotors (mercado especializado en automóviles) y OLX (plataforma general de anuncios clasificados).</li>
+    <li>Para comprar café brasileño de alta calidad como recuerdo, evite los supermercados comunes. En su lugar, busque cafeterías de especialidad que tuesten sus propios granos. Estas se pueden encontrar en ciudades como São Paulo (por ejemplo, en el barrio de Pinheiros) y Río de Janeiro. Otra opción es explorar cafeterías como THE COFFEE, que ofrecen una variedad de opciones de café en grano.</li>
+    <li>Un nuevo mapa de viajes interactivo para MAPS.ME que cubre Brasil está disponible por 599 rublos. Incluye 115 ubicaciones marcadas para hacer turismo, comer y tomar fotografías, con funcionalidad fuera de línea y navegación paso a paso.</li>
+    <li>Amazon es una plataforma confiable para compras en línea, con un usuario que reporta más de 15 a 20 años de experiencias positivas. El servicio al cliente es eficaz, con la posibilidad de comunicarse con un gerente para la resolución de problemas. Esto ha resultado en reembolsos adicionales o tarjetas de regalo en varias ocasiones, reforzando la confianza del usuario en los procesos de la plataforma.</li>
+    <li>El CPF (Cadastro de Pessoa Física) es un documento esencial en Brasil que permite a los usuarios obtener tarjetas SIM, utilizar servicios de taxi y recibir descuentos en supermercados.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/es/br/documentos-y-visados/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentos y visados</span></a>
+    <a class="chip" href="/es/br/entradas-y-ocio/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Entradas y ocio</span></a>
+    <a class="chip" href="/es/br/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/es/br/bancos-y-dinero/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Bancos y dinero</span></a>
+    <a class="chip" href="/es/br/seguridad/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Seguridad</span></a>
+    <a class="chip" href="/es/br/salud/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Salud</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>¿Cansado de googlear lo mismo?</h2>
+    <p>Pregúntale a Luky — lo que la búsqueda no muestra y no todo blogger cuenta.</p>
+    <p>Y Luky es un traductor de voz para conversaciones reales: y el guía hablará tu idioma.</p>
+    <p class="ps">PS: hablar con alguien en un festival en el extranjero — fácil</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiencia real de chats de comunidades, sin relleno</div>
+    <nav class="f-links">
+      <a href="/es/about/">Acerca de</a>
+      <a href="/es/br/">Todos los temas</a>
+      <a href="/es/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Las respuestas se recopilan de chats abiertos de comunidades — es experiencia real de personas, no asesoría oficial. Verifica antes de decisiones importantes.</p>
+    <div class="f-copy">© 2026 Luky · actualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noche", DAY="\u2600 D\u00eda";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Belarus: Transport — real experience · Luky</title>
+<meta name="description" content="Real experience from chats about Transport in Belarus: as it is, first-hand. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/by/transport/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/by/transport/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/by/transport/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/by/transport/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/by/transport/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/by/">Belarus</a> /
+    <b>Transport</b>
+  </nav>
+
+
+  
+  <h1>Transport: how it works in Belarus — first-hand</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of people from chats on «Transport» in Belarus — as it is, no fluff. For your case — <strong>ask Luky</strong>.</div></div>
+
+  <h2>From real experience</h2>
+  <ul class="qlist">
+    <li>When crossing the border from Russia to Belarus by car, expect a quick inspection. Passports of the driver and passengers will be checked, and the trunk may be opened. The process is generally swift, taking about 5-10 minutes. Be mindful of alcohol restrictions, as excessive amounts may be confiscated. It is advisable to adhere to the allowed limits for alcohol to avoid issues at the border.</li>
+    <li>To check for traffic fines in Belarus, contact the Belarusian GAI directly. Fines from cameras typically expire after three months if you are not stopped by police. If stopped, payment is mandatory.</li>
+    <li>For cars with Russian license plates, road tolls in Belarus are generally free. However, if you wish to pay for passage on toll roads like the MKAD (Minsk Ring Road), you can do so via the Autodor-tr.ru website. Local Belarusian insurance is recommended over the Russian &#39;blue card&#39; for car repairs within Belarus during extended stays, as the blue card may require repairs to be done in Russia. The cost for local insurance is approximately 120 BYN for two months or around 2500 BYN monthly, with annual plans offering better value.</li>
+    <li>Speed cameras are present in Minsk and its surrounding areas, and are often indicated by navigation apps like Yandex.Navigator. Some cameras may be less conspicuous, integrated into traffic light systems, or placed on dedicated lanes. Additionally, traffic police equipped with radar guns actively enforce speed limits. It is advisable to adhere to posted speed limits to avoid fines and potential penalties.</li>
+    <li>In Belarus, the minimum term for a &#39;Green Card&#39; (Blue Card) insurance policy is 14 days. If a policy expires while in the country, it cannot be extended for a shorter period (e.g., 5 days) at a reduced rate; one must visit a &#39;Belgosstrakh&#39; office to purchase a new policy for the full minimum term. Border agents may occasionally offer short-term &#39;border insurance&#39; that is not standard for domestic extension.</li>
+    <li>Traveling with pets to Belarus generally involves minimal inspection. While animals are typically not screened rigorously, having the pet&#39;s passport is advisable, especially when traveling by train. Ensure all vaccinations are up-to-date. If a specific vaccination (like Nobivac for rabies) is expired, it can be administered in Belarus. There is no dedicated veterinary control at the border.</li>
+    <li>For adults crossing the Russia-Belarus border, a standard domestic passport (for RU citizens) is sufficient. A travel passport (zagranpassport) is only mandatory for children under 14.</li>
+    <li>Russian citizens driving vehicles with Belarusian license plates in Russia often face harassment by traffic police. Legally, driving such vehicles is permitted under customs union regulations, but police may misinterpret Art. 16.24 of the Administrative Code. Carrying printed legal documentation or obtaining a Belarusian residence permit (VNZH) are common mitigation strategies.</li>
+    <li>If you have a Russian phone number and are trying to pay for parking in Belarus via SMS to number 204, and it&#39;s not working, consider using the &#39;ERIP bez granit&#39; service. Navigate through &#39;Stoyanki garazhi parkovki&#39; (Parking, Garages, Parking lots) within the service. Alternatively, you can visit a post office and ask them to process the parking payment via ERIP, providing the parking number and your vehicle&#39;s license plate.</li>
+    <li>The price of 95 octane gasoline in Belarus is approximately 2.68 BYN per liter. There are no reported issues with fuel availability. &#39;Belarusneft&#39; stations are preferred, with consistent quality and pricing across different locations.</li>
+    <li>When traveling with a pet (e.g., a cat or dog) from Russia to Belarus by car, a veterinary passport is the primary required document. Border checks for pets may vary, with some travelers reporting no specific inquiries, while others recommend having the veterinary passport readily available to ensure a smooth crossing.</li>
+    <li>When traveling from Germany to Russia, the Benyakoni border crossing in Lithuania is suggested as a smoother option. Online registration for the queue is recommended, particularly for weekend travel.</li>
+    <li>Russian citizens traveling by train from Kaliningrad to Minsk typically require either a special transit document from Lithuania (stating a valid reason like medical treatment or family ties) or a multi-entry Schengen visa. Purchasing a ticket solely to Smolensk (Russia) and then proceeding to Minsk might allow travel under the &#39;internal Russian journey&#39; rule, requiring a UDD-ZhD (Universal Transport Document for Railway Transport) instead of a Schengen visa. Ensure the ticket is purchased up to Smolensk, not directly to Minsk, to leverage this option.</li>
+    <li>Road conditions between Russia and Belarus vary. Some sections are new and allow higher speeds (up to 140 km/h), while older sections require slower speeds (60-80 km/h). Belarusian roads are generally good, but include villages with 40 km/h speed limits. Pay attention to road signs indicating speed limits and road type (e.g., toll roads).</li>
+    <li>Border control between Russia and Belarus is inconsistent. Travelers should be prepared for potential vehicle inspections and document checks. Fuel shortages at major branded gas stations in border regions (e.g., Bryansk region) have been reported; it is recommended to maintain a full tank before approaching the border. Travelers are advised to avoid peak hours if possible.</li>
+    <li>When crossing the Belarusian border by car, be aware that checkpoints like &#39;Krasnaya Gorka&#39; (en route to Brest) can experience significant queues. Consider alternative routes, such as via Roslavl if coming from Moscow, though this may add distance. It&#39;s advisable to check current queue conditions at border crossings like Kruglovka and Krasnaya Gorka, as they fluctuate. It is recommended to obtain the &#39;blue card&#39; (vehicle insurance) in Russia before your trip, although it may be available at the border crossing.</li>
+    <li>Carsharing services like Anytime are available in Minsk for renting vehicles for city use or day trips (e.g., to Mir and Nesvizh castles). Users can rent a car and use it for the duration of their rental period, including waiting time, provided it&#39;s covered by their rental agreement. It&#39;s important to check the terms and conditions regarding &#39;waiting&#39; fees or if the car can be re-rented by other passengers if left unattended for extended periods. Pricing structures vary, and it&#39;s advisable to check the service&#39;s official website or app for current rates and policies.</li>
+    <li>When traveling by car with a pet between Russia and Belarus, specific animal documentation checks are generally not stringent. The focus is typically on the traveler&#39;s own documentation.</li>
+    <li>Cameras in Russia do capture speeding and other traffic violations for Belarusian vehicles. While unregistered fines may theoretically be dismissed, it is advisable to comply with Russian traffic laws to avoid potential issues.</li>
+    <li>The road from Gomel through Bryansk to Voronezh is generally good. There is a short section of roadworks on the Bryansk bypass, but otherwise, the route is safe and well-maintained. Fuel availability should be monitored, and carrying extra fuel is advisable due to the current geopolitical situation.</li>
+    <li>Travelers driving through the Bryansk (Russia) to Gomel (Belarus) region generally report it as relatively safe, with no direct evidence of shelling or frequent drone activity affecting the main routes. While the general security situation is acknowledged, specific reports of direct threats to this particular road link are scarce. Most users describe the roads as functional, with all services (like gas stations) operating normally. However, awareness of the broader geopolitical context is advised.</li>
+    <li>Drivers with less than two years of experience in Russia may need to adhere to specific speed limits in Belarus, such as the 70 km/h rule. While enforcement details can vary, it&#39;s advisable to be aware of and comply with such regulations to avoid potential issues.</li>
+    <li>The direct route from Gomel to Brest is recommended over traveling via Minsk, as the latter involves a significant detour. Road conditions on the direct route are reported as normal.</li>
+    <li>No fuel purchase restrictions exist for Russian citizens in Belarus. Under ADR (transport of dangerous goods) rules, personal vehicles can transport up to 240L of fuel, with a maximum of 60L in portable canisters. Avoid excessive amounts to prevent &#39;commercial cargo&#39; classification by customs.</li>
+    <li>For travel by car from Brest, Belarus, to Saint Petersburg, Russia, recommended routes include passing through Vitebsk and Ezerishche. An alternative involves taking the M1 highway towards Orsha, then heading to Vitebsk, and proceeding via Ezerishche. On the Russian side, potential stopovers or service areas are available near Pushgory or Ostrov, or directly on the highway.</li>
+    <li>The &#39;Blue Card&#39; (Green Card equivalent for Belarus) is required for vehicles entering from Russia. It is recommended to purchase this as an online extension of the Russian OSAGO policy via an agent or insurance company prior to travel. Pricing is approximately 1,070 RUB for 15 days. Purchasing at the border is discouraged due to potential queues and variable availability.</li>
+    <li>For optimal travel in Belarus by car, prioritize direct routes. For instance, the Gomel to Brest journey is best undertaken directly rather than via Minsk, which adds significant distance. Local practice supports direct routes.</li>
+    <li>The Belarusian &#39;Blue Card&#39; (motor insurance) is typically issued per vehicle. It is advisable to have a printed copy or a digital version (screenshot) readily available, although electronic forms are often accepted.</li>
+    <li>A car deregistered in Russia and sold under a purchase agreement (DKP) should generally be permitted to cross the border into and out of Belarus without issue. Border control typically focuses on passenger passports and vehicle trunk inspections, with driver&#39;s licenses less frequently checked, although exceptions exist at certain border crossings like the Georgian border.</li>
+    <li>For diesel fuel, Belarus is recommended as a good place to refuel, with advice to take at least 40 liters for peace of mind. While Moscow and its surroundings have diesel available, commercial stations may charge around 125-130 rubles per liter. Carrying an additional 20 liters in a canister is suggested as a precaution for the trip to Moscow, especially given a smaller fuel tank capacity (55 liters).</li>
+    <li>For cars crossing the border between Russia and Belarus, proof of insurance is required. This typically includes the Russian OSAGO policy or a Belarusian &#39;blue card&#39; (similar to green card insurance valid in Belarus). Drivers should ensure their insurance is valid for the duration of their stay and covers the territory of Belarus.</li>
+    <li>Russian citizens residing in Belarus with extended driving licenses can typically be absent for up to 5 months without facing legal issues, especially when returning to Russia. These extensions are generally recognized, and no revocation of driving privileges is expected.</li>
+    <li>Russian car insurance is rarely checked at the Belarus-Russia border. If not listed on the insurance policy, you may still drive without immediate issues in Belarus, though Russian traffic police might inquire. Belarusian &#39;blue card&#39; insurance is mandatory for entry into Belarus and is issued per vehicle, not per driver.</li>
+    <li>Fuel prices in Belarus are state-regulated due to the country having only two refineries. The price for 95-octane gasoline is approximately 2.67 Belarusian rubles per liter. Gazprom may offer a slight discount of one kopeck per liter for 95-octane fuel.</li>
+    <li>Fuel availability on the route from St. Petersburg to Belarus can be inconsistent. While some stations in the Leningrad region and St. Petersburg may have fuel (with limits), areas further along the R-23 route have shown significant scarcity of 95-octane gasoline. Diesel fuel was reported to be more available. It&#39;s recommended to carry extra fuel, such as in a canister, if unsure about reaching a refueling point.</li>
+    <li>When traveling from Minsk to St. Petersburg by car, there are two main routes to consider. The M1 highway is generally in good condition, especially the section near Vitebsk. An alternative, shorter route via Polotsk and towards Opocka (Russia) has seen recent repairs. While parts of this route may still have older asphalt surfaces, significant potholes are reportedly less common now, making it a more viable option than in previous years. The section from the Belarus-Russia border to Opocka in Russia is a toll road, with mixed conditions but generally improved. Travelers may find the shorter route more appealing if time is a constraint, while the M1 offers a more consistently good driving experience.</li>
+    <li>For driving a car in Belarus when you are not the owner but are listed on the insurance policy, a notarized power of attorney is not required. Ensure you have the vehicle registration certificate (СТС) and the &#39;blue card&#39; (international insurance policy).
+
+Regarding residency (ВНЖ/РВП) in Belarus: obtaining legal registration (прописка) can involve risks for the property owner, similar to Russia, where eviction without consent may require court proceedings. It&#39;s possible to arrange paid registration, typically costing 60-150 BYN per month, potentially more for families. When applying for ВНЖ, you must select a specific migration office (ОГиМ) for your district of registration. The ОГиМ will verify a stable income source (e.g., pension, rental income, employment contract); absence of this may lead to denial. You become a tax resident after residing in Belarus for over six months.</li>
+    <li>The official regulations allow for the transport of up to 240 liters of fuel per vehicle and up to 60 liters per container for personal use when crossing the border between Belarus and Russia. While there might be verbal restrictions or differing interpretations at the border, the established official limits for personal import/export of fuel remain. Exporting fuel for commercial sale is prohibited.</li>
+    <li>Driving a Belarusian-registered car in Russia can be complicated. Requirements may include proof of EAEU status for the vehicle, potentially necessitating payment of commercial recycling fees if preferential rates were applied in Belarus. Official clarification from Russian customs is recommended, as specific documentation (e.g., passenger customs declaration) and the method of vehicle import into Belarus can affect compliance.</li>
+    <li>Obtain the Belarusian &#39;Blue Card&#39; (vehicle insurance) before entering Belarus. Electronic confirmation (screenshot) is generally accepted. While Russian insurance may not be checked at the border, the &#39;Blue Card&#39; is mandatory for entry into Belarus. The insurance is tied to the vehicle, not the driver.</li>
+    <li>When facing difficulties paying for parking in Minsk with a Russian passport via app, SMS, or phone, try visiting a bank to pay through the ERIP system (&#39;Ерип без границ&#39;). This is a reliable alternative.</li>
+    <li>When crossing the Russian-Belarusian border by bus, passengers&#39; passports will be checked. In some instances, travelers may be asked to exit the bus for a more thorough inspection. While passport control is conducted, passage is generally granted without significant issues.</li>
+    <li>For a 14-year-old traveling by car from Russia to Belarus with an adult sibling (not parents), a notarized consent from one parent is generally required. While rules may vary, it&#39;s best to have this document to avoid issues at the border. If traveling with a parent, the other parent&#39;s consent is typically not needed, but a check for exit bans might still occur.</li>
+    <li>Fuel availability on the M1 highway approaching Moscow can be limited, with potential for long queues or restrictions at some gas stations. As of recent reports, some stations have implemented a 20-liter limit per vehicle. It is advisable to plan refueling stops in advance and consider alternative routes or stations if possible.</li>
+    <li>For travel between Russia and Belarus by train, adults typically only require their standard Russian internal passports. For children under three years old, a foreign passport (either old or new model) is mandatory. While pet vaccination records are advisable, the necessity of specific health certificates for pets when traveling by train between these countries might vary and should be verified with the carrier.</li>
+    <li>Purchasing and registering a car in Belarus for Russian citizens can be complex. Requirements may include Belarusian residency (VNZh) or a Belarusian intermediary (&#39;prokladka&#39;). Cars imported into Belarus might be recognized as EAEU goods by Russian customs, but preferential recycling fees might not be waived, potentially requiring additional payments. Consult with customs officials for specific procedures and costs.</li>
+    <li>Travelers planning to drive from Rostov to Belarus should be aware of potential security concerns, particularly on routes passing through regions bordering Ukraine. The Bryansk-Gomel stretch is mentioned as a higher-risk area. While some travelers have reported uneventful journeys on this route, others express caution. Fortifications have been observed at some gas stations. Consider alternative routes like Voronezh-Kursk-Oryol-Bryansk. Thoroughly check current security advisories and assess the risks before embarking on a road trip.</li>
+    <li>To drive a car in Belarus that is not registered in your name, you do not need a power of attorney. Ensure you have your passport and the vehicle&#39;s registration certificate (STS). Border guards are primarily concerned with your personal documents and the vehicle&#39;s registration, not the driver&#39;s ownership of the car.</li>
+    <li>Transporting pets, including dogs and cats, across the Russia-Belarus border generally does not involve strict veterinary checks at the border itself. Several users reported successful crossings without presenting pet passports or vaccination records, even for large breeds. The general consensus is that there is no dedicated veterinary control at the border crossings between Russia and Belarus, making the process relatively straightforward for pets. However, official regulations can change, and it&#39;s always advisable to have basic pet documentation (like a passport) just in case.</li>
+    <li>When crossing the Russian-Belarusian border by car, expect passport checks. While control points like those on the M1 highway may have minimal checks, other border crossings might involve sending passengers to a booth for detailed inspection. Belarusian border control on the Russian border is currently not active, but travelers should stay informed about potential changes.</li>
+    <li>While there are no explicit limits on carrying fuel in canisters for personal use across the Russia-Belarus border due to their unified customs space, regulations for transporting dangerous goods (like fuel) may apply. Generally, up to 60 liters per container, with a limit of four containers (240 liters total), is considered standard for personal transport. However, customs officials may inspect any quantity, and it&#39;s wise to ensure canisters are approved for fuel transport.</li>
+    <li>Russian citizens with outstanding debts and a travel ban imposed by bailiffs may still be able to transit through Belarus. While border control may detect such bans, reports indicate that travelers are frequently permitted to cross. The effectiveness of Russian travel bans during transit through Belarus can be inconsistent.</li>
+    <li>Booking intercity bus tickets in Belarus can be conveniently done online through platforms like Atlas Bus and Infobus. Train tickets are also available via services like RZD and BelZhD. For comfortable transfers, various services offer options without upfront payment, often featuring experienced drivers familiar with local routes.</li>
+    <li>Russian citizens with a Belarusian residence permit (VNZH) are not required to exchange their Russian driver&#39;s license for a Belarusian one. Driving a vehicle with Russian plates in Belarus or using a Belarusian license in Russia is legally permitted under Union State agreements.</li>
+    <li>Operating a Belarusian-registered vehicle in Russia on transit plates can be legally complex. While Russian regulations may impose time limits, some individuals report extended use by leveraging documents confirming the vehicle&#39;s EAEU status. This often involves obtaining a Passenger Customs Declaration (PTD) and potentially benefitial recycling fee processing. Official consultations with customs authorities are advised for navigating these procedures, especially for older vehicles or those imported under special Belarusian arrangements.</li>
+    <li>Transporting pets, including multiple dogs, across the Belarus-Russia border by car is generally not a significant issue. Border guards are reported to rarely check pet documentation. While it&#39;s always advisable to have necessary health certificates and vaccination records, the practical enforcement at this border crossing appears lenient for private vehicles.</li>
+    <li>A 14-year-old Russian citizen can travel to Belarus by train. While parental consent might not be strictly required if traveling with one parent, having a notarized consent from one parent is advisable. If no exit ban is in place, border guards may not always request extensive documentation, but it&#39;s safer to be prepared.</li>
+    <li>Transporting fuel across the Russia-Belarus border for personal use is permitted, with a limit of up to 240 liters per vehicle. Due to occasional fuel shortages or price spikes in border regions of the Russian Federation, using Belarus gas stations is a reliable way to avoid waiting in long queues at local petrol stations.</li>
+    <li>To visit Belovezhskaya Pushcha, purchase tickets at the entrance ticket office. Transportation to the park needs to be arranged separately; consider group transport options like those found on Kufar if traveling with a large group. For the best experience with animals, visit the enclosures upon opening (9 AM) and bring food. Dining options include the &#39;Sosny&#39; cafe (affordable and tasty) and the main building&#39;s restaurant (pricier). Allocate at least a full day, ideally two, to explore the enclosures, take guided tours, and enjoy activities like cycling.</li>
+    <li>The &#39;Blue Card&#39; (motor insurance for Belarus) is mandatory for foreign cars. It can be purchased online (check lead time/validity), at local insurance offices in Russia, or at kiosks near the border. If buying at border kiosks, ensure they have internet access to register the policy in the database. Prices are regulated by the Russian Association of Motor Insurers (RAMI) and are standardized.</li>
+    <li>When crossing into Belarus with a car, especially one deregistered in Russia, expect thorough checks of passenger passports and the vehicle&#39;s trunk. Driver&#39;s licenses are typically not checked at the border, though this can vary by crossing. It is advisable to carry all relevant documentation.</li>
+    <li>Border crossing points between Russia and Belarus vary in traffic. Lobok-Ezerishche is popular but prone to queues; Dolostsy is quieter but has worse road surface. Avoid weekends/holidays for faster processing. Ensure a full fuel tank before crossing, as fuel supply can be inconsistent.</li>
+    <li>Russian citizens traveling to Belarus typically only need their internal Russian passport for border crossing. A driving license is not sufficient as a primary identification document for border control. In cases of lost or expired passports, alternative identification methods might be explored, but a valid passport is the standard requirement.</li>
+    <li>Road conditions between Gomel and Brest are reported as normal with some minor repair work. The route is scenic and can be completed in approximately eight hours, even with stops in towns like Pinsk.</li>
+    <li>For cross-border travel between Belarus and Russia, ensure your vehicle has appropriate insurance. While Russian insurance may not be checked at the border, Belarusian &#39;blue card&#39; insurance is mandatory for entry into Belarus. Keep all relevant documents, including insurance and vehicle registration papers, accessible.</li>
+    <li>When driving from Russia to Belarus, travelers report that Russian border control is generally minimal or non-existent on the outbound journey. Some users mention a &#39;stop&#39; sign where they briefly slowed down, but no checks were performed. Belarusian border control also appears to be light for Russian citizens entering the country. However, on the return journey (Belarus to Russia), checks might be more thorough, with border guards potentially inspecting the vehicle&#39;s interior and trunk. It is crucial to have all necessary documents for passengers and the vehicle.</li>
+    <li>When crossing the border between Russia and Belarus by car, the essential documents typically required are: passports for all passengers, the vehicle&#39;s registration certificate (STS), and proof of insurance (OSAGO or &#39;blue card&#39; for Belarus). For company-owned vehicles (e.g., leased), a power of attorney from the organization might be needed, although some users suggest it may not be strictly required, with rights, STS, and insurance being sufficient.</li>
+    <li>Green Card/Blue Card for Belarus is mandatory for foreign-registered vehicles. It can be purchased at 24/7 kiosks near the border. Price for 15 days for a passenger car is approximately 1070 RUB. A power of attorney is not required for border crossing.</li>
+    <li>When driving a company-leased car from Russia into Belarus, a power of attorney from the leasing company might be required, though some users suggest it may not always be strictly enforced. Essential documents generally include the driver&#39;s license, the vehicle&#39;s registration certificate (STS), and valid insurance (OSAGO or equivalent). It is advisable to carry all relevant documentation to avoid potential issues at the border or during any police checks.</li>
+    <li>Fuel prices near the Russian border with Belarus were observed around 69 rubles per liter for 95 octane gasoline at &#39;Rosneft&#39;. &#39;Lukoil&#39; had a queue of about 20 cars. One gas station on Tverskaya offered 95 octane at 100 rubles per liter. The user chose to fill up fully in Russia to avoid risks.</li>
+    <li>When traveling by train between Russia and Belarus, passport checks are primarily conducted by Russian border guards. Belarusian border guards are less commonly encountered on these routes. The presence of border control officers may vary.</li>
+    <li>Extended Russian driver&#39;s licenses are recognized and valid for driving in Belarus. The Minsk traffic police confirm acceptance of these extended licenses, alleviating concerns about driving validity.</li>
+    <li>If unable to pay for parking in Minsk using mobile apps or SMS due to having a Russian passport, try paying at a bank terminal or through the ERIP system (&#39;Ерип без границ&#39;). This method bypasses app limitations.</li>
+    <li>Internet and GPS signal coverage along the Bryansk-Roslavl-Dubovichi route in Belarus can be unreliable. Mobile data speeds may be slow, and GPS accuracy might be affected. Using a Samsung device is suggested over an iPhone for potentially better compatibility. Rely on offline maps if necessary.</li>
+    <li>Fueling on the M1 highway towards Belarus is generally not an issue, as restrictions have been lifted on most gas stations, including Tatneft and others that previously had no limitations.</li>
+    <li>When crossing the border into Belarus with a company-owned vehicle registered under an LLC, ensure you have the following documents: passports for all passengers, the vehicle&#39;s registration certificate (STS), and other car documentation. Border officials typically inspect the trunk and record passenger details. Traffic police may also request driver&#39;s licenses.</li>
+    <li>Yandex Go (ride-hailing and delivery services) operates in Belarus. To use these services, a Mir payment card is typically required for linking to the account. Other payment methods may not be supported for linking or transactions within Belarus.</li>
+    <li>Inquire about local souvenirs from Belarus. Seeking information on bus routes from Grodno to Brest, specifically looking for options suitable for children who get carsick, possibly larger buses without air conditioning.</li>
+    <li>Toll sections on the Minsk highway (e.g., between km 33 and 66) can be paid for at toll booths using cash or card. Transponders are not mandatory. Payment is collected upon passing the toll point. An alternative route near Odintsovo exists but may not be cost-effective.</li>
+    <li>In Belarus, a passport is not required for purchasing tickets or boarding domestic buses and trains. This allows for flexible travel within the country using tickets under different names if desired. However, for international travel, a passport is mandatory.</li>
+    <li>Comfortable transfer services are available throughout Belarus, covering airport pickups, intercity travel, and guided tours to attractions like Mir Castle, Nesvizh Castle, and Belovezhskaya Pushcha. Services feature clean vehicles, experienced drivers, flexible routes, and payment upon service completion. No advance payment is required.</li>
+    <li>Traveling with pets between Russia and Belarus: Veterinary control is minimal, but pet passports with valid vaccinations are required. Belarus has local municipal regulations regarding the maximum number of pets allowed per apartment; failure to comply or register pets can lead to fines.</li>
+    <li>When traveling by car in Belarus, be aware of potential fuel shortages in neighboring regions like Pskov Oblast, where many gas stations are closed. Road conditions within Belarus vary, with ongoing repairs; follow GPS navigation for the most time-efficient routes, which often pass through villages. Border guards may inspect fuel carried in canisters; a full tank plus one canister is generally advised. Mobile connectivity can sometimes be an issue. Mosquitoes can be prevalent, especially near water bodies, though higher floors in buildings might offer relief.</li>
+    <li>Road conditions and fuel availability on the route from Russia to Belarus vary. West of Smolensk, gasoline shortages and long queues were reported. However, after Smolensk, especially closer to the border, fuel availability improved with normal prices and no queues. It&#39;s advisable to refuel before the border or upon entering Belarus.</li>
+    <li>Traveling to Belarus in a vehicle registered to another person (relative) does not require a notarized power of attorney. Only the standard registration documents (STS) are required at the border.</li>
+    <li>Russian driving licenses are fully valid in Belarus for driving personal vehicles or using carsharing services. Notarized translations are NOT required as both countries recognize each other&#39;s documents.</li>
+    <li>When crossing the Belarus-Russia border by car, drivers and passengers must present valid identification, primarily passports. A driver&#39;s license is not considered sufficient proof of identity for border control. Failure to present a valid passport will result in being denied entry.</li>
+    <li>If you have an electronic copy (screenshot) of your Belarusian &#39;Blue Card&#39; (vehicle insurance), it is generally accepted and a printed copy may not be strictly necessary for border crossings.</li>
+    <li>To find the fastest current border crossing points (KPP) and routes between Russia and Belarus, consult recent information in relevant travel forums or official border service updates. Avoid outdated information as checkpoints can be decommissioned or changed. For travel from St. Petersburg to Minsk, consider routes like Baidachovo (a dirt road with potentially no queues), Dolosetsy, and Lobok. Kruglovka is not a viable route for St. Petersburg connections.</li>
+    <li>The road from Polotsk to Lida via Lepel is reported to be in good condition, with ongoing work nearing completion and minimal speed cameras. This route continues towards Grodno, offering a smooth journey. Ensure your vehicle is prepared for the full route, including any segments beyond Lida.</li>
+    <li>The limit for fuel transport in Belarus is not specified, suggesting there is no limit for personal use. However, there are limits for transportation purposes which also apply in Russia. The user clarifies that 240 liters per car and 60 liters per container are transportation limits, not export limits for Belarus.</li>
+    <li>While many travelers report that pet documents are not checked at the Belarus border, it is legally required to have a pet passport with vaccination records for crossing the border. Some users have experienced checks, while others have not. It is recommended to carry the pet&#39;s vaccination certificate (F1 form) for international travel, although its strict enforcement at the Belarus border is debated among users. Having a veterinary passport with up-to-date vaccinations is considered essential. Some users mention that border guards might check the pet itself but not necessarily the documents unless presented by the owner.</li>
+    <li>The road from Brest to Gomel is in normal condition with some areas undergoing repairs. The route is scenic and can be covered in under eight hours, allowing for stops.</li>
+    <li>Travel between Russia and Belarus is permitted using either a valid internal Russian passport or a foreign passport. Border control procedures are inconsistent; some crossings perform basic visual checks, others may scan documents. Only use designated official border crossings (e.g., Redki–Krasnaya Gorka, etc.) to avoid issues upon return. There is no systemic evidence of mandatory phone searches at the border.</li>
+    <li>Travel between Russia and Belarus is generally not restricted by debt-related bans on exit as strictly as international flights. However, check the Federal Bailiff Service (FSSP) database before traveling. If a formal travel ban is imposed by a bailiff, attempting to cross the border via official transport hubs carries risks as control systems and data sharing between the two countries are becoming more integrated.</li>
+    <li>Purchasing property in Belarus for residency purposes varies significantly in price. While rumors of houses costing as little as one basic unit (approx. 45 BYN) exist, these are typically dilapidated and unsuitable for VNZh. Habitable properties suitable for residency usually start from $1,000-$2,000 USD and can be considerably more expensive. Both Russians and other nationalities are reported to buy property for residency, car registration, or relocation, with varying degrees of renovation required.</li>
+    <li>The road conditions between Polotsk (Belarus) and the Russian border crossing at Dolossy, and continuing towards Opocka (Russia), have reportedly improved significantly. While previously known for poor quality and extensive repairs, recent information suggests the road has been substantially upgraded, particularly in late 2024. Travelers now encounter sections with new asphalt alongside older, but reportedly pothole-free, surfaces. The road is not tolled on the Belarusian side, though a toll applies shortly after crossing into Russia towards Opocka. Current conditions are described as acceptable to good.</li>
+    <li>Russian citizens can use their Russian driving school completion certificates to register for driving exams in Belarus. If successful, they can obtain a Belarusian driving license. A Russian national driving license remains valid in Belarus until its expiration date, after which it can be exchanged for a Belarusian license without retraining.</li>
+    <li>Fuel availability on the Moscow-Minsk route is stable at major branded gas stations (Rosneft, Lukoil). Travelers are permitted to carry up to 240 liters of fuel per vehicle. Border crossing at points like Ezerishche is typically fast, often taking less than 5-10 minutes, although random checks by Russian border guards on the exit/entry to Russia occur.</li>
+    <li>When traveling by car between Russia and Belarus, &#39;Blue Card&#39; insurance (a type of international motor insurance) is required. This insurance is typically issued for the vehicle, not specific drivers. It can be obtained at border crossings or online. For border crossings, ensure you have your passport and vehicle registration documents (STS). Some checkpoints may only photograph passports and inspect the trunk, while others might require data entry into a system.</li>
+    <li>The aquacenter in Grodno is described as small but reasonably priced. Entry to the main pool area with slides is charged hourly, with separate fees for sauna access. Accommodation in apartments typically includes Wi-Fi. The aquacenter is accessible by public transport within the city. Many bus stops feature electronic displays with schedules, aiding navigation.</li>
+    <li>Belarus has a growing infrastructure of electronic charging stations for electric vehicles. Users report that they are available in sufficient numbers across the country.</li>
+    <li>To register on AV.by for placing car advertisements, a Belarusian phone number is required. Purchasing a local SIM card in Belarus is the most reliable method. Using virtual numbers or obtaining a number from a stranger is not recommended due to potential security and legal issues. Physical presence in Belarus is generally necessary to acquire a functional local number for registration.</li>
+    <li>When crossing the border between Russia and Belarus by bus, document checks are common. While baggage inspection is selective, it can occur. Drivers may be asked to open trunks or lower windows. The process is generally smooth for passengers without prohibited items.</li>
+    <li>Fuel (95 gasoline) is generally available on major routes like M1 between Russia and Belarus. Temporary shortages due to tanker refueling or station maintenance occur; carrying a 10-15L reserve can prevent delays. Drivers with Russian license plates report neutral treatment. Payment for fuel is standard; Russian &#39;Mir&#39; cards are widely accepted.</li>
+    <li>Russian citizens can stay in Belarus for up to 90 days per year without obtaining a visa or residence permit. To stay longer, a residence permit (VNZh or RVP) is required. Traveling by train from Russia to Belarus may involve selective border checks. Russian border guards might inspect phones of departing or arriving citizens if they raise suspicion.</li>
+    <li>For rail travel between Russia and Belarus with pets, passengers must book a specific &#39;pet-friendly&#39; carriage. A veterinary passport is mandatory. Requirements for microchipping are not strictly enforced on the border, but railway companies may require specific documentation (form F1 health certificate). Always clarify the pet ticket payment process with the specific railway carrier.</li>
+    <li>Belarusian-registered vehicles are rarely observed in Moscow, with an estimated frequency of about one in several hundred. The majority of these vehicles are reportedly of standard models, lacking any indications of luxury.</li>
+    <li>In Belarus, there is no official grace period for speeding. Exceeding the speed limit by even 1 km/h can result in a fine. While fines from speed cameras may be delayed, they can be enforced upon departure from Belarus. For Russian drivers, adhering to speed limits is crucial, as Belarusian traffic authorities may impose penalties. Using cruise control on major highways like the M1 (Minsk-Brest) set at speeds between 120-129 km/h is often recommended.</li>
+    <li>While the traffic regulations are largely unified between Russia and Belarus, enforcement can differ. Russian drivers should be aware that Belarusian traffic police may access records of past violations, even those committed in Russia. One user reported a Belarusian traffic officer accessing details of their Russian vehicle&#39;s past violations in Russia when issuing a speeding ticket. It is generally understood that traffic police in Belarus can access cross-border violation data. Therefore, it&#39;s advisable to adhere strictly to traffic laws in Belarus.</li>
+    <li>The border crossing at Rudnya, specifically the Kruglovka checkpoint, can experience significant delays, particularly during Fridays and peak hours. Reports indicate that all vehicles are subject to thorough checks, with drivers and passengers potentially being taken to a booth for inspection. While not the only point of control, this checkpoint is noted for its potential to cause substantial waiting times. The border guards do perform checks, including passport and vehicle inspections.</li>
+    <li>Fuel transport across the RU-BY border: Formal limits are 60 liters per container and 240 liters per vehicle. Border guards rarely inspect containers closely, and the material (plastic vs metal) is generally not an issue for personal use.</li>
+    <li>Fuel availability for 95 octane gasoline in Belarus is reported to be good. While there might be queues at gas stations on the Russian side near the border, Belarus generally has sufficient supply. It is recommended to refuel in Belarus for a smoother experience.</li>
+    <li>Border crossing procedures for Ukrainian citizens traveling from Poland to Belarus can vary. Experiences range from smooth passage to extended interviews and delays for buses. It is advisable to check current travel advisories and border crossing wait times if possible.</li>
+    <li>For navigating cities like Vitebsk, Belarus, and finding points of interest such as cafes and attractions, users recommend using map applications that can provide both navigation and information on local amenities. While specific app recommendations vary, the general advice is to use a reliable navigation tool that integrates points of interest.</li>
+    <li>Foreigners driving in Belarus should be aware that unpaid traffic fines can lead to a 5-year entry ban. Fines should be paid promptly. If a fine is issued, it can often be checked or paid at traffic police posts (GAI) or via local banking channels. Ignoring or failing to pay a small fine can result in serious legal consequences, including being officially informed of a ban by transport police during travel.</li>
+    <li>Traveling by train from Minsk to St. Petersburg involves passport control upon boarding the train in Minsk and upon arrival in St. Petersburg. There is no physical border or customs check at the station upon arrival in Belarus from Russia, or vice versa. Passengers are expected to present their passports for checks during boarding. While direct physical checks on the train are uncommon for Russian and Belarusian citizens, border guards have the authority to board trains and conduct selective checks. For citizens of other countries, more thorough checks might occur. Luggage is typically screened upon entering the train station, not at the platform.</li>
+    <li>For the &#39;Belarusian Maldives&#39; (blue quarries), research which locations offer the most visually striking scenery for a car trip, considering routes such as Tver-Minsk-Grodno.</li>
+    <li>The &#39;Blue Card&#39; (Sinyaya karta) insurance for traveling by car to Belarus can be purchased 24/7 at numerous kiosks immediately before crossing the border. It is recommended to have a printed version of the policy. Costs are standard (approx. 1070 RUB for 15 days as of recent reports).</li>
+    <li>Registering a car purchased in Belarus into the Russian Federation involves careful consideration of customs duties, particularly the recycling fee (util&#39;sbor). If the vehicle was imported into Belarus under preferential terms or lacks a Passenger Customs Declaration (PTD), Russian authorities may require payment of the full commercial recycling fee. For older vehicles or those with high engine power, this cost can be substantial. It is highly recommended to consult directly with Russian customs officials, preferably at a higher administrative level, to understand the exact procedures, required documentation (like PTD), and potential costs.</li>
+    <li>Individuals traveling from Moscow to Belarus by night train with FSSP (Federal Bailiff Service) debts are generally permitted to travel, provided there is no direct travel ban in place.</li>
+    <li>A German citizen traveling to Russia with a valid Russian visa (electronic or stamped) does not require a transit visa for Belarus when transiting through Minsk by bus for a short layover (e.g., a few hours) to catch a flight to Moscow. However, they must hold a valid Russian visa to enter Russia.</li>
+    <li>When traveling with a pet from Minsk, inquire about accepted currencies for payment at veterinary control. It is advisable to have both Belarusian rubles and potentially Euros or USD, as payment methods can vary.</li>
+    <li>For internal travel within Belarus (e.g., by train), there are no requirements for notarized travel authorizations for children traveling with relatives like grandparents. Domestic documents are generally sufficient.</li>
+    <li>When traveling from Belarus to Russia with a non-owned trailer, ensure you have the trailer&#39;s documentation and a &#39;blue card&#39; (international insurance). For extended stays in Belarus, consider purchasing local Belarusian insurance, as the &#39;blue card&#39; may not cover vehicle repairs within Belarus, potentially requiring you to transport the vehicle back to Russia for service. Russian-plated vehicles generally have free passage on Belarusian toll roads. &#39;Blue card&#39; insurance allows for repairs in Russia if an accident occurs in Belarus, but not vice versa.</li>
+    <li>Fuel shortages are currently reported on routes from Russia to Belarus (specifically Pskov region/M1 highway). Motorists face long queues and empty stations. It is advised to keep the tank full, bring a fuel canister (though some stations refuse to fill them), and not rely solely on real-time fuel tracking apps.</li>
+    <li>Border crossings between Belarus and Russia can experience significant queues, particularly on Friday evenings. Light vehicles may face queues of 1-1.2 km, while trucks can face even longer waits (1.5-2 km). Procedures include passport photography and potential baggage inspection. Traveling during weekdays is recommended to avoid these delays.</li>
+    <li>Upon arrival in Minsk, currency exchange can be done at Belorusbank exchange offices, including those at the train station. SIM cards and public transport cards (BSK) for metro and bus travel can be purchased at the &#39;Galileo&#39; shopping center or at Minsktrans/metro ticket offices. BSK cards offer various tariffs based on the number of trips or days.</li>
+    <li>Carsharing services (Hello, Anytime) operate in Minsk and accept Russian Mir cards. Carsharing is limited in Brest, so renting in Minsk is recommended for wider travel across Belarus.</li>
+    <li>Travelers driving from St. Petersburg to Minsk should be aware of potential gasoline shortages and queues at some Russian gas stations (e.g., Rosneft). However, major brands like Lukoil, Teboil, and Gazprom typically have fuel. In Belarus, there are generally no fuel shortages or significant queues at gas stations. It is advised to refuel proactively and not wait until the last moment.</li>
+    <li>Travel between Russia and Belarus for Russian citizens is conducted without full border control checks against the Russian federal debt database (FSSP) in the same way as international flights from Russian airports. However, this is a legal loophole that can be closed or monitored at any time; relying on this as a guaranteed method to bypass travel bans for debt or alimony is high-risk.</li>
+    <li>The distance from Moscow to the Belarusian border (e.g., Lukoil station just after the checkpoint) is approximately 460 km. With a full tank and moderate driving, this should be sufficient. However, fuel availability can be inconsistent, so carrying an extra canister is a prudent measure for peace of mind, especially with a vehicle that has higher fuel consumption.</li>
+    <li>Belarus uses speed cameras, indicated by &#39;Фота Кантроль&#39; signs. Cameras are mainly on rural roads. Fines are not sent to Russian Gosuslugi and can only be checked with Belarusian GAI. Unpaid camera fines expire after three months unless stopped by police.</li>
+    <li>Fuel availability in Belarus is stable for passenger cars. For transit from Moscow to Belarus, fill up before crossing the border. On the return route (M1 towards Moscow), fuel shortages are reported at some stations; limits of 30 liters per refueling may apply. Apps indicating real-time fuel availability are often unreliable. Road tolls for cars under 3.5 tons registered in EAEU countries are free on Belarus highways.</li>
+    <li>Registering a Russian car in Belarus is complex for residents/citizens due to customs/utilization fees and tax laws. It is generally recommended to keep Russian license plates if not working as a taxi, as driving with Russian plates in Belarus is permitted without special restrictions. Deregistering a car in Russia while living in Belarus has become significantly more difficult as of 2025.</li>
+    <li>There is no fuel shortage in Belarus. Russia-Belarus transit on M-roads may experience severe fuel supply issues in the Pskov region (long queues). Speed limit tolerance in Belarus is 10 km/h (unlike 20 km/h in Russia). Traffic fines from cameras are stored in the database; police can stop vehicles for unpaid fines at any time.</li>
+  </ul>
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/by/documents-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documents &amp; Visa</span></a>
+    <a class="chip" href="/en/by/tickets-entertainment/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🎟 Tickets &amp; Entertainment</span></a>
+    <a class="chip" href="/en/by/housing/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🏠 Housing</span></a>
+    <a class="chip" href="/en/by/sim-internet/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>📶 SIM &amp; Internet</span></a>
+    <a class="chip" href="/en/by/shopping/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛒 Shopping</span></a>
+    <a class="chip" href="/en/by/banking-money/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Banking &amp; Money</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Still don&#39;t know what to do in your case?</h2>
+    <p>Ask Luky — what search won&#39;t show and not every blogger will tell.</p>
+    <p>And Luky is a live voice translator for real conversations: talk to locals directly.</p>
+    <p class="ps">PS: in a voice game chat you&#39;ll understand teammates from half the world</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/by/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

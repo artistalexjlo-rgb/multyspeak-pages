@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Montenegro: Banking &amp; Money — real experience · Luky</title>
+<meta name="description" content="Real experience from chats about Banking &amp; Money in Montenegro: as it is, first-hand. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/me/banking-money/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/me/banking-money/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/me/banking-money/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/me/banking-money/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/me/banking-money/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/me/">Montenegro</a> /
+    <b>Banking &amp; Money</b>
+  </nav>
+
+
+  
+  <h1>Banking &amp; Money: how it works in Montenegro — first-hand</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of people from chats on «Banking & Money» in Montenegro — as it is, no fluff. For your case — <strong>ask Luky</strong>.</div></div>
+
+  <h2>From real experience</h2>
+  <ul class="qlist">
+    <li>Payment for Turkish Airlines flights using Russian cards (like MIR) can be complex. MIR cards are generally accepted for flights originating from Russia. For return flights to Russia (e.g., Podgorica-Istanbul-Moscow), payment with MIR might be possible if the booking is made as a round trip. However, for flights originating outside Russia (like Podgorica), MIR card acceptance is unlikely. It is recommended to consult directly with Turkish Airlines or check their official website for the most up-to-date payment options and policies, especially for international itineraries. Visa cards issued by Russian banks may also have limitations depending on the issuing bank and the transaction&#39;s origin.</li>
+    <li>Advise on where to exchange 50 euros for smaller denominations in Tivat, Montenegro. A practical suggestion is to make a small purchase in a store.</li>
+    <li>Commercial banks in Montenegro often refuse to accept damaged banknotes. For damaged Euro currency, the official procedure is to exchange them at the Central Bank of Montenegro (CBCG) in Podgorica. A valid ID (passport or residency card) is required for the exchange.</li>
+    <li>In Montenegro, it is possible to exchange currency or make purchases and receive change in return. For example, buying small items like ice cream can facilitate currency exchange.</li>
+    <li>Individuals can export up to 9,999 EUR per person from Montenegro without declaration. For families traveling with minors, it is advisable for one adult to declare the total amount if it exceeds the individual limit to avoid potential issues.</li>
+    <li>For entry into Montenegro, individuals can carry up to 9,999 EUR without declaration per person. Amounts exceeding this threshold must be declared. It is advisable to distribute cash among family members to stay within the limit if applicable. Consult official Montenegrin customs regulations for precise details.</li>
+    <li>ATM withdrawal fees for converting USD to EUR in Budva can be high, with some ATMs charging around 13%. It is advisable to check your bank&#39;s foreign transaction fees and exchange rates. Letting your home bank handle the conversion may result in a better rate than the ATM&#39;s offered conversion. Always opt for withdrawal in EUR and let your bank perform the conversion if possible.</li>
+    <li>In Montenegro, most Russian banking applications (e.g., Sber, Alfa) work correctly without a VPN. However, some Russian government websites (e.g., Gosuslugi, RZD, Mos.ru, Russian Post) may be inaccessible. Solutions include switching from home Wi-Fi to mobile internet or using a free, online &#39;VPN наоборот&#39; service for short-term access. Note that using a VPN might sometimes interfere with banking app functionality, as they may detect and block VPN usage. Direct access without VPN is usually preferred for banking.</li>
+    <li>For budget-friendly travel in Montenegro, compare group tours offered locally on beaches, which are often cheaper than those from large operators like &#39;Olympus&#39;. Independent exploration via car rental is the most economical option. Options range from city-based tours to more expensive individual excursions.</li>
+    <li>Belarusian Mastercard, including those from Belarussian banks like Belarusbank (issued November 2023), are reported to be working in Montenegro and other Balkan countries like Istanbul. However, cash transactions might be more widely accepted for accommodation and small local businesses. It&#39;s advisable to confirm with your specific bank about international transaction capabilities and any potential restrictions.</li>
+    <li>UnionPay cards are not accepted in Montenegro. Visa and Mastercard issued in third countries (e.g., Armenia, Kyrgyzstan, Serbia) generally work for payments and ATM withdrawals. Be aware that many local markets and small shops operate on a cash-only basis. Opening accounts in Armenia requires personal presence, and policies for non-residents are tightening.</li>
+    <li>Seek recommendations for taxi services from Podgorica Airport to Budva. Ask if there are alternatives to MonteGo and if card payments are accepted or if cash is required.</li>
+    <li>Non-residents without a residence permit (boravak) in Montenegro are generally unable to open bank accounts in local institutions like Lovćen Banka. Accounts opened for foreigners usually require a valid residence permit; losing that permit status leads to the mandatory closure of the account.</li>
+    <li>Exchanging Russian Rubles for Euros in Montenegro may require finding trusted individuals as official exchange points might be limited. Cryptocurrency transactions, such as exchanging EUR for USDT/TON or vice versa, are possible but require caution and finding reliable partners.</li>
+    <li>FlyOne may reschedule flights with little notice, sometimes moving them earlier. Online check-in is mandatory to avoid high airport fees (36-120 EUR). Passengers should monitor flight status frequently and ensure they have digital copies of boarding passes, as airport staff may charge for printing or check-in.</li>
+    <li>Opening a bank account in Montenegro for non-residents (including Russian citizens) is extremely difficult without property ownership or a residency permit (boravak). Some banks charge high fees (up to 500 EUR) for account opening, and management often requires proof of the specific purpose for the account (e.g., paying for property, school fees).</li>
+    <li>Historically, cash was highly valued in Montenegro, with many people preferring it over cards and lacking accessible bill payment systems until recently. While cards are becoming more common for convenience, cash remains a preferred method for many. In Serbia, cash is still immediately exchanged for Euros.</li>
+    <li>In Montenegro, there are no currency exchange kiosks. Dollars to Euro exchange is performed at banks, though some branches may be reluctant. Banks typically operate until 15:00 and are closed on weekends.</li>
+    <li>To deposit money onto a Montenegrin bank card, if the ATM menu does not offer the option, visit a bank branch. Not all ATMs are equipped for cash deposits, even if they have a cash acceptor.</li>
+    <li>While specific prohibited items beyond standard customs regulations are not detailed in this log, travelers should be aware of standard customs declarations for large sums of cash (over 9,999 EUR per person). Ensure all necessary documentation, such as valid passports and any required permits, are in order.</li>
+    <li>When exchanging USD to EUR in Montenegro, be aware of ATM withdrawal fees and currency conversion rates. ATMs often charge a flat fee or a percentage for withdrawals. It is generally advisable to let your home bank perform the conversion rather than the ATM&#39;s offered rate, as it might be more favorable. However, it&#39;s best to check your bank&#39;s specific foreign transaction fees and exchange rates. Some ATMs may offer direct USD to EUR withdrawals, while others might require conversion. Banks themselves might offer better rates for direct exchange.</li>
+    <li>Clarify currency declaration rules for entering Montenegro. Amounts up to 9,999 EUR per person (over 16 years old) do not require declaration. For amounts exceeding this, declaration is necessary. Advise on strategies to handle currency declaration, such as distributing funds or verbally stating the amount, and emphasize the importance of knowing the specific country&#39;s regulations.</li>
+    <li>Serbian Dinars (RSD) are best exchanged for Euros in Serbia before traveling to Montenegro. Exchange offices for RSD are not readily available in Montenegro, and attempting to exchange them there may result in unfavorable rates or difficulties.</li>
+    <li>When using foreign bank cards at Montenegrin ATMs, avoid the machine&#39;s offered dynamic currency conversion (DCC). Selecting the ATM&#39;s conversion rate often results in high fees (up to 15-20%). Always select &#39;Decline&#39; or &#39;Continue without conversion&#39; to allow your home bank to process the currency exchange at its standard rate.</li>
+    <li>Cash is widely used in Montenegro. Small denomination euro notes (10-20 EUR) are recommended for daily purchases. Visa cards are generally accepted, while UnionPay (including Russian-issued cards) is largely non-functional.</li>
+    <li>Montenegrin banks are gradually updating their ATMs to more modern models. Older ATMs may have been in service for around 20 years. This modernization aims to improve functionality, including options for depositing funds and paying bills.</li>
+    <li>UnionPay cards, including those from Rosselkhozbank, are generally not accepted for direct payments or cash withdrawals in Montenegro. ATMs and payment terminals are typically configured for Visa and Mastercard. It is advisable to have alternative payment methods, such as Visa/Mastercard or cash, when traveling to Montenegro with a UnionPay card.</li>
+    <li>Exchanging US Dollars for Euros in Montenegro is possible, but rates may not be optimal. It is advisable to compare exchange rates at different banks and exchange offices to get the best deal. For significant amounts, planning this exchange in advance or within your home country might be more beneficial.</li>
+    <li>Exchanging Russian rubles for Euros is best done in Russia. While some exchange points or individuals in Montenegro may facilitate this, the rates are likely to be unfavorable. For currency exchange, it is generally recommended to use official banks or reputable exchange offices.</li>
+    <li>To obtain a bank statement in Montenegro for a personal account with a bank card, the process typically involves visiting a bank branch. The time required can vary depending on the bank and whether there are queues. It is advisable to inquire about specific procedures and expected waiting times directly with your bank.</li>
+    <li>The &#39;Plati po Miru&#39; card is mentioned as a potentially viable option for urgent transactions in Montenegro, though its specific functionality and acceptance may vary. For more permanent banking solutions, cards from CIS countries offering multi-currency options are often recommended for remote opening and delivery within 2-4 weeks. Direct exchange of Russian rubles to Euros is best done in Russia, though some informal exchange might be possible in Montenegro at potentially less favorable rates.</li>
+    <li>Opening a bank account in Montenegro with a real estate purchase (&#39;boravak po nekretninama&#39;) can facilitate the process, particularly with banks like Hipotekarna. However, success is not guaranteed and depends on the specific bank&#39;s policies and the individual bank employee&#39;s discretion. It is advisable to research banks known to be more accommodating to foreign property owners and to be prepared with all necessary documentation, potentially including a printout of relevant regulations from the Central Bank of Montenegro (cbcg.me).</li>
+    <li>Opening a foreign bank account for use in Montenegro can be challenging, especially for short-term tourist stays. For long-term residency or employment, opening an account in a CIS country that offers multi-currency cards might be simpler. Obtaining a Montenegrin bank account typically requires a residency permit (VНЖ), and even then, it can be difficult without proof of local employment. For purely tourist purposes, using an existing foreign-issued card or arranging for remittances is usually more practical than attempting to open a new, dedicated account.</li>
+    <li>Russian bank cards are largely non-functional for direct ATM withdrawals in Montenegro. Travelers should utilize local cryptocurrency P2P exchanges, currency exchange Telegram groups, or digital services that allow transfers to local bank accounts to obtain cash.</li>
+  </ul>
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/me/transport/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transport</span></a>
+    <a class="chip" href="/en/me/tickets-entertainment/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🎟 Tickets &amp; Entertainment</span></a>
+    <a class="chip" href="/en/me/documents-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documents &amp; Visa</span></a>
+    <a class="chip" href="/en/me/shopping/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛒 Shopping</span></a>
+    <a class="chip" href="/en/me/registration-residency/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Registration &amp; Residency</span></a>
+    <a class="chip" href="/en/me/safety/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛡 Safety</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Search answers everyone — but you?</h2>
+    <p>Ask Luky — builds the answer from fresh first-hand reports, not marketing copy.</p>
+    <p>And Luky is a live voice translator for real conversations: figure out at the store what you&#39;re even buying.</p>
+    <p class="ps">PS: if you like, Luky helps you meet people with no language barrier 😉</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/me/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

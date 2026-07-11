@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Montenegro: Tickets &amp; Entertainment — real experience · Luky</title>
+<meta name="description" content="Real experience from chats about Tickets &amp; Entertainment in Montenegro: as it is, first-hand. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/me/tickets-entertainment/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/me/tickets-entertainment/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/me/tickets-entertainment/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/me/tickets-entertainment/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/me/tickets-entertainment/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/me/">Montenegro</a> /
+    <b>Tickets &amp; Entertainment</b>
+  </nav>
+
+
+  
+  <h1>Tickets &amp; Entertainment: how it works in Montenegro — first-hand</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of people from chats on «Tickets & Entertainment» in Montenegro — as it is, no fluff. For your case — <strong>ask Luky</strong>.</div></div>
+
+  <h2>From real experience</h2>
+  <ul class="qlist">
+    <li>Podgorica is primarily an administrative center and lacks significant luxury shopping or high-end tourist infrastructure compared to coastal areas. Porto Montenegro in Tivat is considered the primary luxury destination in the country.</li>
+    <li>Access to viewpoints above Kotor is possible by car, with paid parking available at €1.30 per hour (cash payment). Free parking spots can also be found nearby. The road is narrow and serpentine. The cable car operates with a round-trip ticket costing €20 for adults.</li>
+    <li>There is a free hiking trail to the Kotor fortress. To find it, walk along Tabacina street, passing the Kamelija shopping center, until you reach the local water utility building; a trail behind it leads to the fortress.</li>
+    <li>Oyster farms in Boka Bay (near Perast/Risan) are best accessed via the Blue Line bus service from Tivat. Walking from Tivat to the farms is not feasible. The area between Perast and Risan is home to several oyster farms including the popular Milos farm.</li>
+    <li>A 3-hour boat tour in the Bay of Kotor, costing approximately 35 EUR per person, is highly recommended. The itinerary typically includes a visit to Our Lady of the Rocks (without disembarking), a submarine tunnel, Mamula Island, and the Blue Cave with swimming opportunities. This excursion is a popular alternative to other activities like the Kotor cable car.</li>
+    <li>For photographers in Budva seeking to build a portfolio or create Instagram content, it is recommended to network within local photography communities or use platforms that connect models and photographers. Direct contact through personal chats or referrals is a common approach.</li>
+    <li>Flight operations from Podgorica can be significantly delayed due to severe weather, including hail and poor visibility. Airlines attempt to find weather windows for departures. Passengers may experience prolonged waiting times and uncertainty regarding their travel plans.</li>
+    <li>Durmitor National Park near Žabljak offers numerous outdoor activities. Visitors can explore hiking trails, lakes, and rivers. Popular activities include canyoning, quad biking, horseback riding, and cycling. A multi-day trip is recommended to fully experience the park and its surroundings.</li>
+    <li>Kotor Cable Car: tickets cost 25 EUR for a round trip, with an additional 12 EUR for the toboggan. Fast track options are available for 20 EUR. Official shuttle services from Tivat, Kotor, and Budva can be booked via their website. In case of bad weather, operations may be suspended, leading to delays in evacuation/descent. For the best views of the bay, hike 800m from the &#39;Monte 1350&#39; bar to the &#39;Best View of Kotor&#39; lookout.</li>
+    <li>Boat tour prices in Montenegro: Canyon Tour - 40 EUR (35 min), Skadar Lake Tour - 70 EUR (1 hour), Amazon Tour - 85 EUR (1 hour 20 min), Full Tour - 125 EUR (2 hours). Prices are per boat. National Park entrance fee is 5 EUR per person. Payment is cash only. Traveling to Skadar Lake from Virpazar might be slightly cheaper.</li>
+    <li>The Kotor cable car offers a scenic ascent. For descent, a toboggan ride is available. This toboggan is a rail-based amusement ride that completes a circular route, descending and then ascending back to the starting point; disembarking mid-route is not possible. There are no established walking trails from the toboggan&#39;s upper station. Access to and from the top stations typically requires using the cable car or arranging a taxi/private vehicle due to steep slopes.</li>
+    <li>Access to Lovcen National Park from the Kotor serpentine road may be restricted before the park officially opens. The road where fees are collected might be closed outside of operating hours.</li>
+    <li>For solo travelers in Montenegro without a car, organized tours are a viable option to visit various attractions. Numerous tour operators offer excursions, and individual tours can also be arranged.</li>
+    <li>Beaches near Kotor include those in Dobrota, Prčanj, and Orahovac. In Tivat, Waikiki beach is an option, along with hotel-provided pontoons and small pebble beaches along the Donja Lastva coast. Hotel-associated beaches may have high rental fees for non-guests.</li>
+    <li>Private boat trips on the Crnojevica River (the &#39;Montenegrin Amazon&#39; route) typically cost around 85 EUR per boat. Prices may vary based on route duration and service provider.</li>
+    <li>The train route between Belgrade and Podgorica is prone to long delays (3+ hours). 6-berth compartments are cramped and non-air-conditioned. For a better experience, opt for 1st class (3-berth compartment) or the daytime train, which is modern and equipped with air conditioning.</li>
+    <li>Kotor Cable Car: 11-minute ascent. Online tickets are available to skip queues. Shuttle service runs from Kotor bus station (cash required at station, online for other departures). The alpine coaster at the top is popular; for sunset visits, arrive by 17:00 to manage coaster queues before sunset viewing.</li>
+    <li>Public transportation in Northern Montenegro (Žabljak, Prokletije) is limited. Car rental is highly recommended for exploring national parks and scenic mountain roads like the Sedlo pass, as bus routes are sparse and do not allow for flexible sight-seeing.</li>
+    <li>Djurdjevic Tara Bridge is currently under construction. Traffic is restricted: closed for cargo vehicles, with alternating/reversible traffic for passenger cars and tourist buses. Expect significant delays. The bridge is generally accessible to pedestrians. Ziplines across the canyon remain operational. Completion of works is not expected before autumn.</li>
+    <li>For beaches near Kotor, consider Dobrota, Prčanj, and Orahovac. These areas offer options, though specific amenities like sunbeds and umbrellas may be primarily associated with hotels and come with higher prices for non-guests. Hotel-owned piers can also provide convenient access to the sea.</li>
+    <li>Choosing a base in Montenegro depends on travel priorities: Budva is the primary hub for nightlife and transport access but is highly crowded. Tivat offers a modern aesthetic, marinas, and luxury, but lacks natural sandy beaches. Herceg Novi is aesthetically charming but involves significant walking on stairs. For families with children, all-inclusive resorts in Becici are recommended for convenience.</li>
+    <li>For a month-long stay in Montenegro focusing on remote work, beautiful beaches, and city exploration, consider the following: Kotor offers historical charm but lacks ideal beaches. Budva is logistically convenient for day trips and has beaches, but can be crowded and perceived as less clean. Tivat offers a more relaxed atmosphere and is known for its marinas and proximity to other Boka Bay towns. Herceg Novi is another option with historical sites and access to nature. For sunsets, consider higher vantage points, as the sun sets behind mountains in many coastal areas. Research specific beaches in Tivat (like Kalardovo, Waikiki) or areas near Petrovac for potential good beach experiences. Be aware that &#39;pleasant beaches&#39; can be subjective; clarify your preferences (sand, pebbles, water clarity, amenities).</li>
+    <li>Air Montenegro has experienced flight delays and changes in arrival airports. Passengers have reported a 4-hour delay on a flight and a change of arrival airport from Tivat to Podgorica. It is advisable to check flight status regularly and have flexible travel plans when flying with Air Montenegro. Some travelers suggest that Air Serbia might be a more reliable alternative for flights to Montenegro.</li>
+    <li>Budva&#39;s beaches, such as Mogren and Mogren 2, offer both paid sections with sunbeds and umbrellas (ranging from €15-€40) and free areas. Prices can vary significantly depending on the location and amenities. Some smaller beaches along the promenade offer slightly lower prices but may have inferior water quality. Public beaches are accessible without charge.</li>
+    <li>Budva offers free sections on beaches like Mogren and Mogren 2. Paid sunbeds and umbrellas can range from €15-€20 on the promenade or up to €40 at Mogren Beach. Water quality can vary, with some areas reportedly having issues. Consider the public sections for a more budget-friendly experience.</li>
+    <li>Dobrota offers limited evening entertainment. For more affordable groceries, explore local markets and the Chinese store (&#39;Kineska robna kuca&#39;) located near the &#39;Dom Zdravlja&#39; (Health Center) on the way to the Old Town.</li>
+    <li>It is generally permissible to carry cheese and melons in checked baggage when flying from Montenegro. However, it&#39;s crucial to ensure proper packaging to prevent damage or leakage. For melons, wrap them securely in plastic wrap and place them in a sturdy bag. While not explicitly prohibited, it&#39;s always wise to check with your specific airline for any baggage restrictions on fresh produce. Some airlines may have specific rules regarding perishable items.</li>
+    <li>When traveling by train from Montenegro to Serbia (e.g., Bar to Belgrade): 1. Purchase tickets and a mandatory seat reservation (&#39;Rezervacija Sedišta&#39;) at the train station (e.g., in Bar); online purchase is not available. 2. A train change occurs at the border. 3. Insist on getting entry/exit stamps from border police, as they may not always apply them in trains or buses. 4. Montenegrin SIM cards generally work in Serbia and several other Balkan countries without additional roaming charges, which previously required activating a service in an app but is now often automatic.</li>
+    <li>The Adriatic sea in Montenegro is subject to upwelling, where wind pushes surface water away, causing cold deep water to rise. Consequently, water temperatures can drop rapidly even during heatwaves. Typical temperatures range from 20°C to 24°C.</li>
+    <li>To see cruise ships in Kotor, check the official Kotor Port schedule online. The day of the week does not significantly impact the ability to see the ships, as their arrival is predictable via the port&#39;s schedule.</li>
+    <li>Renting sunbeds and umbrellas in Budva can be expensive. Prices observed include €40 for two sunbeds and an umbrella at Mogren Beach (a public beach). More affordable options exist on the promenade for €15-€20, though water quality might be lower. Parts of Mogren and Mogren 2 beaches are free to use.</li>
+    <li>Swimming in Tivat Bay is possible in May, although the water may still be cool for some. While some individuals may venture in for a dip, it&#39;s generally considered early season. Finding easy access points to the water, especially outside of private beach clubs, can be a challenge in the bay area. The water temperature can vary, and it might be more suitable for a brief immersion rather than extended swimming.</li>
+    <li>Tennis courts in Budva (specifically near Slovenska Plaza) are available for public use. Court rental is approximately 10-15 EUR per hour. Tennis balls can be rented on-site at the administration building.</li>
+    <li>A 4-hour private boat trip starting from Budva marina can be booked for approximately €75 for two people. The itinerary typically includes visits to Pizana beach, the Old Town panorama, Mogren 1 and 2 beaches, the Blue Lagoon, Calipso beach and cave, Hawaii beach, St. Nicholas Island, the Cave of Love, St. Stefan island, Przno, and Rafailovici.</li>
+    <li>Provide restaurant recommendations in Budva, Montenegro, specifically mentioning &#39;Olimp&#39; (fish restaurant) and &#39;Citadela&#39; (diverse menu, expensive but scenic). Also suggest &#39;Modena&#39; and &#39;Porat&#39; in Rafailovici as alternatives.</li>
+    <li>The toboggan experience near the Kotor cable car is highly recommended. Tickets can be purchased on-site (card payments accepted at the cable car ticket office or near the toboggan runs). The cost is around 12 EUR. A shuttle service from Kotor bus station to the cable car operates, with round-trip shuttle and cable car tickets costing approximately 30 EUR. Both daytime and sunset visits offer great views.</li>
+    <li>Consider self-organizing a trip to Kotor from Budva via bus and then booking a local tour in Kotor, which might be more flexible and cost-effective than a packaged day cruise from Budva. Alternatively, full-day organized tours from Budva covering multiple locations (like Cetinje, Njegusi, Kotor, Perast, and the cable car) are available and can be convenient for those without a car.</li>
+    <li>When visiting Piva Lake and Durmitor from Herceg Novi, be aware of potential roadwork and bridge closures. Sections of the route may be closed daily from 11:00 to 17:00 for maintenance. The Đurđevića Tara Bridge is under reconstruction, with access limited at certain times (e.g., after 20:00, or potentially between 12:00-14:00). Travel to Piva Lake might involve routes like the Sedlo Pass. Mountain weather is unpredictable, with possibilities of rain, hail, and cool temperatures (around 11°C), even in summer. Consider this when packing and planning your itinerary.</li>
+    <li>Boat tour operators are concentrated along the waterfront in Kotor, near the city park. Tours typically last 3 hours (approx. 35-40 EUR) and cover Perast, Mamula island, submarine tunnels, and Blue Cave. Booking in person at the docks is common and negotiable with cash.</li>
+    <li>Turkish Airlines flights can be rerouted. Issues may arise with third-party booking platforms (like Trip.com) regarding flight changes or cancellations, even if the service is advertised. Direct booking with the airline might be a more reliable option in such situations, though potentially more expensive.</li>
+    <li>For private boat hire from Herceg Novi, it is advisable to inquire locally at the marina or tourist information centers. Some local captains offer private tours or boat rentals for specific needs. It might be possible to find contacts through local forums or expat groups online. Prices can vary depending on the boat size, duration, and destination.</li>
+    <li>The seasonal daytime train &#39;Tara&#39; (1130/1131) operates between Bar (Montenegro) and Subotica (Serbia) from June 13 to September 14. Travelers must transfer trains at the Bijelo Polje station for border procedures. Seat reservation is mandatory (cost: 3 EUR). Tickets are available via the official Montenegro Railways website.</li>
+    <li>For budget-friendly travel in Montenegro, compare group tours offered locally on beaches, which are often cheaper than those from large operators like &#39;Olympus&#39;. Independent exploration via car rental is the most economical option. Options range from city-based tours to more expensive individual excursions.</li>
+    <li>Flight rerouting from Tivat to Podgorica can occur. Taxi fares from Podgorica to Herceg Novi can be around 130 EUR. Using third-party booking sites for flight changes (like for &#39;Trip.com&#39;) may be problematic, with issues like non-functional payment buttons. Direct booking with the airline may be necessary in such cases, potentially leading to higher costs and tight connection times.</li>
+    <li>Advise visitors to Ostrog Monastery in Montenegro to avoid weekends (Friday-Sunday) due to large crowds and potential traffic congestion on the narrow access road. Recommend visiting on weekdays for a more peaceful experience and shorter queues.</li>
+    <li>Identify locations for beach volleyball courts in Budva, Montenegro. Mention a court near Hotel Park close to the tunnel in Becici, but advise checking availability for rental and suggest searching for other potential courts if needed.</li>
+    <li>Entry into the Blue Cave (Plava Špilja) area is now prohibited for motorized vessels according to a new safety regulation. Access is permitted only with non-motorized vessels to ensure the safety of swimmers and visitors, and to reduce the risk of maritime accidents in a high-traffic navigation zone. Minister of Maritime Affairs Filip Radulović emphasized these changes.</li>
+    <li>Airport departure checks for registration payment can vary. If you have a booking confirmation (e.g., from Booking.com), it may suffice if questioned.</li>
+    <li>Kotor Cable Car tickets are best purchased on-site to maintain flexibility. Avoid peak discount days to escape long queues. Early morning or sunset are optimal times to visit to avoid crowds. Occasionally, promotional discounts (e.g., via Mastercard) may occur, but they are rare during the high season.</li>
+    <li>For a first-time visit to Montenegro, a full-day boat tour of the Bay of Kotor is recommended to see the sights while staying cool with the sea breeze. Renting a car for independent exploration is also a budget-friendly option.</li>
+    <li>Near Petrovac, Montenegro, the city beach and Lučice beach are recommended. Scenic walking paths lead to Perazića Do beach via a tunnel and to Buljarica, a long, often secluded beach. These areas offer beautiful views and opportunities for exploration.</li>
+    <li>Heavy tourist buses and public transport are restricted on the narrow Kotor serpentine (between Kotor and Lovćen) due to narrow roads and constant traffic jams. Large buses also frequently block roads near Rijeka Crnoevića. Travelers should avoid expecting public buses on these scenic routes and use smaller vehicles or hike.</li>
+    <li>Sea temperature in Budva is currently comfortable for children to swim. Water may initially feel cool but becomes comfortable within minutes. Caution advised due to the presence of sea urchins on the beaches this year; special water shoes are recommended for safety.</li>
+    <li>The Kotor cable car may have operating hour restrictions due to weather, such as thunderstorms (e.g., 4 PM - 6 PM). In case of thunderstorms, it&#39;s advised not to use the cable car due to difficult evacuation procedures. Tickets can be purchased on-site at a dedicated ticket office near the toboggan runs (card payments accepted) or at the cable car ticket office. Prices observed were 12 EUR and 20 EUR, with the higher price potentially being for a faster experience. Both daytime and sunset visits offer scenic views.</li>
+    <li>Beaches in Risan and Tivat are primarily composed of stone piers or pebbles, not sand. For those seeking sandy beaches, these locations may not be ideal. Checking the Blue Flag designation for water quality is recommended for beaches in the Bay of Kotor.</li>
+    <li>Access to the Blue Caves can be restricted due to adverse weather conditions like strong winds, leading to police enforcement preventing travel on open sea. The caves themselves have low ceilings, making them potentially inaccessible or unpleasant during rough seas. If direct access from Kotor is not feasible, consider alternative departure points like Žanjic or Mirišta beaches, from where local boatmen might offer trips. It is advisable to check local weather forecasts and consult with boat tour operators for the most current information on accessibility and safety.</li>
+    <li>Official regulations for unmanned aircraft (drones) in Montenegro require registration with the Ministry of Economy. There are documented restrictions on flying drones for Russian citizens as per the Civil Aviation Agency (CAA) notice. Unauthorized use carries high risk of confiscation.</li>
+    <li>Dedicated children&#39;s play areas are scarce in Bar, Montenegro. While small play zones may be found near cafes along the waterfront, comprehensive indoor play facilities are limited. Previously, amusement rides were available on the promenade.</li>
+    <li>The Lepetane-Kamenari ferry in Montenegro is free for pedestrians. It serves as a transit point between Tivat/Kotor and Herceg Novi. Pedestrians can combine local bus routes by using the ferry to avoid expensive tourist boat tours.</li>
+    <li>The water temperature in the Adriatic Sea, especially in Montenegro, is considered cool to moderate. While it can reach pleasant levels in peak summer, it is rarely described as &#39;warm&#39;. Temperatures around 19-22°C are common, and after windy conditions, layers can mix, leading to a noticeable drop in temperature. However, the water is noted for its clarity.</li>
+    <li>Kotor, Montenegro, is primarily known for its historical sites and bay. For beaches, consider smaller, more intimate options like those in Prčanj, Dobrota, and Orahovac, which are closer to the city. Private beach clubs, such as the one in front of Huma hotel in Dobrota, offer amenities and dining. Accommodation near these areas is recommended for beach access.</li>
+    <li>Seek recommendations for beautiful restaurants in mountainous areas suitable for celebrating a birthday. Specific suggestions include Amber Restaurant Budva (known for cuisine, service, and ambiance) and Giardino in Rezevici (with a nice view and simple food). For a picturesque setting, Katovici Mline near the ferry is also suggested, accessible by boat if arriving by yacht or small boat.</li>
+    <li>Bečići beach, located to the right of &#39;Sansara&#39; when facing the sea, is highly recommended, especially for families with children. It is described as an excellent beach.</li>
+    <li>A suggested itinerary for Montenegro covering Budva and Dobrota with a car includes: From Budva: explore the city, visit Sveti Stefan, St. Peter&#39;s Island, Skadar Lake, Rijeka Crnojevica, Virpazar, and beaches. From Dobrota: explore Kotor, Perast, Lustica, Tivat. Then, head to Lovcen Pass, Njegusi, and Cetinje. A trip to Zabljak is also recommended if time permits. A 7-day itinerary can be very packed; it&#39;s advisable to prioritize and not try to see everything.</li>
+    <li>When considering flight routes to Tivat, options include flying via Armenia, Istanbul, or Serbia. Armenia is often cited as a more economical choice. Direct flights from Baku via AZAL are also available. It is important to factor in potential flight delays and the adequacy of layover times, as short connections can pose risks. Researching prices for specific travel dates is recommended.</li>
+    <li>FlyOne may reschedule flights with little notice, sometimes moving them earlier. Online check-in is mandatory to avoid high airport fees (36-120 EUR). Passengers should monitor flight status frequently and ensure they have digital copies of boarding passes, as airport staff may charge for printing or check-in.</li>
+    <li>Due to the summit in Montenegro (June 4-6, 2026), major road routes between Kotor, Tivat, and Budva are subject to intermittent closures. Airports (Tivat/Podgorica) may shift operations; travelers are advised to check official traffic lists, allow 2-3 extra hours for transfers, and monitor airline status pages.</li>
+    <li>Budva is largely considered a tourist-oriented city, particularly popular with visitors from CIS countries, offering familiar services and comfort. For a more authentic &#39;local&#39; Montenegrin experience, one should visit non-touristy towns such as Cetinje, Nikšić, Ulcinj, or Bijelo Polje. While Kotor, Bar, and Tivat have some local populations, they are also significantly influenced by tourism, though Tivat might have a slightly lower concentration of Russian tourists compared to Budva.</li>
+    <li>Boat trips from Budva along the Bay of Kotor are generally not offered due to the long distance. It is recommended to purchase these trips in Kotor, where they are readily available along the promenade.</li>
+    <li>Private tours for sightseeing in Montenegro, such as visiting viewpoints, can be arranged. The cost for a 4-hour private tour by car is estimated to be around 200 EUR. It is advisable to confirm the price and availability with local guides or drivers. Language proficiency (Russian or English) is important for communication. Some local drivers may not speak English or Russian.</li>
+    <li>When booking bus tickets in Montenegro via busticket4.me: 1) Luggage is not included and must be paid directly to the driver in cash (usually 1 EUR per bag). 2) Electronic tickets on smartphones are often not accepted; passengers must print their tickets in advance, or pay a fee (approx. 1 EUR) at the station ticket counter to have them printed.</li>
+    <li>Paragliding sites in Montenegro, specifically near Becici, offer flights for approximately 95 EUR per person. Most providers include a 15-20 minute transfer from the coast to the launch site. GoPro footage is usually captured by the passenger&#39;s own camera or provided for an additional fee. Advanced booking (at least 24 hours in advance) is recommended.</li>
+    <li>Boat trips to Žanjic beach are available from Herceg Novi. While other departure points might exist, Herceg Novi is a common starting point for such excursions.</li>
+    <li>A 1.5-hour boat trip in Rijeka Crnojevića costs around 95 EUR per boat, with prices varying based on the route and duration. Booking in advance is not necessary, and free parking is available. Nearby, the Vukmirovich winery offers rosé wine. The recommended starting point for boats is near the old bridge in Rijeka Crnojevica.</li>
+    <li>Buses operate from Tivat to Herceg Novi. The journey might involve a ferry crossing (e.g., Lepetane-Kamenari) or a longer route around the bay. Check schedules and ticket prices in advance.</li>
+    <li>The bus station in Tivat may not always display schedules clearly. Information might be limited, and departure times could be infrequent. For accurate scheduling and ticketing, it&#39;s advisable to consult online resources or inquire directly with available staff.</li>
+    <li>Roads around Durmitor National Park and the Đurđevića Tara Bridge area are generally accessible for vehicles. While specific route conditions can change, typical access allows for travel by car. Zipline operations at the bridge are seasonal and should be confirmed for the specific travel dates.</li>
+    <li>Laguna restaurant, a beach club near Ducray hotel (15 min walk from Bečići), offers a pleasant experience with good service. The concept involves an 80 EUR deposit for sunbeds and umbrellas, redeemable for food and drinks. While prices are above average, the quality is high. Live music is available, and a free speedboat service to Budva&#39;s Old Town is provided for guests. Booking is recommended, especially on weekends.</li>
+    <li>Montenegro coastal law mandates public access to the sea. Hotels often manage beach sections with sunbeds. While access to the water is legally guaranteed, disputes with private security over using sunbeds without paying are common and often result in conflicts. Look for designated public beach areas or free sand spots.</li>
+    <li>The &#39;famous passage&#39; into Kotor fortress is reportedly bricked up. There is a desire for an official second entrance to allow access to exterior views of the fortress, potentially at a lower cost than the main entrance.</li>
+    <li>Suggest Budva as a convenient base for exploring Montenegro due to its central location and accessibility to various attractions. Advise that while Budva is a good hub, August can be extremely hot and crowded.</li>
+    <li>Advise on where to purchase rafting tour packages departing from Budva, Montenegro. Mention that kiosks selling excursions typically offer them, and prices/itineraries are often similar. Note that availability might require checking multiple vendors.</li>
+    <li>Public transport in Montenegro: tickets bought at bus stations include a terminal/platform fee, making them more expensive (approx 4.8 EUR vs 2.5 EUR). Boarding buses at local street stops avoids these extra fees. Use apps like &#39;busticket4.me&#39; or FlixBus for schedules, but note that payment on board is often cash-only.</li>
+    <li>Beach chair prices at Mogren Beach in early June were around €40 for two loungers and an umbrella on the first line. Alternative beaches like Kamenovo (accessible via tunnel from Bečići) are considered cozier and less crowded. Other options near the old town of Budva are available within a 16-20 minute walk, with prices typically around €15-20. Coral shoes are recommended due to large pebbles on beaches and entry points.</li>
+    <li>A shuttle service operates from Kotor bus station to the cable car. Tickets for the shuttle and cable car (round trip) can be purchased, costing approximately 30 EUR. The shuttle runs every 30-60 minutes. One-way tickets may not be available, so plan accordingly if you intend to travel from the cable car to another destination like Perast or Kotor without returning to the shuttle&#39;s origin.</li>
+    <li>Organized tours to the Blue Cave in Montenegro are being cancelled due to safety concerns (reported rockfall). Access may now be restricted to non-motorized vessels like rafts and kayaks. A new safety regulation might be the cause. Visitors should confirm current accessibility and transport options.</li>
+    <li>The Blue Cave excursion from Kotor can be affected by weather conditions, particularly wind, which may restrict access to open sea. Police may enforce safety measures. If conditions are unfavorable, alternative departure points like Žanjic or Mirista beaches might offer boat trips. Currently, it might be off-season, potentially limiting availability. Historically, these caves offer a unique natural phenomenon, but safety and accessibility depend on the weather. Check local conditions and tour operators for current availability and feasibility.</li>
+    <li>The Savina Monastery near Herceg Novi is recommended for its scenic views and a winery. It&#39;s considered a notable attraction in the Boka Bay area.</li>
+    <li>The zipline at Đurđevića Tara Bridge was operational in mid-June. Road conditions for vehicles traveling to the bridge were generally clear, with no major closures reported.</li>
+    <li>Tickets for the Kotor cable car and the associated alpine coaster (toboggan) should be purchased online in advance to avoid disappointment, as slots sell out by 18:00. Walking from the lower parking area to the cable car station takes approximately 10 minutes, which is faster than driving up the serpentines.</li>
+    <li>Discussing optimal flight routes and airport choices for Montenegro, specifically Tivat vs. Podgorica. Key considerations include potential flight delays and cancellations, especially with the Tivat airport&#39;s reputation. Recommended strategies involve booking with a single airline (e.g., Turkish Airlines via Istanbul to Podgorica) to minimize risks associated with transfers. Alternative routes, like flying into Tirana, Albania, are also mentioned, though less direct for those heading straight to destinations like Budva. The reliability of different airlines and the importance of buffer time for connections are highlighted. Practical advice includes checking road conditions and considering alternative airports based on current flight schedules and airline policies.</li>
+    <li>To access the Alpine Coaster near Kotor, Montenegro, there are two main options: 1. Take the cable car (žičara) from the starting point near the Kotor tunnel. 2. Drive directly to the top, which involves paying for the Alpine Coaster ride and an entrance fee to the national park.</li>
+    <li>Beyond Kotor, Tivat, Perast, and Sveti Stefan, consider exploring other nearby attractions accessible from Budva without a car. Options include: 1. Cetinje: The historical royal capital, reachable by bus, offering museums and old architecture. 2. Lovćen National Park: Accessible via tours or taxi, offering stunning views. 3. Skadar Lake: Take a bus to Virpazar and then a boat tour. 4. Local beaches and villages around Budva: Explore less crowded spots like Jaz Beach or explore nearby villages by local bus.</li>
+    <li>Flying drones in Montenegro, even lightweight ones like the DJI Mini 4 Pro (under 249g), may require a permit. Obtaining this permit via email can be a lengthy process with no guarantee of approval, particularly for Russian citizens. While some individuals successfully bring drones without permits, there is a risk of confiscation. It is advisable to research the specific regulations and permit process beforehand.</li>
+    <li>Tips for the Belgrade-Bar train (Train 433): 1) Tickets must be purchased at the train station (up to 60 days in advance). Booking 1st class is highly recommended and should be done early. 2) Delays are extremely common, ranging from 30 minutes to 6 hours due to track conditions. 3) There are two border checkpoints during the night, each lasting around 40 minutes.</li>
+    <li>Gather user experiences and opinions regarding flights with Fly One, especially those involving a layover in Yerevan. Include advice on online check-in to avoid a 40 unit fine.</li>
+    <li>For Tivat, Montenegro, daytime weather is generally warm, suitable for summer clothing. A light layer like a shirt might be useful for cooler evenings or shaded areas. Water temperatures are around 18-20°C, starting to warm up but potentially still cool for some.</li>
+    <li>A canyoning excursion in Međureč (near Bar) is offered on Thursdays, July 9th. The activity includes jumps, waterfall descents, natural water slides, and use of specialized equipment. Insurance and gear conforming to international standards are provided. To book, contact the organizers directly.</li>
+    <li>For free beach options near Budva that are less rocky, consider Rafailoviči (sandy), the right side of Bečići, or Kamenovo. Sveti Stefan also offers accessible beaches. While Jaz beach is sandy, Ploče beach is rocky and requires a boat trip from Budva. It&#39;s advisable to check specific locations for suitability and potential accessibility issues.</li>
+    <li>For beaches near Bečići and Sveti Stefan, consider Kamenovo or Rafailoviči (which has sand). Sveti Stefan also offers good options. The right side of Bečići is also recommended. While some beaches have paid sunbeds (around 15-30 EUR for a set), free beach areas exist, especially if you arrive early or are willing to use your own towels. Some beaches like Drobni Pijesak offer a beautiful and clean experience with options for various budgets, including free access with paid amenities.</li>
+    <li>Beach options near Budva include Jaz (sandy, large), Ploče (rocky, accessible by boat), Kamenovo, and Rafailoviči. Drobni Pijesak is a highly recommended beautiful and clean beach with varying prices for amenities (starting from 25 euros) but has a steep descent. Paid sunbeds typically range from 15-30 EUR per set. Luxury beach clubs like Laguna at Dukley Hotel offer premium experiences (around 80 EUR with a deposit for food/drinks) and good service.</li>
+    <li>Solo travel in Montenegro is generally safe and feasible. English is widely understood, especially in tourist areas, and many locals, particularly in hospitality and service industries, have a basic or good command of English. Russian speakers are also common in tourist hotspots. Navigation is relatively straightforward, and in case of difficulties, gestures and a translation app can be helpful. Offline maps are recommended for exploring mountainous areas.</li>
+    <li>The water temperature in Montenegro&#39;s coastal areas, particularly the Adriatic Sea, is generally cooler than in tropical destinations, typically ranging from 19-24 degrees Celsius during the summer season. While it may feel cool initially, especially for those accustomed to warmer waters, acclimatization is possible. Water temperatures can be warmer in sheltered bays like the Bay of Kotor compared to the open coast. Water temperature can fluctuate due to phenomena like upwelling, where colder deep water surfaces, but it generally recovers with continued sunshine.</li>
+    <li>Beach access fees, particularly in areas like Miločer, can be high during peak season, with reported costs of up to 240 euros. These &#39;prohibitive tariffs&#39; are sometimes implemented by hotels or private entities that have acquired rights to adjacent beaches. Previously free beaches may now have significant access charges, potentially due to privatization or seasonal policies. It is advisable to confirm beach access policies and costs in advance.</li>
+    <li>Solo travel in Montenegro is generally safe and manageable. English is widely spoken in tourist areas, and Russian speakers are also common. While navigating might pose minor challenges, especially in remote areas, offline maps and basic communication skills (including gestures) are usually sufficient. The country is considered safe for solo travelers.</li>
+    <li>FlyOne&#39;s hand luggage policy is enforced via sizers at the airport. While staff may not measure bags with a tape measure, bags must physically fit in the sizer. Removing wheels from luggage can often help reduce the dimensions by 1-2 cm to meet strict requirements.</li>
+  </ul>
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/me/transport/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transport</span></a>
+    <a class="chip" href="/en/me/documents-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documents &amp; Visa</span></a>
+    <a class="chip" href="/en/me/shopping/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛒 Shopping</span></a>
+    <a class="chip" href="/en/me/registration-residency/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Registration &amp; Residency</span></a>
+    <a class="chip" href="/en/me/banking-money/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Banking &amp; Money</span></a>
+    <a class="chip" href="/en/me/safety/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛡 Safety</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Didn&#39;t find your case?</h2>
+    <p>Ask Luky — what search won&#39;t show and not every blogger will tell.</p>
+    <p>And Luky is a live voice translator for real conversations: so the waiter won&#39;t mix up your order.</p>
+    <p class="ps">PS: a voice call with that person from another country — also Luky</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/me/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

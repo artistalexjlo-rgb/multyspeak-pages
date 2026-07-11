@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Japan: Transport — real experience · Luky</title>
+<meta name="description" content="Real experience from chats about Transport in Japan: as it is, first-hand. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/jp/transport/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/jp/transport/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/jp/transport/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/jp/transport/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/jp/transport/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/jp/">Japan</a> /
+    <b>Transport</b>
+  </nav>
+
+
+  
+  <h1>Transport: how it works in Japan — first-hand</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of people from chats on «Transport» in Japan — as it is, no fluff. For your case — <strong>ask Luky</strong>.</div></div>
+
+  <h2>From real experience</h2>
+  <ul class="qlist">
+    <li>Inquire about websites or platforms for purchasing train tickets from Matsumoto to Osaka, as Trip.com does not seem to offer this route directly.</li>
+    <li>ICOCA/Suica cards have a maximum balance limit of 20,000 JPY. Cards can be recharged multiple times after the balance is spent. They are widely accepted in convenience stores (konbini) and chain restaurants, serving as a supplement to cash for tourists without international bank cards.</li>
+    <li>Traveling to Japan during &#39;Silver Week&#39; (a series of holidays in September) results in significant crowds and high demand for accommodation and transportation. It is essential to book hotels, Shinkansen tickets, and popular attractions well in advance, potentially months ahead, to secure availability and avoid inflated prices. Consider adjusting travel dates to avoid this peak period.</li>
+    <li>Japan travel planning: Purchase Shinkansen and bus tickets (e.g., to Kawaguchiko) in advance, especially during peak season. While some tickets can be bought on the spot, booking ahead is recommended. Japan Rail Pass can be cost-effective for extensive travel. For transit in Shanghai, confirm terminal information and complete arrival cards in advance.</li>
+    <li>A reserved Shinkansen ticket can be used for travel in non-reserved cars on the same day, either earlier or later than the original reservation, provided such cars are available on the train. This offers flexibility for travelers whose plans may change.</li>
+    <li>If a Suica or Pasmo card is rejected at a bus or station gate, it is often due to an &#39;incomplete trip&#39; error (e.g., failure to tap out at the previous destination). This can only be resolved by station staff at a railway gate. In Kyoto, buses require tapping the card upon exit, not entry, due to fixed pricing.</li>
+    <li>When purchasing train tickets in Japan, if ticket counters offer limited availability or inconvenient times, travelers should also check self-service ticket machines. In one instance, earlier tickets were available through a machine when the counter only offered later departure times.</li>
+    <li>Choosing between Hiroshima and Onomichi for a 3-night stay during a cycling trip (including Miyajima and Hiroshima): Onomichi offers more scenic cycling potential but has less convenient Shinkansen access. Hiroshima provides better logistical connections. Verify if Onomichi is covered by the chosen Kansai Pass.</li>
+    <li>Navigating public transport in Japan is made easier with the use of Google Maps for route planning, which provides station information, exit numbers, travel times, and fares. The ICOCA card is a versatile travel pass that can be used on subways, commuter trains, and buses in Osaka, Kyoto, and Tokyo.</li>
+    <li>Suica (IC) cards are interoperable and function across Japan, including major regions like Tokyo, Osaka, Kyoto, and Kamakura. They can be used for transit and reloaded at most major stations.</li>
+    <li>Google Maps is highly accurate for public transport in Japan, including Shinkansen and local buses. It provides precise routing and timing. For those using JR lines or seeking specific IC card designs, physical cards can be purchased at station machines (e.g., Icoca, Hayakaken, Suica, Sugoca). Note that tourist-specific IC cards are valid for 28 days.</li>
+    <li>First-time travelers to Japan can benefit from advice on customs, currency exchange, transportation, and shopping. Key recommendations include: no liquid restrictions in carry-on, utilizing currency exchange offices like Ninja Exchange for favorable rates, using Google Maps and ICOCA cards for public transport, and choosing appropriate stores for specific purchases (e.g., Don Quijote for sweets, drugstores for cosmetics). Be aware of potential luggage inspections in transit countries.</li>
+    <li>For domestic flights in Japan, consider budget airlines like Jetstar for more affordable options compared to full-service carriers like ANA. Prices can range significantly (e.g., 25,000 JPY for a round trip for two on Jetstar versus 63,000 JPY on ANA, depending on dates and promotions). Use flight aggregators like Trip.com and Google Flights to compare prices. Be aware of luggage allowances and additional fees with low-cost carriers.</li>
+    <li>For the Shinkansen route from Kyoto to Tokyo, choose seat &#39;E&#39; (left side) for the best views of Mount Fuji. If seeking a warmer carriage, look for designated cars with reduced air conditioning; these are often marked on the platform signage. Be aware that Japanese trains are fixed-direction, so seats are manually rotated at the end of the line by staff.</li>
+    <li>Fishing rods in hard tubes exceeding standard dimensions must be checked as oversized/fragile baggage. Passengers should proceed to the specialized check-in counter at the airport for oversized items.</li>
+    <li>If you exit a station at a stop different from the one designated on your paper ticket, use the &#39;Fare Adjustment&#39; (Norikoshi) machines located inside the ticket gates before exiting. Alternatively, pay the difference to the station staff. IC cards automatically handle fare adjustments.</li>
+    <li>For booking bus and train tickets in the Japanese Alps, consider using Japanbusonline and Trip.com. Specific routes like Osaka-Takayama and Takayama-Shirakawa-go are available. Note that direct buses from Takayama to Kamikochi are not available; a transfer in Hirayu is required. Trip.com also offers combined routes, such as Osaka-Takayama with a stop in Shirakawa-go.</li>
+    <li>Rental cars should include an ETC card for toll roads. Parking is largely paid, but free spots exist near tourist attractions (temples, parks) and grocery stores; check signage carefully. Japanese speed limits are strict; excessive speeding (20-30+ km/h over) can lead to license revocation even for tourists. Verify compatibility of driver&#39;s license conventions (Geneva vs. Vienna) before rental.</li>
+    <li>Domestic flights are available within Japan for travel to islands like Okinawa, as there is no Shinkansen connection. Booking platforms such as Trip.com can be used to find and purchase tickets for these internal flights. It&#39;s important to understand the booking process for domestic air travel in Japan.</li>
+    <li>Physical IC cards (Suica/Pasmo) become unusable once migrated to an Apple Wallet/Digital Wallet. Digital cards can be topped up at station machines equipped with contactless pads or at convenience stores like 7-Eleven. Apps like &#39;CardReader&#39; can help check balances if official top-up methods are unavailable.</li>
+    <li>&#39;No transfer&#39; (без пересадок) on Japanese train routes means you remain on the same physical train even if the line or train number changes during the journey. You do not need to disembark and re-board.</li>
+    <li>For adding Japanese transit cards (Suica/Pasmo/ICOCA) to Apple Wallet, users often encounter payment issues. Recommended troubleshooting steps: 1. Try a different bank card. 2. Use a VPN if located in restricted regions like Belarus/Russia. 3. If Suica fails, switch to PASMO. Transit cards are widely accepted for small retail payments (conbini, vending machines, etc.) in addition to transit.</li>
+    <li>Russian-issued cards (specifically UnionPay) have limited acceptance in Japan; they work for cash withdrawals at 7-11 ATMs and some major retail stores but are unreliable for general contactless payments. Russian travel aggregators (Ostrovok, Trip.com) accept Russian-issued cards for hotel and transport bookings.</li>
+    <li>Japan Travel Tips: Shinkansen tickets between major cities cost around 7,000 JPY. Local transport (metro, buses) averages 1,000 JPY/day. Capsule hotels are the cheapest accommodation (1,500-2,000 JPY). Book transport and accommodation in advance. eSIMs can be purchased via Trip.com with clear activation instructions. Souvenir katanas can be transported in checked luggage with proper documentation and handling by airport customs.</li>
+    <li>If a piece of luggage exceeds the airline&#39;s weight limit (e.g., 30 kg instead of 23 kg), options include: 1. Repacking: Distribute the excess weight into other available luggage or a newly purchased bag. 2. Paying for Overweight Baggage: Inquire at the airline counter or reception about fees for overweight items. The cost can vary significantly. It&#39;s generally advisable to adhere to standard weight limits to avoid unexpected charges.</li>
+    <li>Planning a trip to Japan involves itinerary creation and budgeting. Travelers often build their own routes using resources like Google Maps, Trip.com, and Visit Japan. Costs can vary significantly based on flight and accommodation choices. It&#39;s important to prioritize destinations and activities to maximize the travel experience within the available time and budget.</li>
+    <li>If JR Kansai-Hiroshima Pass is unavailable online, it can be purchased in person at authorized travel agencies like NTA TiS Osaka (Umeda station) by presenting a passport. This avoids digital redemption issues.</li>
+    <li>When a physical Suica/Pasmo card cannot be topped up at station vending machines after being added to a mobile wallet (e.g., Apple Wallet), it can often be topped up using cash at Lawson convenience store counters, which feature contactless payment pads.</li>
+    <li>Russian driving licenses (including International Driving Permits/МВУ issued in Russia) are not valid in Japan. To legally drive, rent a car, or participate in street-karting, one must hold a permit issued by a country that adheres to the 1949 Geneva Convention (e.g., Kazakhstan, Georgia).</li>
+    <li>Airline baggage allowance rules often specify weight limits per checked item, not just total allowance. If a single bag exceeds the limit (e.g., 23 kg), excess charges may apply even if the total baggage weight for the passenger is within the overall limit. It is advisable to distribute weight evenly or use an additional bag if available and within total allowances to avoid potential fees or repacking.</li>
+    <li>When booking Shinkansen tickets via third-party services like Trip.com, use the provided QR code at station kiosks to print physical tickets. For large luggage, passengers must book seats with extra space, as these are limited and mandatory for bulky items.</li>
+    <li>Tokyo public transport is notoriously crowded and indifferent, while Okinawa exhibits more relaxed social etiquette. In Japan, elderly or disabled passengers often carry specific pins or badges to alert others that they require a priority seat.</li>
+    <li>Traveling to Japan during New Year (Oshogatsu): Expect fewer tourist crowds compared to peak seasons. Celebrations are primarily family-oriented. For festive atmosphere, visit areas like Shibuya or Omotesando. Consider Kyushu for hot springs and scenery; book transport and accommodation in advance due to potential limited availability. Enjoy clear skies for Fuji views.</li>
+    <li>Shinkansen tickets do not have major 40% early-bird discounts. Standard prices apply for high-speed trains like Nozomi. Small savings (approx. 10%) can be found in &#39;kinken shops&#39; (ticket resale shops) in Japan. JR Pass or standard ticket purchases are recommended for convenience.</li>
+    <li>Shinkansen luggage rules: Luggage up to 160cm (total dimensions) does not require a reservation. Oversized luggage (160-250cm) requires a seat reservation with extra space. Measurements are standard for JR lines.</li>
+    <li>Key travel insights from Japan: Currency exchange is best at dedicated exchange offices like Ninja Exchange in Shinjuku for optimal rates. For shopping, Don Quijote is good for sweets and alcohol, Tom&#39;s for cosmetics, and Ginza Karen for luggage. Google Maps is highly recommended for navigation. Notably, there are no restrictions on liquids in carry-on baggage at Japanese airports, allowing for the transport of items like alcohol. Tax-free shopping procedures and purchasing electronics are also mentioned.</li>
+    <li>Carry-on liquid restrictions for flights to China: Liquids, aerosols, and gels (LAGs) in hand luggage must be in containers of 100 ml or less. All such containers must be packed in a single transparent, resealable plastic bag of a maximum capacity of 1 liter. This rule applies to items like toners and perfumes. Larger containers (over 100 ml) are generally not allowed in hand luggage.</li>
+    <li>Power bank travel requirements in Japan: ensure the device has clear capacity labeling and (for international transit through China) a CCC mark. Stick to standard 5,000–20,000 mAh capacities to avoid security inspection delays.</li>
+    <li>In Japan, tax-free purchases are categorized into general goods (clothing, electronics) and consumable goods (cosmetics, food, drugs). Consumables are often sealed in clear anti-tamper bags which technically should not be opened until leaving the country. General goods do not require such sealing. Customs checks on these bags at departure are rare for tourists unless quantities are suspicious (bulk/resale). Most travelers open packages for luggage optimization without consequences.</li>
+    <li>IC cards (Suica/Pasmo) on Android devices are typically restricted to hardware manufactured for the Japanese market. Devices brought from outside Japan often fail to support digital wallet IC integration. Android users without Japanese hardware should rely on physical IC cards. Physical cards can be recharged with cash at station ticket machines or at major convenience stores (Lawson, 7-Eleven, FamilyMart).</li>
+    <li>For Shinkansen travel, medium-sized luggage (size M) fits comfortably on overhead racks. Oversized luggage requires specific reserved seats with designated luggage space, which should be selected during the booking process on platforms like Trip.com, Klook, or at station counters.</li>
+    <li>Domestic flights are a viable option for travel between Japanese cities, including journeys to Okinawa. Platforms like Trip.com can be used for booking tickets. Unlike mainland travel, Shinkansen services do not extend to Okinawa, making flights the primary mode of transport to the island.</li>
+    <li>Eating and drinking on Shinkansen (bullet trains) in Japan is not only acceptable but common. Bento boxes and beverages, including alcoholic options like beer, sake, and imported wines, are readily available for purchase at stations and on the train. While bringing your own alcohol is generally fine, purchasing it onboard is a convenient option.</li>
+    <li>Multi-day Japan rail passes typically expire at midnight on the last day of validity, not exactly 24/48/72 hours after activation. If you board a train before midnight, you can usually complete your journey. However, it&#39;s best to check the specific terms of your pass, as some may have different rules or require reservations for certain trains.</li>
+    <li>Tickets for Shinkansen (bullet trains) purchased without a reserved seat are typically valid for any train on the specified route and date, in non-reserved cars. You are not restricted to a specific departure time. However, if the ticket includes a reserved seat, it is valid only for that specific train and time.</li>
+    <li>For booking express bus tickets to/from Kawaguchiko, use the recommended website Japanbusonline. Avoid booking randomly from any site, as the JapanBusonline platform is considered reliable for this service.</li>
+    <li>The JR Pass validity is calculated based on calendar days, not a strict 168-hour period. Be aware that it might expire on the 8th calendar day of use, not exactly 168 hours after activation.</li>
+    <li>Tokyo Station is large and complex. Two platforms might share the same number. Arriving early is recommended to find your Shinkansen. Shinagawa Station is considered easier for navigation.</li>
+    <li>Optimizing a 21-day Japan itinerary involves strategic allocation of time. It&#39;s suggested to split time in the Tokyo area (e.g., 7 days in Tokyo, 4 days for surrounding excursions like Kawasaki, Yokohama, Kamakura). Including cities like Kanazawa and Hikone, dedicating 2 days to the Fuji area, and considering travel time between locations are important factors. Managing FOMO (Fear Of Missing Out) is also a common concern for travelers aiming to see as much as possible.</li>
+    <li>Purchasing concert tickets for events in Japan, such as those listed on platforms like Pia (ticket-lot.pia), may involve phone verification steps. Travelers facing difficulties with online purchases requiring phone calls should seek assistance through official support channels or explore alternative purchasing methods.</li>
+    <li>Provide a cost comparison between flying and taking the Shinkansen between Tokyo and Osaka. Detail factors to consider such as airport transportation, baggage fees, and the operating airlines and airports for each option (e.g., Haneda, Narita, Itami, Kansai, Kobe).</li>
+    <li>Regional transport cards: Suica/Pasmo are issued by JR East/Tokyo Metro and are for the Kanto region. For the Kansai region (Osaka/Kyoto), use ICOCA cards. ICOCA cards can be purchased at JR stations (e.g., JR Kansai International Airport, Osaka Station). Standard balance limit for these cards is 20,000 JPY.</li>
+    <li>Russian driver&#39;s licenses are not valid for car rentals in Japan, even with an official translation. Japan requires an International Driving Permit (IDP) issued strictly under the 1949 Geneva Convention. Russian-issued IDPs do not meet these requirements.</li>
+    <li>Modern international transit flights often transfer baggage automatically. Passengers should check the baggage claim tag (connecting flight destination must be on it) and request baggage check-through at the initial check-in counter. Even if the policy is automated, confirming with the ground staff is standard procedure for peace of mind.</li>
+    <li>While Japan is increasingly cashless, cash is still required for some small shops, temples, and local buses. Travelers are advised to carry 10,000 JPY in cash as a backup. IC cards (Suica, Pasmo, etc.) are highly recommended for transport and occasional small payments.</li>
+    <li>Welcome Suica: Free to issue, non-refundable, expires after 28 days. Best for short-term tourists. Standard Suica: Costs 500 JPY deposit, refundable, valid for 10 years from last use. Both act as digital wallets for transit and convenience stores.</li>
+    <li>Russian International Driving Permits (IDPs) are strictly invalid in Japan because Russia issues IDPs under the Vienna Convention, while Japan only recognizes the 1949 Geneva Convention. Driving with a Russian IDP is legally treated as driving without a license, punishable by fines up to 3,000,000 JPY or imprisonment up to 2 weeks, and invalidates all insurance.</li>
+    <li>When booking Shinkansen tickets via aggregators like Trip.com, passengers often cannot select specific seat numbers in advance. A system-assigned ticket with carriage and seat information is issued. When traveling in a group, the system generally attempts to assign seats together, but individual seat selection (e.g., D or E seats) is typically not available during the online booking process.</li>
+    <li>For a 24-hour transit in China as a Russian citizen, indicate &#39;visa-free entry&#39; or &#39;transit entry&#39; on relevant forms. If planning to leave the airport and explore the city, ensure you fill out the migration card correctly. This process is standard for transit passengers.</li>
+    <li>China Eastern Airlines luggage policy: While airlines often allow a small overweight allowance (1-2 kg), the strict limit is 23 kg per checked bag. Overweight items may incur fees or be subject to rejection. To manage excess weight, consider distributing items into hand luggage or a personal shopping bag (tote).</li>
+    <li>Experiencing issues with a foreign (Kazakhstan) card in Japan, leading to a lack of cash for airport transfer. Exploring options for using a Suica card, purchasing transport passes via Trip.com, withdrawing cash, or finding local assistance. Potential solutions include checking card limits, ATM withdrawal options (including NFC), contacting the card issuer or colleague, and seeking help from Russian speakers.</li>
+    <li>Shinkansen tickets can be purchased online or at ticket counters. &#39;Non-reserved&#39; tickets allow travel on any train, but seating is not guaranteed. There are a limited number of non-reserved cars, and standing room only is a possibility during peak times. Reserved seats guarantee a specific seat on a specific train. Luggage can be stored in overhead racks, at the end of cars, or placed in front of your seat. It&#39;s advisable to book reserved seats for a more comfortable journey, especially during busy periods.</li>
+    <li>The Japan Rail Pass is calculated based on calendar days. If activated on Day 1, it is valid until the end of Day 7. Using it on the 8th calendar day, even within 168 hours of activation, will not be permitted.</li>
+    <li>Is it possible to rent a car with a driver in Japan? Information is sought regarding whether Russian driver&#39;s licenses are accepted for car rentals and the availability/cost of private car services or transfers.</li>
+    <li>Flight cancellations due to typhoons in Japan are causing significant traveler distress. Airlines and booking platforms are offering rebooking options, but often with substantial additional fees or long delays. This creates a critical issue for travelers whose visas are nearing expiration. It&#39;s essential to understand the airline&#39;s policy on involuntary changes and to explore all rebooking avenues, including direct contact with the airline, to avoid additional costs and visa overstays.</li>
+    <li>For China Eastern Airlines baggage exceeding standard dimensions (over 204 cm sum of three dimensions), you need to pay a surcharge for excess baggage. It is advisable to contact the airline in advance to arrange and potentially get a better rate than paying at the airport, where the fee can be around 2000 CNY per segment.</li>
+    <li>Renting a motorcycle in Japan with a driver&#39;s license issued in the Russian Federation is not legally possible, regardless of the rental company. Japan does not recognize Russian licenses or International Driving Permits (IDPs) issued in Russia because Russia is not a signatory to the 1949 Geneva Convention on Road Traffic. Driving without a valid license leads to severe legal consequences, including fines, deportation, and a potential ban on future entry.</li>
+    <li>Tokyo transport passes like the 48-hour Subway/Toei Subway pass may not cover all lines, particularly private railways. You might need to pay extra or purchase separate tickets for certain private lines (e.g., Gotokuji Line, lines connected to Shinjuku Station). It&#39;s advisable to research the specific coverage of your pass and the transportation network to plan your routes effectively.</li>
+    <li>Air China online check-in is generally only available for tickets booked directly through their website. If booked via third-party agents, check-in must be completed at the airport counter. Air China enforces a strict 23 kg weight limit per checked bag, unlike some other airlines that may consider total passenger weight.</li>
+    <li>While Japan is technologically advanced, cash is still widely preferred and often required for certain transactions, especially for transportation passes. Credit cards may not be accepted everywhere. Always carry sufficient cash, particularly for local transport and smaller purchases.</li>
+    <li>Car rental in Okinawa, Japan for Russian citizens is not possible. Japanese rental companies do not recognize Russian driver&#39;s licenses, even international ones (МВУ). Valid licenses are typically from countries with agreements with Japan, such as Georgia or Kazakhstan. Driving without a valid Japanese or recognized international license carries severe penalties.</li>
+    <li>A 21-day itinerary for Japan can be optimized by balancing popular destinations with day trips. Key considerations include allocating sufficient time for major cities like Osaka and Tokyo, potentially splitting Tokyo nights for easier access to surrounding areas like Nikko or Yokohama. While day trips to places like Himeji and Nara are feasible, it&#39;s important to manage travel time and avoid over-scheduling to prevent fatigue. Exploring options like Kanazawa or Kōbe can add variety to the itinerary.</li>
+    <li>Typhoon warnings and subsequent flight cancellations are causing significant disruption for travelers in Japan. Many are scrambling to rebook flights, with some resorting to purchasing new tickets at higher prices to meet visa deadlines. Travelers are advised to monitor weather forecasts, airline notifications, and to proactively contact their airlines or booking agents for rebooking options. Be aware of visa expiration dates and potential overstay penalties. Consider alternative routes or carriers if direct flights are unavailable or canceled.</li>
+    <li>Comparing the cost-effectiveness of train travel versus taxi for transportation between Osaka and Kyoto. Taxi fares are estimated to be significantly higher (around 20,000-25,000 JPY) compared to local trains.</li>
+    <li>Explain the high demand for boat rentals at Takachiho Gorge. Provide details on how to book tickets, the typical booking window (e.g., &#39;smash within 10 minutes&#39;), and the implications of not securing a boat rental for the overall experience, considering the travel time.</li>
+    <li>Flight prices to Japan can fluctuate significantly. While historically round-trip tickets could be found for around 40,000 rubles, current prices are generally higher, often ranging from 50,000 to 55,000 rubles. Some deals, like 38,000 rubles, might appear for connecting flights (e.g., via China). Airlines like Hainan Airlines, China Eastern, and Air China are frequently mentioned. Booking 3-4 months in advance is often recommended, although last-minute deals can sometimes appear about a month before departure.</li>
+    <li>In Japanese public transport, priority seats are available to anyone when empty but must be vacated immediately for elderly, disabled, or pregnant passengers. Locals may decline offers of seats from foreigners as a matter of cultural pride. If an elderly person needs a seat, they will typically approach the priority area. Foreigners are encouraged to follow local lead: sit if seats are free, but stay alert and ready to yield.</li>
+    <li>A comprehensive 21-day itinerary for Japan can be enhanced by optimizing the allocation of days across key regions. Suggestions include dedicating two days to Osaka and its surroundings (Kobe, Himeji), incorporating cities like Kanazawa and Hikone, and potentially extending the stay near Mount Fuji. Overnight stays in Nikko and Kamakura are also recommended for a deeper exploration. While it&#39;s impossible to see everything, strategic planning can maximize the travel experience and mitigate FOMO.</li>
+    <li>If departing from Kansai International Airport (KIX) at 9:08 AM, the first train from Namba around 5:15 AM is sufficient. It arrives in Osaka around 6:00 AM, providing ample time and negating the need for a taxi.</li>
+    <li>Budget flights between Tokyo and Osaka can be significantly cheaper than Shinkansen tickets. However, Shinkansen is often more efficient for travel between city centers, avoiding the time and costs associated with airport transfers, security checks, and boarding procedures.</li>
+    <li>For first-time travelers to Japan, relying on cash and a local IC card (like Suica or Pasmo) for transportation and small purchases is a viable alternative to international credit cards. Cash is widely accepted, and IC cards simplify payments where cards might not be. Researching options for obtaining an IC card upon arrival is recommended.</li>
+    <li>Renting electric scooters in Japan typically requires a valid international driving permit. Without the proper license, usage may be restricted. Finding rental options that accept cash payments or operate outside standard digital platforms might be a workaround for travelers without foreign cards.</li>
+    <li>The JR Kansai &amp; Hiroshima Area Pass (5 days, ~17,000 JPY) is highly cost-effective and fully covers the Nozomi Shinkansen between Osaka and Hiroshima, as well as the Haruka Airport Express. However, it is explicitly not valid for the Shinkansen line between Osaka and Kyoto; regular JR lines or rapid service trains must be used for that segment.</li>
+    <li>Suica cards can be purchased at airport kiosks using large banknotes (10,000 JPY). For trips under 28 days, Welcome Suica is recommended as it requires no deposit. Balances up to 20,000 JPY can be stored on the card.</li>
+    <li>Luggage forwarding services (takkyubin) are highly reliable in Japan. Travelers should ask the hotel front desk to arrange pickup. Delivery usually takes 1-2 days depending on the distance. Always verify the expected delivery date with the staff before shipping, especially if traveling to a new city.</li>
+    <li>Transferring from the Shinkansen (Tokaido Line) to the Narita Express (N&#39;EX) at Tokyo Station is straightforward and typically takes 10-15 minutes, even with luggage. Follow signs for &#39;JR Lines&#39; and &#39;Narita Express (N’EX)&#39; within the same station complex. Do not exit through the main turnstiles; instead, use the transfer turnstiles. The Shinkansen ticket will be returned by the turnstile. N&#39;EX platforms are usually underground. Allocate at least 20 minutes for the transfer, especially if unfamiliar with the station. Alternate travel to Narita is possible via regular JR electric trains, which are slower but run later.</li>
+    <li>When using airport limousine buses in Okinawa, it is advisable to check in advance whether pre-booking is required or if tickets can be purchased on-site. This information can usually be found on the bus company&#39;s official website or by contacting their customer service. Pre-booking may be recommended during peak travel seasons or for specific routes to ensure availability.</li>
+    <li>Kansai International Airport (KIX) transfer between Terminal 2 and Terminal 1 requires a shuttle bus ride (approx. 15 minutes). For self-transfers, 3 hours is a recommended minimum to account for immigration, baggage claim, and terminal transit. If on a single ticket, the airline will rebook missed connections due to their own delays.</li>
+    <li>Japan does not have restrictions on the amount of liquids allowed in carry-on luggage. This was confirmed by a traveler who passed through pre-boarding security with an unfinished liter bottle of alcohol without issue. The same traveler also reported successfully bringing several small bottles of sake and a 700ml bottle of wine without any items being confiscated.</li>
+    <li>Japan only recognizes the 1949 Geneva Convention International Driving Permit (IDP). A 1968 Vienna Convention IDP is invalid in Japan. Ensure the document explicitly states &#39;1949&#39; on the cover/front page. Driving with an invalid license or a fake &#39;combined&#39; permit will result in the inability to rent a vehicle.</li>
+  </ul>
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/jp/shopping/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛒 Shopping</span></a>
+    <a class="chip" href="/en/jp/documents-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documents &amp; Visa</span></a>
+    <a class="chip" href="/en/jp/tickets-entertainment/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🎟 Tickets &amp; Entertainment</span></a>
+    <a class="chip" href="/en/jp/banking-money/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Banking &amp; Money</span></a>
+    <a class="chip" href="/en/jp/exchange-transfers/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Exchange &amp; Transfers</span></a>
+    <a class="chip" href="/en/jp/safety/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛡 Safety</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Need it for your situation, not in general?</h2>
+    <p>Ask Luky — what search won&#39;t show and not every blogger will tell.</p>
+    <p>And Luky is a live voice translator for real conversations: sort things out with the taxi driver, no gestures.</p>
+    <p class="ps">PS: flirt on a date in a foreign language? No problem 😏</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/jp/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

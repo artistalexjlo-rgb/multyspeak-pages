@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Filipinas: Entradas y ocio — experiencia real · Luky</title>
+<meta name="description" content="Experiencia real de los chats sobre Entradas y ocio en Filipinas: tal cual, de primera mano. Para tu caso — pregúntale a Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/es/ph/entradas-y-ocio/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/ph/entradas-y-ocio/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/ph/entradas-y-ocio/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/ph/entradas-y-ocio/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/ph/entradas-y-ocio/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · cualquier país · sin relleno</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noche</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/es/">Inicio</a> /
+    <a href="/es/ph/">Filipinas</a> /
+    <b>Entradas y ocio</b>
+  </nav>
+
+
+  
+  <h1>Entradas y ocio en Filipinas: experiencia real de los chats</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiencia real de gente de los chats sobre «Entradas y ocio» en Filipinas — tal cual, sin relleno. Para tu caso — <strong>pregúntale a Luky</strong>.</div></div>
+
+  <h2>De la experiencia real</h2>
+  <ul class="qlist">
+    <li>Las cascadas recomendadas en Filipinas incluyen Tumalog y Mantayupan. Un usuario señaló que las cataratas Kawasan son menos impresionantes. Otras cascadas que se mencionan como interesantes son Dao, Aguinid e Inambacan. En las mismas regiones también se destaca la proximidad a lugares de buceo con tiburones y la posibilidad de ver monos.</li>
+    <li>Las experiencias de viaje en Filipinas varían significativamente según el estilo de viaje. Para los viajeros activos, islas como Cebú, Bohol, Siquijor y Negros ofrecen actividades diversas que incluyen buceo (por ejemplo, el banco de sardinas y tortugas en Moalboal, clases de buceo a pulmón), ciclismo, senderismo y la exploración de sitios naturales únicos como volcanes y cascadas. Cada isla tiene un ambiente distinto: Negros, con sus montañas, volcanes y casas de bambú locales; Siquijor, por su ambiente relajado, bares al atardecer y DJs; Palawan, por sus extensas playas y surf. Se señala que El Nido es ruidoso y sucio, con actividades limitadas más allá de una excursión, aunque sus playas insulares son populares. Boracay se considera buena para pasar una semana de relax. Algunos consideran que Filipinas implica un movimiento constante en comparación con otros destinos como Phuket o Bali, pero muchos aprecian su belleza única y su variedad, especialmente quienes pasan de 3 a 4 días en cada lugar. Se sugiere que, para aquellos que buscan principalmente vacaciones estáticas en la playa, otras regiones podrían ser más adecuadas.</li>
+    <li>Para viajar desde la playa de Alona (Bohol) hasta Oslob (Cebú) para observar al tiburón ballena, la ruta típica consiste en tomar un ferry hasta la isla de Cebú. Desde Cebú, se necesita un coche u otro transporte terrestre para llegar a Oslob. A menudo se recomienda pasar la noche en Oslob para facilitar la actividad con el tiburón ballena a primera hora de la mañana y evitar prisas.</li>
+    <li>Para ver luciérnagas en el río Loboc, se recomienda llegar alrededor de las 6:30 p. m. El costo de un tour es de aproximadamente 1300 PHP para dos personas, aunque los hoteles podrían cobrar alrededor de 2500 PHP por lo mismo.</li>
+    <li>La isla de Siquijor se puede recorrer en unos pocos días, siendo 3 o 4 días suficientes para muchos visitantes. La isla ofrece cascadas y playas, aunque quizás no sean tan espectaculares como las de Bohol. Las actividades incluyen visitar la costa oeste, explorar cascadas y relajarse en playas como Tabar Beach. Para una experiencia más completa, combinar la exploración de las costas oeste y este en una semana es factible, dependiendo de las expectativas e intereses individuales.</li>
+    <li>Filipinas es considerada un destino principal para el buceo, y algunos argumentan que su infraestructura menos desarrollada mejora la experiencia de buceo en comparación con lugares con exceso de servicios como Turquía o Miami. Sin embargo, la seguridad en el buceo requiere una formación extensa, incluyendo conocimientos teóricos y habilidades prácticas tanto en entornos de piscina como de aguas abiertas, preparándose para condiciones desafiantes como tormentas y corrientes. Simplemente obtener un certificado sin la preparación adecuada está fuertemente desaconsejado debido a los altos riesgos.</li>
+    <li>Para un viaje a Bohol, se tarda aproximadamente 1,5 horas en visitar a los tarseros. La elección del alojamiento depende de la proximidad a las atracciones deseadas.</li>
+    <li>Viajar a Cebú vía Hong Kong es una opción viable. Hong Kong puede ser un destino de escala agradable, con atracciones como Victoria Peak, la Avenida de las Estrellas y las escaleras mecánicas Mid-Levels. Aunque el alojamiento en Hong Kong puede ser costoso, la ciudad cuenta con un sistema eficiente de MTR para el transporte. Puede encontrar más detalles sobre Cebú en otros mensajes dentro del chat.</li>
+    <li>Un tour en helicóptero en Boracay cuesta aproximadamente 6100 PHP a nivel local. El precio en Trip.com aparece como 7830 RUB. (Nota: Los precios están sujetos a cambios y pueden variar).</li>
+    <li>Bluewater Sumilon Island Resort ofrece un paquete de pase diario con un precio aproximado de 1800 PHP por persona. El paquete suele incluir traslados en barco de ida y vuelta, un almuerzo tipo bufé y acceso a las instalaciones de la isla, como actividades de esnórquel y playa. Se considera una opción de excursión de un día ideal para niños y sin estrés cerca de la zona de Cebú/Oslob.</li>
+    <li>Para practicar esnórquel con peces y tortugas en Boracay, White Beach es un lugar recomendado. Algunos turistas han informado avistamientos diarios de tortugas. Se puede contratar transporte local como tuk-tuks desde White Beach por unos 150 pesos por persona para explorar la vida marina. El barranquismo también es una actividad popular. Tenga en cuenta que tocar la vida marina, como las tortugas, está desaconsejado y puede conllevar multas.</li>
+    <li>Aunque los tiburones ballena son una atracción muy solicitada en Palawan, no se garantizan los avistamientos. En áreas como Sabang, la presencia de fauna peligrosa, como los cocodrilos de agua salada, también es una preocupación. Estos grandes reptiles suelen habitar ocasionalmente en las zonas costeras. Los relatos locales suelen enfatizar el peligro significativo que representan los cocodrilos, con descripciones vívidas de encuentros.</li>
+    <li>La isla de Balabac es accesible exclusivamente a través de tours organizados. Las opciones de alojamiento varían según la agencia y el presupuesto, desde campamentos básicos hasta casas cómodas. La isla es conocida como un paraíso natural adecuado para excursiones de un día y fotografía, con informes sobre la presencia de cocodrilos.</li>
+    <li>Se recomienda completar la teoría y el entrenamiento en piscina para la certificación OWD en el país de origen. Esto permite una mejor comprensión del idioma y manejo del estrés. Los estudiantes pueden obtener una referencia de su instructor para realizar sus inmersiones de evaluación &#39;Open Water&#39; en un resort de destino, ahorrando tiempo de vacaciones.</li>
+    <li>Obtener la certificación PADI Open Water Diver (OWD) en Filipinas es factible. Los cursos pueden variar en duración, generalmente de 2 a 5 días, dependiendo del centro de buceo y el plan de estudios específico. Por ejemplo, los cursos en Panglao pueden completarse más rápido, especialmente si hay un instructor que hable ruso disponible. El costo puede rondar los 19,000 PHP. También es posible completar la parte teórica del curso en línea o en casa antes de llegar, y luego centrarse en el entrenamiento práctico en el agua y el examen.</li>
+    <li>Los sitios de buceo avanzado en Filipinas, como la isla Verde (Mindoro), requieren una experiencia de buceo significativa (mínimo Advanced Open Water Diver, preferiblemente con más de 50-100 inmersiones registradas). Estos lugares no son adecuados para el entrenamiento, y los centros de buceo locales generalmente no proporcionan supervisión dedicada para buceadores inexpertos. Las corrientes fuertes e impredecibles son un peligro importante, capaz de arrastrar a los buceadores. Las precauciones de seguridad, como permanecer cerca de las paredes en la isla Verde, son cruciales. Las condiciones meteorológicas (corrientes, visibilidad, altura de las olas) pueden cambiar rápidamente y afectar la seguridad del buceo. Si bien ciertas áreas como Panglao pueden ser buenas para ganar experiencia, los sitios avanzados exigen una preparación exhaustiva, conocimiento local y un instructor experimentado.</li>
+    <li>Para problemas con AirChina en Moscú, visita su oficina en la calle Tverskaya. Aunque el soporte telefónico puede ser difícil, las visitas en persona son efectivas para resolver problemas, incluyendo la asignación previa de asientos para grupos con una lista de nombres y números de boletos electrónicos.</li>
+    <li>Philippine Airlines está realizando actualmente una venta relámpago de 3 días en su sitio web oficial. Un usuario compró con éxito boletos de ida y vuelta de Manila a Boracay para febrero por 159 USD para dos personas. Aconsejamos a los usuarios que revisen el sitio web oficial para ver ofertas.</li>
+    <li>Para excursiones como el Río Subterráneo con tirolina, se pueden organizar visitas a través de cualquier hotel o comprando las entradas directamente en la playa de Sabang. El tiempo de viaje desde Puerto Princesa es de aproximadamente 1,5 a 2 horas. Hay audioguías disponibles en ruso por 55 PHP.</li>
+    <li>Para reservar el avistamiento de tiburones ballena en Oslob, los usuarios deben ponerse en contacto con la página de Facebook &#39;Reservation Oslob Whaleshark&#39; exactamente un día antes de la visita prevista. Deben especificar la franja horaria preferida y el número de personas, y luego esperar un código de confirmación de reserva. No se requieren números de teléfono locales; toda la comunicación se puede gestionar de forma eficiente directamente a través de Facebook Messenger.</li>
+    <li>Para un viaje de un día desde Manila, considere visitar cascadas y un volcán (con un mirador desde Starbucks) o explorar la ciudad histórica con un tour local en tuk-tuk (aprox. 2-3 horas). Pregunte en el lugar sobre las opciones de alquiler de coches en Manila.</li>
+    <li>Seguridad y atracciones en Mindanao. Un residente con experiencia descarta las preocupaciones sobre la seguridad por considerarlas obsoletas y recomienda Mindanao tanto para vivir como para hacer turismo. Entre los puntos destacados se incluyen la isla de Samal (la mayor colonia de murciélagos), Camiguin (múltiples atracciones) y sitios cerca de Davao: el Crocodile Park, el río Enchanted, las cascadas de Marilog, la Mezquita Rosa, las playas de Samal y Mati, y el Monte Apo. Aconseja no hacer caso a quienes infunden miedo, afirmando que existen zonas peligrosas en todas partes, pero que se pueden evitar usando el sentido común. Un viajero que planea un viaje de un mes a Davao busca lugares arquitectónicos y oportunidades para practicar senderismo o ciclismo, en lugar de actividades centradas en la playa.</li>
+    <li>Los precios de los vuelos a Filipinas varían enormemente dependiendo de las escalas y el momento de la reserva. Los vuelos directos suelen ser más caros. Las rutas a través de China o Dubái son alternativas comunes. Busque ofertas en aerolíneas como Cebu Pacific para los tramos internacionales y considere aerolíneas de bajo costo como Pobeda para los segmentos hacia centros de tránsito. Reservar con antelación o durante periodos de ofertas puede reducir significativamente los costos. Tenga en cuenta la duración de las escalas y los posibles requisitos de visado para los países de tránsito.</li>
+    <li>La ciudad de Cebú ofrece buenas opciones de compras, pero no es un destino turístico en sí mismo. Moalboal es recomendable para practicar esnórquel con sardinas y tortugas, aunque White Beach es la principal playa accesible. La isla de Panglao en Bohol es una buena base para explorar atracciones como las Colinas de Chocolate, los tarseros y los cruceros por el río Loboc, con ferris frecuentes desde Cebú. Es posible nadar con tiburones ballena y la actividad puede durar más de 30 minutos.</li>
+    <li>Filipinas ofrece experiencias excepcionales de buceo y esnórquel. Entre los destinos de buceo populares se encuentran Komodo (aunque técnicamente está en Indonesia, a menudo se compara), Lembeh, Donsol (conocido por los tiburones ballena), Subic Bay, Puerto Galera, Palawan, Malapascua (enfocado al buceo) y Panglao. Boracay y Panglao también ofrecen actividades generales de natación y playa. Para la vida marina, Panagsama es conocida por sus bancos de sardinas y tortugas, mientras que White Beach en Boracay ofrece visibilidad de peces coloridos con máscara y tubo, aunque los bancos de sardinas no suelen encontrarse allí. Se recomienda Panglao para el buceo. Siquijor ofrece una experiencia más natural y menos turística con oportunidades para bucear y explorar paredes de coral. Las inmersiones nocturnas son muy recomendables en toda Filipinas para avistar macrofauna como caballitos de mar, pulpos, peces mandarín y peces piedra. El país es elogiado por sus playas de arena blanca, su servicio, su gente, su vegetación y sus numerosas islas, lo que proporciona una experiencia equilibrada en comparación con otros destinos asiáticos. El ron es generalmente más barato y mejor en Filipinas que en Indonesia.</li>
+    <li>Costes de las excursiones privadas en Filipinas: Aproximadamente 12.000 PHP para dos personas. Una excursión mixta de los mejores paquetes cuesta 16.000 PHP. Cada persona adicional paga 1.000 PHP. Las excursiones en grupo pueden reducir el precio a 9.000 PHP por pareja. Las excursiones suelen realizarse de 8 a. m. a 4 p. m.</li>
+    <li>El acceso público a las playas de Boracay está protegido por ley, incluso si los hoteles bloquean las rutas de acceso tradicionales. Para llegar a las zonas de playa que parecen restringidas, busque senderos públicos (a menudo entre propiedades privadas) o mencione al personal de seguridad que se dirige a un restaurante de hotel, lo cual es una forma común de obtener acceso.</li>
+    <li>En Boracay, las estaciones 1 y 3 son considerablemente más tranquilas que la concurrida estación 2. Para disfrutar de una experiencia de playa exclusiva sin alojarse en hoteles costosos, los turistas pueden visitar los resorts Mövenpick o Crimson comprando un pase diario (Day Pass). El pase diario cuesta aproximadamente 3000 PHP por persona (como crédito/depósito canjeable en alimentos y bebidas) más una tarifa de entrada de 400 PHP.</li>
+    <li>En Palawan, considere alojarse en Bambu Suites. Desde allí, la playa de Nagtabon está a 40 minutos en ciclomotor, y se puede encontrar una playa aún más pintoresca y menos concurrida más adelante en el camino desde Nagtabon.</li>
+    <li>¿Cuál es el precio de las actividades en Moalboal? Por ejemplo, el barranquismo desde Moalboal cuesta 1800 pesos si se reserva localmente, y 2100 pesos si se reserva directamente en el lugar, sin incluir comida.</li>
+    <li>Baguio es una ciudad montañosa en Filipinas conocida por su clima más fresco, su entorno limpio y sus bosques de pinos. Es popular entre los locales, lo que provoca mucho tráfico y escasez de hoteles durante los fines de semana. Se recomienda para viajeros de larga estancia que necesiten un respiro del calor costero. Atracciones clave: el monte Pulag (amanecer sobre las nubes), el Jardín Botánico y el mercado nocturno. El acceso es limitado debido a que no hay vuelos comerciales; viajar requiere transporte por carretera desde Manila.</li>
+    <li>Obtener una certificación de buceo en el extranjero, especialmente mediante cursos de corta duración, puede ser más económico, pero conlleva riesgos. Una formación exhaustiva, que incluya teoría y sesiones en piscina, es fundamental para la seguridad y el desarrollo de habilidades. Algunos argumentan que obtener la certificación en casa o dedicarle más tiempo durante las vacaciones es más seguro y eficaz que los cursos rápidos y de bajo costo. Tenga cuidado con los instructores fraudulentos que pueden emitir certificados sin la formación adecuada.</li>
+    <li>Filipinas ofrece excelentes oportunidades para el buceo y recorrer islas. Los lugares de buceo populares incluyen Dauin y la zona de Apo cerca de Cebú. Para actividades en tierra, considere explorar cascadas, lagos de montaña y bancos de arena. Alquilar una moto es una excelente manera de ver las pintorescas carreteras de Palawan, Bohol y Negros. Una excursión popular es nadar con tiburones en Oslob, lo que suele llevar un día entero. Para estancias más largas, se recomiendan Siargao y Palawan por sus experiencias auténticas y su belleza natural.</li>
+    <li>El costo de nadar con tiburones ballena en Oslob es de 1000 pesos filipinos por persona. La actividad suele realizarse desde las 6 AM hasta las 11 AM aproximadamente. Un viaje de ida y vuelta de Cebú a Oslob, incluyendo el tiempo de espera, puede tomar unas 7 horas. El transporte suele ser en automóvil, y el viaje desde Cebú puede tomar bastante más de 2,5 horas.</li>
+    <li>Para traslados privados y tours en la isla de Cebú, el conductor Rakson ofrece servicios confiables a tarifas fijas. Números de contacto: +639917215212 o +639914421842. Tarifas estándar: el traslado de Ciudad de Cebú a Moalboal cuesta 3.000 PHP; un tour de un día desde Moalboal a los tiburones ballena de Oslob y las cascadas Tumalog cuesta 4.000 PHP, incluyendo asistencia con guía y entradas.</li>
+    <li>Al comprar billetes de avión para vuelos dentro de Filipinas (por ejemplo, Cebu Pacific, Philippine Airlines), los agregadores de terceros como Trip.com pueden ofrecer precios significativamente más bajos en comparación con los sitios web oficiales de las aerolíneas. El pago directo en los sitios web de las aerolíneas con tarjetas UnionPay rusas generalmente no tiene éxito. Las tarjetas Visa no rusas o el uso de agregadores internacionales son opciones de pago viables.</li>
+    <li>En Moalboal, se puede hacer esnórquel para ver tortugas y bancos de sardinas por cuenta propia, sin necesidad de un guía turístico. Las tortugas se suelen encontrar cerca de la orilla, junto al Chili Bar. Las sardinas se encuentran más lejos, cerca del punto de bajada. Alquilar una GoPro en el lugar cuesta aproximadamente 500 PHP.</li>
+    <li>Para las excursiones desde Moalboal, incluidos los viajes a las cascadas Kawasan y la observación de tiburones, se recomienda reservar a través de grupos locales de Facebook, ya que suele ser la opción más rentable.</li>
+    <li>Al contrario de lo que se suele pensar, Bohol sí tiene playas, especialmente en Anda. Aunque Panglao es ampliamente reconocido por sus playas y está conectado físicamente a Bohol, es incorrecto afirmar que Bohol carece de zonas de playa.</li>
+    <li>Se recomienda Moalboal, Filipinas, como destino de viaje para quienes buscan playas y actividades acuáticas. Ofrece la oportunidad de nadar con tortugas y sardinas. White Beach es una playa cercana donde se puede alquilar una tumbona por 300 pesos. Se considera una buena alternativa a hospedarse en la ciudad de Cebú.</li>
+    <li>Para los traslados nacionales con Cebu Pacific desde Manila (NAIA) a Caticlan, los vuelos suelen operar desde la Terminal 3. Si llega a la Terminal 3, los pasajeros que tengan vuelos nacionales de conexión con Cebu Pacific pueden permanecer en la misma terminal. Instrucciones: Después de salir, gire a la derecha y diríjase al tercer piso. Se recomienda realizar el registro en un quiosco electrónico y luego dejar el equipaje en el mostrador justo enfrente. Hay personal disponible para ayudar, y es posible que el equipaje de mano no se pese durante este proceso.</li>
+    <li>La ruta Cebú-Moalboal-Oslob se gestiona mejor de forma independiente utilizando autobuses públicos. Consejos clave: llegue al punto de avistamiento de tiburones ballena en Oslob entre las 06:00 y las 07:00 para evitar multitudes. El barranquismo en Moalboal requiere habilidades básicas de natación y actividad física. La especialidad gastronómica local es el &#39;Lechón&#39;.</li>
+    <li>Para nadar sin restricciones en El Nido, se recomiendan Nacpan Beach y Las Cabanas Beach, ya que no hay interferencia de barcos. En Boracay, la Estación 3 suele tener menos multitudes, aunque esto puede variar según el mes. En general, las oportunidades para nadar sin restricciones están ampliamente disponibles en todas las Filipinas.</li>
+    <li>Borácay ofrece diversas actividades más allá de relajarse en la playa. El mundo submarino es rico y es probable que se pueda alquilar equipo de esnórquel en los hoteles. Otras actividades confirmadas incluyen tirolesa y equitación.</li>
+    <li>Para servicios de transporte y guía en Filipinas, particularmente en Cebú y Bohol, se recomiendan los conductores locales Ralken (Cebú: +639914421842) y Jeth (Bohol: +639082452899) según la experiencia de los usuarios. Ralken ayuda con el buceo, la fotografía submarina y los mercados locales. Jeth ayuda con el cambio de divisas y ofrece precios competitivos, siendo 2.5 veces más barato que un guía que habla ruso y un 20% más barato que otros guías locales filipinos. Ambos son elogiados por su seguridad y atención. La comunicación es generalmente en inglés, pero las aplicaciones de traducción son viables.</li>
+    <li>Para disfrutar de una belleza excepcional y practicar esnórquel en Filipinas, investigue las islas Ditaytayan y Malcapuya, que suelen incluirse en los recorridos desde Coron. Se recomienda encarecidamente practicar esnórquel cerca de las formaciones rocosas de Ditaytayan.</li>
+    <li>Un itinerario de viaje de un día bastante exigente desde Lapu-Lapu incluye Oslob (para ver tiburones ballena, mejor antes de las 9 a. m.), Moalboal y cascadas. Para aprovechar al máximo este viaje, llegue a Cebú el día anterior, pase la noche allí y comience a las 3 a. m. Nadar con sardinas es también una actividad recomendable. Las cascadas recomendadas incluyen Tumalog y Mantayupan; Kawasan podría resultar menos impresionante. Este es un itinerario agotador, que es mejor repartir en más de un día si el tiempo lo permite.</li>
+    <li>Experiencias de viaje y recomendaciones para las islas filipinas. Cebu se considera un destino para visitar una sola vez, principalmente para hacer barranquismo y buceo con tiburones. Palawan no impresionó a un usuario por la falta de arrecifes directamente frente a las playas, quien prefirió Siquijor y expresó su deseo de regresar allí. Se destacó que Boracay tiene playas excelentes, aunque con menos actividades. Para los viajeros que buscan un equilibrio entre relajación en la playa y exploración, se sugirió Siquijor como alternativa a Palawan. Las playas en Filipinas se describen generalmente como hermosas. Las actividades específicas recomendadas para Cebu incluyen el barranquismo y el buceo con tiburones.</li>
+    <li>Se están introduciendo nuevos vuelos directos a Kalibo (Boracay) desde Rusia. Los vuelos desde Irkutsk a Kalibo comenzarán el 20 de octubre, y desde Jabárovsk a Kalibo el 21 de octubre. Actualmente hay paquetes turísticos disponibles para la compra, y se espera que los billetes de avión individuales salgan a la venta en unas dos semanas aproximadamente. La aerolínea que opera estas rutas es IrAero, en colaboración con el operador turístico Mango-DV.</li>
+    <li>Moalboal y White Beach en Filipinas son altamente recomendadas por su belleza natural y vida marina, que incluye avistamientos de tortugas grandes. Basdaku es otra zona con tortugas. White Beach ofrece una experiencia superior. Basdaku es una base conveniente para excursiones a atracciones como Oslob y cascadas. También brinda acceso a opciones de vida nocturna y restauración. La proximidad a la playa (2 minutos a pie) es una ventaja. Se destaca un restaurante local dirigido por una persona nativa de Odesa como un excelente lugar.</li>
+    <li>Experiencia y recomendaciones para la isla de Panglao, Filipinas. White Beach se considera buena, pero el usuario prefirió el Bohol Beach Club. Alquilar un coche costó 1800 PHP. Si bien Alona Beach resultó decepcionante, un tour privado por Bohol con conductor fue muy bien valorado. Una excursión a la isla de Balicasag no fue satisfactoria debido a una percepción de mala organización. El usuario sugiere que 4 días pueden ser suficientes en Panglao para aquellos que planean explorar extensamente en lugar de solo relajarse en la playa.</li>
+    <li>Los avistamientos de tiburones ballena en Oslob, Filipinas, pueden ser inconsistentes. Aunque Oslob es conocido por los encuentros con tiburones ballena, hay días en los que no se avistan. Los informes locales indican que los avistamientos pueden ser poco frecuentes, con un instructor señalando solo tres avistamientos en diez años. Si los tiburones ballena son una prioridad, prepárese para la posibilidad de no verlos en un día determinado, incluso si los informes anteriores fueron positivos. Considere lugares alternativos para bucear o hacer esnórquel si los avistamientos son cruciales.</li>
+    <li>Manila ofrece varias atracciones para una visita de varios días, como explorar Intramuros y el Fuerte Santiago, visitar iglesias y basílicas históricas, y experimentar el transporte local como los jeepneys. Un itinerario de 3 días se puede completar cómodamente con estas actividades.</li>
+    <li>Para un itinerario que cubra Cebú, Boracay y Bohol antes de volar a China, se recomienda una cuidadosa planificación de la secuencia. Para los vuelos entre islas, Trip.com es una plataforma sugerida, conocida por aceptar potencialmente tarjetas de pago rusas. Con respecto a la moneda, generalmente es mejor usar la moneda local (PHP), pero los USD pueden ser útiles para el cambio.</li>
+    <li>El kayak en El Nido, Filipinas, es una actividad popular para la exploración independiente. Se pueden alquilar kayaks en playas como Las Cabañas o Corong-Corong por aproximadamente 300-400 PHP al día. Esto permite el acceso a playas solitarias, lagunas (Big Lagoon, Small Lagoon) y lugares ocultos como cañones con cálaos de Palawan. Aunque el kayak también forma parte de tours organizados, alquilar de forma independiente ofrece una experiencia más privada. El equipo esencial incluye una bolsa seca y protector solar.</li>
+    <li>Boracay y Panglao ofrecen hermosas playas y opciones de alojamiento en Filipinas. White Beach en Boracay es conocida por su arena blanca y sus servicios, donde el esnórquel puede revelar peces coloridos y posiblemente tortugas, pero no bancos de sardinas. La playa de Dumaluan destaca por tener menos gente y una tarifa de entrada de 50 PHP. Alona Beach recibe críticas mixtas, y algunos viajeros recomiendan evitarla. Panglao también tiene playas atractivas, incluida Alona, aunque las opiniones varían. Los precios del alojamiento difieren significativamente; los hoteles frente a la playa en Boracay pueden costar alrededor de 46 $ por noche para dos personas, mientras que opciones similares en Palawan o El Nido podrían rondar los 180 $. Para una experiencia más aislada, Siquijor ofrece belleza natural y tranquilidad, aunque con posibles problemas como electricidad intermitente y problemas de alcantarillado.</li>
+    <li>Noviembre en Filipinas generalmente ofrece buen tiempo para las vacaciones de playa. Para encontrar fruta abundante y menos problemas logísticos, considere destinos populares como Boracay, Panglao (Bohol) o El Nido. Las islas remotas o el extremo sur de Palawan podrían tener una disponibilidad de fruta limitada.</li>
+    <li>La isla de Malapascua es conocida por su buceo, particularmente por los tiburones zorro. Aunque algunos visitantes consideran que 3 días son suficientes para explorar la isla en moto, otros sugieren que se requieren estancias más largas. Entre las playas destacadas se incluyen Paliton Beach y Salagdoong Beach. La experiencia en Malapascua puede variar según las expectativas individuales.</li>
+    <li>El Monte Apo es un área protegida que requiere un permiso y un guía filipino local certificado para realizar senderismo. La entrada no autorizada conlleva sanciones graves bajo la Ley de Áreas Protegidas del Monte Apo de 2003, que incluyen hasta 6 años de prisión, multas desde 2000 PHP (por infracciones menores) hasta 200.000-1.000.000 PHP (por daños) y la posible prohibición de entrada para extranjeros. Para organizar una excursión, contacte con una agencia de viajes acreditada o con la oficina de turismo de la ciudad de Kidapawan. A partir de mayo de 2026, el sendero desde Kidapawan está cerrado por recuperación de la naturaleza (se espera que hasta otoño); solo está abierta la subida desde Digos.</li>
+    <li>Para las playas continentales en El Nido, Palawan, los visitantes pueden utilizar un servicio de autobús lanzadera gratuito que va a Lio Beach. Otras playas accesibles recomendadas con buena infraestructura turística, bares y restaurantes incluyen Nacpan Beach y Vanilla Beach.</li>
+    <li>El Nido es considerado uno de los destinos más hermosos pero costosos de Filipinas. Consejo de planificación: reserve al menos una semana para los tours (A, B, C, D) y días de descanso. Para playas menos concurridas, visite Duli Beach en el norte; Las Cabanas es más popular y concurrida.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/es/ph/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/es/ph/documentaci-n-y-visados/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentación y visados</span></a>
+    <a class="chip" href="/es/ph/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/es/ph/banca-y-dinero/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Banca y dinero</span></a>
+    <a class="chip" href="/es/ph/preparativos-del-viaje/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Preparativos del viaje</span></a>
+    <a class="chip" href="/es/ph/alojamiento/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Alojamiento</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>¿En todas partes lo mismo, pero tu caso es especial?</h2>
+    <p>Pregúntale a Luky — te dice qué funciona ahora — según reportes recientes.</p>
+    <p>Y Luky es un traductor de voz para conversaciones reales: descubre en la tienda qué estás comprando.</p>
+    <p class="ps">PS: hablar con alguien en un festival en el extranjero — fácil</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiencia real de chats de comunidades, sin relleno</div>
+    <nav class="f-links">
+      <a href="/es/about/">Acerca de</a>
+      <a href="/es/ph/">Todos los temas</a>
+      <a href="/es/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Las respuestas se recopilan de chats abiertos de comunidades — es experiencia real de personas, no asesoría oficial. Verifica antes de decisiones importantes.</p>
+    <div class="f-copy">© 2026 Luky · actualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noche", DAY="\u2600 D\u00eda";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

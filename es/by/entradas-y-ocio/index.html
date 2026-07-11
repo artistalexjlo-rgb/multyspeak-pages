@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bielorrusia: Entradas y ocio — experiencia real · Luky</title>
+<meta name="description" content="Experiencia real de los chats sobre Entradas y ocio en Bielorrusia: tal cual, de primera mano. Para tu caso — pregúntale a Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/es/by/entradas-y-ocio/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/by/entradas-y-ocio/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/by/entradas-y-ocio/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/by/entradas-y-ocio/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/by/entradas-y-ocio/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · cualquier país · sin relleno</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noche</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/es/">Inicio</a> /
+    <a href="/es/by/">Bielorrusia</a> /
+    <b>Entradas y ocio</b>
+  </nav>
+
+
+  
+  <h1>Entradas y ocio: cómo es en Bielorrusia — de primera mano</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiencia real de gente de los chats sobre «Entradas y ocio» en Bielorrusia — tal cual, sin relleno. Para tu caso — <strong>pregúntale a Luky</strong>.</div></div>
+
+  <h2>De la experiencia real</h2>
+  <ul class="qlist">
+    <li>En Vítebsk, las atracciones clave incluyen el Museo Marc Chagall y los lugares a lo largo de la calle Suvorov. Un solo día podría ser insuficiente para verlo todo. Considere investigar guías locales o establecer prioridades según sus intereses personales.</li>
+    <li>Para obtener información sobre atracciones y puntos de interés en Minsk, consulte canales o recursos especializados. Si busca lugares de ocio nocturno o entretenimiento, los mensajes privados podrían ser más adecuados para obtener recomendaciones específicas.</li>
+    <li>Los servicios de coche compartido como Anytime están disponibles en Minsk para alquilar vehículos para uso urbano o viajes de un día (por ejemplo, a los castillos de Mir y Nesvizh). Los usuarios pueden alquilar un coche y usarlo durante la duración de su período de alquiler, incluido el tiempo de espera, siempre que esté cubierto por su contrato de alquiler. Es importante consultar los términos y condiciones relativos a las tarifas de &#39;espera&#39; o si el coche puede ser alquilado nuevamente por otros pasajeros si se deja desatendido durante períodos prolongados. Las estructuras de precios varían, y es recomendable consultar el sitio web oficial o la aplicación del servicio para conocer las tarifas y políticas actuales.</li>
+    <li>Los billetes de tren bielorrusos comprados a través de la aplicación «My Train» o de RZD pueden reembolsarse en línea. Los reembolsos suelen procesarse en un plazo aproximado de 24 horas a la tarjeta de pago original, con una pérdida mínima de la tarifa (alrededor de unos pocos cientos de rublos). Acceda a la opción de reembolso dentro de los detalles del billete en la aplicación.</li>
+    <li>Para reservar un tour en el Centro de Seguridad del Ministerio de Situaciones de Emergencia (MES) en Minsk, Bielorrusia, debe ponerse en contacto directamente con el centro por teléfono para organizar la visita.</li>
+    <li>En Minsk, los billetes de transporte terrestre pueden comprarse con una tarjeta &#34;Mir&#34; en estancos o quioscos. Es posible que no se pueda comprar los billetes directamente al conductor con dinero en efectivo.</li>
+    <li>Ruta a pie sugerida en Vitebsk: calle Suvorova (Centro de Arte de Marc Chagall) -&gt; ubicaciones de grafitis (&#39;Pez de oro&#39;, &#39;El zar es real&#39;, &#39;Marc Chagall&#39;) -&gt; calle Putna -&gt; Catedral de la Asunción (mirador) -&gt; Parque de la Victoria (Globo terráqueo) -&gt; calle Marc Chagall -&gt; calle Lenin -&gt; calle Frunze (Anfiteatro/Paseo de la Fama) -&gt; Jardín Botánico. Recomendación gastronómica: &#39;Te samye chebureki&#39;, calle Yanka Kupala, 11.</li>
+    <li>En Bielorrusia, no se requiere pasaporte para comprar boletos o abordar autobuses y trenes nacionales. Esto permite viajar con flexibilidad dentro del país usando boletos a distintos nombres si se desea. Sin embargo, para viajes internacionales, el pasaporte es obligatorio.</li>
+    <li>Para obtener un mejor precio y un UDD-ZhD (Documento de Transporte Universal para Transporte Ferroviario) en viajes en tren de Rusia a Bielorrusia, compre los boletos hasta Smolensk en lugar de directamente hasta Minsk. Viajar directamente a Minsk puede requerir una visa Schengen para los ciudadanos rusos. Tanto las regulaciones ferroviarias rusas como las bielorrusas permiten a los pasajeros abordar en estaciones intermedias si el boleto está pagado hasta el destino final. No abordar en la estación de salida no anula automáticamente el boleto.</li>
+    <li>Existen servicios de traslado cómodos por toda Bielorrusia, que cubren recogidas en aeropuertos, viajes interurbanos y visitas guiadas a lugares de interés como el Castillo de Mir, el Castillo de Nesvizh y Belovezhskaya Pushcha. Los servicios cuentan con vehículos limpios, conductores experimentados, rutas flexibles y pago al finalizar el servicio. No se requiere pago por adelantado.</li>
+    <li>Para vuelos de Bielorrusia a Kazajistán: los ciudadanos rusos con pasaportes de estilo antiguo (que no son tarjeta de identificación) no necesitan un pasaporte internacional por separado. Los ciudadanos bielorrusos con pasaportes de estilo antiguo tampoco necesitan un pasaporte internacional. Solo los ciudadanos bielorrusos con nuevas tarjetas de identificación podrían necesitar un pasaporte internacional.</li>
+    <li>Para lugares de nado en Bielorrusia durante agosto, especialmente si visita Grodno, Brest, Belovezhskaya Pushcha y Minsk, considere el Mar de Minsk. Los lagos y ríos locales también pueden ofrecer sitios adecuados para nadar.</li>
+    <li>Para obtener información sobre carreras de autos y eventos de drift en Bielorrusia, consulte el sitio web &#34;Autodrom Stayki&#34; para ver los próximos eventos. Además, el sitio web &#34;gonki.by&#34; también puede listar actividades y horarios relevantes.</li>
+    <li>Los boletos de tren bielorrusos cancelados pueden reaparecer rápidamente en el sistema para su reventa, en un lapso de 15 minutos a 2.5 horas. Para comprar un boleto recién cancelado, es necesario monitorear y actualizar constantemente la página de reserva.</li>
+    <li>Las condiciones de las carreteras y la disponibilidad de combustible en la ruta de Rusia a Bielorrusia varían. Al oeste de Smolensk, se informó de escasez de gasolina y largas colas. Sin embargo, después de Smolensk, especialmente cerca de la frontera, la disponibilidad de combustible mejoró con precios normales y sin colas. Es recomendable repostar antes de la frontera o al entrar en Bielorrusia.</li>
+    <li>Para unas vacaciones relajantes y enfocadas en la salud en Bielorrusia, considere sanatorios como &#39;Ruzhany&#39;. Ofrece servicios como bosques de pinos, un lago, piscina y aguas termales (aunque calentadas artificialmente). Encontrar disponibilidad durante los meses pico de verano puede ser un desafío, con opciones que potencialmente se abren en septiembre. Para aguas termales naturales, investigue regiones específicas, ya que algunos sanatorios ofrecen agua calentada de forma natural.</li>
+    <li>Castillo de Mir: 3-4 horas; Castillo de Nesvizh: 2-3 horas. Belovezhskaya Pushcha: No se permite el acceso a coches particulares; se recomienda el alquiler de bicicletas para visitar los senderos. Los repelentes son esenciales.</li>
+    <li>Vítebsk, Bielorrusia, ofrece varios puntos de interés, incluido el Museo de Arte Moderno de Vítebsk y el Teatro Académico Nacional de Drama Yakub Kolas. Para visitas organizadas, se puede contactar con agencias de turismo locales o guías.</li>
+    <li>Los ciudadanos rusos pueden ingresar a Bielorrusia utilizando su pasaporte interno. Para los vuelos de Bielorrusia a Kazajistán, es suficiente con el pasaporte interno ruso, siempre que no sea de tipo tarjeta de identidad. Los ciudadanos bielorrusos con pasaportes antiguos tampoco necesitan un pasaporte internacional para esta ruta, pero es posible que aquellos con las nuevas tarjetas de identidad sí lo necesiten.</li>
+    <li>Al reemitir billetes de tren (es decir, cancelar uno y comprar otro), la disponibilidad del billete cancelado nuevamente en el sistema puede variar. Según la experiencia de los usuarios, puede tomar desde 15 minutos hasta 2.5 horas. Se recomienda monitorear continuamente el sistema o actualizar la página de reserva para ver cuándo el billete vuelve a estar disponible para su recompra.</li>
+    <li>El permiso de conducir interno ruso (VUL) generalmente no es suficiente para comprar billetes de tren para salir de Rusia hacia Bielorrusia. Por lo general, se requiere un pasaporte para los viajes internacionales.</li>
+    <li>El acuacentro de Grodno se describe como pequeño pero con precios razonables. La entrada a la zona principal de la piscina con toboganes se cobra por horas, con tarifas separadas para el acceso a la sauna. El alojamiento en apartamentos suele incluir wifi. El acuacentro es accesible mediante transporte público dentro de la ciudad. Muchas paradas de autobús cuentan con pantallas electrónicas con horarios, lo que facilita la navegación.</li>
+    <li>El pago de billetes de avión, particularmente en aerolíneas rusas, puede realizarse usando una tarjeta del sistema &#34;Mir&#34; emitida en Bielorrusia. Aunque las tarjetas &#34;Belkart&#34; también pueden ser aceptadas, su compatibilidad puede variar. Es recomendable confirmar las opciones de pago con la aerolínea o la plataforma de reserva.</li>
+    <li>Para moverse por ciudades como Vitebsk, Bielorrusia, y encontrar puntos de interés como cafeterías y atracciones, los usuarios recomiendan utilizar aplicaciones de mapas que ofrezcan tanto navegación como información sobre servicios locales. Aunque las recomendaciones específicas de aplicaciones varían, el consejo general es usar una herramienta de navegación fiable que integre puntos de interés.</li>
+    <li>Para las &#39;Maldivas bielorrusas&#39; (canteras azules), investigue qué ubicaciones ofrecen el paisaje más impactante visualmente para un viaje en automóvil, considerando rutas como Tver-Minsk-Grodno.</li>
+    <li>Para nadar y descansar en Bielorrusia durante agosto, el Mar de Minsk es un destino recomendado. Además, varios lagos y ríos ofrecen oportunidades para realizar actividades acuáticas.</li>
+    <li>Un ciudadano alemán que viaje a Rusia con una visa rusa válida (electrónica o estampada) no requiere una visa de tránsito para Bielorrusia al pasar por Minsk en autobús durante una escala corta (por ejemplo, unas pocas horas) para tomar un vuelo a Moscú. Sin embargo, debe poseer una visa rusa válida para ingresar a Rusia.</li>
+    <li>Los servicios de coche compartido (Hello, Anytime) operan en Minsk y aceptan tarjetas rusas Mir. El coche compartido es limitado en Brest, por lo que se recomienda alquilar en Minsk para viajar con mayor libertad por toda Bielorrusia.</li>
+    <li>Para reservar una excursión a la fábrica de BelAZ en Zhodino, Bielorrusia, comuníquese con el Departamento de Excursiones llamando al +375 (1775) 2-79-79 o al +375 (29) 170-79-79. Por lo general, las reservas deben realizarse estrictamente con un mes de antelación y las visitas requieren la asistencia presencial en la fábrica.</li>
+    <li>La aplicación «My BCh» para los ferrocarriles bielorrusos puede ser poco fiable. Considere utilizar métodos alternativos para comprar billetes de tren, como bots dedicados de Telegram. Estos bots suelen ofrecer precios más bajos y facilitar el pago mediante SBP (Sistema de Pagos Rápidos). Es posible gestionar las compras y consultar los saldos directamente dentro de Telegram.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/es/by/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/es/by/documentaci-n-y-visados/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentación y visados</span></a>
+    <a class="chip" href="/es/by/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/es/by/sim-e-internet/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>📶 SIM e Internet</span></a>
+    <a class="chip" href="/es/by/banca-y-dinero/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Banca y dinero</span></a>
+    <a class="chip" href="/es/by/alojamiento/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Alojamiento</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>¿La búsqueda responde a todos, pero a ti?</h2>
+    <p>Pregúntale a Luky — te dice qué funciona ahora — según reportes recientes.</p>
+    <p>Y Luky es un traductor de voz para conversaciones reales: y el camarero no confundirá tu pedido.</p>
+    <p class="ps">PS: entabla charla con un compañero de viaje que no habla ni una palabra del tuyo</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiencia real de chats de comunidades, sin relleno</div>
+    <nav class="f-links">
+      <a href="/es/about/">Acerca de</a>
+      <a href="/es/by/">Todos los temas</a>
+      <a href="/es/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Las respuestas se recopilan de chats abiertos de comunidades — es experiencia real de personas, no asesoría oficial. Verifica antes de decisiones importantes.</p>
+    <div class="f-copy">© 2026 Luky · actualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noche", DAY="\u2600 D\u00eda";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

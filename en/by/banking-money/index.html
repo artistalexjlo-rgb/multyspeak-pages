@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Belarus: Banking &amp; Money — real experience · Luky</title>
+<meta name="description" content="Real experience from chats about Banking &amp; Money in Belarus: as it is, first-hand. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/by/banking-money/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/by/banking-money/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/by/banking-money/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/by/banking-money/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/by/banking-money/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/by/">Belarus</a> /
+    <b>Banking &amp; Money</b>
+  </nav>
+
+
+  
+  <h1>Banking &amp; Money in Belarus: what actually matters to know</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of people from chats on «Banking & Money» in Belarus — as it is, no fluff. For your case — <strong>ask Luky</strong>.</div></div>
+
+  <h2>From real experience</h2>
+  <ul class="qlist">
+    <li>Russian citizens can generally open bank accounts and obtain cards in Belarus. Popular banks that may offer services include BSB Bank, Technobank, MTBank, Status Bank, and Paritetbank. It&#39;s advisable to check current requirements and procedures directly with the banks, as policies can change.</li>
+    <li>BNB-Bank in Belarus offers account opening services for foreign citizens, with a card issuance fee of 50 BYN and free maintenance. While advertised to work widely, users report limitations, such as inability to link to PayPal. This suggests potential inconsistencies in international transaction capabilities, warranting further investigation or consideration of alternative banking options.</li>
+    <li>Russian citizens can withdraw cash in Belarus using MIR cards. Avoid extra fees by using ATMs of the respective bank (e.g., Sberbank Russia card at Sberbank Belarus ATMs, VTB at VTB). Some banks charge fees for withdrawals under 3000 RUB. It is generally recommended to exchange currency via banking apps during business hours (10:00–17:00) for better rates compared to physical exchange offices.</li>
+    <li>Payment via Apple Pay with Belarusian cards may be subject to varying commission rates. Using a Russian MIR card (if available and accepted) or a card from a bank like VTB might be a more straightforward option, especially if international transaction fees are a concern. It is recommended to check with your bank and local merchants for accepted payment methods and associated fees.</li>
+    <li>Russian citizens can open bank accounts in Belarus, with BNB-Bank mentioned as an option. However, the functionality of Belarusian bank cards, especially for international transactions and online payments, can be inconsistent. It&#39;s recommended to research thoroughly or consider opening accounts in other countries like Kazakhstan (e.g., Kaspi Bank) for potentially more reliable international use. Be aware of potential issues with specific platforms like Booking.com.</li>
+    <li>Real estate rental payments in Belarus must be conducted in Belarusian rubles (BYN). Contracts can denominate the price in foreign currency equivalents, but actual settlements in USD/EUR are prohibited and subject to administrative fines. US dollar bills of any design are legal tender, though newer series are often preferred for convenience.</li>
+    <li>Registration for non-residents in the Belarusian payment app &#39;Oplati&#39; is active. Users must visit a Belinvestbank branch in person with their ID to activate the account. Online pre-booking of the appointment is recommended to avoid queues.</li>
+    <li>When using a Belarusian Belkart MIR card in Moscow, expect a commission. While withdrawals from ATMs linked to Belarusian banks typically incur a 2% fee, Russian banks may charge a different commission. For instance, withdrawing 3000 rubles could incur a fee. It&#39;s advisable to check the specific commission rates with both your Belarusian bank and the Russian bank&#39;s ATM you intend to use.</li>
+    <li>The &#39;Oplati&#39; app is a payment service used in Belarus. To pay for a second person or make other transactions, users typically need to scan a QR code or enter a garage number associated with the service or recipient. The app interface guides users through selecting the quantity or recipient before confirming the payment. The app supports transfers to other Belarusian bank cards and potentially to Russian banks (like Sberbank) via the ERIP system, though direct transfers might have specific procedures or limitations.</li>
+    <li>Russian citizens can open a debit card in a Belarusian bank using either their Russian internal passport or their international passport. Specific bank policies and requirements may vary, so it is advisable to confirm the details with the chosen bank.</li>
+    <li>Russian rubles are widely accepted in Belarus for exchange. Both exchange offices and ATMs (specifically for &#39;Mir&#39; cards) readily handle transactions. Old US dollar bills are also accepted at par with newer ones. It&#39;s important to distinguish between Belarusian Rubles (BYN) and Russian Rubles (RUB).</li>
+    <li>SBP (Faster Payments System) does not function in Belarus. Linking Russian Mir cards to a Belarusian ruble account is currently only supported by Alpha-Bank and T-Bank; VTB has discontinued this feature. For cash withdrawals, use ATMs of partner banks such as Belagroprombank, Belarusbank, BelVEB, Priorbank, and Sber Bank to avoid extra fees.</li>
+    <li>To obtain Belarusian rubles, users can exchange Russian rubles at Minsk train station. This method is suggested as potentially more favorable than bank exchanges.</li>
+    <li>Russian &#39;Mir&#39; cards are widely accepted in Belarus for card payments and ATM withdrawals. Some users report favorable exchange rates using direct payments or transferring funds to a local BYN account. However, note that major cash exchanges of large sums (e.g., over 1M RUB) may be limited by ATM withdrawal caps.</li>
+    <li>When using Russian bank cards (Sberbank, Tinkoff, VTB) in Belarus, check current withdrawal and transaction fees. Fees can vary significantly and change frequently. It&#39;s recommended to consult your bank directly or look for recent user experiences to determine the most cost-effective option. Local Belarusian bank cards may offer better rates.</li>
+    <li>To withdraw cash without commission in Belarus using Russian cards, consider these options: 1. Open a Belarusian account with Tinkoff, purchase Belarusian rubles there, and then withdraw from Tinkoff. 2. If you have Sberbank, withdraw cash from Sberbank ATMs. VTB is no longer a viable option for commission-free withdrawals.</li>
+    <li>Exchanging Russian Rubles for Belarusian Rubles in Belarus can be done using cash, which may offer better rates at exchange offices for larger sums. Russian bank cards (Mir, Sberbank, Tinkoff) are widely accepted, but check the exchange rates. For withdrawals, ATMs of Belorusbank typically offer commission-free transactions for Mir cards. Consult onlymir.ru for current exchange rate information.</li>
+    <li>Russian citizens can obtain Mastercard/Visa cards in Belarus (e.g., Technobank). Process: order cards (can be non-personalized for faster receipt), register using a Russian phone number. Costs include opening fee. Virtual BelCard accounts are often available for free. Transfers from Russia can be made via card number or phone number depending on the bank.</li>
+    <li>Yandex Go (ride-hailing and delivery services) operates in Belarus. To use these services, a Mir payment card is typically required for linking to the account. Other payment methods may not be supported for linking or transactions within Belarus.</li>
+    <li>MT Bank cards may not function for payments on certain international websites like booking.com or omio.com due to sanctions or bank policies. Their usability in Europe on terminals is also uncertain and depends on the specific merchant and payment processor.</li>
+    <li>Withdrawing Russian Rubles from ATMs in Belarus can incur various fees depending on the bank and card. VTB charges 4% for withdrawals in foreign currency. Ozon card may charge 190 rubles for 100 Belarusian rubles. Withdrawals exceeding 3000 Russian rubles might be commission-free, but it&#39;s crucial to check specific bank policies. Cards like Tinkoff &#39;Mir&#39; offered a rate of 27.86, which was considered relatively favorable. It&#39;s advised to confirm withdrawal conditions with your own bank beforehand.</li>
+    <li>In Belarus currency exchange offices, rates are displayed per 100 units of foreign currency. Divide 100 by the displayed rate to get the price per 1 BYN. Using Russian rubles for private transactions is often illegal or discouraged; exchange to BYN in banks or official offices for better rates and compliance.</li>
+    <li>Currency exchange inside Russia for BYN is inefficient. Use &#39;Mir&#39; payment system cards in Belarus. Open BYN-denominated accounts via Russian banking apps (Alfa, Tinkoff) for better rates. Belarusbank ATMs typically allow cash withdrawals from Russian &#39;Mir&#39; cards without transaction fees (check current individual bank limits).</li>
+    <li>Currency exchange for Russian rubles or USD to Belarusian rubles without commission is possible only at VTB Bank (Belarus) ATMs and branches. Key locations in Minsk: Gitkalo st. 3, Nezavisimosti ave. 168/2, Pritytskogo st. 91. Operating hours generally range from 09:00-19:00 (weekdays). Informal street currency exchange is illegal.</li>
+    <li>When traveling to Belarus, Russian citizens can generally use Russian bank cards (including Sberbank, PSB, Tinkoff) for payments. For cash withdrawals, using Belarusian bank ATMs, such as those of Belorusbank, is recommended to avoid high commissions (e.g., Sberbank&#39;s 5.5% fee). The &#39;Mir&#39; card often offers favorable exchange rates, but it&#39;s advisable to check specific bank rates. For substantial amounts, exchanging cash at an exchange office might be more cost-effective.</li>
+    <li>To withdraw cash with an Ozon Bank card in Belarus without commission, use ATMs from the following banks: Belagroprombank, Belarusbank, Bank BelVEB, Belinvestbank, BTA Bank, (Neo) Bank VTB (Belarus), MTBank, Paritetbank, Priorbank, RRB-Bank, Sber Bank, Technobank, Alfa-Bank. Note that withdrawals between 3000 and 50,000 BYN might be commission-free at some ATMs, but check specific bank policies as limits can vary.</li>
+    <li>Using a &#39;Mir&#39; card for payments in Belarus can be more advantageous than exchanging cash. For example, a transaction of 100 Belarusian rubles might cost around 2100 Russian rubles (a rate of 27.27 per BYN) when paid by card. In contrast, exchanging cash might yield a less favorable rate, such as 3.505 BYN for 100 RUB (a rate of 28.53 RUB per BYN). Therefore, using a &#39;Mir&#39; card is recommended for potentially better exchange rates.</li>
+    <li>Withdrawing cash in Belarus with Russian cards: VTB charges 4% (min 300 RUB) for withdrawals. Ozon Bank cards are currently recommended as a cost-effective alternative for cash withdrawals (free from 3,000 RUB). Belarusbank ATMs are frequently used to avoid additional local withdrawal fees.</li>
+    <li>Russian MIR cards from Sberbank and Gazprombank (including Union Pay Gold) generally work in Belarus. Be aware of potentially unfavorable exchange rates applied by Russian banks. Carrying cash is advisable.</li>
+    <li>Upon arrival in Minsk, currency exchange can be done at Belorusbank exchange offices, including those at the train station. SIM cards and public transport cards (BSK) for metro and bus travel can be purchased at the &#39;Galileo&#39; shopping center or at Minsktrans/metro ticket offices. BSK cards offer various tariffs based on the number of trips or days.</li>
+    <li>Using &#39;Mir&#39; cards (Sberbank, Alpha) is generally more cost-effective than exchanging physical cash. Currency conversion rates for Mir cards are competitive (approx. 27-28 RUB per 1 BYN). There is no significant benefit to opening a local bank account in Belarusian Rubles (BYN) for short-term visitors.</li>
+  </ul>
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/by/transport/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transport</span></a>
+    <a class="chip" href="/en/by/documents-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documents &amp; Visa</span></a>
+    <a class="chip" href="/en/by/tickets-entertainment/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🎟 Tickets &amp; Entertainment</span></a>
+    <a class="chip" href="/en/by/housing/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🏠 Housing</span></a>
+    <a class="chip" href="/en/by/sim-internet/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>📶 SIM &amp; Internet</span></a>
+    <a class="chip" href="/en/by/shopping/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛒 Shopping</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Search answers everyone — but you?</h2>
+    <p>Ask Luky — fresh reports, not a five-year-old article.</p>
+    <p>And Luky is a live voice translator for real conversations: ask for directions and actually understand the answer.</p>
+    <p class="ps">PS: even with your partner&#39;s family who don&#39;t speak a word of yours 😄</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/by/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

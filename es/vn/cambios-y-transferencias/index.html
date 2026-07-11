@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vietnam: Cambios y transferencias — experiencia real · Luky</title>
+<meta name="description" content="Experiencia real de los chats sobre Cambios y transferencias en Vietnam: tal cual, de primera mano. Para tu caso — pregúntale a Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/es/vn/cambios-y-transferencias/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/vn/cambios-y-transferencias/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/vn/cambios-y-transferencias/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/vn/cambios-y-transferencias/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/vn/cambios-y-transferencias/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · cualquier país · sin relleno</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noche</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/es/">Inicio</a> /
+    <a href="/es/vn/">Vietnam</a> /
+    <b>Cambios y transferencias</b>
+  </nav>
+
+
+  
+  <h1>Cambios y transferencias: cómo es en Vietnam — de primera mano</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiencia real de gente de los chats sobre «Cambios y transferencias» en Vietnam — tal cual, sin relleno. Para tu caso — <strong>pregúntale a Luky</strong>.</div></div>
+
+  <h2>De la experiencia real</h2>
+  <ul class="qlist">
+    <li>Para retirar VND usando una tarjeta MIR de T-Bank (Tinkoff) en cajeros automáticos de VRB con el mejor tipo de cambio, abra una cuenta en VND en la aplicación bancaria, cambie rublos a dong vietnamita durante el horario laboral del mercado de Moscú, vincule la tarjeta MIR a esta cuenta en VND y retire efectivo. Tenga en cuenta que los retiros inferiores al equivalente a 3000 rublos incurren en una comisión.</li>
+    <li>En Nha Trang, los cajeros automáticos del VRB (Vietnam Russia Bank) son utilizados frecuentemente por turistas rusos. Los usuarios informan que las tarjetas de Sovcombank (Halva) pueden no tener comisiones por retiro, mientras que las tarjetas de Sberbank a menudo incurren en cargos por transacción. El mejor tipo de cambio generalmente se obtiene mediante transferencias P2P en plataformas como Bybit a una cuenta vietnamita local.</li>
+    <li>Cambiar rublos rusos (RUB) a dongs vietnamitas (VND) puede hacerse mediante varios métodos con diferentes tasas y riesgos. Las transferencias entre pares (por ejemplo, de Sberbank a Sberbank) pueden ser convenientes, con tasas reportadas de alrededor de 1 RUB por 308,87 VND. Algunas personas ofrecen servicios de cambio donde se transfieren rublos en línea y se entregan dongs en efectivo, aunque se han señalado posibles faltantes en los montos de efectivo. Las tasas de cambio bancarias oficiales pueden ser inferiores a las del mercado informal. Usar plataformas como Binance o Bybit para el intercambio de criptomonedas a dinero fiduciario también es una opción. Es crucial verificar la tasa de cambio y asegurar la transparencia, especialmente al tratar con cambistas informales. Usar cajeros automáticos como los de VRB con tarjetas bancarias rusas también puede ser una opción, aunque la disponibilidad de cajeros puede ser limitada. Llevar dólares estadounidenses (USD) y cambiarlos en Vietnam es otra estrategia común, con billetes de USD nuevos que potencialmente obtienen una tasa ligeramente mejor.</li>
+    <li>Alipay funciona principalmente para ciudadanos chinos fuera de la China continental. Los turistas y residentes extranjeros en Vietnam no pueden usar Alipay para pagos locales o cambio de moneda. Los pagos con código QR en Vietnam suelen requerir aplicaciones bancarias locales o sistemas de pago regionales específicos compatibles.</li>
+    <li>Transferir fondos a una cuenta bancaria vietnamita desde Rusia puede ser difícil debido a las restricciones de pago. Las opciones pueden incluir: usar plataformas de criptomonedas como Binance o Bybit para enviar fondos a una cuenta vietnamita local. Algunos servicios P2P (entre pares) podrían facilitar las transferencias. Las transferencias bancarias directas pueden ser difíciles. Algunas personas ofrecen servicios informales de cambio de divisas donde se transfieren RUB a su cuenta rusa y se entregan VND en efectivo en Vietnam. Sin embargo, sea cauteloso y verifique la confiabilidad de dichos servicios. Para sumas grandes, considere acuerdos de pago alternativos o consulte con expertos financieros especializados en transferencias internacionales.</li>
+    <li>Los tipos de cambio en Vietnam varían. Cambiar rublos rusos directamente por dong vietnamita ofrece una tasa de aproximadamente 322 VND por rublo. Es más ventajoso cambiar dólares estadounidenses, con una tasa aproximada de 100 USD = 2.600.000 VND. El uso de Sberbank para pagos con código QR rinde aproximadamente entre 340 y 342 VND por rublo. Retirar efectivo de una tarjeta MIR en los cajeros automáticos de VRB podría ofrecer mejores tasas, pero esto debería ser verificado. Por lo general, se recomienda cambiar dólares estadounidenses.</li>
+    <li>Los métodos de pago recomendados en Vietnam para los turistas rusos incluyen: 1) tarjetas UnionPay (introducir 00 antes del PIN si es necesario), 2) tarjetas MIR en cajeros automáticos del VRB (Banco Vietnam-Rusia) y 3) pagos con código QR. Para el cambio de divisas, las tiendas de oro locales suelen ofrecer mejores tipos de cambio que los bancos. Los servicios de cambio de USDT a VND son muy utilizados por la comunidad de expatriados.</li>
+    <li>Para realizar pagos sin efectivo a largo plazo en Vietnam, abra una cuenta bancaria vietnamita local (por ejemplo, Bidv, Vietcombank) y utilice pagos QR. Para obtener las mejores tasas de conversión, cambie rublos (RUB) a dong vietnamitas (VND) a través de Bybit o un exchange de criptomonedas similar y transfiéralos a la cuenta local en VND.</li>
+    <li>Las joyerías en Vietnam, como «Treasures of Angkor» en Nha Trang, aceptan dólares estadounidenses para el cambio, aunque la tasa puede ser ligeramente menos favorable que en otros lugares.</li>
+    <li>Los tipos de cambio en el aeropuerto de Cam Ranh son generalmente menos favorables que los que se encuentran en la ciudad. Es recomendable cambiar solo una pequeña cantidad de moneda en el aeropuerto para necesidades inmediatas y buscar mejores tasas en bancos, joyerías de confianza u oficinas de cambio autorizadas en Nha Trang u otras ciudades importantes.</li>
+    <li>Si necesita cambiar dólares por dong vietnamita en Cam Ranh, no confíe únicamente en el consejo de su guía. Por lo general, puede cambiar moneda en la recepción de los hoteles y en las joyerías. Además, considere utilizar opciones de pago con código QR a través de aplicaciones bancarias rusas (Sberbank, VTB) o plataformas de criptomonedas, si están disponibles y son aceptadas.</li>
+    <li>Un usuario comparte un servicio que utiliza para transferir fondos desde saldos de criptomonedas a una tarjeta a través de SBP (Sistema de Pagos Rápidos) en cuotas. Esto se presenta como una solución para gestionar comisiones y tipos de cambio al necesitar VND para el alquiler u otros gastos.</li>
+    <li>Cambiar rublos rusos por dong vietnamitas puede resultar desfavorable. Se informó una tasa de 3,050,000 VND por 10,000 RUB en una joyería. Utilizar servicios como TON para la transferencia de divisas puede ofrecer menores comisiones y mejores tipos de cambio.</li>
+    <li>Al usar tarjetas Tinkoff en Vietnam, los retiros directos pueden tener tipos de cambio desfavorables. Convertir desde una cuenta en rublos a una cuenta en VND (si está disponible) podría evitar comisiones. Cambiar USD a VND suele ser más ventajoso. El tipo de cambio de las tarjetas Tinkoff a VND es mejor durante el horario bancario ruso (por ejemplo, 334.2 VND/RUB) y significativamente peor fuera de ese horario (por ejemplo, 310 VND/RUB). Se recomienda realizar los cambios durante el horario de atención de los bancos rusos.</li>
+    <li>Para aquellos que consideran mudarse a Vietnam, recopilar información completa es clave. Los recursos pueden incluir blogs de expatriados e influencers en redes sociales que comparten perspectivas sobre la vida cotidiana, pros y contras, y preparación práctica. Seguir cuentas de Instagram enfocadas en Vietnam puede proporcionar un flujo continuo de información relevante. También es crucial recibir consejos financieros prácticos, como los métodos de cambio de divisa (de rublos a dongs vietnamitas) y formas eficientes de encontrar opciones alternativas cuando los métodos preferidos no están disponibles.</li>
+    <li>Para determinar la moneda más ventajosa para cambiar en Vietnam (yuan frente a dólar), se recomienda comparar los tipos de cambio actuales en los bancos locales y las casas de cambio. Los tipos pueden fluctuar, por lo que es necesario comprobarlos en tiempo real para obtener el mejor trato.</li>
+    <li>Identifique joyerías en Nha Trang, Vietnam, mencionando a &#39;Angkor Treasures&#39; como una posible opción con un tipo de cambio de aproximadamente 26.200.</li>
+    <li>En Da Nang, es posible cambiar dólares estadounidenses antiguos y rublos rusos. Los tipos de cambio pueden variar; los billetes de dólar nuevos rinden aproximadamente 2.600.000 VND y los antiguos 2.500.000 VND por cada 100 USD.</li>
+    <li>En Vietnam, los tipos de cambio de divisas para dólares estadounidenses antiguos frente a los nuevos pueden diferir ligeramente, pero a menudo se aplica una tasa fija. Por lo general, es más ventajoso cambiar efectivo en USD o EUR. Aunque algunas tarjetas bancarias rusas pueden funcionar, los pagos con código QR a través de Sberbank son una opción viable, aunque VTB podría ofrecer un tipo de cambio menos favorable. Se recomienda tener efectivo a mano.</li>
+    <li>El registro incluye una pregunta sobre cómo encontrar servicios de intercambio de criptomonedas verificados en Nha Trang, pero no se proporcionan recomendaciones o información específica.</li>
+    <li>Cambiar rublos rusos por dong vietnamitas en Vietnam suele ser poco favorable, con una aceptación limitada y tipos de cambio bajos. Los billetes de dólar estadounidense antiguos son aceptados, pero ofrecen un tipo de cambio ligeramente inferior al de los billetes nuevos (por ejemplo, un billete de 100 dólares de 1996 podría obtener 2.590.000 VND en comparación con los 2.620.000 VND de los billetes nuevos). Las joyerías ofrecen servicios de cambio con tasas que pueden ser ligeramente inferiores a la oficial, pero generalmente son aceptables.</li>
+    <li>En Nha Trang, los billetes de dólar estadounidense más recientes (posteriores a 2009, identificados a menudo por una banda de seguridad azul) pueden recibir un tipo de cambio ligeramente mejor que los antiguos. Por ejemplo, los billetes antiguos podrían cambiarse a 2.590.000 VND, mientras que los billetes nuevos podrían cambiarse a 2.620.000 VND por la misma cantidad. A menudo se comenta que las joyerías ofrecen mejores tipos de cambio que las casas de cambio convencionales.</li>
+    <li>Los billetes de USD más antiguos (por ejemplo, las series de 2006, 2013) a menudo se pueden cambiar en Vietnam, aunque a veces a una tasa ligeramente más baja. Los billetes muy antiguos (por ejemplo, la serie de 1996) podrían ser rechazados, especialmente en aeropuertos o tiendas regulares. Las joyerías en Nha Trang generalmente aceptan mejor las denominaciones más antiguas.</li>
+    <li>Al utilizar tarjetas bancarias rusas como RSB en Vietnam, a menudo se prefiere el efectivo, especialmente para los taxis. Las tarjetas UnionPay se aceptan en establecimientos más grandes. En el caso de RSB, los pagos pueden realizarse en cafeterías que las acepten. Es aconsejable tener disponibles tanto dólares estadounidenses (nuevos o viejos, aunque los viejos pueden tener un tipo de cambio ligeramente peor) como dongs vietnamitas. Si bien es posible realizar pagos con tarjeta, las transacciones en efectivo son más comunes para compras y servicios pequeños.</li>
+    <li>Los usuarios buscan métodos para cambiar rublos rusos (RUB) a dongs vietnamitas (VND) mediante transferencias SBP (Sistema de Pagos Rápidos). Esto indica la necesidad de soluciones de cambio de divisas transfronterizas que sean convenientes y potencialmente rentables.</li>
+    <li>Mejores prácticas para el cambio de divisas en Vietnam: Los cambios en efectivo ofrecen actualmente las mejores tasas de conversión para el rublo ruso. Compare siempre con el tipo de cambio en tiempo real en Google. Desconfíe de las casas de cambio que ofrecen tasas significativamente más altas que el promedio del mercado, ya que a menudo son fraudulentas.</li>
+    <li>Los pagos en Vietnam para turistas rusos se pueden realizar mediante códigos QR en aplicaciones bancarias locales (por ejemplo, Sber). El tipo de cambio promedio es de aproximadamente 1 RUB = 335 VND. Para efectivo, las joyerías en Nha Trang son los lugares más fiables para cambiar rublos rusos por dongs. Las tarjetas bancarias internacionales con Apple Pay o Google Pay son ampliamente aceptadas en los terminales de punto de venta.</li>
+    <li>Clarifique las opciones de pago para las reservas de alojamiento en Vietnam. Específicamente, indique que no se pueden utilizar rublos para pagar en Booking.com, pero que Trip.com sí permite tales transacciones. Aconseje sobre posibles problemas de cambio de divisas si se paga a la llegada.</li>
+    <li>Las mejores tasas de cambio en Nha Trang se encuentran generalmente en joyerías (tiendas de oro) en lugar de bancos o aeropuertos. Por ejemplo, los bancos pueden ofrecer ~26,100 VND/USD, mientras que las joyerías ofrecen ~26,000 VND/USD. Confirme siempre las tasas localmente.</li>
+    <li>Cambiar rublos rusos por dongs vietnamitas en Vietnam puede resultar en tasas desfavorables. Por ejemplo, un reporte indica una tasa de 3,050,000 VND por 10,000 RUB. Considere métodos alternativos como transferencias a través de TON para reducir potencialmente las pérdidas por conversión y las comisiones.</li>
+    <li>El tipo de cambio para los billetes de dólar estadounidense antiguos (por ejemplo, de 1996) en Vietnam es generalmente más bajo que para los billetes nuevos, con una diferencia de aproximadamente 30 000 a 40 000 VND por cada 100 dólares. Las joyerías pueden ofrecer tasas ligeramente inferiores a la oficial, pero siguen siendo aceptables.</li>
+    <li>En las zonas turísticas de Vietnam, las casas de cambio y los hoteles a menudo se niegan a cambiar billetes de Euro de denominaciones menores a 100 EUR, o bien ofrecen tasas desfavorables. Por el contrario, los dólares estadounidenses (USD) son ampliamente aceptados y cambiados incluso en denominaciones pequeñas.</li>
+    <li>El tipo de cambio de USD a VND es de aproximadamente 26 000 VND por cada 1 USD para billetes de denominación alta (&#39;nuevos&#39;). Las joyerías son lugares comunes para el cambio de divisas informal, aunque se recomienda a los usuarios verificar las tasas con antelación.</li>
+    <li>Los billetes de dólar estadounidense antiguos suelen aceptarse en Vietnam, pero a menudo se cambian a una tasa un 2% inferior a la de los billetes &#34;azules&#34; o más recientes. Evite los billetes muy desgastados o de baja denominación si es posible para asegurar mejores tipos de cambio en centros comerciales o joyerías locales.</li>
+    <li>Dificultad para cambiar dólares estadounidenses antiguos en Da Nang. Muchos lugares pueden no aceptarlos o ofrecer tasas desfavorables. Se sugiere intentar cerca del mercado Ben Thanh para obtener mejores tasas.</li>
+    <li>Al cambiar dólares estadounidenses antiguos en Da Nang, Vietnam, se recomienda acudir a bancos o casas de cambio de confianza. Los tipos de cambio pueden variar y los billetes antiguos o dañados pueden obtener una tasa de cambio más baja. Es aconsejable comparar las ofertas de varios lugares.</li>
+    <li>Para una conversión mental rápida de dong vietnamita (VND) a rublos rusos (RUB), elimine los últimos tres ceros (miles) y multiplique el número restante por 3. Por ejemplo: 352 000 VND se convierte en 352 * 3 = 1056 RUB.</li>
+    <li>Existe demanda por el intercambio de USDT por efectivo en USD en Nha Trang. Hay informes de intercambios exitosos de 2500 USDT sin problemas, lo que contradice los rumores de posibles bloqueos de cuentas bancarias por parte de BIDV. Se recomienda verificar las prácticas actuales con casas de cambio locales o particulares.</li>
+    <li>Las tarjetas UnionPay, especialmente las denominadas en rublos, son ampliamente aceptadas en los centros comerciales y supermercados vietnamitas, ofreciendo tipos de cambio favorables. Es aconsejable utilizar tarjetas para los pagos en lugar de retirar efectivo de cajeros automáticos debido a las altas comisiones y los tipos de cambio desfavorables. Aunque las tarjetas &#39;Mir&#39; pueden no funcionar, las tarjetas UnionPay han demostrado ser compatibles.</li>
+    <li>Al viajar a Vietnam, generalmente es más ventajoso cambiar USD que rublos (RUB). Si bien pueden existir algunos cambios informales de rublos, a menudo conllevan tasas desfavorables o riesgos. Los USD se pueden cambiar por dong vietnamita (VND) en varios lugares, incluidas oficinas de cambio, joyerías y, a veces, hoteles. A menudo se informa que las joyerías ofrecen las mejores tasas. Los euros también se pueden cambiar generalmente en Vietnam sin mayores problemas. Las tasas de cambio en el aeropuerto de Cam Ranh suelen ser menos competitivas en comparación con las de la ciudad. Es recomendable llevar una mezcla de USD y VND al llegar y buscar puntos de cambio de confianza para obtener mejores tasas.</li>
+    <li>El tipo de cambio para billetes de dólar estadounidense antiguos frente a los nuevos en Vietnam puede variar ligeramente, pudiendo cambiarse los billetes más viejos a una tasa más baja. Sin embargo, para la mayoría de los fines prácticos, la diferencia es mínima. Se recomienda llevar billetes de dólar relativamente nuevos y en buen estado para obtener mejores tipos de cambio.</li>
+    <li>El tipo de cambio de USD a VND en el aeropuerto al llegar puede ser desfavorable, habiéndose reportado tasas tan bajas como 27,000 VND por 1 USD. Se recomienda buscar mejores tasas de cambio en otros lugares, como joyerías locales o bancos fuera del aeropuerto.</li>
+    <li>Al elegir entre Hermes y Ola Hotel en Nha Trang, investiga las reseñas recientes para conocer las condiciones y servicios actuales. Consejo sobre cambio de divisas: compara las tasas del yuan chino y del dólar estadounidense en oficinas de cambio y bancos locales para determinar cuál es más favorable en el momento de tu visita.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/es/vn/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/es/vn/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/es/vn/documentaci-n-y-visados/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentación y visados</span></a>
+    <a class="chip" href="/es/vn/ocio-y-entradas/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Ocio y entradas</span></a>
+    <a class="chip" href="/es/vn/alojamiento/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Alojamiento</span></a>
+    <a class="chip" href="/es/vn/seguridad/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Seguridad</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>¿No encontraste tu caso?</h2>
+    <p>Pregúntale a Luky — te dice qué funciona ahora — según reportes recientes.</p>
+    <p>Y Luky es un traductor de voz para conversaciones reales: regatea en el mercado como un local.</p>
+    <p class="ps">PS: pon Luky en un altavoz portátil en una fiesta y habla con todos a la vez</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiencia real de chats de comunidades, sin relleno</div>
+    <nav class="f-links">
+      <a href="/es/about/">Acerca de</a>
+      <a href="/es/vn/">Todos los temas</a>
+      <a href="/es/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Las respuestas se recopilan de chats abiertos de comunidades — es experiencia real de personas, no asesoría oficial. Verifica antes de decisiones importantes.</p>
+    <div class="f-copy">© 2026 Luky · actualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noche", DAY="\u2600 D\u00eda";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

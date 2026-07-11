@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brazil: Safety — real experience · Luky</title>
+<meta name="description" content="Real experience from chats about Safety in Brazil: as it is, first-hand. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/br/safety/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/br/safety/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/br/safety/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/br/safety/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/br/safety/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/br/">Brazil</a> /
+    <b>Safety</b>
+  </nav>
+
+
+  
+  <h1>Safety: how it works in Brazil — first-hand</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of people from chats on «Safety» in Brazil — as it is, no fluff. For your case — <strong>ask Luky</strong>.</div></div>
+
+  <h2>From real experience</h2>
+  <ul class="qlist">
+    <li>Address concerns about walking safety in Rio de Janeiro, Brazil. Provide realistic advice on whether it is safe to walk around, including at night, and use a phone for photography. Discuss the perceived risks versus actual experiences, and offer tips for minimizing danger.</li>
+    <li>Shark attacks are a known risk in Recife, primarily occurring when individuals venture beyond protective reefs or into areas without them. While natural pools formed by reefs at Boa Viagem beach offer safer swimming conditions, caution is advised. The presence of reefs significantly reduces wave action and the likelihood of encounters. Despite these risks, Recife remains a popular beach destination, emphasizing the need for heightened awareness and adherence to safety guidelines, such as staying within designated safe zones.</li>
+    <li>This discussion focuses on crime prevention and safety tips for tourists in Brazil. Users share experiences and advice on avoiding theft and scams, including: not flashing valuables, avoiding certain areas/times, being aware of surroundings, and specific preventive measures like specialized clothing. The conversation touches upon the reality of petty theft, armed robberies, and the effectiveness of different precautions.</li>
+    <li>In Rio de Janeiro, travelers should be cautious about credit card payments to avoid potential tourist scams, although such incidents may be less common than in places like Mexico. It is advisable to purchase tours for activities like skydiving, helicopter rides, and paragliding from reputable providers to ensure safety and avoid overcharging. For exploring favelas, hiring a local guide is recommended. Accommodation options like Booking.com and Airbnb are available, with Copacabana being a popular area. While Rio offers vibrant nightlife, exercising standard city safety precautions, especially at night, is advised. Information regarding specific massage parlors is not provided.</li>
+    <li>Inquire if the iDrive application in Brazil requires CPF for usage or if there are alternative methods or generators that can provide a valid CPF for registration.</li>
+    <li>During the COVID-19 pandemic in Brazil (2020-2022), restrictions varied by region and public spaces. General: Masks were often mandatory indoors (e.g., shops in Rio), recommended outdoors, but not strictly enforced by police in all areas. Vaccination was widely encouraged, but mandatory for specific activities (e.g., gym entry, university admission, travel to Fernando de Noronha). São Paulo: Experienced periods of severe lockdown with empty cities. Rio de Janeiro: Citizens were strict about mask-wearing in stores; beaches were closed and people were sometimes removed by police. Travel restrictions were implemented for some areas (e.g., Buzios required proof of residence). Rural/Remote Areas: Restrictions were often less strict or ignored, with people gathering without masks.</li>
+    <li>Rio de Janeiro, particularly tourist areas like Copacabana and Ipanema, can be perceived as unsafe due to petty crime. However, personal safety depends largely on individual vigilance. While locals and tourists may sometimes exhibit lax security habits (e.g., carrying valuables openly), adhering to basic safety measures significantly reduces risks. Travelers generally find Brazilians to be friendly and helpful. For instance, a passing driver once warned visitors about venturing into a potentially unsafe side street. Overall, with attention to surroundings and avoiding ostentatious displays of wealth, Rio can be a safe and enjoyable destination.</li>
+    <li>Discuss the perceived versus actual safety levels in Brazil. Offer a balanced perspective, acknowledging potential risks while highlighting that with basic precautions, tourists can often have a safe and enjoyable experience. Mention that stories of danger might be exaggerated.</li>
+    <li>Analyze the safety of neighborhoods around stadiums in São Paulo. Specifically, the user mentions the area around Itaquera (Corinthians stadium) as dangerous (&#39;atas&#39;) and the area around Morumbi as having low-rise buildings, empty streets, and being prone to robbery, with proximity to the Paraisópolis favela. Provide information on safety perceptions or crime statistics for these specific areas in São Paulo.</li>
+    <li>To find Russian-speaking community chats for Curitiba, Brazil on Telegram, use the search term: &#39;Curitiba&#39;. The chat may not have thousands of members, but active communities exist.</li>
+    <li>Safety tips for Brazil (specifically Rio): Avoid physical contact with aggressive beggars, as local laws often protect them. Firmly say &#39;não posso ajudar&#39; (I cannot help) and continue walking. Be cautious with children, as incidents of phone theft in crowds are common.</li>
+    <li>Rio de Janeiro attracts approximately 16 million tourists annually, making it a major global destination. While safety concerns, particularly regarding robbery, are common, the risk of negative incidents can be mitigated by exercising basic precautions. These include avoiding nighttime excursions while intoxicated or adorned with excessive jewelry and gadgets, staying within tourist areas, and not displaying wealth ostentatiously. Brazilians are generally described as friendly and approachable.</li>
+    <li>Safety concerns regarding nightlife in Brazil. User found Sao Paulo potentially unsafe even during the day and avoided going out at night. Regarding Rio, reports suggest high rates of theft (phones, money, passports) despite an active nightlife scene. Advises vigilance in both cities.</li>
+    <li>In Rio de Janeiro, beach safety on Copacabana is manageable. Beach chair and umbrella rentals are available. It&#39;s advisable to carry valuables like phones and cards, and to secure belongings with a lock if leaving them unattended. Many people leave items unsecured without issue. Flip-flops are commonly worn on the beach, and people typically change shoes upon arrival. Evening activities like beach sports are common and generally safe.</li>
+    <li>For urgent cryptocurrency exchanges, especially converting USDT to Brazilian Reals (BRL) using cash, focus on finding reliable peer-to-peer (P2P) exchangers or platforms that facilitate such transactions. Be prepared for potentially fluctuating rates, especially when urgency is a factor. Prioritize safety by verifying the identity and reputation of the counterparty before finalizing any exchange. Community forums or specialized crypto groups might offer leads, but always exercise due diligence.</li>
+    <li>Safety tips for tourists in Rio de Janeiro: 1. Avoid displaying expensive phones or jewelry in public. 2. Do not resist robbery attempts; perpetrators may be armed. 3. Use a secondary, inexpensive phone for navigation in high-risk areas. 4. Check maps inside shops or cafes rather than on the street. 5. Be cautious of individuals on motorcycles. 6. Avoid physical confrontation with street criminals.</li>
+    <li>Concerns have been raised about the legitimacy of purchasing Rio Carnival tickets from platforms like GetYourGuide and similar sites, especially when official guides state tickets are unavailable. Travelers who have used these services for other destinations without issue are seeking verification for Carnival tickets. It is important to be cautious of potential scams, as some users have reported increased scam attempts after inquiring about tickets.</li>
+    <li>In Brazil, especially in cities like Rio de Janeiro and São Paulo, be vigilant against pickpocketing and phone snatching. Thieves, often on motorcycles or in groups, can quickly steal phones. Avoid displaying expensive devices in crowded areas. While anti-theft accessories like lanyards exist, be cautious: a phone tightly secured to your hand could lead to a wrist injury if forcefully snatched. The best approach is a combination of situational awareness and appropriate security measures.</li>
+    <li>Experiences with potential scorpion stings in Brazil are shared. A user reported a sudden sting on a little finger, followed by numbness and burning, with no visible mark. Artificial intelligence suggested a small scorpion or caterpillar as possible causes. The user has only observed small yellow scorpions and found no puncture marks, speculating about other insects like spiders or ants. Previously existing &#39;raposcorpions&#39; are no longer common.</li>
+    <li>Be cautious of unsolicited DMs in travel or expat groups. Scammers often use local context (airport pickups, document assistance) to solicit advance payments in cryptocurrency. Always verify contacts through official channel &#39;pinned&#39; messages. Report suspicious accounts to channel administrators immediately. Do not share personal information or make payments to unverified individuals.</li>
+    <li>In Brazil, physical bank cards face high skimming risks. Merchants often use terminals that require manual insertion, providing a window for card data theft. Recommendation: Use virtual cards (via Apple/Google Pay) and avoid physical cards to prevent cloning. Credit BIN cards are particularly risky due to offline authorization protocols, which allow transactions to process weeks after a card is blocked.</li>
+    <li>Obtaining a legal firearm in Brazil is a lengthy and complex process, even for individuals with international shooting sports qualifications. Such certifications do not grant expedited access. While penalties for illegal firearm possession may be less severe than in some other countries (e.g., Russia), the risks are still significant. The process requires extensive documentation and training. Some individuals, after experiencing bureaucratic hurdles and limited practical use, have chosen to dispose of their legal firearms.</li>
+    <li>Brazil safety protocol: keep smartphones secured with lanyards or carabiners. Avoid displaying expensive devices in public; use them quickly and return them to a bag. While street incidents like being pushed or harassed by locals can occur, keeping a low profile and staying alert reduces risks significantly.</li>
+    <li>Inquire about current travel advisories and airline policies regarding potential route cancellations or modifications due to geopolitical events. Specifically, investigate the feasibility and potential risks of booking flights with Turkish Airlines for the Yerevan-São Paulo route, considering potential disruptions to Doha layovers.</li>
+    <li>Social dynamics in Brazil heavily favor personal relationships over strictly formal procedures. Building rapport with staff (in banks, public offices, or clinics) through small, non-monetary gestures or consistent friendly communication significantly improves the likelihood of resolving administrative issues (e.g., correcting application errors) or expediting services, as local culture prioritizes human connection and interpersonal trust.</li>
+    <li>For international flights arriving in Brazil, even on a single ticket, passengers must re-claim and re-check their luggage. However, for departures from Brazil, even on a single ticket, baggage is checked through to the final destination. In case of lost luggage, file a claim at the airport; it is often delivered the next day.</li>
+    <li>A tourist expressed dissatisfaction with the lack of foot showers (&#39;no-gai-moi-ka&#39;) on beaches in Rio de Janeiro, such as Copacabana and Red Beach. They consider this a common and important amenity, noting its presence in Thailand. Standard beach showers are seen as insufficient for cleaning sand off feet before wearing footwear.</li>
+    <li>Users inquire about the safety of walking routes in Rio de Janeiro, specifically from Botafogo metro station to Rio Sul shopping mall. This highlights common safety concerns for tourists and residents regarding pedestrian navigation in specific urban areas.</li>
+    <li>Discuss safety measures for protecting a mobile phone in Brazil. Evaluate the effectiveness and risks of using a neck strap or lanyard for phones, and recommend alternative secure carrying methods like waist bags or cross-body bags, especially for preventing theft in crowded areas or at night.</li>
+    <li>To visit favelas in Rio de Janeiro:
+*   **Transportation**: Taxis can take you to the entrance. From there, options include taking a motorcycle taxi or walking. The ascent within the favela is generally not considered difficult.
+*   **Safety**: According to local reports, favelas can be safe for visitors, even without a guide, though guides are often recommended for deeper cultural insight and navigation. One user reported a positive experience with a guide named Anton.
+*   It&#39;s advisable to research specific favelas and local conditions before visiting.</li>
+    <li>Drivers in Brazil may attempt to cheat passengers by creating fake debts in the Uber app after cash payments. To prevent this, prefer in-app card payments over cash. If a driver claims a ride was unpaid, use the &#39;Help&#39; section in the Uber app to report the issue; customer support typically removes these fraudulent charges upon review.</li>
+    <li>The legal penalties in Brazil for drug trafficking, such as attempting to cross borders with controlled substances like cocaine, are severe and can range from 5 to 25 years of imprisonment. Engaging in such activities carries significant legal risks and consequences.</li>
+    <li>Rio de Janeiro&#39;s beaches (e.g., Copacabana, Ipanema) feature watered pathways (&#39;dark stripes&#39;) to prevent burns from hot sand, leading to barracas (beach kiosks). Umbrellas at each barraca are color-coded, helping distinguish between hotel guests and other visitors.</li>
+    <li>Credit card skimming and unauthorized transactions are common in Brazil, even when using digital payment methods like Apple Pay. Instances include unauthorized purchases of airline tickets or Uber rides. To mitigate risk, it is recommended to: 1. Do not store large sums of money on cards; top up as needed. 2. Set daily spending limits on cards. 3. Use cards from banks with strong anti-fraud systems and easy dispute resolution processes (e.g., Wise, Revolut are mentioned as fast in refunds; Kyrgyz banks are noted as potentially having weaker anti-fraud). 4. Enable 3DS (3-D Secure) for online payments if possible. 5. When paying, ensure the correct amount is entered on the terminal and always opt to pay in local currency (BRL) without USD conversion if offered.</li>
+    <li>Homelessness is common in Rio de Janeiro, with varied behaviors depending on the area. In Lapa, while numerous, homeless individuals are often described as non-aggressive by residents. In contrast, areas like Ipanema can see more aggressive encounters. It is generally advised to be cautious. Walking from Lapa towards Maracanã via Santa Teresa is considered unsafe for tourists, with locals sometimes warning against it. Some travelers suggest leaving food near homeless encampments rather than direct handouts. Travelers should research neighborhood safety before booking accommodation.</li>
+    <li>While both São Paulo and Rio de Janeiro present safety concerns, some travelers perceive São Paulo as potentially more dangerous, particularly at night. Experiences vary by district and time of day. One traveler reported a phone theft in São Paulo and generally found the city less comfortable regarding safety compared to Rio de Janeiro, where adherence to safety measures can lead to a more manageable experience for tourists.</li>
+    <li>Public perception of crime in Brazil (São Paulo/Rio de Janeiro) often exceeds actual individual risk for tourists/expats who follow basic safety precautions. Media reports often sensationalize isolated incidents.</li>
+    <li>For beach destinations in Brazil during June, the Northeast region is the most suitable. Recife offers beaches like Boa Viagem, which are generally safe for swimming within the reef-protected areas, though caution regarding sharks outside these zones is advised. Porto de Galinhas is known for its calm waters and suitable depth. Fortaleza provides ocean swimming opportunities but can have more waves. Salvador&#39;s suitability for swimming is considered less ideal. It&#39;s important to note that Brazilian &#39;good beaches&#39; often prioritize shallow waters (&#39;waist-deep&#39;) and social atmosphere over conditions for long-distance swimming.</li>
+    <li>For Royal Air Maroc flights with long layovers (8-15 hours) in Casablanca, the airline may provide complimentary hotel accommodation and meals. Proceed through passport control, then descend to the baggage claim area. Turn left towards the exits, then left again towards the trains. Ascend to the 2nd floor to the Royal Air Maroc transit passenger office. Present your passport and boarding passes to receive a hotel voucher. Take the shuttle from outside the airport (look for RELAX and SKY hotel signs). Return shuttles operate on a schedule. Airport Wi-Fi is available in 10-15 minute increments. Luggage storage is not available. An express train runs to Casablanca city center (50 minutes).</li>
+    <li>Turkish Airlines flights to Brazil transiting via Istanbul involve strict pre-boarding security checks for Russian passport holders managed by a third-party security agency. To prevent boarding denials, passengers must hold a confirmed round-trip ticket (ideally on a single booking with Turkish Airlines) and proof of accommodation (such as a non-prepaid Booking.com reservation). Security personnel may ask detailed questions regarding travel duration and itinerary, and they typically take photos of passports and tickets.</li>
+    <li>Note that under Brazilian Law 297/2026, women aged 18+ (and 16-18 with guardian permission) are legally permitted to carry pepper spray for self-defense. Purchase requires an ID, proof of address, and a clean criminal record for violent crimes. Unauthorized or disproportionate use results in administrative fines (1 to 10 minimum wages), confiscation, and potential criminal liability.</li>
+    <li>To change an account region to Brazil for online games requiring a local payment (e.g., 3.5 BRL), a Brazilian bank card is necessary. Obtaining a CPF and opening a bank account solely for this purpose can be time-consuming. Direct payment assistance from individuals with Brazilian cards is generally not provided due to security risks and potential bank account closure. Some users may consider alternative methods such as using a VPN in conjunction with a non-Brazilian card if the service allows, or exploring less direct payment methods if available. Random CPF numbers may not work and using a third-party&#39;s card details is strongly discouraged.</li>
+    <li>Passengers flying Moscow-Istanbul-Sao Paulo with Turkish Airlines should expect security screening questions. In Moscow, security may verbally ask about travel purpose and cash limits. During transit in Istanbul, secondary screening is common, where security personnel may question the passenger&#39;s travel motives or the possession of a second passport. Booking confirmations are recommended to be kept on hand, though physical checks upon arrival in Brazil are rare.</li>
+    <li>Visiting favelas in Rio de Janeiro such as Rocinha, Santa Marta, and Vidigal can be done safely, especially with a guided tour. Locals confirm these areas are generally safe for tourists. It&#39;s common to see individuals with visible weapons, often for security, which is generally considered less threatening than hidden dangers. Tourists are advised to remain calm and follow safety guidelines.</li>
+    <li>Brazil strictly regulates the keeping of non-standard pets. Only dogs, cats, small parrots, small rodents, and livestock can be kept without a license. Keeping other animals, including ferrets and exotic wildlife like raccoons, requires obtaining a government permit.</li>
+    <li>Street crime, particularly pickpocketing and mobile phone theft by individuals on motorcycles or bicycles, is a common issue in major Brazilian cities like Rio de Janeiro and São Paulo. High-value items should not be displayed in public. Police data indicate thousands of reported thefts annually; tourists are advised to maintain situational awareness at all times.</li>
+    <li>In Brazil, access to police services generally requires an appointment. Some cities allow for stay extensions without an appointment. In Recife, appointment slots are typically released within the current month, offering multiple openings over several days. Securing an appointment requires prompt action, often within 15 seconds of release. While not guaranteed, attempting to visit without an appointment might occasionally result in service.</li>
+    <li>Safety protocol for community users: never trust unsolicited direct messages from accounts claiming to be administration or experts. Never pay in advance. Verify suspicious contacts by forwarding messages to the designated community administrator (Dasha).</li>
+    <li>When traveling in Brazil, particularly in cities like Rio de Janeiro and São Paulo, consider using a money belt or a hidden pouch worn under your clothing to carry valuables such as cash, credit cards, and your phone. This significantly reduces the risk of becoming a target for street theft or pickpocketing. Simple, low-cost options like an under-shirt pouch are effective, as are more specialized anti-theft bags. Avoid openly displaying valuable items, including mobile phones, which are frequently targeted.</li>
+    <li>In Brazil, some Uber drivers may falsely report non-payment after cash transactions, leading to a &#39;debt&#39; appearing in the user&#39;s app, which can only be cleared via digital payment. To mitigate this: users should either persistently contact Uber support to dispute the charges, or switch to card payments, or use a ride-start verification code if available to ensure accurate transaction completion.</li>
+    <li>In São Paulo, Jardins and areas around Avenida Paulista are generally considered safe for tourists. In Rio de Janeiro, the Zona Sul region, including Leme, Copacabana (especially near Arpoador), Ipanema, Leblon, and Barra da Tijuca, are recommended for safety. When choosing accommodation, it&#39;s advisable to observe local activity in the evenings: presence of families with children or dog walkers indicates a safer environment. Avoid areas with only homeless people or deserted streets at night.</li>
+    <li>The state of Santa Catarina, including Florianópolis, is visibly safer than Rio de Janeiro or São Paulo, characterized by lower fences and fewer security measures. Homicide statistics show very low rates in cities like Jaraguá do Sul (2.2 per 100k) and Tubarão (3.6) compared to Florianópolis (8.9). However, Florianópolis experiences seasonal spikes in non-violent thefts due to high tourism.</li>
+    <li>Argentinian football fans, particularly from Buenos Aires, are reported to exhibit racist behavior towards Brazilians, using derogatory terms and displaying racist attitudes. This behavior is observed not only in football matches but also in online gaming. White Argentinians, in particular, are cited as perpetrators, possibly due to a perceived sense of European superiority. This issue extends to prejudice against other South American nationalities as well, with individuals of Black or Indigenous descent being subjected to racial slurs.</li>
+    <li>A significant police operation occurred in Brazil. Local sources indicate that while the event was real, media coverage, particularly from distant sources, often exaggerates its scale. For example, a reported &#39;64 victims&#39; was contextualized by locals as a single-day operation resulting in &#39;over 130 criminals killed and 90 arrested&#39;. Advise users to cross-reference news with local perspectives.</li>
+    <li>Safety in favelas (e.g., Rocinha) is subjective. While some official tours require registration and credentials, independent visitors can enter by taking local motorcycle taxis. Essential precautions: do not display electronics (phones/cameras), dress modestly, and maintain a low profile.</li>
+    <li>Self-defense items like pepper spray are strictly regulated in Brazil and may lead to legal issues. Avoid carrying defensive weapons. Basic safety protocol: avoid desolate areas, use Uber/99 for transport, keep expensive items hidden, and maintain high situational awareness. Local transport (taxis vs. Uber) is debated, but Uber is generally considered safer and easier to dispute regarding overcharging.</li>
+    <li>Exploring favelas in Brazil with guides is possible, with some reporting them to be safer than certain urban areas due to internal community rules. Pacified favelas like Vidigal are considered safe for tourists, even for nighttime visits. Organized tours are available, and solo travelers can often join groups to reduce costs. It&#39;s advisable to research which favelas are &#39;pacified&#39; and tourist-friendly before visiting independently.</li>
+    <li>Visiting favelas in Rio de Janeiro can be a unique experience, with some tourists reporting feeling safer there, especially when accompanied by a local guide. However, it is crucial to be respectful, avoid unauthorized photography of residents, and understand the cultural context. Hiring a certified guide is highly recommended for safety and a meaningful experience. Favelas are not typically considered tourist attractions in the traditional sense, and visitors should have a genuine interest in understanding the local culture and history.</li>
+    <li>Provide insights into visiting favelas in Rio de Janeiro, such as Rocinha or Vidigal. Discuss the safety aspects of visiting with a guided tour versus independently, including options like motorcycle tours. Share experiences of visiting at night and interacting with locals.</li>
+    <li>Phone theft in Brazil is common and poses significant risks beyond device loss. Thieves may dismantle phones for parts, attempt full resets, or use more sophisticated methods. These include extracting phone numbers to send phishing links (e.g., &#39;find my iPhone&#39; scams) to steal Apple IDs, bypass security features, and potentially access and use personal data (e.g., photos from iCloud for blackmail). Phones can be stolen due to inattention or direct robbery. Among some youth, the quantity of stolen phones can signify social status.</li>
+    <li>Provide step-by-step instructions for filling out the online application form for Brazil, including how to navigate between sections and upload required documents (scans). Clarify the meaning of &#39;verso&#39; or &#39;back side&#39; in the context of passport submission and advise on potential solutions if the form is not progressing.</li>
+    <li>Safety precautions for Rio de Janeiro: avoid displaying mobile phones and expensive jewelry in public. Request ride-hailing services from inside buildings. High risk areas include the city center. Avoid leaving personal items (like footwear) unattended on beaches. Entering favelas should only be done with a local guide.</li>
+    <li>Safety tips for Rio de Janeiro: 1. Do not use your phone near car windows; snatch-and-grab thefts by motorcyclists are common. 2. Avoid buses at night. 3. Use taxi apps (Uber/99) for transport. 4. Areas like Paulista in São Paulo are safer for evening walking compared to the center of Rio.</li>
+    <li>A prevalent scam targeting expats in Brazil involves soliciting SumUp bank card details under the guise of &#39;earning money&#39; or &#39;money transfer&#39; schemes. These are fraudulent operations. No legitimate bank or financial institution uses random chat groups to recruit users for account &#39;enrichment&#39;. Do not share account details, PINs, or offer access to SumUp cards.</li>
+    <li>There is a prevalent risk of card fraud and overcharging in Brazil, particularly targeting foreigners. Scams include inputting significantly higher amounts on card terminals than the actual purchase price. Essential safety practice is to manually verify the transaction amount on the terminal display before finalizing the payment.</li>
+    <li>Street crime, including pickpocketing and mobile phone theft, is common in large Brazilian cities like Rio de Janeiro and São Paulo. Recommended precautions: use a secondary, low-value phone for outdoor activities, avoid displaying valuables in public, use cloud backup services (Google One, iCloud) for all data, and stay vigilant in crowded areas.</li>
+    <li>Encounters with brown capuchin monkeys in Brazil are common. While generally not aggressive, they are known for their thieving behavior. One incident involved a monkey stealing half a bag of corn chips from a backpack. Offering small food items like bananas or cashews is possible, but vigilance is advised.</li>
+    <li>In Rio de Janeiro, public restrooms are generally difficult to find outside of beach areas. The primary option is to ask for access at cafes or restaurants. They typically allow non-patrons to use their facilities, sometimes for a small fee (around 4 BRL). It is not always necessary to offer money upfront, as locals are generally helpful.</li>
+    <li>In large Brazilian cities like São Paulo and Rio de Janeiro, street robberies (e.g., snatching jewelry, phones) are common, especially in central and tourist areas (e.g., near São Paulo Cathedral). Travelers are advised to avoid displaying expensive items (jewelry, high-end gadgets). In case of a robbery, resistance can be dangerous. It&#39;s recommended to be quick when taking photos with a phone and immediately put it away, as thieves on motorcycles might snatch it. São Paulo&#39;s city center is generally considered unsafe for extensive walking. Rio de Janeiro is often cited as the most unsafe city in Brazil compared to others.</li>
+    <li>Street safety in major Brazilian cities (Rio, São Paulo): high risk of petty theft and robbery. Advice for travelers: do not wear visible jewelry (chains, bracelets, expensive watches) on the street. Keep mobile phones concealed and avoid using them in public areas. Street crime targets visible valuables; leave expensive items in hotel safes.</li>
+    <li>Premium banking cards in Russia (like T-Bank) often include travel insurance. However, coverage is typically restricted, such as a 90-day maximum stay limit outside the home country. Always verify specific terms and conditions before relying on bank-provided travel insurance for immigration or long-term stays.</li>
+    <li>Brazil uses both 110V and 220V power standards depending on the region and specific building infrastructure. Travelers with voltage-sensitive electronics (like Dyson hair tools or specific chargers) should verify voltage compatibility. 220V outlets are often marked with red labels to prevent damage to 110V-only devices.</li>
+    <li>Vivo mobile services require a Brazilian-registered app store account (Apple ID or Google Play) to download the app. Registration typically requires a CPF. Vivo Easy plans do not support SMS reception while roaming in Russia.</li>
+    <li>To find Russian-speaking community chats for Florianopolis, Brazil on Telegram, search for: &#39;Brazil_For_You_Floripa&#39; and &#39;brfloripa&#39;. These are common community group names.</li>
+    <li>Inquire about the availability and common vendors of electronic cigarettes similar to IQOS in São Paulo, Brazil. Information regarding legal status and retail locations would be beneficial for travelers.</li>
+    <li>In Rio de Janeiro and São Paulo, prioritize personal safety due to high crime rates. Avoid displaying expensive items like jewelry, watches, or high-end phones, as they attract criminal attention. Dress simply, wear casual footwear like flip-flops, and carry minimal cash. Use a basic phone for essential communication and ride-hailing services. It&#39;s advisable to leave valuables and important documents in a hotel safe. Be aware of common theft methods, including phone snatching at public transport stops, crosswalks, and even in cafes. While popular tourist sites can be targets, some visitors report feeling safer in favelas when accompanied by a certified local guide. Always assess the specific area and exercise situational awareness.</li>
+    <li>When traveling within Brazil, carry-on items like nail scissors or even a fork might be subject to inspection by security personnel. While usually returned after a brief check, it&#39;s possible for certain items to be confiscated if deemed potentially suspicious by security staff. Personal items are generally allowed after inspection.</li>
+    <li>Safety in Rio de Janeiro: Basic urban safety measures are sufficient. Avoid displaying expensive jewelry or smartphones in public. Use digital maps to ensure routes do not pass through dangerous areas such as Avenida Brasil, which are high-risk favelas. Rio is statistically safer than Johannesburg but requires more caution than cities like Moscow.</li>
+    <li>Safety tips for Brazil: 1. Avoid using phones or valuables in public to prevent theft. 2. Do not walk alone after 18:00; use ride-sharing apps or taxis. 3. Research safe areas in advance. 4. Hiring a local guide or having a trusted local contact significantly improves safety and navigation.</li>
+    <li>In Brazil, phone theft is rampant. Users report losing photos, crypto, and personal data. Recovery attempts often lead to &#39;phone graveyards&#39; or scams. Advice includes using Face ID on all essential apps and keeping SIM cards linked to financial services separate from the primary device. Vigilance is key, as thieves may attempt to steal devices or scam users into revealing account details.</li>
+    <li>Discuss safety and etiquette for visiting favelas in Rio de Janeiro. Advise on whether to go with a local guide, independently, or through organized tours. Address concerns about potential police raids and the general attitude of residents towards tourists.</li>
+    <li>Hotel guests in Brazil report instances of staff attempting to blame visitors for pre-existing broken electronics (e.g., TVs). Document or report room defects immediately upon check-in. In terms of street safety, tourists are advised to avoid displaying high-end photography gear and smartphones in public; use them quickly and store them immediately.</li>
+    <li>Drones weighing over 250g require registration with DECEA and ANATEL to be legal in Brazil. This registration is restricted to Brazilian residents. Tourists should strictly use sub-250g drones (like the DJI Mini series) to avoid confiscation and legal compliance issues, as lightweight drones do not require resident-only registration.</li>
+    <li>Discussion revolves around the perceived quality of life and safety in Florianópolis (Floripa), Brazil. Key themes include: 1.  **Safety:** Generally considered high compared to other Brazilian cities, with significantly lower crime rates. While incidents (theft, violence) do occur, the overall environment is perceived as safer, allowing for more relaxed behavior like leaving belongings unattended on the beach or in cafes. However, the existence of favelas and some violent incidents are acknowledged. 2.  **Community:** A large and active Russian-speaking community is present, facilitating social interactions, services, and leisure activities. There&#39;s a strong sense of local community where neighbors know and help each other. 3.  **Lifestyle:** Described as having an &#39;island culture,&#39; offering a distinct lifestyle with seasonal changes and cooler temperatures. The city is compared favorably to other regions in Brazil, with some even calling it &#39;almost Europe.&#39; 4.  **Contrasting Views:** While many praise Floripa, some users act as &#39;devil&#39;s advocate,&#39; highlighting negative incidents and arguing against overly positive portrayals to provide a balanced perspective. This includes mentioning specific violent events and the presence of favelas, while acknowledging that such issues are not pervasive across the entire island.</li>
+    <li>Water quality in Rio de Janeiro beaches fluctuates. Use official state government reports (gov.br) to check beach suitability before swimming, as some areas near river outlets (like Rio Carioca) or storm drains can be contaminated. Do not assume all beach water is safe based on popularity.</li>
+    <li>Be aware of &#39;DM recommendation&#39; scams in travel chat groups. Users often report receiving private messages from individuals &#39;recommending&#39; service providers (repair, crypto exchange, guides). Always verify experts via official channel pins or pinned messages. Never send money to individuals contacted via private messages who are not verified by the community administration.</li>
+    <li>Phone snatching, often by individuals on motorcycles, is a common risk in busy areas of São Paulo, particularly at traffic lights. It is highly recommended to exercise extreme caution when using mobile phones in public. A common local safety tip is to carry a &#39;dummy&#39; or inexpensive secondary phone for outdoor use, leaving your primary device at home. Situational awareness and minimizing visible use of valuables are crucial for personal safety.</li>
+    <li>Travel safety in Brazil: Avoid flashiness, store valuables in waterproof cases while on the beach, and stay in reputable neighborhoods. Public transport like &#39;99 Taxi&#39; is accessible with international/Russian numbers. Petty crime exists, but many tourists report safe experiences with basic precautions.</li>
+    <li>While some anecdotal evidence suggests potential risks in Brazil, such as armed robbery, personal experiences indicate a different reality. One individual&#39;s brother-in-law lived in São Paulo for 31 years without any incidents of robbery. In contrast, a personal experience in the Czech Republic involved an attempted phone theft on the metro. This suggests that perceptions of safety can vary, and personal encounters may contradict general assumptions about different countries.</li>
+    <li>Safety in Rio de Janeiro requires basic precautions: avoid wearing visible jewelry and minimize phone usage in public, especially near cyclists or motorcyclists who commit snatch-and-grab thefts. Crowds during events like Carnival are high-risk areas for pickpocketing.</li>
+    <li>The Jardin Oceanico area, near Barra da Tijuca beach in Rio de Janeiro, is considered safe and features excellent beaches. While favelas are present in various areas of Rio, locals advise general vigilance, especially near metro stations; observing locals&#39; behavior (e.g., hiding phones) can indicate potential risks. Traveling from Barra da Tijuca to Copacabana is feasible, though Copacabana can be very crowded, especially during events like Carnival, leading to higher accommodation prices.</li>
+    <li>In Brazil, paying on Mercado Livre with Pix can lead to account blockage and a request for local ID (e.g., RG, CNH). While the order typically still arrives, subsequent purchases require a new account and credit/debit card payment (not Pix). Non-Brazilian users without local ID should avoid Pix for Mercado Livre purchases.</li>
+    <li>When relocating to Brazil, prioritize quality items, specifically shoes and durable outerwear, as local equivalents can be expensive or low-quality. Vacuum bags reduce volume but not weight. Be cautious of humidity; clothes stored long-term in coastal areas like Floripa are prone to mold.</li>
+    <li>During a two-week stay in Rio de Janeiro, safety was generally good, with only flip-flops reported stolen. Travelers are encouraged not to be afraid but to practice necessary precautions.</li>
+    <li>In Brazil, particularly Rio de Janeiro, tourists are advised to be mindful of their appearance and avoid looking overtly wealthy. Phone theft, often by individuals on motorcycles, is common. It is strongly recommended to avoid displaying phones in public. When necessary, use the phone only in crowded, safe areas. For crowded markets, wear backpacks on the front. Phone lanyards or &#39;phone cases on a string&#39; are not always reliable; internal attachments should be sturdy, and external clips can break, leading to loss or theft. A safer practice is to hold the phone firmly in hand with a wrist strap.</li>
+    <li>Safety in Rio de Janeiro: Tourist areas like Copacabana and Ipanema are relatively safer but still prone to petty theft. Standard precautions apply: avoid flashing valuables. Some locals recommend carrying a small amount of cash (approx. 50 BRL) to hand over in case of a robbery to prevent physical confrontation.</li>
+    <li>In Brazil, it is culturally acceptable to ask trustworthy-looking locals (especially families) or other tourists to temporarily watch over personal belongings. This practice is common and often yields positive results, but caution should always be exercised.</li>
+    <li>Traveler spent two weeks in Rio de Janeiro, Brazil. Felt safe walking at night with a phone, including visiting bars. Hired a guide for a tour of the Rocinha favela through a local travel agency for 220 reais, which included hotel pickup and drop-off. Stayed at Ibis Posto 2 on Copacabana, paying around 80 euros per night for a breakfast-included room.</li>
+    <li>Visiting favelas in Rio: It is highly discouraged to enter favelas without a local guide. For organized tours, official pickup points exist (e.g., near Botafogo metro station). Avoid using GPS navigation that might route through unsecured favela areas, as this has led to violent incidents involving tourists.</li>
+    <li>Safety in Brazil: avoid public use of expensive mobile phones to prevent theft by motorcyclists. Key strategies: carry a secondary low-cost device for navigation, use taxis after 8 PM, and avoid flashing valuables. Thieves target unlocked phones to access bank apps and data.</li>
+    <li>For safety in Rio de Janeiro, tourists should avoid openly displaying valuables such as phones, expensive jewelry, or large amounts of cash. It is recommended to keep phones concealed and only take them out briefly for photos in secure areas (e.g., Sugarloaf Mountain, Christ the Redeemer statue) after assessing the surroundings. When waiting for a taxi, do so indoors if possible, and only memorize the car&#39;s number and color rather than actively tracking it on a phone in public. Dressing like locals (t-shirt, shorts, Havaianas flip-flops) helps reduce visibility as a tourist. While generally safer, southern districts like Copacabana and Ipanema still carry risks of petty crime, including phone snatching and chain ripping. Northern areas are considered less safe.</li>
+    <li>The cost of kindergarten in Rio de Janeiro for a 3-year-old child, especially one offering English-language instruction, can range from 1500 to 3000 Brazilian Real per month. While some programs may include English as a subject, they might not be fully immersive English-speaking environments. Information on Russian-language kindergartens is less common, possibly requiring research into expat-run facilities.</li>
+    <li>Standard safety precautions for Brazil: avoid using mobile phones on the street, avoid wearing expensive jewelry/watches, and stay away from known favelas and deserted city centers after dark. Thieves often operate via motorcycles to snatch phones. Use ATMs inside malls or banks.</li>
+    <li>To find safe neighborhoods in São Paulo, search for &#39;safe neighborhoods São Paulo&#39; on Google. Areas around Paulista Avenue, including near the São Paulo Museum of Art, are considered pedestrian-friendly and safe.</li>
+    <li>While some users report not experiencing Uber cash payment scams in Brazil, such incidents are described as frequent in Chile and Peru, where drivers often fail to mark cash payments received unless explicitly prompted. Uber support typically clears these debts a few times, but users may eventually be required to pay. Always ensure the driver confirms payment in the app.</li>
+    <li>Compare Fortaleza with Jericoacoara and Pipa in Brazil for travelers seeking a quieter experience. Discuss safety in Fortaleza. Note the shallow ocean conditions in Jericoacoara, which may limit swimming.</li>
+    <li>During carnival season in Brazil, especially in Rio de Janeiro, be extra vigilant as crime rates can increase. A tourist reported being robbed and stabbed in a police station&#39;s vicinity. Despite the incident, she chose to remain in Brazil and now takes extreme precautions: carrying her phone and cards in a secure inner pocket, only accessing them in secluded areas, and scheduling activities before noon. Be aware of potential risks even in crowded places like Copacabana beach, where muggings can occur. Avoid drawing attention with valuables and dress down. Wearing a phone on a lanyard around your neck can make you a more visible target; it&#39;s advisable to keep your phone hidden. If you feel threatened, consider running towards a police presence, but be aware that criminals may use mopeds for quick escapes.</li>
+    <li>In Brazil, ride-sharing app drivers (e.g., 99 app) may falsely claim non-payment if passengers pay with cash or Pix. To mitigate fraud: 1. Prioritize in-app card payments. 2. If using Pix, retain a screenshot of the payment confirmation. 3. If fraud occurs, contact the app&#39;s support immediately; some users report success in obtaining refunds or credits. 4. Always provide low ratings for dishonest drivers. 5. Be aware of potential dishonesty, particularly when interacting with foreign passengers.</li>
+    <li>Personal experiences in Latin America include encountering armed guards (shotguns) at ATMs, which is considered a common sight. While direct experience in Venezuela is lacking, it is perceived as a potentially dangerous location. Sri Lanka also has visible security measures with older firearms. Brazil presents a generally calmer atmosphere, but vigilance is advised. Similar security practices are also noted in parts of Asia.</li>
+    <li>When exchanging money in Brazil, inquire about reliable private exchange contacts to mitigate the risk of scams. Due diligence is advised before engaging in any private financial transactions.</li>
+    <li>The Kaspi card functions in Brazil, but incurs a 12% transaction fee on each purchase. It is advisable to notify your bank, such as Halyk Bank, in advance of travel to Brazil to ensure card functionality and potentially avoid issues.</li>
+    <li>In Brazil, especially in areas like Centro Histórico, Brás, and Luz, it&#39;s advisable to avoid wearing visible gold jewelry (e.g., chains) and expensive mobile phones, as they are frequently targeted by snatch thieves. Police indicate that robbers often do not use weapons, but focus on items that can be quickly grabbed. Safer areas exist, but general caution is recommended.</li>
+    <li>Brazil is considered geologically stable with minimal risk of severe natural disasters such as major earthquakes, tsunamis, or hurricanes. While minor seismic activity can occasionally occur in regions like Amapá, it rarely causes significant damage. This geological calmness is a notable advantage compared to some neighboring countries.</li>
+    <li>Swimming conditions in Fortaleza vary by season and specific beach location. Central hotel-area beaches may have strong currents; locals recommend the area near the fish market (mercado de peixes) for calmer waters. Beach conditions in Brazil are highly variable, and scouting different zones along the coast is common practice.</li>
+    <li>Provide current weather information for Rio de Janeiro, Brazil. Specify temperature ranges, likelihood of rain, and expected conditions. Contrast this with weather in southern Brazilian states like Santa Catarina, Parana, and Rio Grande do Sul, highlighting potential for colder temperatures.</li>
+    <li>Organizations like UNHCR Brazil, Caritas Brazil, and Missão Paz São Paulo offer humanitarian services including free legal aid, temporary housing, and food to those in need.</li>
+    <li>Walking on Copacabana beach at night after New Year&#39;s Eve fireworks, especially with valuables like phones, raises significant safety concerns. Calling an Uber immediately after such a large event might also be problematic due to high demand and traffic.</li>
+    <li>When bringing a drone (even under 250g like DJI Mini 3/4 Pro) to Brazil, tourists do not need registration with ANAC or DECEA to fly. However, customs may demand ANATEL (telecommunications agency) certification. Drones purchased outside Brazil legally require homologation (uso próprio), which is virtually impossible to obtain for non-residents. There is a risk of confiscation at customs if the drone is inspected.</li>
+    <li>Losing luggage, especially with important documents, at a bus station like São Paulo&#39;s Terminal Rodoviário Tietê can be a distressing experience. If such an incident occurs, filing a police report is the immediate recommended action. However, based on user experiences, the recovery rate for stolen items, particularly those quickly processed by thieves for valuables, can be low. It is advised to be cautious and aware of your surroundings, and if searching for lost items, to do so with safety in mind and potentially not alone.</li>
+    <li>In Rio de Janeiro, violent street robberies targeting mobile phones occur even in affluent areas like Recreio and Barra da Tijuca. Standard safety protocol for expats: avoid walking in unlit or deserted areas after dark. If robbed, do not resist. Police often lack the resources or motivation to recover stolen electronics even with active GPS tracking.</li>
+    <li>Zapimoveis.com.br is a major real estate portal in Brazil where you can find various rental options, including short-term or monthly stays. When searching for rentals on Zapimoveis, be vigilant about potential scams. It is crucial to inspect the property in person before making any financial commitments, such as paying deposits or advance rent. Be wary of listings with prices significantly below the market average, as these are often indicators of fraudulent activity. Always request and verify official documentation from the seller or landlord.</li>
+    <li>Yes, there is a valid extradition treaty between Brazil and Russia, signed in 2002 and ratified by both countries. This agreement allows for the mutual extradition of individuals for criminal prosecution or to serve a sentence.</li>
+    <li>Bringing a drone heavier than 250 grams into Brazil for filming may require registration with ANATEL and DECEA. Obtaining a CPF (Cadastro de Pessoas Físicas) is often necessary for the registration process and customs duties. Some tourists have reported successful entry and use of drones without formal registration, particularly in public areas like parks and beaches, but this carries risks. Exploring rental options or services that assist with registration might be advisable.</li>
+    <li>Be cautious of individuals contacting you via private messages offering services; these are often scammers. Forward any suspicious messages to a designated contact (e.g., &#39;Dasha&#39;) for verification. &#39;Dasha&#39; will not initiate contact or provide recommendations. Any unsolicited message claiming to be from administration or experts, or promoting services, should be considered fraudulent. Block such accounts immediately and never make advance payments. Adhering to safety guidelines is crucial.</li>
+  </ul>
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/br/documents-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documents &amp; Visa</span></a>
+    <a class="chip" href="/en/br/tickets-entertainment/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🎟 Tickets &amp; Entertainment</span></a>
+    <a class="chip" href="/en/br/transport/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transport</span></a>
+    <a class="chip" href="/en/br/shopping/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛒 Shopping</span></a>
+    <a class="chip" href="/en/br/banking-money/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Banking &amp; Money</span></a>
+    <a class="chip" href="/en/br/housing/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🏠 Housing</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Need it for your situation, not in general?</h2>
+    <p>Ask Luky — gives what you actually need: real experience of people who went through it.</p>
+    <p>And Luky is a live voice translator for real conversations: talk to a doctor and understand what they said.</p>
+    <p class="ps">PS: flirt on a date in a foreign language? No problem 😏</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/br/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

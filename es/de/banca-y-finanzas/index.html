@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alemania: Banca y finanzas — experiencia real · Luky</title>
+<meta name="description" content="Experiencia real de los chats sobre Banca y finanzas en Alemania: tal cual, de primera mano. Para tu caso — pregúntale a Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/es/de/banca-y-finanzas/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/de/banca-y-finanzas/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/de/banca-y-finanzas/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/de/banca-y-finanzas/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/de/banca-y-finanzas/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · cualquier país · sin relleno</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noche</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/es/">Inicio</a> /
+    <a href="/es/de/">Alemania</a> /
+    <b>Banca y finanzas</b>
+  </nav>
+
+
+  
+  <h1>Banca y finanzas: cómo es en Alemania — de primera mano</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiencia real de gente de los chats sobre «Banca y finanzas» en Alemania — tal cual, sin relleno. Para tu caso — <strong>pregúntale a Luky</strong>.</div></div>
+
+  <h2>De la experiencia real</h2>
+  <ul class="qlist">
+    <li>Una Verpflichtungserklärung (VE) alemana a menudo deja de ser válida tras la primera salida del espacio Schengen. Para viajes posteriores, podría ser necesaria una nueva VE. Alternativamente, se puede utilizar una carta de invitación de formato libre si la persona invitada asume la responsabilidad financiera de su viaje. Por lo general, en el sitio web de la Embajada de Alemania está disponible una plantilla para una invitación de formato libre.</li>
+    <li>En Alemania, el &#39;Mietkautionsversicherung&#39; (seguro de fianza de alquiler) es una alternativa al tradicional depósito en efectivo (Kaution). En lugar de pagar la fianza directamente al arrendador, el inquilino paga una prima a una compañía de seguros, que actúa como avalista por el importe del depósito. Esto evita que el arrendador acceda a los fondos de forma independiente. Sin embargo, no todos los arrendadores aceptan esta forma de depósito, ya que muchos prefieren un pago directo en efectivo. Las tarifas del Mietkautionsversicherung se pueden comparar en plataformas como Check24.</li>
+    <li>Revolut bloquea cuentas frecuentemente en Alemania sin previo aviso, particularmente para transacciones que involucran bancos de fuera de la UE (por ejemplo, Freedom Bank, Kazajistán). Los equipos de cumplimiento examinan las transferencias fuera de la UE. La forma más efectiva de resolver los bloqueos es exigir al chatbot automatizado que escale el caso a un agente humano.</li>
+    <li>El pago de facturas del gobierno alemán (por ejemplo, para el reconocimiento de certificados escolares/Zeugnisanerkennung) desde Rusia está altamente restringido debido a las sanciones. OTP Bank es actualmente uno de los pocos bancos rusos que sigue procesando transferencias SWIFT en EUR a cuentas IBAN europeas. Alternativamente, se pueden utilizar agentes de pago de confianza que figuren en directorios verificados de comunidades de expatriados.</li>
+    <li>Kleinanzeigen (anteriormente eBay Kleinanzeigen) tiene un sistema antifraude extremadamente estricto. El registro o uso desde fuera de la UE, mediante VPN, o utilizando números de teléfono virtuales provocará un baneo permanente inmediato. Incluso las cuentas nuevas registradas dentro de Alemania con tarjetas SIM locales pueden ser marcadas y suspendidas al enviar la primera consulta. Desbloquear la cuenta a través del soporte técnico (Kundenservice) requiere verificación de identidad y puede tardar hasta 3 semanas.</li>
+    <li>Abrir una cuenta bancaria en Alemania (Sparkasse/bancos comerciales) normalmente requiere un Steuer-ID (número de identificación fiscal). Este número es enviado automáticamente por la Oficina Federal Central de Impuestos (BZSt) a la dirección registrada del residente después de la Anmeldung inicial (registro de dirección). Algunas sucursales bancarias pueden permitir la apertura de la cuenta con el compromiso de proporcionar el ID más tarde, pero las políticas varían según la sucursal.</li>
+    <li>Requisitos para el visado Schengen alemán: Es obligatoria una declaración formal de patrocinio (Verpflichtungserklärung) de la Ausländerbehörde si no se proporciona otra prueba de estabilidad financiera. Los extractos bancarios de terceros países no se aceptan sin un permiso de residencia válido (Aufenthaltstitel) para ese país específico. Al solicitarlo a través de otro país Schengen, el solicitante debe asegurarse de que la mayor parte de la duración del viaje se pase en el país emisor.</li>
+    <li>Los presupuestos diarios recomendados para un turista en Alemania varían ampliamente. Las sugerencias van desde 100 € (excluyendo el alojamiento) hasta 1.000 € o incluso 10.000 €. Los gastos reales dependen de actividades como comer fuera, comprar recuerdos, el transporte y las visitas a museos.</li>
+    <li>Para transferir fondos de PayPal recibidos de un empleador usando una tarjeta bancaria de Azerbaiyán en Alemania, explore opciones como vincular la tarjeta azerbaiyana directamente a PayPal (si es compatible), utilizar servicios intermediarios de transferencia de dinero o considerar intercambios de criptomonedas como método de conversión. Las transferencias bancarias directas de PayPal a cuentas no pertenecientes a la UE pueden tener limitaciones o procedimientos específicos.</li>
+    <li>Aclare el proceso y los posibles problemas al pagar el billete DE con una tarjeta bancaria extranjera. Determine si dichos pagos se comunican automáticamente a SCHUFA (agencia de crédito) e investigue los métodos de pago exitosos, tomando como referencia las transacciones realizadas en plataformas como Immobilienscout24.</li>
+    <li>Al intentar ampliar una cuenta bloqueada (como Fintiba) o ajustar el saldo de la cuenta debido a la obtención de un contrato de trabajo en Alemania, es posible que se requiera que las personas proporcionen un documento específico de las autoridades de inmigración. Este documento debe confirmar la base para abrir o mantener una cuenta con un importe reducido, garantizando el cumplimiento de la normativa bancaria y de inmigración alemana.</li>
+    <li>Al transferir fondos desde Rusia a una cuenta bloqueada (Sperrkonto) para un visado de estudiante alemán, algunos usuarios informan de problemas con Finteiba, que examina el &#39;origen de los fondos&#39;. Se sugiere considerar proveedores alternativos como Edubao para evitar posibles complicaciones, ya que las políticas o la aplicación de las normas por parte de Finteiba podrían haberse vuelto más estrictas en los últimos años.</li>
+    <li>Es posible abrir una cuenta bancaria en Alemania sin un permiso de residencia (&#39;Anmeldung&#39; o tarjeta de residencia). Varios bancos, incluidos Sparkasse, N26 y posiblemente otros como Revolut, podrían permitir la apertura de una cuenta solo con una visa válida. Se recomienda visitar varias sucursales bancarias para consultar sobre sus requisitos específicos para no residentes.</li>
+    <li>Las aplicaciones móviles de Sberbank pueden funcionar en Alemania con limitaciones. Se recomienda usar una VPN para una mejor conectividad. Aunque es posible realizar pagos de facturas, la funcionalidad varía según el comercio. Algunos usuarios informan haber tenido éxito usando la aplicación sin VPN a través de datos móviles o Wi-Fi doméstico.</li>
+    <li>Según se informa, Commerzbank es conocido por no cooperar con los titulares de pasaportes rusos, incluso con aquellos que poseen un permiso de residencia alemán (Aufenthaltstitel) y un número de identificación fiscal. Algunos usuarios califican al banco como &#39;rusófobo&#39; debido a los repetidos rechazos para abrir cuentas.</li>
+    <li>Los bancos alemanes mencionados habitualmente con entidades legales en Alemania incluyen Sparkasse y N26. Algunos usuarios también utilizan Revolut. Las opiniones sobre la experiencia de usuario con bancos específicos, como Sparkasse, pueden variar.</li>
+    <li>Al solicitar una visa alemana con una invitación oficial (Verpflichtungserklärung), esta suele servir como prueba financiera suficiente, a menos que se indique específicamente lo contrario en el documento. Sin embargo, se aconseja a los solicitantes que proporcionen un extracto bancario que muestre el historial de transacciones de los últimos tres meses. El propósito de este extracto bancario no es demostrar un saldo mínimo específico, sino servir como prueba complementaria de la intención del solicitante de regresar a su país de origen.</li>
+    <li>Recomendaciones para abrir cuentas bancarias en Alemania para personas con permiso de residencia (Aufenthaltstitel). Aunque se ha informado de que Commerzbank denegó una solicitud, Sparkasse y Volksbank se sugieren como opciones más accesibles. También se menciona Revolut como una posibilidad.</li>
+    <li>Vivir en Alemania sin unos ingresos estables y dependiendo únicamente de los ahorros es un reto. Aunque los ahorros no tributan, su agotamiento puede afectar gravemente a la estabilidad financiera. La burocracia alemana se caracteriza por largos tiempos de espera para obtener citas (por ejemplo, 3 semanas para una cita en una ciudad de 200.000 habitantes), posibles cancelaciones de última hora y lentitud en las respuestas por correo electrónico de las oficinas públicas (Ausländerbehörde). Se aconseja tener un plan financiero claro más allá de los simples ahorros.</li>
+    <li>Para las solicitudes de visado Schengen que requieren prueba de medios económicos, se podría considerar un extracto bancario de un banco ruso que no esté sujeto a sanciones, pero su aceptación por parte de la embajada alemana es incierta. Es aconsejable abrir una cuenta en un banco con sede en la UE para tener mayores posibilidades de aceptación. Sin embargo, obtener una invitación formal con compromiso financiero (Verpflichtungserklärung) es generalmente la forma más fiable de conseguir un visado Schengen alemán, ya que evita algunos de los estrictos requisitos de prueba financiera de las solicitudes puramente turísticas.</li>
+    <li>El usuario tiene una tarifa de Vodafone que vence el día 14. Ha recargado su saldo pero no puede pagar la tarifa por adelantado ni ampliarla. El sistema debe aconsejar al usuario que: 1. Compruebe los términos y condiciones específicos de su contrato con Vodafone respecto al pago anticipado o la renovación. 2. Contacte directamente al servicio de atención al cliente de Vodafone para preguntar sobre opciones para extender o volver a contratar la tarifa, o si puede utilizar el saldo recargado para un nuevo plan. 3. Tenga en cuenta que algunas tarifas podrían no permitir la renovación anticipada y requieren esperar a que la actual expire.</li>
+    <li>Si no es posible obtener una &#39;Verpflichtungserklärung&#39; (declaración formal de obligación) oficial para invitar a sus padres a Alemania, puede intentar presentar una carta de invitación informal acompañada de extractos bancarios que demuestren fondos suficientes para cubrir sus gastos durante la visita. Aunque este método no garantiza su aceptación, es una alternativa viable. Si no tiene éxito, considere explorar la posibilidad de obtener una &#39;Verpflichtungserklärung&#39; a través de amigos o conocidos, lo cual conlleva su propio conjunto de procedimientos.</li>
+    <li>Si no se puede obtener una &#39;Verpflichtungserklärung&#39; (declaración formal de obligación) oficial para invitar a los padres a Alemania, una alternativa es emitir una carta de invitación informal. Esta debe ir acompañada de extractos bancarios del anfitrión en Alemania, que demuestren fondos suficientes para cubrir los gastos de los visitantes durante su estancia. Aunque no es obligatorio oficialmente como la &#39;Verpflichtungserklärung&#39;, este enfoque puede ser aceptado a veces por las autoridades.</li>
+    <li>Para actualizar sus datos en Sparkasse con un nuevo Aufenthaltstitel, debe visitar la sucursal específica donde abrió su cuenta. Otras sucursales no pueden procesar esta actualización. Es recomendable llamar a su sucursal con antelación para confirmar si es necesario pedir cita.</li>
+    <li>A un ciudadano ruso con Tarjeta Azul en Alemania le han denegado la apertura de cuentas de inversión en Commerzbank, S-Broker y Scalable Capital. Esto sugiere posibles dificultades para los ciudadanos rusos a la hora de acceder a ciertos servicios financieros en Alemania.</li>
+    <li>En relación con la Verpflichtungserklärung (VE) para solicitudes de visado, un punto clave a comprobar es una marca en una casilla específica en el reverso. Aunque el significado exacto de esta marca puede resultar confuso, se refiere a la prueba de solvencia financiera. El término «glaubhaft gemacht» (acreditado de forma creíble) que aparece en una casilla superior también puede ser relevante, y la embajada considera ambos como equivalentes.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/es/de/documentaci-n-y-visados/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentación y visados</span></a>
+    <a class="chip" href="/es/de/trabajo-e-impuestos/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Trabajo e impuestos</span></a>
+    <a class="chip" href="/es/de/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/es/de/cambios-y-transferencias/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Cambios y transferencias</span></a>
+    <a class="chip" href="/es/de/alojamiento/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Alojamiento</span></a>
+    <a class="chip" href="/es/de/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>¿Buscaste y sigues sin estar seguro?</h2>
+    <p>Pregúntale a Luky — te da lo que de verdad necesitas: experiencia real de quien ya pasó por ello.</p>
+    <p>Y Luky es un traductor de voz para conversaciones reales: y el camarero no confundirá tu pedido.</p>
+    <p class="ps">PS: una llamada de voz con esa persona de otro país — también Luky</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiencia real de chats de comunidades, sin relleno</div>
+    <nav class="f-links">
+      <a href="/es/about/">Acerca de</a>
+      <a href="/es/de/">Todos los temas</a>
+      <a href="/es/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Las respuestas se recopilan de chats abiertos de comunidades — es experiencia real de personas, no asesoría oficial. Verifica antes de decisiones importantes.</p>
+    <div class="f-copy">© 2026 Luky · actualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noche", DAY="\u2600 D\u00eda";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

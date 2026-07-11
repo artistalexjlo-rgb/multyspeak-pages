@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Corea del Sur: Transporte — experiencia real · Luky</title>
+<meta name="description" content="Experiencia real de los chats sobre Transporte en Corea del Sur: tal cual, de primera mano. Para tu caso — pregúntale a Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/es/kr/transporte/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/kr/transporte/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/kr/transporte/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/kr/transporte/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/kr/transporte/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · cualquier país · sin relleno</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noche</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/es/">Inicio</a> /
+    <a href="/es/kr/">Corea del Sur</a> /
+    <b>Transporte</b>
+  </nav>
+
+
+  
+  <h1>Transporte en Corea del Sur: lo que de verdad importa saber</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiencia real de gente de los chats sobre «Transporte» en Corea del Sur — tal cual, sin relleno. Para tu caso — <strong>pregúntale a Luky</strong>.</div></div>
+
+  <h2>De la experiencia real</h2>
+  <ul class="qlist">
+    <li>El traslado entre el Aeropuerto de Incheon, la ciudad de Incheon y el Aeropuerto de Gimpo es factible a través del metro, tardando aproximadamente 30 minutos. Esto proporciona una opción económica para realizar traslados.</li>
+    <li>Durante la festividad de Chuseok, la entrada a los principales sitios turísticos, como los palacios, suele ser gratuita, aunque las visitas guiadas pueden ser limitadas. La mayoría de las grandes cadenas minoristas permanecen abiertas, mientras que los pequeños negocios privados pueden cerrar. Es esencial reservar transporte (trenes/autobuses) con antelación debido a la alta demanda.</li>
+    <li>Para viajes de varias ciudades en Corea del Sur (por ejemplo, Seúl-Busan-Seúl): 1. La mayoría de los hoteles ofrecen almacenamiento de equipaje gratuito para los huéspedes que regresan al mismo hotel después de un viaje corto. 2. El almacenamiento de equipaje en los trenes KTX es limitado; los pasajeros con maletas grandes (tamaño M/L) deben abordar temprano para asegurar un espacio en los compartimentos de equipaje designados en los extremos de los vagones.</li>
+    <li>Transporte desde Incheon: El AREX (Airport Railroad Express) es la opción más rápida, pero requiere un billete con horario específico. Alternativamente, el tren subterráneo que para en todas las estaciones es más barato (aprox. 4,000 KRW) y circula con mayor frecuencia, aunque tarda unos 15 minutos más y puede estar abarrotado en horas punta. Utilice aplicaciones como Google Maps o Naver Maps para seguir los horarios.</li>
+    <li>Los billetes de tren KTX para agosto en Corea del Sur suelen ponerse a la venta a partir del 4 de julio. Aunque es posible reservar con antelación, la selección de asientos específicos podría estar limitada hasta que se acerque la fecha de venta. Es aconsejable consultar el sitio web oficial de Korail o plataformas de viaje de confianza para conocer los horarios exactos de venta y los procedimientos de reserva. El &#39;Blue Line Park&#39; en Busan ofrece recorridos panorámicos, y las entradas para el mismo se pueden comprar en el lugar o con antelación.</li>
+    <li>Los usuarios pueden encontrar problemas al usar las tarjetas T-Money y Wowpass en el sistema de metro de Seúl, particularmente con la compatibilidad de iPhone para transferencias de fondos entre tarjetas. Si una tarjeta no se lee en el torniquete, busque ayuda del personal del metro. Asegúrese de que la tarjeta esté colocada correctamente y pruebe métodos alternativos o comuníquese con el soporte técnico si los errores persisten.</li>
+    <li>Procedimientos del Aeropuerto de Incheon para tarjetas SIM y cambio de divisas: las tarjetas SIM están fácilmente disponibles y son fáciles de comprar en el aeropuerto después de recoger el equipaje, con numerosos puestos. Una eSIM es una alternativa si el dispositivo es compatible. Las tasas de cambio de divisas en el aeropuerto suelen ser deficientes; es recomendable cambiar solo una pequeña cantidad para las necesidades inmediatas y el resto en Seúl. T-money y Wowpass también se adquieren o recargan de forma más conveniente en la ciudad.</li>
+    <li>El transporte público en Corea del Sur (autobuses, metro) requiere tarjetas T-Money o tarjetas de transporte específicas. Por lo general, las tarjetas de crédito internacionales no se aceptan para el pago directo en torniquetes o lectores de tarjetas de autobús.</li>
+    <li>Los taxis coreanos generalmente aceptan tarjetas T-money para el pago a través de terminales ubicadas en el apoyabrazos. Es una alternativa confiable al efectivo si no se aceptan tarjetas internacionales o si el pasajero no tiene moneda física.</li>
+    <li>Para moverse por los sistemas de metro y autobús de Seúl, utilice &#39;Naver Maps&#39; o &#39;Kakao Maps&#39;. Estas aplicaciones proporcionan las rutas más precisas, incluyendo los transbordos. Ambas admiten configuraciones en inglés (revise la configuración de la aplicación -&gt; Language/언어). Las aplicaciones de navegación de terceros aleatorias a menudo ofrecen sugerencias de rutas incorrectas o ilógicas.</li>
+    <li>Las compras realizadas en tiendas libres de impuestos en Corea (líquidos que superen los 100 ml) solo pueden llevarse como equipaje de mano si el embalaje permanece sellado y conserva el recibo. Es fundamental tener en cuenta que, si hace escala en un país como China (por ejemplo, Pekín o Shanghái), la seguridad de tránsito confiscará estos artículos si sale de la zona de tránsito o si requiere volver a facturar el equipaje. Por lo general, es imposible añadir artículos al equipaje facturado una vez que se encuentra en la zona estéril del aeropuerto.</li>
+    <li>Viajar dentro de Corea del Sur durante la festividad de Chuseok (del 24 al 26 de septiembre de 2024) presenta desafíos de transporte significativos. La alta demanda de boletos de tren y autobús, cuyas ventas se abren aproximadamente un mes antes en los sitios web oficiales, hace que reservar con antelación sea crucial. Los boletos, incluidas las opciones de viaje de pie, a menudo no están disponibles en plataformas de terceros como Trip.com. Los viajeros que necesiten trasladarse entre ciudades durante este período deben planificar itinerarios complejos, posibles múltiples transbordos o considerar fechas de viaje alternativas. También se recomienda encarecidamente reservar con antelación los hoteles en las zonas turísticas populares.</li>
+    <li>Los viajeros que visitan Corea del Sur a menudo enfrentan desafíos con el equipaje debido a las compras extensas. Algunos han tenido que dejar artículos atrás o lidiar con el exceso de peso. Comprar una maleta adicional al llegar es una estrategia común, especialmente para cosméticos, que son significativamente más baratos. Los autobuses limusina generalmente aceptan dos maletas facturadas sin costo adicional.</li>
+    <li>Tarjetas de transporte y pago en Corea del Sur: 1. Las tarjetas WowPass tienen funcionalidad T-Money integrada. 2. WowPass actúa como una tarjeta de débito/prepago para tiendas, mientras que T-Money es estrictamente para el transporte público. 3. El saldo restante en T-Money se puede reembolsar en tiendas de conveniencia (por ejemplo, 7-Eleven, CU) para montos inferiores a 20,000 KRW. Los reembolsos mayores requieren una oficina de T-Money. 4. Si una aplicación indica que una tarjeta ya ha sido emitida, puedes realizar una reemisión de tarjeta en un quiosco físico en las estaciones de metro.</li>
+    <li>Para el transporte público en Incheon, se recomienda comprar una tarjeta T-Money en una tienda de conveniencia y recargarla. Una recomendación común es obtener una Wowpass, que funciona tanto como tarjeta de transporte como tarjeta bancaria. Puede cargar fondos en la Wowpass a través de su aplicación y luego transferir dinero a la sección de transporte. Cada persona requiere su propia tarjeta de transporte. El costo desde el Aeropuerto de Incheon hasta el centro de la ciudad es de aproximadamente 5,350 KRW para el tren regular y 11,600 KRW para el tren expreso. También se pueden comprar boletos sencillos en las máquinas expendedoras.</li>
+    <li>El registro en Kakao T (aplicación de taxi) suele requerir la integración con KakaoTalk. Si los códigos de verificación por SMS no llegan a números no coreanos, verifique que su operador de telefonía móvil admita la recepción de SMS internacionales. Una solución alternativa conocida consiste en asegurarse primero de que la cuenta de KakaoTalk esté completamente verificada y, posteriormente, vincularla a Kakao T. Algunos usuarios reportan éxito al seleccionar la opción de registro para «extranjeros» dentro de la aplicación.</li>
+    <li>Los billetes de tren KTX en Corea del Sur deben reservarse con 1 o 2 semanas de antelación a través de plataformas como Trip.com. Si los billetes aparecen agotados, es posible comprar un billete «de pie» en la estación y ocupar los asientos vacíos hasta que llegue el pasajero con billete.</li>
+    <li>Los billetes de tren KTX se anuncian con un período de validez de 72 horas. Sin embargo, esta información puede no estar fácilmente disponible después de la compra, y el mecanismo exacto de su aplicación requiere una aclaración.</li>
+    <li>Las tarjetas T-Money se pueden comprar y recargar en tiendas de conveniencia (incluidas las de 24 horas) y en las máquinas expendedoras de las estaciones de metro y aeropuertos de Corea del Sur. Es probable que el Aeropuerto de Jeju cuente con estas instalaciones.</li>
+    <li>Los tipos de cambio en el Aeropuerto de Incheon suelen ser menos favorables en comparación con los que se encuentran en Myeongdong. Es recomendable cambiar solo una pequeña cantidad de moneda en el aeropuerto para necesidades inmediatas como el transporte. Para cambios mayores, Myeongdong ofrece mejores tasas debido a una mayor concentración de casas de cambio.</li>
+    <li>A pesar de las indicaciones en los sitios web de las empresas de alquiler (como Jeju OK Rent) de que una tarjeta de crédito es obligatoria para el alquiler de coches en Jeju, no siempre es un requisito estricto. Muchos viajeros han alquilado coches con éxito sin presentar una tarjeta de crédito.</li>
+    <li>El transporte público en Corea del Sur, incluidos autobuses y metros en todo el país (incluso en la isla de Jeju), se paga principalmente con tarjetas T-Money. Las tarjetas Climate están restringidas al área metropolitana de Seúl. Cada pasajero, incluidos niños de 14 y 16 años, requiere su propia tarjeta T-Money individual. Las tarjetas se pueden comprar y recargar en aeropuertos o tiendas de conveniencia abiertas las 24 horas.</li>
+    <li>Los códigos QR de los billetes de tren Korail se escanean directamente en la estación. Si el personal del tren lo solicita, el código QR de la aplicación sirve como billete. Normalmente no es necesario cambiarlo por un billete físico.</li>
+    <li>Para vuelos a primera hora de la mañana desde el Aeropuerto de Incheon (ICN), considere reservar un hotel cerca del aeropuerto para las últimas una o dos noches de su viaje, mientras se hospeda en el centro de Seúl durante la mayor parte de su estancia. Esta estrategia ayuda a gestionar el tiempo de viaje, que puede ser de una hora o más desde el centro de Seúl. Alternativamente, utilice los autobuses limusina del aeropuerto, que cuentan con paradas convenientemente ubicadas cerca de su alojamiento en Seúl. Los taxis hacia el ICN desde hoteles en la isla del aeropuerto (Incheon) cuestan aproximadamente 22.000 KRW a través de Uber.</li>
+    <li>En Corea del Sur, las tarjetas WOWPASS requieren ser validadas al entrar y salir para pagar la tarifa. Cada viajero necesita su propia WOWPASS si viajan juntos. Para el transporte público, también se puede utilizar una tarjeta Tmoney por separado.</li>
+    <li>Los autobuses limusina del aeropuerto en Corea del Sur se pueden pagar con tarjetas T-Money o en efectivo. Aunque algunos viajeros intentan utilizar el saldo de la Wowpass directamente, a menudo no es fiable para las terminales de autobuses; se recomienda utilizar específicamente la función T-Money o tener efectivo a mano.</li>
+    <li>Prevención de estafas de taxis en Seúl: 1. Si un conductor exige un pago adicional a un cupón prepagado, es probable que sea una estafa; contacte al soporte de la plataforma de reservas. 2. Verifique la tarifa del taxi a través de aplicaciones como Uber o Kakao Taxi, que generalmente ofrecen una mayor transparencia. 3. Tenga cuidado con los conductores que se niegan a entregar el equipaje en el aeropuerto para forzar pagos adicionales. 4. Los autobuses limusina del aeropuerto son una alternativa confiable y rentable a los taxis para viajar al aeropuerto de Incheon.</li>
+    <li>El tiempo de viaje entre los aeropuertos de Incheon (ICN) y Gimpo (GMP) en Seúl a través del metro es de aproximadamente 1 hora. Los pasajeros deben identificar su aeropuerto correcto (nacional o internacional) y tener en cuenta el tiempo de caminata potencial.</li>
+    <li>Traslados al aeropuerto en Seúl: Para llegadas a altas horas de la noche (después de las 23:30), las opciones de transporte público incluyen autobuses nocturnos. Los traslados privados pueden reservarse a través de plataformas como Trip.com, lo cual es recomendable para grupos grandes o pasajeros con mucho equipaje. Los autobuses limusina del aeropuerto cuentan con compartimentos exclusivos para equipaje y son una opción fiable para llegar a los principales centros de la ciudad.</li>
+    <li>Los taxis del aeropuerto en Corea tienen paradas designadas. El pago se acepta en efectivo, con tarjetas de crédito internacionales (Visa/Mastercard) o tarjetas de viaje locales como Wowpass. Es muy recomendable tener la dirección de destino guardada en coreano para mostrársela al conductor.</li>
+    <li>Opciones de alquiler de coches para turistas sin tarjetas de crédito internacionales principales: 1. Las agencias independientes (por ejemplo, Bella Car) pueden permitir el alquiler sin tarjeta de crédito/depósito si se incluye un seguro. 2. Lotte Rent-a-car podría aceptar WOWPASS. 3. Se ha reportado que algunas tarjetas UnionPay emitidas en Rusia (por ejemplo, Rosselkhozbank) funcionan para pagos en Corea.</li>
+    <li>Los bots automatizados de compra de boletos, como los que utilizan KakaoTalk, pueden ser efectivos para asegurar boletos de tren en Corea del Sur durante períodos de alta demanda. Sin embargo, existe el riesgo de cancelaciones de pedidos. Los boletos de reventa a menudo están disponibles en las primeras horas de la mañana, lo que requiere un monitoreo constante. La selección de asientos no es posible con este método, pero posicionarse temprano en la fila virtual puede aumentar las posibilidades de compra.</li>
+    <li>Para escalas largas durante la noche en Guangzhou con China Southern Airlines, consulte directamente con la aerolínea o su servicio de atención al cliente sobre la política de alojamiento en hoteles. Anteriormente, ofrecían arreglos hoteleros, pero las políticas actuales pueden variar.</li>
+    <li>Las tarjetas T-Money suelen ser más rentables para los niños en Corea del Sur en comparación con las Climate Cards, especialmente cuando viajan fuera de Seúl. Las tarjetas T-Money ofrecen tarifas con descuento para niños y se pueden usar en todo el país, mientras que las Climate Cards están limitadas al área de Seúl.</li>
+    <li>Para usar Kakao T sin una tarjeta de crédito local: elige el taxi &#34;General&#34; durante la reserva y selecciona &#34;Pay to Driver&#34; (pago al conductor, en efectivo o con tarjeta T-money dentro del vehículo). A menudo se requiere un número de teléfono local para la aplicación, pero algunos usuarios informan que han tenido éxito con números internacionales.</li>
+    <li>Las tarjetas WOWPASS incluyen una función T-Money para el transporte público. El saldo se puede transferir de la cuenta principal de WOWPASS al sub-saldo de T-Money a través de la aplicación WOWPASS. Si la transferencia desde la aplicación falla, los usuarios pueden recargar el saldo de T-Money con efectivo en cualquier tienda de conveniencia (7-Eleven, CU, GS25).</li>
+    <li>Los boletos para el tren de alta velocidad a Busan comprados a través de Trip.com se pueden presentar mediante un código QR en la aplicación. Las revisiones de boletos no son frecuentes, pero es recomendable tener el boleto a mano. Si un pasajero no se encuentra en su asiento asignado, es más probable que realicen controles.</li>
+    <li>El costo promedio de un taxi desde el Aeropuerto de Incheon hasta el centro de Seúl (por ejemplo, la Estación de Seúl) suele oscilar entre 60,000 y 80,000 KRW, dependiendo de la hora del día y el tráfico.</li>
+    <li>Tránsito en el Aeropuerto de Incheon: Es viable salir del aeropuerto durante una escala de 9 horas para visitar lugares como el Parque Namsan o el Palacio Gyeongbokgung. Los viajeros deben utilizar el tren exprés AREX por su rapidez, pero se les recomienda comprar los boletos de regreso con antelación, ya que no se garantiza la disponibilidad de último minuto.</li>
+    <li>La mejor forma de viajar entre Seúl y Busan es mediante el tren KTX, que tarda aproximadamente 2 horas y 40 minutos. Los boletos se pueden comprar en línea (por ejemplo, a través de Trip.com). La tarifa de primera clase cuesta aproximadamente 9,500 KRW para dos pasajeros.</li>
+    <li>Conducir en Corea del Sur con una licencia rusa requiere tanto el permiso nacional de conducción como un Permiso Internacional de Conducción (PIC). Corea del Sur exige ambos documentos debido a regulaciones específicas de las convenciones de tráfico. La aplicación de esto en las agencias de alquiler puede variar, pero contar con ambos es el requisito legal.</li>
+    <li>En Corea del Sur, las tarjetas T-Money se pueden recargar con efectivo en cualquier tienda de conveniencia (CU, GS25). Las máquinas de tarjetas Wowpass para cambio de divisas y recarga están ampliamente disponibles, incluidas opciones abiertas las 24 horas del día, los 7 días de la semana en áreas como Myeongdong (consulte la aplicación Wowpass para conocer las ubicaciones). Los tipos de cambio fuera del aeropuerto, especialmente en áreas turísticas populares como Myeongdong, a menudo pueden ser más favorables que los del aeropuerto. Wowpass no se puede recargar en línea; solo es posible la recarga física en las máquinas. Para las tarjetas Union Pay (por ejemplo, RSKHB), es posible retirar efectivo de los cajeros automáticos (como los del Woori Bank) y luego usar ese efectivo para cargar la tarjeta Wowpass.</li>
+    <li>Los billetes de tren de Seúl a Busan se pueden comprar en la ventanilla de la estación de tren (por ejemplo, en la estación de Seúl) para evitar las elevadas comisiones por servicio de las agencias de viajes en línea. El personal de ventanilla suele hablar inglés. Para los días de temporada baja, los billetes suelen estar disponibles, aunque se recomienda reservar con antelación para horarios de salida específicos.</li>
+    <li>Para entradas múltiples en Corea del Sur dentro del período de validez de su K-ETA, no es necesario volver a solicitarla. En su lugar, actualice las fechas de viaje y los detalles del alojamiento dentro de su solicitud de K-ETA existente antes de cada nueva entrada. Esto se aplica incluso para estancias de tránsito, como unos pocos días en Seúl de camino a otro destino. Los niños menores de 17 años no necesitan una K-ETA, pero es posible que deban completar una tarjeta de llegada.</li>
+    <li>Se recomienda Organic Maps como aplicación de navegación sin conexión para usar en Seúl. Los usuarios pueden descargar los mapas de la ciudad con antelación para navegar sin conexión a internet.</li>
+    <li>Transporte del aeropuerto de Incheon a Seúl: 1. El AREX (tren exprés) es altamente eficiente. 2. Los autobuses limusina cuestan aproximadamente 17,000 KRW. 3. Los taxis cuestan entre 50,000 y 80,000 KRW. Consiga siempre una tarjeta T-money en el aeropuerto y recárguela en tiendas de conveniencia como CU para viajar sin contratiempos.</li>
+    <li>Al volar de China (por ejemplo, Pekín) a Jeju con Korean Air, los agentes de puerta pueden inspeccionar minuciosamente la K-ETA, los vuelos de regreso y las reservas de viajes internos (como vuelos de Jeju a Seúl o boletos de tren KTX a Busan) durante el registro. Prepare copias impresas o sin conexión de todas sus reservas de transporte interno.</li>
+    <li>Al pagar en Corea del Sur, prepárese para la variabilidad en la aceptación de tarjetas. Las tarjetas bancarias rusas, especialmente UnionPay (incluso de bancos como Rosselkhozbank - RSB), tienen una aceptación limitada, principalmente para retiros en cajeros automáticos. Los minoristas más grandes, como Lotte, pueden rechazar una Visa Gold estándar, pero aceptar Visa Platinum. Las tiendas más pequeñas, cafeterías y lavanderías podrían aceptar las mismas tarjetas sin problemas. Las tarjetas extranjeras suelen tener límites de retiro diario (alrededor de 700,000 KRW) y comisiones por transacción. Para compras importantes, planifique dividir los pagos en varios días y localizar cajeros automáticos compatibles. Es recomendable llevar moneda local (KRW), especialmente para mercados y comida callejera. Para el transporte, la tarjeta T-money es esencial y puede recargarse a través de la aplicación Wowpass o en tiendas de conveniencia (CU, GS25, 7/11). La tarjeta turística Wowpass es ampliamente aceptada, pero se ha reportado que falla en los taxis de la isla de Jeju, lo que hace que el efectivo sea una opción más segura allí.</li>
+    <li>Para viajar a Corea del Sur, se recomienda llevar algo de Won coreano para los gastos iniciales, como el transporte desde el aeropuerto. Se sugieren dólares estadounidenses o yuanes chinos para montos mayores, ya que cambiar USD a KRW dentro de Corea puede ser difícil. Los boletos de autobús al aeropuerto se pueden comprar con la tarjeta T-money o en efectivo directamente en el autobús (alrededor de 17,000 KRW). Las tarjetas UnionPay rusas pueden presentar problemas; a veces requieren dígitos adicionales después del PIN o enfrentan bloqueos.</li>
+    <li>Para escalas largas (más de 18 horas) que impliquen un cambio de aeropuerto en Pekín con una sola aerolínea (por ejemplo, Air China), consulte directamente con la aerolínea sobre acuerdos de traslado y hotel de cortesía. Si no se proporcionan, los pasajeros son responsables de sus propios arreglos. Las fluctuaciones en las tarifas aéreas pueden verse influidas por la demanda estacional, como la próxima temporada alta en octubre.</li>
+    <li>Las aplicaciones móviles esenciales para viajar por Corea del Sur incluyen: Naver Map (recomendada sobre Google Maps para la navegación), Wowpass (para una tarjeta de pago local), Subway (para el transporte público) y Kakao Taxi/K.Ride (para servicios de transporte). También es recomendable configurar KakaoTalk antes de llegar, ya que los códigos de registro pueden sufrir retrasos.</li>
+    <li>Al comparar las tarjetas Wowpass y CU en Corea del Sur, Wowpass ofrece una funcionalidad de transporte T-Money integrada, reembolso y descuentos, lo que hace que sea generalmente la preferida por los turistas. Las tarjetas CU sirven principalmente como tarjetas de transporte. Aunque ambas se pueden recargar, Wowpass permite recargas multidivisa a través de su aplicación y terminales, lo cual puede ser más cómodo que las opciones de CU. No todos los terminales y tiendas aceptan ambas universalmente.</li>
+    <li>T-money es el método de pago estándar para autobuses y metro en Seúl. El pago del transporte público no puede realizarse directamente con tarjetas de crédito internacionales. Las tarjetas T-money se pueden comprar y recargar con efectivo en tiendas de conveniencia (GS25, etc.). Para los usuarios de Wowpass, los fondos deben transferirse al saldo interno de T-money.</li>
+    <li>Boletos para el autobús turístico Hop-on Hop-off de Seúl: ~22,000 KRW en línea, ~27,000 KRW en taquilla. El servicio incluye comentarios en audio en ruso. La mejor hora para visitar es por la mañana temprano (antes de las 11:00 a. m.) para evitar las aglomeraciones.</li>
+    <li>Al alquilar un coche en Corea del Sur, es posible que se requiera un Permiso de Conducir Internacional (IDP), específicamente el tipo &#39;libreto&#39;, además de la tarjeta de plástico estándar. Confirme los requisitos con las agencias de alquiler.</li>
+    <li>El transporte público (metro/autobuses) en Corea del Sur requiere estrictamente tarjetas T-Money o boletos de un solo uso comprados en las estaciones. WOWPASS tiene integrado T-Money, pero debe recargarse por separado del saldo de la tarjeta. El pago del transporte no se puede realizar directamente con tarjetas bancarias extranjeras o UnionPay estándar.</li>
+    <li>El transporte público en Corea del Sur, particularmente el metro de Seúl, opera aproximadamente de 5:30 a. m. a 1:00 a. m. los días de semana y hasta la medianoche los fines de semana, con horarios específicos por estación disponibles en aplicaciones de mapas. Los autobuses también son un modo de transporte común. La tarjeta T-money es esencial para viajar sin problemas en metro y autobús; se puede recargar a través de la aplicación Wowpass o en tiendas de conveniencia (CU, GS25, 7/11). La propia tarjeta Wowpass funciona tanto como método de pago como tarjeta de transporte. En la isla de Jeju, el transporte público es menos frecuente, lo que hace que alquilar un coche o tomar taxis sea más práctico, aunque potencialmente más costoso. Las tarifas de taxi en Jeju son comparables a las de Seúl, pero las distancias más largas entre puntos en la isla pueden resultar en tarifas de 40,000 a 50,000 KRW por viaje.</li>
+    <li>El uso de aplicaciones de transporte como Uber en Corea del Sur puede ser inconsistente con respecto a las opciones de pago. Aunque a veces aparecen opciones de «pago al conductor» en Seúl, permitiendo pagos en efectivo o con tarjeta local (como Wowpass), esta función no siempre está disponible, especialmente en ciudades como Busan. Es aconsejable tener efectivo a mano o explorar aplicaciones locales de transporte como Kakao Taxi para un transporte más confiable.</li>
+    <li>Las tarjetas de transporte público en Seúl pueden comprarse y recargarse en máquinas. Un depósito de 500 KRW es reembolsable al devolver la tarjeta en una máquina designada. Para los usuarios de iPhone, la transferencia de fondos entre T-Money y Wowpass puede requerir procedimientos de aplicación específicos o el uso directo de la tarjeta en las máquinas. Los problemas con la lectura de tarjetas en los torniquetes pueden requerir asistencia del personal de transporte.</li>
+    <li>La tripulación que transita por China hacia Corea del Sur para trabajar en un barco requiere aclaraciones sobre la K-ETA o visados específicos, ya que normalmente los empleadores deben gestionarlos. Un documento temporal emitido por un agente al llegar al puerto puede conceder derechos de movimiento dentro del país.</li>
+    <li>Wowpass es una tarjeta turística con dos monederos distintos: 1) Un saldo prepago para compras en comercios (mediante chip). 2) Un saldo T-money integrado para el transporte público. Los depósitos deben asignarse al monedero correcto. Retirar el exceso de saldo de T-money es restrictivo; a menudo requiere visitar un centro de servicio principal de T-money si la cantidad supera la capacidad de una tienda de conveniencia.</li>
+    <li>Para el transporte público en Corea del Sur, se recomiendan las tarjetas T-Money, especialmente cuando se viaja con niños. Las tarjetas T-Money se pueden comprar y recargar en tiendas de conveniencia (7-Eleven, CU, GS25) o en máquinas expendedoras en estaciones de metro y aeropuertos. Existen tarifas específicas para niños que ofrecen precios más bajos; estas deben activarse si el niño cumple con el criterio de edad. Aunque se puede usar Wowpass, este no facilita la recarga de tarjetas T-Money para niños. Las tarjetas T-Money para niños pueden recargarse a través de máquinas expendedoras o en las cajas de las tiendas de conveniencia. Hay varios diseños de tarjetas disponibles, incluidas colecciones temáticas.</li>
+    <li>El &#39;autotren&#39; en el aeropuerto probablemente se refiere al Airport Railroad Express (AREX), que conecta el Aeropuerto Internacional de Incheon (ICN) con Seúl. Se debe seguir la señalización de &#39;Airport Railroad&#39;. También hay servicios de transporte disponibles.</li>
+    <li>Las multas derivadas de infracciones de tráfico al conducir un coche de alquiler en Corea del Sur suelen cargarse al arrendatario. Por lo general, se notificará primero a la empresa de alquiler y, a continuación, esta facturará la infracción al arrendatario. Este proceso puede tardar semanas o incluso meses después de la infracción, por lo que es importante tener en cuenta posibles cargos tardíos.</li>
+    <li>Para vuelos a primera hora de la mañana desde Incheon (ICN), las opciones incluyen autobuses limusina nocturnos (que comienzan a las 4:00 a. m.) o hoteles en el aeropuerto con servicio de traslado. Los taxis desde el centro de Seúl (por ejemplo, Myeongdong) suelen costar alrededor de 65 000 KRW (Uber XL/Kakao T) según la demanda y la ruta.</li>
+    <li>La tarjeta T-money es indispensable para utilizar el transporte público en Corea del Sur, incluidos el metro, los autobuses y algunos taxis. Las opciones de compra y recarga están disponibles en tiendas de conveniencia (CU, GS25, 7-Eleven), máquinas expendedoras en las estaciones de metro y otros puntos de venta. La tarjeta Wowpass también puede cargarse con la funcionalidad T-money. Su uso implica pasar la tarjeta por los lectores designados al entrar y salir de las estaciones de metro o al subir a los autobuses. Mantener un saldo adecuado es crucial para un viaje sin contratiempos.</li>
+    <li>Para llegadas nocturnas al Aeropuerto Internacional de Incheon (ICN): 1. Use Naver Map o Kakao Map para consultar los horarios de los autobuses nocturnos en tiempo real ajustando la hora de salida. 2. El alojamiento cerca del aeropuerto (a 1 o 2 paradas de metro) suele ser más económico que alojarse directamente en el aeropuerto. 3. Los tipos de cambio en los aeropuertos son malos; considere cambiar solo cantidades mínimas.</li>
+    <li>Uso de Wowpass en Corea del Sur: es conveniente para cambiar USD a KRW, ya que acepta billetes de dólar antiguos. Los fondos se pueden cargar en las terminales con conversión automática a KRW. A las tarjetas T-money se les puede aplicar una tarifa infantil usando un pasaporte en las estaciones de recarga. Si tiene una tarjeta Visa extranjera (de un banco no ruso), es ampliamente aceptada y podría hacer innecesario el uso de Wowpass.</li>
+    <li>Cuando una reserva de vuelo es con billete único (una sola reserva con conexiones), el equipaje facturado debe transferirse automáticamente al destino final. En el aeropuerto de tránsito (por ejemplo, Pekín), los pasajeros pueden dirigirse directamente a la sala de salidas siguiendo las señales de tránsito sin pasar por inmigración. Es aconsejable confirmar la transferencia de equipaje al destino final con la aerolínea durante el registro en el aeropuerto de salida.</li>
+    <li>La tarjeta Namane funciona como una tarjeta de transporte estándar en Corea del Sur, pero no ofrece beneficios para atracciones, a diferencia del Discover Seoul Pass. La tarjeta Climate es un pase de viaje ilimitado específico de Seúl. T-money es una tarjeta de transporte de uso general que requiere recargas individuales. Para los titulares de cuentas bancarias coreanas, las tarjetas de transporte vinculadas pueden permitir deducciones mensuales en lugar de por viaje.</li>
+    <li>Los fondos no utilizados en las tarjetas de transporte T-Money o Woopaass (integradas) de Corea del Sur no caducan. Los reembolsos pueden tramitarse en tiendas de conveniencia como CU. Se aplica una comisión de 500 KRW para reembolsos inferiores a 50,000 KRW. El monto máximo de reembolso en tiendas de conveniencia es de 20,000 KRW. Cantidades mayores (hasta 50,000 KRW) pueden retirarse en las terminales de las estaciones de metro. Para montos que superen los 50,000 KRW, es posible que se requiera la verificación del pasaporte.</li>
+    <li>La Sky Capsule de Busan ofrece una experiencia más panorámica y elevada en comparación con el Blue Line Beach Train. La Sky Capsule viaja a mayor altura, proporcionando mejores vistas, aunque su recorrido es más corto. Los billetes para la Sky Capsule tienen mucha demanda y a menudo se agotan con meses de antelación durante la temporada alta. El Blue Line Beach Train circula más cerca de la costa, ofreciendo vistas menos elevadas, pero puede recorrerse a pie si el tiempo lo permite. Ambas rutas cubren zonas costeras similares.</li>
+    <li>La cápsula aérea de Busan (Busan Sky Capsule) ofrece un punto de vista más elevado y mejores vistas en comparación con el tren de playa Blue Line. La ruta de la Sky Capsule es más corta y los billetes suelen agotarse con mucha antelación, especialmente durante la temporada alta. El tren de playa Blue Line recorre la costa, ofreciendo una experiencia a nivel del suelo que se puede explorar a pie para disfrutar de vistas panorámicas.</li>
+    <li>Compare las opciones de transporte entre Seúl (Aeropuerto de Gimpo) y Busan. El tiempo de vuelo es de aproximadamente una hora desde Gimpo. El tren de alta velocidad tarda unas 2.5 horas. Considere el costo y el tiempo de viaje para la llegada/salida.</li>
+    <li>El periodo de finales de julio a principios de agosto en la isla de Jeju, Corea del Sur, cae dentro de la temporada de monzones de verano. Aunque la lluvia es común, suele haber periodos de sol intercalados con días lluviosos. Los viajeros pueden esperar condiciones cálidas y húmedas. Se aconseja consultar los pronósticos meteorológicos más cerca de la fecha del viaje para obtener predicciones más precisas.</li>
+    <li>El Aeropuerto Internacional de Gimhae en Busan (PUS) ofrece numerosos quioscos de autoservicio para el registro de equipaje y el registro de pasajeros. Al reservar vuelos con escalas, verifique la política de facturación de equipaje. El equipaje puede enviarse directamente al destino final o solo hasta el punto de tránsito, lo que requiere volver a facturar en el aeropuerto de escala. Se aconseja a los pasajeros esperar de 5 a 10 minutos después de dejar el equipaje para controles de seguridad antes de dirigirse al control de pasaportes.</li>
+    <li>Los boletos de tren KTX se pueden reservar con anticipación a través de plataformas como Trip.com, que pueden ofrecer precios más bajos y aceptar métodos de pago internacionales como las tarjetas MIR, a diferencia del sitio web oficial de Korail, que puede requerir una tarjeta coreana o extranjera. El embarque en los trenes KTX generalmente no implica controles de equipaje en la estación. El equipaje se puede guardar en los compartimentos superiores o en los estantes designados en el vagón. El personal realiza controles de asientos periódicamente.</li>
+    <li>La tarjeta Namane es una opción de pago versátil en Corea del Sur que funciona tanto como tarjeta de pago general (&#39;Pay Balance&#39;) como tarjeta de transporte público (&#39;T-money&#39;). Se acepta en la mayoría de los comercios y para las tarifas de taxi. Se pueden añadir fondos mediante quioscos Namane o tiendas de conveniencia CU. La aplicación móvil complementaria permite realizar transferencias de saldo, diseñar tarjetas personalizadas y, potencialmente, acceder a ofertas exclusivas.</li>
+    <li>Al elegir entre la tarjeta T-Money y la Climate Card para el transporte público en Seúl, considere sus funcionalidades. La Climate Card suele ser más barata, pero está limitada a los límites administrativos de Seúl y solo se puede utilizar para el transporte. La tarjeta T-Money, aunque puede ser más cara, es más versátil, ya que se puede usar en el transporte, en tiendas de conveniencia y en tiendas como Daiso, además de cubrir un área más amplia, incluido el transporte hacia y desde el Aeropuerto de Incheon.</li>
+    <li>Para viajar desde el Aeropuerto de Incheon (ICN) a Busan, el método más eficiente es tomar el tren exprés AREX hasta la estación de Seúl y, después, hacer transbordo a un tren de alta velocidad KTX con destino a Busan. Aunque Naver Maps pueda sugerir inicialmente rutas de autobús, también debería ofrecer opciones de metro y tren. Si las opciones de metro no aparecen, puede deberse a la hora del día o a la configuración de navegación. Google Maps puede utilizarse para una orientación general, pero para rutas precisas de transporte público en Corea, es preferible utilizar Naver Maps o Kakao Maps.</li>
+    <li>Para utilizar una tarjeta T-Money en el transporte público de Corea del Sur, debe validar la tarjeta al entrar y al salir del metro o autobús. Esto garantiza un cálculo preciso de la tarifa. Si realiza transbordos entre autobuses o entre un autobús y el metro dentro de un determinado período de tiempo (normalmente 30 minutos), el transbordo puede ser gratuito o tener descuento, siempre que valide la salida del primer medio de transporte y la entrada del segundo.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/es/kr/documentos-y-visados/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentos y visados</span></a>
+    <a class="chip" href="/es/kr/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/es/kr/entradas-y-ocio/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Entradas y ocio</span></a>
+    <a class="chip" href="/es/kr/banca-y-finanzas/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Banca y finanzas</span></a>
+    <a class="chip" href="/es/kr/seguridad/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Seguridad</span></a>
+    <a class="chip" href="/es/kr/cambio-y-transferencias/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Cambio y transferencias</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>¿Necesitas algo para tu situación, no en general?</h2>
+    <p>Pregúntale a Luky — no artículos genéricos, sino detalles para tu situación.</p>
+    <p>Y Luky es un traductor de voz para conversaciones reales: habla con el médico y entiende lo que te dijo.</p>
+    <p class="ps">PS: incluso con la familia de tu pareja que no habla nada del tuyo 😄</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiencia real de chats de comunidades, sin relleno</div>
+    <nav class="f-links">
+      <a href="/es/about/">Acerca de</a>
+      <a href="/es/kr/">Todos los temas</a>
+      <a href="/es/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Las respuestas se recopilan de chats abiertos de comunidades — es experiencia real de personas, no asesoría oficial. Verifica antes de decisiones importantes.</p>
+    <div class="f-copy">© 2026 Luky · actualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noche", DAY="\u2600 D\u00eda";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

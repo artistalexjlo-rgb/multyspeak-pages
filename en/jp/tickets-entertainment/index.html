@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Japan: Tickets &amp; Entertainment — real experience · Luky</title>
+<meta name="description" content="Real experience from chats about Tickets &amp; Entertainment in Japan: as it is, first-hand. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/jp/tickets-entertainment/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/jp/tickets-entertainment/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/jp/tickets-entertainment/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/jp/tickets-entertainment/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/jp/tickets-entertainment/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/jp/">Japan</a> /
+    <b>Tickets &amp; Entertainment</b>
+  </nav>
+
+
+  
+  <h1>Tickets &amp; Entertainment: how it works in Japan — first-hand</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of people from chats on «Tickets & Entertainment» in Japan — as it is, no fluff. For your case — <strong>ask Luky</strong>.</div></div>
+
+  <h2>From real experience</h2>
+  <ul class="qlist">
+    <li>To view Mount Fuji, consider the following: 1. Visibility: Check local weather forecasts and visibility reports, as Fuji is often obscured by clouds. Some travelers use specific indexes or online resources to track visibility. 2. Locations: Popular viewpoints include Hakone, the Fuji Five Lakes region (Kawaguchiko), and certain high points in Tokyo. 3. Timing: Early mornings and clear, crisp days often offer the best chances. Traveling during drier seasons (late autumn to early spring) can also increase visibility.</li>
+    <li>For a short stay in Osaka (1.5 days), visitors can explore the aquarium and sample local cuisine such as takoyaki, okonomiyaki, kushikatsu, and kitsune udon. Day trips to nearby cities like Kobe or Himeji are possible, but allocating more time for Osaka itself is recommended to fully experience the city and its attractions, including Osaka Castle.</li>
+    <li>Traveling to Japan during &#39;Silver Week&#39; (a series of holidays in September) results in significant crowds and high demand for accommodation and transportation. It is essential to book hotels, Shinkansen tickets, and popular attractions well in advance, potentially months ahead, to secure availability and avoid inflated prices. Consider adjusting travel dates to avoid this peak period.</li>
+    <li>Japan is widely considered one of the safest countries globally, contrary to some misconceptions fueled by media portrayals. While incidents like sexual harassment (&#39;chikan&#39;) or assault can occur, they are rare, and Japan&#39;s overall safety record for solo female travelers is exceptionally high compared to many other destinations. Reassurances can include the availability of the Russian embassy contact, potential connections with Russian-speaking residents via language exchange apps, and emphasizing Japan&#39;s low crime rates. Fear-mongering narratives are generally unfounded.</li>
+    <li>Japanese souvenir stamps (eki stamp) require separate notebooks from Goshuin (temple seal books). Goshuin are considered sacred and are for temple visits only. For train station/sightseeing stamps, any high-quality notebook works. Umbrellas in communal stands at cafes or shops are often shared, but taking one is a local convention, not a formal right for tourists.</li>
+    <li>Japanese single-entry visas typically become valid on the date of issuance or the specific start date indicated. Entering Japan before this date is impossible. If a flight segment is missed in a single booking (e.g., Beijing-Tokyo), airlines often automatically cancel subsequent segments (no-show policy). Always verify visa validity dates against flight schedules before booking.</li>
+    <li>When visiting Mount Fuji, consider various viewpoints beyond Kawaguchiko, such as Fujinomiya or Enoshima Island, which also offer scenic views. Be prepared for potential cloud cover obscuring the mountain. An overnight stay might increase the chances of clear views, and checking weather forecasts is crucial for planning.</li>
+    <li>Offering visa application services for Japan, including document preparation, submission without personal visits to the visa center, and assistance with travel plans and motivational letters. Services are available for citizens of all Russian regions. Various packages and pricing options are presented.</li>
+    <li>Mt. Fuji visibility is unpredictable regardless of the season. To optimize viewing chances, monitor local weather forecasts and live webcams before departure. A day trip from Tokyo is feasible via bus or train. Staying overnight (e.g., Kawaguchiko area) for 1-2 days significantly increases the probability of seeing the mountain clear of clouds.</li>
+    <li>Information is sought on how individuals have purchased tickets for the Ghibli exhibition in Osaka. Specific methods and procedures are requested.</li>
+    <li>For visitors to Japan, Kyoto is recommended for historical sites and atmosphere, best visited early morning. Osaka is preferred for nightlife, modern shopping, and as a central hub for day trips to Nara, Kyoto, and Kobe.</li>
+    <li>Domestic flights are available within Japan for travel to islands like Okinawa, as there is no Shinkansen connection. Booking platforms such as Trip.com can be used to find and purchase tickets for these internal flights. It&#39;s important to understand the booking process for domestic air travel in Japan.</li>
+    <li>Ghibli Museum tickets go on sale on the 10th of every month for the following month. International payment cards are required. Tickets sell out almost instantly. Third-party platforms like Klook offer tour packages, but availability is limited and expensive.</li>
+    <li>The Izu Peninsula is a recommended alternative to the overcrowded Kawaguchiko area. Key attractions include the Jogasaki Coast (lava formations), Mount Omuro, and various hot springs (onsen). It is accessible from Tokyo and offers a more relaxed atmosphere while still providing views of Mt. Fuji.</li>
+    <li>Planning a trip to Japan involves itinerary creation and budgeting. Travelers often build their own routes using resources like Google Maps, Trip.com, and Visit Japan. Costs can vary significantly based on flight and accommodation choices. It&#39;s important to prioritize destinations and activities to maximize the travel experience within the available time and budget.</li>
+    <li>Planning a beach vacation in Japan from late June to mid-July. Inquiring about suitable destinations that offer good swimming conditions and infrastructure. Okinawa is mentioned as a possibility but with concerns about June&#39;s hot and rainy weather. The user is open to locations near Tokyo but prefers advice from experienced travelers. The goal is to find a place with water access to mitigate heat.</li>
+    <li>Russian driving licenses (including International Driving Permits/МВУ issued in Russia) are not valid in Japan. To legally drive, rent a car, or participate in street-karting, one must hold a permit issued by a country that adheres to the 1949 Geneva Convention (e.g., Kazakhstan, Georgia).</li>
+    <li>Traveling to Japan during New Year (Oshogatsu): Expect fewer tourist crowds compared to peak seasons. Celebrations are primarily family-oriented. For festive atmosphere, visit areas like Shibuya or Omotesando. Consider Kyushu for hot springs and scenery; book transport and accommodation in advance due to potential limited availability. Enjoy clear skies for Fuji views.</li>
+    <li>When choosing between Roppongi and Chuo City in Tokyo: Roppongi offers better walkability, proximity to attractions like Roppongi Hills (with the spider sculpture), and easier access to Ueno museums and teamLab Borderless. Chuo City is closer to the river, but Roppongi provides a more central base for general sightseeing and day trips.</li>
+    <li>Investigate the current functionality of Russian-issued Visa and Mastercard (specifically from Mbank and Ayyl banks) in Japan for bookings and payments. Be aware that due to recent sanctions, these cards may not be accepted. Research alternative international cards that work reliably in Japan, such as those issued in CIS countries or through intermediaries.</li>
+    <li>Purchasing tickets for TeamLab Borderless in Kyoto with a Russian card can be challenging as they may not be accepted on platforms like Trip.com. Purchasing at an on-site ticket machine is an option, but advance booking is recommended due to potential demand.</li>
+    <li>Optimizing a 21-day Japan itinerary involves strategic allocation of time. It&#39;s suggested to split time in the Tokyo area (e.g., 7 days in Tokyo, 4 days for surrounding excursions like Kawasaki, Yokohama, Kamakura). Including cities like Kanazawa and Hikone, dedicating 2 days to the Fuji area, and considering travel time between locations are important factors. Managing FOMO (Fear Of Missing Out) is also a common concern for travelers aiming to see as much as possible.</li>
+    <li>Purchasing concert tickets for events in Japan, such as those listed on platforms like Pia (ticket-lot.pia), may involve phone verification steps. Travelers facing difficulties with online purchases requiring phone calls should seek assistance through official support channels or explore alternative purchasing methods.</li>
+    <li>When planning a visit to Mount Fuji, an overnight stay is often recommended to increase the chances of clear views, as Fuji is frequently obscured by clouds. Alternative viewing locations exist besides Kawaguchiko, such as Fujinomiya, offering beautiful vistas. Travelers should monitor weather forecasts closely and be prepared for the possibility of not seeing the mountain.</li>
+    <li>Nihon-ji temple complex in Chiba (Mt. Nokogiri) is accessible via Hama-kanaya station. Costs: 700 JPY for temple entry, 650 JPY for one-way cable car. Recommended visit time: afternoon, with late arrival at the Jigoku Nozoki viewpoint (around 4 PM) to avoid queues.</li>
+    <li>Tattoos are generally prohibited in traditional Japanese public baths (onsens). Swimwear is usually not allowed. Travelers with tattoos should specifically search for &#39;tattoo-friendly&#39; onsen facilities, which are increasingly common in tourist areas.</li>
+    <li>While Japan is increasingly cashless, cash is still required for some small shops, temples, and local buses. Travelers are advised to carry 10,000 JPY in cash as a backup. IC cards (Suica, Pasmo, etc.) are highly recommended for transport and occasional small payments.</li>
+    <li>Photographing real geishas in Kyoto without their consent is highly discouraged and can lead to fines. Most &#39;geishas&#39; seen by tourists are either performers or tourists in rental kimonos, though asking for permission is considered proper etiquette.</li>
+    <li>When planning a trip to Japan, the time allocation for cities like Osaka and day trips to places like Himeji is a common discussion point. While some find 1-1.5 days sufficient for Osaka, others argue for more time. Himeji Castle is considered a significant attraction, with recommendations to visit it, possibly combined with Kobe for a single day trip if time is limited.</li>
+    <li>To maximize chances of seeing Mt. Fuji: 1. Monitor weather forecasts closely and be flexible with your itinerary to visit on clear days. 2. Consider a day trip rather than an overnight stay near Lake Kawaguchiko if the primary goal is viewing Fuji, allowing for better timing flexibility. 3. Understand that visibility is not guaranteed; manage expectations and enjoy other aspects of the trip.</li>
+    <li>Photography film, such as Kodak and Fujifilm, and development services can be found in Japan. For example, Tokiwa Camera in Den Den Town, Osaka, offers film at competitive prices, with Kodak film reportedly being significantly cheaper than in some other countries. It&#39;s advisable to check specific store availability and pricing.</li>
+    <li>Traveling to Okinawa in August involves high temperatures (30-32°C air, 27-29°C water) and high humidity (around 80%). Rainfall is usually brief. August is part of the peak tourist season, including Japanese domestic travel, leading to crowds and queues at attractions. However, crowd levels in August are not significantly higher than in other summer months. Beach activities and swimming are comfortable.</li>
+    <li>Japanese concert ticket purchasing (ePlus, Lawson, TicketJam) often requires a local Japanese phone number for SMS verification. International visitors should look for English-language versions of ticketing sites or hire local facilitators/services available through reputable community resources.</li>
+    <li>For Universal Studios Japan (Osaka), the single rider queue is a time-efficient alternative to the expensive Express Pass (Fast Pass). Most major rides accommodate single riders, significantly reducing wait times without needing extra tickets.</li>
+    <li>Beyond Osaka city attractions, the Kansai region offers numerous interesting day trip destinations. These include Nara (known for its friendly wild deer), Kōya-san (a significant center for Japanese Buddhism), Kobe, and even Hiroshima. Exploring these surrounding areas can enrich the travel experience and provide a broader perspective on Japanese culture and history.</li>
+    <li>A 21-day itinerary for Japan can be optimized by balancing popular destinations with day trips. Key considerations include allocating sufficient time for major cities like Osaka and Tokyo, potentially splitting Tokyo nights for easier access to surrounding areas like Nikko or Yokohama. While day trips to places like Himeji and Nara are feasible, it&#39;s important to manage travel time and avoid over-scheduling to prevent fatigue. Exploring options like Kanazawa or Kōbe can add variety to the itinerary.</li>
+    <li>Provide reliable methods and resources for tracking Mount Fuji&#39;s visibility. Users are asking for ways to check when Fuji is likely to be visible, especially considering weather conditions.</li>
+    <li>To witness the iconic view of Mount Fuji, an overnight stay near Kawaguchiko is recommended. The best time to see Fuji is typically early morning, from around 4 AM to 7 AM. By 8 AM, clouds often obscure the view. Consider staying at a hotel like Fuji-View Hotel for optimal morning viewing opportunities. Day trips from Tokyo are often not feasible for catching these specific views.</li>
+    <li>Applicants for a Japanese visa who were born in Crimea, the newly annexed regions of Ukraine, South Ossetia, Abkhazia, or the Kuril Islands face a significantly elevated risk of visa refusal. They are strongly advised not to purchase non-refundable flight tickets until the visa is officially approved.</li>
+    <li>Explain the high demand for boat rentals at Takachiho Gorge. Provide details on how to book tickets, the typical booking window (e.g., &#39;smash within 10 minutes&#39;), and the implications of not securing a boat rental for the overall experience, considering the travel time.</li>
+    <li>Tickets for the Osaka Aquarium can be purchased on-site. Availability for immediate entry is not guaranteed; visitors might be assigned a later time slot. Price is approximately 2800 JPY.</li>
+    <li>Flight prices to Japan can fluctuate significantly. While historically round-trip tickets could be found for around 40,000 rubles, current prices are generally higher, often ranging from 50,000 to 55,000 rubles. Some deals, like 38,000 rubles, might appear for connecting flights (e.g., via China). Airlines like Hainan Airlines, China Eastern, and Air China are frequently mentioned. Booking 3-4 months in advance is often recommended, although last-minute deals can sometimes appear about a month before departure.</li>
+    <li>Shibuya Sky has strict safety rules for the rooftop observation deck: bags, backpacks, caps, and large accessories must be stored in lockers provided on-site. Only mobile phones and cameras with neck straps are permitted on the deck to prevent objects from falling. Locker keys are attached to wristbands.</li>
+    <li>Professional drifting experiences in Japan are available via local specialized operators, typically costing around 100,000 JPY per person. Booking directly via social media channels is more cost-effective than using travel intermediaries.</li>
+    <li>Observe a street procession in the Hatchobori station area of Tokyo. Possible identification as Tsukiji Shishi Matsuri or Sandra Matsuri. General description of Japanese matsuri involving mikoshi and deity procession is noted.</li>
+    <li>Universal Studios Japan visitors can optimize their time using &#39;single rider&#39; lines for faster entry, though this separates parties. The official app can provide free entry slots for high-demand areas like Super Nintendo World if checked throughout the day.</li>
+    <li>Ghibli Museum tickets go on sale on the 10th of each month for the following month at 10:00 JST. Users should join the virtual queue 30-60 minutes before. The booking site is prone to crashes. Tickets are non-transferable, require ID verification at the entrance, and scalping is illegal in Japan.</li>
+    <li>Description of a rental space: 100m2 terrace with canopy, dining area, poufs, suitable for movie screenings, photoshoots, retreats, quiet gatherings (not noisy parties). Accommodates 15-20 people. Includes large grill, kazan for plov, 19th-century samovar, hammock, music. Access to house and antiques for photos. Tour of house and grounds. Optional extras: projector screen, speaker, bath tub/sauna. Details on cost and booking are mentioned but not provided.</li>
+    <li>For a beach holiday in Okinawa in late June, expect hot weather (up to 32°C) with minimal rain as the rainy season typically ends. Avoid Honshu during this period due to extreme heat and humidity; opt for islands like Okinawa for better beach conditions. Beaches near Tokyo are generally considered less appealing than those in Okinawa.</li>
+    <li>The beach season in Okinawa generally starts in April. By mid-April to early May, the water and air temperatures are usually warm enough for swimming and sunbathing. Average temperatures in April are around 22°C for both air and water. While some may find the water comfortable in late December, air temperatures are cooler. The official swimming season typically ends in early November.</li>
+    <li>A one-day trip to Nikko from Tokyo is feasible if starting early (e.g., 05:00-06:00 departure). Efficient route: Start with major shrines (Toshogu, Rinnoji), move to the Shinkyo Bridge and Kanmangafuchi Abyss, then head to Kegon Falls and Lake Chuzenji. Requires consistent pacing.</li>
+  </ul>
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/jp/transport/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transport</span></a>
+    <a class="chip" href="/en/jp/shopping/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛒 Shopping</span></a>
+    <a class="chip" href="/en/jp/documents-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documents &amp; Visa</span></a>
+    <a class="chip" href="/en/jp/banking-money/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Banking &amp; Money</span></a>
+    <a class="chip" href="/en/jp/exchange-transfers/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Exchange &amp; Transfers</span></a>
+    <a class="chip" href="/en/jp/safety/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛡 Safety</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Didn&#39;t find your case?</h2>
+    <p>Ask Luky — builds the answer from fresh first-hand reports, not marketing copy.</p>
+    <p>And Luky is a live voice translator for real conversations: sort things out with the taxi driver, no gestures.</p>
+    <p class="ps">PS: even with your partner&#39;s family who don&#39;t speak a word of yours 😄</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/jp/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

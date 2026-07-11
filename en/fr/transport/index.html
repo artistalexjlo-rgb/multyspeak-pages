@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>France: Transport — real experience · Luky</title>
+<meta name="description" content="Real experience from chats about Transport in France: as it is, first-hand. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/fr/transport/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/fr/transport/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/fr/transport/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/fr/transport/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/fr/transport/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/fr/">France</a> /
+    <b>Transport</b>
+  </nav>
+
+
+  
+  <h1>Transport: how it works in France — first-hand</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of people from chats on «Transport» in France — as it is, no fluff. For your case — <strong>ask Luky</strong>.</div></div>
+
+  <h2>From real experience</h2>
+  <ul class="qlist">
+    <li>Internal Schengen borders are subject to sporadic, non-systematic checks. Authorities (Police aux Frontières in France or Bundespolizei in Germany) frequently perform document verifications on trains and flights. Travelers should always carry a passport and visa, and be prepared for potential questioning regarding stay duration and onward travel plans even within the Schengen area.</li>
+    <li>Late night transfer from Orly Airport to Alesia: 1. Public transport: Shuttle to Antony -&gt; RER B to Denfert-Rochereau -&gt; Metro Line 4 to Alésia (approx. 60 mins). 2. Rideshare (Bolt/Uber): Recommended for convenience, especially with luggage. Estimated cost is comparable to public transport for multiple passengers.</li>
+    <li>Travel within the Schengen Area (e.g., France to Switzerland and back to France) on a single-entry French Schengen visa is permitted, provided the total duration does not exceed the visa validity and the primary destination remains France. Movement between Schengen countries does not constitute a visa violation as there are no internal border passport controls in the same manner as external borders.</li>
+    <li>Air France is strictly enforcing hand luggage weight and size limits, including backpacks. A passenger reported being charged 80 euros for 3 kg of excess hand luggage. Online check-in does not exempt passengers from these checks. Be prepared for thorough inspections at the gate.</li>
+    <li>When planning a travel itinerary for France, consider the duration of stay in each city. For instance, a 10-day stay in Paris and 8 days in Nice might be balanced, but adding a third city depends on personal preference. Some suggest that 3 days in Nice is sufficient, allowing time for exploring surrounding areas. It is crucial to accurately represent your travel plans to avoid suspicion from consular officials. Overly elaborate or fabricated itineraries increase the risk of errors. Focus on the genuine purpose of your trip and avoid disguising private visits as tourism.</li>
+    <li>For Russian citizens traveling to France with a Schengen visa: Flights via Turkey (e.g., Istanbul) are generally straightforward. Upon arrival in France from a transit country like Turkey, border control primarily focuses on your valid Schengen visa and entry requirements for France. Previous transit points or your departure country are usually not scrutinized. Avoiding transit through Poland is advisable due to potential issues for Russian citizens. Flights like Moscow-Doha-Paris and returning from Nice via Doha are viable options. When traveling within the Schengen area, be aware that passport and visa checks can occur, especially during inter-country transport (e.g., buses) or at airports. Maintain copies of accommodation bookings, particularly if your intended stay in France is longer than in other Schengen countries, as this is a key factor for visa compliance.</li>
+    <li>Cash is widely accepted in France, though having coins is essential for public transport ticket machines (e.g., tram stops in Nice). While credit cards are recommended for convenience, cash remains a viable alternative for tourists.</li>
+    <li>To travel from Nice to Saint-Tropez in France, the most cost-effective method involves taking a train to Saint-Raphaël and then transferring to a bus. This route is recommended for budget-conscious travelers. Additionally, day trips from Nice to various coastal towns, including Saint-Tropez, are feasible, with three days potentially being sufficient for Saint-Tropez itself, allowing for exploration of other nearby locations.</li>
+    <li>Border control entry requirements for France (Schengen) are inconsistent. While French border police may not always request proof of accommodation or return tickets, airlines (Turkish Airlines, etc.) frequently perform document checks during boarding. Travelers should carry proof of stay and a return ticket to avoid boarding denial.</li>
+    <li>When renting a car from Sixt in France, confirm if a physical credit card in the renter&#39;s name is mandatory, especially if using a card belonging to someone else or a virtual card. Inquire about specific requirements for additional drivers and payment methods.</li>
+    <li>When choosing an airport for Paris, consider Beauvais (BVA), Orly (ORY), and Charles de Gaulle (CDG). Beauvais can be a budget option with bus transfers. Orly offers good connectivity via metro and tram. Booking flights as a single itinerary is recommended for seamless connections in case of delays. Airlines like Turkish Airlines offer good service and comfortable layovers. For shorter layovers, consider flights via Sabiha Gökçen Airport (SAW).</li>
+    <li>When holding a Schengen visa issued by France, traveling to Germany for the majority of the trip after initial entry into France is generally permissible under Schengen rules, provided France remains either the country of primary intended stay or the first point of entry if the main destination is unclear. Travelers should be prepared to demonstrate their itinerary and bookings (e.g., return tickets, hotel reservations for France confirming longer or initial stay), even if these documents are not always requested during internal Schengen border checks. Confidence and preparedness are key.</li>
+    <li>A couple visiting Paris is urgently seeking someone flying from Moscow to Paris within the next 4 days to transport a Russian driver&#39;s license. They can arrange for the license to be sent via courier in Moscow and collected in Paris at a convenient location. They are hoping to receive it by the 15th to facilitate car rental for their trip, including a planned visit to Normandy. They offer a bottle of wine or cognac as a thank you.</li>
+    <li>TravelAsk offers expert services for purchasing tickets to global events (concerts, sports, attractions) and arranging individual transfers. Ticket services cover complex purchases requiring local platforms, foreign phone numbers, fan clubs, or knowledge of local entry rules, including reselling if plans change. Transfer services include economy, comfort, business, premium classes, minivans, and buses, with guaranteed comfortable and punctual service. Yacht excursions can also be organized. Contact is available via private messages with the respective experts.</li>
+    <li>Airport security regulations for hand luggage restrict liquid containers to a maximum of 100ml. A 200ml container, even if unopened, will be confiscated at security checkpoints at airports like Beauvais-Tillé (BVA).</li>
+    <li>For driving in France with a Russian Federation license: While international driving permits (IDP) are often recommended, driving with a standard Russian Federation driving license for rental cars in France is possible, particularly with companies like SIXT. Ensure your Russian license is valid and in Latin script. Some rental agencies may require a translation or an IDP, so it&#39;s best to confirm directly with the rental company at the time of booking. Be aware that driving regulations and road rules in France must be strictly followed. For excursions like day trips from Paris to Étretat and Mont Saint-Michel, having a valid Russian license should suffice for rental car purposes, but always verify with the specific rental agency.</li>
+    <li>The most common route from Paris to Mont Saint-Michel is by taking a TGV train from Gare Montparnasse to Rennes. From Rennes train station, there are shuttle buses available to Mont Saint-Michel.</li>
+    <li>When traveling with a French visa valid for 30 days, departing on the last day (August 6th) is permissible until 23:59, provided the flight departs within the visa validity period. Flight delays are generally managed by immigration authorities as long as the border is crossed before the visa expires. It is crucial to be truthful about your itinerary, including stays in other Schengen countries like Germany and Spain. Presenting a potentially &#39;suspicious&#39; multi-country itinerary without clear intent might raise questions or lead to scrutiny at border control, as airlines and immigration officials may be cautious about individuals suspected of migration intent. Adhering strictly to the visa conditions and providing accurate information is the safest approach to avoid entry denial or deportation.</li>
+    <li>Transavia France typically allows personal items like backpacks or laptop bags in addition to standard cabin baggage for economy class passengers. While policies can change, in the past, passengers have successfully carried various types of bags, including backpacks, as hand luggage without issues. It&#39;s advisable to check the most current baggage allowance directly with Transavia France before traveling.</li>
+    <li>At Lyon–Saint-Exupéry Airport (LYS), for flights departing from the Schengen area to non-Schengen destinations (e.g., Istanbul), passport control is typically located just before the boarding gate. This means passengers cannot clear immigration in advance to access lounges or wait in a general seating area. Passengers will need to wait for the gate to be announced, proceed to the designated passport control area, and then wait near the gate for boarding. This procedure is common in airports with fewer non-Schengen departures.</li>
+    <li>User arriving in Marseille plans to stay for no more than 2 days before traveling to Nice. Seeking recommendations for places to stay en route, information on purchasing train tickets locally, and advice on whether renting a car is necessary to see the most scenic spots.</li>
+    <li>Le Havre serves as a cost-effective base for exploring Normandy coastal towns like Étretat and Fécamp. Public bus connections run hourly, with transit times around 60 minutes. Google Maps is recommended for real-time transit schedules. Luggage lockers are usually available at major train stations like Rouen, though availability should be verified on regional rail websites.</li>
+    <li>Passport control times at Charles de Gaulle (CDG) airport are highly variable. Processing time ranges from 5 minutes to over 60 minutes depending on peak flight arrivals and staffing levels at border control booths. Travelers should allow for at least 1.5–2 hours between flights.</li>
+    <li>A user&#39;s son was flying from Moscow to Paris via Istanbul with Turkish Airlines and was initially denied a boarding pass for his connecting flight. Upon approaching the airline&#39;s counter (not the check-in desk), they contacted Istanbul and successfully arranged a boarding pass.</li>
+    <li>Metro tickets in Paris cost approximately €2.50 for a single ride, but this fare does not typically cover travel to Charles de Gaulle Airport (CDG) or Disneyland. For these destinations, separate tickets or passes are required. Ride-sharing services like Bolt can be more economical than the RER for journeys to CDG, especially for groups, with costs around €32 compared to €13 per person for the RER. Purchasing a travel pass may be beneficial for frequent use within Paris, depending on the duration and extent of travel.</li>
+    <li>A &#39;citation&#39; charge after renting a car in France typically refers to a fine or administrative fee resulting from a traffic violation. The rental company may have processed your data to forward to the police. If you are unsure about the reason for the citation or believe it&#39;s an error, contact the car rental company for clarification.</li>
+    <li>While intra-Schengen travel typically doesn&#39;t involve passport control, travelers may occasionally encounter checks by border guards. A specific instance involved passengers on a flight from Barcelona (Spain) to Nice (France) being subjected to passport and visa checks upon arrival. This is not a common occurrence but can happen, and travelers should ensure their Schengen visa is valid.</li>
+    <li>When flying with Russian airlines like Transavia, consider whether you will transit through the airport or exit with hand luggage. It is generally possible to obtain a boarding pass from Transavia if a seat is purchased. There are concerns about potential entry restrictions for Russians into EU countries, which might influence exit routes in the future, potentially requiring travelers to use the same routes for departure as they did for entry.</li>
+    <li>Purchasing tickets for Disneyland Paris often involves considering timing for better prices. While Disneyland does not typically offer significant discounts outside of special promotions:
+1.  **Off-Peak Seasons:** Prices can be lower during off-peak seasons. November is often cited as a month with potentially lower ticket prices compared to peak summer months or holidays.
+2.  **Official Channels:** It is safest to purchase tickets directly from the official Disneyland Paris website or authorized ticket resellers. Be wary of unofficial sites offering heavily discounted tickets, as they may be scams.
+3.  **No Immediate Discounts:** For immediate travel needs during high season, expect to pay the standard ticket price. Disneyland has consistent demand throughout the year, so deep discounts for last-minute purchases are rare.
+4.  **Ticket Types:** Different ticket options exist (e.g., 1 Park vs. 2 Parks, number of days). Choose the one that best suits your visit duration and plans.
+
+For the cheapest options, planning travel during off-peak periods like November is advisable. For immediate travel, purchasing through official channels at the standard rate is the most secure approach.</li>
+    <li>To reduce train travel costs between France and Switzerland (e.g., Paris to Lausanne on TGV Lyria): 1) Search via aggregators like Trip.com for cheaper morning slots. 2) Check BlaBlaCar for ridesharing options, especially on weekends. 3) Purchase an SNCF discount card (Carte Avantage) on the SNCF website (often discounted to €30-49), which provides significant discounts on regional and high-speed trains.</li>
+    <li>A Navigo Jour pass is not suitable for airport to city travel on RER B to Gare de Lyon as it does not include the &#39;ticket aéroport&#39;. For a single journey from CDG airport to Gare de Lyon with transfers, a &#39;ticket aéroport 14&#39; loaded onto a Navigo Easy card is recommended, costing approximately €16. This ticket covers the RER and subsequent metro/bus transfers within Paris. For groups of more than two, a taxi might be comparable in price.</li>
+    <li>When looking for transportation from Charles de Gaulle Airport (CDG) in Paris, Bolt is a potential taxi service option that users consider for their transfers.</li>
+    <li>When traveling with OUIGO on high-speed trains (e.g., Paris to Bordeaux), seat and carriage information is typically provided via a QR code sent by email approximately 4 days before departure. If your ticket does not initially display this information, expect to receive it via email.</li>
+    <li>User has a 5-hour layover in Paris with arrival at Beauvais Airport (BVA) and departure from Charles de Gaulle Airport (CDG). Needs to know if the transfer is feasible and how to get from BVA to CDG, considering a non-native French speaker. Recommendations for transport options and time management are required.</li>
+    <li>When planning a trip to France and Italy and applying for a visa through France (which may not require flight tickets for application), it is advisable to include Italy in your application forms and itinerary. Clearly outlining all planned destinations, including Italy, demonstrates transparency and helps visa officers understand your travel plans, potentially avoiding issues at the border or during the visa application process.</li>
+    <li>When renting a car in France with companies like SIXT, it is typically required that the name on the credit card used for payment matches the name of the primary driver. This is a standard security measure to prevent fraud.</li>
+    <li>Late-night transport from Gare de Lyon in Paris (around 22:30-23:00) is generally safe. The Paris Metro operates comfortably until about 01:00 AM and is considered a safe and viable option. Taxis are available but metro is a common and secure alternative.</li>
+    <li>French Schengen visa application requires a route itinerary instead of confirmed flight tickets. VFS Global slots are released in bulk once per month and are booked very quickly. Total costs are approximately 15,000 RUB, including service fees (3,390 RUB) and consular fees. Online registration often faces OTP code delivery issues.</li>
+    <li>Car rental agencies in France generally require physical credit or debit cards for security deposits. Virtual cards are often rejected. When booking via aggregators like DiscoverCars, filter for &#39;debit card only&#39; options. Verify the specific bank and card issuer (BIN) to ensure compatibility with European POS terminals, as some CIS-issued cards may be flagged.</li>
+    <li>When traveling by train in France (SNCF), the difference between TGV (high-speed) and TER (regional) is often negligible on short routes. Discounted tickets via SNCF Connect are frequently train-specific, whereas standard tickets may be flexible for the entire day. Check fare conditions before purchase.</li>
+    <li>Recent experience at Paris Orly (ORY) airport indicates fast processing times (e.g., 20 minutes for border control). The EES (Entry/Exit System) demonstrated varied functionality for different individuals, sometimes skipping steps. Travelers reported being asked only for their return flight date to Russia, with no requests for booking confirmations. Seven EES kiosks were operational. Backpacks on a Transavia flight from Istanbul to Paris Orly were not weighed.</li>
+    <li>When booking flights, especially with airlines like Turkish Airlines, there&#39;s a possibility of being asked to present the credit card used for the booking at check-in if the name on the card does not match the name on the booking. This is a fraud prevention measure. If the ticket was purchased by a third party (e.g., as a gift), it&#39;s advisable to check with the airline beforehand or ensure you have supporting documents like an invitation letter or proof of accommodation. While not all airlines or check-ins enforce this, it&#39;s a known practice that can cause issues if not prepared.</li>
+    <li>For travel from Paris to Le Havre, train tickets via SNCF Connect app can be found for around €30.80 with a transfer, compared to €44 for a direct route. FlixBus is often a cheaper alternative for bus travel, though services might be more frequent at night.</li>
+    <li>When paying for fuel at French gas stations using a card, be aware that a temporary deposit (e.g., 100-150 EUR) may be pre-authorized on your card. This amount is usually released within a few days after the actual fuel cost is deducted, but delays can occur. Using cards like Revolut might result in faster deposit release.</li>
+    <li>If transferring from Paris Charles de Gaulle (CDG) airport to a high-speed train to Brussels, one hour is generally sufficient, provided there are no flight delays, passport control is processed quickly, and you are traveling with minimal luggage.</li>
+    <li>When crossing the border into France on a visa as a family member of an EU citizen, there might be specific questions at border control related to the nature of the relationship and the visa type. It&#39;s advisable to have all relevant documentation (marriage certificate, proof of relationship, etc.) readily available.</li>
+    <li>When using FlixBus, particularly for routes from the airport to a hotel, cash payment on the bus is generally not accepted. It is advisable to purchase tickets in advance. Information regarding the availability of ticket vending machines should be verified.</li>
+    <li>Ride-sharing services like Uber and Bolt are available and functional in France. They often offer discounts on initial rides. Registration for Uber may primarily require a phone number, not necessarily an international bank card. Cash payment is often an option, providing flexibility for users who prefer not to link foreign bank accounts.</li>
+    <li>User inquires about the possibility of staying overnight at Orly Airport (ORY) for a morning flight at 8:45 AM with Transavia. Confirmation needed on whether overnight stays are permitted and any associated procedures or restrictions.</li>
+    <li>Beauvais Airport (BVA) is located about 85 km from Paris. The most economical way to reach the city is by bus. Train travel is also an option but involves a change. Taxi services from Beauvais to Paris are expensive, potentially costing around 100 EUR. Night transfer options should be confirmed in advance.</li>
+    <li>Renting a car in Paris for travel to Barcelona without a bank card, especially for same-day departure and one-way drop-off, is highly challenging and likely impossible through standard rental agencies like SIXT. Most companies require a credit card for a security deposit, and specific policies govern one-way rentals which often incur significant fees. Alternative travel options, such as booking flights (e.g., Vueling) or train tickets, should be prioritized. If car rental is essential, exploring options that allow cash payment or alternative card types might be necessary, but success is not guaranteed and requires extensive research and potentially direct negotiation with rental companies.</li>
+    <li>A Schengen visa allows free movement within all Schengen Area countries, regardless of which country issued the visa. There is no requirement to exit the Schengen Area through the country that issued the visa.</li>
+    <li>Car rental in France (including CDG airport) with a debit card instead of a credit card is possible. Providers like Sixt and Goldcar accept debit cards. Opting for full insurance (maximum package) with Goldcar reduces the security deposit to around €120. Users can filter debit card acceptance on aggregators like Discover Cars before booking directly with the rental company.</li>
+    <li>Paris-Beauvais (BVA) is the furthest airport from Paris city center. The most common and reliable transport method is the airport shuttle bus, which drops passengers off at a designated location (usually Porte Maillot), providing direct access to the Paris Metro network.</li>
+    <li>When flying FlyOne from Moscow to Paris via Yerevan, be aware of potential delays on the Moscow leg. In cases of missed connections due to delays, FlyOne has been observed to re-accommodate passengers on a subsequent flight to Paris, even if it results in a delay (e.g., 3 hours). The airline may use its own later flight or an additional flight with available seats. This suggests that the airline attempts to resolve missed connection issues due to its own delays.</li>
+    <li>The cost of a single metro ticket in Paris is approximately €2.50. This ticket type generally does not cover travel to Charles de Gaulle Airport (CDG) or Disneyland, which require separate fares or specific passes. For journeys to CDG, especially for groups, taxis or ride-sharing services like Bolt (around €32 in previous instances) can be more cost-effective than the RER (€13 per person). Purchasing a travel pass might be more economical depending on the frequency and extent of travel within Paris.</li>
+    <li>Extreme heat is forecast for Paris, with daytime temperatures potentially reaching 40°C. Travelers are advised to wear appropriate clothing, headwear, and limit outdoor activities after 1 PM. Public transport may experience disruptions due to overheating, with non-functional air conditioning being a common issue during hot weather. Summer maintenance work can also impact services.</li>
+    <li>The estimated cost for an Uber from Beauvais Airport (BVA) to Paris is &#39;from 100 euros&#39;. For Disneyland Paris, it might be slightly higher. Bolt ride-sharing service is a potentially cheaper alternative, with reported fares of 80-90 euros for a similar route. Public buses are also an option.</li>
+    <li>To travel from Orly Airport to Nogent-sur-Marne, use Metro Line 14 to Gare de Lyon, then transfer to RER A, specifically the Boissy-Saint-Léger branch. Avoid the Marne-la-Vallée branch.</li>
+    <li>If you are having trouble registering for the Velib&#39; bicycle rental service in Paris via the app, potential issues could include phone settings, VPN usage, or temporary server problems. Try again later or seek support from the Velib&#39; service for troubleshooting assistance.</li>
+    <li>When applying for a Schengen visa from a country other than your country of residence (e.g., applying for a French visa from the UK), applicants need to demonstrate sufficient financial means. The specific amount required can vary, but a general guideline is to show funds that cover accommodation, daily expenses, and potential return travel. For a one-week trip, this typically means having enough to cover estimated daily costs, which can range from €65 to €120 per day, depending on the country and accommodation type. It&#39;s also advisable to have proof of onward or return travel, although some visa applications might be processed without pre-booked tickets, provided the itinerary is well-justified.</li>
+    <li>For road trips in France, consider opting for full insurance coverage due to narrow parking facilities. Toll roads can be tracked via GPS navigation and paid online via platforms like sanef.org using the vehicle&#39;s license plate number. Accommodations with dedicated parking are highly recommended in rural or scenic regions.</li>
+    <li>When booking flights from Moscow to Paris with children and requiring a layover, consider the following: For a single ticket, airlines are typically responsible for providing accommodation and meals if a connecting flight is missed due to delays, especially if the next available flight is the following day. Airlines like Ajet/Pegasus with layovers in Istanbul are options, but be aware of potential delays. If a layover is missed due to airline-related issues, the airline should rebook you on the next available flight, potentially to a different airline, and cover necessary expenses. Booking a single, integrated ticket is generally recommended to ensure the airline handles rebooking and accommodation in case of missed connections. Azal via Baku and Turkish Airlines are also suggested for families due to in-flight amenities like meals.</li>
+    <li>Car rental requirements in France: Russian domestic driver&#39;s licenses (which contain English text) are generally accepted by major agencies like Hertz. International Driving Permits are typically only required if the license is in a language without Latin characters. Crucially, the credit card for booking, payment, and the security deposit must be issued in the name of the primary driver; third-party cards are not accepted.</li>
+    <li>Russian citizens seeking transit through France without a visa must ensure their itinerary is logical and does not arouse suspicion of migration intent. While a direct flight connection may technically be considered transit, airlines and border officials may scrutinize unusual routes (e.g., Istanbul-Paris-Ankara) or those that appear designed to circumvent immigration requirements. It is advisable to choose destinations that logically follow from Paris, such as other visa-free countries in Africa or South America. Russian citizens have faced increased scrutiny and potential denial of boarding on flights to certain destinations due to migration concerns. Seeking asylum at the border might be a possibility, but the process and feasibility depend on specific circumstances and border official discretion. It is crucial to verify airline policies and transit visa requirements for all segments of the journey.</li>
+    <li>Passport control at Nice Côte d&#39;Azur Airport (NCE) can experience delays up to 2.5 hours. Passengers holding biometric passports without minors can use automated PARAFE gates to significantly reduce wait times. Minors, regardless of passport type, must be processed manually by border officers.</li>
+    <li>The Navigo weekly pass is valid exclusively within the Île-de-France region (Paris and suburbs). It does not cover long-distance travel to cities like Lyon or Rouen. Towns such as Chatou are included as they fall within the Île-de-France department of Yvelines.</li>
+    <li>Inquire about the current availability of shuttle buses connecting Étretat to Honfleur and Le Havre in France. Confirm the operating schedule and any potential routes.</li>
+    <li>When arriving at Paris Charles de Gaulle Airport (CDG) for onward travel, especially to destinations like Etretat, consider renting a car or arranging a ride immediately upon arrival. While 3 hours might suffice for departure, queues at passport control can cause delays, with some travelers needing 4.5 hours. Russian passports are processed, but it&#39;s wise to allocate extra time.</li>
+    <li>When arriving at Gare de Lyon in Paris and needing transportation, several options are available:
+
+1.  **Official Taxi Ranks:** Gare de Lyon has designated taxi stands where authorized taxis are available. Taxis often drive directly to the station entrance.
+2.  **Ride-Sharing Apps (Uber/Bolt):** These services are generally available and often more cost-effective than traditional taxis. Check their respective apps for real-time pricing and availability. They operate throughout Paris, including late at night.
+3.  **G7 Taxis:** G7 is a prominent French taxi company. However, some users have reported issues with app registration, such as not receiving confirmation codes. If you can register, they are a reliable option.
+4.  **Public Transport (Metro):** While potentially the cheapest option, the Paris Metro might seem daunting for a first-time solo traveler arriving late. However, it is generally safe and efficient. The last trains run until around 12:45 AM on weekdays and 1:45 AM on weekends.
+
+**Recommendation:** For late-night arrivals, especially if unfamiliar with the city, using a ride-sharing app (Uber/Bolt) or heading to the official taxi rank at Gare de Lyon are convenient and reliable choices. Checking app prices beforehand is advised.</li>
+    <li>Navigo transport cards in France require a physical photo for weekly or longer passes. Users can attach a passport-style photo or a photocopy of an ID document. Navigo Easy passes do not require a photograph.</li>
+    <li>At Lyon Airport (LYS), travelers passing through security checks may be asked to remove all cosmetic bags and liquids from their hand luggage. It is advisable to pack these items in an easily accessible manner to facilitate quick removal during inspection.</li>
+    <li>A day trip from Paris to Luxembourg by TGV train is feasible, taking approximately 3 hours one way. Combining this with a trip to Cologne on the same day is challenging due to travel time. For multi-modal route planning, resources like Rome2Rio can be useful.</li>
+    <li>VFS Global France is experiencing severe technical instability, including registration failures and missing OTP codes. Current visa processing times average over 30 days. It is strongly advised not to purchase non-refundable travel tickets before confirming a visa application slot.</li>
+    <li>When flying Transavia from Istanbul to Paris, it is generally not mandatory to print your boarding pass, as tickets are purchased with passenger names and passport details are entered manually before check-in. However, it is advisable to have printed documents as a backup. Registration is mandatory.</li>
+    <li>For short stays in Lyon (e.g., 2 days) and without planning museum visits, a 48-hour public transport pass may be available. Such passes can typically be purchased from vending machines using a bank card, or at official public transport company sales points (e.g., near Jene Mace metro station) if paying with cash. It&#39;s recommended to confirm current pass options and purchasing locations upon arrival.</li>
+    <li>It is permissible to travel from Nice to Monaco and back on a single-entry Schengen visa. Monaco, despite being a separate principality, is closely integrated with France and operates within the Schengen Area. Therefore, such a round trip does not constitute exiting the Schengen Zone, provided the visa remains valid.</li>
+    <li>Beauvais-Tillé (BVA) is a small airport serving budget airlines. Transfers to Paris (Porte Maillot) take approximately 1.5 hours by shuttle bus. Security checks are strict regarding liquids; carry-on liquids must be in clear zip-lock bags to avoid manual inspection or unpacking.</li>
+    <li>For holders of a Finnish residence permit planning to travel to France: A short-term Schengen visa (Type C) with a valid Finnish residence permit allows travel within Schengen countries for 90/180 days without needing a separate visa, provided the permit remains valid upon return to Finland. If you intend to change residency and your current permit is expiring, you may apply for a French D visa before its expiration. The primary rule for visa applications is to spend the majority of your stay in the country that issued the visa (in this case, France). While there are no internal border controls within the Schengen area, travel can be tracked through flight tickets, hotel bookings, and potential checks at borders or during transport. The issuing country may request proof of proper use of a previous visa upon subsequent applications. Currently, France does not meticulously verify internal travel routes as strictly as some other countries (like Hungary previously did). However, border checks can occur, and you should be prepared to demonstrate your travel intentions and accommodation bookings.</li>
+    <li>Children studying in France on a student visa, attending boarding school, can generally travel to Russia for holidays. Restrictions are not typically imposed on such travel for the duration of the visa. It&#39;s advisable to coordinate with the educational institution and arrange for a legal guardian in France if parents are unable to handle travel arrangements personally. A contract with the guardian will be necessary.</li>
+    <li>Border checks between Italy and France (both Schengen Area countries) are not systematic but can occur. While routine passport or document checks are rare due to the open borders of the Schengen Area, authorities may conduct random checks or checks at specific locations or times, especially if there are security concerns or during increased border surveillance periods.</li>
+    <li>An arrival at Paris CDG airport at 7:30 AM followed by a train departure from Paris Gare du Nord at 9:24 AM is a very tight connection. Numerous factors can cause delays, including flight delays, long queues at passport control, baggage claim, and travel time from CDG to Gare du Nord (e.g., via RER B). It is highly recommended to purchase any available &#39;fast-track&#39; services in advance rather than on arrival. Travelers should account for potential unforeseen variables and consider allowing more time or re-scheduling connections.</li>
+    <li>When purchasing train tickets in France, specifically for travel to places like Le Havre from Paris, there might be different fare options, including a youth fare for individuals under 26. It&#39;s important to clarify whether this youth fare is exclusive to French citizens or available to all travelers under the age limit.</li>
+    <li>Travelers in France can navigate airports using offline translators and English signage. Most major transport hubs and kiosks (like McDonald&#39;s) provide multi-language support, including Russian. Using 3D Street View in Google Maps prior to arrival is an effective method for pre-visualizing exits, transport connections, and complex pedestrian paths.</li>
+    <li>When flying from Charles de Gaulle (CDG) airport, check your boarding pass for the terminal number. The airport&#39;s official website should also provide this information. For flights to destinations like Yerevan, Terminal 1 is often used, sometimes requiring a shuttle transfer from Terminal 3.</li>
+    <li>The Gare TGV station at Charles de Gaulle Airport (CDG) is located between terminals 2C-2D and 2E-2F. Look for the &#39;Gare TGV&#39; signage. Downloading an airport map beforehand can help with navigation.</li>
+    <li>Traveling from France to Bulgaria with a single-entry French visa and transiting through a non-Schengen country like Istanbul is problematic. Upon departure from Schengen (France), the single-entry visa is considered used. Authorities in transit hubs like Istanbul may deny boarding. It is advised to book flights with connections within the Schengen area (e.g., via Munich) to avoid issues with a single-entry visa.</li>
+    <li>Inquire about convenient travel passes in Paris, such as unlimited transport options for a 2-day period. Common passes include Navigo Découverte (weekly/monthly), Paris Visite (tourist pass), and Mobilis (day ticket). Specific duration passes may vary in availability and price.</li>
+    <li>When renting a car in Paris, inquire about their policies regarding international driving permits (IDP). While some rental companies may accept Russian domestic driving licenses, others might require an IDP. Additionally, explore rental services that do not require a credit card for booking, as this is a common requirement. Research different rental agencies and their specific terms and conditions to find a suitable option.</li>
+  </ul>
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/fr/documents-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documents &amp; Visa</span></a>
+    <a class="chip" href="/en/fr/sim-internet/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>📶 SIM &amp; Internet</span></a>
+    <a class="chip" href="/en/fr/banking-money/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Banking &amp; Money</span></a>
+    <a class="chip" href="/en/fr/tickets-entertainment/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🎟 Tickets &amp; Entertainment</span></a>
+    <a class="chip" href="/en/fr/shopping/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛒 Shopping</span></a>
+    <a class="chip" href="/en/fr/safety/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛡 Safety</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Still don&#39;t know what to do in your case?</h2>
+    <p>Ask Luky — talks like someone just back from there — no fluff.</p>
+    <p>And Luky is a live voice translator for real conversations: chat in the lobby with travellers from other countries.</p>
+    <p class="ps">PS: even with your partner&#39;s family who don&#39;t speak a word of yours 😄</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/fr/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

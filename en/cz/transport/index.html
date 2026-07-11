@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Czechia: Transport — real experience · Luky</title>
+<meta name="description" content="Real experience from chats about Transport in Czechia: as it is, first-hand. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/cz/transport/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/cz/transport/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/cz/transport/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/cz/transport/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/cz/transport/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/cz/">Czechia</a> /
+    <b>Transport</b>
+  </nav>
+
+
+  
+  <h1>Transport in Czechia: real experience from chats</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of people from chats on «Transport» in Czechia — as it is, no fluff. For your case — <strong>ask Luky</strong>.</div></div>
+
+  <h2>From real experience</h2>
+  <ul class="qlist">
+    <li>When traveling by train from Poland to Czechia, there is always a possibility of document checks, despite both countries being part of the Schengen Area. Travelers should always carry their valid identification documents.</li>
+    <li>Schengen visas are generally not annulled upon exit from Prague if the initial entry was for tourism and all visa conditions were met. The system for exit checks can sometimes be inconsistent, with border officials occasionally having difficulty accessing or interpreting data, even for individuals with valid visas and entry stamps. Having a valid multi-entry Schengen visa allows travel to various destinations. For future visa applications, especially for longer-term visas, demonstrating a pattern of travel to the issuing country might be beneficial, though not always a strict requirement for exit. Ensure all travel documentation is in order and complies with Schengen regulations.</li>
+    <li>To travel to Brno, Czech Republic, from Russia without a Schengen visa, consider obtaining one from neighboring countries. Options mentioned include Hungary, Spain, and France. It&#39;s advisable to check visa application requirements and availability on forums like &#39;Vinsky Forum&#39;. Ensure your passport is biometric and be aware of potential age restrictions for visa applications. Direct travel to Slovakia or Austria for visa purposes might be difficult as they reportedly do not issue tourist visas currently. Always verify the latest visa regulations and travel advisories.</li>
+    <li>When booking flights with separate tickets, be aware that airlines are not obligated to rebook you on a later flight if you miss your connection due to a delay on the first flight. It is advisable to allow ample layover time (6-8 hours or more) or consider an overnight stay if the layover is short. Research potential costs of accommodation and transportation to compare with the expense of a longer layover. Some airports offer capsule hotels for short stays. For budget travelers, sleeping in &#39;silent zones&#39; with a sleeping mat is an option, though not recommended for comfort or security.</li>
+    <li>When looking for car repair shops (autoservis) in Czechia, rely on Google Maps ratings (&#39;hodnocení&#39;) rather than language proficiency. Use Google Translate for communication if necessary. Specific shops like &#39;Tex-As&#39; are occasionally recommended in expat communities for general repairs.</li>
+    <li>When traveling by train from Prague to Vienna (within the Schengen Area), there are no document or ticket checks upon boarding. Conductors check tickets during the journey. While border controls by Austrian police are possible, they are typically selective and aimed at identifying illegal migrants, not at general travelers with valid Schengen visas. Concerns about being denied boarding for Russian citizens with valid Schengen visas are largely unfounded.</li>
+    <li>Travel from Budapest to Berlin: Avoid tight connections (e.g., 8 minutes) in Prague due to frequent delays. Recommended booking site: mavcsoport.hu. Direct trains are available starting from 59 EUR. Night trains are often significantly more expensive than day trains or buses. Budget airlines are generally faster and cost-efficient, even when adding baggage fees (approx. 19 EUR per piece).</li>
+    <li>A Russian citizen residing in Czechia (arrival in late 2024) was detained at Prague airport while attempting to depart for Turkey and then Russia. The individual was stopped by migration services, had their phone confiscated, and was held for two days. The exact grounds for detention were unclear, with initial speculation pointing to illegal stay or work, as Russian citizens have been unable to obtain work visas since 2022 and the individual&#39;s stay began after this restriction. Despite the individual&#39;s claim of legal stay (possibly on a visa or residence permit, though specifics were debated), it was discovered that the documentation for his departure had been lost in the system. The individual was eventually released after his departure documents were reprocessed. This case highlights potential issues with documentation processing, communication breakdowns with authorities, and the challenges faced by foreign nationals in navigating migration procedures, especially when language barriers exist.</li>
+    <li>For family-friendly beach/lake recreation near Prague with public transport access:
+*   **Žluté lázně**: Located directly in Prague on the Vltava River (Podolské nábř. 3/1184, 140 00 Praha 4-Podolí). Accessible by tram. Offers a sandy beach, grass, volleyball, table tennis, food facilities, kayaks, and pedal boats. Entrance is typically paid until 17:00, then free, but queues can form. It&#39;s a city beach, not a natural getaway.
+*   **Slapy**: A reservoir considered the closest option for a more natural setting with accommodation possibilities.
+*   **Machovo Jezero** (Macha Lake) and **Lipno** are further options, but less convenient for short trips by public transport from Prague.</li>
+    <li>When flying from Prague to Istanbul with items purchased for over 1000 EUR, especially in hand luggage: While tax-free forms are not being processed, be aware that hand luggage undergoes screening. It&#39;s advisable to wear valuable jewelry on your person. If items are in a bag or backpack without tags or receipts, they are less likely to be flagged, provided they do not appear to be commercial goods. Avoid оформление tax-free claims to prevent drawing attention.</li>
+    <li>When traveling between Schengen countries via internal flights (e.g., from Amsterdam to Prague), passport control is typically not present. Travelers with biometric passports and standard Schengen visas (without specific restrictive country markings) should not expect border checks upon arrival in the Czech Republic from another Schengen state. The Czech Republic does not enforce systematic internal border controls. In the unlikely event of questioning, advise travelers to confirm their visa was obtained in the country where the longest stay occurred, or where the primary purpose of travel was focused, and to present consistent travel plans (e.g., hotel bookings, return tickets).</li>
+    <li>For seniors aged 60-65 in Prague, a discounted monthly transport pass (130 CZK) requires verification of age. This can be done via the PID Lítačka app by uploading a photo and validating the passport at an official DPP/PID kiosk. Alternatively, one can obtain a physical &#39;Průkazka&#39; (ID card with photo) to purchase paper coupons. Short-term/single discounted tickets can be purchased at ticket machines using a passport as proof of age.</li>
+    <li>To travel from the Fortuna Sports Arena area in Prague to Prague Airport (PRG) by public transport:
+1.  Use the PID Lítačka app or DPP Praha website to find the best route and schedule.
+2.  Take a tram to a Green Metro line (Line A) station such as Strašnická, Želivského, or Prosek.
+3.  Take the Green Metro line to Nádraží Veleslavín station.
+4.  From Nádraží Veleslavín, take trolleybus #59 directly to the airport.
+The total travel time is approximately one hour, but it can vary based on the time of day and whether it&#39;s a weekday or weekend.</li>
+    <li>In Brno, public transport tickets (jizdenku) can be purchased for 20 CZK near the main bus station, specifically by the Grand Hotel in the basement area near Billa. Similar purchasing points may exist near the central train station. This information is particularly relevant for short-distance travel, potentially by tram.</li>
+    <li>In Prague, if you require a designated driver service (e.g., a &#39;drunk driver&#39; service), look for specialized private services that offer transportation for individuals who are unable to drive themselves. It is advisable to pre-book such services or have contact information readily available.</li>
+    <li>Travel requirements to the Czech Republic (formerly Czechoslovakia) have varied significantly. During the Soviet era, travel was highly restricted, requiring official invitations and approval from both Soviet and Czechoslovak border authorities. Conversely, in the 1990s, specifically between 1996 and 1999, Russian citizens could enter the Czech Republic with only a passport and tickets, without a visa, for stays up to 30 days. It was also common practice to briefly exit to Slovakia and re-enter to reset the 30-day allowance.</li>
+    <li>Deviating from your declared travel itinerary when entering the Schengen area on a visa can have consequences. The Schengen Visa Code prohibits changing the stated route, which can be considered providing false information. This may lead to visa annulment and potential issues with future visa applications if detected. It is advisable to maintain original bookings and be aware of potential checks.</li>
+    <li>When traveling from the Czech Republic to Russia, vacuum-packed meat products (sausages) and cheese are permitted in checked baggage. However, soft cheeses like Hermelín are typically restricted in carry-on luggage due to consistency/liquid rules. Alcohol is allowed in checked baggage, subject to standard customs duty-free import limits (typically up to 1 liter per person).</li>
+    <li>For intercity public transport in Czechia:
+*   **Trains**: Tickets can be purchased via CD.CZ (Czech Railways website).
+*   **Long-distance Buses**: Flixbus is a common option.
+*   **Local/Suburban Buses (e.g., Prague-Kladno)**: Tickets can often be purchased directly from the driver onboard.
+*   **Universal Route Planner/Ticket Purchase**: The website/app IDOS.CZ is highly recommended. It allows users to plan routes, check schedules for both buses and trains, and purchase tickets online if supported by the specific carrier. Bolt typically functions well for ride-hailing services.</li>
+    <li>For short stays in Prague, purchasing individual 30 or 90-minute public transport tickets is often more economical than a weekly pass, especially if you do not plan extensive travel. Seniors over 60 can benefit from a discounted monthly pass, and children under 14 travel for free with proof of age.</li>
+    <li>Services are available for relocating pets to and from the Czech Republic. These services include providing a comprehensive guide to the required documentation for pets, assisting with flight selection and booking, offering recommendations on vaccinations, providing online support until arrival, and facilitating delivery via air or ground transport. For inquiries and personalized discussions regarding pet relocation, contact the service provider directly.</li>
+    <li>For luxury vehicle hire (Mercedes S-class/E-class) in Prague, using Google search or established rental agencies is more reliable than peer-to-peer requests.</li>
+    <li>When traveling by motorcycle to the Czech Republic, adhere strictly to traffic laws. While roads can be free for motorcyclists, local police are known to be vigilant about speed limits and other violations. Avoiding infractions generally prevents being stopped.</li>
+    <li>For a trip to Prague, a minimum of one day is suggested for a hurried tour, focusing on comfortable footwear. A more relaxed exploration can be comfortably covered in 2-3 days. Consider downloading an offline map for navigation and exploring local beer specialties along your sightseeing routes.</li>
+    <li>Foreign travel in the Czech Republic and transit through the Schengen Area requires a valid biometric passport. Internal passports are not recognized. Entry requirements vary significantly based on citizenship, legal status (tourist vs. refugee), and port of entry. Polish border control is noted for strict document enforcement for land-based entries into the Schengen zone.</li>
+    <li>To take an Uber from Prague Airport (PRG) to the city, follow the app&#39;s instructions for the pickup location. At Terminal 1, the designated meeting point is behind the bus stop. At Terminal 2, proceed to the second floor and look for the last exit. In some cases, Uber vehicles may be already waiting at the pickup zone, and you will need to provide a code to your driver to confirm your ride.</li>
+  </ul>
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/cz/documents-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documents &amp; Visa</span></a>
+    <a class="chip" href="/en/cz/tickets-entertainment/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🎟 Tickets &amp; Entertainment</span></a>
+    <a class="chip" href="/en/cz/shopping/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛒 Shopping</span></a>
+    <a class="chip" href="/en/cz/work-taxes/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💼 Work &amp; Taxes</span></a>
+    <a class="chip" href="/en/cz/safety/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛡 Safety</span></a>
+    <a class="chip" href="/en/cz/housing/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🏠 Housing</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Everywhere the same, but your case is special?</h2>
+    <p>Ask Luky — from people&#39;s recent experience, not from manuals.</p>
+    <p>And Luky is a live voice translator for real conversations: sort things out with the taxi driver, no gestures.</p>
+    <p class="ps">PS: meet someone at a bar who speaks another language</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/cz/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

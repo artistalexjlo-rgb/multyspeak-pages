@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Montenegro: Shopping — real experience · Luky</title>
+<meta name="description" content="Real experience from chats about Shopping in Montenegro: as it is, first-hand. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/me/shopping/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/me/shopping/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/me/shopping/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/me/shopping/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/me/shopping/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/me/">Montenegro</a> /
+    <b>Shopping</b>
+  </nav>
+
+
+  
+  <h1>Shopping in Montenegro: real experience from chats</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of people from chats on «Shopping» in Montenegro — as it is, no fluff. For your case — <strong>ask Luky</strong>.</div></div>
+
+  <h2>From real experience</h2>
+  <ul class="qlist">
+    <li>Cattle in Montenegro are often sourced from Serbia and Bosnia and Herzegovina. While specific breeds are not detailed, the prevalent meat products suggest a focus on beef cattle.</li>
+    <li>Podgorica is primarily an administrative center and lacks significant luxury shopping or high-end tourist infrastructure compared to coastal areas. Porto Montenegro in Tivat is considered the primary luxury destination in the country.</li>
+    <li>For a good selection of Rakija in Montenegro, check larger &#39;Voli&#39; supermarkets, as smaller branches have limited stock. &#39;Monte Fish Budva&#39; is also recommended for Rakija.</li>
+    <li>Individuals seeking air conditioning repair services in the Kotor area of Montenegro should inquire locally for recommended technicians or service providers.</li>
+    <li>For inexpensive sneakers in Bar or Budva, Montenegro, look in local &#39;Chinese stores&#39; (often selling a variety of goods at low prices). For example, one such store is located near the Tree Canne hotel in Budva.</li>
+    <li>Many meat products, including beef and pork, consumed in Montenegro are imported from Serbia. Specific national products like Pršut (dry-cured ham) may be produced locally, with some sources suggesting cultivation in Danilovgrad.</li>
+    <li>For electronics purchases in Budva, consider local Chinese stores and Jumbo. For specific brands like Asics, explore sports stores in Tivat, particularly within Delta City mall, which houses several large sports retailers.</li>
+    <li>Finding stores selling Russian books in Budva can be challenging. While dedicated Russian bookstores are rare, some larger shops or cultural centers might stock a selection. It is recommended to check popular bookstores or inquire at local cultural organizations. Alternatively, online retailers or book exchanges may offer options for purchasing Russian books.</li>
+    <li>Montenegro has a very limited selection of professional outdoor and trekking gear (such as high-quality hiking boots or specialized membrane apparel) due to high import duties and low local demand. Travelers requiring specialized gear should purchase it in EU countries like Italy, Germany, Austria, or Czech Republic before arriving.</li>
+    <li>Beach sunbed prices at premium hotels (e.g., Maestral, Przno) can reach 200 EUR per day to discourage non-guests. Public beaches provide free zones for towels. Buying personal beach equipment is often more economical than daily rentals in high-demand areas.</li>
+    <li>For transporting glass bottles (wine) in checked luggage, standard food wrap (cling film) applied in 10-15 layers provides sufficient protection against breakage.</li>
+    <li>Average daily food budget for 2 people in Montenegro is highly variable. Budget dining options: Pekara (bakery) for burek/pastries (3-5 EUR), local Konoba (small tavern) with daily specials (7-12 EUR per dish), or home cooking. Breakfast at home is significantly cheaper than cafe breakfasts. Tourist-heavy areas like Budva Old Town have significantly higher prices (pizza from 11 EUR, main dishes from 20 EUR). Grocery stores are closed on Sundays.</li>
+    <li>For local wines in Montenegro, try Vranac and Krstač, which are indigenous varieties. Rosé wines from local wineries like Vukmirovich are also available and can be pleasant. Serbian rakija might be preferred by some over Montenegrin versions. For beer, Nikšićko is a local specialty. Fruit cider is recommended as a refreshing option for hot evenings.</li>
+    <li>For affordable fishing gear in Dobrota, Montenegro, check the Chinese store &#39;Kineska robna kuca&#39; located next to the &#39;Dom Zdravlja&#39; (Health Center). It&#39;s situated on the same side of the road as the Dom Zdravlja, before reaching it when approaching from Dobrota towards the Old Town.</li>
+    <li>Used goods in Montenegro can be bought and sold primarily through Facebook groups such as &#39;Черногория барахолка&#39; (Montenegro Flea Market) and local city-specific groups. Specialized Telegram channels also exist for such transactions.</li>
+    <li>When choosing Vranac wine in Montenegro, consider that while many are similar, basic options around €3.5 may be considered unexceptional. Explore premium selections or seek local recommendations beyond entry-level wines.</li>
+    <li>In Tivat and surrounding areas of Montenegro, the &#39;MonteGO&#39; application is a functional taxi-ordering tool. While the interface is dated, it is reported to be effective. Always keep 50 EUR in cash for small vendors or emergency taxi situations where card payments might not be accepted.</li>
+    <li>For beaches near Kotor, consider Dobrota, Prčanj, and Orahovac. These areas offer options, though specific amenities like sunbeds and umbrellas may be primarily associated with hotels and come with higher prices for non-guests. Hotel-owned piers can also provide convenient access to the sea.</li>
+    <li>Explain tipping customs in Montenegro. Clarify whether tips are mandatory or customary, and mention the typical percentage expected. Advise that service charges might be included in the bill in some places, and user experiences vary across different cities like Podgorica.</li>
+    <li>Quality luggage can be purchased in Budva at the market near Hotel Cannes or in shops located near the Plaza shopping center (on the right side).</li>
+    <li>Budva&#39;s beaches, such as Mogren and Mogren 2, offer both paid sections with sunbeds and umbrellas (ranging from €15-€40) and free areas. Prices can vary significantly depending on the location and amenities. Some smaller beaches along the promenade offer slightly lower prices but may have inferior water quality. Public beaches are accessible without charge.</li>
+    <li>Budva offers free sections on beaches like Mogren and Mogren 2. Paid sunbeds and umbrellas can range from €15-€20 on the promenade or up to €40 at Mogren Beach. Water quality can vary, with some areas reportedly having issues. Consider the public sections for a more budget-friendly experience.</li>
+    <li>Dobrota offers limited evening entertainment. For more affordable groceries, explore local markets and the Chinese store (&#39;Kineska robna kuca&#39;) located near the &#39;Dom Zdravlja&#39; (Health Center) on the way to the Old Town.</li>
+    <li>For specific products in Montenegro, such as sports nutrition like Dymatize ISO 100, consider online retailers like Proteini.si. For everyday items like inexpensive sneakers, check &#39;Chinese stores&#39; which are common in cities like Budva.</li>
+    <li>Renting sunbeds and umbrellas in Budva can be expensive. Prices observed include €40 for two sunbeds and an umbrella at Mogren Beach (a public beach). More affordable options exist on the promenade for €15-€20, though water quality might be lower. Parts of Mogren and Mogren 2 beaches are free to use.</li>
+    <li>Provide restaurant recommendations in Budva, Montenegro, specifically mentioning &#39;Olimp&#39; (fish restaurant) and &#39;Citadela&#39; (diverse menu, expensive but scenic). Also suggest &#39;Modena&#39; and &#39;Porat&#39; in Rafailovici as alternatives.</li>
+    <li>Inform about outlet shopping options in Podgorica, Montenegro. Clarify that &#39;Big Fashion&#39; is the primary shopping center, but it has limited brand selection and is not a true outlet mall. Advise against traveling from Budva solely for shopping there.</li>
+    <li>In Podgorica, &#39;Intersport&#39; is a sports store comparable to Decathlon, offering a range of sporting goods including equipment for swimming such as masks, goggles, and swimwear. Other sports equipment stores may also be available.</li>
+    <li>Retail options in Montenegro are limited. Zara, Pull&amp;Bear, Stradivarius, Bershka, and OVS are located in the &#39;Big Fashion&#39; mall in Podgorica. Uniqlo is unavailable in the Balkans. Tivat features luxury brands (Dolce &amp; Gabbana, YSL, Bottega Veneta, etc.).</li>
+    <li>In Budva, clothes drying racks can be purchased at Chinese stores (&#39;Kineska Kuća&#39;) or at Okov. The Chinese store is located in the city center, near the main road and the municipality (&#39;Opština&#39;).</li>
+    <li>Provide breakfast recommendations in Kotor, Montenegro. Suggest &#39;Hotel Vardar&#39; located in the old town near the main entrance and &#39;Restaurant Taraca&#39; near the river gate.</li>
+    <li>Travelers in Montenegro should avoid making payments for services via bank transfers to third-party individuals, especially in foreign currencies (e.g., RUB transfers for EUR services). Scammers often use fake recommendations and &#39;payment failure&#39; pretexts to solicit repeat transfers. Always verify service providers through official group resources or pinned contact lists.</li>
+    <li>On Sundays in Montenegro, most supermarkets are closed. Only cafes, gas stations, and bakeries typically operate. Flea markets might be an option for specific items, but their operating hours on Sundays are not guaranteed.</li>
+    <li>HEETS sticks for IQOS are not available in Montenegro. However, TEREA sticks for the IQOS ILUMA device are sold. FEET sticks, compatible with LIL and IQOS, can be ordered via delivery apps like Glovo.</li>
+    <li>Major public holidays in Montenegro (e.g., Independence Day, May 21-22) result in the closure of most retail outlets and supermarkets. Planning for groceries in advance is required.</li>
+    <li>For specific purchases in Montenegro: Lamb can be found at local markets or from trusted butchers. Barberries are likely available in larger supermarkets like &#39;Mix Market&#39;. For cucumbers, local varieties might differ from imported ones; imported options (e.g., from Germany) may be of higher quality but more expensive. Markets in Tivat and Kotor are also worth checking.</li>
+    <li>Fresh fish and seafood in Budva, Montenegro, can be purchased from fish markets located on the promenade near the Old Town. Some sources suggest checking Montefish as well, though the freshness might vary. It&#39;s advisable to inquire about the origin and freshness of the seafood before purchasing.</li>
+    <li>Seek recommendations for beautiful restaurants in mountainous areas suitable for celebrating a birthday. Specific suggestions include Amber Restaurant Budva (known for cuisine, service, and ambiance) and Giardino in Rezevici (with a nice view and simple food). For a picturesque setting, Katovici Mline near the ferry is also suggested, accessible by boat if arriving by yacht or small boat.</li>
+    <li>In some large Montenegrin supermarkets, such as &#39;Mega&#39;, there is a free meat grilling service. Customers purchase fresh meat and staff grill it on-site. It is a cost-effective alternative to restaurants, typically costing around 10 EUR for two people, with a suggested 1 EUR tip.</li>
+    <li>Oatmeal and other breakfast cereals are available in Montenegro. Look for &#39;Haferflocken&#39; (oat flakes) in larger supermarkets like Aroma, HDL, and Voli. While common oat flakes are widely available, traditional &#39;Hercules&#39; style rolled oats that require longer cooking might be harder to find but can sometimes be found in health food sections or specialty stores like Mixt-Market, which stocks products from former Soviet countries. Czech brands of quick-cooking flakes are also available.</li>
+    <li>Card payments are widely accepted in Montenegro (approx. 90% of cafes/restaurants). Cash is required for: local markets, taxi services, small bakeries/kiosks, and local tourist tax payments. Digital payments like Apple Pay are increasingly supported.</li>
+    <li>Building materials such as tile adhesive and grout can be found at Okov stores in Budva. The Okov store is located a short distance down the road from the bus station.</li>
+    <li>A 1.5-hour boat trip in Rijeka Crnojevića costs around 95 EUR per boat, with prices varying based on the route and duration. Booking in advance is not necessary, and free parking is available. Nearby, the Vukmirovich winery offers rosé wine. The recommended starting point for boats is near the old bridge in Rijeka Crnojevica.</li>
+    <li>For food delivery services in Sveti Stefan, the &#39;Plovi&#39; service is available along the coast. Their offerings can be reviewed in their Telegram group.</li>
+    <li>To purchase a portable hiking stove in Montenegro, check outdoor or camping supply stores, or inquire in local community groups for recommendations.</li>
+    <li>Inform the user that brand shopping options are limited in Montenegro, with some available in Porto Montenegro, Tivat, but the selection is not extensive.</li>
+    <li>Laguna restaurant, a beach club near Ducray hotel (15 min walk from Bečići), offers a pleasant experience with good service. The concept involves an 80 EUR deposit for sunbeds and umbrellas, redeemable for food and drinks. While prices are above average, the quality is high. Live music is available, and a free speedboat service to Budva&#39;s Old Town is provided for guests. Booking is recommended, especially on weekends.</li>
+    <li>To sell antique furniture at a low price in Montenegro, consider listing it on Facebook groups for the specific city or general &#39;Montenegro Buy-Sell&#39; groups.</li>
+    <li>Fresh fruits and berries in Montenegro can be purchased at local markets (&#39;Zelena Pijaca&#39;) in cities like Kotor, Budva, and Tivat. Specific market locations include Pert in Tivat and areas near the old town or Aroma store in Kotor. While markets offer variety, prices can be higher than in supermarkets. For specific produce like tomatoes, seeking out private vendors is often recommended. The quality and availability of items like cucumbers can vary seasonally and by vendor.</li>
+    <li>Beach chair prices at Mogren Beach in early June were around €40 for two loungers and an umbrella on the first line. Alternative beaches like Kamenovo (accessible via tunnel from Bečići) are considered cozier and less crowded. Other options near the old town of Budva are available within a 16-20 minute walk, with prices typically around €15-20. Coral shoes are recommended due to large pebbles on beaches and entry points.</li>
+    <li>Public transport from Budva to Sveti Stefan stops at city bus stops (not necessarily the main bus station), making it more convenient. For routes like Tivat-Budva, buying tickets online is often unnecessary due to frequent departures, and travelers often pay a station usage fee anyway. Cash is king for local bus payments and small market purchases.</li>
+    <li>For convenient meal options in Montenegro, supermarket chains like Voli or Aroma offer prepared food counters. A popular alternative for those with kitchen access is purchasing fresh pre-made pizza/pinsa crusts sold in these stores, allowing for a quick, customizable home-cooked meal.</li>
+    <li>When arriving in Bečići by bus, note that buses from Budva stop closer to the sea than those from the main bus station. Accommodation is plentiful. The area offers clear water and beach chair rentals (around €15). Downsides include a poorly maintained promenade and persistent vendors. Beach surfaces can get very hot.</li>
+    <li>Inform about the temperature at the top of the Lovcen cable car at sunset, noting it can be about 7-10 degrees Celsius colder than on the coast. Advise dressing warmly.</li>
+    <li>For sports nutrition products like Dymatize ISO 100 in Montenegro, Proteini.si is a dominant online retailer. It is generally more convenient to order from such platforms than to search in physical stores.</li>
+    <li>Cash is widely used in Montenegro. Small denomination euro notes (10-20 EUR) are recommended for daily purchases. Visa cards are generally accepted, while UnionPay (including Russian-issued cards) is largely non-functional.</li>
+    <li>Cash is widely accepted and preferred in Montenegro. It is advisable to carry small denominations (10-20 EUR) for minor expenses like bus luggage fees (approx. 1 EUR). Belarusian bank cards, even those from sanctioned banks, are generally functional for payments in Montenegro. US dollars are generally not accepted for direct payment in stores; local currency (Euro) is required.</li>
+    <li>In Montenegro, most supermarkets and shopping malls are closed on Sundays by law. Restaurants, cafes, small tobacco kiosks (trafika), and convenience stores at gas stations typically remain open and are the primary source for essentials on Sundays.</li>
+    <li>UnionPay cards, including those from Rosselkhozbank, are generally not accepted for direct payments or cash withdrawals in Montenegro. ATMs and payment terminals are typically configured for Visa and Mastercard. It is advisable to have alternative payment methods, such as Visa/Mastercard or cash, when traveling to Montenegro with a UnionPay card.</li>
+    <li>Turkey and rabbit meat can be found in Montenegro, though availability may vary by location and season. Look for packaged frozen turkey in larger supermarkets like &#39;Mega&#39; in Budva or &#39;Idea&#39; and &#39;Aroma&#39; in other cities, often available towards the end of the week. For fresh, high-quality options, consider specialized &#39;chicken house&#39; shops or local farms. Farmer Olga Ovchar (findable on Facebook) may offer turkey and other poultry. Rabbit might be harder to find in regular stores and may require seeking out specialized farms.</li>
+    <li>Chicken fillet can be purchased in Bečići at shops like Mini HDL and Idea. If these are out of stock, look for &#39;Mesara&#39; (butcher shops) on Google Maps. Some butcher shops may have limited stock or specific delivery days.</li>
+    <li>Officially, cryptocurrency payments are not widely accepted by businesses or service providers in Montenegro. Shops and tour operators generally do not accept crypto directly. While informal arrangements with individuals might be possible, it is not a reliable method for transactions. It is advisable to rely on traditional payment methods like cash or bank cards.</li>
+    <li>For beaches near Bečići and Sveti Stefan, consider Kamenovo or Rafailoviči (which has sand). Sveti Stefan also offers good options. The right side of Bečići is also recommended. While some beaches have paid sunbeds (around 15-30 EUR for a set), free beach areas exist, especially if you arrive early or are willing to use your own towels. Some beaches like Drobni Pijesak offer a beautiful and clean experience with options for various budgets, including free access with paid amenities.</li>
+    <li>Beach options near Budva include Jaz (sandy, large), Ploče (rocky, accessible by boat), Kamenovo, and Rafailoviči. Drobni Pijesak is a highly recommended beautiful and clean beach with varying prices for amenities (starting from 25 euros) but has a steep descent. Paid sunbeds typically range from 15-30 EUR per set. Luxury beach clubs like Laguna at Dukley Hotel offer premium experiences (around 80 EUR with a deposit for food/drinks) and good service.</li>
+    <li>To purchase equipment like massage beds or eyelash extension lamps in Montenegro, specialized stores catering to beauty salons would be the primary source. While specific store names may vary, searching for &#39;beauty supply stores&#39; or &#39;salon equipment suppliers&#39; in the relevant city (e.g., Budva) is recommended. It might be necessary to inquire at larger shopping malls or directly with beauty professionals for recommendations.</li>
+    <li>For a wide selection of beauty products in Budva, Montenegro, consider stores like &#39;Cosmetics&#39; near Plaza or &#39;Dama&#39; in Budva Mall. These stores may carry brands like Olaplex. For high-end international beauty retailers like Sephora, options might be limited, and it&#39;s advisable to check the offerings at larger shopping centers.</li>
+  </ul>
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/me/transport/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transport</span></a>
+    <a class="chip" href="/en/me/tickets-entertainment/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🎟 Tickets &amp; Entertainment</span></a>
+    <a class="chip" href="/en/me/documents-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documents &amp; Visa</span></a>
+    <a class="chip" href="/en/me/registration-residency/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Registration &amp; Residency</span></a>
+    <a class="chip" href="/en/me/banking-money/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Banking &amp; Money</span></a>
+    <a class="chip" href="/en/me/safety/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛡 Safety</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Search answers everyone — but you?</h2>
+    <p>Ask Luky — from people&#39;s recent experience, not from manuals.</p>
+    <p>And Luky is a live voice translator for real conversations: ask for directions and actually understand the answer.</p>
+    <p class="ps">PS: flirt on a date in a foreign language? No problem 😏</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/me/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

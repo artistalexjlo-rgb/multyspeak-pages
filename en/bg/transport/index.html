@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bulgaria: Transport — real experience · Luky</title>
+<meta name="description" content="Real experience from chats about Transport in Bulgaria: as it is, first-hand. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/bg/transport/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/bg/transport/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/bg/transport/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/bg/transport/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/bg/transport/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/bg/">Bulgaria</a> /
+    <b>Transport</b>
+  </nav>
+
+
+  
+  <h1>Transport in Bulgaria: real experience from chats</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of people from chats on «Transport» in Bulgaria — as it is, no fluff. For your case — <strong>ask Luky</strong>.</div></div>
+
+  <h2>From real experience</h2>
+  <ul class="qlist">
+    <li>For public transport in Bulgaria (buses, trams), consider purchasing a monthly pass if you plan to travel frequently. If you do not have a Bulgarian bank card, a mobile application may not be a suitable payment option. Check for subscription-based cards that offer unlimited travel for a fixed period.</li>
+    <li>Paid parking in Nessebar varies in price, with daily rates reported at 15 EUR and 24 EUR. Hourly rates are generally considered to be consistent across paid parking lots.</li>
+    <li>Bus routes from Istanbul Airport to Bulgaria (e.g., Arda Tur) often show up on aggregators like Obilet with an &#39;airport&#39; pickup, but in reality, many buses do not enter the airport premises. It is more reliable to take a Havaist shuttle to the main bus station (otogar) and depart from there. Direct buses from the airport are very infrequent (e.g., 05:45, 15:30 for some carriers) and should not be relied upon if they don&#39;t match the travel schedule.</li>
+    <li>Travel within the Schengen zone with a single-entry Bulgarian visa is permitted. There is generally no passport control on intra-Schengen flights, but travelers should carry proof of onward travel to Bulgaria to satisfy potential border checks.</li>
+    <li>Bulgarian citizens can travel within the EU using a valid passport or national ID card (lichna karta), even if their validity period is nearing expiration. The crucial requirement is that the document must not be expired at the time of travel. For long-term planning, 10-year validity passports are available.</li>
+    <li>Users are asking for directions to find the Nishli bus from Istanbul Airport, specifically mentioning &#39;platform 19, Exit B&#39;. This is a factual request requiring specific location information.</li>
+    <li>Relocating to Bulgaria with pets requires understanding specific veterinary regulations. Key steps include rabies vaccination, followed by a titer test at least one month later. Travel is permitted only three months after the titer test yields a positive result (above 0.5 IU/ml). Some travelers opt for private transport or buses, negotiating terms with carriers in advance. Airport transfers from Istanbul to Burgas can be costly; seeking recommendations from pet owner communities is advised. Be aware of transit regulations through Turkey, which officially requires similar documentation. Travelers may sometimes assume personal risk if time constraints prevent adherence to the full three-month waiting period, often requiring signed waivers acknowledging this risk. Always verify current requirements with official sources, as regulations can change.</li>
+    <li>There is no direct public bus service from Varna Airport (VAR) to Sunny Beach (Slanchev Bryag). Travelers should first take bus route 409 from Varna Airport to the Varna Central Bus Station (Avtogara), and from there, take another bus service to Sunny Beach.</li>
+    <li>Arda Tur operates bus routes from Istanbul Airport to Varna. Tickets can be booked via their official website. Payment typically requires an international bank card.</li>
+    <li>To travel from Varna to Nessebar with luggage, the most economical option is the bus from the central bus station, taking approximately 2 hours. Taxi services are available, costing around 100-120 BGN, while private transfer services are priced between 80-100 BGN. Direct bus services might be more expensive.</li>
+    <li>Two bus services operate from Istanbul New Airport to Sunny Beach: one at 6:00 AM and another around 3:30 PM. The bus stops at the Shell gas station in Sunny Beach, located near the E87 intersection. The bus also stops at the same Shell station when traveling from Varna. It is advisable to arrive at the bus stop slightly before the scheduled departure time.</li>
+    <li>There is no single universal taxi application for all of Bulgaria. Instead, taxi services are localized. For cities like Varna, &#39;Triumph Taxi&#39; is a recommended local application. Travelers should research city-specific taxi apps or be prepared to hail taxis or call them directly.</li>
+    <li>Border crossing times between Turkey and Bulgaria (e.g., at Kapitan Andreevo/Kapıkule, Malko Tarnovo/Dereköy) vary significantly. Factors influencing wait times include:
+*   **Time of day:** Early morning and midday can sometimes have fewer vehicles.
+*   **Day of week:** Weekends and specific days might be busier.
+*   **National holidays:** Both Turkish and Bulgarian holidays can cause significant delays.
+*   **Mode of transport:** Individual transfers or private cars often experience shorter waits compared to buses, especially if there are multiple buses.
+*   **Direction of travel:** Wait times can differ based on whether you are entering Turkey or Bulgaria.
+Recent reports varied from 20 minutes (individual transfer) to 1.5 hours (bus) on specific dates, contradicting rumors of 7-hour waits.</li>
+    <li>To travel from Istanbul Airport (IST) to Bulgaria, several options exist. Buses operated by companies like Nişli are available. Tickets can be purchased via obilet.com or, in some cases, booked via WhatsApp (though booking availability may be limited). The cost is approximately 30 EUR, payable by foreign bank cards. While Obilet may display prices in TRY, payment often requires a non-Russian card. The Havaist-5 bus route goes to Istanbul&#39;s main bus terminal (Otogar); tickets cost 330-336 TRY and can be paid with a foreign card or Istanbulkart. Direct purchase from the driver may not be possible. For those needing to pay in Turkish Lira, currency exchange is available at the airport.</li>
+    <li>Nishikli bus service route: Istanbul Airport (IST) to Bulgarian resorts. Key boarding point: Floor -2, Column 19. Frequency: Twice daily (approx. 05:45 and 15:30). Booking methods: On-site counter or via Obilet website/app. Payment: Turkish Lira, EUR, or USD. Duration: ~7-8 hours depending on border crossing wait times.</li>
+    <li>In Bulgaria, specifically in Burgas, car rental services offer vehicles suitable for cross-border travel to Greece and Romania. The approximate daily cost is 40-50 EUR. Verify specific terms for international travel with the rental company.</li>
+    <li>When crossing the Bulgaria-Turkey border at Malko Tarnovo, if holding two passports, ensure the passport used for entry into Turkey has at least 120 days of validity remaining. Bulgarian exit procedures may allow departure with a passport nearing its expiration, but Turkish entry requirements are stricter. It is generally advised to use the same passport for exit from Bulgaria and entry into Turkey if both countries recognize it. However, if passport validity for Turkey is an issue, a second, valid passport might be presented upon entry to Turkey. Local experiences suggest some flexibility at Malko Tarnovo, but official rules require sufficient passport validity for Turkish entry.</li>
+    <li>For travel from Varna Airport to Sunny Beach (Bulgaria), utilize buses from Varna Central Bus Station. Route 409 is a regular service. Check the schedule on the Varna bus station&#39;s official website. If transiting through Istanbul, a shuttle service operates from the new airport to the central bus station (approx. 40 minutes). From there, various bus companies, including Arda Tur, offer services. Booking bus tickets in advance may not always be necessary, though sometimes travel insurance against visa rejection is offered with ticket purchase.</li>
+    <li>Public transport route from Pomorie to Mall Galleria in Burgas: take an intercity bus, get off at &#39;Zornitsa&#39; stop near Park Sveta Troitsa, and walk about 10 minutes through the park to the mall, avoiding the longer bus route via Burgas bus station (Autogara Yug).</li>
+    <li>Advise individuals with Bulgarian residency and visas who plan to travel to Italy for a week before heading to Bulgaria. Inquire about potential issues at Rome airport and when applying for a new visa subsequently. Note that border control in Rome is generally lenient.</li>
+    <li>For information on regular flights from Burgas Airport during the autumn/winter season, consult the official Burgas Airport website, which usually provides schedules up to November 1st. Be aware that Burgas Airport may have limited or no operations during winter months, while Varna Airport offers a broader range of destinations.</li>
+    <li>When exiting Bulgaria by bus, particularly on routes to Turkey (e.g., &#39;Nishikli&#39; from Sunny Beach to Istanbul), luggage checks by Bulgarian border authorities are possible. Despite a common belief that checks occur only upon entry, a user reported their luggage being checked on the Bulgarian side when exiting in March.</li>
+    <li>Land border crossings from Bulgaria to Turkey involve thorough security checks on the Turkish side. Passengers should expect their luggage to undergo X-ray scanning, and buses may be searched, leading to potential delays of at least 1 hour beyond standard border processing time.</li>
+    <li>Entry to Bulgaria for vehicles with Russian license plates is generally restricted due to sanctions. While some older vehicles with Russian plates may be present in Bulgaria (having entered before restrictions), current entry is difficult and risky, potentially leading to vehicle impoundment or significant fines.</li>
+    <li>Bus travel between Bulgaria (Sunny Beach) and Istanbul Airport (IST) takes approximately 8-9 hours total. Border processing time fluctuates between 1 and 3 hours due to customs system volatility (fingerprinting/photos). Nishiqli bus tickets cost 1500 TRY and must be purchased via the official ticket counter at the airport, not from the driver. Buses typically depart from the Shell gas station in Sunny Beach.</li>
+    <li>Crossing the border into Serbia and re-entering Bulgaria with a car registered in Bulgaria using a Power of Attorney (POA) issued in Bulgaria is generally possible. However, the specifics, especially regarding potential issues if the owner remains in Turkey and the car is released with difficulty, require careful verification. While a POA facilitates driving the vehicle, exit and re-entry regulations, particularly concerning ownership and residency, can be complex. It is advisable to consult Bulgarian and Serbian customs authorities or forums specializing in cross-border vehicle regulations for definitive guidance, as issues with vehicle ownership and cross-border movement can lead to complications, especially if the owner is not present.</li>
+    <li>For travel between Istanbul and Bulgarian cities like Burgas, intercity buses are available from Istanbul&#39;s main bus station (Otogar). The last bus departs around 20:15, with the next one at 5 AM. Night buses are not available. Travel from Sabiha Gökchen Airport (SAW) to Istanbul&#39;s bus station via metro involves approximately 1.5 hours with two transfers. An alternative is to take a bus to the new Istanbul Airport and then connect, or stay at hotels near the Yenikapi metro station for overnight stays.</li>
+    <li>Border crossing between Bulgaria and Turkey is unpredictable. Bulgarian customs may or may not perform physical baggage checks. Turkish customs typically require baggage to pass through X-ray scanners. Significant delays (up to 9 hours) occur due to prolonged interviews at the border. There are no pedestrian crossings between Poland and Belarus; travel is strictly by bus or private vehicle.</li>
+    <li>For transportation from Burgas Airport (BOJ) to resort towns like Sveti Vlas or Sunny Beach, taxi services are available, typically costing between 220-240 EUR. An alternative is to reach the border and then arrange local transport.</li>
+    <li>For booking bus tickets from Istanbul to Sunny Beach, the Nishikli website may be unreliable. An alternative platform that works well is obilet.com.</li>
+    <li>1. Balkan Express Agency: Balkan Express (visa agency) also acts as a reseller for bus tickets to Bulgaria. 2. Pricing: They are known to resell tickets from other carriers (e.g., Nishikli, Arda) at significantly inflated prices (2-3 times higher than direct purchase, e.g., 28 EUR ticket for 6300 RUB). Transfer services can also be costly (e.g., 90 EUR with long wait times). 3. Recommendation: To avoid overpaying, it is advised to purchase bus tickets directly from platforms like obilet.com using a foreign bank card, which offers real prices and comprehensive schedules.</li>
+    <li>Holders of a Schengen visa issued by Bulgaria can travel within the entire Schengen Area, regardless of whether it is single-entry or multiple-entry, as long as they do not exit the Schengen zone. Travel from Bulgaria to other Schengen countries like Hungary or Austria is permissible. If the visa is single-entry, exiting the Schengen Area and attempting to re-enter might be problematic, but re-entry into Bulgaria from another Schengen country is generally not considered an &#39;exit&#39; from the zone in a way that would invalidate a single-entry visa for further intra-Schengen travel. Some anecdotal reports suggest confusion or specific restrictions from consulates, but the fundamental principle of the Schengen Agreement allows free movement within its member states.</li>
+    <li>With a single-entry Bulgarian Schengen visa, travelers can enter Bulgaria and then travel to other Schengen countries (e.g., Hungary, Austria, Greece) by air or land, as internal Schengen borders typically have no passport control. Returning to the country of origin (e.g., Russia) is not strictly required to be from Bulgaria; one can depart from any Schengen country, such as Greece.</li>
+    <li>In Varna, Bulgaria, international ride-hailing applications such as Uber or InDrive are not available. The primary local taxi service that operates with an application is &#39;Triumph Taxi&#39; (Триумф Такси). This service is known for its punctuality, with taxis typically arriving within 10 minutes, and their call center staff often speak Russian.</li>
+    <li>If your Bulgarian national visa expires on July 8th, you can legally cross the Bulgarian-Turkish border on July 8th, as the expiration date is inclusive. For extra caution, departing on July 7th is also an option.</li>
+    <li>To travel to Lake Ohrid in North Macedonia from Sofia, Bulgaria, by public transport, one would typically need to find bus or train connections. Inquiring at Sofia&#39;s central bus or train station for the most direct or convenient routes would be advisable.</li>
+    <li>Assess the safety and potential issues of flying to Burgas via Munich with a single-entry Bulgarian visa. Specifically, inquire about German border control procedures and potential questions upon entry. Confirm if entry is permitted given that the traveler owns property and has all necessary documents. Evaluate the risk of a 1 hour 15 minute layover with new security check procedures.</li>
+    <li>Bulgarian petrol prices are influenced by factors such as low excise duties, efficient logistics, and state subsidies, aiming to keep fuel costs accessible due to the country&#39;s lower average income within the EU. Despite Bulgaria officially ceasing direct imports of Russian oil in March 2024, relying on sources like Kazakhstan and Iraq, discussions persist about potential indirect imports. In contrast, Russia is experiencing fuel supply issues and long queues at gas stations.</li>
+    <li>Travelers have inquired about the acceptance of 5-year validity foreign passports for crossing the Turkey-Bulgaria border. While current information suggests acceptance, there is uncertainty about entry regulations with 5-year passports beyond 2027, leading to considerations about obtaining 10-year passports.</li>
+    <li>Travelers between Istanbul and Bulgaria should expect variable border control times, ranging from 40 minutes to over 3 hours. Delays are frequently linked to passenger demographics and additional document checks. For flight connections, taking an overnight bus is recommended to mitigate risks.</li>
+    <li>Viber is the most widely used messaging application in Bulgaria, with penetration estimated at over 90% of the population. It is the standard for communicating with local service providers, taxi drivers, and real estate agents.</li>
+    <li>To get to Burgas Mall from Nessebar, use navigation apps like Google Maps or Maps2Me. Alternatively, take bus number 10, but disembark one stop before the main Burgas bus station and walk the remaining distance.</li>
+    <li>When crossing borders, be aware of potential restrictions on food products. While items like salted fish or pork fat (salo) might generally be permissible, electronics like power banks are more likely to be confiscated. It&#39;s advisable to check specific customs regulations for the destination country to avoid issues with your luggage.</li>
+    <li>Travel by bus, especially between countries like Turkey and Bulgaria, can be subject to significant delays. Issues such as overbooked services, unexpected passenger loads, and extensive border checks can extend journey times considerably. Passengers should anticipate potential delays and factor them into their travel plans, particularly if they have onward connections.</li>
+    <li>To travel from Sofia, Bulgaria, to Ohrid, North Macedonia, the recommended route is to take a bus from Sofia to Skopje, the capital of North Macedonia. From Skopje, arrange onward transport to Ohrid.</li>
+    <li>Users are asking about booking bus tickets for travel within Bulgaria, specifically mentioning services like &#39;tu-tu&#39; and &#39;obilet&#39;. Information is needed on how to purchase tickets and potential issues with tight connections, such as arriving at 20:30 and needing to catch a last bus at 20:30. Advise users to check specific platform spellings and to allow buffer time for transfers.</li>
+    <li>Arda Tur operates bus services from Istanbul to Bulgarian cities, including Varna. The final stop in Varna is the main bus station (Avtogara Varna).</li>
+    <li>For taxi services along the Bulgarian coast, &#39;Evgeniy Taxi&#39; is mentioned as a provider. Transfers to Istanbul from the coast generally have similar pricing, around 220-240 BGN per car.</li>
+    <li>To travel from Istanbul New Airport (IST) to Sveti Vlas, Bulgaria, several options exist: 1. **Direct Bus Services**: Nishikli Turizm offers buses departing at 06:00 and 15:30 (reportedly from Terminal 19). In previous years, these buses made a stop in Sveti Vlas, but it is advisable to confirm current stops. Arda Tur offers buses to Varna (approximately 36 EUR or 70.41 BGN), with departures around 20:00. These might require a connection to Sveti Vlas or checking if they make an intermediate stop. 2. **Private/Group Transfers**: Group transfers cost approximately 70-80 EUR per person, while individual transfers can cost around 220 EUR.</li>
+    <li>For travel from Istanbul Airport to Bulgaria via bus, be aware of the specific routes and schedules. Buses depart from the main bus station and stop at the airport. There are waiting areas available, such as on the lower level near platform 19, with departures typically at 6 AM and 3:30 PM. It&#39;s advisable to wait at the stop in advance as the bus makes brief stops. Luggage is handled with tags for identification, and tickets are checked. Note that private sellers might refuse older Euro banknotes.</li>
+    <li>1. Bulgarian Visa Application (SPb/Moscow): Documents submitted in St. Petersburg (April 21) were processed in Moscow, visas issued on June 4 (42 days from consulate receipt). Single-entry visas granted for requested duration plus a 15-day corridor. Applicant did not attach flight/hotel bookings but provided a printed itinerary, car documents, and driver&#39;s licenses (declared travel by car). 2. Russian-Plated Cars Entry to Bulgaria: While some rare anecdotal cases exist of Russian-plated cars entering EU via Greece (especially for individuals with residence permits), the general consensus and user experience suggest that Russian-plated cars are *not* allowed to enter Bulgaria from Turkey. The proposed solution is to leave the car at a paid parking in Turkey (e.g., Kırklareli) and use a transfer for crossing into Bulgaria. Declaration of the car before leaving Turkey is necessary.</li>
+    <li>To travel between Bulgarian resort towns like Sunny Beach or Pomorie and Burgas, consider bus route #10, which passes through Burgas Airport (Sarafovo). Taxi services are also available, with companies like &#39;Triumph&#39; (phone: +359 52 644 444). Note that transfer prices from the airport can be around 200-240 EUR.</li>
+    <li>For tourists in Bulgaria needing voice calls (e.g., for local taxis), avoid carrier retail stores if they push contracts. Prepaid SIM cards sold in small independent kiosks are often more accessible and don&#39;t require residence permits. When topping up online (e.g., via ePay.bg), note that minimum thresholds may apply to activate voice minutes.</li>
+    <li>Travelers planning car routes from Turkey to Serbia via Bulgaria can use a Schengen visa obtained from another EU country (e.g., Greece) to enter Bulgaria. However, be prepared for potential questioning at the border, especially if arriving by car with a visa from a country not on your direct route. Having a plausible explanation for your travel plans, such as intending to visit the visa-issuing country, is advisable.</li>
+    <li>For extended stays in Bulgaria, consider long-term car rental options. If you require temporary storage for your vehicle, explore options such as garages, parking lots, or secure storage facilities.</li>
+    <li>To reach Lidl in Ravda from Sunny Beach, consider bus routes #5, #8, or the new route #3. Route #3 operates hourly from Sunny Beach (Emona) to Ravda (Lidl terminus).</li>
+    <li>Entry and transit for passenger vehicles registered in Russia are generally prohibited in Bulgaria, with exceptions only for diplomatic missions. Holders of Bulgarian temporary residence permits (BGN) or even EU residency may face restrictions when attempting to enter Bulgaria directly with Russian-plated vehicles. Some anecdotal evidence suggests potential workarounds via neighboring countries like Greece and Turkey, especially for EU residency holders, but this remains unconfirmed and potentially risky.</li>
+    <li>A bus journey from Istanbul Airport to Sunny Beach, Bulgaria, took 8.5 hours due to a 4-hour border delay at the Bulgarian checkpoint. Passengers, including 40 migrant workers from Kyrgyzstan, underwent biometric data collection (fingerprints and photos). Luggage of every passenger was thoroughly inspected by hand. The vehicle itself was also inspected, with some parts disassembled. Travelers heading to Bulgaria, especially during the end of the season, should anticipate significant border control procedures.</li>
+    <li>When traveling by bus from Istanbul to Bulgaria, it is highly recommended to purchase tickets in advance, especially during peak times, as buses are often full.
+*   **Arda Bus (Istanbul-Burgas)**: Departs from Esenler Bus Terminal. Adult ticket: 27 EUR, child ticket: 15 EUR. Travel time: approx. 7-8 hours, including border crossing (which can take 1.5 hours or more). Arda does not pick up from Istanbul Airport.
+*   **Nishikli Bus (Istanbul Airport-Bulgaria)**: Direct services from Istanbul Airport (level -2, platform 19, near Nishikli kiosk) are available at 06:00 and 15:30. Evening services have historically been unavailable.
+*   **Metro Bus**: Does not offer direct services from Istanbul Airport.
+*   **Havaist**: Services run from Istanbul Airport (level -2, platform 5) approximately hourly. IstanbulCard purchase for Havaist can be declined; payment via bank card is an option.
+*   **Ticket Purchase &amp; Availability**: Check and purchase tickets on obilet.com.
+*   **Transfer to Esenler Bus Terminal from Istanbul Airport**: Havaist5 operates from Istanbul New Airport (IST) to Esenler Otogarı.</li>
+    <li>Experience at Kapitan Andreevo border crossing (Turkey-Bulgaria) via daytime bus. Despite initial quick passage, a delay occurred due to biometric processing for several passengers. The bus and luggage were subsequently subjected to thorough scanning and inspection, with undeclared goods (clothing, produce) confiscated. The process, including baggage handling and passenger coordination, extended the border crossing time significantly (from 30 minutes to 2.5 hours). Border police checks also occurred on both sides, but were brief. Night buses are suggested to be calmer.</li>
+    <li>When crossing the Bulgaria-Turkey border on foot, be prepared for mandatory fingerprinting and biometric photography for all travelers, which can significantly slow down processing during peak hours.</li>
+    <li>Exporting a car from Turkey can involve complex customs procedures, especially if the registered owner remains in Turkey. Releasing a vehicle under a Power of Attorney (POA) may be subject to specific regulations and can sometimes lead to difficulties during the export process. While a POA allows someone else to drive the vehicle, ownership and export laws are distinct. Potential complications may arise, and it is crucial to consult Turkish customs authorities or specialized forums for detailed information on the requirements and potential issues related to exporting a vehicle under such circumstances.</li>
+    <li>Traveling with pets from Russia to Bulgaria via Turkey involves specific documentation. Essential vaccinations include rabies and a combination vaccine. A rabies titer test is required one month after vaccination, with travel permitted three months after receiving satisfactory results (above 0.5 IU/ml). Bulgaria may require veterinary certificate Form 1. Turkey&#39;s requirements can be inconsistent; while officially they may require titer tests, enforcement varies. For transit to the EU (Bulgaria), a veterinary certificate (Euro-certificate) based on titer tests is necessary. If the three-month waiting period after titer tests cannot be met, travelers may need to assume personal risk and sign waivers, acknowledging that border officials might enforce strict rules. Private arrangements or understanding local veterinary practices can be helpful, but always confirm current regulations with official veterinary services.</li>
+    <li>A Bulgarian-issued Schengen visa, even if single-entry, permits travel within the entire Schengen Area. The crucial condition is not to exit the Schengen zone once entered. Re-entry into Bulgaria from another Schengen country is permissible and does not constitute an exit from the zone that would invalidate the visa for further intra-Schengen travel. This facilitates multi-country trips within the Schengen Area for individuals holding a valid visa issued by Bulgaria.</li>
+    <li>If you need to store a car for 3-4 months in Bulgaria, consider looking for available garages, parking spaces, or secure storage facilities. These options are typically available for a fee.</li>
+    <li>Land border crossings into Bulgaria currently involve significant delays (2-3 hours) due to biometric data processing, even if traffic volume appears low. Private transfers from nearby hubs (e.g., to Ravda) cost approximately 80 EUR per vehicle. It is advisable to factor in extra time for border control when booking connecting transport.</li>
+    <li>When applying for a visa to Bulgaria and planning to travel to Turkey by car, then onward by private transfer, be prepared to provide detailed documentation. This may include a written itinerary outlining the route from Russia to Bulgaria, border crossing points, duration of stay, and parking arrangements for the vehicle in a third country (e.g., Kırklareli). Submission of vehicle registration documents and a driver&#39;s license might also be requested. While seemingly excessive, detailed planning documentation can be perceived positively by visa officers demonstrating genuine travel intentions.</li>
+    <li>When traveling from Sunny Beach, Bulgaria to Istanbul, Turkey by the &#39;Arda&#39; bus (e.g., 21:55 departure), the expected arrival at Istanbul Airport (IST) is around 4:00 AM. However, significant delays are common due to factors such as late departure (up to 3 hours), lengthy border crossings, or bus breakdowns (up to 2 hours of repair time reported at the border). In such cases, arrival at Istanbul bus station can be as late as 11:00 AM, with an additional hour needed to reach IST via Havataş or other transfers. Travelers with connecting flights from IST should allow a substantial buffer (e.g., plan to arrive the day before) or consider alternative transport methods due to the high unpredictability of bus schedules.</li>
+    <li>A Bulgarian national visa (Type D), especially one issued before Bulgaria&#39;s full accession to the Schengen land border area (March 31, 2024), is primarily for long-term stay in Bulgaria itself. It does not automatically grant the holder the right to enter or travel freely within the wider Schengen Area (other than Bulgaria). While historically, bilateral agreements sometimes allowed specific categories of Bulgarian visa holders to enter Romania or Cyprus, a Bulgarian Type D national visa generally restricts travel to Bulgaria only, as it is not a Schengen visa. For travel to other Schengen countries, a separate Schengen visa (Type C) from a Schengen member state would be required, or a full Schengen C visa issued by Bulgaria after its accession.</li>
+    <li>Since January 1, 2025, Bulgaria is a full member of the Schengen Area. Holders of a Bulgarian Type C visa can travel freely within the Schengen zone. Traveling to other Schengen countries (e.g., Italy, Greece) is permitted even with a single-entry visa, provided the traveler does not exit the Schengen zone, as leaving terminates the single entry.</li>
+    <li>Public transport is highly recommended for travel between coastal cities in Bulgaria (e.g., Burgas to Sozopol or Nessebar) due to cost-efficiency. Renting a car for border crossings (e.g., into Turkey) is discouraged due to long queues at customs. For local sightseeing (like Ravadinovo Castle), a rental car is a convenient option.</li>
+  </ul>
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/bg/documents-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documents &amp; Visa</span></a>
+    <a class="chip" href="/en/bg/banking-money/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Banking &amp; Money</span></a>
+    <a class="chip" href="/en/bg/currency-transfers/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Currency &amp; Transfers</span></a>
+    <a class="chip" href="/en/bg/shopping/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛒 Shopping</span></a>
+    <a class="chip" href="/en/bg/safety/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛡 Safety</span></a>
+    <a class="chip" href="/en/bg/tickets-entertainment/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🎟 Tickets &amp; Entertainment</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Didn&#39;t find your case?</h2>
+    <p>Ask Luky — what search won&#39;t show and not every blogger will tell.</p>
+    <p>And Luky is a live voice translator for real conversations: talk to a doctor and understand what they said.</p>
+    <p class="ps">PS: in a voice game chat you&#39;ll understand teammates from half the world</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/bg/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

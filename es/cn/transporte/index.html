@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>China: Transporte — experiencia real · Luky</title>
+<meta name="description" content="Experiencia real de los chats sobre Transporte en China: tal cual, de primera mano. Para tu caso — pregúntale a Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/es/cn/transporte/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/cn/transporte/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/cn/transporte/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/cn/transporte/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/cn/transporte/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · cualquier país · sin relleno</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noche</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/es/">Inicio</a> /
+    <a href="/es/cn/">China</a> /
+    <b>Transporte</b>
+  </nav>
+
+
+  
+  <h1>Transporte: cómo es en China — de primera mano</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiencia real de gente de los chats sobre «Transporte» en China — tal cual, sin relleno. Para tu caso — <strong>pregúntale a Luky</strong>.</div></div>
+
+  <h2>De la experiencia real</h2>
+  <ul class="qlist">
+    <li>En casos de retrasos en los vuelos que provoquen la pérdida de conexiones, especialmente en centros de tránsito como Shanghái, el personal de tierra de las aerolíneas (a menudo compañías chinas) puede volver a reservar proactivamente a los pasajeros en el siguiente vuelo disponible y ayudar con el traslado del equipaje, como se experimentó con un retraso de 2 horas desde Seúl. Esto indica que existe un sistema para gestionar itinerarios de tránsito interrumpidos, pero siempre se recomienda disponer de un tiempo de escala amplio.</li>
+    <li>Al realizar traslados entre aeropuertos en Pekín (por ejemplo, de PEK a Daxing) con China Eastern Airlines, es muy probable que deba recoger su equipaje y trasladarlo usted mismo. Por lo general, el equipaje no se transfiere automáticamente entre aeropuertos, incluso con la misma aerolínea, especialmente si los billetes se compraron por separado. Contacte directamente con la aerolínea por correo electrónico para confirmarlo. El sistema de metro conecta los aeropuertos, tardando aproximadamente 1,5 horas y costando alrededor de 65 CNY. Tenga en cuenta el horario de funcionamiento del metro, ya que tiene una pausa de 23:00 a 04:00. Considere reservar alojamiento en el hotel del aeropuerto de Daxing, que puede ofrecer opciones de salida tardía.</li>
+    <li>Al realizar tránsitos por aeropuertos chinos en itinerarios complejos con billetes separados o equipaje que no ha sido facturado hasta el destino final, una ventana de 2 horas es extremadamente arriesgada debido al control de inmigración y posibles cambios de terminal. Priorice llevar solo equipaje de mano para evitar volver a facturar maletas y navegar por la logística del aeropuerto bajo presión de tiempo.</li>
+    <li>Para el tránsito a través de China, si el pasajero necesita salir de la zona de tránsito (por ejemplo, para cambiar de terminal o recoger equipaje), debe completar un código QR/Declaración de salud con antelación. De lo contrario, deberá completar la documentación en la terminal, lo que provocará retrasos en el control de pasaportes.</li>
+    <li>Al transitar por China, las baterías externas (power banks) deben cumplir estrictamente con la norma CCC (Certificación Obligatoria de China). La falta de una marca CCC adecuada a menudo resulta en la confiscación durante los controles de seguridad, independientemente de la marca. Asegúrese de que la etiqueta física sea visible en el dispositivo antes de la salida.</li>
+    <li>Tránsito en el Aeropuerto Internacional de Pekín-Capital: siga las señales de &#39;Transfer&#39;. Espere controles de seguridad rigurosos; los cargadores portátiles (power banks) deben sacarse del equipaje de mano. La barrera del idioma es importante en las zonas de restauración (KFC). Las tarjetas UnionPay son ampliamente aceptadas en los terminales, pero podrían no funcionar en las máquinas expendedoras de agua de autoservicio.</li>
+    <li>Para los pasajeros en tránsito en Shanghái con una escala de 12 horas y sin registro adicional, es posible salir a la ciudad sin visado. Por lo general, los pasajeros necesitan su tarjeta de embarque y puede que deban cumplimentar un formulario (posiblemente un código QR de declaración de salud) al llegar para ingresar a la ciudad. El transporte público, como el metro, es accesible y se puede pagar con tarjetas de crédito internacionales (por ejemplo, Mastercard). Asegúrese de tener a mano todos los documentos de tránsito necesarios.</li>
+    <li>El tránsito en el Aeropuerto Internacional de Shanghái-Pudong (PVG) a menudo requiere un traslado entre terminales. Los viajeros deben utilizar el tren interno del aeropuerto en lugar de ir a pie. El control de seguridad en tránsito puede ser exhaustivo, y se recomienda retirar los cargadores portátiles de inmediato. Si el viaje se ha reservado en un único billete, la aerolínea es responsable de la reprogramación en caso de retrasos.</li>
+    <li>Tránsito por China hacia Corea del Sur: si los pasajeros permanecen en la zona de tránsito (sin pasar el control fronterizo para entrar en China), no se necesitan documentos especiales más allá de los requisitos de la aerolínea. Si se ingresa a la ciudad, es posible que se requieran tarjetas de llegada. Los tiempos de tránsito de 1,5 horas en los principales centros neurálgicos chinos, como Shanghái, suelen ser suficientes, ya que los controles de seguridad y pasaportes en tránsito suelen llevar de 20 a 40 minutos.</li>
+    <li>Los pasajeros que transitan por China hacia Japón deben completar un nuevo código QR de Declaración de Salud por cada entrada a China, incluso durante las escalas. Los procedimientos de facturación y salida en los aeropuertos chinos tratan cada llegada como una entrada por separado.</li>
+    <li>Al transitar por el Aeropuerto de Qingdao (China) con una escala, si su equipaje está facturado hasta su destino final pero requiere un nuevo registro en Qingdao, siga los procedimientos designados. Hay mostradores específicos para el re-registro de equipaje dentro del área de tránsito. Un tiempo de tránsito de 2 horas y 25 minutos es generalmente suficiente para este proceso, ya que el aeropuerto está bien organizado y es eficiente. Los viajeros han reportado completar los traslados, incluido el re-registro de equipaje, en menos de 40 minutos.</li>
+    <li>Aclarar los procedimientos de recogida de equipaje para pasajeros con escalas largas en Pekín (PEK o PKX) con continuación del viaje a Osaka. Aconsejar consultar con la aerolínea en el punto de salida si el equipaje facturado será reemitido durante la escala o si será transferido automáticamente al destino final. Además, proporcionar orientación sobre los procedimientos de inmigración y el tiempo estimado necesario para salir y volver a entrar al aeropuerto.</li>
+    <li>Equipaje en tránsito en China: 1. Si vuela con diferentes aerolíneas o reservas separadas, confirme si el equipaje se factura hasta el destino final. 2. Si no es así, los pasajeros deben pasar por inmigración, recoger el equipaje y volver a facturarlo. 3. Los mostradores de transferencia en el área de tránsito pueden ayudar a imprimir las tarjetas de embarque para el siguiente tramo si el equipaje ya ha sido facturado hasta el destino final.</li>
+    <li>Al realizar trasbordos en China con una misma reserva/billete, el equipaje generalmente se factura hasta el destino final. Los viajeros deben confirmar esto en el mostrador de facturación inicial en el país de salida. Si las tarjetas de embarque para todos los trayectos se emiten al principio, normalmente no es necesario volver a facturar el equipaje, pero se recomienda verificarlo con el personal de tierra de la aerolínea.</li>
+    <li>Escalas cortas en China (Shanghái/Pekín): 1. Las reservas con un mismo billete permiten tiempos de tránsito más cortos (menos de 2 horas), ya que el personal de la aerolínea ayuda con las conexiones ajustadas. 2. Si un pasajero sale accidentalmente de la zona de tránsito, utilice aplicaciones de traducción sin conexión (inglés a chino) para comunicarse con el personal del aeropuerto. 3. Los formularios de declaración de salud son obligatorios para Guangzhou, pero no para Shanghái.</li>
+    <li>Consejos para el tránsito en aeropuertos de China: 1. Para escalas cortas (menos de 2 horas), tenga a mano los billetes para solicitar un control de seguridad prioritario al personal del aeropuerto. 2. El tránsito implica pasar por un control de seguridad incluso si el equipaje está facturado hasta el destino final. 3. Se recomienda un tiempo de escala de más de 3 horas en los aeropuertos de China para mitigar los riesgos derivados de posibles retrasos en los vuelos. 4. Los billetes con una sola escala (misma aerolínea) son más seguros para realizar cambios de reserva en caso de retraso.</li>
+    <li>Para llegar a Tianshan Tea City desde el aeropuerto de Shanghái, tome el tren Maglev hasta la estación de Longyang Road, luego haga transbordo a la línea 3 o 4 del metro hasta Yishan Road o Zhongshan West Road. También existe otra tienda más pequeña cerca.</li>
+    <li>Los ciudadanos rusos pueden utilizar el tránsito sin visado de 24/144 horas en China (por ejemplo, Guangzhou CAN, Chengdu TFU). Para salir a la ciudad durante una escala larga, complete la tarjeta de llegada o el formulario electrónico en el área de inmigración, especifique cualquier hotel cercano como alojamiento temporal y declare que el propósito es tránsito/vacaciones. Asegúrese de tener listo su billete de continuación a un tercer país. Si el tránsito es internacional con equipaje facturado hasta el destino final, deje el equipaje de mano en la consigna del aeropuerto.</li>
+    <li>Al transitar por Pekín, China, verifique el aeropuerto específico (PEK vs PKX). Los traslados entre ellos requieren mucho tiempo. Un mínimo de 2,5 horas es insuficiente si los aeropuertos son diferentes.</li>
+    <li>Para vuelos de tránsito a través de China (por ejemplo, Shanghái) con un mismo billete, los pasajeros suelen ser dirigidos a través de corredores de tránsito dedicados. Para agilizar el control de seguridad, los viajeros deben retirar de inmediato todos los objetos metálicos y capas adicionales de ropa. Los pasajeros con K-ETA para Corea que hagan una escala en China generalmente están exentos de completar tarjetas de entrada chinas.</li>
+    <li>Los ventiladores portátiles a batería generalmente están permitidos en el equipaje de mano en vuelos que transitan por China. Al transitar: si permanece en la zona de tránsito estéril, no se requiere tarjeta de llegada. Si sale del aeropuerto hacia la ciudad, debe completar una tarjeta de llegada (puede hacerse con 24 horas de antelación a través de la aplicación &#39;12367&#39; o la mini-aplicación de Alipay).</li>
+    <li>En el Aeropuerto Internacional de Pekín-Daxing (PKX), los pasajeros en tránsito que conectan vuelos internacionales (por ejemplo, China Eastern/Southern y S7) pueden realizar el check-in de transferencia y el re-registro de equipaje directamente dentro de la zona de tránsito internacional en los mostradores de transferencia (ubicados a la derecha de la zona de transferencia). No es necesario salir al área pública ni pasar por el control fronterizo chino, incluso si las alertas de reserva automatizadas indican que se requiere &#34;auto-transferencia&#34;.</li>
+    <li>Tránsito en China: los ciudadanos rusos pueden entrar a la ciudad durante escalas largas completando una tarjeta migratoria. En el aeropuerto de Pekín, los viajeros en tránsito pueden alquilar áreas para dormir tipo cápsula cerca de la zona de puertas A, que incluyen duchas, camas y servicios básicos por aproximadamente 200 CNY por 12 horas.</li>
+    <li>El check-in en línea de Air China desde Rusia a menudo falla mediante los métodos estándar. Los usuarios deben pasar la verificación de identidad en la aplicación cargando los datos del pasaporte. Incluso con un check-in en línea exitoso, generalmente se requiere el check-in físico en el mostrador del aeropuerto para dejar el equipaje o imprimir la tarjeta de embarque definitiva.</li>
+    <li>El tránsito a través de los aeropuertos chinos conlleva estrictas inspecciones de baterías. Las baterías externas (power banks) deben contar con una certificación CCC clara y especificaciones técnicas legibles. Aquellas con una capacidad superior a 20,000 mAh son confiscadas con frecuencia. Mantenga las baterías en su equipaje de mano y retírelas durante los controles de seguridad para su inspección. El cumplimiento de las indicaciones del personal de seguridad es obligatorio para evitar que se le deniegue el embarque.</li>
+    <li>Para el tránsito por China, es obligatorio completar un código QR de declaración de salud. Aunque puede rellenarse al llegar, se recomienda hacerlo en línea con antelación para ahorrar tiempo y evitar posibles retrasos en el registro o en inmigración. El código QR es fundamental para salir de la zona de tránsito y superar los controles de inmigración y salud.</li>
+    <li>En el caso de China Eastern Airlines, el último segmento del vuelo (por ejemplo, Shanghái-Moscú) suele utilizar un número de billete diferente. Si el segmento no aparece en la página web de la aerolínea, intente añadir un «1» al último dígito del número de billete. El registro en línea suele estar disponible solo 24 horas antes. Confirme siempre si el equipaje se factura hasta el destino final para gestionar las restricciones de líquidos.</li>
+    <li>Consejos de viaje para el tránsito en China: 1. Priorice siempre las reservas en un solo billete para protegerse ante posibles retrasos. 2. Siga las señales de «International Transfer», no las de salida. 3. Utilice traductores sin conexión para comunicarse. 4. Si pierde una conexión en una reserva única, la aerolínea es responsable de realizar una nueva reserva. 5. Se recomienda contratar un seguro de viaje para cubrir retrasos fortuitos.</li>
+    <li>Al transitar por China con una reserva de billete único (por ejemplo, China Eastern) y con el equipaje facturado hasta el destino final, los pasajeros pueden salir de la zona de tránsito durante una escala sin tener que recoger su equipaje. El equipaje será transferido automáticamente al vuelo de conexión.</li>
+    <li>Al transitar por China, solo se requiere un formulario en línea si planea abandonar la zona de tránsito. Permanecer dentro de la zona de tránsito no exige completar ningún formulario. Es recomendable completar el formulario si se sale de la zona de tránsito, ya que el incumplimiento puede derivar en la denegación del paso.</li>
+    <li>El tránsito por China para los pasajeros que deseen salir del aeropuerto requiere completar una tarjeta de llegada/salida. Cada vez se utilizan más los formularios QR electrónicos. Los pasajeros que permanezcan estrictamente en la zona de tránsito no necesitan completar estos formularios.</li>
+    <li>Es obligatorio presentar una tarjeta de llegada para las entradas internacionales en China. Para los vuelos en tránsito, si no sale de la zona de tránsito, no necesita rellenarla. Si sale de la zona de tránsito del aeropuerto hacia la ciudad, debe completar la tarjeta. Rellene el destino como la ciudad de primer aterrizaje en China si hay un vuelo de conexión nacional. Se recomienda encarecidamente rellenar la tarjeta de llegada digital a través del enlace oficial con antelación, en lugar de utilizar formularios en papel a la llegada.</li>
+    <li>Google Maps es muy impreciso en China debido al desplazamiento de coordenadas y a las restricciones del firewall. Los viajeros deben usar Amap (Gaode) o Baidu Maps para una navegación precisa y rutas de transporte público.</li>
+    <li>Tránsito a través de China: 1. Si sale del aeropuerto o cambia de terminal, los pasajeros deben rellenar una tarjeta de llegada en línea y recibir un código QR antes del vuelo. 2. Esto se aplica a los requisitos de llegada tanto de China como de Vietnam.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/es/cn/seguridad/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Seguridad</span></a>
+    <a class="chip" href="/es/cn/documentos-y-visados/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentos y visados</span></a>
+    <a class="chip" href="/es/cn/entradas-y-ocio/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Entradas y ocio</span></a>
+    <a class="chip" href="/es/cn/banca-y-dinero/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Banca y dinero</span></a>
+    <a class="chip" href="/es/cn/alojamiento/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Alojamiento</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>¿Cansado de googlear lo mismo?</h2>
+    <p>Pregúntale a Luky — arma la respuesta con reportes frescos de primera mano, no con publicidad.</p>
+    <p>Y Luky es un traductor de voz para conversaciones reales: arréglatelas con el taxista sin gestos.</p>
+    <p class="ps">PS: una llamada de voz con esa persona de otro país — también Luky</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiencia real de chats de comunidades, sin relleno</div>
+    <nav class="f-links">
+      <a href="/es/about/">Acerca de</a>
+      <a href="/es/cn/">Todos los temas</a>
+      <a href="/es/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Las respuestas se recopilan de chats abiertos de comunidades — es experiencia real de personas, no asesoría oficial. Verifica antes de decisiones importantes.</p>
+    <div class="f-copy">© 2026 Luky · actualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noche", DAY="\u2600 D\u00eda";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>
