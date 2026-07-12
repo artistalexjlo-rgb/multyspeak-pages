@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brasil: Câmbio e Transferências — experiência real · Luky</title>
+<meta name="description" content="Experiência real dos chats sobre Câmbio e Transferências em Brasil: como é, em primeira mão. Para o seu caso — pergunte ao Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/pt/br/c-mbio-e-transfer-ncias/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/br/c-mbio-e-transfer-ncias/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/br/c-mbio-e-transfer-ncias/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/br/c-mbio-e-transfer-ncias/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/br/c-mbio-e-transfer-ncias/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/br/c-mbio-e-transfer-ncias/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · qualquer país · sem enrolação</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noite</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/pt/">Início</a> /
+    <a href="/pt/br/">Brasil</a> /
+    <b>Câmbio e Transferências</b>
+  </nav>
+
+
+  
+  <h1>Câmbio e Transferências em Brasil: experiência real dos chats</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiência real de pessoas dos chats sobre «Câmbio e Transferências» em Brasil — como é, sem enrolação. Para o seu caso — <strong>pergunte ao Luky</strong>.</div></div>
+
+  <h2>Da experiência real</h2>
+  <ul class="qlist">
+    <li>O melhor método de câmbio (dinheiro em espécie versus cartão internacional) no Brasil não é direto e pode ser contraditório. Um usuário observou taxas da MasterCard em torno de 5,12 BRL/USD, enquanto casas de câmbio ofereciam 5,5 BRL/USD (parecendo inicialmente melhor). No entanto, outro usuário relatou taxas de câmbio de dinheiro em espécie desfavoráveis em casas locais (cerca de 4,8 BRL/USD) e preferiu usar seu cartão estrangeiro. Sites como o MelhorCâmbio estão disponíveis para comparação de taxas. Os viajantes devem verificar as taxas atuais ao chegar e considerar que as taxas de cartões estrangeiros podem, às vezes, ser mais favoráveis do que o câmbio em espécie em casas físicas.</li>
+    <li>Informações sobre a taxa de câmbio de USD para BRL no Brasil. O usuário trocou US$ 200 no aeroporto por aproximadamente 4 BRL/USD, notando que as casas de câmbio ofereciam cerca de 6 BRL/USD. Menciona outra taxa de 4,2-4,98 como potencialmente normal. Busca esclarecimentos sobre taxas de câmbio favoráveis atuais.</li>
+    <li>A taxa de câmbio de USD para BRL no Rio de Janeiro foi relatada da seguinte forma: 500 BRL para notas novas de USD e 400 BRL para notas antigas de USD, a cada 100 USD.</li>
+    <li>Para obter as melhores taxas de câmbio perto da fronteira entre o Brasil e o Paraguai, atravesse a ponte a pé até o Paraguai. À esquerda, após a travessia, há um shopping center conhecido por oferecer as taxas de câmbio mais favoráveis e uma variedade de moedas.</li>
+    <li>Para sacar Reais (BRL) da Bybit para a moeda local, os usuários devem explorar os métodos de saque disponíveis. Serviços de câmbio específicos verificados ou opções podem ser recomendados por meio de canais seguros, como mensagens fixadas em chats oficiais ou contatos de especialistas verificados. Recomenda-se cautela contra ofertas não solicitadas devido ao aumento das tentativas de fraude.</li>
+    <li>No Brasil, os usuários podem comprar criptomoedas com rublos (ou outras moedas fiduciárias) e usar o aplicativo da Bybit para pagar comerciantes diretamente através da infraestrutura do sistema de pagamentos local brasileiro (integração com o Pix).</li>
+    <li>Viajantes entrando no Brasil podem trazer até 10.000 USD (ou o equivalente em outras moedas) em dinheiro em espécie sem precisar declarar à alfândega. Valores que excedam esse limite devem ser declarados na chegada.</li>
+    <li>O câmbio no Brasil é tipicamente atrelado ao dólar americano (USD). Rublos russos (RUB) não são aceitos para troca. Casas de câmbio físicas em áreas turísticas como Copacabana podem não exigir passaporte para pequenas transações. As taxas de câmbio são cotadas em relação ao dólar americano (USD/BRL).</li>
+    <li>Viajantes que chegam ao Aeroporto de São Paulo-Guarulhos (GRU) podem encontrar carregadores oferecendo serviços informais de câmbio, por vezes com taxas negociáveis. No entanto, realizar tais transações traz um alto risco de golpes e fraudes. É fortemente recomendável usar casas de câmbio oficiais ou caixas eletrônicos. Tenha cuidado com mensagens privadas não solicitadas de indivíduos oferecendo serviços de câmbio, pois estas são frequentemente fraudulentas. Administradores de comunidades online normalmente não oferecem recomendações ou serviços por mensagens privadas.</li>
+    <li>A maioria das lojas no Brasil aceita pagamentos via celular (Google Pay, Apple Pay). Ao pagar com um cartão internacional pelo celular, instrua o caixa a processar como &#39;cartão de crédito&#39;, pois é assim que os cartões internacionais são normalmente identificados.</li>
+    <li>Transferências internacionais diretas do Sberbank para contas brasileiras (Pix) são atualmente pouco confiáveis. As transações são frequentemente rejeitadas ou devolvidas por bancos intermediários ou receptores. Se uma transferência falhar, inicie uma investigação formal de pagamento através do aplicativo de suporte ao cliente do banco.</li>
+    <li>Desde 30 de dezembro de 2022, os viajantes que entram ou saem do Brasil podem portar até US$ 10.000 (ou o equivalente em outras moedas) sem declaração obrigatória. Anteriormente, o limite era de R$ 10.000. Para valores superiores a US$ 10.000, os viajantes devem enviar a &#39;Declaração Eletrônica de Bens do Viajante (e-DBV)&#39; à Alfândega, declarando o dinheiro em espécie, cheques e cheques de viagem portados.</li>
+    <li>Há uma discussão em andamento no chat sobre o uso da Bybit com PIX (sistema de pagamento instantâneo do Brasil) para transações de criptomoedas via código QR. Usuários relataram transações bem-sucedidas por pelo menos seis meses, indicando que, embora alguns locais específicos possam apresentar problemas, o método é geralmente funcional.</li>
+    <li>A troca de moeda em São Paulo diferencia notas de dólar antigas de novas, oferecendo taxas significativamente mais baixas para cédulas antigas. Locais recomendados: Money Exchange na Praça da Liberdade, 130 (bairro Liberdade) e SP Mundi Exchange na Av. Brig. Faria Lima, 1827 (Pinheiros). O Euro é uma alternativa viável caso não haja notas novas de dólar disponíveis.</li>
+    <li>As tarifas de interpretação profissional consecutiva ou simultânea no Brasil variam de 100 a 200 BRL por hora até aproximadamente 50 USD por hora para serviços profissionais. Para projetos de longo prazo (por exemplo, 3 semanas), recomenda-se negociar uma taxa fixa diária ou baseada no projeto, em vez de uma taxa horária.</li>
+    <li>Ao trocar dólares americanos por reais brasileiros, há uma diferença perceptível nas taxas de câmbio entre notas de séries antigas e novas. Notas mais antigas geralmente são aceitas com uma taxa ligeiramente pior, variando tipicamente de 10 a 50 centavos de real a menos por dólar, dependendo do local. É aconselhável usar notas mais novas para um câmbio mais favorável.</li>
+    <li>Usuários relatam utilizar o P2P da Binance para sacar BRL para bancos brasileiros (Itaú, Nu, Inter) sem enfrentar bloqueios de conta. Recomenda-se negociar com comerciantes verificados e bem avaliados na plataforma.</li>
+    <li>As taxas de câmbio no aeroporto de São Paulo são relatadas como muito desfavoráveis. Um usuário relatou ter perdido aproximadamente 100 de 300 unidades da moeda trocada. É aconselhável evitar a troca de moeda no aeroporto e procurar taxas melhores em outros locais.</li>
+    <li>Em São Paulo, as casas de câmbio físicas são encontradas com mais facilidade e segurança dentro de grandes shopping centers. Eles oferecem um ambiente seguro para a troca de dinheiro em espécie.</li>
+    <li>O Pix é o principal sistema de pagamentos instantâneos no Brasil, funcionando de forma semelhante ao SBP (Sistema de Pagamentos Mais Rápidos) da Rússia. Para usar o Pix, normalmente é necessário ter uma conta em um banco brasileiro ou acesso a um serviço de câmbio de terceiros que facilite a conversão de criptomoedas ou rublos para BRL.</li>
+    <li>No Aeroporto de São Paulo-Guarulhos (GRU), geralmente não há casas de câmbio na zona de trânsito estéril. Existe uma casa de câmbio localizada após o controle de passaportes e antes da restituição de bagagem, mas ela oferece uma taxa de câmbio muito desfavorável. Ela funciona à noite. Táxis estão disponíveis fora do terminal, à direita, em um quiosque de vidro. O pagamento pode ser feito em dinheiro ou cartão; a tarifa permanece a mesma. Os táxis são espaçosos. Por exemplo, uma viagem até a Vila Mariana custa aproximadamente 230 BRL. É recomendável ter o endereço de destino impresso em português para o motorista.</li>
+    <li>São necessárias informações sobre o horário mais cedo e o local para câmbio de moeda em Foz do Iguaçu para comprar passagens de ônibus para viajar para o lado argentino das Cataratas do Iguaçu. Esse câmbio é necessário para a compra da passagem de ônibus.</li>
+    <li>O usuário relata uma taxa de câmbio extremamente desfavorável de USD para BRL no aeroporto de São Paulo, recebendo 355 BRL por 100 USD quando a taxa de mercado local era de aproximadamente 5,3 BRL/USD. Recomenda-se trocar dinheiro em outro lugar.</li>
+    <li>No Brasil, o principal método de pagamento digital é o PIX, que funciona de forma semelhante ao SBP da Rússia. Os pagamentos podem ser feitos escaneando um código QR ou inserindo manualmente os dados do destinatário. Embora plataformas como Bybit e Wanderwallet possam ser integradas ao PIX, a confiabilidade e as taxas de câmbio delas nem sempre são ideais. A solução mais eficiente para residentes de longo prazo é abrir uma conta bancária local e obter um cartão local.</li>
+    <li>O uso de cartões estrangeiros (não brasileiros) no Brasil envolve perdas significativas de conversão, variando frequentemente entre 10% e 12% no total devido à dupla conversão (por exemplo, RUB/USD para BRL) e possíveis taxas de serviço do terminal. Soluções locais populares incluem o uso de serviços P2P (como Bybit ou MoneyTrust) para financiar contas locais, ou o uso de cartões de países da CEI (por exemplo, bancos do Tajiquistão) que permitem transferências em rublos via número de telefone.</li>
+    <li>Para um serviço confiável de câmbio no Rio de Janeiro, os viajantes recomendam a casa de câmbio localizada na R. Xavier da Silveira, 15. Ela funciona dentro de uma agência de viagens e é conhecida pela disponibilidade consistente e taxas justas.</li>
+    <li>Estrangeiros no Brasil podem abrir contas bancárias no Bradesco e no Banco do Brasil. Esses bancos oferecem suporte ao PIX. Transferências de corretoras de criptomoedas como a Bybit para cartões locais (reais) são possíveis através desses bancos. Protocolos específicos podem ser necessários para a abertura da conta.</li>
+    <li>Trocar moeda (reais brasileiros) em São Paulo em um feriado, como 31 de dezembro, pode ser difícil, já que os bancos estão fechados. Procure por uma &#39;casa de câmbio&#39;. Grandes hotéis também podem oferecer serviços de câmbio, especialmente durante feriados. É aconselhável verificar o horário de funcionamento das casas de câmbio com antecedência.</li>
+    <li>Notas de dólar americano de modelos mais antigos são geralmente aceitas em casas de câmbio no Brasil, mas os viajantes devem esperar taxas de comissão mais altas em comparação com notas mais novas.</li>
+    <li>Estrangeiros que não residem no Brasil são legalmente obrigados a obter um CPF (Cadastro de Pessoas Físicas) caso possuam ou planejem adquirir bens sujeitos a registro público no Brasil, como imóveis, veículos, embarcações, aeronaves ou contas bancárias. Turistas podem solicitar um CPF antecipadamente em um consulado brasileiro no exterior declarando a intenção de comprar um veículo ou propriedade ao chegar. O CPF é obrigatório para abrir contas bancárias ou concluir compras registradas.</li>
+    <li>Viagens diretas da Rússia para o Brasil exigem dólares americanos ou cartões internacionais/criptomoedas. Rublos russos não podem ser trocados no Brasil; a conversão para dólares deve ser feita em países de trânsito como Armênia, Cazaquistão ou Quirguistão, onde casas de câmbio locais aceitam RUB.</li>
+    <li>Em São Paulo, as casas de câmbio oficiais geralmente ficam fechadas aos domingos. Alguns hotéis podem oferecer serviços de câmbio, mas geralmente com taxas menos favoráveis. É aconselhável trocar dinheiro durante a semana ou planejar o uso de caixas eletrônicos.</li>
+    <li>No Brasil, a maneira mais eficiente de pagar por bens e serviços é usando o sistema Pix. Turistas costumam utilizar corretoras de criptomoedas P2P (como a Bybit) para converter USDT em BRL, que é então transferido via Pix para uma conta local ou usado diretamente para pagamentos via QR code.</li>
+    <li>As taxas de câmbio nos aeroportos brasileiros são significativamente piores do que nos centros das cidades (por exemplo, 4,2 contra 5,3 BRL/USD). Ao trocar USD, notas mais novas (série azul) obtêm uma taxa melhor do que as antigas verdes. Perto de Foz do Iguaçu, atravessar para o Paraguai (Shopping Paris) geralmente oferece taxas de câmbio melhores.</li>
+    <li>No Brasil, as lojas das grandes marcas de telecomunicações raramente vendem planos móveis para turistas sem residência local (CPF/RNE). Para obter um cartão SIM pré-pago (&#39;chip pré-pago&#39;), compre-o em uma banca de jornal por cerca de 20 BRL. É altamente recomendável ativá-lo imediatamente com a ajuda do vendedor para verificar se funciona. As recargas de saldo podem ser feitas em farmácias locais.</li>
+    <li>Trocar BRL (Real brasileiro) na Rússia é altamente ineficiente devido às taxas de câmbio desfavoráveis. É significativamente mais vantajoso (aprox. 25% melhor) levar USD para o Brasil e trocar por BRL localmente. As comissões médias das casas de câmbio locais variam de 1% a 3%.</li>
+    <li>Para taxas de câmbio potencialmente melhores ao lidar com a moeda brasileira, considere usar serviços internacionais de transferência de dinheiro, como Wise ou Revolut, em vez de depender apenas de cartões bancários locais ou casas de câmbio. Esses serviços costumam oferecer taxas mais competitivas.</li>
+    <li>Turistas no Brasil que possuem CPF, mas não têm uma conta bancária local, podem usar o sistema de pagamentos Pix por meio de corretoras de criptomoedas, como a Bybit. Esse método permite a participação no ecossistema Pix sem a necessidade de abrir uma conta bancária tradicional brasileira, o que pode ser um desafio para não residentes.</li>
+    <li>É difícil trocar rublos russos físicos no Brasil, pois eles não são aceitos para transações gerais e só servem como lembranças.</li>
+    <li>A integração do PIX para pagamentos no aplicativo funciona, mas oferece uma taxa de câmbio um pouco menos favorável (cerca de 3% de ágio) em comparação com a taxa oficial. A taxa observada foi de 5,14 BRL para 1 USD, com a taxa oficial em 5,28 BRL. Isso é comparável a outros serviços de cripto-fintech.</li>
+    <li>Resolução de problemas de pagamento para o show da Rafain Churrascaria em Foz do Iguaçu ao pagar a partir da Rússia. O usuário tentou usar cartões do Uzbequistão e do Quirguistão, com e sem VPN, mas o pagamento não é processado. O problema pode estar relacionado ao processamento de pagamentos para transações internacionais ou à possível detecção de fraude pelos bancos.</li>
+    <li>O acesso ao sistema de pagamento PIX no Brasil geralmente requer um CPF (Cadastro de Pessoas Físicas) e documentação de residência (como RNE/CRNM). A maioria dos aplicativos bancários exige esses documentos para verificação de conta, tornando difícil para turistas se registrarem no PIX sem um documento de identidade emitido no Brasil.</li>
+    <li>Transferências diretas do Sberbank para o Nubank no Brasil via código QR funcionam, embora estornos ocasionais possam ocorrer. As taxas de câmbio para Sber-para-PIX/Nubank são frequentemente competitivas em comparação com a troca de dinheiro ou depósitos em cartões locais. A aceitação de pagamentos via QR do Sber é limitada a determinados estabelecimentos (por exemplo, cafés em aeroportos) e pode não ser aceita em todos os supermercados.</li>
+    <li>Ciudad del Este (Paraguai) é um centro de compras livre de impostos na Tríplice Fronteira com o Brasil e a Argentina. Os preços de eletrônicos são significativamente mais baixos do que no Brasil/Argentina devido às isenções fiscais. Moeda recomendada: USD em espécie. Espere uma variedade limitada de moda.</li>
+    <li>Oriente os turistas sobre os melhores métodos de pagamento e opções de cartão para o Brasil. Explique a funcionalidade limitada do UnionPay no Brasil e o impacto das sanções nos cartões bancários russos. Recomende levar um pouco de dólares em espécie como reserva. Sugira opções como o uso de serviços para converter rublos em reais brasileiros ou para facilitar pagamentos, e mencione o potencial sucesso com bancos russos específicos via códigos QR, se disponíveis.</li>
+    <li>Ao pagar com cartão no Brasil, escolha sempre ser cobrado em reais (BRL) em vez de dólares (USD). Pagar em BRL pode resultar em uma taxa de câmbio de 10 a 15% melhor. Os terminais de pagamento geralmente oferecem uma escolha de moeda (BRL ou USD). Observe as instruções na tela; normalmente, um botão vermelho pode estar associado ao BRL. Os caixas brasileiros podem não entender as instruções em inglês e podem pressionar instintivamente o botão verde, que pode definir o pagamento em USD por padrão. É crucial que o usuário selecione BRL.</li>
+    <li>Transferir fundos para o Brasil para a compra de imóveis envolve vários métodos com diferentes prós e contras:
+1. **Tinkoff (Rússia):** Oferece taxas de câmbio favoráveis (aprox. 15,4 RUB/BRL), mas os fundos chegam como transferências TED internas, podendo causar problemas com bancos brasileiros quanto à comprovação de origem e imposto IOF.
+2. **Banco Armênio (SWIFT para o Santander):** Taxa de câmbio mais alta (aprox. 16,7 RUB/BRL), mas garante uma comprovação clara da origem dos fundos.
+3. **Criptomoeda (ex.: USDT):** O potencial para grandes retiradas legais sem transações P2P requer uma investigação minuciosa sobre a aceitação bancária e a comprovação de origem.
+4. **Cartões/Serviços Multimoedas:** Explore opções de transferências diretas de USD para USD se o vendedor aceitar, ou serviços que facilitem pagamentos internacionais com baixa perda. Observe que as regulamentações brasileiras geralmente exigem que os pagamentos sejam liquidados em BRL.</li>
+    <li>Trocar rublos russos diretamente por reais brasileiros (BRL) é, em geral, ineficiente. Estratégia recomendada: converta rublos para USD na Rússia e, depois, troque os USD por BRL localmente (evitando casas de câmbio em aeroportos devido às altas comissões). Alternativamente, use criptoativos (USDT) para converter para BRL a fim de obter uma taxa de câmbio mais favorável.</li>
+    <li>As taxas de câmbio nos aeroportos brasileiros são geralmente ruins. Tenha cuidado com mensagens privadas não solicitadas oferecendo consultoria de câmbio, pois podem ser golpes. As taxas de câmbio nos aeroportos são frequentemente menos favoráveis do que as encontradas em hotéis ou dentro da cidade. Os administradores não iniciam mensagens privadas para recomendações.</li>
+    <li>Ao viajar para o Brasil, considere utilizar cartões de pagamento para transações. Para câmbio de dinheiro, recomenda-se utilizar métodos confiáveis ou contatos de confiança em vez de trocar grandes quantias ao chegar.</li>
+    <li>Um usuário em um chat brasileiro está buscando informações sobre aplicativos de fintech locais que suportem transações de criptomoedas, semelhantes aos serviços disponíveis na Argentina. Eles procuram plataformas que permitam pagamentos favoráveis em cripto e a emissão de cartão virtual, possivelmente usando apenas o CPF (Cadastro de Pessoas Físicas) sem residência permanente. A possibilidade de verificar contas com documentos argentinos também está sendo explorada.</li>
+    <li>Câmbio de moeda em São Paulo: as opções incluem o Shopping Pátio Paulista (2º andar). As taxas de câmbio variam; em 2013, a taxa era de aproximadamente 5,1 BRL por USD. Foque na troca de notas de USD emitidas após 2013.</li>
+    <li>Compare métodos de câmbio no Brasil para obter Reais brasileiros (BRL). Discuta opções como Unired, transferências bancárias, conversões de criptomoedas (USDT) e possíveis taxas de câmbio e tarifas associadas a cada uma.</li>
+    <li>Em Copacabana, Brasil, um almoço econômico sem bebidas custa aproximadamente 300 RUB. Trocar dinheiro em espécie é geralmente mais vantajoso financeiramente do que pagar com cartão (Visa/Mastercard). Os viajantes devem estar cientes dos diferentes padrões de higiene; baratas são comumente observadas em restaurantes e supermercados. Também é relatado um odor incomum nas seções de carne dos supermercados, o que os locais muitas vezes consideram normal.</li>
+    <li>Para trocar dólares americanos por reais brasileiros no Rio de Janeiro, recomenda-se geralmente evitar vendedores de rua e procurar casas de câmbio oficiais ou bancos conceituados. As taxas de câmbio podem variar, portanto, é aconselhável comparar as taxas em diferentes locais. Alguns viajantes também relataram sucesso ao usar caixas eletrônicos para saques, embora isso possa incorrer em taxas de transação internacional cobradas pelo seu banco. Considere verificar com seu banco sobre as taxas de caixa eletrônico internacional e as taxas de câmbio antes de sua viagem.</li>
+    <li>Ao buscar serviços financeiros no Brasil, considere opções como &#39;Freedom bank&#39; e &#39;e residence&#39;. Solicitar diretamente o &#39;e residence&#39; pode ser mais econômico do que passar por certos bancos. Embora cartões de plástico possam ser obtidos, a disponibilidade pode estar restrita a países específicos, como Rússia e Cazaquistão. Esteja ciente de que os regulamentos financeiros podem mudar, potencialmente exigindo uma nova solicitação para serviços como o &#39;e residence&#39;. Recomenda-se pesquisar várias opções de cartões virtuais e físicos, bem como serviços bancários, para encontrar as soluções mais adequadas e econômicas.</li>
+    <li>Ao viajar para o Brasil, evite portar notas de 200 euros. Casas de câmbio e bancos locais (incluindo o Banco do Brasil) em cidades menores frequentemente se recusam a aceitar notas de 200 euros devido a preocupações com liquidez. Notas de 100 euros e denominações menores são facilmente aceitas e mais fáceis de trocar.</li>
+    <li>Câmbio de moeda no Brasil (por exemplo, São Paulo, Copacabana) aos domingos: A maioria das casas de câmbio especializadas está fechada aos domingos. Recomenda-se verificar locais de &#39;câmbio&#39; no Google Maps com antecedência ou planejar a troca de moeda para dias úteis.</li>
+    <li>Para transferir dinheiro da Rússia para o Brasil, especialmente para um cidadão brasileiro, dois métodos alternativos comuns são: 1. Corretoras de criptomoedas: Utilize plataformas para converter RUB em criptomoeda e, depois, em BRL. 2. Câmbio Peer-to-Peer (P2P): Combine uma troca direta com uma pessoa no Brasil que possa fornecer BRL localmente em troca de uma transferência de RUB na Rússia.</li>
+    <li>Usuários relataram problemas significativos com cartões do Freedom Bank no Rio de Janeiro. Os problemas incluem inoperância total, saldos negativos aleatórios que levam dias para serem resolvidos e restrições arbitrárias ao cartão. O tempo de resposta do suporte ao cliente também seria lento, tornando aconselhável que os viajantes tenham métodos de pagamento alternativos.</li>
+    <li>Indivíduos que procuram trocar Reais brasileiros por criptomoedas por meio de reuniões presenciais no Brasil estão buscando transações diretas. Isso sugere uma preferência por trocas seguras e presenciais em vez de plataformas online, possivelmente devido à confiança ou a condições específicas de mercado.</li>
+    <li>As experiências de câmbio em aeroportos brasileiros variam. No aeroporto de São Paulo, apenas o passaporte foi necessário para trocar Euros. No aeroporto de Salvador, mesmo para pequenas quantias (por exemplo, 50 Euros), os funcionários teriam perguntado sobre profissão e renda.</li>
+    <li>No Brasil, casas de câmbio e bancos são altamente sensíveis à condição e à série das notas de dólar americano. Notas de 2006 ou anteriores são frequentemente rejeitadas ou aceitas com taxas de câmbio significativamente menores. Os viajantes devem portar notas de dólar de valor alto, novas e emitidas recentemente (série &#39;azul&#39; posterior a 2013) para evitar dificuldades de câmbio.</li>
+    <li>Dicas práticas importantes para viajar pelo Brasil incluem: 1. Transporte: Para o aplicativo 99, um CPF é necessário; o Uber funciona sem ele. Pagamentos no Uber podem ser feitos em dinheiro, mas esteja ciente de possíveis ajustes de tarifa ou cobranças pendentes. No Aeroporto do Galeão, os pontos de coleta da 99 ficam no 2º andar, enquanto o Uber fica a uma curta caminhada da saída. 2. Cartões SIM: Cartões SIM podem ser comprados sem CPF no shopping RioSul (cerca de 70 BRL), geralmente em bancas de jornal. 3. Câmbio: As taxas de câmbio nos aeroportos são desfavoráveis (aprox. 3,6 BRL/USD); saques em caixas eletrônicos oferecem taxas melhores (aprox. 4,2 BRL/USD com taxas). 4. Segurança: Áreas como Copacabana, Ipanema e o centro do Rio são geralmente consideradas seguras, mesmo à noite, desde que se mantenha uma vigilância básica e os telefones sejam guardados prontamente após o uso. 5. Passeios Guiados: Contratar um guia é recomendado para experiências como passeios em favelas ou voos de helicóptero. 6. Comida: Explore frutas exóticas no Mercado Municipal de São Paulo. 7. Foz do Iguaçu: Visite o parque das aves; um dia é suficiente para o lado argentino, mas observe o horário do último trem para a &#39;Garganta do Diabo&#39;.</li>
+    <li>O pagamento direto via aplicativos bancários russos (usando códigos QR) não funciona no Brasil. O sistema local de pagamento instantâneo, PIX, exige uma conta local ou um intermediário de criptomoedas (como a Bybit) para facilitar pagamentos para não residentes com número de CPF.</li>
+    <li>Para viajar do aeroporto de São Paulo ao Rio de Janeiro de ônibus: do aeroporto de São Paulo, pegue um ônibus até o terminal rodoviário do Tietê, o que custa aproximadamente 30 BRL e leva 1 hora. Do Tietê, um ônibus noturno para o Rio de Janeiro leva cerca de 7 horas, com preços que variam de 120 a 800 BRL, dependendo da classe de conforto (uma passagem de 150 BRL é viável para um ônibus noturno padrão). O passaporte é suficiente para comprar passagens de ônibus intermunicipais; não é necessário CPF brasileiro. Reais (BRL) podem ser comprados na Rússia, por exemplo, no Banco Avangard em São Petersburgo.</li>
+    <li>Esclareça as implicações fiscais de receber transferências financeiras de parentes no Brasil. Diferencie &#39;doação&#39; de &#39;ajuda material&#39;. Explique que as doações estão sujeitas ao Imposto sobre Transmissão Causa Mortis e Doação (ITCMD), um imposto estadual, e descreva as condições sob as quais essas transferências podem ser consideradas rendimento ou doação para fins fiscais. Além disso, explique as implicações fiscais para não residentes e a possível exigência de declarar bens.</li>
+    <li>No Brasil, os caixas eletrônicos dispensam exclusivamente Reais (BRL), não Dólares (USD), mesmo que a conta do cartão contenha USD. Para converter USD em dinheiro, geralmente é preciso sacar BRL e então trocar BRL por USD em uma casa de câmbio. Alguns pontos de câmbio em shoppings podem aceitar uma foto do passaporte para a troca de moeda.</li>
+    <li>Para indivíduos que trabalham remotamente para empresas russas enquanto residem no Brasil, as implicações fiscais são uma preocupação. Alguns relatam pagar impostos na Rússia sem problemas por parte do Brasil, mesmo com status de residência. Os fundos geralmente são movimentados por meio de cartões de países da CEI, criptomoedas ou serviços de câmbio, com alguns mantendo contas em países como Geórgia ou Armênia. Embora o Brasil possa ocasionalmente solicitar números de identificação fiscal, isso parece ser menos rigoroso do que na Argentina em relação ao monitoramento de gastos. Recomenda-se a legalização da renda, mesmo que proveniente de economias.</li>
+    <li>No Brasil, notas de dólar americano impressas antes de 2006 não são amplamente aceitas e geralmente estão sujeitas a um desconto na taxa de câmbio de 10% a 20%. Aconselhe os viajantes a trazerem notas de dólar mais novas para evitar grandes perdas na conversão.</li>
+    <li>Viajantes no Brasil podem economizar dinheiro em passagens de ônibus intermunicipais evitando agregadores como o ClickBus devido às taxas de serviço. Em vez disso, identifique a operadora de ônibus no agregador e reserve diretamente pelo site oficial da empresa. Códigos promocionais costumam estar disponíveis nos sites oficiais para reservas diretas.</li>
+    <li>Os usuários procuram frequentemente métodos confiáveis para transferir dinheiro do Brasil para a Rússia. Isso indica uma demanda por serviços financeiros que facilitem remessas internacionais entre esses países.</li>
+    <li>Evite casas de câmbio em aeroportos no Brasil devido às taxas desfavoráveis. Utilize agências de câmbio na cidade para obter melhores taxas. Ao trazer dólares, priorize notas de 100 dólares da &#39;série azul&#39; (nova série); notas mais antigas podem sofrer um desconto de até 20% nos pontos de troca.</li>
+    <li>Transferências do Sberbank para o Brasil usando PIX são instantâneas. As transações geralmente variam de 10.000 a 30.000 rublos russos. Este método de transferência vem sendo utilizado nos últimos dois meses.</li>
+    <li>As taxas de câmbio de dólar para real no Aeroporto de Guarulhos (GRU) são significativamente piores do que na cidade de São Paulo. Exemplo de taxas no GRU: 3,6 BRL para cada 100 USD, 4,0 BRL para cada 200 USD. Notas antigas de dólar podem receber taxas menores. As taxas na cidade podem girar em torno de 5,2 BRL por dólar. Alguns taxistas no aeroporto podem oferecer taxas intermediárias (por exemplo, 4,8 BRL para cada 100 USD). Para encontrar as melhores taxas, o site melhorcambio é recomendado.</li>
+    <li>Para transferir dinheiro para o Brasil sem depender de criptomoedas, um método prático envolve obter o RNM (Registro Nacional Migratório). Uma vez obtido o RNM, pode-se abrir uma conta na Wise. Os fundos podem então ser transferidos para a conta Wise via serviços como KoronaPay e, posteriormente, da Wise para uma conta bancária brasileira. Isso oferece uma alternativa tradicional e regulamentada para transações financeiras.</li>
+    <li>Ao trocar USD por BRL em Recife, Brasil, recomenda-se visitar 2 ou 3 casas de câmbio locais para comparar as taxas, pois elas variam. Evite trocar dinheiro em aeroportos e shoppings, já que suas taxas costumam ser significativamente piores. Também é aconselhável verificar chats da comunidade local para obter recomendações atualizadas dos moradores.</li>
+    <li>As taxas de câmbio nos aeroportos brasileiros, incluindo São Paulo (GRU), são geralmente muito desfavoráveis (taxas de &#34;roubo&#34;), com exemplos como 3,85 BRL por USD quando as taxas favoráveis giram em torno de 5,3 BRL por USD. É altamente recomendável evitar trocar grandes quantias em aeroportos. Embora a maioria das transações possa ser feita por cartão, um pouco de dinheiro em espécie (BRL) é útil para pequenos vendedores, gorjetas ou serviços específicos, como banheiros de praia ou flanelinhas. Para conseguir taxas melhores, procure casas de câmbio no centro da cidade ou utilize caixas eletrônicos (com cautela em relação às tarifas).</li>
+    <li>Em São Paulo, evite trocar moeda no aeroporto devido às taxas desfavoráveis. Opções melhores incluem casas de câmbio em shoppings, como uma localizada no terceiro andar de um grande shopping no início da Avenida Paulista, que funciona inclusive aos domingos. A Travelex é uma rede reconhecida com várias unidades, oferecendo taxas competitivas (por exemplo, 4,9 BRL por 1 USD), mas exige a apresentação de passaporte. Para despesas imediatas e pequenas, como táxi ou um café na chegada, trocar uma quantia pequena (por exemplo, 100 USD) no aeroporto é aceitável.</li>
+    <li>Caso não consiga recarregar o aplicativo Yolla com um cartão brasileiro, cartões internacionais (por exemplo, cartões do Cazaquistão) são aceitos. Isso sugere uma alternativa para problemas de pagamento local.</li>
+    <li>No Shopping Paris, no Paraguai, perto da ponte de Foz do Iguaçu (Brasil), uma casa de câmbio aceitou notas de 100 USD mais antigas (de 2006) a uma taxa favorável de 5,5 BRL, igualando a taxa das notas mais novas. As casas de câmbio de rua ofereceram taxas menores para notas antigas.</li>
+    <li>Transferências bancárias diretas da Rússia para o Brasil estão atualmente altamente restritas devido a sanções. Alternativas comuns incluem o uso de corretoras de criptomoedas ou plataformas P2P, como a Western Union. Transferências internacionais entre bancos frequentemente falham ou resultam em contas bloqueadas. Recomenda-se o uso de métodos de pagamento locais ou serviços P2P.</li>
+    <li>No Brasil, usuários com um CPF registrado e uma conta na Bybit podem fazer pagamentos via Pix (sistema local de pagamento por QR code) usando o Bybit Pay. Esse método converte automaticamente USDT para BRL, oferecendo taxas de câmbio superiores às das casas de câmbio tradicionais.</li>
+    <li>Ao trocar dólares americanos no Brasil, a taxa de câmbio para notas mais antigas pode ser menor do que para as novas, com uma diferença potencial de 5% a 20%. É recomendável trocar dinheiro em casas de câmbio oficiais, frequentemente encontradas em shoppings, onde as taxas para notas de dólar mais novas são geralmente mais favoráveis. Embora alguns locais possam oferecer a mesma taxa para notas antigas e novas, isso é menos comum. Trazer notas de dólar mais novas é recomendado para possivelmente garantir uma taxa de câmbio melhor.</li>
+    <li>Para registrar o PIX no Brasil, indivíduos que obtiveram seu CPF em Moscou podem comprar o PIX em bancas de jornal. O custo aproximado é de cerca de $20 USD. Negociar com o vendedor também pode resultar na obtenção de um cartão SIM ativado.</li>
+    <li>Utilizar a Bybit para câmbio de criptomoedas e o Pix para pagamentos no Brasil pode oferecer uma taxa de câmbio muito favorável, evitando potencialmente perdas com dupla conversão. No entanto, este método tem desvantagens práticas: exige uma conexão estável à internet, o processo de recarga de criptomoedas pode ser trabalhoso e as transações frequentemente exigem a inserção de um código de verificação recebido por e-mail. Por conveniência, pagamentos com cartão offline podem ser preferíveis, apesar de as taxas de câmbio serem potencialmente menos favoráveis.</li>
+    <li>Ao trocar USD/EUR por BRL no Brasil, evite casas de câmbio em aeroportos devido às taxas desfavoráveis. Use casas de câmbio em shoppings. A maioria fecha às 18:00. As taxas de câmbio podem variar entre as cidades (historicamente, o Rio de Janeiro pode oferecer taxas um pouco melhores do que São Paulo).</li>
+    <li>Para transferir fundos da Rússia para o Brasil: 
+1. **Via PIX (QR Code):** Há relatos de que o Sberbank e o VTB suportam transferências usando PIX (código QR) a partir da Rússia. Este é um método de transferência despersonalizado.
+2. **Via Wise:** Transferências via SWIFT para o Wise levam aproximadamente um dia. No entanto, transferências SWIFT diretas da Rússia podem estar restritas. Uma solução para um remetente na Rússia (como uma avó) é criar uma &#39;chave de PIX&#39; no Wise e pedir que enviem fundos via Sberbank usando um código QR para essa chave PIX.
+3. **Wise para Wise:** Se você possui uma conta Wise, transferências internacionais (como Wise para Wise) são geralmente rápidas e econômicas. No entanto, a transferência inicial *para* o Wise a partir da Rússia pode ser o gargalo.
+Considere que o cartão Wise pode ser uma opção para receber fundos, mas transferências diretas da Rússia podem enfrentar limitações. O método da &#39;chave de PIX&#39; a partir do Sberbank parece ser uma opção viável para usuários na Rússia.</li>
+    <li>Transferências via PayPal para contas bancárias brasileiras são convertidas automaticamente para BRL. Se esses fundos chegarão a um cartão de débito/crédito depende do processamento interno do banco do destinatário. Recomenda-se sempre testar o processo com uma pequena transação antes de enviar um valor alto.</li>
+    <li>Troca de dólares americanos no Brasil: notas de denominações mais antigas, possivelmente até mesmo as de 2013, podem estar sujeitas a taxas de câmbio menos favoráveis em comparação com notas mais novas. É aconselhável verificar com as casas de câmbio quais séries de notas de dólar são atualmente aceitas com as melhores taxas.</li>
+    <li>O saque de dinheiro no Brasil pode ser feito via caixas eletrônicos, casas de câmbio e alguns caixas eletrônicos especializados. Por exemplo, os caixas eletrônicos vermelhos no térreo do Shopping Pátio Paulista permitem o saque de dinheiro com Visa. As taxas de câmbio em casas de câmbio de aeroportos são frequentemente desfavoráveis; uma taxa ruim para 50 EUR rendeu apenas 205 BRL, mal o suficiente para um táxi. É aconselhável comparar as taxas de câmbio em diferentes locais, pois economias significativas (por exemplo, 400 BRL) podem ser obtidas visitando várias casas de câmbio, possivelmente nos andares inferiores de shoppings ou longe do aeroporto.</li>
+    <li>Os requisitos de câmbio variam de acordo com a cidade no Brasil. No Rio de Janeiro, as casas de câmbio turísticas geralmente não exigem passaporte. Em São Paulo, os viajantes relatam frequentemente que o passaporte ou o CPF (Cadastro de Pessoas Físicas) é necessário para transações de câmbio.</li>
+    <li>Durante feriados (por exemplo, Natal), quando bancos e casas de câmbio podem estar fechados, uma alternativa para trocar moeda no Brasil é verificar hotéis maiores. Um viajante relatou ter trocado 100 euros por 550 BRL em um hotel, observando que a taxa pode não ser a ideal, mas oferece uma opção quando outros serviços não estão disponíveis.</li>
+    <li>Notas de USD são amplamente aceitas em casas de câmbio, mas notas modernas (posteriores a 2013) conseguem uma taxa de câmbio significativamente melhor. Notas mais antigas podem sofrer descontos. O USD não substitui a moeda local (BRL) para transações diárias ou pagamentos via QR code.</li>
+    <li>Abrir uma conta bancária brasileira sem residência permanente (RNE/CRNM) é difícil. Bancos tradicionais (Banco do Brasil, Itaú) são altamente restritivos para turistas. Opções de fintechs como Nubank ou PicPay são mais acessíveis, embora algumas (C6 Bank) cobrem pela manutenção da conta e emissão de cartão de débito. Transferências internacionais via SWIFT para contas brasileiras são frequentemente lentas, caras (devido aos spreads de taxa de câmbio e tarifas bancárias) e propensas a bloqueios de conformidade. Métodos alternativos como P2P ou gateways regulamentados de cripto para moeda fiduciária são frequentemente preferidos para volumes maiores.</li>
+    <li>No Brasil, a troca de moeda é realizada por casas de câmbio especializadas em vez de bancos de varejo comuns. Os guichês de câmbio em aeroportos normalmente cobram uma &#39;taxa de serviço&#39;. As casas de câmbio nas cidades frequentemente dispensam taxas para trocas de 100 dólares americanos ou mais em notas em estado impecável. O lucro das casas de câmbio provém do spread (margem) entre as taxas de compra e venda.</li>
+    <li>Para viagens ao Rio de Janeiro: a segurança é geralmente adequada, mas incidentes podem ocorrer. O Uber funciona de forma eficaz; certifique-se de ter baixado uma versão do aplicativo que não seja a russa. Reais brasileiros (BRL) são universalmente aceitos. Cartões bancários não russos (por exemplo, Mastercard do Cazaquistão) também são aceitos para pagamentos. Para dinheiro em espécie, recomenda-se fortemente o dólar americano para câmbio, embora o euro também possa ser facilmente convertido. Guias de turismo que falam russo, inclusive com veículos, estão amplamente disponíveis.</li>
+    <li>Transferências diretas de dinheiro de bancos russos (Sberbank, Gazprombank) para contas brasileiras (Banco do Brasil, Nubank) estão enfrentando altas taxas de falha atualmente. As transações estão sendo canceladas automaticamente. Recomenda-se que os usuários não dependam desses canais para transferências críticas, pois o mecanismo parece estar bloqueado ou com mau funcionamento.</li>
+    <li>O limite legal para transportar dinheiro em espécie para o Brasil sem declaração é de 10.000 USD (ou equivalente). Valores que excedam esse limite devem ser declarados formalmente na chegada à alfândega.</li>
+    <li>Ao viajar para o Brasil, recomenda-se levar Reais ou Dólares americanos. Os cartões russos &#39;Mir&#39; não são aceitos no Brasil, assim como cartões russos geralmente não são aceitos em países como o Cazaquistão. Embora cartões de crédito/débito sejam amplamente utilizados, é aconselhável levar algum dinheiro em espécie para pequenas compras ou locais onde cartões possam não ser aceitos. Trocar dinheiro no aeroporto geralmente resulta em taxas desfavoráveis; casas de câmbio locais podem oferecer taxas melhores, mas operam principalmente em dias úteis. O Uber é mencionado como uma opção de transporte com bom custo-benefício em comparação com outros serviços, que podem ser tão caros quanto em Moscou ou até mais.</li>
+    <li>Atualmente, não é possível trocar rublos russos físicos (dinheiro) em São Paulo, Brasil. Apenas opções de câmbio sem dinheiro podem estar disponíveis.</li>
+    <li>Trocar reais brasileiros (BRL) por rublos russos (RUB) pode ser um desafio. Embora alguns bancos, como o Tinkoff, possam ter oferecido esses serviços anteriormente, as opções atuais são limitadas. A criptomoeda (negociação P2P) é um método comum, mas esteja ciente de possíveis fiscalizações fiscais e limites de saque. Procure por corretoras de cripto autorizadas em plataformas como bestchange.ru que ofereçam opções de saque em dinheiro. Em Moscou e São Petersburgo, há demanda por BRL, o que pode facilitar trocas diretas. Trocar reais em espécie em bancos pode oferecer taxas melhores do que o câmbio oficial. Viajantes costumam trazer USD, trocá-los e, então, ganhar em RUB.</li>
+    <li>Trocar criptomoedas no Brasil pode ser complexo. Embora a conversão direta para BRL seja possível, esteja ciente de possíveis volatilidades, taxas de transação e obstáculos regulatórios. Algumas plataformas podem permitir transações P2P diretas ou através de casas de câmbio licenciadas. Pesquise corretoras locais respeitáveis ou plataformas que suportem saques em reais brasileiros (BRL).</li>
+    <li>Trocar rublos russos (RUB) por reais brasileiros (BRL) no Brasil é extremamente difícil. A maioria das casas de câmbio padrão não aceita RUB. Serviços digitais e plataformas P2P (por exemplo, Moneytrans) que utilizam o SBP (Sistema Russo de Pagamentos Rápidos) para o Pix (Sistema Brasileiro de Pagamentos Instantâneos) são o método recomendado para transferir fundos da Rússia para o Brasil.</li>
+    <li>Confirma que as taxas de câmbio no aeroporto de São Paulo são ruins. Aconselha trocar dinheiro na cidade ou, preferencialmente, comprar Reais brasileiros na Rússia antes da partida para obter uma taxa melhor. Menciona uma casa de câmbio específica em São Petersburgo (Ligovsky Prospekt) onde Reais estavam disponíveis.</li>
+    <li>Para pegar um táxi de GRU até o centro da cidade de São Paulo, use aplicativos de transporte como o Uber (baixe com antecedência para evitar problemas com CAPTCHA). Serviços de agregadores custam cerca de 3500 RUR. As taxas de câmbio do aeroporto são ruins (ex: 3,6 BRL/USD). Taxistas podem oferecer taxas informais melhores (ex: 4,7-5,0 BRL/USD). As melhores taxas de câmbio (5,1+ BRL/USD) geralmente são encontradas na cidade durante os dias úteis.</li>
+    <li>A taxa de câmbio entre o Dólar americano e o Real brasileiro está atrelada ao mercado de ações e pode ser encontrada usando um buscador como o Google.</li>
+    <li>Um usuário recomenda usar um cartão &#39;crypto seguro&#39; no Brasil para pagamentos internacionais e recargas de cripto, citando a liberdade de bloqueios bancários. Este cartão permite transações mundiais e depósitos de criptomoedas sem problemas.</li>
+    <li>Abrir uma conta bancária no Brasil como não residente é difícil, mas possível. A maioria dos bancos exige o RNM (Registro Nacional Migratório), mas o Banco Rendimento é uma exceção para não residentes com CPF. Bancos tradicionais como o Banco do Brasil ou o Itaú têm políticas inconsistentes dependendo da agência e do gerente; abrir uma conta geralmente exige CPF e comprovante de contrato de aluguel. Transferências SWIFT da Rússia não funcionam; exchanges de criptomoedas P2P são o principal método para movimentar fundos.</li>
+    <li>Para enviar dinheiro ao Brasil, você pode usar serviços como Wise, Revolut ou Paysend. Wise e Revolut geralmente exigem o número da conta bancária, enquanto o Paysend pode permitir o uso direto de uma chave Pix. Para usuários na Rússia, transferências P2P via exchanges de criptomoedas podem ser um método econômico. Esteja ciente de possíveis golpes; nunca compartilhe detalhes financeiros pessoais com indivíduos não verificados.</li>
+    <li>Experiência de realocação no Rio de Janeiro (bairro Recreio) após 1,5 mês: A moradia é satisfatória, com serviços de entrega e comodidades convenientes. As opções de alimentação são boas e acessíveis. O Uber é preferível ao 99 devido ao custo e ao serviço. O sistema de pagamento PIX sofreu um bloqueio de um mês devido a sanções. O clima em dezembro é quente e com muito sol. A ética de trabalho local pode ser diferente, com menos ênfase em &#39;lucro&#39; e &#39;esforço&#39;. A beleza natural é abundante, e áreas como Ipanema são movimentadas, mas calmas. O período noturno no Recreio pode ser silencioso e escuro após as 20h.</li>
+    <li>Transferências diretas de contas bancárias russas (por exemplo, Sberbank) para bancos brasileiros (por exemplo, Nubank) via sistemas de código QR existem como uma alternativa rápida às trocas de criptomoedas P2P. Os usuários relatam uma taxa de câmbio efetiva cerca de 7% abaixo da taxa oficial do Google. A disponibilidade do sistema pode ser instável, e os usuários devem comparar as taxas com plataformas P2P como a Huobi para transações maiores.</li>
+    <li>Serviços internacionais de entrega de flores no Brasil (por exemplo, Flowow) geralmente não aceitam cartões bancários emitidos na Rússia. Para pagamentos a partir da Rússia, os usuários recorrem a intermediários locais ou expatriados com cartões de pagamento internacionais ou brasileiros. Não existe nenhuma restrição cultural local quanto ao número de flores em um buquê (par vs. ímpar).</li>
+    <li>O câmbio de moeda em São Paulo aos domingos é extremamente limitado. O único local confiável é uma casa de câmbio localizada no terceiro andar do shopping center situado no início da Avenida Paulista (o que leva o nome da própria avenida).</li>
+    <li>Ao visitar o Brasil, é aconselhável usar cartões bancários que não sejam russos, pois a aceitação deles pode ser limitada. Embora os pagamentos sem dinheiro em espécie sejam predominantes, o dinheiro vivo (reais brasileiros) é geralmente aceito, embora alguns vendedores possam preferir pagamentos com cartão. É fundamental levar notas de dólar americano mais novas, pois as denominações mais antigas (anteriores a 1993) podem ser difíceis de trocar ou ter uma taxa de câmbio ruim. Alguns cartões russos específicos, como o UnionPay do RSB, apresentaram problemas. Portanto, recomenda-se uma combinação de cartões estrangeiros prontamente aceitos e dinheiro suficiente em dólares americanos novos para câmbio.</li>
+    <li>Para trocar Reais brasileiros de volta para moeda estrangeira, utilize casas de câmbio autorizadas, conhecidas como &#39;Câmbio&#39;. Elas são normalmente encontradas nos principais aeroportos e centros das cidades. Certifique-se de que o estabelecimento seja licenciado.</li>
+    <li>Para cidadãos russos viajando ao Brasil, usar um cartão Bybit vinculado ao Google Pay (apenas Android) é uma opção viável de cripto-fiat com taxas de conversão mínimas de USDT para BRL. A verificação do cartão Bybit exige um telefone/endereço não russo e não aceita protocolos de residência brasileira (exige passaporte físico/CNH). Alternativamente, cartões do Uzbequistão (Kapital Bank) podem ser abertos em 3 dias para turistas. Cartões do Cazaquistão agora exigem RVP e são restritos a uma validade de 1 ano para cidadãos russos.</li>
+    <li>As casas de câmbio no Brasil geralmente aceitam USD, mas notas ou séries mais antigas podem estar sujeitas a uma taxa de câmbio menor em comparação com notas novas. É aconselhável usar notas modernas e em bom estado para evitar taxas desfavoráveis ou rejeição.</li>
+    <li>Notas de USD de séries mais antigas (como 2009 e 2013) podem ser trocadas sem problemas no Rio de Janeiro e em São Paulo. Use o termo &#39;Câmbio&#39; no Google Maps para encontrar casas de câmbio físicas locais.</li>
+    <li>Nas Cataratas do Iguaçu, no lado brasileiro, há uma casa de câmbio localizada em um supermercado perto da rodoviária. Viajantes relataram que essa casa de câmbio oferece uma taxa razoável, tornando-a uma opção conveniente para trocar moeda ao chegar, caso você esteja indo direto para o Iguaçu.</li>
+    <li>Para comprar criptomoedas com RUB e converter para BRL para pagamentos via PIX no Brasil, foi relatado que um aplicativo chamado &#39;Bakay&#39; funciona. O PIX é o sistema de pagamentos instantâneos do Brasil, comparável ao SBP (Sistema de Pagamentos Rápidos) da Rússia.</li>
+    <li>Câmbio de moeda no Rio de Janeiro: as casas de câmbio funcionam frequentemente como agências de turismo. Negociar o valor é possível e comum. As taxas flutuam (por exemplo, de 4,8 a 5,0 BRL por USD). Atenção: a maioria das casas de câmbio fecha aos domingos. Evite ofertas de câmbio entre particulares via mensagens diretas em redes sociais devido ao alto risco de fraude.</li>
+    <li>Para converter rublos russos (RUB) para reais brasileiros (BRL) para pagamentos via PIX, crie uma conta na Bybit. Use a seção BybitPay para pagamentos via código QR, que aceita USDT e cobre aproximadamente 99% das transações PIX no Brasil. Converta RUB para USDT usando casas de câmbio baseadas no Telegram, como Altyn, Whitebird, Antarctic ou Ciframarket (a Altyn oferece uma interface amigável no Telegram). Para transferências bancárias diretas, gere um código QR PIX no seu banco brasileiro e escaneie-o dentro da Bybit para concluir a transferência.</li>
+    <li>O dinheiro em espécie é amplamente aceito no Brasil, incluindo restaurantes, lojas e serviços de táxi. O principal problema para os viajantes é a falta de troco para notas de 50 e 100 BRL. É recomendável trocar notas grandes em supermercados ou hotéis sempre que possível e carregar notas de menor valor.</li>
+    <li>O PIX é o principal sistema de pagamento instantâneo no Brasil. Ele opera por meio de códigos QR. Muitas carteiras digitais e plataformas de criptomoedas, como a Bybit Pay, aceitam pagamentos diretos via PIX. Ele é amplamente aceito em todos os tipos de estabelecimentos.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/pt/br/transportes/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transportes</span></a>
+    <a class="chip" href="/pt/br/documentos-e-vistos/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentos e Vistos</span></a>
+    <a class="chip" href="/pt/br/bilhetes-e-lazer/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Bilhetes e Lazer</span></a>
+    <a class="chip" href="/pt/br/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/pt/br/bancos-e-finan-as/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Bancos e Finanças</span></a>
+    <a class="chip" href="/pt/br/seguran-a/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Segurança</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Ainda não sabe o que fazer no seu caso?</h2>
+    <p>Pergunte ao Luky — diz o que funciona agora — com base em relatos recentes.</p>
+    <p>E o Luky é um tradutor de voz para conversas reais: resolva na recepção sem estresse.</p>
+    <p class="ps">PS: uma chamada de voz com aquela pessoa de outro país — também é o Luky</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir o Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiência real dos chats de comunidades, sem enrolação</div>
+    <nav class="f-links">
+      <a href="/pt/about/">Sobre</a>
+      <a href="/pt/br/">Todos os temas</a>
+      <a href="/pt/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">As respostas são reunidas de chats abertos de comunidades — é a experiência real das pessoas, não aconselhamento oficial. Verifique antes de decisões importantes.</p>
+    <div class="f-copy">© 2026 Luky · atualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noite", DAY="\u2600 Dia";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

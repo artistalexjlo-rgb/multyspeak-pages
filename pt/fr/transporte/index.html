@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>França: Transporte — experiência real · Luky</title>
+<meta name="description" content="Experiência real dos chats sobre Transporte em França: como é, em primeira mão. Para o seu caso — pergunte ao Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/pt/fr/transporte/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/fr/transporte/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/fr/transporte/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/fr/transporte/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/fr/transporte/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/fr/transporte/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · qualquer país · sem enrolação</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noite</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/pt/">Início</a> /
+    <a href="/pt/fr/">França</a> /
+    <b>Transporte</b>
+  </nav>
+
+
+  
+  <h1>Transporte em França: o que realmente importa saber</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiência real de pessoas dos chats sobre «Transporte» em França — como é, sem enrolação. Para o seu caso — <strong>pergunte ao Luky</strong>.</div></div>
+
+  <h2>Da experiência real</h2>
+  <ul class="qlist">
+    <li>As fronteiras internas do espaço Schengen estão sujeitas a verificações esporádicas e não sistemáticas. As autoridades (Police aux Frontières na França ou Bundespolizei na Alemanha) realizam frequentemente verificações de documentos em trens e voos. Os viajantes devem sempre portar passaporte e visto, e estar preparados para possíveis questionamentos sobre a duração da estadia e planos de viagem futuros, mesmo dentro da área Schengen.</li>
+    <li>Traslado noturno do Aeroporto de Orly para Alesia: 1. Transporte público: Shuttle para Antony -&gt; RER B até Denfert-Rochereau -&gt; Linha 4 do Metrô até Alésia (aprox. 60 min). 2. Transporte por aplicativo (Bolt/Uber): Recomendado pela conveniência, especialmente com bagagem. O custo estimado é comparável ao do transporte público para vários passageiros.</li>
+    <li>Viajar dentro do Espaço Schengen (por exemplo, da França para a Suíça e de volta para a França) com um visto Schengen francês de entrada única é permitido, desde que a duração total não exceda a validade do visto e o destino principal continue sendo a França. O deslocamento entre países Schengen não constitui uma violação do visto, uma vez que não existem controles de passaporte nas fronteiras internas da mesma forma que nas fronteiras externas.</li>
+    <li>A Air France está aplicando rigorosamente os limites de peso e tamanho da bagagem de mão, incluindo mochilas. Um passageiro relatou ter sido cobrado em 80 euros por 3 kg de excesso de bagagem de mão. O check-in online não isenta os passageiros dessas verificações. Esteja preparado para inspeções minuciosas no portão de embarque.</li>
+    <li>Ao planejar um itinerário de viagem para a França, considere a duração da estadia em cada cidade. Por exemplo, uma estadia de 10 dias em Paris e 8 dias em Nice pode ser equilibrada, mas adicionar uma terceira cidade depende da preferência pessoal. Alguns sugerem que 3 dias em Nice são suficientes, permitindo tempo para explorar as áreas vizinhas. É crucial representar com precisão seus planos de viagem para evitar suspeitas por parte dos funcionários consulares. Itinerários excessivamente elaborados ou fabricados aumentam o risco de erros. Foque no propósito genuíno da sua viagem e evite disfarçar visitas particulares como turismo.</li>
+    <li>Dinheiro em espécie é amplamente aceito na França, embora ter moedas seja essencial para máquinas de bilhetes de transporte público (por exemplo, pontos de bonde em Nice). Embora cartões de crédito sejam recomendados pela conveniência, o dinheiro continua sendo uma alternativa viável para turistas.</li>
+    <li>Para viajar de Nice a Saint-Tropez na França, o método mais econômico envolve pegar um trem para Saint-Raphaël e, em seguida, fazer a transferência para um ônibus. Esta rota é recomendada para viajantes que buscam economizar. Além disso, passeios de um dia de Nice para várias cidades costeiras, incluindo Saint-Tropez, são viáveis, sendo que três dias podem ser suficientes para a própria Saint-Tropez, permitindo a exploração de outros locais próximos.</li>
+    <li>Os requisitos de entrada no controle de fronteira para a França (Schengen) são inconsistentes. Embora a polícia de fronteira francesa nem sempre solicite comprovante de acomodação ou passagens de volta, as companhias aéreas (Turkish Airlines, etc.) frequentemente realizam verificações de documentos durante o embarque. Os viajantes devem portar comprovante de estadia e uma passagem de volta para evitar a negativa de embarque.</li>
+    <li>Ao alugar um carro na Sixt na França, confirme se um cartão de crédito físico no nome do locatário é obrigatório, especialmente se estiver usando um cartão pertencente a outra pessoa ou um cartão virtual. Informe-se sobre requisitos específicos para motoristas adicionais e métodos de pagamento.</li>
+    <li>Ao escolher um aeroporto para Paris, considere Beauvais (BVA), Orly (ORY) e Charles de Gaulle (CDG). Beauvais pode ser uma opção econômica com traslados de ônibus. Orly oferece boa conectividade via metrô e bonde. Reservar voos como um itinerário único é recomendado para conexões perfeitas em caso de atrasos. Companhias aéreas como a Turkish Airlines oferecem um bom serviço e escalas confortáveis. Para escalas mais curtas, considere voos via Aeroporto Sabiha Gökçen (SAW).</li>
+    <li>Ao possuir um visto Schengen emitido pela França, viajar para a Alemanha para a maior parte da viagem após a entrada inicial na França é geralmente permitido pelas regras Schengen, desde que a França permaneça o país de principal estadia pretendida ou o primeiro ponto de entrada, caso o destino principal não esteja claro. Os viajantes devem estar preparados para demonstrar seu itinerário e reservas (por exemplo, passagens de volta, reservas de hotel na França confirmando uma estadia mais longa ou inicial), mesmo que esses documentos nem sempre sejam solicitados durante as verificações nas fronteiras internas de Schengen. Confiança e preparação são fundamentais.</li>
+    <li>Um casal visitando Paris procura urgentemente alguém que voe de Moscou para Paris nos próximos 4 dias para transportar uma carteira de motorista russa. Eles podem providenciar o envio da carteira por correio em Moscou e a coleta em um local conveniente em Paris. Eles esperam recebê-la até o dia 15 para facilitar o aluguel de um carro para sua viagem, que inclui uma visita planejada à Normandia. Eles oferecem uma garrafa de vinho ou conhaque como agradecimento.</li>
+    <li>O TravelAsk oferece serviços especializados para a compra de ingressos para eventos globais (shows, esportes, atrações) e organização de traslados individuais. Os serviços de ingressos cobrem compras complexas que exigem plataformas locais, números de telefone estrangeiros, clubes de fãs ou conhecimento de regras de entrada locais, incluindo revenda caso os planos mudem. Os serviços de traslado incluem classes econômica, conforto, executiva, premium, minivans e ônibus, com garantia de serviço pontual e confortável. Excursões de iate também podem ser organizadas. O contato está disponível via mensagens privadas com os respectivos especialistas.</li>
+    <li>As normas de segurança aeroportuária para bagagem de mão restringem recipientes de líquidos a um máximo de 100 ml. Um recipiente de 200 ml, mesmo que fechado, será confiscado nos pontos de controle de segurança em aeroportos como o de Beauvais-Tillé (BVA).</li>
+    <li>Para dirigir na França com uma carteira de motorista da Federação Russa: Embora a Permissão Internacional para Dirigir (PID) seja frequentemente recomendada, é possível dirigir com uma carteira de motorista padrão da Federação Russa para carros alugados na França, particularmente com empresas como a SIXT. Certifique-se de que sua carteira russa seja válida e esteja em alfabeto latino. Algumas locadoras podem exigir uma tradução ou uma PID, por isso é melhor confirmar diretamente com a locadora no momento da reserva. Esteja ciente de que os regulamentos de direção e as regras de trânsito na França devem ser rigorosamente seguidos. Para excursões como viagens de um dia de Paris a Étretat e ao Monte Saint-Michel, ter uma carteira russa válida deve ser suficiente para o aluguel de carros, mas verifique sempre com a locadora específica.</li>
+    <li>A rota mais comum de Paris para o Mont Saint-Michel é pegar um trem TGV da Gare Montparnasse para Rennes. Da estação de trem de Rennes, há ônibus disponíveis para o Mont Saint-Michel.</li>
+    <li>Ao viajar com um visto francês válido por 30 dias, a partida no último dia (6 de agosto) é permitida até às 23h59, desde que o voo parta dentro do período de validade do visto. Atrasos de voo geralmente são gerenciados pelas autoridades de imigração, desde que a fronteira seja cruzada antes que o visto expire. É crucial ser verdadeiro sobre o seu itinerário, incluindo estadias em outros países do Espaço Schengen, como Alemanha e Espanha. Apresentar um itinerário multi-país potencialmente &#39;suspeito&#39;, sem uma intenção clara, pode levantar questões ou levar a um escrutínio no controle de fronteira, já que as companhias aéreas e os funcionários de imigração podem ser cautelosos com indivíduos suspeitos de intenção de migração. Aderir estritamente às condições do visto e fornecer informações precisas é a abordagem mais segura para evitar a recusa de entrada ou a deportação.</li>
+    <li>A Transavia France normalmente permite itens pessoais, como mochilas ou bolsas de laptop, além da bagagem de mão padrão para passageiros da classe econômica. Embora as políticas possam mudar, no passado, os passageiros levaram com sucesso vários tipos de bolsas, incluindo mochilas, como bagagem de mão sem problemas. É aconselhável verificar a franquia de bagagem mais atual diretamente com a Transavia France antes de viajar.</li>
+    <li>No Aeroporto de Lyon–Saint-Exupéry (LYS), para voos que partem da área Schengen para destinos fora de Schengen (por exemplo, Istambul), o controle de passaportes geralmente está localizado logo antes do portão de embarque. Isso significa que os passageiros não podem passar pela imigração com antecedência para acessar lounges ou esperar em uma área de assentos geral. Os passageiros precisarão aguardar o anúncio do portão, dirigir-se à área de controle de passaportes designada e, em seguida, aguardar perto do portão para o embarque. Este procedimento é comum em aeroportos com menos partidas para fora de Schengen.</li>
+    <li>Usuário chegando em Marselha planeja ficar por no máximo 2 dias antes de viajar para Nice. Procura recomendações de locais para se hospedar no caminho, informações sobre a compra de bilhetes de trem localmente e conselhos sobre se é necessário alugar um carro para ver os pontos mais cênicos.</li>
+    <li>Le Havre serve como uma base com bom custo-benefício para explorar cidades costeiras da Normandia, como Étretat e Fécamp. As conexões de ônibus público operam de hora em hora, com tempos de trânsito de cerca de 60 minutos. O Google Maps é recomendado para horários de transporte em tempo real. Armários para bagagem geralmente estão disponíveis nas principais estações de trem, como Rouen, embora a disponibilidade deva ser verificada nos sites de ferrovias regionais.</li>
+    <li>Os tempos de controle de passaporte no aeroporto Charles de Gaulle (CDG) são altamente variáveis. O tempo de processamento varia de 5 minutos a mais de 60 minutos, dependendo dos picos de chegada de voos e dos níveis de pessoal nos postos de controle de fronteira. Os viajantes devem reservar pelo menos 1,5 a 2 horas entre os voos.</li>
+    <li>O filho de um usuário estava voando de Moscou para Paris via Istambul com a Turkish Airlines e foi inicialmente impedido de obter um cartão de embarque para seu voo de conexão. Ao procurar o balcão da companhia aérea (não o balcão de check-in), eles entraram em contato com Istambul e organizaram com sucesso um cartão de embarque.</li>
+    <li>As passagens de metrô em Paris custam aproximadamente € 2,50 por uma única viagem, mas essa tarifa normalmente não cobre viagens para o Aeroporto Charles de Gaulle (CDG) ou para a Disneyland. Para esses destinos, são necessárias passagens ou passes separados. Serviços de transporte por aplicativo como o Bolt podem ser mais econômicos do que o RER para viagens ao CDG, especialmente para grupos, com custos em torno de € 32 em comparação com € 13 por pessoa para o RER. Comprar um passe de transporte pode ser vantajoso para uso frequente dentro de Paris, dependendo da duração e da extensão das viagens.</li>
+    <li>Uma cobrança de &#39;citação&#39; (citation) após alugar um carro na França refere-se tipicamente a uma multa ou taxa administrativa resultante de uma infração de trânsito. A empresa de aluguel pode ter processado seus dados para encaminhá-los à polícia. Se você não tiver certeza sobre o motivo da citação ou acreditar que é um erro, entre em contato com a locadora de veículos para esclarecimentos.</li>
+    <li>Embora viagens dentro do espaço Schengen tipicamente não envolvam controle de passaporte, os viajantes podem ocasionalmente encontrar verificações por guardas de fronteira. Um caso específico envolveu passageiros em um voo de Barcelona (Espanha) para Nice (França) sendo submetidos a verificações de passaporte e visto na chegada. Isso não é uma ocorrência comum, mas pode acontecer, e os viajantes devem garantir que seu visto Schengen seja válido.</li>
+    <li>Ao voar com companhias aéreas russas como a Transavia, considere se você fará trânsito pelo aeroporto ou sairá com bagagem de mão. Geralmente é possível obter um cartão de embarque da Transavia se um assento for comprado. Existem preocupações sobre potenciais restrições de entrada para russos em países da UE, o que pode influenciar as rotas de saída no futuro, potencialmente exigindo que os viajantes usem as mesmas rotas para partida que usaram para a entrada.</li>
+    <li>A compra de bilhetes para a Disneyland Paris envolve frequentemente considerar a altura certa para obter melhores preços. Embora a Disneyland não ofereça habitualmente descontos significativos fora de promoções especiais:
+1. **Épocas Baixas:** Os preços podem ser mais baixos durante as épocas baixas. O mês de novembro é frequentemente citado como um mês com preços de bilhetes potencialmente mais baixos em comparação com os meses de pico de verão ou feriados.
+2. **Canais Oficiais:** É mais seguro comprar bilhetes diretamente no site oficial da Disneyland Paris ou em revendedores de bilhetes autorizados. Desconfie de sites não oficiais que oferecem bilhetes com grandes descontos, pois podem ser fraudes.
+3. **Sem Descontos Imediatos:** Para necessidades de viagem imediatas durante a época alta, espere pagar o preço normal do bilhete. A Disneyland tem uma procura constante ao longo do ano, pelo que descontos elevados em compras de última hora são raros.
+4. **Tipos de Bilhete:** Existem diferentes opções de bilhetes (por exemplo, 1 Parque vs. 2 Parques, número de dias). Escolha a que melhor se adapta à duração da sua visita e aos seus planos.
+
+Para as opções mais baratas, é aconselhável planear a viagem durante períodos de época baixa, como novembro. Para viagens imediatas, comprar através dos canais oficiais à tarifa normal é a abordagem mais segura.</li>
+    <li>Para reduzir os custos de viagem de comboio entre França e Suíça (por exemplo, de Paris para Lausanne no TGV Lyria): 1) Pesquise através de agregadores como o Trip.com para encontrar horários matinais mais baratos. 2) Verifique o BlaBlaCar para opções de partilha de boleias, especialmente aos fins de semana. 3) Adquira um cartão de desconto da SNCF (Carte Avantage) no site da SNCF (frequentemente com desconto para 30-49 €), que proporciona descontos significativos em comboios regionais e de alta velocidade.</li>
+    <li>Um passe Navigo Jour não é adequado para viagens do aeroporto para a cidade no RER B até a Gare de Lyon, pois não inclui o &#39;ticket aéroport&#39;. Para uma viagem única do aeroporto CDG até a Gare de Lyon com transferências, recomenda-se um &#39;ticket aéroport 14&#39; carregado em um cartão Navigo Easy, custando aproximadamente 16€. Este bilhete cobre o RER e transferências subsequentes de metrô/ônibus dentro de Paris. Para grupos com mais de duas pessoas, um táxi pode ter um preço comparável.</li>
+    <li>Ao procurar transporte do Aeroporto Charles de Gaulle (CDG) em Paris, o Bolt é uma opção de serviço de táxi que os usuários consideram para seus traslados.</li>
+    <li>Ao viajar com a OUIGO em comboios de alta velocidade (por exemplo, de Paris para Bordéus), as informações sobre o lugar e a carruagem são normalmente fornecidas através de um código QR enviado por e-mail aproximadamente 4 dias antes da partida. Se o seu bilhete não exibir inicialmente esta informação, espere recebê-la por e-mail.</li>
+    <li>O usuário tem uma escala de 5 horas em Paris, chegando no Aeroporto de Beauvais (BVA) e partindo do Aeroporto Charles de Gaulle (CDG). Precisa saber se a transferência é viável e como ir do BVA ao CDG, considerando que não fala francês fluentemente. Recomendações sobre opções de transporte e gestão de tempo são necessárias.</li>
+    <li>Ao alugar um carro na França com empresas como a SIXT, é normalmente exigido que o nome no cartão de crédito utilizado para o pagamento corresponda ao nome do condutor principal. Esta é uma medida de segurança padrão para evitar fraudes.</li>
+    <li>As agências de aluguel de carros na França geralmente exigem cartões de crédito ou débito físicos para depósitos de segurança. Cartões virtuais são frequentemente rejeitados. Ao reservar através de agregadores como o DiscoverCars, filtre pelas opções &#39;apenas cartão de débito&#39;. Verifique o banco específico e o emissor do cartão (BIN) para garantir a compatibilidade com terminais de pagamento (POS) europeus, já que alguns cartões emitidos na CEI podem ser bloqueados.</li>
+    <li>Ao viajar de trem na França (SNCF), a diferença entre o TGV (alta velocidade) e o TER (regional) é frequentemente insignificante em rotas curtas. Passagens com desconto via SNCF Connect são frequentemente vinculadas a trens específicos, enquanto passagens padrão podem ser flexíveis para o dia todo. Verifique as condições da tarifa antes da compra.</li>
+    <li>Experiências recentes no aeroporto de Paris Orly (ORY) indicam tempos de processamento rápidos (por exemplo, 20 minutos para o controle de fronteira). O EES (Sistema de Entrada/Saída) demonstrou funcionalidade variável para diferentes indivíduos, por vezes pulando etapas. Viajantes relataram que lhes foi perguntada apenas a data do voo de retorno para a Rússia, sem solicitações de comprovantes de reserva. Sete quiosques do EES estavam operacionais. Mochilas em um voo da Transavia de Istambul para Paris Orly não foram pesadas.</li>
+    <li>Ao reservar voos, especialmente com companhias aéreas como a Turkish Airlines, existe a possibilidade de que lhe peçam para apresentar o cartão de crédito usado na reserva no momento do check-in, caso o nome no cartão não coincida com o nome na reserva. Esta é uma medida de prevenção contra fraudes. Se a passagem foi comprada por terceiros (por exemplo, como um presente), é aconselhável verificar com a companhia aérea com antecedência ou garantir que você tenha documentos de suporte, como uma carta-convite ou comprovante de acomodação. Embora nem todas as companhias aéreas ou funcionários de check-in imponham isso, é uma prática conhecida que pode causar problemas se não houver preparação.</li>
+    <li>Para viagens de Paris a Le Havre, bilhetes de trem pelo aplicativo SNCF Connect podem ser encontrados por cerca de €30,80 com uma baldeação, em comparação aos €44 para uma rota direta. O FlixBus é frequentemente uma alternativa mais barata para viagens de ônibus, embora os serviços possam ser mais frequentes à noite.</li>
+    <li>Ao pagar por combustível em postos franceses usando cartão, esteja ciente de que um depósito temporário (por exemplo, 100-150 EUR) pode ser pré-autorizado no seu cartão. Esse valor geralmente é liberado dentro de alguns dias após o custo real do combustível ser deduzido, mas podem ocorrer atrasos. Usar cartões como o Revolut pode resultar em uma liberação de depósito mais rápida.</li>
+    <li>Ao atravessar a fronteira para a França com um visto de familiar de um cidadão da UE, podem surgir perguntas específicas no controle de fronteira relacionadas à natureza do relacionamento e ao tipo de visto. É aconselhável ter toda a documentação pertinente (certidão de casamento, prova de parentesco, etc.) facilmente disponível.</li>
+    <li>Ao utilizar o FlixBus, especialmente em trajetos do aeroporto para um hotel, o pagamento em dinheiro no ônibus geralmente não é aceito. Recomenda-se comprar as passagens com antecedência. A disponibilidade de máquinas de venda automática de bilhetes deve ser verificada.</li>
+    <li>Serviços de transporte por aplicativo como Uber e Bolt estão disponíveis e funcionam na França. Eles frequentemente oferecem descontos em corridas iniciais. O cadastro no Uber pode exigir principalmente um número de telefone, não necessariamente um cartão bancário internacional. O pagamento em dinheiro é muitas vezes uma opção, proporcionando flexibilidade para usuários que preferem não vincular contas bancárias estrangeiras.</li>
+    <li>Banheiros públicos na França: 1. Use banheiros públicos automáticos nas grandes cidades (leia as instruções com atenção). 2. Aplicativos como &#39;Où sont les toilettes&#39; ajudam a localizar instalações. 3. Cafés e redes de fast-food (por exemplo, McDonald&#39;s) são opções comuns, muitas vezes exigindo uma compra ou um código de porta.</li>
+    <li>O Aeroporto de Beauvais (BVA) está localizado a cerca de 85 km de Paris. A maneira mais econômica de chegar à cidade é de ônibus. Viajar de trem também é uma opção, mas envolve uma troca. Serviços de táxi de Beauvais para Paris são caros, podendo custar cerca de 100 EUR. As opções de traslado noturno devem ser confirmadas com antecedência.</li>
+    <li>Alugar um carro em Paris para viajar a Barcelona sem um cartão bancário, especialmente para partida no mesmo dia e devolução em local diferente, é extremamente desafiador e provavelmente impossível através de locadoras padrão como a SIXT. A maioria das empresas exige um cartão de crédito para o depósito de segurança, e políticas específicas regem os aluguéis de ida, que muitas vezes incorrem em taxas significativas. Opções alternativas de viagem, como reservar voos (por exemplo, Vueling) ou bilhetes de trem, devem ser priorizadas. Se o aluguel de carro for essencial, pode ser necessário explorar opções que permitam pagamento em dinheiro ou outros tipos de cartão, mas o sucesso não é garantido e requer uma pesquisa extensa e, potencialmente, negociação direta com as locadoras.</li>
+    <li>Um visto Schengen permite a livre circulação em todos os países da Área Schengen, independentemente do país que emitiu o visto. Não é necessário sair da Área Schengen pelo país que emitiu o visto.</li>
+    <li>É possível alugar um carro na França (incluindo no aeroporto CDG) com cartão de débito em vez de cartão de crédito. Locadoras como Sixt e Goldcar aceitam cartões de débito. Optar pelo seguro total (pacote máximo) com a Goldcar reduz o depósito de segurança para cerca de 120 €. Os usuários podem filtrar a aceitação de cartão de débito em agregadores como o Discover Cars antes de reservar diretamente com a locadora.</li>
+    <li>Paris-Beauvais (BVA) é o aeroporto mais distante do centro da cidade de Paris. O método de transporte mais comum e confiável é o ônibus do aeroporto, que deixa os passageiros em um local designado (geralmente Porte Maillot), proporcionando acesso direto à rede de metrô de Paris.</li>
+    <li>Ao reservar voos de Moscovo para Paris com crianças e necessitar de uma escala, considere o seguinte: Para um bilhete único, as companhias aéreas são geralmente responsáveis por fornecer alojamento e refeições se um voo de ligação for perdido devido a atrasos, especialmente se o próximo voo disponível for no dia seguinte. Companhias aéreas como a Ajet/Pegasus com escalas em Istambul são opções, mas esteja atento a possíveis atrasos. Se uma escala for perdida devido a problemas relacionados com a companhia aérea, a mesma deve remarcar o seu voo para o próximo voo disponível, possivelmente noutra companhia aérea, e cobrir as despesas necessárias. Reservar um bilhete único e integrado é geralmente recomendado para garantir que a companhia aérea trate da remarcação e do alojamento em caso de perda de ligações. A Azal via Baku e a Turkish Airlines também são sugeridas para famílias devido às comodidades a bordo, como refeições.</li>
+    <li>Requisitos para aluguer de carros em França: As cartas de condução russas (que contêm texto em inglês) são geralmente aceites pelas principais agências como a Hertz. As Permissões Internacionais de Condução são geralmente exigidas apenas se a licença estiver num idioma sem caracteres latinos. Crucialmente, o cartão de crédito para reserva, pagamento e depósito de segurança deve ser emitido em nome do condutor principal; cartões de terceiros não são aceites.</li>
+    <li>Os cidadãos russos que pretendem transitar por França sem visto devem garantir que o seu itinerário é lógico e não suscita suspeitas de intenção migratória. Embora uma ligação aérea direta possa ser tecnicamente considerada trânsito, as companhias aéreas e os funcionários das fronteiras podem examinar rotas invulgares (por exemplo, Istambul-Paris-Ancara) ou aquelas que pareçam concebidas para contornar os requisitos de imigração. É aconselhável escolher destinos que se sigam logicamente a partir de Paris, como outros países sem visto em África ou na América do Sul. Os cidadãos russos têm enfrentado um maior escrutínio e potencial recusa de embarque em voos para determinados destinos devido a preocupações migratórias. Procurar asilo na fronteira pode ser uma possibilidade, mas o processo e a viabilidade dependem de circunstâncias específicas e da discrição dos funcionários das fronteiras. É crucial verificar as políticas das companhias aéreas e os requisitos de visto de trânsito para todos os segmentos da viagem.</li>
+    <li>O controle de passaportes no Aeroporto de Nice Côte d&#39;Azur (NCE) pode sofrer atrasos de até 2,5 horas. Passageiros com passaportes biométricos que não estejam acompanhados de menores podem usar os portões automatizados PARAFE para reduzir significativamente o tempo de espera. Menores, independentemente do tipo de passaporte, devem ser processados manualmente pelos agentes de fronteira.</li>
+    <li>O passe semanal Navigo é válido exclusivamente na região de Île-de-France (Paris e subúrbios). Ele não cobre viagens de longa distância para cidades como Lyon ou Rouen. Cidades como Chatou estão incluídas, pois fazem parte do departamento de Yvelines, na Île-de-France.</li>
+    <li>Informe-se sobre a disponibilidade atual de ônibus que conectam Étretat a Honfleur e Le Havre, na França. Confirme o horário de funcionamento e quaisquer rotas potenciais.</li>
+    <li>Informe-se sobre passes de viagem convenientes em Paris, como opções de transporte ilimitado para um período de 2 dias. Passes comuns incluem Navigo Découverte (semanal/mensal), Paris Visite (passe turístico) e Mobilis (bilhete diário). A disponibilidade e o preço de passes com duração específica podem variar.</li>
+    <li>Um visto Schengen francês de entrada única permite a entrada no Mônaco e o retorno à França. Embora Mônaco não faça parte do Espaço Schengen, não há controle de fronteira entre a França e Mônaco.</li>
+    <li>É permitido voar para um país Schengen (por exemplo, Lyon, França) e partir de outro (por exemplo, Genebra, Suíça) para um país fora do espaço Schengen, desde que um visto Schengen válido cubra toda a estadia. Tanto a França quanto a Suíça fazem parte da Área Schengen, permitindo a livre circulação entre elas.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/pt/fr/documentos-e-vistos/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentos e Vistos</span></a>
+    <a class="chip" href="/pt/fr/ingressos-e-lazer/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Ingressos e Lazer</span></a>
+    <a class="chip" href="/pt/fr/sim-e-internet/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>📶 SIM e Internet</span></a>
+    <a class="chip" href="/pt/fr/banco-e-dinheiro/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Banco e Dinheiro</span></a>
+    <a class="chip" href="/pt/fr/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/pt/fr/acomoda-o/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Acomodação</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Em todo lugar a mesma coisa, mas o seu caso é especial?</h2>
+    <p>Pergunte ao Luky — dá o que você realmente precisa: experiência real de quem já passou por isso.</p>
+    <p>E o Luky é um tradutor de voz para conversas reais: descubra na loja o que você está comprando.</p>
+    <p class="ps">PS: se quiser, o Luky ajuda a conhecer gente sem barreira de idioma 😉</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir o Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiência real dos chats de comunidades, sem enrolação</div>
+    <nav class="f-links">
+      <a href="/pt/about/">Sobre</a>
+      <a href="/pt/fr/">Todos os temas</a>
+      <a href="/pt/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">As respostas são reunidas de chats abertos de comunidades — é a experiência real das pessoas, não aconselhamento oficial. Verifique antes de decisões importantes.</p>
+    <div class="f-copy">© 2026 Luky · atualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noite", DAY="\u2600 Dia";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

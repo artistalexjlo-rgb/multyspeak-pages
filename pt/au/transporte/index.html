@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Austrália: Transporte — experiência real · Luky</title>
+<meta name="description" content="Experiência real dos chats sobre Transporte em Austrália: como é, em primeira mão. Para o seu caso — pergunte ao Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/pt/au/transporte/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/au/transporte/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/au/transporte/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/au/transporte/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/au/transporte/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/au/transporte/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · qualquer país · sem enrolação</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noite</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/pt/">Início</a> /
+    <a href="/pt/au/">Austrália</a> /
+    <b>Transporte</b>
+  </nav>
+
+
+  
+  <h1>Transporte em Austrália: experiência real dos chats</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiência real de pessoas dos chats sobre «Transporte» em Austrália — como é, sem enrolação. Para o seu caso — <strong>pergunte ao Luky</strong>.</div></div>
+
+  <h2>Da experiência real</h2>
+  <ul class="qlist">
+    <li>O cartão Myki para jovens para o transporte público de Melbourne pode ser comprado em lojas 7-Eleven ou estações de trem. Na zona gratuita de bonde (free tram zone) do CBD, não é necessário passar o cartão Myki na entrada ou saída, mas recomenda-se fazê-lo ao viajar para fora desta zona para garantir o cálculo correto da tarifa. Os limites da zona gratuita de bonde geralmente são bem sinalizados dentro do centro da cidade.</li>
+    <li>O transporte público na Tasmânia é limitado, particularmente entre cidades. Alugar um carro é altamente recomendável para explorar as atrações naturais da ilha, incluindo parques nacionais e áreas costeiras. Sydney, em contrapartida, possui um excelente sistema de transporte público, tornando o aluguel de carro desnecessário para explorar a cidade.</li>
+    <li>Nem todas as estradas na Austrália são pedagiadas. Especificamente, não há estradas com pedágio na Austrália Ocidental. Os usuários devem verificar as especificidades regionais em relação a estradas com pedágio ao planejar viagens.</li>
+    <li>Ao alugar um carro na Austrália, agregadores terceirizados geralmente permitem o pré-pagamento com diversos tipos de cartão, enquanto o contrato final de locação é liquidado no local de retirada. Recomenda-se vivamente um seguro abrangente (&#39;cobertura total&#39;) para evitar custos elevados por pequenos danos. Regra essencial de reabastecimento: devolva o veículo com o tanque cheio, abastecido a menos de 15 km do ponto de devolução, para evitar sobretaxas significativas.</li>
+    <li>A Sichuan Airlines ocasionalmente oferece preços competitivos de passagens para a Austrália (por exemplo, 63.000 RUB para agosto/setembro, encontrados no Trip.com). No entanto, as experiências dos viajantes são mistas em relação à confiabilidade: alguns relatam voos pontuais, enquanto outros enfrentaram atrasos significativos ou mudanças de horário (por exemplo, reagendamento de voos que tornou as conexões impossíveis, forçando a remarcação). A qualidade do serviço (comida, idade da aeronave em alguns trechos) é considerada mediana. Os viajantes devem ponderar a economia de custos em relação a possíveis transtornos de viagem e monitorar atentamente o status dos voos caso escolham esta companhia aérea.</li>
+    <li>Em Sydney, Austrália, placas de estacionamento com &#39;1/2P&#39; e horários especificados indicam um limite de tempo de 30 minutos. O pagamento é geralmente feito por meio de um aplicativo móvel. Se dias específicos, como &#39;domingo&#39;, não estiverem listados na placa, o estacionamento pode ser permitido até o próximo dia útil. Sempre verifique os regulamentos locais de estacionamento para evitar multas.</li>
+    <li>Ao reservar voos domésticos na Austrália, esteja ciente de possíveis problemas com sites de terceiros como o Trip.com, que podem apresentar preços variáveis. Recomenda-se reservar diretamente nos sites das companhias aéreas (por exemplo, Jetstar, Virgin Australia), especialmente se você estiver levando mais do que apenas uma pequena bagagem de mão. Verifique cuidadosamente as franquias de bagagem, pois as companhias aéreas aplicam limites rigorosos de peso e tamanho para bagagem de mão, o que pode resultar em taxas inesperadas. O check-in online geralmente está disponível 24 horas antes da partida nos sites das companhias aéreas. Para pagamentos e potenciais reembolsos, é aconselhável usar uma operadora de cartão de crédito confiável, já que alguns agentes de reserva de terceiros têm um histórico de processos de reembolso lentos.</li>
+    <li>O aluguel de carros na Austrália exige que o motorista principal tenha um cartão de crédito ou débito em seu próprio nome. Algumas empresas, como a Hertz, aceitam cartões de débito; verifique os agregadores para opções específicas. Motoristas adicionais podem ser incluídos mediante uma taxa. O trânsito é pela mão esquerda com veículos com direção à direita. O trânsito em Melbourne e Victoria é geralmente calmo, enquanto Sydney e Nova Gales do Sul são mais movimentados e com estradas mais irregulares. Esteja ciente de multas significativas por infrações leves de velocidade; recomenda-se um carro com limitador de velocidade. As regras de trânsito australianas relativas à prioridade em cruzamentos diferem de outros países: a prioridade é determinada principalmente por placas de &#39;Dê a Preferência&#39; e sinalização horizontal. A regra de &#39;dar preferência à direita&#39; é aplicada de forma muito seletiva em cruzamentos específicos sem controle, não como um princípio universal.</li>
+    <li>Alugar um carro na Austrália com uma carteira de motorista emitida recentemente geralmente não é um problema. Embora a permissão internacional para dirigir seja recomendada, as carteiras nacionais são frequentemente aceitas. As locadoras priorizam ter uma carteira válida e um cartão de pagamento emitido no exterior.</li>
+    <li>Voos para a Austrália em janeiro podem ser caros. Considere meses alternativos para uma viagem potencialmente mais confortável e com melhores preços. Verifique promoções, como as que podem ser oferecidas pelo Trip.com por volta do dia 7 de cada mês.</li>
+    <li>Voos de longa duração para a Austrália (frequentemente com mais de 14 horas) exigem preparação. Dicas importantes para o conforto físico: mantenha a hidratação, use meias de compressão (após consultar um médico), alongue-se frequentemente caminhando pelo corredor da aeronave e utilize o acesso a salas VIP durante as escalas para tomar banho e fazer refeições de qualidade. Uma máscara de dormir e uma almofada de pescoço são itens essenciais.</li>
+    <li>Viajantes grávidas têm permissão para entrar na Austrália; dar à luz no país não concede cidadania automática à criança. As companhias aéreas geralmente exigem um atestado médico para viagens após 26-28 semanas de gestação.</li>
+    <li>Ao alugar um carro na Austrália: 1. **Carteira de Motorista:** Certifique-se de que sua carteira de motorista seja válida e atenda aos requisitos mínimos de idade/experiência (geralmente 1 ano de experiência de direção). Carteiras estrangeiras vencidas geralmente não são aceitas para dirigir, embora possam ser usadas para demonstrar o histórico de direção. Carteiras com uma tradução clara para o inglês ou uma Permissão Internacional para Dirigir (PID) são geralmente exigidas. 2. **Depósitos de Locação:** Esteja preparado para depósitos de carros alugados, que podem variar de AUD $100 a $1.000 ou mais. Estes são geralmente pré-autorizados em um cartão de crédito e reembolsados após a devolução do veículo em boas condições. Empresas como Apex e Europcar são conhecidas por, às vezes, não exigirem depósitos ou exigirem depósitos mínimos. Sempre informe-se sobre as políticas de depósito e os prazos de reembolso associados.</li>
+    <li>Estacionar nas grandes cidades australianas, como Sydney e Melbourne, é complexo devido à sinalização confusa e regras rígidas. Restrições comuns incluem limites de tempo (por exemplo, 1-2 horas, às vezes até 15 minutos) perto dos centros das cidades. Algumas áreas são designadas apenas para residentes ou exigem pagamento via aplicativos que necessitam de um número de telefone australiano (por exemplo, Cremorne Point, em Sydney). As placas de estacionamento usam notações como &#39;3P&#39; para indicar um máximo de 3 horas. As setas nas placas especificam as direções de estacionamento válidas. O pagamento é geralmente feito via parquímetros ou aplicativos como o EasyPark. O estacionamento gratuito é frequentemente aplicado fora do horário de pico (por exemplo, das 21h às 7h). É aconselhável perguntar sobre as instalações de estacionamento ao reservar a acomodação.</li>
+    <li>Usuários alugaram carros com sucesso em cidades australianas como Melbourne e Camberra usando um cartão de débito estrangeiro. Embora alguns serviços de aluguel historicamente preferissem cartões de crédito para depósitos, parece que muitos agora aceitam cartões de débito. É aconselhável esclarecer a aceitação com a locadora específica ao fazer a reserva, mas a experiência pessoal indica que é possível.</li>
+    <li>Na Austrália, a sinalização de estacionamento e as placas de registro de veículos podem ser confusas. Um problema comum surge da semelhança entre a letra &#39;I&#39; e o numeral &#39;1&#39;. Embora a letra &#39;I&#39; possa ser usada em placas personalizadas, as placas de emissão geral costumam usar &#39;1&#39; para evitar ambiguidade. Certifique-se de identificar e inserir corretamente o número da sua placa, prestando atenção especial a caracteres potencialmente confusos ao pagar pelo estacionamento para evitar multas. As multas podem ser substanciais (de 70 a 100 AUD para infrações menores, e potencialmente mais).</li>
+    <li>O aluguel de carros na Austrália, incluindo a Tasmânia, é frequentemente possível com carteiras de motorista nacionais obtidas recentemente, mesmo sem uma tradução separada. Os requisitos principais são uma licença válida e um cartão de pagamento emitido no exterior. As locadoras podem perguntar sobre a data de emissão da carteira, mas costumam ser flexíveis.</li>
+    <li>Ao voar com a Jetstar ou transportadoras similares com uma conexão doméstica (por exemplo, de Melbourne para Hobart), verifique a política de bagagem no check-in inicial. Se ambos os voos estiverem em um único bilhete, a bagagem geralmente é despachada até o destino final, mas os procedimentos de alfândega/imigração geralmente ocorrem no primeiro ponto de entrada (por exemplo, Melbourne). É aconselhável reservar pelo menos 2 horas para transferências de voos internacionais para domésticos.</li>
+    <li>Cronograma de solicitação de visto de turista australiano: o tempo médio atual de processamento é de aproximadamente 4 a 6 semanas a partir do envio. Pontos principais: 1. A data de envio da solicitação dá início ao processo de análise, não a data do agendamento biométrico. 2. Os dados biométricos devem ser enviados dentro de 14 dias após a solicitação. 3. Comprovação de fundos: depósitos salariais regulares são mais importantes do que grandes depósitos únicos. 4. Documentos de suporte: certidões de casamento são consideradas &#39;identidade de suporte&#39;, não &#39;identidade principal&#39;. 5. Aluguel de carros: a maioria das locadoras internacionais exige um cartão de crédito com o nome do motorista em relevo.</li>
+    <li>Ao alugar um carro na Austrália, considere o seguinte: métodos de pagamento (débito vs. crédito), requisitos de depósito e opções de seguro. É aconselhável consultar esses detalhes com a locadora com antecedência. Por exemplo, um usuário conseguiu alugar um carro em Melbourne pela Avis usando um cartão de débito do Cazaquistão, optando pelo seguro completo e utilizando sua carteira de motorista para verificação, sem necessidade de pré-pagamento.</li>
+    <li>Viajar pela Great Ocean Road (GOR) de campervan é altamente recomendado para uma experiência melhorada. Pernoites são restritos a parques de caravanas designados. Esses parques frequentemente oferecem locais cênicos com vida selvagem abundante (por exemplo, as cacatuas-de-crista-amarela são comuns nos parques de caravanas de Lorne). Os visitantes devem estar cientes de que a vida selvagem local pode tentar roubar comida.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/pt/au/documentos-e-vistos/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentos e Vistos</span></a>
+    <a class="chip" href="/pt/au/ingressos-e-lazer/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Ingressos e Lazer</span></a>
+    <a class="chip" href="/pt/au/c-mbio-e-transfer-ncias/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Câmbio e Transferências</span></a>
+    <a class="chip" href="/pt/au/bancos-e-dinheiro/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Bancos e Dinheiro</span></a>
+    <a class="chip" href="/pt/au/acomoda-o/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Acomodação</span></a>
+    <a class="chip" href="/pt/au/trabalho-e-impostos/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>📦 Trabalho e Impostos</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>A busca responde a todos — mas a você?</h2>
+    <p>Pergunte ao Luky — diz o que funciona agora — com base em relatos recentes.</p>
+    <p>E o Luky é um tradutor de voz para conversas reais: descubra na loja o que você está comprando.</p>
+    <p class="ps">PS: se quiser, o Luky ajuda a conhecer gente sem barreira de idioma 😉</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir o Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiência real dos chats de comunidades, sem enrolação</div>
+    <nav class="f-links">
+      <a href="/pt/about/">Sobre</a>
+      <a href="/pt/au/">Todos os temas</a>
+      <a href="/pt/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">As respostas são reunidas de chats abertos de comunidades — é a experiência real das pessoas, não aconselhamento oficial. Verifique antes de decisões importantes.</p>
+    <div class="f-copy">© 2026 Luky · atualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noite", DAY="\u2600 Dia";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

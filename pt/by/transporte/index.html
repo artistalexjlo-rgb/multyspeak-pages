@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bielorrússia: Transporte — experiência real · Luky</title>
+<meta name="description" content="Experiência real dos chats sobre Transporte em Bielorrússia: como é, em primeira mão. Para o seu caso — pergunte ao Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/pt/by/transporte/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/by/transporte/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/by/transporte/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/by/transporte/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/by/transporte/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/by/transporte/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · qualquer país · sem enrolação</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noite</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/pt/">Início</a> /
+    <a href="/pt/by/">Bielorrússia</a> /
+    <b>Transporte</b>
+  </nav>
+
+
+  
+  <h1>Transporte: como é em Bielorrússia — em primeira mão</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiência real de pessoas dos chats sobre «Transporte» em Bielorrússia — como é, sem enrolação. Para o seu caso — <strong>pergunte ao Luky</strong>.</div></div>
+
+  <h2>Da experiência real</h2>
+  <ul class="qlist">
+    <li>Ao cruzar a fronteira da Rússia para a Bielorrússia de carro, espere uma inspeção rápida. Os passaportes do motorista e dos passageiros serão verificados e o porta-malas poderá ser aberto. O processo é geralmente ágil, levando cerca de 5 a 10 minutos. Esteja atento às restrições de álcool, pois quantidades excessivas podem ser confiscadas. É aconselhável respeitar os limites permitidos para evitar problemas na fronteira.</li>
+    <li>Para verificar multas de trânsito na Bielorrússia, entre em contato diretamente com a GAI bielorrussa. As multas de câmeras geralmente expiram após três meses se você não for parado pela polícia. Se for parado, o pagamento é obrigatório.</li>
+    <li>Para carros com placas russas, os pedágios na Bielorrússia são geralmente gratuitos. No entanto, se desejar pagar pela passagem em estradas com pedágio como o MKAD (Anel Viário de Minsk), pode fazê-lo através do site Autodor-tr.ru. O seguro local bielorrusso é recomendado em vez do &#39;cartão azul&#39; russo para reparos de carros dentro da Bielorrússia durante estadias prolongadas, já que o cartão azul pode exigir que os reparos sejam feitos na Rússia. O custo do seguro local é de aproximadamente 120 BYN por dois meses ou cerca de 2500 BYN por mês, com planos anuais oferecendo melhor custo-benefício.</li>
+    <li>Existem radares de velocidade em Minsk e arredores, e eles são frequentemente indicados por aplicativos de navegação como o Yandex.Navigator. Alguns radares podem ser menos perceptíveis, integrados a sistemas de semáforos ou posicionados em faixas dedicadas. Além disso, a polícia de trânsito equipada com pistolas de radar aplica ativamente os limites de velocidade. É aconselhável respeitar os limites de velocidade sinalizados para evitar multas e possíveis penalidades.</li>
+    <li>Na Bielorrússia, o prazo mínimo para uma apólice de seguro &#39;Cartão Verde&#39; (Cartão Azul) é de 14 dias. Se uma apólice expirar enquanto você estiver no país, ela não poderá ser estendida por um período menor (por exemplo, 5 dias) com uma tarifa reduzida; é necessário visitar um escritório da &#39;Belgosstrakh&#39; para adquirir uma nova apólice pelo prazo mínimo total. Os agentes de fronteira podem ocasionalmente oferecer um &#39;seguro de fronteira&#39; de curto prazo que não é padrão para extensão doméstica.</li>
+    <li>Viajar com animais de estimação para a Bielorrússia geralmente envolve uma inspeção mínima. Embora os animais normalmente não sejam submetidos a exames rigorosos, é aconselhável ter o passaporte do animal, especialmente ao viajar de trem. Certifique-se de que todas as vacinas estejam em dia. Se uma vacina específica (como a Nobivac para raiva) estiver vencida, ela pode ser administrada na Bielorrússia. Não há controle veterinário dedicado na fronteira.</li>
+    <li>Para adultos cruzando a fronteira Rússia-Bielorrússia, um passaporte doméstico padrão (para cidadãos russos) é suficiente. O passaporte de viagem (zagranpassport) só é obrigatório para crianças menores de 14 anos.</li>
+    <li>Cidadãos russos que dirigem veículos com placas bielorrussas na Rússia frequentemente enfrentam assédio da polícia de trânsito. Legalmente, dirigir tais veículos é permitido sob os regulamentos da união aduaneira, mas a polícia pode interpretar mal o Art. 16.24 do Código Administrativo. Carregar documentação legal impressa ou obter uma autorização de residência bielorrussa (VNZH) são estratégias de mitigação comuns.</li>
+    <li>Se você tem um número de telefone russo e está tentando pagar o estacionamento na Bielorrússia via SMS para o número 204, e não está funcionando, considere usar o serviço &#39;ERIP bez granit&#39;. Navegue através de &#39;Stoyanki garazhi parkovki&#39; (Estacionamentos, Garagens, Áreas de estacionamento) dentro do serviço. Alternativamente, você pode ir a uma agência dos correios e pedir que processem o pagamento do estacionamento via ERIP, fornecendo o número do estacionamento e a placa do seu veículo.</li>
+    <li>A partir de 20 de janeiro de 2026, cidadãos russos menores de 14 anos exigirão um passaporte estrangeiro (zagranpasport) para viagens internacionais saindo da Rússia. Anteriormente, uma certidão de nascimento com foto poderia ter sido aceita, mas isso não é mais garantido. Certifique-se de que crianças menores de 14 anos possuam um passaporte estrangeiro válido para a partida da Federação Russa.</li>
+    <li>O preço da gasolina 95 octanas na Bielorrússia é de aproximadamente 2,68 BYN por litro. Não há problemas relatados quanto à disponibilidade de combustível. Os postos da &#39;Belarusneft&#39; são preferíveis, com qualidade e preços consistentes em diferentes locais.</li>
+    <li>Ao viajar da Alemanha para a Rússia, a passagem de fronteira de Benyakoni, na Lituânia, é sugerida como uma opção mais tranquila. Recomenda-se fazer o registro online para a fila, especialmente para viagens de fim de semana.</li>
+    <li>Cidadãos russos que viajam de trem de Kaliningrado para Minsk normalmente precisam de um documento de trânsito especial da Lituânia (que declare um motivo válido, como tratamento médico ou laços familiares) ou de um visto Schengen de múltiplas entradas. Comprar uma passagem apenas até Smolensk (Rússia) e, em seguida, seguir para Minsk pode permitir a viagem sob a regra de &#39;viagem interna russa&#39;, exigindo um UDD-ZhD (Documento de Transporte Universal para Transporte Ferroviário) em vez de um visto Schengen. Certifique-se de que a passagem seja comprada até Smolensk, e não diretamente para Minsk, para aproveitar essa opção.</li>
+    <li>As condições das estradas entre a Rússia e a Bielorrússia variam. Alguns trechos são novos e permitem velocidades mais altas (até 140 km/h), enquanto trechos mais antigos exigem velocidades menores (60-80 km/h). As estradas bielorrussas são geralmente boas, mas passam por vilarejos com limites de velocidade de 40 km/h. Preste atenção às placas de sinalização que indicam limites de velocidade e o tipo de estrada (por exemplo, estradas com pedágio).</li>
+    <li>O controle de fronteira entre a Rússia e a Bielorrússia é inconsistente. Os viajantes devem estar preparados para possíveis inspeções de veículos e verificações de documentos. Foram relatadas faltas de combustível em grandes postos de gasolina de marca nas regiões de fronteira (por exemplo, na região de Bryansk); recomenda-se manter o tanque cheio antes de se aproximar da fronteira. Aconselha-se que os viajantes evitem horários de pico, se possível.</li>
+    <li>Ao cruzar a fronteira bielorrussa de carro, esteja ciente de que postos de controle como &#39;Krasnaya Gorka&#39; (no caminho para Brest) podem apresentar filas significativas. Considere rotas alternativas, como via Roslavl se estiver vindo de Moscou, embora isso possa aumentar a distância. É aconselhável verificar as condições atuais das filas em postos de fronteira como Kruglovka e Krasnaya Gorka, pois elas flutuam. Recomenda-se obter o &#39;cartão azul&#39; (seguro veicular) na Rússia antes da sua viagem, embora ele possa estar disponível na passagem de fronteira.</li>
+    <li>O seguro veicular (&#39;cartão azul&#39;) para a Bielorrússia geralmente pode ser adquirido em postos de gasolina próximos às passagens de fronteira, incluindo rotas como Nevel-Polotsk ou o posto de controle de Ukleenka.</li>
+    <li>As passagens de fronteira entre a Rússia e a Bielorrússia (por exemplo, Krasnaya Gorka) podem sofrer atrasos durante os horários de pico (sextas-feiras à noite, feriados, trocas de turno). O tempo médio de trânsito fora do pico é de aproximadamente 20 minutos. As verificações de passaporte (passaportes internos russos) são seletivas, mas frequentes. Não são necessárias autorizações especiais de trânsito para viagens padrão.</li>
+    <li>Serviços de compartilhamento de carros como o Anytime estão disponíveis em Minsk para alugar veículos para uso na cidade ou viagens de um dia (por exemplo, aos castelos de Mir e Nesvizh). Os usuários podem alugar um carro e usá-lo durante o período de aluguel, incluindo tempo de espera, desde que coberto pelo contrato de aluguel. É importante verificar os termos e condições relativos às taxas de &#39;espera&#39; ou se o carro pode ser realugado por outros passageiros se deixado sem vigilância por períodos prolongados. As estruturas de preços variam, e é aconselhável verificar o site oficial ou o aplicativo do serviço para taxas e políticas atuais.</li>
+    <li>Ao viajar de carro com um animal de estimação entre a Rússia e a Bielorrússia, as verificações específicas de documentação do animal geralmente não são rigorosas. O foco geralmente está na própria documentação do viajante.</li>
+    <li>As câmeras na Rússia captam excesso de velocidade e outras infrações de trânsito de veículos bielorrussos. Embora multas não registradas possam, teoricamente, ser descartadas, é aconselhável cumprir as leis de trânsito russas para evitar possíveis problemas.</li>
+    <li>A estrada de Gomel passando por Bryansk até Voronezh é geralmente boa. Há um curto trecho de obras na estrada no contorno de Bryansk, mas, fora isso, a rota é segura e bem conservada. A disponibilidade de combustível deve ser monitorada, e é aconselhável levar combustível extra devido à situação geopolítica atual.</li>
+    <li>Viajantes que dirigem pela região de Bryansk (Rússia) a Gomel (Bielorrússia) geralmente relatam que o percurso é relativamente seguro, sem evidências diretas de bombardeios ou atividade frequente de drones afetando as rotas principais. Embora a situação geral de segurança seja reconhecida, relatos específicos de ameaças diretas a esta ligação rodoviária em particular são escassos. A maioria dos usuários descreve as estradas como funcionais, com todos os serviços (como postos de gasolina) operando normalmente. No entanto, recomenda-se estar ciente do contexto geopolítico mais amplo.</li>
+    <li>Motoristas com menos de dois anos de experiência na Rússia podem precisar aderir a limites de velocidade específicos na Bielorrússia, como a regra de 70 km/h. Embora os detalhes da fiscalização possam variar, é aconselhável estar ciente e cumprir tais regulamentos para evitar possíveis problemas.</li>
+    <li>Viajantes com filhos cidadãos da UE podem entrar na Bielorrússia sem visto e, em seguida, voar para Moscou com vistos eletrônicos. Para o reingresso na Bielorrússia ou viagens subsequentes, certifique-se de que toda a documentação, incluindo os vistos eletrônicos, esteja válida e em conformidade com os regulamentos atuais. Fontes oficiais devem ser consultadas para obter as informações mais atualizadas, já que os regulamentos de viagem podem mudar.</li>
+    <li>Recomenda-se a rota direta de Gomel para Brest em vez de viajar via Minsk, já que esta última implica um desvio significativo. As condições da estrada na rota direta são consideradas normais.</li>
+    <li>Não existem restrições de compra de combustível para cidadãos russos na Bielorrússia. Segundo as regras de ADR (transporte de mercadorias perigosas), veículos particulares podem transportar até 240L de combustível, com um máximo de 60L em galões portáteis. Evite quantidades excessivas para prevenir a classificação de &#39;carga comercial&#39; pela alfândega.</li>
+    <li>Para viagens de carro de Brest, na Bielorrússia, para São Petersburgo, na Rússia, as rotas recomendadas incluem passar por Vitebsk e Ezerishche. Uma alternativa envolve pegar a rodovia M1 em direção a Orsha, seguir para Vitebsk e continuar via Ezerishche. No lado russo, possíveis paradas ou áreas de serviço estão disponíveis perto de Pushgory ou Ostrov, ou diretamente na rodovia.</li>
+    <li>O &#39;Blue Card&#39; (equivalente ao Green Card para a Bielorrússia) é obrigatório para veículos que entram a partir da Rússia. Recomenda-se comprá-lo como uma extensão online da apólice russa OSAGO via um corretor ou companhia de seguros antes da viagem. O preço é de aproximadamente 1.070 RUB para 15 dias. A compra na fronteira é desencorajada devido a possíveis filas e disponibilidade variável.</li>
+    <li>Para uma viagem ideal de carro pela Bielorrússia, priorize rotas diretas. Por exemplo, a viagem de Gomel a Brest é feita melhor diretamente do que via Minsk, o que aumenta consideravelmente a distância. A prática local apoia as rotas diretas.</li>
+    <li>O &#39;Cartão Azul&#39; bielorrusso (seguro automóvel) é geralmente emitido por veículo. É aconselhável ter uma cópia impressa ou uma versão digital (captura de tela) prontamente disponível, embora formulários eletrônicos sejam frequentemente aceitos.</li>
+    <li>Um carro dado baixa na Rússia e vendido sob um contrato de compra e venda (DKP) deve, em geral, ter permissão para cruzar a fronteira para dentro e para fora da Bielorrússia sem problemas. O controle de fronteira concentra-se normalmente nos passaportes dos passageiros e nas inspeções do porta-malas do veículo, sendo as carteiras de motorista verificadas com menos frequência, embora existam exceções em certas passagens de fronteira, como a fronteira georgiana.</li>
+    <li>Quanto ao combustível diesel, a Bielorrússia é recomendada como um bom lugar para reabastecer, com a orientação de levar pelo menos 40 litros para maior tranquilidade. Embora Moscou e seus arredores tenham diesel disponível, os postos comerciais podem cobrar cerca de 125-130 rublos por litro. Levar 20 litros adicionais em um galão é sugerido como precaução para a viagem a Moscou, especialmente considerando uma capacidade menor do tanque de combustível (55 litros).</li>
+    <li>Para carros que cruzam a fronteira entre a Rússia e a Bielorrússia, é necessário um comprovante de seguro. Isso normalmente inclui a apólice russa OSAGO ou uma &#39;carta azul&#39; bielorrussa (semelhante ao seguro Carta Verde válido na Bielorrússia). Os motoristas devem garantir que seu seguro seja válido durante a estadia e cubra o território da Bielorrússia.</li>
+    <li>O seguro de carro russo raramente é verificado na fronteira entre a Bielorrússia e a Rússia. Se não estiver listado na apólice de seguro, você ainda pode dirigir sem problemas imediatos na Bielorrússia, embora a polícia de trânsito russa possa perguntar. O seguro &#39;carta azul&#39; bielorrusso é obrigatório para a entrada na Bielorrússia e é emitido por veículo, não por motorista.</li>
+    <li>Os preços dos combustíveis na Bielorrússia são regulados pelo Estado devido ao fato de o país ter apenas duas refinarias. O preço da gasolina de 95 octanas é de aproximadamente 2,67 rublos bielorrussos por litro. A Gazprom pode oferecer um pequeno desconto de um copeque por litro para o combustível de 95 octanas.</li>
+    <li>A disponibilidade de combustível na rota de São Petersburgo para a Bielorrússia pode ser inconsistente. Embora alguns postos na região de Leningrado e em São Petersburgo possam ter combustível (com limites), áreas ao longo da rota R-23 mostraram uma escassez significativa de gasolina de 95 octanas. O combustível diesel foi relatado como sendo mais disponível. Recomenda-se carregar combustível extra, como em um galão, caso não tenha certeza sobre chegar a um ponto de reabastecimento.</li>
+    <li>Ao viajar de carro de Minsk para São Petersburgo, existem duas rotas principais a considerar. A rodovia M1 está geralmente em boas condições, especialmente o trecho próximo a Vitebsk. Uma rota alternativa e mais curta via Polotsk em direção a Opocka (Rússia) passou por reparos recentes. Embora partes desta rota ainda possam ter superfícies de asfalto mais antigas, relatos indicam que buracos significativos são menos comuns agora, tornando-a uma opção mais viável do que em anos anteriores. O trecho da fronteira entre a Bielorrússia e a Rússia até Opocka, na Rússia, é uma estrada com pedágio, com condições variadas, mas geralmente melhoradas. Os viajantes podem achar a rota mais curta mais atraente se o tempo for um fator limitante, enquanto a M1 oferece uma experiência de direção consistentemente boa.</li>
+    <li>Para dirigir um carro na Bielorrússia quando você não é o proprietário, mas está listado na apólice de seguro, não é necessária uma procuração notariada. Certifique-se de ter o certificado de registro do veículo (STS) e a &#39;carta azul&#39; (apólice de seguro internacional).
+
+Em relação à residência (VNZh/RVP) na Bielorrússia: obter o registro legal (propiska) pode envolver riscos para o proprietário do imóvel, semelhante ao que ocorre na Rússia, onde o despejo sem consentimento pode exigir procedimentos judiciais. É possível providenciar um registro pago, que normalmente custa de 60 a 150 BYN por mês, podendo ser mais caro para famílias. Ao solicitar o VNZh, você deve selecionar um escritório de migração (OGiM) específico para o seu distrito de registro. O OGiM verificará uma fonte de renda estável (por exemplo, pensão, renda de aluguel, contrato de trabalho); a ausência disso pode levar à negação. Você se torna um residente fiscal após residir na Bielorrússia por mais de seis meses.</li>
+    <li>Os regulamentos oficiais permitem o transporte de até 240 litros de combustível por veículo e até 60 litros por recipiente para uso pessoal ao cruzar a fronteira entre a Bielorrússia e a Rússia. Embora possam existir restrições verbais ou interpretações divergentes na fronteira, os limites oficiais estabelecidos para a importação/exportação pessoal de combustível permanecem. A exportação de combustível para venda comercial é proibida.</li>
+    <li>Dirigir um carro com registro bielorrusso na Rússia pode ser complicado. Os requisitos podem incluir a prova do status na UEEA (União Econômica Eurasiática) para o veículo, possivelmente exigindo o pagamento de taxas comerciais de reciclagem se taxas preferenciais tiverem sido aplicadas na Bielorrússia. Recomenda-se um esclarecimento oficial da alfândega russa, uma vez que a documentação específica (por exemplo, declaração aduaneira de passageiros) e o método de importação do veículo para a Bielorrússia podem afetar a conformidade.</li>
+    <li>Obtenha o &#39;Cartão Azul&#39; bielorrusso (seguro veicular) antes de entrar na Bielorrússia. A confirmação eletrônica (captura de tela) é geralmente aceita. Embora o seguro russo possa não ser verificado na fronteira, o &#39;Cartão Azul&#39; é obrigatório para a entrada na Bielorrússia. O seguro está vinculado ao veículo, não ao motorista.</li>
+    <li>Ao cruzar a fronteira entre a Rússia e a Bielorrússia de ônibus, os passaportes dos passageiros serão verificados. Em alguns casos, pode ser solicitado aos viajantes que saiam do ônibus para uma inspeção mais minuciosa. Embora o controle de passaportes seja realizado, a passagem é geralmente concedida sem problemas significativos.</li>
+    <li>Para um jovem de 14 anos viajando de carro da Rússia para a Bielorrússia com um irmão adulto (que não seja um dos pais), geralmente é necessária uma autorização reconhecida em cartório de um dos pais. Embora as regras possam variar, é melhor ter este documento para evitar problemas na fronteira. Se estiver viajando com um dos pais, a autorização do outro geralmente não é necessária, mas uma verificação de proibições de saída ainda pode ocorrer.</li>
+    <li>A disponibilidade de combustível na rodovia M1 ao se aproximar de Moscou pode ser limitada, com potencial para longas filas ou restrições em alguns postos de gasolina. De acordo com relatos recentes, alguns postos implementaram um limite de 20 litros por veículo. É aconselhável planejar as paradas para reabastecimento com antecedência e considerar rotas ou postos alternativos, se possível.</li>
+    <li>Para viagens entre a Rússia e a Bielorrússia de trem, os adultos geralmente precisam apenas de seus passaportes internos russos padrão. Para crianças menores de três anos, um passaporte estrangeiro (seja o modelo antigo ou o novo) é obrigatório. Embora os registros de vacinação de animais de estimação sejam recomendáveis, a necessidade de certificados de saúde específicos para animais de estimação ao viajar de trem entre esses países pode variar e deve ser verificada com a operadora.</li>
+    <li>Comprar e registar um automóvel na Bielorrússia para cidadãos russos pode ser complexo. Os requisitos podem incluir residência bielorrussa (VNZh) ou um intermediário bielorrusso (&#39;prokladka&#39;). Os carros importados para a Bielorrússia podem ser reconhecidos como mercadorias da UEEA pela alfândega russa, mas as taxas de reciclagem preferenciais podem não ser dispensadas, o que pode exigir pagamentos adicionais. Consulte as autoridades aduaneiras para procedimentos e custos específicos.</li>
+    <li>Os viajantes que planeiam conduzir de Rostov para a Bielorrússia devem estar cientes de potenciais preocupações de segurança, particularmente nas rotas que passam por regiões que fazem fronteira com a Ucrânia. O troço Bryansk-Gomel é mencionado como uma área de maior risco. Embora alguns viajantes tenham relatado viagens sem incidentes nesta rota, outros expressam cautela. Observaram-se fortificações em algumas estações de serviço. Considere rotas alternativas como Voronezh-Kursk-Oryol-Bryansk. Verifique minuciosamente os avisos de segurança atuais e avalie os riscos antes de iniciar uma viagem por estrada.</li>
+    <li>Para conduzir um carro na Bielorrússia que não esteja registado em seu nome, não precisa de uma procuração. Certifique-se de que tem o seu passaporte e o certificado de registo do veículo (STS). Os guardas de fronteira preocupam-se principalmente com os seus documentos pessoais e o registo do veículo, não com a propriedade do carro por parte do condutor.</li>
+    <li>O transporte de animais de estimação, incluindo cães e gatos, através da fronteira Rússia-Bielorrússia geralmente não envolve controlos veterinários rigorosos na própria fronteira. Vários utilizadores relataram passagens bem-sucedidas sem a apresentação de passaportes de animais de estimação ou registos de vacinação, mesmo para raças grandes. O consenso geral é que não existe um controlo veterinário dedicado nas passagens de fronteira entre a Rússia e a Bielorrússia, tornando o processo relativamente simples para os animais de estimação. Contudo, os regulamentos oficiais podem mudar, sendo sempre aconselhável ter a documentação básica do animal (como um passaporte) por precaução.</li>
+    <li>Ao atravessar a fronteira russo-bielorrussa de carro, espere controlos de passaporte. Embora pontos de controlo como os da autoestrada M1 possam ter controlos mínimos, outras passagens de fronteira podem envolver o envio de passageiros para uma cabina para uma inspeção detalhada. O controlo fronteiriço bielorrusso na fronteira russa não está ativo atualmente, mas os viajantes devem manter-se informados sobre potenciais alterações.</li>
+    <li>Para cidadãos da Bielorrússia, o passaporte doméstico azul padrão serve como documento de viagem interno e internacional. Ele é válido para viagens a destinos como Turquia e Egito (onde se aplica visto na chegada ou isenção de visto), desde que o documento esteja válido. Cartões de identificação, se emitidos, devem ser acompanhados de um passaporte biométrico separado para viagens internacionais.</li>
+    <li>Embora não existam limites explícitos para o transporte de combustível em galões para uso pessoal através da fronteira Rússia-Bielorrússia devido ao espaço aduaneiro unificado, podem aplicar-se regulamentos para o transporte de mercadorias perigosas (como combustível). Geralmente, até 60 litros por recipiente, com um limite de quatro recipientes (240 litros no total), é considerado o padrão para transporte pessoal. No entanto, os funcionários da alfândega podem inspecionar qualquer quantidade, e é sensato garantir que os galões sejam aprovados para o transporte de combustível.</li>
+    <li>Cidadãos russos com dívidas pendentes e uma proibição de viagem imposta por oficiais de justiça ainda podem conseguir transitar pela Bielorrússia. Embora o controle de fronteira possa detectar tais proibições, relatos indicam que os viajantes são frequentemente autorizados a atravessar. A eficácia das proibições de viagem russas durante o trânsito pela Bielorrússia pode ser inconsistente.</li>
+    <li>A reserva de passagens de ônibus intermunicipais na Bielorrússia pode ser feita convenientemente online através de plataformas como Atlas Bus e Infobus. Bilhetes de trem também estão disponíveis através de serviços como RZD e BelZhD. Para traslados confortáveis, vários serviços oferecem opções sem pagamento antecipado, frequentemente com motoristas experientes e familiarizados com as rotas locais.</li>
+    <li>Cidadãos russos com autorização de residência bielorrussa (VNZH) não são obrigados a trocar sua carteira de motorista russa por uma bielorrussa. Dirigir um veículo com placas russas na Bielorrússia ou usar uma carteira de motorista bielorrussa na Rússia é legalmente permitido sob os acordos do Estado da União.</li>
+    <li>Operar um veículo com registro bielorrusso na Rússia com placas de trânsito pode ser legalmente complexo. Embora as regulamentações russas possam impor limites de tempo, alguns indivíduos relatam uso prolongado ao aproveitar documentos que confirmam o status de EAEU do veículo. Isso geralmente envolve a obtenção de uma Declaração Aduaneira de Passageiro (PTD) e, potencialmente, o processamento benéfico da taxa de reciclagem. Consultas oficiais com as autoridades aduaneiras são aconselhadas para navegar por esses procedimentos, especialmente para veículos mais antigos ou aqueles importados sob acordos especiais bielorrussos.</li>
+    <li>Transportar animais de estimação, incluindo vários cães, através da fronteira entre a Bielorrússia e a Rússia de carro geralmente não é um problema significativo. Relata-se que os guardas de fronteira raramente verificam a documentação dos animais. Embora seja sempre aconselhável ter os certificados de saúde e registros de vacinação necessários, a aplicação prática nesta passagem de fronteira parece ser flexível para veículos particulares.</li>
+    <li>Um cidadão russo de 14 anos pode viajar para a Bielorrússia de trem. Embora o consentimento dos pais possa não ser estritamente necessário se viajar com um dos pais, é aconselhável ter um consentimento notariado de um dos pais. Se não houver proibição de saída, os guardas de fronteira nem sempre podem solicitar documentação extensa, mas é mais seguro estar preparado.</li>
+    <li>O transporte de combustível através da fronteira Rússia-Bielorrússia para uso pessoal é permitido, com um limite de até 240 litros por veículo. Devido a escassez ocasional de combustível ou picos de preços nas regiões fronteiriças da Federação Russa, usar postos de gasolina da Bielorrússia é uma maneira confiável de evitar longas filas nos postos de combustíveis locais.</li>
+    <li>Para visitar Belovezhskaya Pushcha, compre ingressos na bilheteria da entrada. O transporte para o parque precisa ser organizado separadamente; considere opções de transporte em grupo, como as encontradas no Kufar, se estiver viajando com um grupo grande. Para a melhor experiência com os animais, visite os recintos assim que abrirem (às 9h) e leve comida. As opções de refeições incluem o café &#39;Sosny&#39; (acessível e saboroso) e o restaurante do edifício principal (mais caro). Reserve pelo menos um dia inteiro, idealmente dois, para explorar os recintos, fazer visitas guiadas e desfrutar de atividades como andar de bicicleta.</li>
+    <li>O &#39;Cartão Azul&#39; (seguro automotivo para a Bielorrússia) é obrigatório para carros estrangeiros. Pode ser adquirido online (verifique o prazo de entrega/validade), em escritórios de seguros locais na Rússia ou em quiosques perto da fronteira. Se comprar em quiosques de fronteira, certifique-se de que eles tenham acesso à internet para registrar a apólice no banco de dados. Os preços são regulados pela Associação Russa de Seguradoras de Automóveis (RAMI) e são padronizados.</li>
+    <li>Ao cruzar a fronteira para a Bielorrússia com um carro, especialmente um que tenha sido baixado (deregistered) na Rússia, espere verificações rigorosas dos passaportes dos passageiros e do porta-malas do veículo. As carteiras de motorista normalmente não são verificadas na fronteira, embora isso possa variar dependendo do ponto de travessia. É aconselhável portar toda a documentação relevante.</li>
+    <li>As carteiras de motorista russas com períodos de validade estendidos automaticamente são reconhecidas na Bielorrússia. Embora alguns agentes de trânsito possam não estar familiarizados com essas extensões, confirmações oficiais sustentam sua validade. Os viajantes devem garantir que seus documentos estejam em conformidade com os regulamentos russos relativos a extensões automáticas.</li>
+    <li>Os pontos de passagem de fronteira entre a Rússia e a Bielorrússia variam quanto ao tráfego. Lobok-Ezerishche é popular, mas propenso a filas; Dolostsy é mais tranquilo, mas tem uma superfície de estrada pior. Evite finais de semana/feriados para um processamento mais rápido. Certifique-se de estar com o tanque de combustível cheio antes de atravessar, pois o abastecimento pode ser inconsistente.</li>
+    <li>Cidadãos russos que viajam para a Bielorrússia geralmente precisam apenas do seu passaporte interno russo para cruzar a fronteira. Uma carteira de motorista não é suficiente como documento de identificação principal para o controle de fronteira. Em casos de perda ou vencimento do passaporte, métodos alternativos de identificação podem ser explorados, mas um passaporte válido é o requisito padrão.</li>
+    <li>As condições das estradas entre Gomel e Brest são consideradas normais, com algumas pequenas obras de reparo. O percurso é cênico e pode ser feito em aproximadamente oito horas, mesmo com paradas em cidades como Pinsk.</li>
+    <li>Para viagens transfronteiriças entre a Bielorrússia e a Rússia, certifique-se de que o seu veículo possua o seguro adequado. Embora o seguro russo possa não ser verificado na fronteira, o seguro &#39;carta verde&#39; bielorrusso é obrigatório para a entrada na Bielorrússia. Mantenha todos os documentos relevantes, incluindo o seguro e os documentos de registro do veículo, acessíveis.</li>
+    <li>Ao dirigir da Rússia para a Bielorrússia, os viajantes relatam que o controle de fronteira russo é geralmente mínimo ou inexistente na viagem de ida. Alguns usuários mencionam uma placa de &#39;pare&#39; onde diminuíram brevemente a velocidade, mas nenhuma verificação foi realizada. O controle de fronteira bielorrusso também parece ser flexível para cidadãos russos que entram no país. No entanto, na viagem de volta (da Bielorrússia para a Rússia), as verificações podem ser mais minuciosas, com os guardas de fronteira podendo inspecionar o interior e o porta-malas do veículo. É crucial ter todos os documentos necessários para os passageiros e para o veículo.</li>
+    <li>Ao cruzar a fronteira entre a Rússia e a Bielorrússia de carro, os documentos essenciais geralmente exigidos são: passaportes de todos os passageiros, o certificado de registro do veículo (STS) e comprovante de seguro (OSAGO ou &#39;carta azul&#39; para a Bielorrússia). Para veículos de propriedade de empresas (por exemplo, alugados), pode ser necessária uma procuração da organização, embora alguns usuários sugiram que isso pode não ser estritamente exigido, sendo suficientes os direitos, o STS e o seguro.</li>
+    <li>O Green Card/Blue Card para a Bielorrússia é obrigatório para veículos registrados no exterior. Ele pode ser comprado em quiosques que funcionam 24 horas por dia, 7 dias por semana, perto da fronteira. O preço para 15 dias para um carro de passeio é de aproximadamente 1070 RUB. Não é necessária uma procuração para cruzar a fronteira.</li>
+    <li>Para viagens de comboio entre a Rússia e a Bielorrússia com animais de estimação, os passageiros devem reservar uma carruagem específica &#39;pet-friendly&#39;. Um passaporte veterinário é obrigatório. Os requisitos de microchipagem não são rigorosamente aplicados na fronteira, mas as companhias ferroviárias podem exigir documentação específica (certificado de saúde formulário F1). Confirme sempre o processo de pagamento do bilhete para o animal de estimação junto da respetiva transportadora ferroviária.</li>
+    <li>As viagens entre a Rússia e a Bielorrússia para cidadãos russos são realizadas sem verificações completas de controlo fronteiriço contra a base de dados federal de dívidas da Rússia (FSSP), da mesma forma que os voos internacionais a partir de aeroportos russos. No entanto, esta é uma lacuna legal que pode ser fechada ou monitorizada a qualquer momento; confiar nisto como um método garantido para contornar proibições de viagem devido a dívidas ou pensões alimentícias é de alto risco.</li>
+    <li>A distância de Moscovo até à fronteira bielorrussa (por exemplo, a estação Lukoil logo após o posto de controlo) é de aproximadamente 460 km. Com um depósito cheio e uma condução moderada, isto deverá ser suficiente. No entanto, a disponibilidade de combustível pode ser inconsistente, pelo que levar um bidão extra é uma medida prudente para garantir tranquilidade, especialmente com um veículo que tenha um consumo de combustível mais elevado.</li>
+    <li>A disponibilidade de combustível na Bielorrússia é estável para veículos de passeio. Para o trânsito de Moscou para a Bielorrússia, abasteça antes de cruzar a fronteira. Na rota de retorno (M1 em direção a Moscou), há relatos de escassez de combustível em alguns postos; podem ser aplicados limites de 30 litros por abastecimento. Aplicativos que indicam a disponibilidade de combustível em tempo real são frequentemente pouco confiáveis. Os pedágios para carros com menos de 3,5 toneladas registrados em países da EAEU são gratuitos nas rodovias da Bielorrússia.</li>
+    <li>Registrar um carro russo na Bielorrússia é complexo para residentes/cidadãos devido às taxas alfandegárias/de utilização e às leis tributárias. Geralmente, recomenda-se manter as placas russas caso não se trabalhe como táxi, já que dirigir com placas russas na Bielorrússia é permitido sem restrições especiais. Cancelar o registro de um carro na Rússia enquanto se vive na Bielorrússia tornou-se significativamente mais difícil a partir de 2025.</li>
+    <li>Para viagens entre a Rússia e a Bielorrússia: Crianças menores de 14 anos precisarão de passaporte internacional a partir de janeiro de 2026. Para crianças de 14 anos ou mais, um passaporte interno russo é suficiente. Anteriormente, crianças com fotos desatualizadas em seus passaportes frequentemente tinham a passagem permitida, mas isso pode mudar. As verificações de fronteira podem incluir a fotografia dos documentos.</li>
+    <li>Ao transportar animais de estimação, como gatos ou cachorros, para a Bielorrússia, geralmente é necessário um passaporte veterinário com vacinas e tratamentos atualizados. Embora o microchip nem sempre seja verificado, é aconselhável confirmar os requisitos específicos com os serviços veterinários locais. Para viagens de trem, certifique-se de que os animais estejam em uma caixa de transporte fechada. Certificados de saúde podem ser solicitados, embora sua aplicação possa variar.</li>
+    <li>O custo de instalação de equipamento a gás em um carro em Minsk, Bielorrússia, varia a partir de aproximadamente 1300 rublos bielorrussos. O preço depende do número de cilindros e da qualidade do equipamento. A instalação geralmente pode ser concluída em um dia.</li>
+    <li>Viajantes que cruzam da Rússia para a Bielorrússia pelo posto de controle de Krasnaya Gorka devem estar cientes de possíveis atrasos. Embora o combustível geralmente esteja disponível perto de Smolensk e Krasnaya Gorka, problemas com o programa de seguro podem causar tempos de espera significativos (cerca de 40 minutos observados). Recomenda-se obter o seguro online com antecedência.</li>
+    <li>O Yandex Taxi opera em Vitebsk, na Bielorrússia. O pagamento através de cartões bancários russos, como o MIR, é aceite, garantindo a disponibilidade do serviço de táxi mesmo que exista algum problema com o roaming móvel.</li>
+    <li>O combustível está prontamente disponível na Bielorrússia, sem escassez reportada. No entanto, a compra de bidões grandes (mais de 5 litros) para transportar combustível pode ser difícil, uma vez que muitas vezes esgotam nas lojas. Embora os regulamentos permitam até 240 litros em recipientes de até 60 litros cada, transportar alguns bidões normais não costuma ser um problema.</li>
+    <li>A passagem de cidadãos estrangeiros pelo posto de controle de Lobanok (Bielorrússia) pode variar. Embora cidadãos do Cazaquistão tenham sido supostamente impedidos de entrar em janeiro de 2025, um cidadão da Austrália passou sem problemas em agosto de 2025. É aconselhável verificar os regulamentos atuais antes de viajar.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/pt/by/documentos-e-visto/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentos e Visto</span></a>
+    <a class="chip" href="/pt/by/bilhetes-e-lazer/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Bilhetes e Lazer</span></a>
+    <a class="chip" href="/pt/by/bancos-e-dinheiro/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Bancos e Dinheiro</span></a>
+    <a class="chip" href="/pt/by/alojamento/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Alojamento</span></a>
+    <a class="chip" href="/pt/by/sim-e-internet/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>📶 SIM e Internet</span></a>
+    <a class="chip" href="/pt/by/seguran-a/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Segurança</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Em todo lugar a mesma coisa, mas o seu caso é especial?</h2>
+    <p>Pergunte ao Luky — tenta entender a sua situação e responder com mais precisão.</p>
+    <p>E o Luky é um tradutor de voz para conversas reais: fale com o médico e entenda o que ele disse.</p>
+    <p class="ps">PS: tenha uma conversa por voz com um amigo no exterior como se estivesse ao lado</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir o Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiência real dos chats de comunidades, sem enrolação</div>
+    <nav class="f-links">
+      <a href="/pt/about/">Sobre</a>
+      <a href="/pt/by/">Todos os temas</a>
+      <a href="/pt/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">As respostas são reunidas de chats abertos de comunidades — é a experiência real das pessoas, não aconselhamento oficial. Verifique antes de decisões importantes.</p>
+    <div class="f-copy">© 2026 Luky · atualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noite", DAY="\u2600 Dia";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

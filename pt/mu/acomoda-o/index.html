@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maurício: Acomodação — experiência real · Luky</title>
+<meta name="description" content="Experiência real dos chats sobre Acomodação em Maurício: como é, em primeira mão. Para o seu caso — pergunte ao Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/pt/mu/acomoda-o/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/mu/acomoda-o/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/mu/acomoda-o/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/mu/acomoda-o/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/mu/acomoda-o/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/mu/acomoda-o/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · qualquer país · sem enrolação</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noite</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/pt/">Início</a> /
+    <a href="/pt/mu/">Maurício</a> /
+    <b>Acomodação</b>
+  </nav>
+
+
+  
+  <h1>Acomodação: como é em Maurício — em primeira mão</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiência real de pessoas dos chats sobre «Acomodação» em Maurício — como é, sem enrolação. Para o seu caso — <strong>pergunte ao Luky</strong>.</div></div>
+
+  <h2>Da experiência real</h2>
+  <ul class="qlist">
+    <li>Áreas recomendadas para famílias com crianças nas Maurício: Mont Choisy e Pereybere devido às melhores condições para natação; Flic-en-Flac é frequentemente citada por possuir detritos de coral. Resorts de alto padrão voltados para famílias incluem o La Pirogue e o Dinarobin.</li>
+    <li>Setembro é geralmente um bom mês para visitar as Maurício, marcando a transição do inverno para a primavera. O clima é tipicamente agradável, com menor umidade e menos precipitação. O norte da ilha geralmente desfruta de mais sol e mares mais calmos, tornando-o uma escolha popular para acomodação e atividades. O sul oferece paisagens mais dramáticas e é menos desenvolvido. Considere suas atividades e atmosfera preferidas ao escolher entre o norte e o sul.</li>
+    <li>Para voos de Moscou para as Maurício via Dubai com a Emirates (por exemplo, com partida de Moscou às 16:25 e um trânsito de 1h 40m para o voo das 02:30 para as Maurício): caso os passageiros percam a conexão devido a atrasos, a política da Emirates é reacomodá-los no próximo voo disponível pela manhã e fornecer um voucher de hotel para a estadia durante o trânsito.</li>
+    <li>Os resorts Beachcomber (Dinarobin e Paradis) nas Maurício compartilham instalações comuns. Os hóspedes podem usar piscinas, restaurantes e praias de ambas as propriedades. O Dinarobin é mais tranquilo e privativo, enquanto o Paradis possui melhor entrada para o mar e mais entretenimento. O site oficial está oferecendo atualmente um desconto de 40% até o dia 4 de junho.</li>
+    <li>As condições das praias para natação nas Maurício variam. Algumas áreas podem ter águas muito rasas (&#39;na altura dos joelhos ou da cintura&#39;), exigindo passeios de barco para uma natação adequada. Praias recomendadas incluem Trou aux Biches, Mont Choisy e Pereybere Le Morne. Sapatilhas para coral são recomendadas devido à possibilidade de encontrar ouriços-do-mar ou corais.</li>
+    <li>Para viagens às Maurícias em maio, as costas oeste e norte são recomendadas para alojamento. Estas regiões estão abrigadas de ventos fortes, sofrem menos com marés drásticas e oferecem vistas ideais do pôr do sol em comparação com outras partes da ilha.</li>
+    <li>Para umas férias em família com adultos, as Maldivas oferecem excelentes praias, mergulho com tubo, pesca e mergulho com tubarões, mas carecem de atrações significativas. As Maurícias oferecem uma natureza mais rica e oportunidades de visita turística. As Seicheles são sugeridas como uma alternativa potencial.</li>
+    <li>O clima nas Maurícias pode ser altamente variável. Um dia pode ter ventos fortes e ondas, enquanto o seguinte pode estar completamente calmo, especialmente na costa oeste. Áreas do norte, como Mont Choisy, são sugeridas por terem condições mais calmas.</li>
+    <li>Notas sobre hotéis nas Maurícias: O Dinarobin Beachcomber tem aquecimento sazonal de piscina (geralmente ativo no inverno, pode estar desligado em outubro). A área de Le Morne é recomendada para snorkeling e avistamento de tartarugas. Sapatos para coral são essenciais devido a detritos e pedras no fundo do mar. Conduzir na ilha é possível, embora as estradas do sul tenham troços sinuosos.</li>
+    <li>Para as Maurícias, ficar na costa oeste é logisticamente ideal. Atrações principais: os passeios de observação de baleias partem de Flic-en-Flac; o Casela Nature Parks (safari) está localizado perto de Cascavelle.</li>
+    <li>As praias das Maurícias possuem frequentemente lagoas pouco profundas devido ao recife de coral protetor que rodeia a ilha. As zonas de natação com maior profundidade são limitadas. Locais recomendados para melhores condições de natação incluem Trou aux Biches (praia larga de areia) e Paradis (península de Le Morne). O uso de calçado para proteção contra corais é fortemente recomendado devido à possível presença de ouriços-do-mar e detritos de coral. O acesso às praias públicas é permitido mesmo em hotéis; os visitantes podem estender toalhas perto da linha de água, mas devem evitar as espreguiçadeiras e infraestruturas privadas dos hotéis.</li>
+    <li>Ao reservar hotéis nas Maurícias, plataformas como o Booking.com são fiáveis. Para os hotéis Riu (por exemplo, Riu Palace, Riu Turquesa) em Le Morne, o pagamento pode ser processado com antecedência (semanas antes do check-in via cartão como Visa) ou no momento da chegada. O Riu Palace é uma secção exclusiva para adultos, enquanto o Riu Turquesa acomoda famílias. Não foram reportados problemas com o check-in.</li>
+    <li>No Booking.com, é possível encontrar apartamentos/hotéis nas Maurícias que não exigem pré-pagamento. No Airbnb, os utilizadores podem contactar diretamente os proprietários para combinar o pagamento no local.</li>
+    <li>Ao reservar bilhetes de avião, considere a diferença nas políticas de reembolso e alteração entre reservas diretas com a companhia aérea e agregadores de viagens online (OTAs). A Emirates, embora por vezes mais lenta com reembolsos (até 30 dias), oferece opções de pagamento direto como pagamento em escritório e transferências bancárias, e geralmente trata as alterações sem problemas. OTAs como a KupiBilet e a Trip.com mostraram resultados mistos: a KupiBilet demorou 7 dias para reembolsos de voos e 30 para upgrades de lugar, enquanto a Trip.com conseguiu reagendar uma reserva de hotel não reembolsável. A reserva direta com as companhias aéreas é frequentemente recomendada para uma resolução de problemas mais simples. Os cartões russos Mir podem não ser aceites para compras diretas com algumas companhias aéreas, como a Emirates.</li>
+    <li>Considere o valor de um pacote all-inclusive nas Maurício. Se você planeja comer em cafés locais e consumir álcool comprado fora do resort, uma opção de meia pensão ou apenas café da manhã pode ser mais econômica. Avalie as preferências pessoais de jantar e relaxamento.</li>
+    <li>Ao reservar alojamento nas Maurícias, considere propriedades como o Sugar Beach Mauritius. A proximidade de outras instalações (por exemplo, Pirogue) pode ser um fator na escolha do quarto (por exemplo, Bloco Q). Os mapas dos hotéis, especialmente se estiverem desatualizados online, podem ser cruciais para o planeamento. Relações estabelecidas com agentes de viagens (por exemplo, 25 anos) podem facilitar os processos de reserva.</li>
+    <li>Várias praias nas Maurícias oferecem experiências diferentes:
+* **Le Morne (praia pública):** Boa para nadar.
+* **Pereybere:** Pequena, espaço limitado, pouco acolhedora.
+* **Mont Choisy:** Espaçosa, boa sombra, agradável para relaxar, apesar da água potencialmente turva.
+* **Trou aux Biches:** Água límpida, mas com uma faixa de areia estreita, alto tráfego de barcos e área de natação restrita para crianças menores de 6 anos.
+* **La Cuvette:** Pode apresentar água turva e algas, mas foi relatada como límpida em fevereiro-março.
+* **Flic-en-Flac:** Sem ondas devido ao recife próximo, mas falta sombra. Não é universalmente recomendada para lazer geral na praia.
+* **Praias do sul (perto do hotel Shanti):** Preferidas por alguns pela experiência geral.
+As expectativas devem ser geridas, pois as praias podem não corresponder aos padrões das Maldivas/Seicheles.</li>
+    <li>Uma recomendação de comida nas Maurícias: o TERACA, localizado perto do KFC, oferece uma grande variedade de opções de pequeno-almoço. A comida é descrita como muito saborosa, as porções são grandes e os preços são acessíveis.</li>
+    <li>O clima nas Maurícias é altamente localizado; aguaceiros curtos são comuns, mas raramente duram o dia todo. Mudar para uma praia diferente geralmente garante tempo ensolarado. As temperaturas médias em agosto variam entre 25°C e 29°C. A temperatura da água é geralmente mais quente na costa sul em comparação com a norte.</li>
+    <li>As críticas de hotéis nas Maurícias mencionam o Tamarin Golf and Spa, localizado na praia de Flic-en-Flac (costa oeste), a cerca de 15 minutos a pé ou 25 minutos de carro da praia de Tamarin; é considerado caro. O Lux Belle Mare e o Dinarobin receberam feedback positivo pela comida e serviço. Algumas praias podem ser pouco profundas perto da costa, mas adequadas para além dos quebra-mares. Os hotéis Beachcomber oferecem acesso gratuito a pranchas de paddle, canoas e gaivotas.</li>
+    <li>Snorkeling nas Maurícias: o Dinorobin oferece a oportunidade de nadar com tartarugas. A praia de Paradis tem peixes perto da área dos barcos, mas carece de um recife significativo. Recomenda-se o uso de sapatilhas de recife devido aos ouriços-do-mar em águas mais profundas.</li>
+    <li>Para reservas de hotel nas Maurícias, o Booking.com é geralmente preferido pela fiabilidade e dimensão do inventário. Para hotéis de 4-5 estrelas, recomenda-se a comparação de preços com operadores turísticos especializados (por exemplo, Maldives Bonus, Maldiviana, Art Tour), uma vez que podem oferecer melhores tarifas através de reservas de grupo e fornecer apoio do operador em caso de perturbações nos voos.</li>
+    <li>Para reservar a experiência de pequeno-almoço com girafas no Casela, nas Maurícias, consulte o site oficial para ver a lista de atividades. Se a reserva online direta para o pequeno-almoço não estiver disponível, contacte-os através do endereço de e-mail indicado para se informar sobre os procedimentos de reserva e a disponibilidade. Outras atividades, como passeios de quadriciclo e alimentação de animais, também são oferecidas.</li>
+    <li>Os viajantes que consideram a Ethiopian Airlines para voos para as Maurícias, particularmente a partir de Moscovo, têm manifestado preocupações sobre um potencial excesso de reservas com base em avaliações. Embora alguns relatem voos sem incidentes e pontuais, outros observam que a aeronave pode ser menos luxuosa do que as da Emirates. É aconselhável pesquisar as avaliações atuais e considerar os compromissos entre custo e nível de serviço.</li>
+    <li>Para praias e hotéis adequados para crianças nas Maurícias em junho, considere a costa leste, especificamente o Lux Belle Mar, conhecido pelas suas águas pouco profundas e cristalinas. No entanto, a costa leste pode ser ventosa, o que faz com que a temperatura pareça fresca ao sair da água. A costa oeste, perto de Dinarobin, pode ter águas mais frias em junho e recomendam-se sapatos de coral. Os fatores-chave a considerar são a clareza da água, a profundidade, as condições do vento e a temperatura.</li>
+    <li>La Pirogue e Sugar Beach, nas Maurícias, são estâncias interligadas que partilham a praia e as instalações. Os hóspedes de um podem frequentemente utilizar a infraestrutura do outro. La Pirogue é composto por bungalows (frequentemente descritos como datados, mas charmosos), enquanto o Sugar Beach apresenta edifícios de vários andares em estilo colonial. A vida selvagem local comum, como os tenrecs (que se assemelham a ouriços ou pequenos roedores), é frequentemente confundida com ratos pelos turistas, mas são inofensivos. Ambas as propriedades estão localizadas na praia de Flic-en-Flac.</li>
+    <li>As praias das Maurícias requerem frequentemente calçado de água devido a fragmentos de coral, ao contrário das margens arenosas das Seychelles. A vida local é muito ativa nas praias públicas durante os fins de semana. Praias populares incluem Trou aux Biches, Mont Choisy e Le Morne, embora esta última possa ser ventosa.</li>
+    <li>Ao viajar para as Maurícias com crianças, considere a acessibilidade e o transporte. O Google Maps pode não funcionar universalmente; serviços de mapas alternativos ou depender dos dispositivos de amigos pode ser necessário. Embora as opções de alimentação nem sempre estejam a uma curta distância a pé, alugar um carro é uma solução viável, mas recomenda-se uma seleção cuidadosa da área. Grandes villas podem ser muito caras, exigindo potencialmente ajustes no orçamento ou escolhas de alojamento alternativas.</li>
+    <li>No Hotel Nirvana, nas Maurícias, algumas partes da praia são consideradas impróprias para nadar. O hotel também carece, alegadamente, de vegetação extensa, o que pode ser uma preocupação durante a época alta.</li>
+    <li>Ao reservar voos para as Maurícias, especialmente com opções de codeshare como a Air Mauritius operando em aviões da Emirates, esteja atento a possíveis cenários de overbooking. No caso de overbooking, os passageiros que possuem bilhetes comprados diretamente na companhia aérea operadora (neste caso, a Emirates) são geralmente priorizados para o embarque. O risco de overbooking é geralmente baixo em grandes companhias aéreas como a Emirates, mas é um fator a considerar se houver uma diferença de preço significativa. O apoio ao cliente de algumas companhias aéreas, como a Air Mauritius, pode ser menos robusto, podendo causar problemas com reembolsos ou reacomodações caso ocorram interrupções. Para poupanças significativas (por exemplo, 100.000 unidades), o risco pode valer a pena, mas para diferenças menores (10-15 unidades), pode não ser aconselhável. Verifique sempre as políticas de reembolso e apoio do agente de viagens e da companhia aérea.</li>
+    <li>Dicas de viagem para as Maurícias: julho/agosto é época baixa (menos multidões, tarifas mais baixas, temperaturas mais frescas). Hotéis recomendados na Costa Oeste: Hilton, Sugar Beach, La Pirogue. Costa Norte: Maritim, Beachcomber Trou aux Biches. Conduzir nas Maurícias: trânsito pela esquerda, carros com volante à direita, estradas de alta qualidade. O tamanho da ilha permite cobrir as principais atrações em 7-10 dias. Os recifes próximos protegem a costa, tornando o snorkeling geralmente seguro perto das praias.</li>
+    <li>No Hotel Nirvana, nas Maurícias, os quartos do segundo andar anunciados com vista para o jardim dão, na verdade, para uma área de estacionamento técnico. Os hóspedes devem confirmar as preferências de vista do quarto no momento da reserva.</li>
+    <li>Maurício oferece pacotes de lua de mel e reservas de vilas com presentes de hotéis válidos por até 9 meses após o casamento. Embora seja comparável às Seychelles em termos de opções comemorativas, o período de &#39;lua de mel&#39; e as ofertas específicas podem diferir. Comemorações anuais são recomendadas, independentemente do destino.</li>
+    <li>Nas Maurício, informe-se sobre as normas culturais em relação a dar gorjetas aos funcionários do hotel (camareiras, garçons). Embora dar gorjetas seja comum em muitos destinos turísticos, é importante verificar se isso é considerado habitual ou potencialmente ofensivo na cultura local para evitar mal-entendidos.</li>
+    <li>Um hóspede do Tamarin Golf Boutique Hotel (4 estrelas) em Tamarin, Maurício, encontrou uma cobra-lobo (não peçonhenta, com cerca de meio metro de comprimento) em seu quarto. A equipe do hotel aconselha manter as varandas fechadas, pois as cobras podem entrar. O hotel forneceu um novo quarto rapidamente.</li>
+    <li>O Hotel Nirvana, em Maurício, dispõe de quartos altamente reformados com instalações de alta qualidade e excelente limpeza. Os interiores dos quartos são muito bem avaliados pelos hóspedes.</li>
+    <li>Os pacotes com tudo incluído em hotéis de luxo nas Maurícias podem custar aproximadamente 360 EUR por dia para duas pessoas. Recomenda-se comparar os custos de upgrade diretamente com o hotel e através do operador turístico, uma vez que este último pode ser até 20% mais barato.</li>
+    <li>No Dinarobin Hotel, o café da manhã inclui sucos frescos de um dispensador e uma variedade de frutas, especialmente mamão. As opções para crianças incluem mingau, manteiga, queijo, ovos cozidos e frutas, garantindo que fiquem satisfeitas até o almoço. As opções de almoço no restaurante à beira-mar incluem hambúrgueres e outras iguarias, com sorvete de cortesia. Pedidos especiais de frutas como mamão são frequentemente atendidos.</li>
+    <li>Agosto em Bel Mare, Maurício, pode ser ventoso e frio. Existem praias, mas a infraestrutura é limitada, com principalmente vilarejos e poucos restaurantes. Considere outras partes da ilha para obter mais comodidades.</li>
+    <li>No LUX* Le Morne Resort 5* nas Maurícias, aplica-se um código de vestuário para o jantar. Não é permitido aos hóspedes usar calções nas áreas de restauração. Calças compridas (por exemplo, jeans, calças chino ou outras calças casuais elegantes) são obrigatórias para os homens. Vestidos de verão casuais ou calças elegantes são adequados para as mulheres. Esta regra garante o conforto e a adesão ao ambiente do hotel.</li>
+    <li>Muitos hotéis nas Maurícias oferecem desportos e atividades aquáticas. Os hotéis Beachcomber oferecem acesso gratuito a pranchas de paddle, canoas e gaivotas. Outros resorts, como o Lux Belle Mare, também oferecem várias atividades aquáticas. O preço e a disponibilidade podem variar, pelo que é aconselhável verificar com o hotel específico.</li>
+    <li>Os hóspedes que celebram a lua de mel (mesmo até 9 meses após o casamento) em hotéis nas Maurícias podem receber vantagens especiais como champanhe gratuito, petiscos, jantares comemorativos e vales para o bar de vinhos. Estes presentes podem estar avaliados em aproximadamente 15.000 INR. O estilo do mobiliário do hotel pode ser considerado datado por alguns, mas é muitas vezes intencional. As potenciais preocupações com a privacidade relativas a pessoas que passam em frente aos quartos são mínimas devido ao baixo fluxo de pessoas fora das horas das refeições. A variedade do pequeno-almoço pode ser limitada, mas as opções são geralmente abundantes.</li>
+    <li>O Booking.com não aceita cartões bancários russos para reservas nas Maurícias. Plataformas de reserva alternativas, como a Ozon Travel e a Trip.com, podem ser utilizadas para garantir alojamento.</li>
+    <li>Um hóspede ficou no Riu Turquoise - All Inclusive nas Maurícias de 14 a 24 de maio. O hotel e a comida foram considerados bons. A praia do hotel era muito ventosa, mas uma caminhada de 15 minutos para a direita levava a uma praia melhor. A localização do hotel é conveniente para o Parque Casela, partidas de hidroavião e excursões de observação de baleias. No geral, o hóspede teve uma impressão positiva.</li>
+    <li>O clima nas Maurícias é geralmente agradável para viajar durante as estações intermédias, como outubro-novembro e março-abril. O final de setembro oferece noites quentes e dias de calor, com temperaturas do oceano confortáveis. As costas norte e oeste tendem a ser mais quentes e menos ventosas do que as costas leste e sul.</li>
+    <li>Para uma estadia em Le Morne, nas Maurícias, os hotéis recomendados incluem o Dinarobin e o Paradise. Estes fazem parte da mesma rede hoteleira, oferecendo instalações e praias partilhadas. São conhecidos por terem praias calmas e planas com entrada rasa na água, adequadas para nadar mesmo em condições menos ideais.</li>
+    <li>O hotel Veranda Tamarin 3* nas Maurícias é recomendado principalmente para estadias econômicas. A praia de Tamarin, perto do hotel, é geralmente considerada inadequada para nadar e relaxar. Existem praias melhores a 20-30 minutos de carro, o que torna necessário o aluguel de veículos para os hóspedes que buscam momentos de qualidade na praia.</li>
+    <li>Poderá ser possível remarcar uma reserva de hotel para outra pessoa através do operador turístico. Isto pode ser feito com uma tarifa reduzida se a reserva original precisar de ser transferida devido a circunstâncias imprevistas.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/pt/mu/ingressos-e-lazer/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Ingressos e Lazer</span></a>
+    <a class="chip" href="/pt/mu/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/pt/mu/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/pt/mu/seguran-a/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Segurança</span></a>
+    <a class="chip" href="/pt/mu/documentos-e-vistos/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentos e Vistos</span></a>
+    <a class="chip" href="/pt/mu/c-mbio-e-transfer-ncias/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Câmbio e Transferências</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Existem artigos genéricos — mas uma solução para você?</h2>
+    <p>Pergunte ao Luky — diz o que funciona agora — com base em relatos recentes.</p>
+    <p>E o Luky é um tradutor de voz para conversas reais: converse no lobby com viajantes de outros países.</p>
+    <p class="ps">PS: conheça alguém num bar que fala outra língua</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir o Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiência real dos chats de comunidades, sem enrolação</div>
+    <nav class="f-links">
+      <a href="/pt/about/">Sobre</a>
+      <a href="/pt/mu/">Todos os temas</a>
+      <a href="/pt/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">As respostas são reunidas de chats abertos de comunidades — é a experiência real das pessoas, não aconselhamento oficial. Verifique antes de decisões importantes.</p>
+    <div class="f-copy">© 2026 Luky · atualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noite", DAY="\u2600 Dia";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

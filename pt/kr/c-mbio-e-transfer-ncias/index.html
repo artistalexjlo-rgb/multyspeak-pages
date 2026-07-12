@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coreia do Sul: Câmbio e Transferências — experiência real · Luky</title>
+<meta name="description" content="Experiência real dos chats sobre Câmbio e Transferências em Coreia do Sul: como é, em primeira mão. Para o seu caso — pergunte ao Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/pt/kr/c-mbio-e-transfer-ncias/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/kr/c-mbio-e-transfer-ncias/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/kr/c-mbio-e-transfer-ncias/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/kr/c-mbio-e-transfer-ncias/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/kr/c-mbio-e-transfer-ncias/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/kr/c-mbio-e-transfer-ncias/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · qualquer país · sem enrolação</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noite</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/pt/">Início</a> /
+    <a href="/pt/kr/">Coreia do Sul</a> /
+    <b>Câmbio e Transferências</b>
+  </nav>
+
+
+  
+  <h1>Câmbio e Transferências: como é em Coreia do Sul — em primeira mão</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiência real de pessoas dos chats sobre «Câmbio e Transferências» em Coreia do Sul — como é, sem enrolação. Para o seu caso — <strong>pergunte ao Luky</strong>.</div></div>
+
+  <h2>Da experiência real</h2>
+  <ul class="qlist">
+    <li>Trocar USD por KRW na Coreia do Sul é geralmente mais vantajoso do que fazer a troca na Rússia. Procure casas de câmbio em centros da cidade, como Myeongdong, para obter taxas melhores em comparação com as casas de câmbio do aeroporto. Notas de USD mais antigas geralmente são aceitas, embora possivelmente com uma taxa de câmbio ligeiramente menor.</li>
+    <li>Os usuários podem encontrar problemas ao usar cartões T-Money e Wowpass no sistema de metrô de Seul, particularmente com a compatibilidade do iPhone para transferências de fundos entre os cartões. Se um cartão falhar na leitura na catraca, peça ajuda aos funcionários do metrô. Certifique-se de que o cartão esteja posicionado corretamente e tente métodos alternativos ou entre em contato com o suporte caso os erros persistam.</li>
+    <li>Procedimentos do Aeroporto de Incheon para cartões SIM e câmbio: cartões SIM estão prontamente disponíveis e são fáceis de comprar no aeroporto após a retirada de bagagem, com diversos quiosques. O eSIM é uma alternativa caso seja compatível. As taxas de câmbio no aeroporto geralmente não são boas; é aconselhável trocar apenas uma pequena quantia para necessidades imediatas e o restante em Seul. O T-money e o Wowpass também são adquiridos ou recarregados com mais conveniência na cidade.</li>
+    <li>A troca de rublos russos por won sul-coreano em Seul pode ser feita em casas de câmbio como a Moneybox, que frequentemente oferecem taxas competitivas. É aconselhável comparar as taxas em vários pequenos pontos de câmbio, especialmente em áreas como Myeongdong.</li>
+    <li>Os métodos comuns para transferir dinheiro da Rússia para a Coreia do Sul atualmente incluem: 1. Zolotaia Korona (exige uma conta ou cartão local coreano do destinatário). 2. Aplicativos de remessa dedicados como E9pay ou GmoneyTrans, que são preferidos por terem comissões mais baixas em comparação com transferências bancárias padrão. Os usuários devem estar cientes dos limites de transação e da necessidade de possuir uma conta bancária local.</li>
+    <li>Para trocar rublos russos (RUB) por won sul-coreano (KRW) em Busan, é aconselhável procurar casas de câmbio. Embora as taxas possam oscilar, buscar casas de câmbio em áreas com maior fluxo de turistas pode oferecer taxas mais competitivas. Recomenda-se comparar as taxas em vários locais antes de realizar a troca.</li>
+    <li>Para transferir dinheiro de rublos russos para uma conta coreana (Toss ou Hana), serviços como a Zolotaya Korona estão oficialmente disponíveis e podem ser uma opção segura. Tenha cuidado com ofertas não solicitadas em mensagens diretas.</li>
+    <li>O pagamento com cartões UnionPay russos na Coreia do Sul é inconsistente. Embora alguns usuários relatem transações bem-sucedidas em várias lojas (por exemplo, Olive Young, Daiso, lojas de roupas), muitos enfrentam dificuldades ou rejeições diretas. Os cartões são geralmente mais confiáveis para saques em caixas eletrônicos. A taxa de sucesso pode variar dependendo do banco e do estabelecimento específico. É aconselhável ter métodos de pagamento alternativos, como dólares em espécie para câmbio ou um cartão local coreano.</li>
+    <li>Transferências diretas de cartão para cartão da Coreia do Sul para a Rússia não estão disponíveis no momento. Serviços recomendados incluem o E9pay ou transferências via SWIFT através de bancos russos não sancionados (por exemplo, Raiffeisen). A troca ponto a ponto de KRW em espécie por RUB é uma alternativa comum para turistas.</li>
+    <li>Para viajantes na Coreia com pouco dinheiro e cartões bancários russos, podem existir opções para converter rublos em casas de câmbio, particularmente em áreas turísticas ou distritos frequentados por falantes de russo. Tenha cautela devido a possíveis golpistas. Acordos online não são recomendados; utilize canais verificados.</li>
+    <li>Para trocar dinheiro por criptomoedas na Coreia do Sul, os indivíduos geralmente precisam usar caixas eletrônicos de criptomoedas ou visitar casas de câmbio licenciadas. Existem plataformas populares e locais físicos, mas trocas diretas entre pares podem acarretar riscos maiores. Recomenda-se pesquisar serviços de boa reputação com antecedência.</li>
+    <li>Cartões de pagamento russos, particularmente UnionPay de bancos como o RSB, podem ter aceitação limitada na Coreia do Sul, inclusive em algumas Apple Stores em Seul. Saques em caixas eletrônicos são geralmente possíveis. É aconselhável usar notas de dólares americanos mais novas para câmbio, já que notas antigas podem não ser aceitas em todos os lugares. Casas de câmbio menores, como as de Myeongdong, frequentemente oferecem taxas mais favoráveis do que os grandes bancos.</li>
+    <li>Câmbio e disponibilidade de caixas eletrônicos na Ilha de Jeju: Bancos e casas de câmbio existem, mas são menos numerosos do que em Seul e exigem uma viagem específica. Os terminais Wowpass eram escassos (2 para toda a ilha anteriormente). Nonghyup e NH Bank oferecem boas taxas de câmbio sem necessidade de documento de identidade, muitas vezes melhores do que os caixas eletrônicos do aeroporto ou do Wowpass. Caixas eletrônicos do Woori Bank podem ser encontrados em empresas de transporte. Os funcionários locais geralmente podem ajudar a localizar caixas eletrônicos.</li>
+    <li>Os terminais Wowpass na Coreia do Sul oferecem uma maneira conveniente de trocar moeda a uma taxa unificada e solicitar reembolsos de impostos. Embora existam casas de câmbio disponíveis, suas taxas podem ser um pouco menos favoráveis (cerca de 10 KRW de diferença). Reembolsos de impostos também são possíveis em compras feitas em lojas oficiais da Apple ao usar o Wowpass ou outros métodos elegíveis.</li>
+    <li>O WOWPASS é um cartão pré-pago e T-money (cartão de transporte) em um só. Usar o aplicativo móvel pode exigir uma VPN se acessado do exterior. Recomenda-se comprar e recarregar nas máquinas na cidade em vez do aeroporto devido às longas filas. Converter USD para KRW em casas de câmbio independentes (por exemplo, Money Box) antes de carregar o cartão oferece uma taxa de câmbio melhor do que a conversão direta de USD no terminal.</li>
+    <li>As taxas de câmbio no Aeroporto de Incheon são geralmente menos favoráveis em comparação com as encontradas em Myeongdong. É aconselhável trocar apenas uma pequena quantia de moeda no aeroporto para necessidades imediatas, como transporte. Para trocas maiores, Myeongdong oferece taxas melhores devido a uma concentração maior de casas de câmbio.</li>
+    <li>O cartão Wowpass pode ser obtido com antecedência pelo aplicativo ou na chegada ao Aeroporto de Incheon. Recomenda-se a pré-reserva (com pelo menos 24 horas de antecedência) para maior conveniência, com opções de retirada em lojas CU do aeroporto ou balcões dedicados (caso um pacote de chip SIM esteja incluído). Alternativamente, os cartões podem ser adquiridos nas máquinas Wowpass localizadas por toda a cidade. Embora as taxas de câmbio do aeroporto para recarga possam ser menos favoráveis, a troca de dinheiro ainda é possível para as necessidades iniciais da viagem.</li>
+    <li>Embora a Coreia do Sul não tenha um requisito oficial estrito de valor mínimo em dinheiro para entrada, portar aproximadamente 100 dólares americanos por dia, por pessoa, é uma diretriz amplamente aceita. Isso serve principalmente para demonstrar autossuficiência financeira. Se a sua acomodação estiver pré-paga e sua estadia for curta, pequenas discrepâncias geralmente não são um problema. No entanto, faltas significativas podem gerar preocupações. Para câmbio, o Moneybox em Myeongdong ou outras casas de câmbio menores oferecem taxas favoráveis.</li>
+    <li>Na Coreia do Sul, os cartões T-Money podem ser recarregados com dinheiro em qualquer loja de conveniência (CU, GS25). As máquinas para cartões Wowpass, destinadas ao câmbio e recarga, estão amplamente disponíveis, incluindo opções 24 horas por dia, 7 dias por semana em áreas como Myeongdong (verifique o aplicativo Wowpass para localizar). As taxas de câmbio fora do aeroporto, especialmente em áreas turísticas populares como Myeongdong, podem ser muitas vezes mais favoráveis do que as taxas do aeroporto. O Wowpass não pode ser recarregado online; apenas recargas físicas nas máquinas são possíveis. Para cartões Union Pay (como o RSKHB), é possível sacar dinheiro em caixas eletrônicos (como o Woori Bank) e depois usar o dinheiro para carregar o Wowpass.</li>
+    <li>Para viajar para a Coreia do Sul, recomenda-se ter algum Won coreano para despesas iniciais, como transporte do aeroporto. Dólares americanos ou Yuan chinês são sugeridos para quantias maiores, já que trocar USD por KRW dentro da Coreia pode ser difícil. As passagens de ônibus para o aeroporto podem ser compradas com o cartão T-money ou em dinheiro diretamente no ônibus (cerca de 17.000 KRW). Cartões UnionPay russos podem enfrentar problemas, às vezes exigindo dígitos adicionais após o PIN ou enfrentando bloqueios.</li>
+    <li>Gmoneytrans é um serviço de remessas que pode ser utilizado na Coreia com um passaporte e um número de telefone coreano para o registro inicial. Embora um número coreano seja necessário para a configuração, pode ser possível alterá-lo posteriormente. Um cartão Gmoney físico (cartão Quick) pode ser obtido com um passaporte russo, permitindo saques em dinheiro mesmo que o número de telefone coreano se torne inativo. Há uma taxa de saque de 1500 won, e o cartão funciona como um cartão de transporte.</li>
+    <li>Ao viajar para a Coreia do Sul, é aconselhável ter dinheiro em espécie à mão (cerca de US$ 100 por dia), mesmo que você tenha cartões bancários estrangeiros. Notas antigas de dólar americano podem ser aceitas, especialmente se trocadas através de serviços como o Wowpass, que oferece uma taxa de câmbio decente. Para sacar Won coreano, considere usar bancos como o Woori ou o KB-bank. Cartões como o RSB UnionPay com uma conta em Yuan também podem ser utilizáveis para saques. Dinheiro pode ser trocado em vários locais, incluindo casas de câmbio dedicadas em áreas como Myeongdong.</li>
+    <li>Cartões de transporte público em Seul podem ser comprados e recarregados em máquinas. Um depósito de 500 KRW é reembolsável ao devolver o cartão em uma máquina designada. Para usuários de iPhone, transferir fundos entre o T-Money e o Wowpass pode exigir procedimentos específicos no aplicativo ou o uso direto do cartão nas máquinas. Problemas com a leitura do cartão nas catracas podem exigir assistência dos funcionários do transporte.</li>
+    <li>Na área de Dongdaemun, em Seul, existe um bairro de língua russa onde casas de câmbio operadas por coreanos russos podem oferecer serviços de câmbio de rublos, incluindo via transferência bancária.</li>
+    <li>Para troca de moeda na Coreia do Sul, recomenda-se verificar as taxas diárias entre o quiosque WOWPASS e as casas de câmbio locais MoneyBox (por exemplo, em Myeong-dong). Muitas vezes, as casas de câmbio locais oferecem taxas melhores do que a conversão feita no quiosque do cartão.</li>
+    <li>Sacar dinheiro em caixas eletrônicos na Coreia do Sul é geralmente possível usando cartões UnionPay nos caixas eletrônicos dos principais bancos coreanos (Shinhan, NH, Woori, Hana). Cartões de bancos russos, como o RosSelkhozbank, podem funcionar, mas é aconselhável confirmar as condições com antecedência. Para troca de moeda, particularmente para notas de dólar americano mais antigas, recomenda-se usar casas de câmbio em centros urbanos como Myeong-dong, já que as taxas geralmente são melhores do que no aeroporto. As casas de câmbio podem oferecer taxas ligeiramente menos favoráveis para notas de dólar mais antigas em comparação com as mais novas, mas ainda assim é uma opção viável.</li>
+    <li>Transferência de dinheiro da Coreia do Sul para a Rússia: 1. GME Remit e E9Pay são serviços padrão para residentes com um ARC (Cartão de Registro de Estrangeiro). 2. A &#39;Zolotaya Korona&#39; (Golden Crown) é tipicamente usada para transferências da Rússia para a Coreia, não o contrário. 3. Câmbios online/criptomoedas P2P são alternativas para aqueles sem uma conta bancária local, mas as taxas costumam ser menos favoráveis do que as dos serviços oficiais de remessa.</li>
+    <li>Transferir dinheiro da Rússia para a Coreia do Sul via KoronaPay (Zolotaya Korona) é possível, sendo o Ozon Bank mencionado como uma opção funcional. O saque de transferências pode exigir o uso de serviços como Hanpass/GME. Seja cauteloso com indivíduos que oferecem câmbio direto via mensagens privadas, pois podem ser golpistas. Receber fundos diretamente em um cartão bancário também é uma opção.</li>
+    <li>É permitido usar notas de dólar americano mais antigas na Coreia do Sul para câmbio. No entanto, espere uma taxa de câmbio um pouco menos favorável em comparação com notas mais novas, com diferenças potenciais em torno de 1-2% ou aproximadamente 100 KRW por 100 USD. Para fins práticos, especialmente quando é necessária moeda local imediata, essa pequena diferença na taxa de câmbio é frequentemente negligenciável.</li>
+    <li>Para trocar moeda estrangeira por KRW na Coreia do Sul, a &#39;Moneybox&#39; (por exemplo, em Myeong-dong, Seul) oferece taxas competitivas. Os viajantes devem evitar guichês de câmbio em aeroportos para grandes quantias. É aconselhável pesquisar casas de câmbio particulares locais para obter as melhores taxas possíveis.</li>
+    <li>O cartão Namane é uma opção de pagamento versátil na Coreia do Sul, funcionando tanto como um cartão de pagamento geral (&#39;Pay Balance&#39;) quanto como um cartão de transporte público (&#39;T-money&#39;). É aceito na maioria dos estabelecimentos comerciais e para tarifas de táxi. Fundos podem ser adicionados via quiosques Namane ou lojas de conveniência CU. O aplicativo móvel que o acompanha permite transferências de saldo, designs personalizados de cartão e, potencialmente, acesso a ofertas exclusivas.</li>
+    <li>No distrito de Myeongdong, em Seul, é possível fazer câmbio, muitas vezes com taxas melhores do que no aeroporto. Procure casas de câmbio como a Moneybox e outras menores nas proximidades para taxas potencialmente mais favoráveis, especialmente para trocar dólares americanos por won sul-coreano ou valores menores.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/pt/kr/documentos-e-vistos/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentos e Vistos</span></a>
+    <a class="chip" href="/pt/kr/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/pt/kr/bancos-e-dinheiro/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Bancos e Dinheiro</span></a>
+    <a class="chip" href="/pt/kr/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/pt/kr/ingressos-e-lazer/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Ingressos e Lazer</span></a>
+    <a class="chip" href="/pt/kr/seguran-a/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Segurança</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Quer uma resposta para você, não uma palestra para todos?</h2>
+    <p>Pergunte ao Luky — tenta entender a sua situação e responder com mais precisão.</p>
+    <p>E o Luky é um tradutor de voz para conversas reais: e o garçom não vai confundir o seu pedido.</p>
+    <p class="ps">PS: até com a família do seu par que não fala nada da sua língua 😄</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir o Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiência real dos chats de comunidades, sem enrolação</div>
+    <nav class="f-links">
+      <a href="/pt/about/">Sobre</a>
+      <a href="/pt/kr/">Todos os temas</a>
+      <a href="/pt/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">As respostas são reunidas de chats abertos de comunidades — é a experiência real das pessoas, não aconselhamento oficial. Verifique antes de decisões importantes.</p>
+    <div class="f-copy">© 2026 Luky · atualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noite", DAY="\u2600 Dia";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

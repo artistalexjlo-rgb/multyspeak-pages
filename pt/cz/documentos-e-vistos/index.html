@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chéquia: Documentos e Vistos — experiência real · Luky</title>
+<meta name="description" content="Experiência real dos chats sobre Documentos e Vistos em Chéquia: como é, em primeira mão. Para o seu caso — pergunte ao Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/pt/cz/documentos-e-vistos/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/cz/documentos-e-vistos/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/cz/documentos-e-vistos/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/cz/documentos-e-vistos/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/cz/documentos-e-vistos/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/cz/documentos-e-vistos/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · qualquer país · sem enrolação</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noite</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/pt/">Início</a> /
+    <a href="/pt/cz/">Chéquia</a> /
+    <b>Documentos e Vistos</b>
+  </nav>
+
+
+  
+  <h1>Documentos e Vistos em Chéquia: o que realmente importa saber</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiência real de pessoas dos chats sobre «Documentos e Vistos» em Chéquia — como é, sem enrolação. Para o seu caso — <strong>pergunte ao Luky</strong>.</div></div>
+
+  <h2>Da experiência real</h2>
+  <ul class="qlist">
+    <li>Ao viajar de comboio da Polónia para a Chéquia, existe sempre a possibilidade de verificação de documentos, apesar de ambos os países fazerem parte do Espaço Schengen. Os viajantes devem levar sempre consigo os seus documentos de identificação válidos.</li>
+    <li>Os vistos Schengen não são geralmente anulados à saída de Praga se a entrada inicial tiver sido para turismo e todas as condições do visto tiverem sido cumpridas. O sistema de controlo de saída pode ser, por vezes, inconsistente, com os funcionários fronteiriços a terem ocasionalmente dificuldade em aceder ou interpretar dados, mesmo para indivíduos com vistos válidos e carimbos de entrada. Possuir um visto Schengen de entradas múltiplas válido permite viajar para vários destinos. Para futuros pedidos de visto, especialmente para vistos de longa duração, demonstrar um padrão de viagem para o país emissor pode ser benéfico, embora nem sempre seja um requisito estrito para a saída. Certifique-se de que toda a documentação de viagem está em ordem e cumpre os regulamentos Schengen.</li>
+    <li>Para cidadãos russos, a obtenção de vistos de trabalho para a República Checa não é atualmente viável devido a regulamentações rigorosas. A Sérvia é mencionada como uma potencial alternativa para relocalização entre os países europeus.</li>
+    <li>Para viajar para Brno, na República Checa, a partir da Rússia sem um visto Schengen, considere obter um através de países vizinhos. As opções mencionadas incluem a Hungria, Espanha e França. É aconselhável verificar os requisitos de pedido de visto e a disponibilidade em fóruns como o &#39;Vinsky Forum&#39;. Certifique-se de que o seu passaporte é biométrico e esteja atento a potenciais restrições de idade para pedidos de visto. Viajar diretamente para a Eslováquia ou Áustria para fins de visto pode ser difícil, uma vez que, segundo consta, não emitem vistos de turista atualmente. Verifique sempre os regulamentos de vistos e avisos de viagem mais recentes.</li>
+    <li>Cidadãos russos que pretendam visitar familiares que sejam cidadãos da UE (por exemplo, com cidadania checa) devem investigar os &#34;vistos para familiares de cidadãos da UE&#34;. Estes vistos envolvem frequentemente procedimentos de candidatura simplificados, podendo incluir taxas consulares reduzidas ou isentas. Alguns consulados, como o consulado húngaro num caso relatado, podem oferecer marcações aceleradas ou consideração especial após comunicação direta (por exemplo, por e-mail ao cônsul) caso circunstâncias específicas o justifiquem, conduzindo a um processo de candidatura mais rápido e potencialmente mais económico.</li>
+    <li>Está a ser introduzido na República Checa um novo programa de controlo eletrónico de fronteiras, que inclui a recolha de dados biométricos. Espera-se que este procedimento seja obrigatório para os indivíduos que entrem ou voem para o país e deverá estar operacional.</li>
+    <li>Para renovar uma autorização de residência permanente na República Tcheca (karta trvalého pobytu), siga estes passos: 1. Verifique a data de validade do seu cartão atual. 2. Visite o site da Polícia Tcheca (Policie ČR) para informações oficiais e formulários. 3. Preencha o formulário de inscrição necessário. 4. Envie a inscrição para a polícia. 5. Agende um horário para a coleta de dados biométricos. Entre em contato com o departamento de polícia relevante para procedimentos específicos e documentos necessários.</li>
+    <li>Na Tchéquia, um &#39;absolvent&#39; (estudante que concluiu os estudos, mas pode continuar ou ainda não se formou oficialmente) pode estender seu VNZ estudantil (autorização de residência). Para manter o status legal e o propósito da estadia, é aconselhável enviar um &#39;doklad o podané přihlášce na magisterské studium&#39; (comprovante de inscrição para estudos de mestrado). A inscrição pode ser considerada incompleta, levando à suspensão do processamento e a uma solicitação de confirmação adicional do propósito de &#39;estudo&#39;. Durante o período de análise da inscrição, o requerente beneficia-se da &#39;fikce pobytu&#39; (ficção de estadia), mantendo o status legal. Viajar para fora de Schengen geralmente não é um problema, desde que a inscrição esteja pendente e o status seja mantido.</li>
+    <li>A entrada na República Tcheca com um visto Schengen italiano é permitida, desde que o visto não contenha a observação &#39;-CZ&#39; que proíba explicitamente a entrada na República Tcheca e o viajante possua um passaporte biométrico. A entrada deve ser originária do Espaço Schengen.</li>
+    <li>Um cidadão russo residente na Tchéquia (chegada no final de 2024) foi detido no aeroporto de Praga ao tentar partir para a Turquia e, em seguida, para a Rússia. O indivíduo foi parado pelos serviços de migração, teve seu telefone confiscado e foi mantido detido por dois dias. Os motivos exatos da detenção não ficaram claros, com especulações iniciais apontando para permanência ou trabalho ilegal, já que cidadãos russos não conseguem obter vistos de trabalho desde 2022 e a estadia do indivíduo começou após essa restrição. Apesar da alegação do indivíduo de permanência legal (possivelmente com visto ou autorização de residência, embora os detalhes tenham sido debatidos), descobriu-se que a documentação para sua partida havia sido perdida no sistema. O indivíduo foi finalmente liberado após o reprocessamento de seus documentos de partida. Este caso destaca possíveis problemas com o processamento de documentação, falhas de comunicação com as autoridades e os desafios enfrentados por cidadãos estrangeiros ao lidar com procedimentos migratórios, especialmente quando existem barreiras linguísticas.</li>
+    <li>O processo para estender uma autorização de residência na República Checa envolve: 1. Agendar uma marcação, 2. Submeter o formulário de pedido, passaporte e o cartão de residência atual, 3. Pagar a taxa (aprox. 2.500 CZK), 4. Comparecer a uma marcação separada para a recolha de dados biométricos, 5. Voltar na data agendada para levantar o novo cartão.</li>
+    <li>Ao renovar um passaporte russo em Praga, a lista de espera tem normalmente 300–500 pessoas, mas avança relativamente depressa, demorando cerca de 2 a 3 meses. Os requerentes recebem um convite para marcação por e-mail quando chegam aproximadamente ao 30.º lugar na fila. Para casos urgentes, solicitar no consulado russo em Bratislava (Eslováquia) é uma opção de reserva comum.</li>
+    <li>Para obter um visto Schengen para uma curta viagem à República Checa (2-3 dias no outono), com amigos que vão a um concerto: Se tiver um visto Schengen francês, esteja ciente das regras rigorosas relativas ao país de &#39;destino principal&#39; e aos cancelamentos de hotéis em França e Itália. Uma alternativa é solicitar através da Hungria, mas prepare-se para os seus requisitos, como pagamentos antecipados de hotéis e potenciais políticas de cancelamento. Uma estratégia recomendada é reservar 4 dias em Budapeste e 3 dias em Praga, garantindo que a reserva do hotel em Budapeste não é cancelada. Ao viajar dentro da área Schengen com um visto válido e um passaporte biométrico, os controlos fronteiriços são mínimos, focando-se na validade do passaporte e na presença do visto, embora possam ocorrer controlos aleatórios.</li>
+    <li>Para reagrupamento familiar com um cidadão da UE/Checo, é possível solicitar residência de longa duração (prechodný pobyt) enquanto se está fisicamente presente na República Checa, mesmo entrando com um visto de curta duração (Tipo C). O requerente deve submeter o pedido antes que o visto de curta duração expire. Isto permite uma estadia legal na República Checa durante o período de processamento.</li>
+    <li>Em 2022, cidadãos russos enfrentaram dificuldades significativas para obter vistos de estudante para cursos de idiomas na República Tcheca. Mesmo com a matrícula confirmada e a documentação completa, muitos pedidos foram negados. Isto indica uma política de vistos restritiva durante aquele período para esta categoria específica de requerentes.</li>
+    <li>Desde o final de 2022, a República Tcheca geralmente não emite vistos para cidadãos russos apenas com base em convites familiares, a menos que os parentes que convidam sejam cidadãos da UE e possam patrocinar o requerente sob regras específicas de livre circulação da UE. Informações nos sites das embaixadas que sugiram o contrário podem estar desatualizadas ou mal interpretadas. Sempre verifique os regulamentos de visto atuais diretamente com a embaixada ou consulado.</li>
+    <li>Viajantes da República Tcheca para a Armênia com um visto Schengen de múltiplas entradas podem partir sem problemas. As restrições aplicam-se à entrada, não à saída. O novo sistema digital de controle de fronteiras está operacional, embora alguns usuários relatem inconsistências ou atrasos no reconhecimento de dados. Passaportes biométricos são o padrão. Se o seu visto for válido e obtido corretamente, e você tiver cumprido os requisitos de entrada para a área Schengen, a partida deve ser simples, mesmo que os funcionários da fronteira encontrem problemas no sistema. O histórico de viagens anteriores dentro do espaço Schengen, especialmente com o país emissor, pode ser relevante para futuras solicitações de visto, embora não seja estritamente necessário para a partida.</li>
+    <li>Ao solicitar vistos em centros como os da Espanha ou Grécia, esteja ciente de que alguns centros de solicitação de visto podem tentar cobrar por serviços adicionais ou exigir documentos não listados no site oficial. Exemplos incluem a solicitação de extratos bancários extras, comprovantes de fundos de vários meses, registros de trabalho eletrônicos ou impressão de documentos na hora. Esses serviços podem variar de 10.000 a 15.000 rublos por pessoa. É crucial confiar na lista oficial de documentos exigidos fornecida pelo centro de vistos e pelo consulado. Se um documento não for oficialmente exigido, ele não é obrigatório para a apresentação. Os centros de vistos são obrigados a aceitar solicitações que cumpram os requisitos publicados. Embora o envio voluntário de documentos adicionais possa fortalecer um caso, não se sinta pressionado a pagar por serviços ou fornecer documentos que não sejam oficialmente obrigatórios. Consulte calmamente a lista oficial e afirme seu direito de ter sua solicitação aceita com base nos requisitos declarados.</li>
+    <li>Para obter um visto de entrada para a República Tcheca, um pré-requisito é um veredito positivo do Ministério do Interior (MVD). Ao chegar na República Tcheca, o portador do visto deve comparecer ao MVD para que o visto seja carimbado oficialmente em seu passaporte, após o que ele poderá ser utilizado dentro de seu período de validade.</li>
+    <li>Para cidadãos uzbeques com autorização de residência na Federação Russa que se candidatam a cursos de idiomas na República Tcheca, há uma recomendação de gerentes e curadores para se candidatarem em Tashkent por ser mais confiável e reduzir o risco de recusa. Para vistos de curta duração, as nomeações em Tashkent aparecem periodicamente (a última foi em 9 de junho). Para programas de bacharelado, os documentos podem ser enviados por e-mail diariamente, seguidos de um convite para a submissão.</li>
+    <li>Para cidadãos uzbeques que solicitam vistos de longa duração para a República Tcheca (trabalho ou estudo) em Tashkent, o processo de solicitação (agendamento e envio) é tratado diretamente pela Embaixada Tcheca. Centros de visto de terceiros, como a VFS Global, não processam vistos tchecos de longa duração no Uzbequistão. Os candidatos às vezes viajam de Moscou a Tashkent para esse fim, a fim de submeter suas solicitações.</li>
+    <li>Ao voar de Praga para Istambul com itens comprados por mais de 1000 EUR, especialmente na bagagem de mão: embora os formulários de isenção de impostos (tax-free) não estejam sendo processados, esteja ciente de que a bagagem de mão passa por triagem. É aconselhável usar joias valiosas no corpo. Se os itens estiverem em uma bolsa ou mochila sem etiquetas ou recibos, é menos provável que sejam sinalizados, desde que não pareçam ser mercadorias comerciais. Evite fazer reivindicações de tax-free para não atrair atenção.</li>
+    <li>Se um passaporte internacional ucraniano (zagran) estiver vencido, é permitido usar o passaporte interno ucraniano para entrar na Chéquia. O processo de renovação do passaporte internacional pode ser tratado posteriormente. Este procedimento é relevante para pedidos como proteção temporária (dočasná ochrana), e não para turismo.</li>
+    <li>Para entrar na Chéquia (e na UE), o principal documento exigido é um passaporte internacional (zagran) válido. Uma fotografia expirada no passaporte interno ucraniano (se o próprio passaporte não estiver expirado) não é um obstáculo para a entrada, uma vez que os documentos internos são considerados assuntos do país de residência. O foco está na validade do passaporte internacional para as passagens de fronteira dentro do Espaço Schengen.</li>
+    <li>Ao viajar entre países Schengen via voos internos (por exemplo, de Amsterdã para Praga), o controle de passaporte geralmente não está presente. Viajantes com passaportes biométricos e vistos Schengen padrão (sem marcações restritivas específicas de países) não devem esperar verificações de fronteira ao chegar na República Tcheca vindo de outro estado Schengen. A República Tcheca não aplica controles sistemáticos de fronteira interna. No caso improvável de questionamento, oriente os viajantes a confirmar que seu visto foi obtido no país onde ocorreu a estada mais longa, ou onde o objetivo principal da viagem foi focado, e a apresentar planos de viagem consistentes (por exemplo, reservas de hotel, passagens de retorno).</li>
+    <li>A Hungria tem emitido vistos Schengen de entrada múltipla válidos por um ano a visitantes frequentes após três estadias de curta duração anteriores no mesmo ano. Embora tenham existido recomendações contra a emissão de certos tipos de vistos, a Hungria concedeu recentemente vistos anuais de entrada múltipla a visitantes habituais. A política pode estar sujeita a alterações e as candidaturas futuras poderão ser processadas de forma diferente, podendo emitir vistos baseados em datas de viagem específicas em vez de validade a longo prazo.</li>
+    <li>Vias alternativas para obter a cidadania checa, potencialmente contornando o complexo requisito de renúncia para cidadãos russos, incluem o casamento com um cidadão checo ou após um período prolongado de residência permanente (PMR). Estes caminhos podem oferecer um processo de naturalização mais direto.</li>
+    <li>As viagens entre a Áustria e a República Checa (ambas na área Schengen) normalmente não envolvem controlo sistemático de passaportes. No entanto, verificações aleatórias de identidade pela polícia podem ocorrer em qualquer lugar, incluindo ruas da cidade. Os viajantes devem transportar um passaporte biométrico válido e seguro de saúde.</li>
+    <li>Viajar entre Dresden (Alemanha) e Praga (Chéquia) continua a ser legal para titulares de vistos Schengen. Os controlos fronteiriços são seletivos e aleatórios. Um visto Schengen válido de 5 anos sem restrições territoriais específicas (por exemplo, &#39;-CZ&#39;) permite a entrada. Os viajantes devem verificar os autocolantes dos seus vistos quanto a quaisquer limitações geográficas, embora estas sejam raras nos passaportes modernos de 10 anos.</li>
+    <li>Os requisitos de viagem para a República Checa (antiga Checoslováquia) variaram significativamente. Durante a era soviética, as viagens eram altamente restritas, exigindo convites oficiais e aprovação tanto das autoridades de fronteira soviéticas quanto das checoslovacas. Por outro lado, na década de 1990, especificamente entre 1996 e 1999, os cidadãos russos podiam entrar na República Checa apenas com passaporte e bilhetes, sem visto, para estadias de até 30 dias. Também era uma prática comum sair brevemente para a Eslováquia e reentrar para reiniciar a permissão de 30 dias.</li>
+    <li>Uma cláusula num contrato de arrendamento na Chéquia que estabeleça que o inquilino não está autorizado a registar a sua residência permanente (trvalé bydliště) no endereço alugado pode ser problemática para pedidos de visto. Embora tal cláusula possa contradizer a lei checa e ser potencialmente inválida, pode ainda assim levantar preocupações. É aconselhável tentar obter uma &#39;Potvrzení o zajištění ubytování&#39; (confirmação de alojamento) sem esta cláusula. Além disso, considere a natureza potencialmente problemática do senhorio se este incluir tais cláusulas. Recomenda-se também verificar se a propriedade está registada como não residencial (por exemplo, um atelier) no &#39;Katastr nemovitostí&#39; (cadastro imobiliário).</li>
+    <li>Um passageiro chegou a Praga de comboio usando um visto Schengen francês sem restrições de país. O funcionário do controlo de fronteira questionou inicialmente a legalidade de estar na Chéquia com um visto de turista. Foi explicado que a saída para países fora da UE é permitida, mas a reentrada na Chéquia via aeroporto com um visto de turista não o é. No entanto, a entrada por terra na Chéquia é permitida devido ao espaço Schengen aberto. Os carimbos no passaporte à chegada/partida já não são emitidos. O passageiro foi verificado no sistema de entrada na UE (França) e depois autorizado a prosseguir, uma vez que estava de saída. Não houve tempo de espera no controlo de passaportes à partida de Praga. O controlo foi híbrido: presencial numa guichet, sem carimbo, mas com leitura digital da mão. O passageiro não violou quaisquer regras, uma vez que estava a sair do espaço Schengen.</li>
+    <li>A entrada em Praga (República Checa) num voo da Smartwings vindo de Valência é permitida a indivíduos detentores de um visto Schengen múltiplo válido sem restrições de país, desde que o visto seja válido pelo menos até 2027 e o passaporte seja biométrico.</li>
+    <li>Cidadãos de países terceiros com autorizações de residência de longa duração (por exemplo, matrícula de estudante) na Rússia não estão sujeitos às restrições específicas do Decreto Governamental Checo n.º 55/2024, que visa exclusivamente cidadãos da Rússia e da Bielorrússia. Embora os regulamentos possam teoricamente permitir-lhes solicitar vistos de turista no consulado checo em Moscovo, a disponibilidade prática de marcações e as políticas individuais de processamento permanecem inconsistentes. Aconselhe sempre os utilizadores a contactar o consulado diretamente via e-mail ou canais oficiais para obter o estado de elegibilidade atual, em vez de dependerem de interpretações de fóruns sobre decretos gerais.</li>
+    <li>A República Checa não emite vistos de estudante para cidadãos da Rússia e da Bielorrússia. Se um requerente tiver dupla nacionalidade (por exemplo, russa e moldava), não é recomendado ocultar a nacionalidade russa, pois é um campo obrigatório e é rigorosamente verificado. No entanto, os vistos de reagrupamento familiar continuam a ser oficialmente processados e emitidos para cônjuges russos de indivíduos que já possuem uma autorização de residência checa válida.</li>
+    <li>Em relação ao seguro médico para entrada na República Tcheca, especificamente ao viajar de outro país do Espaço Schengen, como a Itália: o seguro emitido pela Federação Russa pode ser aceitável, mas recomenda-se confirmar os detalhes com sua seguradora devido a possíveis acordos entre países. Se o seu itinerário de viagem incluir um voo da República Tcheca para Moscou (provavelmente com escala, por exemplo, em Baku), é aconselhável declarar o país de trânsito com precisão para evitar um possível escrutínio por parte do consulado. A exigência de seguro médico pode ser aplicada com mais rigor por países que atualmente não emitem vistos para cidadãos russos, portanto, garantir a conformidade é importante.</li>
+    <li>Para estudantes na República Tcheca em transição de um programa de bacharelado para um mestrado, a extensão do visto de estudante enquanto se está no status de &#39;absolvent&#39; (após a graduação, mas antes de iniciar o próximo programa) é sensível ao tempo. Você normalmente tem apenas de uma semana a um mês para se candidatar. Agendamentos no Ministério do Interior (MV) são geralmente obrigatórios; atendimentos sem hora marcada geralmente não são aceitos. Uma carta de aceitação para o programa de mestrado é geralmente aceita como documentação de suporte em vez de um certificado de matrícula atual, mas é crucial confirmar isso com o escritório específico do MV.</li>
+    <li>Desviar-se do seu itinerário de viagem declarado ao entrar no Espaço Schengen com um visto pode trazer consequências. O Código de Vistos Schengen proíbe a alteração da rota declarada, o que pode ser considerado como fornecimento de informações falsas. Isso pode levar ao cancelamento do visto e a possíveis problemas com futuras solicitações de visto, caso seja detectado. É aconselhável manter as reservas originais e estar ciente de possíveis verificações.</li>
+    <li>O processo de cidadania da República Tcheca para cidadãos russos exige que eles renunciem à sua cidadania russa. No entanto, a lei russa geralmente exige um documento confirmando a prontidão de conceder uma cidadania alternativa para permitir a renúncia. As autoridades tchecas normalmente não emitem essa confirmação até que a cidadania russa seja renunciada, criando um impasse (Catch-22). Essa exigência é considerada discriminatória, pois não se aplica a cidadãos de outros Estados.</li>
+    <li>Se um cidadão russo com uma autorização de residência tcheca (VNZ) perder seu passaporte russo na República Tcheca, ele deve solicitar um novo. Um documento de viagem temporário emitido pelo consulado é geralmente válido apenas para retornar à Rússia. Até que um novo passaporte permanente seja obtido, o indivíduo não pode viajar para fora da República Tcheca ou do Espaço Schengen. Não existem documentos temporários alternativos para viagens internacionais fora do Espaço Schengen em tal situação.</li>
+    <li>Ao entrar na República Tcheca via outro país do Espaço Schengen, se a estadia principal for em um terceiro país, são necessárias reservas de acomodação na República Tcheca? O viajante possui um passaporte biométrico. Aplicam-se as regras gerais de entrada no Espaço Schengen, incluindo possíveis verificações de planos de viagem e acomodação.</li>
+    <li>Antes dos recentes eventos geopolíticos (aproximadamente a partir de 2017), a República Tcheca tinha uma política progressiva para a emissão de vistos Schengen de múltiplas entradas. Os candidatos podiam normalmente receber um visto de um ano, seguido por vistos de dois anos e, posteriormente, de três anos em pedidos subsequentes bem-sucedidos. Esta tendência cessou devido a fatores externos.</li>
+    <li>Ao viajar da República Tcheca para a Rússia, produtos de carne embalados a vácuo (linguiças) e queijo são permitidos na bagagem despachada. No entanto, queijos moles como o Hermelín são geralmente restritos na bagagem de mão devido às regras de consistência/líquidos. Álcool é permitido na bagagem despachada, sujeito aos limites padrão de isenção de impostos alfandegários (geralmente até 1 litro por pessoa).</li>
+    <li>Estão disponíveis serviços para a relocalização de animais de estimação de e para a República Checa. Estes serviços incluem o fornecimento de um guia completo sobre a documentação necessária para animais de estimação, assistência na seleção e reserva de voos, sugestões sobre vacinas, apoio online até à chegada e facilitação da entrega por transporte aéreo ou terrestre. Para questões e discussões personalizadas sobre a relocalização de animais, contacte diretamente o prestador de serviços.</li>
+    <li>Para obter residência na República Tcheca por meio de casamento, esteja ciente do seguinte: 1. Um compromisso de dois anos com o casamento é frequentemente exigido; um divórcio precoce pode levar à deportação. 2. Verificações policiais são comuns. Em relação ao consumo de álcool, a República Tcheca ocupa o quinto lugar globalmente, com 13,7 litros de álcool puro per capita anualmente (conforme dados de 2022). A Rússia ocupa o 29º lugar, com 10,5 litros. Notavelmente, o consumo de álcool diminuiu na Rússia e na Bielorrússia na última década, enquanto aumentou ligeiramente na República Tcheca.</li>
+    <li>Cidadãos do Uzbequistão residentes na Rússia (por exemplo, para estudos) devem solicitar um visto de turista tcheco em seu país de origem, o Uzbequistão (Tashkent), em vez de uma missão diplomática na Rússia.</li>
+    <li>Um usuário compartilhou a experiência de uma tentativa de golpe envolvendo uma oferta de emprego falsa para um visto de trabalho alemão. O golpe consistia em solicitar comprovação de fundos e, em seguida, direcionar a vítima a abrir contas na Binance ou Bybit, citando problemas com bancos russos. O usuário, um profissional de finanças, identificou isso como um golpe comum, observando que os canais oficiais não operam dessa forma e que o pensamento crítico é essencial para evitar tal fraude.</li>
+    <li>Para fins de reagrupamento familiar com um cidadão ou residente tcheco (por mais de 15 meses), o Consulado Tcheco em Moscou aceita solicitações de autorização de residência de longa duração. Após uma decisão favorável, o consulado emite um visto de longa duração (válido por 60 dias, com um corredor de entrada de 6 meses). Ao chegar na República Tcheca, o solicitante deve se apresentar ao Ministério do Interior em até 3 dias úteis para obter a autorização de residência de longa duração, que pode ser válida por até 2 anos com entradas ilimitadas. A emissão da autorização de residência de longa duração pelo Ministério do Interior pode levar até 60 dias. Recomenda-se fortemente que os solicitantes aguardem a emissão da autorização antes de sair do país caso pretendam usufruir de todos os benefícios da estadia de longa duração, uma vez que sair prematuramente pode impactar negativamente solicitações futuras ou a capacidade de obter novamente tal autorização.</li>
+    <li>Para cidadãos quirguizes que solicitam um visto de estudante de longa duração para a República Tcheca (por exemplo, para um programa de ano preparatório/Foundation Year), o processo de solicitação para um visto de longa duração frequentemente exige uma viagem até a Embaixada Tcheca em Astana, no Cazaquistão. A comprovação financeira para um visto de estudante exige demonstrar aproximadamente 116.000 CZK (cerca de 5.000 EUR) por pessoa para um ano de estadia. Para duas pessoas, o montante chega a aproximadamente 10.000 EUR por ano. Embora algumas estimativas de despesas diárias (acomodação e alimentação) possam ser altas (ex: 100 EUR/dia para duas pessoas em uma pensão), cozinhar em casa pode reduzir significativamente os custos com alimentação para cerca de 500-600 EUR por mês para duas pessoas. É crucial preparar-se minuciosamente para a entrevista de visto, particularmente para solicitantes com mais de 20 anos, revisando o feedback da embaixada (por exemplo, no 2GIS) e memorizando todos os detalhes sobre o programa de estudos.</li>
+    <li>Para encontrar emprego na República Tcheca como cidadão quirguiz, concentre-se em portais de busca de emprego como jobs.cz e prace.cz. Esteja ciente de que a iniciativa de um empregador tcheco é geralmente necessária para um visto de trabalho. Articule claramente suas habilidades e proposta de valor para potenciais empregadores.</li>
+    <li>Para cidadãos russos que possuem um visto Schengen húngaro e pretendem trabalhar e morar na República Tcheca, é altamente improvável obter um visto de trabalho na República Tcheca. Aconselha-se esclarecer o tipo específico e os fundamentos do visto húngaro. Para aconselhamento sobre como trabalhar na Hungria, é melhor consultar recursos de imigração específicos da Hungria.</li>
+    <li>Viagens ao exterior na República Tcheca e trânsito pelo Espaço Schengen exigem um passaporte biométrico válido. Passaportes internos não são reconhecidos. Os requisitos de entrada variam significativamente com base na cidadania, status legal (turista vs. refugiado) e ponto de entrada. O controle de fronteira polonês é conhecido pelo cumprimento rigoroso de documentos para entradas terrestres na zona Schengen.</li>
+    <li>Para obter um passaporte internacional russo na República Tcheca, espere um período de espera de aproximadamente 3 meses. A taxa estatal é de 1890 CZK. Há 240 vagas na fila.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/pt/cz/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/pt/cz/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/pt/cz/lazer-e-ingressos/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Lazer e Ingressos</span></a>
+    <a class="chip" href="/pt/cz/trabalho-e-impostos/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>📦 Trabalho e Impostos</span></a>
+    <a class="chip" href="/pt/cz/seguran-a/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Segurança</span></a>
+    <a class="chip" href="/pt/cz/alojamento/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Alojamento</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Precisa de algo para a sua situação, não em geral?</h2>
+    <p>Pergunte ao Luky — dá o que você realmente precisa: experiência real de quem já passou por isso.</p>
+    <p>E o Luky é um tradutor de voz para conversas reais: resolva na recepção sem estresse.</p>
+    <p class="ps">PS: coloque o Luky numa caixa de som portátil numa festa e fale com todos de uma vez</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir o Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiência real dos chats de comunidades, sem enrolação</div>
+    <nav class="f-links">
+      <a href="/pt/about/">Sobre</a>
+      <a href="/pt/cz/">Todos os temas</a>
+      <a href="/pt/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">As respostas são reunidas de chats abertos de comunidades — é a experiência real das pessoas, não aconselhamento oficial. Verifique antes de decisões importantes.</p>
+    <div class="f-copy">© 2026 Luky · atualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noite", DAY="\u2600 Dia";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

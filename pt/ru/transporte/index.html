@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rússia: Transporte — experiência real · Luky</title>
+<meta name="description" content="Experiência real dos chats sobre Transporte em Rússia: como é, em primeira mão. Para o seu caso — pergunte ao Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/pt/ru/transporte/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/ru/transporte/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/ru/transporte/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/ru/transporte/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/ru/transporte/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/ru/transporte/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · qualquer país · sem enrolação</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noite</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/pt/">Início</a> /
+    <a href="/pt/ru/">Rússia</a> /
+    <b>Transporte</b>
+  </nav>
+
+
+  
+  <h1>Transporte: como é em Rússia — em primeira mão</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiência real de pessoas dos chats sobre «Transporte» em Rússia — como é, sem enrolação. Para o seu caso — <strong>pergunte ao Luky</strong>.</div></div>
+
+  <h2>Da experiência real</h2>
+  <ul class="qlist">
+    <li>Indivíduos com dupla cidadania russa/israelense ou relocados russos que retornam à Rússia para visitas curtas podem enfrentar entrevistas prolongadas (3-4 horas) no controle de fronteira. As perguntas frequentemente incluem endereços em Israel, detalhes de contato de familiares e amigos e locais de trabalho. Alguns relatam terem sido questionados sobre serviço militar ou participação na SVO (Operação Militar Especial) ou atividades relacionadas (por exemplo, montagem de drones). Embora alguns indivíduos relatem não ter tido problemas, outros enfrentaram questionamentos detalhados. O status de recrutamento ou a idade não garantem isenção de tais entrevistas. Aeroportos considerados &#39;mais seguros&#39; por alguns viajantes incluem Sochi, Mineralnye Vody e Sheremetyevo. As leis referentes ao recrutamento e à mobilização na Rússia nem sempre podem ser aplicadas de forma consistente. Se houver preocupações sérias em relação ao status militar, considere rotas de viagem indiretas.</li>
+    <li>Problemas com sinal de navegação GPS são cada vez mais comuns em várias regiões russas. Embora Moscou e a região de Moscou mantenham atualmente uma cobertura relativamente estável, cidades como Smolensk e outras partes do território europeu sofrem falhas de sinal intermitentes ou contínuas. Planeje suas rotas offline sempre que possível.</li>
+    <li>Na Rússia, veículos conduzidos por ou que transportam pessoas com deficiência, mesmo que registrados na Bielorrússia com placas bielorrussas, podem exigir registro específico ou conformidade com os regulamentos russos para utilizar vagas de estacionamento destinadas a pessoas com deficiência. Sem o devido registro ou notificação às autoridades competentes, o veículo pode ser rebocado. É aconselhável entrar em contato com as autoridades de trânsito russas para obter os procedimentos específicos referentes a veículos registrados no exterior usados por pessoas com deficiência.</li>
+    <li>Ao partir da Rússia em um voo internacional (por exemplo, para Bali), é obrigatório apresentar uma passagem de ida ou volta para qualquer terceiro país. As companhias aéreas (por exemplo, no Aeroporto Sheremetyevo) aplicam rigorosamente esse requisito no check-in, e a não apresentação pode resultar na recusa de embarque. Embora a imigração em alguns países de destino ou trânsito nem sempre verifique isso, é um pré-requisito para a entrada em muitos países e frequentemente exigido durante o processo de solicitação de eVisa/VOA para a Indonésia.</li>
+    <li>As operações de voo a partir dos aeroportos de Moscou (por exemplo, Zhukovsky) podem estar sujeitas a atrasos. Embora alguns voos cheguem sem incidentes (por exemplo, um voo vindo de Israel em 23 de junho), outros sofreram atrasos (por exemplo, um atraso de 1,5 hora em uma segunda-feira). A situação é imprevisível e os passageiros devem prever possíveis interrupções.</li>
+    <li>Ao importar temporariamente um carro com registro alemão para a Rússia (por exemplo, Kaliningrado) como cidadão com dupla nacionalidade russo-alemã residente na Alemanha (sem registro residencial russo): use seu passaporte alemão para sair da UE/Polônia e o passaporte russo para entrar na Rússia. Um depósito para importação temporária de veículos é exigido apenas se o indivíduo tiver uma residência registrada (&#39;propiska&#39;) na Federação Russa. Se não houver registro russo, um depósito geralmente não é necessário. Tentar ocultar o registro russo para evitar o depósito é punível. As regras sobre isso podem mudar, portanto, sempre verifique as regulamentações mais recentes.</li>
+    <li>Cidadãos brasileiros que entram na Rússia sem visto via aeroportos como DME (Domodedovo) devem estar preparados para apresentar seu passaporte, uma passagem de retorno e comprovante de acomodação (por exemplo, reserva de hotel ou carta de convite) no controle de fronteira. Também podem ser questionados sobre o propósito da visita. Após passar pela alfândega, os viajantes podem seguir para a cidade via metrô (onde disponível a partir do aeroporto).</li>
+    <li>Portadores de carteiras de motorista alemãs podem usá-las na Rússia por um período de 6 meses após se mudarem oficialmente para o país. Após esse período inicial de 6 meses, os indivíduos devem obter uma carteira de motorista russa passando por testes teóricos e práticos para continuar dirigindo legalmente na Rússia.</li>
+    <li>Para viajantes frequentes, especialmente cidadãos russos, obter um segundo passaporte biométrico de 10 anos é extremamente benéfico. Ao solicitar um visto Schengen ou outro visto, o passaporte principal fica retido no consulado durante o processamento (que pode levar de 1 a 3 meses). Um segundo passaporte permite que os indivíduos viajem para países isentos de visto, façam viagens de negócios ou solicitem outros vistos simultaneamente, evitando restrições de viagem durante os períodos de processamento de visto. Os cidadãos russos têm permissão legal para possuir dois passaportes estrangeiros de 10 anos válidos simultaneamente.</li>
+    <li>Um cidadão russo residente na Alemanha com uma autorização de residência alemã, mas que também mantém o registro (propiska) na Rússia, deve pagar um imposto de importação temporária (não é o desembaraço aduaneiro completo) ao levar um carro registrado na Alemanha para a Rússia. Este imposto é de aproximadamente 15% do valor do carro. A obrigação surge devido ao registro russo existente do indivíduo, que o classifica como residente para fins aduaneiros ao entrar na Rússia com um veículo de registro estrangeiro.</li>
+    <li>O controle de fronteira russo pode examinar indivíduos com base no local de nascimento (Ucrânia, Crimeia, Moldávia, Ásia Central). A posse de dupla cidadania ou autorização de residência pode levar a atrasos. Verificações de telefone e interrogatórios podem ocorrer. Indivíduos nascidos na Rússia normalmente enfrentam menos problemas. Os tempos de processamento variam significativamente. Ter cidadania estrangeira pode, por vezes, mitigar essas verificações.</li>
+    <li>Para chegar ao Aeroporto de Zhukovsky (ZIA) a partir de Moscovo, considere estas opções de transporte: 
+1. Táxi: O Yandex Taxi é geralmente acessível. Táxis locais podem cobrar preços mais elevados.
+2. Autocarro: Disponível com transbordo na Estação Leningradsky.
+3. Miniautocarro: Rotas disponíveis a partir da estação de metro Kotelniki ou da estação Ilyinskaya.
+4. Comboio: Apanhe um comboio elétrico da Estação Kazansky até à MCD Otdykh, depois mude para um miniautocarro.</li>
+    <li>Ao viajar com a Red Wings, a compra de bagagem adicional no aeroporto acarreta um custo mais alto, aproximadamente 50% a mais do que a reserva online. Os pagamentos online para serviços da Red Wings são geralmente processados usando cartões bancários russos. O preço exato da bagagem no aeroporto pode variar com base em seu tipo e dimensões.</li>
+    <li>As verificações de telefone pelo controle de fronteira russo no Aeroporto de Sheremetyevo não são uma prática consistente para todos os viajantes. Em vários casos, os viajantes relataram que seus telefones não foram inspecionados. No entanto, sugere-se que a probabilidade de uma verificação de telefone possa ser maior para indivíduos de certas nacionalidades, como cidadãos ucranianos.</li>
+    <li>Restrições ocasionais no fornecimento de combustível foram relatadas em postos de gasolina russos (por exemplo, Lukoil na região de Voronej), limitando as compras a 30-60 litros para carros. Aconselha-se aos motoristas manter uma reserva de combustível e evitar estratégias de dirigir com o tanque vazio devido a possíveis atrasos em filas e disponibilidade limitada.</li>
+    <li>Viajantes entre a Rússia e a Bielorrússia enfrentam atualmente escassez de combustível em postos nas regiões de Smolensk, Lipetsk e Tula. Estratégia recomendada: abasteça até a capacidade total nos principais centros (Moscou/São Petersburgo). Se necessário, transporte combustível em galões de 20 litros (respeitando o limite de 240 litros para uso pessoal). O óleo diesel é geralmente mais disponível do que a gasolina. Na fronteira, não declare o armazenamento de combustível pessoal, a menos que solicitado, para evitar atrasos administrativos. O abastecimento de combustível na Bielorrússia é relatado como normal.</li>
+    <li>Transporte para o Aeroporto Internacional de Zhukovsky (ZIA) saindo de Moscou: 1. Trem Aeroexpress/suburbano até a estação &#39;Otdykh&#39;, seguido de traslado/táxi. 2. Ônibus 441 saindo da estação de metrô &#39;Kotelniki&#39;. A localização é frequentemente citada por viajantes como tendo pior acessibilidade em comparação com outros hubs de Moscou, como Vnukovo (VKO).</li>
+    <li>Viagens para a Crimeia não são recomendadas atualmente devido a possíveis problemas com a disponibilidade de combustível, interrupções de energia e instabilidade geopolítica. Diferente de outras regiões (ex: Sochi), a principal conexão da Crimeia é a Ponte da Crimeia, o que gera o risco de ficar preso. Danos à balsa de Kerch complicam ainda mais uma possível evacuação. Embora a Crimeia tenha significado histórico para estadias prolongadas, as preocupações com a segurança superam o apelo nostálgico, especialmente quando alternativas mais seguras como as Maurício estão disponíveis.</li>
+    <li>Escalas inesperadas durante voos para Moscou (por exemplo, via Tashkent) podem ocorrer devido ao fechamento de aeroportos ou restrições operacionais. As companhias aéreas nem sempre notificam os passageiros sobre mudanças de rota com antecedência. Os viajantes devem verificar os detalhes do voo nas telas dos terminais, mesmo possuindo bilhetes de voo &#39;direto&#39;.</li>
+    <li>Ao regressar à Rússia, os viajantes podem ser submetidos a controlos fronteiriços prolongados, incluindo buscas em telemóveis. Dispositivos pessoais são examinados à procura de conteúdos potencialmente problemáticos, como publicações em redes sociais ou transações financeiras relacionadas com fundos internacionais. A duração destas verificações pode ser significativa e o alcance da busca pode ser minucioso, envolvendo WhatsApp e Telegram. A legalidade e a extensão destas buscas são frequentemente debatidas, com alguns utilizadores a relatá-las como procedimento padrão ao abrigo de leis específicas, enquanto outros descrevem-nas como arbitrárias ou excessivas. Aconselha-se os viajantes a estarem cientes do possível escrutínio, especialmente se tiverem expressado opiniões divergentes online ou participado em atividades controversas.</li>
+    <li>Para cidadãos russos com mais de 18 anos com passaporte da série 75 e superior, o controlo automático de passaportes está disponível no Aeroporto de Sheremetyevo (SVO). Isto permite um processo mais rápido através da leitura do passaporte numa máquina dedicada, eliminando a necessidade de carimbo manual, o que é particularmente útil para passageiros em trânsito ou para aqueles que viajam sem bagagem de porão.</li>
+    <li>Desde abril de 2026, os poderes do controle de fronteira russo em relação a inspeções de telefones têm sido objeto de debate. Embora algumas fontes afirmem que apenas a inspeção externa do dispositivo é permitida sem uma ordem judicial (citando o Artigo 23 da Constituição Russa), evidências anedóticas sugerem que detentores de passaportes não russos, especialmente aqueles com autorizações de residência ou cidadania da UE, ou conexões com a Ucrânia, podem enfrentar interrogatórios longos (2-4 horas) e verificações intrusivas em dispositivos digitais (leitura de mensagens, contatos). Esses incidentes seriam mais comuns nas fronteiras terrestres. Alguns viajantes com VNJ francês relataram não ter problemas, enquanto outros enfrentaram interrogatórios extensos. Existem informações contraditórias e experiências variadas.</li>
+    <li>A importação temporária de um carro com placas búlgaras para a Rússia por um cidadão com dupla nacionalidade (RF/Bulgária) é restrita. Geralmente requer um depósito alfandegário ou um potencial desembaraço aduaneiro completo caso a pessoa seja residente permanente na Rússia, já que ela não é considerada um viajante estrangeiro. Cada caso depende do status de residência do indivíduo e da documentação do veículo.</li>
+    <li>O trânsito na fronteira entre a Rússia e a Bielorrússia está aberto, mas as filas variam significativamente dependendo do horário e do dia (horários de pico aos domingos/feriados). O procedimento padrão inclui a verificação de passaportes e uma inspeção opcional do porta-malas do veículo. Não são emitidos carimbos de entrada/saída. Para um trânsito mais rápido, utilize postos de controle menores ou evite os horários de pico aos domingos e à noite.</li>
+    <li>Cidadãos russos podem possuir legalmente dois passaportes estrangeiros válidos de 10 anos simultaneamente. Isso é altamente recomendado para viajantes frequentes, especialmente ao solicitar vistos (por exemplo, Schengen), já que o passaporte principal fica retido pelo consulado durante o processo de solicitação (que pode levar de 1 a 3 meses, com a Itália podendo levar até 2 a 3 meses). Um segundo passaporte permite viagens internacionais ininterruptas para países isentos de visto, viagens de negócios ou solicitação de outros vistos durante esse período de espera.</li>
+    <li>A travessia da fronteira entre a Rússia e a Bielorrússia por trem ou carro é proibida para cidadãos de terceiros países ou para aqueles que viajam com passaportes estrangeiros devido à falta de postos de controle de fronteira internacionais. A única forma legal para tais indivíduos viajarem entre esses países é através de voos internacionais diretos.</li>
+    <li>Se a entrada de um cidadão estrangeiro na Rússia for recusada à chegada, a prática internacional padrão dita que a companhia aérea que o transportou pode ser obrigada a devolver o passageiro ao seu país de origem. Em alternativa, as autoridades russas podem proceder à deportação. A opção de comprar um bilhete para outro país é severamente restringida pela elegibilidade do visto do indivíduo para potenciais países de trânsito ou destino. Além disso, para cidadãos de certos países (por exemplo, Cuba), podem surgir problemas em pontos de trânsito (por exemplo, Panamá, Turquia) ou até mesmo no aeroporto de origem antes da partida devido a problemas de entrada previstos.</li>
+    <li>Passaportes biométricos russos de 10 anos permitem o uso de portões eletrônicos (e-gates) nos aeroportos de Bali (Ngurah Rai), acelerando significativamente o processo de entrada em comparação com os passaportes não biométricos de 5 anos, que exigem processamento manual nos guichês de imigração.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/pt/ru/documentos-e-vistos/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentos e Vistos</span></a>
+    <a class="chip" href="/pt/ru/seguran-a/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Segurança</span></a>
+    <a class="chip" href="/pt/ru/c-mbio-e-transfer-ncias/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Câmbio e Transferências</span></a>
+    <a class="chip" href="/pt/ru/alf-ndega-e-importa-o/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Alfândega e Importação</span></a>
+    <a class="chip" href="/pt/ru/bancos-e-finan-as/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Bancos e Finanças</span></a>
+    <a class="chip" href="/pt/ru/trabalho-e-impostos/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>📦 Trabalho e Impostos</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Vasculhou a busca e ainda está na dúvida?</h2>
+    <p>Pergunte ao Luky — monta a resposta a partir de relatos frescos em primeira mão, não de publicidade.</p>
+    <p>E o Luky é um tradutor de voz para conversas reais: pechinche na feira como um local.</p>
+    <p class="ps">PS: tenha uma conversa por voz com um amigo no exterior como se estivesse ao lado</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir o Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiência real dos chats de comunidades, sem enrolação</div>
+    <nav class="f-links">
+      <a href="/pt/about/">Sobre</a>
+      <a href="/pt/ru/">Todos os temas</a>
+      <a href="/pt/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">As respostas são reunidas de chats abertos de comunidades — é a experiência real das pessoas, não aconselhamento oficial. Verifique antes de decisões importantes.</p>
+    <div class="f-copy">© 2026 Luky · atualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noite", DAY="\u2600 Dia";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

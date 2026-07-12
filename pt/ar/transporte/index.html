@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Argentina: Transporte — experiência real · Luky</title>
+<meta name="description" content="Experiência real dos chats sobre Transporte em Argentina: como é, em primeira mão. Para o seu caso — pergunte ao Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/pt/ar/transporte/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/ar/transporte/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/ar/transporte/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/ar/transporte/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/ar/transporte/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/ar/transporte/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · qualquer país · sem enrolação</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noite</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/pt/">Início</a> /
+    <a href="/pt/ar/">Argentina</a> /
+    <b>Transporte</b>
+  </nav>
+
+
+  
+  <h1>Transporte: como é em Argentina — em primeira mão</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiência real de pessoas dos chats sobre «Transporte» em Argentina — como é, sem enrolação. Para o seu caso — <strong>pergunte ao Luky</strong>.</div></div>
+
+  <h2>Da experiência real</h2>
+  <ul class="qlist">
+    <li>Ao alugar um carro na Hertz na Argentina (por exemplo, em El Calafate), considere retirá-lo em um escritório na cidade em vez de no aeroporto para evitar taxas aeroportuárias extras. Para reduzir custos, use códigos corporativos (CDP) e tente alterar o país de residência no formulário de reserva para uma nação em desenvolvimento, já que os preços variam conforme o mercado e raramente são verificados no balcão.</li>
+    <li>Um viajante busca conselhos sobre uma conexão de 2 horas no aeroporto de São Paulo (GRU). Ele está preocupado com o curto tempo de transferência, mas é tranquilizado de que, se a reserva for feita em uma única passagem, a companhia aérea providenciará o próximo voo disponível em caso de atrasos. É aconselhável não reservar segmentos de voo separados para uma conexão como essa.</li>
+    <li>Dificuldade em alugar motos: Alugar uma motocicleta na Argentina é muito difícil devido às altas taxas de roubo. O aluguel de carros também é complicado, mas encontrar motocicletas para alugar é significativamente mais difícil.
+Crime de &#34;motochorros&#34;: Refere-se a ladrões em motocicletas que abordam as vítimas, muitas vezes de forma violenta, para roubar suas motos ou pertences.
+Estatísticas de roubo (2024):
+- Superintendência de Seguros da Nação (SSN): 47.168 motocicletas seguradas foram roubadas em todo o país (aprox. 129 por dia).
+- Ministério Público da Província de Buenos Aires (PBA): 87.453 processos criminais por roubo de motocicletas.
+Área de alto risco: Mais de 70% dos roubos ocorrem na Região Metropolitana de Buenos Aires (AMBA).
+Conclusão: Motociclistas são considerados alvos altamente vulneráveis, tornando os serviços de locação raros.</li>
+    <li>Ao viajar com uma única passagem pela mesma companhia aérea (por exemplo, Aerolíneas Argentinas) para voos de conexão, se a duração da escala for significativamente reduzida (por exemplo, de 3,5 horas para 1 hora), a companhia aérea é responsável por garantir que o passageiro chegue ao destino final. No Aeroparque de Buenos Aires (AEP), embora o aeroporto seja pequeno, as filas de controle de passaporte podem ser um problema. Se enfrentar uma conexão apertada, os passageiros devem informar imediatamente a equipe do aeroporto. Caso ocorra uma perda de conexão devido a uma alteração no horário da companhia aérea, esta é obrigada a reacomodar o passageiro no próximo voo disponível sem custo adicional. Muitas vezes é possível evitar passar novamente pela segurança/registro se os voos estiverem em um único bilhete e forem do mesmo terminal, mas a imigração pode ser necessária dependendo da transferência de doméstico para internacional. Informe-se com a companhia aérea sobre alterações gratuitas para um voo anterior, caso a conexão seja considerada muito curta.</li>
+    <li>Viagem de balsa de Montevidéu para Buenos Aires: chegue pelo menos 1,5 hora antes da partida para o controle de fronteira. As passagens podem ser compradas no local ou antecipadamente online.</li>
+    <li>Importar um veículo para a Argentina exige residência (temporária ou permanente), documentação extensa tratada por um despachante e custos de envio significativos. Os preços locais de carros são altos; países vizinhos como Paraguai ou Chile oferecem alternativas mais baratas. As regulamentações de trânsito diferem, incluindo limites de velocidade, costumes de estacionamento e o uso específico do pisca-alerta (setas são usadas para indicar estacionamento ou paradas temporárias, não apenas para emergências).</li>
+    <li>Ao voar internacionalmente a partir de Buenos Aires (Ezeiza - Pistarini), é aconselhável reservar bastante tempo devido ao potencial de cancelamentos, atrasos e reagendamentos de voos, que são relatados como relativamente comuns, especialmente para conexões domésticas. Embora os voos internacionais possam sofrer menos interrupções do que os domésticos, é prudente estabelecer uma margem de segurança significativa, idealmente chegando com bastante antecedência ou até mesmo indo para o aeroporto no dia anterior. Uma escala de 3 a 4 horas pode ser insuficiente diante desses possíveis problemas.</li>
+    <li>Para traslados entre El Calafate (Argentina) e Puerto Natales (Chile), incluindo a travessia da fronteira: a Busbud oferece passagens, mas verifique os horários com atenção, pois as partidas podem ser limitadas (por exemplo, apenas um ônibus às 8h). Opções de transporte privado também estão disponíveis. Informe-se sobre as opções mais convenientes e pontuais para as suas datas de viagem.</li>
+    <li>Ao voar para a Argentina, particularmente com companhias aéreas como a Turkish Airlines, certifique-se de cumprir suas políticas de emissão de bilhetes. Alguns relatos sugerem possíveis problemas caso a passagem de volta não seja reservada com a mesma companhia aérea utilizada no trecho de ida, especialmente para estadias que não sejam de turismo. Entradas de turistas padrão geralmente exigem uma passagem de volta, independentemente da companhia aérea.</li>
+    <li>Política de bagagem da Flybondi: o tamanho e o peso (6kg) do &#39;item pessoal&#39; são rigorosamente aplicados; a verificação do tamanho é frequente. O registro no aeroporto incorre em uma taxa; o check-in online é recomendado. O peso é frequentemente verificado com mais rigor do que as dimensões.</li>
+    <li>Logística para visitar as Cataratas do Iguaçu pelo lado argentino: 1) Ônibus do aeroporto de Puerto Iguazú para o centro da cidade aceitam dinheiro. 2) Ônibus regulares para o parque nacional partem do terminal rodoviário central da cidade (terminal de ómnibus); uma passagem de ida e volta custa aproximadamente 20.000 ARS por pessoa. 3) Os táxis estão sujeitos a um monopólio local e são financeiramente viáveis apenas para grupos de 3 ou mais pessoas. 4) Passeios de barco que chegam perto das quedas d&#39;água exigem capas de chuva devido à névoa extrema e aos respingos.</li>
+    <li>Opções de rota entre Buenos Aires e Montevidéu: 1. Ferry direto (tempo de viagem de aproximadamente 3 horas, custo de ~$130 ida e volta). 2. Ferry até Colonia del Sacramento + ônibus até Montevidéu (mais barato, porém significativamente mais longo). A viagem de ônibus entre essas cidades também é possível, mas o tempo varia (de 2,5 a 8 horas).</li>
+    <li>O clima no Parque Nacional Los Glaciares (El Chaltén, El Calafate) é extremamente instável. Recomenda-se aos viajantes que levem roupas corta-vento e em camadas. Para ver o Monte Fitz Roy, observe que o céu muitas vezes limpa à noite perto do Acampamento Poincenot devido às quedas de temperatura e à mudança na dinâmica das nuvens, mesmo que esteja encoberto durante o dia. Recomenda-se reservar pelo menos 3 a 4 dias como margem de segurança contra o mau tempo.</li>
+    <li>Documentos necessários:
+- **Permissão Internacional para Dirigir (PID):** Essencial.
+- **Cartão de Crédito:** Principalmente exigido para a locação.
+- **Cartão de Débito Estrangeiro:** Pode ser aceito se não estiver escrito explicitamente &#34;debit&#34; na frente do cartão.
+- **Carteira de Habilitação Russa:** Segundo relatos, é aceita sem problemas em combinação com a PID.
+Processo: Mesmo que preenchido previamente online, espere um processo burocrático demorado no balcão de locação.
+Exemplo de locadora: Hertz (utilizada com conta corporativa e cartão bielorrusso).
+Problemas potenciais: A aceitação do cartão (especialmente cartões de débito) pode ser um ponto de conflito.</li>
+    <li>Ao voar dentro da Argentina, a franquia de bagagem e as taxas por excesso de peso variam de acordo com a companhia aérea. Na Aerolineas Argentinas, a franquia padrão incluída pode ser de 15 kg. As taxas por excesso de peso podem ser substanciais; por exemplo, 6 kg de excesso em uma franquia de 15 kg custaram 21.000 ARS em novembro de 2025 para um voo de Mar del Plata para Buenos Aires. A Jetsmart geralmente oferece 23 kg. Sempre verifique a política da companhia aérea específica antes de voar.</li>
+    <li>Voos noturnos dentro da Argentina são geralmente seguros. Para o transporte de e para aeroportos durante esses horários, recomenda-se usar serviços de táxi de confiança. Optar por transporte de ônibus durante horários avançados geralmente não é aconselhável por motivos de segurança.</li>
+    <li>A tarifa de táxi do Aeroporto de Ezeiza (EZE) até o centro da cidade de Buenos Aires pode custar cerca de 40 USD. Para outros locais, como El Calafate ou Puerto Iguazú, considere serviços de transfer de aeroporto. Em Ushuaia, caminhar a partir do aeroporto pode ser uma opção, dependendo da distância.</li>
+    <li>Ao viajar para a Argentina, os agentes de controle de fronteira são geralmente flexíveis quanto à acomodação (dizer verbalmente ou mostrar o endereço de amigos/familiares por escrito costuma ser suficiente). No entanto, os funcionários das companhias aéreas no momento do embarque (especialmente da Turkish Airlines) são extremamente rigorosos e podem exigir uma prova oficial de reserva para mitigar os riscos de imigração ilegal. Informar à equipe da companhia aérea que você ficará com &#39;amigos&#39; pode atrair um escrutínio extra. Os viajantes devem reservar um hotel reembolsável com opção de pagamento na propriedade para apresentar durante o check-in.</li>
+    <li>A verificação de passagens de volta no check-in é altamente subjetiva e depende da política da companhia aérea, do aeroporto específico de partida e de cada funcionário em terra. Embora algumas companhias aéreas (por exemplo, a Turkish Airlines) sejam consideradas mais rigorosas, nenhuma garante um embarque sem problemas sem uma passagem de volta caso isso seja um requisito para a entrada no país de destino.</li>
+    <li>O escritório da Ethiopian Airlines em Buenos Aires está localizado na Carlos Pellegrini 1135, 10º andar. Verifique a localização atual pelo contato oficial deles no WhatsApp, já que os endereços na cidade podem mudar e informações desatualizadas circulam na internet.</li>
+    <li>O transporte público em Buenos Aires aceita pagamentos com cartão bancário. Os ônibus operam 24 horas por dia, 7 dias por semana, e o pagamento da tarifa pode ser feito usando um cartão bancário sem problemas.</li>
+    <li>Buenos Aires oferece várias opções de transporte. O sistema de metrô é eficiente e acessível para viajar pela cidade. Serviços de transporte por aplicativo como o Uber estão disponíveis, embora seja recomendado reservar serviços &#39;comfort&#39; ou de categoria superior para potencialmente evitar problemas com motoristas que recusam corridas. Caminhar pode ser agradável para distâncias curtas, mas pode se tornar cansativo para trajetos extensos. Táxis também são uma opção, mas esteja atento a possíveis congestionamentos de tráfego e à discrição ocasional dos motoristas em relação às tarifas ou destinos.</li>
+    <li>A confiabilidade das companhias aéreas na Argentina varia. Companhias de baixo custo como JetSMART e Flybondi frequentemente sofrem atrasos ou cancelamentos de voos. A Aerolíneas Argentinas é geralmente considerada mais estável, embora não esteja imune a problemas de agendamento.</li>
+    <li>Ao reservar o show de tango La Ventana em Buenos Aires, compare os preços no Trip.com, pois pode ser mais barato do que no site oficial. Evite reservar o serviço de traslado oficial deles; usar o Uber é significativamente mais barato.</li>
+    <li>Quando um voo envolve uma conexão com a mesma companhia aérea ou aliança parceira, a bagagem geralmente é despachada até o destino final, a menos que especificado de outra forma. Mesmo que uma passagem indique a necessidade de retirar e despachar novamente a bagagem durante uma conexão curta (por exemplo, 2h 10min), isso geralmente se refere a procedimentos automatizados da companhia aérea onde o passageiro não precisa sair da área de trânsito.</li>
+    <li>Problemas regionais de abastecimento de gás (GNC) em Buenos Aires estão ligados a cortes de fornecimento pela Camuzzi Gas. Isso afeta a disponibilidade de combustível para veículos e a pressão residencial. O problema não é uniforme em todas as províncias argentinas.</li>
+    <li>A Hertz é uma opção confiável de aluguel de carros em Buenos Aires. Os requisitos incluem um cartão de crédito (não pode ser cartão de débito) para a reserva/depósito.</li>
+    <li>Os horários exatos de partida de navios de cruzeiro de Ushuaia geralmente não são listados em sites públicos. Esses dados estão disponíveis através de serviços comerciais de rastreamento marítimo, como o MarineTraffic, que requer uma assinatura paga para visualizar registros portuários em tempo real e agendamentos precisos.</li>
+    <li>Usuários relatam ocasionalmente problemas ao comprar passagens no site da Flybondi. Uma solução comum é tentar acessar a partir de um dispositivo diferente (por exemplo, outro computador ou celular), já que o site pode bloquear o acesso de certos IPs ou dispositivos por motivos de segurança percebidos.</li>
+    <li>Ao voar com a Turkish Airlines e ter uma conexão longa (por exemplo, superior a 24 horas) em Istambul, os passageiros podem precisar fazer o registro para o voo de prosseguimento em Istambul. Ter passagens de volta na mesma reserva e na mesma rota é geralmente aceitável, mas esteja preparado para perguntas sobre o seu destino e o propósito da viagem. Tenha reservas de hotel e outros documentos relevantes prontamente disponíveis.</li>
+    <li>Viagem entre a Argentina e o Uruguai via balsa Buquebus. Uma passagem de ida e volta pode custar aproximadamente 11.000 rublos. A duração da viagem de ida é de cerca de 3 horas. As passagens podem ser adquiridas diretamente no site oficial da Buquebus.</li>
+    <li>Estrangeiros sem DNI podem comprar um veículo na Argentina obtendo um CDI (Clave de Identificación) junto à autoridade fiscal (AFIP). Legalmente, as carteiras de motorista estrangeiras são válidas por 90 dias após a entrada. No entanto, o seguro de carro local e a recuperação de veículos apreendidos geralmente exigem uma licença local válida (DNI/licencia de conducir). Pagar prêmios de seguro sem um cartão de crédito local pode ser um desafio.</li>
+    <li>Greves são eventos recorrentes na Argentina e podem impactar significativamente os planos de viagem, incluindo atrasos em voos. As informações sobre greves iminentes geralmente ficam disponíveis com alguns dias de antecedência. Se uma greve ocorrer no aeroporto, ela afetará voos internacionais. Os viajantes devem manter-se informados sobre possíveis interrupções.</li>
+    <li>A viagem de balsa entre Buenos Aires e o Uruguai envolve o controle de passaportes de ambos os países antes da partida da Argentina. Os carimbos de entrada uruguaios são colocados na chegada. Para estender a estadia na Argentina, visite a Migración para pagar uma taxa e estender oficialmente por 1,5 meses, o que pode ser feito várias vezes.</li>
+    <li>Para viajar entre as Cataratas do Iguaçu e Buenos Aires, é mais eficiente partir de Puerto Iguazú (Argentina) do que de aeroportos brasileiros. Existem mais de 10 voos diretos diários disponíveis de Puerto Iguazú para Buenos Aires (AEP/EZE).</li>
+    <li>As tarifas do cartão SUBE em Buenos Aires estão sujeitas a aumentos mensais vinculados à inflação. Os usuários devem verificar as tarifas atuais através do aplicativo oficial, pois os preços variam com base na distância. As &#39;tarifas sociais&#39; (descontos) são restritas a grupos locais específicos (idosos, baixa renda, etc.) por meio da ANSES e não se aplicam ao turista ou expatriado comum.</li>
+    <li>A entrada na Argentina pode ser restringida pelas companhias aéreas em vez do controle de fronteira. Passageiros que usam passagens com múltiplos trechos ou diferentes transportadoras para voos de volta frequentemente enfrentam rigor por parte dos funcionários do check-in. Recomenda-se ter um plano de viagem adiante claro e passagens de volta na mesma aliança aérea ou transportadora para evitar ser impedido de embarcar.</li>
+    <li>As franquias de bagagem em voos domésticos na Argentina variam significativamente de acordo com a companhia aérea e a tarifa (frequentemente 15kg vs 23kg). Agregadores exibem claramente os limites de bagagem específicos para cada tarifa. É comum que as companhias aéreas proíbam o compartilhamento do peso da bagagem entre vários passageiros.</li>
+    <li>Oficiais de imigração na fronteira argentina raramente priorizam a verificação de passagens de volta, mas as companhias aéreas frequentemente impõem esse requisito durante o check-in para evitar multas. Os viajantes devem estar preparados com o comprovante de saída da Argentina.</li>
+    <li>Voos domésticos na Argentina: carrinhos de bebê geralmente são transportados gratuitamente como bagagem especial. Normalmente não há limites rígidos de peso ou tamanho, desde que o carrinho seja dobrável. Os passageiros devem dirigir-se ao balcão de bagagens especiais no aeroporto para o check-in.</li>
+    <li>Os preços dos voos de Moscou para Buenos Aires podem variar significativamente. Voos diretos com a Turkish Airlines podem custar cerca de 170.000 RUB ida e volta para fevereiro de 2027. Rotas alternativas via Tashkent ou através da África (Marrocos, Etiópia) podem ser mais baratas, potencialmente em torno de 100.000 a 105.000 RUB. Os meses de verão podem oferecer preços mais baixos, mas com clima mais frio. Recomenda-se reservar com antecedência e comparar várias rotas e companhias aéreas.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/pt/ar/documentos-e-visto/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentos e Visto</span></a>
+    <a class="chip" href="/pt/ar/bancos-e-finan-as/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Bancos e Finanças</span></a>
+    <a class="chip" href="/pt/ar/ingressos-e-lazer/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Ingressos e Lazer</span></a>
+    <a class="chip" href="/pt/ar/c-mbio-e-transfer-ncias/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Câmbio e Transferências</span></a>
+    <a class="chip" href="/pt/ar/moradia/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Moradia</span></a>
+    <a class="chip" href="/pt/ar/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Quer uma resposta para você, não uma palestra para todos?</h2>
+    <p>Pergunte ao Luky — fala como quem acabou de voltar de lá — sem enrolação.</p>
+    <p>E o Luky é um tradutor de voz para conversas reais: e o garçom não vai confundir o seu pedido.</p>
+    <p class="ps">PS: conversar com alguém num festival no exterior — fácil</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir o Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiência real dos chats de comunidades, sem enrolação</div>
+    <nav class="f-links">
+      <a href="/pt/about/">Sobre</a>
+      <a href="/pt/ar/">Todos os temas</a>
+      <a href="/pt/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">As respostas são reunidas de chats abertos de comunidades — é a experiência real das pessoas, não aconselhamento oficial. Verifique antes de decisões importantes.</p>
+    <div class="f-copy">© 2026 Luky · atualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noite", DAY="\u2600 Dia";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

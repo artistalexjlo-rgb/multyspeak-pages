@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brasil: Trabalho e Impostos — experiência real · Luky</title>
+<meta name="description" content="Experiência real dos chats sobre Trabalho e Impostos em Brasil: como é, em primeira mão. Para o seu caso — pergunte ao Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/pt/br/trabalho-e-impostos/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/br/trabalho-e-impostos/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/br/trabalho-e-impostos/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/br/trabalho-e-impostos/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/br/trabalho-e-impostos/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/br/trabalho-e-impostos/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · qualquer país · sem enrolação</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noite</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/pt/">Início</a> /
+    <a href="/pt/br/">Brasil</a> /
+    <b>Trabalho e Impostos</b>
+  </nav>
+
+
+  
+  <h1>Trabalho e Impostos em Brasil: o que realmente importa saber</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiência real de pessoas dos chats sobre «Trabalho e Impostos» em Brasil — como é, sem enrolação. Para o seu caso — <strong>pergunte ao Luky</strong>.</div></div>
+
+  <h2>Da experiência real</h2>
+  <ul class="qlist">
+    <li>A tributação para prestadores de serviços de TI (PJ - Pessoa Jurídica) no Brasil depende do regime tributário (Simples Nacional). A exportação de serviços pode levar a isenções em impostos como PIS, COFINS e ISS, reduzindo potencialmente a alíquota efetiva para cerca de 3-6%. A renda recebida como distribuição de lucros (dividendos) é geralmente isenta de impostos até um certo limite mensal. No entanto, as instituições bancárias frequentemente consideram a renda baseada em dividendos menos estável do que a CLT (emprego formal) ao avaliar solicitações de crédito ou financiamento imobiliário.</li>
+    <li>O prazo para a entrega da declaração anual de impostos do MEI (Microempreendedor Individual) no Brasil geralmente ocorre na primavera. Embora a data exata possa variar um pouco de ano para ano, ela é geralmente por volta de abril ou maio. É crucial verificar o site oficial da Receita Federal para as datas precisas do ano fiscal vigente.</li>
+    <li>Para migrantes no Brasil em busca de emprego, existem vários canais de apoio, incluindo fundos de auxílio à migração e comunidades online. No entanto, tenha cuidado com &#39;ajudantes&#39; que cobram taxas exorbitantes por tarefas básicas como preencher formulários (por exemplo, CPF, SUS). Pesquise e utilize recursos gratuitos ou acessíveis. Plataformas oficiais e informações compartilhadas pela comunidade em grupos de expatriados podem fornecer orientações sobre como navegar pelos processos burocráticos e buscas de emprego sem pagar em excesso.</li>
+    <li>Os salários para ensinar inglês no Brasil variam de R$ 25 a R$ 50 por hora em escolas de idiomas e de R$ 60 a R$ 200 por hora para professores particulares. O teto de renda mensal estimado para um professor de inglês é de cerca de R$ 4.000. Isso é comparável aos salários de professores em algumas regiões da Rússia, excluindo bônus adicionais. Embora ensinar inglês possa fornecer uma renda suplementar, ganhos significativos são improváveis sem uma carga horária substancial ou trabalho adicional.</li>
+    <li>Cidades no Brasil em altitudes mais elevadas, como Curitiba e Belo Horizonte (cerca de 900m), oferecem climas mais amenos. Campos do Jordão está a 1600m. Curitiba tem uma previsão de temperatura média de 22°C, mas exige deslocamento até o litoral. Essas cidades podem ser consideradas por seu tamanho e infraestrutura, atraindo quem busca ambientes urbanos com potencial para desenvolvimento de negócios.</li>
+    <li>São Paulo é geralmente considerada melhor para morar, trabalhar e para a integração cultural no Brasil devido à sua infraestrutura desenvolvida, maior número de museus, teatros, centros culturais (por exemplo, SESCs, Instituto Tomie Ohtake, Beco do Batman), cursos gratuitos de português (Bibli-ASPA), metrô limpo e diversas opções de compras. Oferece melhores perspectivas de emprego e salários mais altos. No entanto, para turistas, o centro da cidade de São Paulo pode parecer menos atraente devido à visibilidade da população em situação de rua, potenciais preocupações com a segurança e a degradação urbana geral, o que leva alguns turistas a preferirem o Rio de Janeiro por sua &#39;atmosfera&#39; percebida, apesar de problemas semelhantes com a população de rua. O Rio é frequentemente preferido por turistas e nômades digitais para lazer. Ambas as cidades apresentam desafios de segurança e população em situação de rua nas áreas centrais.</li>
+    <li>Durante a pandemia de COVID-19 no Brasil (2020-2022), as restrições variaram por região e espaços públicos. Geral: O uso de máscaras era frequentemente obrigatório em locais fechados (por exemplo, lojas no Rio), recomendado em locais abertos, mas não rigorosamente fiscalizado pela polícia em todas as áreas. A vacinação foi amplamente incentivada, mas obrigatória para atividades específicas (por exemplo, entrada em academias, admissão em universidades, viagens para Fernando de Noronha). São Paulo: Passou por períodos de lockdown severo com cidades vazias. Rio de Janeiro: Os cidadãos eram rigorosos quanto ao uso de máscaras em lojas; as praias eram fechadas e as pessoas eram, às vezes, retiradas pela polícia. Restrições de viagem foram implementadas para algumas áreas (por exemplo, Búzios exigia comprovante de residência). Áreas rurais/remotas: As restrições eram frequentemente menos rigorosas ou ignoradas, com pessoas se reunindo sem máscaras.</li>
+    <li>Um anúncio de emprego está buscando motoristas no Brasil. Os requisitos incluem possuir carteira de motorista e veículo. A remuneração oferecida é de no mínimo 1200 BRL por viagem de longa distância. Os candidatos interessados devem entrar em contato diretamente com quem fez a publicação.</li>
+    <li>Para encontrar brasileiros para intercâmbio de idiomas, use o aplicativo Tandem. Ele é recomendado por sua grande base de usuários do Brasil, o que facilita a prática do idioma.</li>
+    <li>O impacto das comunidades de imigrantes na vida local brasileira é discutido. Uma visão sugere que uma alta concentração de migrantes, particularmente russos em Florianópolis, pode levar a problemas sociais, a menos que seja em uma grande metrópole como São Paulo. Por outro lado, a comunidade russa de Florianópolis é elogiada como &#39;excelente e divertida&#39;. O afluxo de pessoas (&#39;ponaehi&#39;) em áreas turísticas como o Nordeste também é apontado como potencialmente disruptivo.</li>
+    <li>Os ganhos de entregadores no Brasil podem variar significativamente com base na localização, plataforma de entrega, meio de transporte e horas trabalhadas. 
+
+*   **Entregas iFood:** Em cidades como Vitória (região Sudeste), entregadores que utilizam carro podem ganhar entre R$ 6.000 e R$ 8.000 por mês, potencialmente até R$ 10.000 se possuírem o veículo e gerenciarem várias viagens diariamente. Entregas em grandes cidades como Rio de Janeiro ou São Paulo podem oferecer ganhos semelhantes ou potencialmente maiores devido à maior demanda, mas também enfrentam mais congestionamentos no trânsito. 
+*   **Motocicleta/Bicicleta:** Os ganhos para entregadores de motocicleta ou bicicleta são geralmente menores, variando tipicamente de R$ 3.000 a R$ 4.000 em áreas metropolitanas. 
+*   **Despesas:** É crucial levar em conta a manutenção do veículo, combustível, seguro e taxas das plataformas ao calcular a renda líquida.</li>
+    <li>Oportunidades de trabalho remoto em plataformas de negociação estão disponíveis no Brasil, oferecendo horários flexíveis e sem necessidade de experiência. Os ganhos potenciais anunciados são de $200+/dia para turnos matinais (11:00-13:00) e $300+/dia para turnos noturnos (15:00-17:00). Os interessados devem entrar em contato com o gerente para obter detalhes. O treinamento é fornecido.</li>
+    <li>Geralmente, não é permitido exercer trabalho remunerado para um empregador local brasileiro ou realizar trabalho remoto para uma empresa estrangeira enquanto se está com visto de turista no Brasil. Trabalhar remotamente para um empregador estrangeiro pode ser permitido sob circunstâncias específicas, mas o emprego local é tipicamente restrito.</li>
+    <li>O Vietnã é visto como um país com custo de vida mais baixo em comparação ao Brasil, especialmente para nômades digitais que buscam públicos específicos. O Brasil está passando por aumentos rápidos de preços devido ao fluxo imigratório, o que pode estar reduzindo essa diferença de custo. Para pessoas que buscam um custo de vida mais acessível enquanto trabalham remotamente, o Vietnã pode ser, atualmente, uma opção mais econômica.</li>
+    <li>Profissões valorizadas em Recife, Brasil, incluem eletricistas industriais e soldadores. A proficiência em português é altamente recomendada para conseguir emprego, embora falantes de inglês possam ter melhores chances em certos setores.</li>
+    <li>Aprender português brasileiro apresenta desafios únicos. Embora alguns aleguem que a fluência seja alcançável em seis meses, os usuários relatam padrões de fala rápidos e complexos, além de coloquialismos que podem ser avassaladores para iniciantes. Ao contrário do russo, onde nuances gramaticais como &#39;po priezde&#39; vs. &#39;po priezde&#39; são complicadas, o português brasileiro possui variações fonéticas (&#39;shekar&#39; vs. &#39;gaúcho&#39;) e uma entrega em alta velocidade que pode dificultar a compreensão. Apesar desses desafios, interações positivas e gestos frequentemente facilitam a comunicação. Para integração profissional, no entanto, atingir um nível proficiente de português é essencial, embora muitas palavras compartilhem raízes latinas, o que pode ajudar os alunos.</li>
+    <li>Há relatos de indivíduos buscando participantes para oportunidades de ganho online relacionadas à plataforma de pagamentos SumUp no Brasil. Os benefícios anunciados incluem ganhos diários de R$ 140 a R$ 240 por 1,5 a 3 horas de trabalho remoto, exigindo apenas um smartphone e, possivelmente, um cartão SumUp. Essas oportunidades são apresentadas como legítimas e sem custos iniciais.</li>
+    <li>Ao contratar trabalhadores autônomos locais para reformas (pedreiros) no Brasil, nunca pague o valor total do contrato antes da conclusão para evitar o abandono da obra. Se um prestador de serviço atrasar o trabalho indefinidamente, os meios legais usados pelos locais incluem ameaçar registrar um Boletim de Ocorrência, solicitar o estorno do pagamento no banco e denunciar o trabalhador às autoridades fiscais por sonegação de impostos.</li>
+    <li>Detalhe os requisitos para o preenchimento da declaração de imposto no Brasil para rendimentos obtidos no exterior. Explique o sistema &#39;carnê-leão&#39; para pagamentos mensais de impostos sobre rendimentos estrangeiros. Especifique o limite de isenção (por exemplo, 5.000 BRL por mês) abaixo do qual os impostos podem ser zero e as implicações de exceder esse limite. Esclareça o prazo das obrigações fiscais após se tornar residente.</li>
+    <li>Para indivíduos que consideram mudar-se para o Brasil: a comunidade LGBT geralmente parece bem integrada e visível, com bairros específicos (por exemplo, a Barra em Salvador) mostrando sinais claros de aceitação, muitas vezes em áreas de classe alta. O mercado de trabalho é geralmente desafiador em todo o país, dificultando a busca por emprego para recém-chegados. O custo de vida pode ser alto. Existem preocupações em relação à segurança. Os aspectos positivos incluem uma sensação de liberdade e um clima agradável.</li>
+    <li>O prazo para a entrega da DASN-SIMEI (Declaração Anual do Simples Nacional para Microempreendedor Individual) no Brasil é 31 de maio. A declaração pode ser feita com antecedência.</li>
+    <li>Um jovem imigrante (19 anos) encontrou-se no Brasil com status de refugiado, sem emprego e com recursos limitados após um plano de imigração fracassado com um parceiro. Ele estava pagando 700 USD/mês de aluguel em Recife, o que é considerado muito alto para sua situação. Os conselhos da comunidade incluem: priorizar empregos de sobrevivência (construção civil, entregas), reduzir custos de moradia significativamente (almejar menos de 1500 BRL/mês), utilizar restaurantes populares para alimentação barata/gratuita e evitar &#39;oportunidades de trabalho&#39; arriscadas em favelas. Trabalho remoto a partir da Rússia foi sugerido, mas o acesso a equipamentos era uma preocupação. A importância do planejamento financeiro realista e de evitar um custo de vida elevado sem renda estável é destacada.</li>
+    <li>Ao aconselhar sobre a busca de emprego para chefs ou baristas no Rio de Janeiro, Brasil, informe aos usuários que a candidatura direta aos estabelecimentos é uma abordagem possível. Enfatize a importância crítica de falar português para conseguir um emprego e negociar o salário. Aconselhe a pesquisar as expectativas salariais locais para essas profissões.</li>
+    <li>Esclareça as implicações fiscais para trabalhadores remotos que solicitam a cidadania brasileira. Especificamente, determine se a renda estrangeira precisa ser declarada e tributada no Brasil como parte do processo de solicitação de cidadania.</li>
+    <li>As escolas em Santos, Brasil, geralmente demonstram uma atitude acolhedora em relação a crianças russas e internacionais, sem relatos de casos de bullying relacionados à nacionalidade ou barreiras linguísticas. O sistema educacional oferece opções de ensino em período integral e meio período, além de uma ampla variedade de atividades extracurriculares gratuitas e pagas, incluindo escolhas populares como surfe e skate.</li>
+    <li>Para encontrar oportunidades de voluntariado com a Igreja Ortodoxa Russa (IOR) no Brasil, os interessados podem contatar os seguintes órgãos oficiais: 1. **Diocese da Argentina e América do Sul da IOR:** Esta é a estrutura principal que supervisiona as paróquias no Brasil (por exemplo, Rio de Janeiro, São Paulo, Porto Alegre). Informe-se pelo e-mail oficial da diocese ou contate diretamente igrejas específicas, como a Igreja de Santa Zinaida no Rio de Janeiro, para funções de manutenção paroquial, organização de eventos ou trabalho social. 2. **Departamento Sinodal de Caridade da IOR:** Para iniciativas sociais e humanitárias mais amplas, contate o serviço &#39;Miloserdie&#39; ou o departamento diretamente. Eles coordenam várias viagens missionárias e humanitárias, incluindo as internacionais. 3. **Departamento Missionário Sinodal:** Este departamento concentra-se na organização de viagens para pessoas dispostas a oferecer assistência física e participar de atividades educacionais e missionárias.</li>
+    <li>No Brasil, as creches locais são comumente preferidas para a integração das crianças e o desenvolvimento bilíngue. Creches de língua russa são escassas. As crianças tendem a se adaptar rapidamente às escolas locais, adquirindo naturalmente o português além de sua língua nativa.</li>
+    <li>O Brasil possui um setor de TI desenvolvido, com escritórios de grandes empresas como o Google e uma vasta comunidade tecnológica. O Stripe está operacional. O emprego baseia-se em qualificações e competências linguísticas, não na nacionalidade. A obtenção de uma autorização de trabalho é o requisito fundamental para o emprego. São Paulo é descrita como uma metrópole dinâmica com arranha-céus, contrastando com locais com características de resort, como Phuket. Embora Astana e Almaty sejam mencionadas para comparação, o Brasil é apresentado como possuindo um maior dinamismo na indústria tecnológica.</li>
+    <li>Profissionais de reparo qualificados são muito procurados no Brasil devido à percepção de baixa qualidade geral dos serviços locais. Uma reputação de mão de obra de qualidade pode levar a oportunidades significativas de carreira e renda, incluindo trabalhar para clientes abastados. Isso indica uma lacuna no mercado para serviços profissionais e confiáveis.</li>
+    <li>Encontrar um emprego comum no Brasil sem falar português é muito difícil. Os salários geralmente são baixos e, mesmo que um emprego seja encontrado, pode não ser suficiente para uma vida confortável. O inglês não é amplamente utilizado no mercado de trabalho. Trabalho remoto ou trazer eletrônicos necessários (já que são caros no Brasil) são frequentemente sugeridos como alternativas. Algumas pessoas encontraram trabalho como professores de inglês, mas o sucesso varia.</li>
+    <li>Para mecânicos automotivos com vasta experiência, o nível de português necessário para trabalhar no Brasil pode variar. Uma comunicação básica pode ser suficiente para trabalhos informais, mas, para empregos formais, especialmente em áreas turísticas, será muito vantajoso ter um bom nível de português ou até mesmo de inglês. Algumas cidades voltadas para o turismo buscam especificamente falantes de inglês. Também é aconselhável levar suas próprias ferramentas.</li>
+    <li>Discussão sobre os desafios e possibilidades para engenheiros estrangeiros que buscam emprego no Brasil. Os pontos principais incluem: a necessidade de revalidação de diploma e registro no CREA, a preferência das empresas locais por candidatos com contatos, a viabilidade de se candidatar a corporações internacionais e a identificação de áreas da engenharia com escassez de mão de obra (por exemplo, cargos técnicos de nível médio, saúde e TI).</li>
+    <li>Encontrar emprego no Brasil sem saber falar português é extremamente difícil para trabalhos de rotina. Embora existam histórias de sucesso, como a de um professor de inglês em São Paulo, elas não são a regra. Para aqueles sem habilidades especializadas ou trabalho remoto, as opções limitam-se a cargos de baixa remuneração ou exigem o aprendizado intensivo do idioma. Imigrantes de outros países da América Latina também enfrentam desafios, mas podem ter expectativas econômicas diferentes ou encontrar trabalho em comunidades específicas.</li>
+    <li>Para encontrar um professor de língua russa no Brasil para um falante nativo de português: 
+1. **Preply:** Pesquise por professores de russo na Preply. Muitos são nativos e também falam português.
+2. **Indicações diretas:** Se você tiver pessoas específicas em mente que ensinam russo e sejam adequadas (por exemplo, Luis ou outro contato recomendado), forneça os detalhes delas.
+3. **Recomendação pessoal:** Busque recomendações de professores com experiência no ensino de russo como língua estrangeira para brasileiros.</li>
+    <li>A pensão social no Brasil é conhecida como Benefício de Prestação Continuada (BPC). É equivalente a um salário mínimo. Elegibilidade: idade mínima de 70 anos (para a pensão social), requer cidadania brasileira (embora residentes com residência permanente possam entrar com ação judicial para obtê-la) e limites rigorosos de renda familiar per capita (geralmente 1/4 do salário mínimo). É necessário um mínimo de 15 anos de contribuições para a aposentadoria padrão, o que o BPC não é.</li>
+    <li>Uma oferta de trabalho remoto voltada para especialistas que falam russo no Brasil foi publicada. A remuneração oferecida é de US$ 260 por dia para um turno matutino (6:30-11:30) e US$ 310 por dia para um turno noturno (17:30-22:30). Este trabalho pode potencialmente ser combinado com um emprego já existente.</li>
+    <li>Cursos de língua portuguesa recomendados no Brasil para preparação para exames incluem a UFRJ (Universidade Federal do Rio de Janeiro) no Rio de Janeiro (acessível pelo ônibus 485 de Copacabana ao Fundão) e a UFBA (Universidade Federal da Bahia) ou a escola particular &#39;Idioma&#39; em Salvador.</li>
+    <li>Esclareça as implicações fiscais de receber transferências financeiras de parentes no Brasil. Diferencie &#39;doação&#39; de &#39;ajuda material&#39;. Explique que as doações estão sujeitas ao Imposto sobre Transmissão Causa Mortis e Doação (ITCMD), um imposto estadual, e descreva as condições sob as quais essas transferências podem ser consideradas rendimento ou doação para fins fiscais. Além disso, explique as implicações fiscais para não residentes e a possível exigência de declarar bens.</li>
+    <li>Empreendedor buscando informações e percepções locais para abrir um salão de beleza no Brasil. O usuário está decidindo entre o Rio de Janeiro e Florianópolis, chegará ao Rio em breve e busca se conectar com falantes de russo para obter conselhos e realizar possíveis reuniões.</li>
+    <li>Para indivíduos que trabalham remotamente para empresas russas enquanto residem no Brasil, as implicações fiscais são uma preocupação. Alguns relatam pagar impostos na Rússia sem problemas por parte do Brasil, mesmo com status de residência. Os fundos geralmente são movimentados por meio de cartões de países da CEI, criptomoedas ou serviços de câmbio, com alguns mantendo contas em países como Geórgia ou Armênia. Embora o Brasil possa ocasionalmente solicitar números de identificação fiscal, isso parece ser menos rigoroso do que na Argentina em relação ao monitoramento de gastos. Recomenda-se a legalização da renda, mesmo que proveniente de economias.</li>
+    <li>Ao escolher uma cidade para um estágio no Brasil, considere Curitiba por sua melhor infraestrutura e ambiente urbano mais previsível. Cidades no Nordeste (Maceió, Aracaju) oferecem praias melhores, mas uma conectividade cultural e de transporte significativamente menor em comparação com as regiões Sul e Sudeste.</li>
+    <li>Ao considerar a imigração para fins de negócios na América Latina, especificamente Brasil versus Peru, observe as possíveis diferenças nas regras de constituição de empresa para trabalho autônomo que leva à residência (VNH). Regras geradas por IA sugerem que o trabalho autônomo via empresa própria para VNH pode ser restrito no Brasil em comparação ao Peru. Caminhos alternativos de legalização incluem casamento ou nascimento de filho. Recomenda-se contratar especialistas locais para a preparação do caso.</li>
+    <li>Explique o procedimento para a prorrogação de visto ou legalização da permanência no Brasil, especificamente em relação aos procedimentos da Polícia Federal em Belo Horizonte. Informe se o agendamento prévio, o preenchimento de formulários e o pagamento de taxas são necessários. Esclareça os métodos de pagamento (por exemplo, PIX, dinheiro em lotéricas) e o processo para obter as guias de pagamento. Detalhe os passos para agendar um atendimento e possíveis problemas com atrasos no agendamento que levem a multas por excesso de permanência.</li>
+    <li>A tradução de &#39;rigger&#39; para o português brasileiro é complexa. &#39;Atirador&#39; traduz-se como &#39;sniper&#39;, o que não é o termo correto. O termo &#39;slinger&#39; pode ser usado como um anglicismo, mas pode não existir uma palavra específica em português brasileiro comumente usada para &#39;rigger&#39; ou ela pode não ser amplamente reconhecida. Pesquisas linguísticas adicionais podem ser necessárias para encontrar um termo preciso e de uso comum.</li>
+    <li>Expatriados que obtêm residência no Brasil devem apresentar sua primeira declaração de IRPF (Imposto de Renda Pessoa Física) no ano seguinte ao ano em que se tornaram residentes (por exemplo, residência em 2026 exige a declaração em maio de 2027). A renda auferida antes da data oficial de residência não é tributada no Brasil, mas todos os ativos e economias em dinheiro mantidos globalmente no início da residência devem ser declarados. Isso estabelece uma base para a avaliação do crescimento futuro do patrimônio. Embora a prova de origem não seja solicitada no momento da declaração, a documentação (por exemplo, extratos de saques bancários) deve ser guardada por 5 anos em caso de uma auditoria futura.</li>
+    <li>O envio de pertences pessoais entre a Rússia e o Brasil por meio de serviços postais oficiais não é recomendado devido a impostos potencialmente altos, mesmo para itens comuns como chá, chocolate ou roupas usadas. Considere métodos alternativos, como o uso de companheiros de viagem para o envio internacional.</li>
+    <li>Florianópolis é discutida como um local em potencial. As opiniões variam: alguns elogiam o clima agradável, a comunidade de TI, as startups e as praias, observando que os preços dos imóveis são mais altos em comparação com a média brasileira, mas não extremos para os padrões globais de cidades. Outros a descrevem como fria e úmida, com aluguéis caros e clima ruim na maior parte do ano, mencionando que o mar é mais frio do que no norte do Brasil. É considerada boa para profissionais de TI e startups.</li>
+    <li>Famílias de expatriados que falam russo no Brasil (por exemplo, em Recife) às vezes contratam babás temporárias que falam russo. Um pacote salarial inicial típico para um contrato de curto prazo é de cerca de 1.000 USD por mês, muitas vezes incluindo custos de realocação/passagens aéreas dentro do Brasil e acomodação gratuita.</li>
+    <li>Em português, de forma semelhante a como as vogais podem se reduzir em sílabas átonas no russo (por exemplo, o &#39;o&#39; tornando-se &#39;a&#39;), o português também apresenta redução vocálica. Especificamente, o som de &#39;o&#39; em sílabas átonas frequentemente reduz-se para um som de &#39;u&#39;. Este é um traço fonético comum no português brasileiro.</li>
+    <li>Existem indícios de que prestadores de serviço russos no Brasil podem cobrar preços significativamente mais altos de outros russos em comparação com as tarifas locais. Exemplos incluem taxas para abertura de CNPJ e assinatura de documentos legais, onde os custos para russos podem ser desproporcionalmente maiores do que para cidadãos brasileiros. Isso sugere uma prática de lucrar sobre a comunidade russa.</li>
+    <li>No Brasil, a residência fiscal é geralmente estabelecida ao obter um visto de residência temporária ou permanente (Visto de Residência) ou ao residir no país por mais de 183 dias dentro de um período de 12 meses, o que ocorrer primeiro. Para indivíduos com tipos de visto específicos, como aqueles emitidos devido ao nascimento no Brasil, a residência fiscal pode ser estabelecida a partir da data em que o visto é concedido. A data exata em que se torna um residente fiscal pode depender das circunstâncias específicas e do tipo de visto ou autorização obtida.</li>
+    <li>Discuta as taxas de juros de hipotecas no Brasil em comparação com a Rússia. Explique que as taxas de hipoteca brasileiras (por exemplo, 10-14%) são geralmente mais altas do que as taxas subsidiadas na Rússia (por exemplo, 3-6%). Detalhe programas como o &#39;Minha Casa Minha Vida&#39; e suas taxas de juros típicas. Discuta a viabilidade e os desafios de usar fundos de hipotecas russos ou capital de maternidade para compras de imóveis no Brasil, incluindo as complexidades do câmbio e potenciais obstáculos regulatórios.</li>
+    <li>As universidades públicas no Brasil são altamente competitivas e exigem proficiência em português (nível C1) e a aprovação no exame ENEM. As universidades privadas são mais acessíveis, com mensalidades que variam de 500 a 3000 BRL, dependendo da instituição e do curso. Os cursos de Medicina são significativamente mais caros.</li>
+    <li>Experiência de realocação no Rio de Janeiro (bairro Recreio) após 1,5 mês: A moradia é satisfatória, com serviços de entrega e comodidades convenientes. As opções de alimentação são boas e acessíveis. O Uber é preferível ao 99 devido ao custo e ao serviço. O sistema de pagamento PIX sofreu um bloqueio de um mês devido a sanções. O clima em dezembro é quente e com muito sol. A ética de trabalho local pode ser diferente, com menos ênfase em &#39;lucro&#39; e &#39;esforço&#39;. A beleza natural é abundante, e áreas como Ipanema são movimentadas, mas calmas. O período noturno no Recreio pode ser silencioso e escuro após as 20h.</li>
+    <li>Para estrangeiros que se mudam para o Brasil, encontrar emprego sem os documentos brasileiros adequados (RNM, CPF, carteira de trabalho) e sem proficiência no idioma português é extremamente difícil. O inglês e o espanhol básico geralmente não são suficientes para a maioria dos cargos. Mesmo com o status de refugiado, o período inicial exige a obtenção de documentos temporários (RNM de papel na hora, RNM de plástico em meses, CPF em dias) e uma carteira de trabalho digital. Plataformas de busca de emprego, como os equivalentes locais do &#39;hh&#39; (HeadHunter), podem ser usadas, mas as oportunidades são escassas sem o português. São Paulo geralmente oferece salários mais altos do que cidades como Fortaleza. Empregos que exigem comunicação verbal mínima (por exemplo, saneamento, limpeza) são mais acessíveis. Encontrar trabalho que inclua moradia é altamente improvável.</li>
+    <li>Para obter um visto de trabalho para o Brasil, o patrocínio de um empregador é normalmente exigido. Documentos essenciais incluem certidão de nascimento com apostila, diploma com apostila e atestado de antecedentes criminais com apostila. Se viajar com a família, as certidões de nascimento e de casamento deles, todas com apostila, também são necessárias. Esses documentos devem ser traduzidos por um tradutor juramentado e submetidos ao Ministério do Trabalho. A solicitação deve especificar o país e a cidade fora do Brasil onde o visto físico será emitido. O tempo de processamento para a decisão é de aproximadamente 3 a 4 meses. Após uma decisão positiva, extensos formulários online devem ser preenchidos e um agendamento deve ser feito para a entrega dos documentos. Em Moscou, o processamento do visto levou cerca de uma semana. Após a chegada ao Brasil, etapas adicionais envolvem a polícia de imigração.</li>
+    <li>Levanta-se uma questão sobre a diferença entre escolas internacionais e escolas regulares no Brasil. Especificamente, pergunta-se se as escolas internacionais acomodam alunos estrangeiros que podem não entender o professor, oferecendo flexibilidades nas avaliações para esses casos.</li>
+    <li>Brasileiros têm dificuldade com consoantes consecutivas como &#39;D&#39; e &#39;M&#39; em nomes (por exemplo, &#39;Dmitry&#39; frequentemente torna-se &#39;Djimytriy&#39;). Aconselha-se que expatriados usem a forma curta simplificada &#39;Dima&#39; para interações sociais diárias e reservem &#39;Dmitry&#39; apenas para documentação legal.</li>
+    <li>O Encceja é o exame exigido para a naturalização para comprovar o nível educacional equivalente aos padrões brasileiros. Ele abrange matérias fundamentais (ciências sociais, história, etc.). Não se trata apenas de um teste de proficiência no idioma. Pais de cidadãos brasileiros podem solicitar a naturalização após 1 ano de residência permanente. O exame pode ser feito por áreas de conhecimento; as seções em que o candidato for reprovado podem ser refeitas em anos subsequentes.</li>
+    <li>Equipes que iniciam empreendimentos comerciais no Brasil frequentemente buscam consultores que falem russo e que tenham mais de 10 anos de experiência em várias cidades brasileiras para fornecer insights sobre a mentalidade e as práticas comerciais locais.</li>
+    <li>O mercado de trabalho brasileiro apresenta altas taxas de desemprego. Estrangeiros frequentemente enfrentam dificuldades significativas para encontrar emprego formal. Profissões regulamentadas (veterinária, medicina, etc.) exigem reconhecimento de diploma rigoroso e acreditação local. Os setores de beleza, serviços e criativo muitas vezes dependem da demanda local e de requisitos estaduais específicos.</li>
+    <li>No Brasil, há ampla disponibilidade de empregos, mas os salários locais podem não atender às expectativas de todos. A proficiência na língua portuguesa é essencial para trabalhar com os locais. A acomodação está facilmente disponível em várias faixas de preço. Observe que muitas organizações não contratam indivíduos apenas com autorização de residência temporária (VNH), enquanto algumas empregam trabalhadores sem documentos.</li>
+    <li>Ao se tornar residente fiscal no Brasil (normalmente após 183 dias de estadia), a renda estrangeira, incluindo a proveniente de trabalho remoto ou negócios na Rússia, passa a estar sujeita à tributação brasileira. O Brasil aplica impostos sobre a renda global. Existe um acordo sobre bitributação entre a Rússia e o Brasil, mas as alíquotas de impostos brasileiras podem ser mais altas que as russas.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/pt/br/transportes/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transportes</span></a>
+    <a class="chip" href="/pt/br/documentos-e-vistos/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentos e Vistos</span></a>
+    <a class="chip" href="/pt/br/bilhetes-e-lazer/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Bilhetes e Lazer</span></a>
+    <a class="chip" href="/pt/br/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/pt/br/bancos-e-finan-as/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Bancos e Finanças</span></a>
+    <a class="chip" href="/pt/br/seguran-a/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Segurança</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Não encontrou o seu caso?</h2>
+    <p>Pergunte ao Luky — pela experiência recente das pessoas, não por manuais.</p>
+    <p>E o Luky é um tradutor de voz para conversas reais: e o garçom não vai confundir o seu pedido.</p>
+    <p class="ps">PS: conheça alguém num bar que fala outra língua</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir o Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiência real dos chats de comunidades, sem enrolação</div>
+    <nav class="f-links">
+      <a href="/pt/about/">Sobre</a>
+      <a href="/pt/br/">Todos os temas</a>
+      <a href="/pt/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">As respostas são reunidas de chats abertos de comunidades — é a experiência real das pessoas, não aconselhamento oficial. Verifique antes de decisões importantes.</p>
+    <div class="f-copy">© 2026 Luky · atualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noite", DAY="\u2600 Dia";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

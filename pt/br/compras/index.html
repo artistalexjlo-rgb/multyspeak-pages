@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brasil: Compras — experiência real · Luky</title>
+<meta name="description" content="Experiência real dos chats sobre Compras em Brasil: como é, em primeira mão. Para o seu caso — pergunte ao Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/pt/br/compras/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/br/compras/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/br/compras/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/br/compras/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/br/compras/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/br/compras/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · qualquer país · sem enrolação</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noite</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/pt/">Início</a> /
+    <a href="/pt/br/">Brasil</a> /
+    <b>Compras</b>
+  </nav>
+
+
+  
+  <h1>Compras em Brasil: experiência real dos chats</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiência real de pessoas dos chats sobre «Compras» em Brasil — como é, sem enrolação. Para o seu caso — <strong>pergunte ao Luky</strong>.</div></div>
+
+  <h2>Da experiência real</h2>
+  <ul class="qlist">
+    <li>Stone é uma marca de terminais de pagamento usados em alguns pontos de venda e farmácias no Brasil. Eles não são universais; a disponibilidade é esporádica e depende do provedor de pagamento do comerciante específico.</li>
+    <li>Os preços de eletrônicos e eletrodomésticos no Brasil são geralmente mais altos do que na Rússia, mesmo considerando as importações paralelas para a Rússia. iPhones e MacBooks são notavelmente caros no Brasil. Embora algumas marcas locais ou produtos fabricados na China possam parecer mais baratos inicialmente, a acessibilidade geral e a qualidade em comparação com os preços do mercado russo (incluindo importações paralelas) devem ser cuidadosamente avaliadas. Por exemplo, uma chaleira simples pode quebrar rapidamente, e até frutas como a pitaia podem ser relativamente caras. Considere comprar esses itens em outros países, como o Paraguai, ou até mesmo na Rússia para obter melhor custo-benefício, dependendo das condições atuais do mercado e dos regulamentos de importação.</li>
+    <li>Os preços de eletrônicos no Brasil são aproximadamente 2,5 vezes mais altos do que na Rússia. Os moradores locais costumam viajar para o Paraguai para comprar dispositivos da Apple e outros eletrônicos por preços significativamente menores, evitando impostos de importação locais e sobrepreços.</li>
+    <li>A busca por moradia no Brasil está em andamento, com um possível aluguel identificado, mas ainda não finalizado. Há um prazo apertado, com a estadia no Airbnb terminando em pouco mais de uma semana. Os planos incluem comprar uma geladeira via Avito. A moradia identificada não possui ar-condicionado, o que é uma preocupação, já que muitos acham difícil viver sem ar-condicionado no Brasil. Unidades de ar-condicionado portáteis estão sendo consideradas como alternativa.</li>
+    <li>Identifique restaurantes russos ou serviços de buffet que preparem comida russa no Rio de Janeiro. O usuário deseja servir conhecidos locais e prefere não cozinhar.</li>
+    <li>O cadastro no Mercado Livre no Brasil não é mais possível com um número de telefone russo. Uma autorização de residência brasileira (VNM) é necessária agora para a criação de conta.</li>
+    <li>Uma consulta frequente dos usuários diz respeito à disponibilidade e confiabilidade de lojas online brasileiras que oferecem serviços de entrega direta para a Rússia. Isso indica uma demanda por informações abrangentes sobre rotas logísticas de comércio eletrônico internacional entre o Brasil e a Rússia.</li>
+    <li>Ao fazer compras no Brasil com um cartão de crédito ou débito denominado em dólares americanos, geralmente é mais vantajoso optar pelo pagamento na moeda local (reais brasileiros, BRL) em vez de dólares americanos. Isso ocorre porque a taxa de câmbio oferecida pelo banco emissor do seu cartão é tipicamente mais favorável do que a taxa de conversão dinâmica de moeda (DCC) fornecida pelo terminal de pagamento do comerciante.</li>
+    <li>Mapa offline interativo do Brasil para o MAPS.ME com 115 pontos de interesse marcados, incluindo atrações, restaurantes e locais para fotos. Oferece navegação passo a passo. Preço: 599 BRL.</li>
+    <li>Aplicativos populares no Brasil para transporte e entrega de comida semelhantes ao Grab incluem Uber e 99 para táxis, e iFood para entrega de comida. Mototáxis também estão disponíveis, com opções para vincular cartões de pagamento.</li>
+    <li>No Brasil, os usuários podem comprar criptomoedas com rublos (ou outras moedas fiduciárias) e usar o aplicativo da Bybit para pagar comerciantes diretamente através da infraestrutura do sistema de pagamentos local brasileiro (integração com o Pix).</li>
+    <li>Promoção de um mapa de viagem interativo para o Brasil disponível para o MAPS.ME. O mapa inclui 115 pontos de interesse (pontos turísticos, atrações, locais para fotos) e oferece navegação offline. O preço é de 599 rublos.</li>
+    <li>A Amazon oferece serviços de entrega para o Brasil. Impostos alfandegários são aplicáveis a bens importados, incluindo eletrônicos novos e usados. Recomenda-se verificar os preços e as condições de envio no amazon.com.br, a plataforma local da Amazon, para entender o custo total, incluindo possíveis impostos.</li>
+    <li>Durante a pandemia de COVID-19 no Brasil (2020-2022), as restrições variaram por região e espaços públicos. Geral: O uso de máscaras era frequentemente obrigatório em locais fechados (por exemplo, lojas no Rio), recomendado em locais abertos, mas não rigorosamente fiscalizado pela polícia em todas as áreas. A vacinação foi amplamente incentivada, mas obrigatória para atividades específicas (por exemplo, entrada em academias, admissão em universidades, viagens para Fernando de Noronha). São Paulo: Passou por períodos de lockdown severo com cidades vazias. Rio de Janeiro: Os cidadãos eram rigorosos quanto ao uso de máscaras em lojas; as praias eram fechadas e as pessoas eram, às vezes, retiradas pela polícia. Restrições de viagem foram implementadas para algumas áreas (por exemplo, Búzios exigia comprovante de residência). Áreas rurais/remotas: As restrições eram frequentemente menos rigorosas ou ignoradas, com pessoas se reunindo sem máscaras.</li>
+    <li>O Brasil utiliza plugues do tipo N (três pinos) e, às vezes, do tipo C (dois pinos, mas frequentemente embutidos). Plugues europeus padrão (Tipo C/F) podem não encaixar em tomadas do tipo N com aterramento devido ao recesso. Viajantes devem procurar um &#39;adaptador de tomada&#39; em lojas de ferragens locais ou supermercados.</li>
+    <li>Restaurantes brasileiros self-service (por quilo) calculam os custos pelo peso. Os preços podem variar com base nos itens alimentares (carnes são muitas vezes cobradas separadamente) ou no horário do dia. Embora raro, turistas (&#39;gringos&#39;) podem ocasionalmente enfrentar discrepâncias de preço; recomenda-se verificar o recibo ou perguntar sobre a política de preços.</li>
+    <li>No Rio de Janeiro, especificamente no bairro de Botafogo, o Botafogo Praia Shopping abriga um restaurante na cobertura em um dos seus andares superiores (supostamente o 9º andar). Este restaurante oferece uma vista espetacular da baía e é conhecido pelos seus preços acessíveis, tornando-se uma boa opção para jantar com vista.</li>
+    <li>Os usuários devem estar cientes de que os serviços de entrega de comida e mercado no Brasil, como o iFood, podem apresentar limitações significativas. Isso inclui restrições no número de itens por pedido (por exemplo, 12 itens), disponibilidade limitada de certas culinárias e horários de funcionamento inconsistentes para muitos estabelecimentos. Nem sempre é possível pedir uma grande variedade de produtos a qualquer momento, ao contrário do que ocorre em grandes cidades internacionais.</li>
+    <li>A maioria das lojas no Brasil aceita pagamentos via celular (Google Pay, Apple Pay). Ao pagar com um cartão internacional pelo celular, instrua o caixa a processar como &#39;cartão de crédito&#39;, pois é assim que os cartões internacionais são normalmente identificados.</li>
+    <li>Para visitar o Cristo Redentor (Corcovado) no Rio de Janeiro: 1. Compre ingressos online com antecedência (recomendado um dia antes). 2. O Trem do Corcovado custa 128 BRL para uma viagem de ida e volta, incluindo a entrada; pesquise &#34;tremdocorcovado rio&#34; para ingressos. Alternativamente, compre um ingresso combinado com uma van. 3. Visitas matinais (por exemplo, às 8h) ajudam a evitar longas filas para a subida, embora o topo ainda esteja lotado. Espere cerca de 20 minutos de fila para a descida. 4. Evite combinar táxis com ônibus locais para chegar ao monumento. 5. Fotógrafos pagos oferecem 4 fotos digitais por 120 BRL. Lembranças estão disponíveis (por exemplo, 3 chaveiros por 20 BRL).</li>
+    <li>Para comprar um adaptador de tomada no Rio de Janeiro, considere procurar lojas de eletrônicos na Rua Barata Ribeiro. É provável que essas lojas ofereçam uma variedade de opções a preços razoáveis.</li>
+    <li>Opções de self-storage mensal em São Paulo estão disponíveis a partir de 75 BRL/mês (mais 50 BRL de seguro obrigatório). O tamanho mínimo da unidade é de 1x1,5x0,9 metros. Preços e disponibilidade são dinâmicos. A localização mencionada é Pinheiros, com opções mais baratas em outros bairros.</li>
+    <li>Os preços do hardware da Starlink no Brasil estão atualmente mais baixos do que nos EUA, com o terminal Mini custando cerca de R$ 799 para o plano &#39;Travel&#39;. Esteja ciente de que opções de hardware mais baratas geralmente vêm com contratos de serviço anuais que não permitem a suspensão do plano. Sempre verifique o contrato de serviço quanto à &#39;fidelidade&#39; (período de compromisso) antes da compra.</li>
+    <li>Dispositivos de vaping/IQOS são proibidos no Brasil. Consequentemente, não estão prontamente disponíveis em canais de varejo oficiais no Rio de Janeiro. Embora alguns indivíduos possam encontrá-los por meio de vendedores não oficiais a preços inflacionados ou solicitando-os a outros viajantes, sua venda e distribuição são ilegais.</li>
+    <li>Efetuar pagamentos em marketplaces brasileiros (como o Mercado Livre) com cartões bancários estrangeiros ou via Pix através de cartões de criptomoedas não brasileiros frequentemente aciona bloqueios de segurança. Usuários relatam que contas são frequentemente suspensas, exigindo documentos de identidade/residência locais para recuperação. Recomenda-se usar métodos de pagamento locais ou contas bancárias locais para evitar a perda de acesso.</li>
+    <li>É prática comum em restaurantes brasileiros adicionar uma taxa de 10% de &#39;serviço&#39; à conta final. Embora frequentemente adicionada automaticamente, ela é tecnicamente opcional, mas amplamente esperada pela equipe de atendimento.</li>
+    <li>Algumas pessoas estão explorando métodos de pagamento alternativos para uso no Brasil, como um cartão do Ayil Bank, apesar de reconhecerem que talvez não seja a opção mais recomendada.</li>
+    <li>Ao usar o Mercado Livre no Brasil, pagar diretamente via Pix pode acionar bloqueios automáticos de conta ou retenções de segurança. Usuários relatam maior sucesso com métodos de pagamento alternativos, como cartões virtuais lastreados em cripto (ex.: Bybit), para compras na plataforma.</li>
+    <li>Um novo usuário entra no chat perguntando sobre a vida no Brasil, incluindo adaptação, saúde e experiências de parto. As respostas indicam que a vida no Brasil é, no geral, positiva. A qualidade da saúde pode variar, mas existem boas opções privadas. Informações sobre parto estão disponíveis em um chat separado. O Brasil é comparado ao México, sendo observado que são países diferentes. Também é mencionado que eletrônicos tendem a ser caros no Brasil.</li>
+    <li>Camisetas de times de futebol podem ser encontradas em mercados de souvenir e ao longo do calçadão da praia em São Paulo. Elas também estão disponíveis em barracas perto do MASP, na Avenida Paulista.</li>
+    <li>Os restaurantes brasileiros geralmente incluem uma taxa de serviço obrigatória de 13% (&#34;gorjeta&#34;) na conta. Não é habitual deixar gorjetas além disso, o que às vezes pode levar a uma menor motivação percebida no atendimento. O inglês raramente é falado pelos funcionários dos restaurantes, mesmo em estabelecimentos de alto padrão, o que pode criar dificuldades de comunicação para os turistas.</li>
+    <li>Ao considerar a compra de eletrodomésticos de grande porte, como geladeiras, máquinas de lavar ou micro-ondas no Brasil, esteja ciente de que os preços podem ser significativamente mais altos do que na Rússia ou em outros mercados, mesmo para marcas mundialmente reconhecidas. Embora a China domine a fabricação, os preços locais e a qualidade percebida podem variar. Por exemplo, micro-ondas da Midea, apesar do domínio da produção global, podem ser mais caros no Brasil do que na Rússia. É aconselhável pesquisar modelos específicos e comparar preços em varejistas e, possivelmente, em marketplaces online como a Shopee. Esteja preparado para uma qualidade de materiais potencialmente inferior (por exemplo, componentes de plástico em vez de metal) em alguns aparelhos, em comparação com os vendidos em outras regiões.</li>
+    <li>É possível obter um CPF (Cadastro de Pessoas Físicas) brasileiro online sem estar fisicamente no Brasil. Este método pode ser usado, por exemplo, para criar novas contas em plataformas como o Mercado Livre caso uma conta anterior tenha sido bloqueada devido a problemas como transações via Bybit Pay ou outros alertas de segurança financeira, já que as contas do Mercado Livre são vinculadas ao CPF.</li>
+    <li>Cartões bancários bielorrussos são amplamente rejeitados por grandes plataformas online no Brasil (Uber, Booking, Airbnb, iFood) devido a sanções internacionais. Usuários relatam falhas constantes no pagamento. Viajantes são aconselhados a levar dinheiro em espécie para despesas diárias, transporte público e táxis locais. Aplicativos de reserva, como o Airbnb, frequentemente exigem pagamentos via aplicativo, e terminais de pagamento físico em pequenos cafés ou transporte de baixo custo podem não aceitar cartões bielorrussos.</li>
+    <li>Em São Paulo, Brasil, não existem grandes outlets comparáveis aos grandes centros de desconto encontrados em outros países, como os próximos a Moscou. Existem vários &#39;Premium Outlets&#39; fora da cidade, mas os descontos significativos geralmente são limitados a categorias específicas, como calçados esportivos e óculos.</li>
+    <li>No Brasil, o dinheiro em espécie não é amplamente utilizado por alguns usuários. As recomendações incluem usar Revolut ou Wise por suas taxas de conversão favoráveis. No entanto, certos estabelecimentos, particularmente casas noturnas, ainda podem exigir pagamentos em dinheiro.</li>
+    <li>Usuários que tentam efetuar pagamentos via Pix, o sistema de pagamentos instantâneos do Brasil, em plataformas como a Shopee podem encontrar problemas com os formatos de número de telefone, especialmente ao usar números não brasileiros. Embora experiências passadas sugiram que números de telefone russos eram aceitos, problemas recentes podem indicar uma mudança na política ou uma falha no sistema que exige um número brasileiro ou uma investigação mais aprofundada junto ao suporte da plataforma.</li>
+    <li>Compre o novo mapa de viagem interativo do MAPS.ME para o Brasil por 599 BRL. O mapa inclui 115 pontos de interesse (atrações, restaurantes, locais para fotos) e funciona offline com navegação passo a passo.</li>
+    <li>Um novo mapa de viagem para o MAPS.ME está disponível para o Brasil. Ele inclui 115 pontos de interesse: lugares para ver, passear, comer e tirar fotos. O mapa funciona offline e oferece navegação passo a passo. O custo é de 599 Reais brasileiros.</li>
+    <li>Um novo mapa de viagem offline para o MAPS.ME foi criado para o Brasil, apresentando 115 pontos de interesse, incluindo atrações, locais para refeições e pontos fotográficos, com navegação passo a passo. O mapa está disponível para compra por 599 reais brasileiros.</li>
+    <li>Métodos de pagamento no Brasil: o Pix (pagamentos por QR code) muitas vezes pode ser processado sem um CPF. Alguns bancos russos, como o Sberbank, podem oferecer suporte a pagamentos Pix diretos via aplicativo. O registro em certas plataformas ainda pode exigir um CPF.</li>
+    <li>Ao trazer uma única peça de joalheria artesanal para o Brasil sem nota fiscal, é aconselhável declará-la à alfândega para evitar possíveis problemas. Embora itens pessoais sejam geralmente tolerados, a ausência de documentação para itens valiosos pode levantar questionamentos.</li>
+    <li>No Brasil, pagamentos com cartão são amplamente aceitos e a necessidade de dinheiro vivo é pouco frequente. A maioria das transações pode ser feita usando cartões de crédito ou débito.</li>
+    <li>No Brasil, pagamentos com cartão são amplamente aceitos, inclusive por muitos vendedores de praia. No entanto, alguns locais específicos podem aceitar apenas dinheiro, como banheiros públicos na praia de Copacabana e certos museus localizados em bases militares (por exemplo, em Copacabana).</li>
+    <li>Ao estar no Rio de Janeiro, explore as delícias culinárias locais além dos serviços de entrega. Procure pratos brasileiros tradicionais como Feijoada (um cozido substancial de feijão com várias carnes, geralmente servido às quartas-feiras e sábados), Pão de Queijo, Açaí (tigela de frutas da Amazônia), Churrasco (geralmente no estilo rodízio) e Moqueca (cozido de peixe ou frutos do mar). Para restaurantes e bares, explore bairros como Copacabana, Ipanema e Leblon para opções mais sofisticadas, ou a Lapa para locais mais boêmios e animados. Pergunte aos moradores locais quais são seus &#39;botecos&#39; favoritos (bares casuais que servem petiscos e bebidas) para uma experiência autêntica.</li>
+    <li>Os cartões russos UnionPay têm funcionalidade limitada no Brasil. Embora o saque de dinheiro em caixas eletrônicos (especificamente mencionando os caixas eletrônicos vermelhos, como o Banco24Horas) seja geralmente possível, pagamentos diretos com cartão em lojas ou restaurantes são raros. É aconselhável que os viajantes levem dinheiro suficiente ou métodos de pagamento alternativos, pois depender exclusivamente do UnionPay para transações pode ser inconveniente.</li>
+    <li>O Brasil utiliza 220V a 60Hz. As tomadas elétricas são semelhantes às europeias, mas incluem um terceiro pino de aterramento. Plugues europeus padrão não encaixarão. Recomenda-se trazer uma extensão com um plugue chato ou montar uma. Embora os eletrônicos funcionem, motores podem superaquecer, exigindo monitoramento cuidadoso.</li>
+    <li>No Brasil, a maneira mais eficiente de pagar por bens e serviços é usando o sistema Pix. Turistas costumam utilizar corretoras de criptomoedas P2P (como a Bybit) para converter USDT em BRL, que é então transferido via Pix para uma conta local ou usado diretamente para pagamentos via QR code.</li>
+    <li>Ter um CPF (Cadastro de Pessoas Físicas) no Brasil é ter um número de identificação fiscal e não implica inerentemente em um endereço residencial registrado para fins de imigração. Ao entrar no Brasil, é improvável que os agentes de imigração peçam comprovante de acomodação além da confirmação do status de turista, que costuma ser a única pergunta feita. Se for questionado especificamente sobre a acomodação, fornecer o endereço e o número de telefone do seu anfitrião ou local de hospedagem é geralmente suficiente, mesmo sem uma reserva formal de hotel. O CPF também pode ser usado para obter descontos em alguns supermercados brasileiros mediante cadastro em seus respectivos sites.</li>
+    <li>No Brasil, não existem lojas oficiais da IQOS. No entanto, bastões HEETS para IQOS podem ser encontrados em tabacarias locais. Por exemplo, a Casa de Fumo Poço Fundo, localizada na Rua Marechal Deodoro, 25, Centro, em Três Pontas, pode tê-los. Recomenda-se ligar com antecedência para confirmar a disponibilidade.</li>
+    <li>São discutidos desafios climáticos no sul do Brasil, incluindo umidade, mofo e correntes de ar frio que exigem roupas quentes. Problemas de qualidade da moradia, como falta de aquecimento e prevalência de correntes de ar e mofo, são destacados. Embora existam soluções como piso aquecido, elas são impraticáveis para inquilinos. A tendência dos habitantes locais de se vestirem muito agasalhados em temperaturas mais amenas (em torno de 20°C) também é observada.</li>
+    <li>Ao levar presentes para o Brasil, evite caviar vermelho ou peixe salgado, pois os habitantes locais frequentemente os consideram crus e inseguros. Os presentes recomendados incluem chá preto com bergamota, vodca russa, barras de chocolate/doces pesados e sementes de girassol torradas embaladas (que só são vendidas cruas em pet shops brasileiros). O leite condensado não precisa ser importado, pois está amplamente disponível localmente.</li>
+    <li>Para alterar a região da conta para o Brasil para jogos online que exigem um pagamento local (por exemplo, 3,5 BRL), é necessário um cartão bancário brasileiro. Obter um CPF e abrir uma conta bancária apenas para este fim pode ser demorado. A assistência direta de pagamento por parte de indivíduos com cartões brasileiros geralmente não é fornecida devido a riscos de segurança e ao potencial fechamento da conta bancária. Alguns usuários podem considerar métodos alternativos, como o uso de uma VPN em conjunto com um cartão não brasileiro, se o serviço permitir, ou explorar métodos de pagamento menos diretos, se disponíveis. Números de CPF aleatórios podem não funcionar e o uso de dados de cartão de terceiros é fortemente desencorajado.</li>
+    <li>Apesar de haver relatos de que a fruta longan cresce no Brasil, ela raramente é encontrada à venda em supermercados comuns. Ela tem sido vista ocasionalmente em lojas específicas, como a Coopersica.</li>
+    <li>Pode não ser possível pedir uma entrega da HM para Florianópolis (Floripa) sem um número de identificação fiscal (CPF). Recomenda-se verificar mais informações com o varejista.</li>
+    <li>Carros no Brasil tendem a ter uma vida útil mais longa e são menos suscetíveis à ferrugem em comparação com os da Rússia, principalmente devido às condições climáticas. Embora a exposição à maresia e a negligência ainda possam causar deterioração, os veículos geralmente mantêm uma condição melhor por períodos prolongados. Um carro de 12 anos ainda pode estar em excelente estado, sugerindo uma longevidade robusta para automóveis no Brasil.</li>
+    <li>Encontrar café brasileiro de alta qualidade, especialmente em grãos com notas de chocolate para presentes, pode ser um desafio dentro do Brasil, particularmente em áreas turísticas como Copacabana. Embora o café moído possa ser mais facilmente encontrado, variedades em grãos podem ser escassas. Alguns recomendam comprar café brasileiro fora do Brasil devido a percepções de diferenças na cultura local do café e nos padrões de preparo. No entanto, cafeterias de especialidades em cidades como São Paulo oferecem experiências de degustação e opções de varejo para a compra de café, juntamente com aconselhamento especializado.</li>
+    <li>Encontrar cartões-postais turísticos em São Paulo pode ser um desafio. Eles podem estar disponíveis em pequenos quiosques, museus (como a Pinacoteca) ou em papelarias mais antigas. Viajantes relataram seleções melhores, embora ainda limitadas, no Rio de Janeiro.</li>
+    <li>As opções de alimentação no Brasil variam muito de preço. Em Guarulhos, um prato feito tradicional e farto (arroz, feijão, salada e uma proteína) custa cerca de 25 BRL. Restaurantes populares subsidiados pelo governo, chamados &#39;Bom Prato&#39;, servem refeições por aproximadamente 1,5 BRL, embora espere longas filas. Preços padrão de supermercado: 1,5 kg de carne bovina custa cerca de 60 BRL, arroz e feijão custam cerca de 5 BRL por pacote, e frutas picadas (abacaxi, melancia, maracujá) custam cerca de 22 BRL.</li>
+    <li>O Mercado Livre é uma plataforma confiável para comprar eletrodomésticos no Brasil a preços significativamente menores do que em lojas físicas. Dicas principais para os usuários: filtre sempre por &#39;frete grátis&#39; e observe que itens enviados da China já incluem impostos no preço exibido.</li>
+    <li>A cultura do café no Brasil varia significativamente; marcas de supermercado como Pilão podem ser muito torradas (nível 8). Grãos de alta qualidade são frequentemente difíceis de encontrar no varejo local, levando os residentes a importar grãos através de centros de trânsito como Adis Abeba. É comum servir café expresso com um pequeno copo de água mineral com gás para limpar o paladar.</li>
+    <li>Cartões bancários da Bielorrússia (por exemplo, Alfa-Bank) enfrentam atualmente problemas com carteiras digitais como o Apple Pay devido a sanções. Embora possam funcionar para pagamentos físicos em terminais de ponto de venda em lojas, eles estão cada vez mais instáveis para sites locais brasileiros ou aplicativos como o Uber.</li>
+    <li>Eletrônicos e muitos produtos de marca importados no Brasil são significativamente mais caros do que na Rússia ou em outros países, principalmente devido aos altos impostos de importação. A diferença de preço aumenta com o valor do item. Frequentemente, é mais econômico comprar tais itens (por exemplo, iPhones, componentes de PC, roupas de qualidade, peças automotivas) na Rússia ou em países vizinhos como o Paraguai, onde os preços seriam a metade dos do Brasil para eletrônicos (especialmente ao pagar em dólares). Ao se mudar para o Brasil, é recomendável trazer eletrônicos pessoais e itens domésticos caros. O controle alfandegário em aeroportos como o de São Paulo é seletivo, mas itens novos e lacrados (como iPhones) podem estar sujeitos a impostos de importação ou verificação de IMEI. Uma declaração de importação temporária é uma opção para itens de alto valor, mas muitos relatam que a bagagem não é inspecionada.</li>
+    <li>Para uma experiência gastronômica de carne premium (estilo churrascaria) com vistas cênicas no Rio de Janeiro, recomendo o &#39;Assador Rio&#39; (localizado no Aterro do Flamengo). É altamente elogiado pela qualidade dos cortes, pelo serviço e pela vista panorâmica da Baía de Guanabara.</li>
+    <li>No Rio de Janeiro, muitos estabelecimentos, incluindo supermercados, ficaram fechados no Natal. Uma situação semelhante é esperada para o dia 1º de janeiro, embora algumas empresas possam permanecer abertas. Os costumes locais e as tradições de feriados influenciam a disponibilidade de serviços.</li>
+    <li>O restaurante &#39;Sal e Brasa&#39; em Natal é altamente recomendado. É uma churrascaria com rodízio de carnes por 74,90 reais brasileiros (89,90 nos fins de semana). Bebidas e sobremesas são cobradas à parte. O buffet também inclui uma grande mesa de saladas e sushi.</li>
+    <li>A compra de chips locais (Vivo, TIM) no Brasil geralmente requer um passaporte e, muitas vezes, um CPF. A ativação em quiosques de aeroportos pode ser demorada; em lojas oficiais, pode envolver verificação verbal por telefone. Planos de dados pré-pagos estão amplamente disponíveis, mas podem não incluir um número de telefone necessário para o cadastro em aplicativos locais.</li>
+    <li>Um jovem imigrante (19 anos) encontrou-se no Brasil com status de refugiado, sem emprego e com recursos limitados após um plano de imigração fracassado com um parceiro. Ele estava pagando 700 USD/mês de aluguel em Recife, o que é considerado muito alto para sua situação. Os conselhos da comunidade incluem: priorizar empregos de sobrevivência (construção civil, entregas), reduzir custos de moradia significativamente (almejar menos de 1500 BRL/mês), utilizar restaurantes populares para alimentação barata/gratuita e evitar &#39;oportunidades de trabalho&#39; arriscadas em favelas. Trabalho remoto a partir da Rússia foi sugerido, mas o acesso a equipamentos era uma preocupação. A importância do planejamento financeiro realista e de evitar um custo de vida elevado sem renda estável é destacada.</li>
+    <li>As redes de supermercados em Brasília incluem Pão de Açúcar, Dona, Fartura e Big Box. Os usuários frequentemente relatam discrepâncias nos dados de mapeamento online devido ao fechamento ou manutenção de lojas locais. Recomenda-se verificar o status atual por meio de uma pesquisa local ou perguntando aos residentes.</li>
+    <li>Os principais aplicativos de entrega e comércio eletrônico no Brasil são: iFood (dominante em entrega de comida e mercado), Mercado Livre (plataforma de comércio eletrônico dominante com envio rápido), Rappi (entrega geral) e 99 (serviços de transporte e entrega).</li>
+    <li>Em São Paulo, Brasil, frutas como manga, abacate e acerola são abundantes e podem ser encontradas crescendo livremente. A nêspera (loquat) também está presente e às vezes é vendida em lojas como fruta exótica. Cogumelos, no entanto, são considerados caros, com preços variando de 6 a 10 BRL por 200 gramas para diversos tipos. Isso contrasta com observações de outras regiões brasileiras (por exemplo, Florianópolis), onde as mangas podem não amadurecer e os preços dos cogumelos são percebidos como normais.</li>
+    <li>Transferências diretas do Sberbank para o Nubank no Brasil via código QR funcionam, embora estornos ocasionais possam ocorrer. As taxas de câmbio para Sber-para-PIX/Nubank são frequentemente competitivas em comparação com a troca de dinheiro ou depósitos em cartões locais. A aceitação de pagamentos via QR do Sber é limitada a determinados estabelecimentos (por exemplo, cafés em aeroportos) e pode não ser aceita em todos os supermercados.</li>
+    <li>Ciudad del Este (Paraguai) é um centro de compras livre de impostos na Tríplice Fronteira com o Brasil e a Argentina. Os preços de eletrônicos são significativamente mais baixos do que no Brasil/Argentina devido às isenções fiscais. Moeda recomendada: USD em espécie. Espere uma variedade limitada de moda.</li>
+    <li>Os usuários podem comprar um mapa interativo para o MAPS.ME sobre o Brasil, ao custo de 599 rublos. O mapa inclui 115 pontos de interesse, funcionalidade offline e navegação passo a passo, projetado para ajudar os usuários a descobrir atrações turísticas, lugares para comer e oportunidades para fotos.</li>
+    <li>O McDonald&#39;s no Brasil lançou carrinhos colecionáveis da Fórmula 1 que esgotaram em poucas horas. Esses brinquedos estão sendo revendidos em plataformas como a OLX por preços significativamente mais altos (a partir de 160-170 reais). Relatos sugerem que funcionários do McDonald&#39;s podem ter estado envolvidos nas compras iniciais em grande quantidade.</li>
+    <li>Para encontrar tipos de carne específicos como peru, cordeiro ou pato no Brasil, use grandes redes de supermercados: Assaí, Atacadão ou Zona Sul. Para entrega, use o aplicativo &#39;iFood&#39; (esteja ciente de que a verificação geralmente exige um CPF local; às vezes, alguns pedidos pequenos iniciais são necessários para evitar o banimento da conta). As feiras locais também oferecem uma grande variedade de carnes frescas.</li>
+    <li>Argila para escultura geralmente pode ser comprada em São Paulo em lojas de artigos para arte, lojas de artesanato ou papelarias grandes. Marketplaces online como o Mercado Livre também podem oferecer uma seleção.</li>
+    <li>A qualidade e a disponibilidade de pão no Brasil são assuntos de discussão entre expatriados. Embora alguns achem o pão de qualidade inferior e com vida útil curta, outros destacam a disponibilidade de opções artesanais, particularmente pão de fermentação natural, em certas áreas como Florianópolis. O acesso a várias farinhas, incluindo centeio e trigo integral, através de lojas locais e marketplaces online (como o Mercado Livre) permite o preparo doméstico de pão de alta qualidade. A farinha de centeio está disponível em algumas regiões por aproximadamente 20 BRL por kg.</li>
+    <li>Durante o inverno no hemisfério sul (junho a agosto), São Paulo apresenta grandes flutuações de temperatura. Embora o dia possa chegar a 26°C, o início da manhã e a noite são excepcionalmente frios. Os viajantes devem levar camadas de roupas quentes (jaquetas/suéteres). Viajantes econômicos pegos de surpresa podem encontrar roupas quentes baratas em brechós locais para evitar pagar mais de 100 BRL por suéteres básicos em shoppings convencionais.</li>
+    <li>Os principais classificados online e marketplaces de venda entre particulares no Brasil são o OLX (marketplace geral para todos os tipos de bens) e o Enjoei (especializado em moda, roupas e itens de estilo de vida).</li>
+    <li>Adaptadores e eletrônicos básicos no Rio de Janeiro podem ser encontrados em quiosques de rua, supermercados locais (como o Zona Sul) e mercados. Comprar em grandes shoppings geralmente é mais caro para os mesmos itens.</li>
+    <li>Para adquirir equipamento profissional de iluminação para câmeras em Florianópolis, Brasil, usuários buscam grandes lojas especializadas em equipamentos de foto e vídeo para operadores e blogueiros. Recomendações de lojas específicas são necessárias.</li>
+    <li>Ao interagir com vendedores ambulantes ou de praia persistentes no Brasil, a abordagem cultural padrão é uma recusa educada e sorridente. No entanto, viajantes experientes observam que uma recusa firme e direta, sem sorriso, costuma ser mais eficaz para interromper o assédio persistente imediatamente, mesmo que ocasionalmente provoque uma breve reação verbal do vendedor.</li>
+    <li>Ao viajar para o Brasil, considere utilizar cartões de pagamento para transações. Para câmbio de dinheiro, recomenda-se utilizar métodos confiáveis ou contatos de confiança em vez de trocar grandes quantias ao chegar.</li>
+    <li>Um grande supermercado Pão de Açúcar, comparável ao Carrefour ou Auchan, está localizado na Av. Conselheiro Nébias, 802 - Boqueirão, Santos. O nome &#34;Pão de Açúcar&#34; refere-se ao icônico Pão de Açúcar no Rio de Janeiro, um marco famoso.</li>
+    <li>O iFood exige um CPF (Cadastro de Pessoas Físicas) para fazer pedidos no Brasil. Um serviço de entrega de comida alternativo que pode não exigir CPF é o Rappi. Estrangeiros sem CPF podem enfrentar dificuldades para pedir comida online.</li>
+    <li>Comprar um iPhone novo no Brasil é significativamente mais caro em comparação com a Rússia, com preços frequentemente de 1,5 a 2 vezes mais altos para os modelos mais recentes.</li>
+    <li>No Brasil, uma taxa de serviço de 10% é frequentemente incluída automaticamente nas contas de restaurantes. Aconselhe os usuários a verificarem se essa taxa consta na conta, já que é habitual e geralmente não negociável, a menos que o serviço tenha sido excepcionalmente ruim. Explique que isso cobre o salário dos funcionários e que gorjetas adicionais ficam a critério do cliente.</li>
+    <li>Os veículos da Toyota são vistos como confiáveis, mas têm preços significativamente elevados no mercado brasileiro. A reputação de confiabilidade pode derivar de modelos mais antigos, e os preços atuais não parecem justificar a vantagem percebida em comparação com outras marcas.</li>
+    <li>Em Copacabana, Brasil, um almoço econômico sem bebidas custa aproximadamente 300 RUB. Trocar dinheiro em espécie é geralmente mais vantajoso financeiramente do que pagar com cartão (Visa/Mastercard). Os viajantes devem estar cientes dos diferentes padrões de higiene; baratas são comumente observadas em restaurantes e supermercados. Também é relatado um odor incomum nas seções de carne dos supermercados, o que os locais muitas vezes consideram normal.</li>
+    <li>Os carros no Brasil geralmente sofrem menos corrosão e duram mais em comparação com a Rússia. Embora a negligência com a manutenção ou a exposição constante à umidade costeira possa causar problemas, os veículos no Brasil são tipicamente mais resistentes à ferrugem e à degradação. Isso implica uma vida útil mais longa para os carros no Brasil do que a comumente observada na Rússia.</li>
+    <li>Ao viajar para Foz do Iguaçu ou São Paulo, leve roupas quentes, mesmo que esteja vindo de regiões quentes como o Rio de Janeiro. As temperaturas caem significativamente no início da manhã e à noite, após o pôr do sol. O clima nessas regiões do sul pode mudar rapidamente.</li>
+    <li>O pagamento em alguns pontos turísticos no Brasil é restrito a Pix ou dinheiro, apesar da prevalência de terminais de cartão entre pequenos vendedores.</li>
+    <li>Os serviços móveis da Vivo exigem uma conta de loja de aplicativos (Apple ID ou Google Play) registrada no Brasil para baixar o app. O cadastro geralmente requer um CPF. Os planos Vivo Easy não suportam o recebimento de SMS em roaming na Rússia.</li>
+    <li>Seja extremamente cauteloso com assistentes de compras/compradores informais (&#39;baerers&#39;) que solicitam pagamento antecipado integral pelos produtos. Caso eles não forneçam recibos, números de rastreamento ou comprovantes de compra dentro de um prazo razoável, considere como um alto risco de fraude. No Brasil, você pode registrar um &#39;Boletim de Ocorrência&#39; oficial e consultar o &#39;Código de Defesa do Consumidor&#39; sobre seus direitos em relação à não prestação de serviços.</li>
+    <li>Cartões Nubank emitidos no Brasil funcionam para transações internacionais, especificamente para a compra de passagens aéreas e pagamentos no Aeroporto de Doha.</li>
+    <li>No Brasil, adquirir itens como &#39;réplicas&#39; é comum, com um usuário mencionando uma compra de 3.000 BRL. O objetivo de integração e assimilação à vida brasileira é um sonho de longo prazo para alguns, mas apresenta desafios devido à situação econômica local. Muitos brasileiros enfrentam limitações financeiras, tornando a assimilação mais complexa do que o inicialmente percebido. A hospitalidade é oferecida, com a promessa de acomodação para visitantes.</li>
+    <li>No Brasil, especificamente em Santa Luzia, estão disponíveis vários tipos de caviar (preto, vermelho, de escamudo, de lúcio). Há também uma loja de iguarias de peixe que oferece entrega dentro da cidade. Para detalhes específicos da loja, o usuário pode fornecer contatos mediante solicitação.</li>
+    <li>Informar-se sobre a disponibilidade e fornecedores comuns de cigarros eletrônicos similares ao IQOS em São Paulo, Brasil. Informações sobre a situação legal e locais de venda seriam úteis para viajantes.</li>
+    <li>Pode ser possível trazer componentes de computador desmontados (como placa de vídeo, memória RAM, discos rígidos) para o Brasil. Declare-os se necessário, especialmente se estiver carregando uma quantidade significativa de bagagem. O escrutínio da alfândega é geralmente maior para indivíduos com várias malas. Pode ser mais fácil comprar um gabinete localmente caso a importação do PC completo seja uma preocupação.</li>
+    <li>A importação e venda de cigarros eletrônicos (vapes, e-líquidos) é oficialmente proibida no Brasil. Apesar disso, muitos viajantes conseguem trazê-los para o país com sucesso. Dispositivos contendo baterias devem ser levados na bagagem de mão, enquanto os e-líquidos devem ser despachados. Itens novos e embalados podem levantar suspeitas de intenção comercial. Localmente, cigarros eletrônicos podem ser encontrados para compra online pesquisando &#39;comprar cigarros eletrônicos&#39;, com preços a partir de aproximadamente 115 BRL para um dispositivo de 10.000 tragadas.</li>
+    <li>Serviços populares de entrega de comida e mercado no Brasil incluem o iFood e o Rappi para pedidos de restaurantes, e o Mercado Livre para entregas de supermercado. Os usuários podem encontrar restrições regionais ao acessar esses aplicativos. É importante baixar a versão correta do aplicativo para o cliente, e ter uma conta brasileira local nas lojas de aplicativos pode melhorar a funcionalidade.</li>
+    <li>Compras online internacionais feitas por meio de plataformas como Amazon, AliExpress e Shopee estão sujeitas a impostos de importação no Brasil. Marketplaces nacionais como o Mercado Livre geralmente incluem esses impostos no preço anunciado. Embora algumas fontes sugiram que livros podem ser isentos, os impostos se aplicam à maioria dos outros produtos, com taxas variadas. O custo final pode exceder significativamente o preço inicial do produto.</li>
+    <li>Discussão sobre compatibilidade elétrica no Brasil. Embora alguns aparelhos russos (secador de cabelo, modelador) funcionem, itens de alta potência como o Dyson podem não funcionar. O usuário relatou falta de tomadas de 220V no Rio de Janeiro (hotéis, Airbnbs), afetando até mesmo um chuveiro elétrico. Os aparelhos funcionaram intermitentemente em São Paulo, mas o uso de adaptadores não é recomendado para eletrônicos caros. Sugere que construções mais novas podem ter tomadas de 220V.</li>
+    <li>Ofereça um mapa interativo para o MAPS.ME cobrindo 115 pontos de interesse no Brasil. O mapa inclui funcionalidade offline e navegação passo a passo. Disponível para compra por 599 rublos.</li>
+    <li>Desafios climáticos no sul do Brasil, incluindo umidade, mofo e correntes de ar frio que exigem roupas quentes, são discutidos. Problemas de qualidade na habitação, como isolamento deficiente, correntes de ar e mofo, são destacados. Embora existam soluções como piso aquecido, elas são impraticáveis para locatários. A tendência dos moradores locais de se vestirem muito agasalhados em temperaturas mais amenas (em torno de 20°C) também é notada.</li>
+    <li>Os consumidores no Brasil relatam preocupações significativas quanto à qualidade e durabilidade de eletrodomésticos e autopeças. Muitos produtos, mesmo de marcas internacionais, são apontados como sendo de origem chinesa com qualidade inferior em comparação a itens similares vendidos em mercados como o da Rússia. Exemplos incluem aparelhos com componentes de plástico em vez de metal, e itens que quebram pouco tempo após a compra. Apesar de possuírem rendas potencialmente adequadas, o acesso a bens de alta qualidade parece ser um desafio para muitos residentes.</li>
+    <li>Cartões emitidos na Rússia (incluindo o UnionPay do RSHB) têm funcionalidade limitada no Brasil. O UnionPay do RSHB funciona esporadicamente para saques em dinheiro no &#39;Banco24Horas&#39; (caixas eletrônicos vermelhos) com uma taxa de aproximadamente 34 BRL, mas é praticamente inútil para pagamentos. O Airbnb e reservas online exigem cartões emitidos no exterior. Cartões virtuais (por exemplo, Bybit) carregados via criptomoedas P2P são recomendados para total liberdade durante a viagem.</li>
+    <li>Drones com peso superior a 250g exigem registro no DECEA e na ANATEL para serem operados legalmente no Brasil. Este registro é restrito a residentes brasileiros. Turistas devem usar estritamente drones abaixo de 250g (como a série DJI Mini) para evitar confisco e problemas de conformidade legal, já que drones leves não exigem o registro exclusivo para residentes.</li>
+    <li>Oriente sobre onde comprar 50 kg de amido puro e uma grande quantidade de peróxido de hidrogênio no Brasil. Identifique fornecedores locais ou opções de varejo para esses itens a granel.</li>
+    <li>As principais plataformas de e-commerce no Brasil são o Mercado Livre (o equivalente mais próximo de marketplaces com entrega rápida, muitas vezes com entrega gratuita no dia seguinte), a Amazon Brasil e a Shopee (a entrega média é de 7 dias, oferece cupons de frete grátis, mas não oferece suporte para prova de roupas ou devoluções fáceis). Pedidos internacionais (AliExpress, Shein, Temu) estão sujeitos ao desembaraço aduaneiro e potenciais impostos de importação.</li>
+    <li>Ao importar eletrônicos, como uma unidade central de computador (PC), para o Brasil por via aérea, esteja ciente de que os impostos alfandegários podem ser altos, chegando, segundo algumas fontes, a 60% do valor do item. O cálculo do imposto pode variar dependendo se o item é novo ou usado. É essencial pesquisar as regulamentações alfandegárias brasileiras atuais para eletrônicos pessoais e declarar os itens com precisão para evitar problemas.</li>
+    <li>São discutidos os desafios climáticos no sul do Brasil, incluindo umidade, mofo e correntes de ar frio que exigem roupas quentes. Problemas de qualidade habitacional, como isolamento deficiente, correntes de ar e mofo, são destacados. Embora existam soluções como piso aquecido, elas são impraticáveis para locatários. Também é observada a tendência dos moradores locais de se vestirem excessivamente para temperaturas mais frescas (em torno de 20°C).</li>
+    <li>Para viajantes no Brasil, um novo cartão de viagem MAPS.ME está disponível para compra por 599 BRL. Este mapa offline inclui 115 pontos de interesse, oferecendo navegação passo a passo e recomendações para passeios, refeições e oportunidades de fotos. Ele foi projetado para ajudar turistas a explorar o Brasil de forma eficiente e evitar que se percam.</li>
+    <li>A discussão aborda os desafios climáticos no Brasil, particularmente nas regiões sul, focando na umidade, mofo e correntes de ar que levam à necessidade de roupas quentes. A qualidade da habitação, especificamente a falta de aquecimento adequado e isolamento, é uma preocupação. Embora existam soluções como piso aquecido, elas não são práticas para inquilinos. Há também uma observação sobre a escolha de roupas dos moradores locais em temperaturas mais frias, muitas vezes parecendo estar supervestidos para as condições.</li>
+    <li>Recomende marcas brasileiras de cuidados com a pele locais que sejam adequadas para peles oleosas e com tendência à acne. Destaque marcas ou produtos específicos, fazendo comparações com marcas internacionais, se aplicável (por exemplo, a Principia como um equivalente local à The Ordinary).</li>
+    <li>O cartão Rock in Rio Club pode ser adquirido no Trip.com, que, segundo relatos, oferece preços competitivos. Os usuários confirmam uma boa recepção de rede, incluindo 5G, ao usar esses eSIMs no Brasil.</li>
+    <li>Devido às altas taxas de importação, eletrônicos e gadgets são excepcionalmente caros no Brasil. Aconselhe os clientes que estão se mudando para o país a comprar ou atualizar seus smartphones, laptops e outros eletrônicos pessoais antes de sua chegada.</li>
+    <li>Aos sábados, grandes feiras livres funcionam em Guarulhos (das 10:00 às 14:00) e perto da ponte do Brás em São Paulo (das 14:00 às 18:00). Itens como roupas e calçados (por exemplo, tênis de couro por cerca de 10 BRL, calças jeans por 10-20 BRL) são vendidos diretamente no chão. Pechinchar é padrão e esperado pelos vendedores fora dos supermercados.</li>
+    <li>Forneça uma estimativa de custo de vida para duas pessoas em Florianópolis, Brasil. Inclua valores médios para aluguel e despesas com alimentação, reconhecendo que os hábitos de consumo individuais influenciarão o custo total.</li>
+    <li>Notas de USD são amplamente aceitas em casas de câmbio, mas notas modernas (posteriores a 2013) conseguem uma taxa de câmbio significativamente melhor. Notas mais antigas podem sofrer descontos. O USD não substitui a moeda local (BRL) para transações diárias ou pagamentos via QR code.</li>
+    <li>Para grãos de café de alta qualidade em São Paulo, os entusiastas locais recomendam o &#39;Moka Clube&#39;, no bairro de Pinheiros. Embora os supermercados ofereçam uma qualidade razoável em comparação com as opções de mercado de massa, lojas especializadas em bairros como Pinheiros são preferidas para adquirir grãos com qualidade de presente.</li>
+    <li>Um novo mapa de viagem para o MAPS.ME cobrindo o Brasil está disponível por R$ 599. Ele contém 115 pontos de interesse, incluindo atrações, lugares para visitar, comer e tirar fotos. O mapa inclui funcionalidade offline e navegação passo a passo.</li>
+    <li>Para viagens ao Rio de Janeiro: a segurança é geralmente adequada, mas incidentes podem ocorrer. O Uber funciona de forma eficaz; certifique-se de ter baixado uma versão do aplicativo que não seja a russa. Reais brasileiros (BRL) são universalmente aceitos. Cartões bancários não russos (por exemplo, Mastercard do Cazaquistão) também são aceitos para pagamentos. Para dinheiro em espécie, recomenda-se fortemente o dólar americano para câmbio, embora o euro também possa ser facilmente convertido. Guias de turismo que falam russo, inclusive com veículos, estão amplamente disponíveis.</li>
+    <li>Alimentos específicos como cevada pérola, trigo mourisco, kefir natural e sêmola podem ser encontrados nas lojas &#39;Armazém Vital&#39;, que focam em produtos naturais no Brasil.</li>
+    <li>Para comprar ou vender produtos usados no Brasil, as principais plataformas são o Facebook Marketplace e a OLX (olx.com.br). Para opções mais localizadas, recomenda-se procurar grupos específicos da cidade no Telegram ou WhatsApp.</li>
+    <li>O chá preto é muito incomum em hotéis brasileiros, que oferecem principalmente chás de ervas. Para comprar chá preto, procure a marca &#39;Leão&#39; em grandes supermercados como o Carrefour. Chá preto a granel de alta qualidade pode ser encontrado na rede de supermercados &#39;Bistek&#39;, em lojas asiáticas no bairro da Liberdade em São Paulo, ou pedido online. Viajantes que preferem chá preto são aconselhados a trazer seu próprio suprimento e uma chaleira de viagem.</li>
+    <li>O CPF (Cadastro de Pessoas Físicas) é um número brasileiro de identificação fiscal. Ele não é obrigatório para turistas em transações de varejo simples (como supermercados ou fast food). Embora algumas plataformas online exijam o documento, fornecer um número falso ou aleatório traz um alto risco de falha na transação ou bloqueio de pedidos. Turistas podem viajar, usar Uber e comprar itens sem um CPF, usando dinheiro ou cartões de crédito internacionais.</li>
+    <li>Ar-condicionados portáteis estão sendo considerados como uma alternativa ao ar-condicionado central no Brasil. Um usuário compartilhou uma experiência em Paris onde uma unidade portátil com duto de exaustão externo foi usada com sucesso. No entanto, a eficácia dessas unidades é limitada, especialmente para espaços maiores, com potência inferior em comparação aos ar-condicionados convencionais. Adaptadores para instalação em janelas também estão disponíveis.</li>
+    <li>Usuário relata a baixa confiabilidade de carros usados no Brasil, observando casos em que água é usada em vez de aditivo no radiador e reparos frequentes no motor em veículos com menos de 200.000 km. Isso contrasta com os mercados europeu ou russo, onde motores similares podem durar de 400.000 a 500.000 km com manutenção mínima.</li>
+    <li>Ao viajar para o Brasil, recomenda-se levar Reais ou Dólares americanos. Os cartões russos &#39;Mir&#39; não são aceitos no Brasil, assim como cartões russos geralmente não são aceitos em países como o Cazaquistão. Embora cartões de crédito/débito sejam amplamente utilizados, é aconselhável levar algum dinheiro em espécie para pequenas compras ou locais onde cartões possam não ser aceitos. Trocar dinheiro no aeroporto geralmente resulta em taxas desfavoráveis; casas de câmbio locais podem oferecer taxas melhores, mas operam principalmente em dias úteis. O Uber é mencionado como uma opção de transporte com bom custo-benefício em comparação com outros serviços, que podem ser tão caros quanto em Moscou ou até mais.</li>
+    <li>Para as celebrações de Ano Novo no Rio de Janeiro: Supermercados ficam abertos até o início da noite no dia 31 de dezembro. Muitos estabelecimentos fecham no dia 1º de janeiro, mas a maioria das operações é retomada até 2 de janeiro. As vias ao redor de Copacabana e Arpoador são parcialmente fechadas no dia 31 de dezembro para o evento. Encontrar um táxi saindo de Copacabana às 2h da manhã do dia 1º de janeiro é possível caminhando até as vias principais (por exemplo, em direção a Botafogo), mas espere dificuldades e congestionamentos de trânsito perto da meia-noite do dia 31 de dezembro.</li>
+    <li>As tomadas elétricas brasileiras variam em tipo e voltagem (110V/220V), mesmo dentro da mesma cidade ou em diferentes acomodações. As tomadas podem ser padrão (compatíveis com muitos carregadores de celular internacionais) ou do tipo N estreito, que pode não acomodar plugues maiores, como os de laptops ou ferros de passar portáteis. Adaptadores são facilmente encontrados em quiosques e pequenas lojas. No entanto, os vendedores podem não entender o termo &#34;adaptador&#34;, sendo necessária a identificação visual. Adaptadores de 3 para 2 pinos são vendidos, mas apresentam riscos de segurança.</li>
+    <li>Para visitas turísticas curtas ao Brasil, a obtenção de um CPF (cadastro de pessoa física) não é obrigatória. Dinheiro em Reais brasileiros (BRL) é amplamente aceito. Cartões de crédito/débito Visa e Mastercard internacionais (exceto russos) funcionam normalmente para pagamentos e caixas eletrônicos.</li>
+    <li>Ajude a encontrar lojas que vendam roupas de ginástica artística para crianças no Rio de Janeiro ou em São Paulo, Brasil. Foque em identificar varejistas que ofereçam collants de competição tanto de performance quanto decorativos (por exemplo, com strass). Sugira verificar lojas de artigos esportivos como a Decathlon e informe-se sobre lojas especializadas em roupas esportivas infantis ou artigos para dança.</li>
+    <li>No Brasil, cartões UnionPay podem potencialmente ser usados para compras em supermercados e hortifrútis, desde que haja um terminal de pagamento verde disponível. No entanto, esses terminais são, segundo relatos, raros.</li>
+    <li>Ao chegar em São Paulo, Brasil:
+*   **Moeda e Pagamentos:** Troca de dinheiro em espécie nem sempre é necessária. Usar plataformas de criptomoedas como a Bybit com Pix para pagamentos via QR code é um método comum (&#39;vou pagar com Pix&#39;).
+*   **Transfer do Aeroporto:** Táxis são acessíveis. O Uber funciona, mas aplicativos locais de transporte como o &#39;99&#39; frequentemente exigem CPF. Ônibus públicos do aeroporto para o centro da cidade estão disponíveis, custando cerca de 5 BRL, e podem não exigir CPF para a compra.
+*   **Segurança e Bairros:** Nenhuma área é totalmente livre de riscos. Áreas centrais mais seguras incluem Vila Olímpia e Brooklin. Pinheiros é uma área vibrante e segura para caminhadas durante o dia e à noite, mas evite exibir valores de forma ostensiva. À noite, prefira deslocar-se de táxi. Para estadias de longa duração, áreas como a Vila Indiana (Butantã), perto da universidade USP, oferecem espaços recreativos seguros, embora a infraestrutura ao redor possa ser limitada.
+*   **Operadoras de Telefonia:** Adquirir um chip local sem CPF é um desafio. Chips turísticos (ex: Vivo, 10-25 GB) estão disponíveis sem CPF, mas serviços de chamadas e SMS podem levar 24 horas para serem ativados. Para planos locais completos (ex: Claro Flex ilimitado), o CPF é geralmente exigido e, mesmo assim, a ativação pode ser problemática, às vezes levando meses de residência. Planeje usar eSIMs turísticos ou dependa de Wi-Fi inicialmente.</li>
+    <li>Desafios com pagamentos online no Brasil, especificamente em relação a cartões estrangeiros e geração de código PIX em marketplaces como a Enjoei. Usuários sem CPF (Cadastro de Pessoas Físicas) enfrentam dificuldades. Sugere-se que possuir um CPF pode viabilizar o uso de métodos de pagamento locais ou contas bancárias, que são aceitos com mais facilidade. O conselho geral é explorar soluções alternativas de pagamento ou buscar maneiras de obter um CPF, se possível, para realizar transações com mais tranquilidade.</li>
+    <li>Alimentos de conforto para expatriados, como o Kefir, podem ser comprados prontos em grandes redes de supermercados brasileiros, como &#34;Zona Sul&#34; e &#34;Pão de Açúcar&#34;, por aproximadamente 10 BRL por 500ml. O &#34;pão de alemão&#34; (pão de centeio escuro) é o equivalente local mais próximo do pão de centeio do Leste Europeu.</li>
+    <li>O Brasil utiliza tomadas do Tipo N. Embora plugues europeus finos funcionem, plugues Schuko mais grossos exigem um adaptador. Crucialmente, a voltagem da rede elétrica não é padronizada em todo o Brasil: alguns estados usam 110V-127V (por exemplo, partes de São Paulo e Rio de Janeiro), enquanto outros usam 220V (por exemplo, Brasília, Recife). Os viajantes devem verificar a voltagem local antes de conectar dispositivos de alto consumo.</li>
+    <li>Um novo mapa de viagem offline para o Brasil está disponível para o MAPS.ME, apresentando 115 pontos de interesse, incluindo pontos turísticos, restaurantes e oportunidades para fotos. O mapa inclui navegação passo a passo e funciona offline. O preço é de 599 reais brasileiros.</li>
+    <li>Um grill elétrico Philips HD6360 usado está disponível para venda. É adequado para uso doméstico, preparando carne, peixe e legumes. As principais características incluem 2000W de potência para aquecimento rápido, superfícies antiaderentes removíveis para facilitar a limpeza e uma bandeja de gordura. Ele permite grelhar com o mínimo de óleo. O preço é 60 (moeda não especificada, provavelmente local).</li>
+    <li>Usuários perguntam sobre locais para comprar jeans brasileiros de alta qualidade no Rio de Janeiro, demonstrando interesse na moda local e na compra de peças de vestuário específicas.</li>
+    <li>Experiência de realocação no Rio de Janeiro (bairro Recreio) após 1,5 mês: A moradia é satisfatória, com serviços de entrega e comodidades convenientes. As opções de alimentação são boas e acessíveis. O Uber é preferível ao 99 devido ao custo e ao serviço. O sistema de pagamento PIX sofreu um bloqueio de um mês devido a sanções. O clima em dezembro é quente e com muito sol. A ética de trabalho local pode ser diferente, com menos ênfase em &#39;lucro&#39; e &#39;esforço&#39;. A beleza natural é abundante, e áreas como Ipanema são movimentadas, mas calmas. O período noturno no Recreio pode ser silencioso e escuro após as 20h.</li>
+    <li>Serviços internacionais de entrega de flores no Brasil (por exemplo, Flowow) geralmente não aceitam cartões bancários emitidos na Rússia. Para pagamentos a partir da Rússia, os usuários recorrem a intermediários locais ou expatriados com cartões de pagamento internacionais ou brasileiros. Não existe nenhuma restrição cultural local quanto ao número de flores em um buquê (par vs. ímpar).</li>
+    <li>No Brasil, quando solicitam o CPF (Cadastro de Pessoas Físicas) para serviços não essenciais, como Wi-Fi público ou, às vezes, para compras, é possível usar um gerador de CPF. Existem sites que podem fornecer números de CPF válidos com os dígitos de verificação corretos. Isso pode ser útil para acessar serviços que exigem um CPF, mas que não envolvem transações críticas ou identificação pessoal.</li>
+    <li>A Neutrogena oferece linhas exclusivas de produtos de cuidados com a pele especificamente para o mercado latino-americano. Esses produtos podem estar disponíveis no Brasil e em outros países da região.</li>
+    <li>A discussão explora o paradoxo de precisar de roupas quentes no Brasil tropical devido à umidade e ao frio, questionando o benefício geral. O texto destaca problemas com a qualidade da habitação, incluindo isolamento térmico precário, correntes de ar e mofo, particularmente nos estados do sul. Embora soluções potenciais sejam mencionadas, os inquilinos consideram impraticáveis reformas residenciais extensas.</li>
+    <li>Ao visitar o Brasil, é aconselhável usar cartões bancários que não sejam russos, pois a aceitação deles pode ser limitada. Embora os pagamentos sem dinheiro em espécie sejam predominantes, o dinheiro vivo (reais brasileiros) é geralmente aceito, embora alguns vendedores possam preferir pagamentos com cartão. É fundamental levar notas de dólar americano mais novas, pois as denominações mais antigas (anteriores a 1993) podem ser difíceis de trocar ou ter uma taxa de câmbio ruim. Alguns cartões russos específicos, como o UnionPay do RSB, apresentaram problemas. Portanto, recomenda-se uma combinação de cartões estrangeiros prontamente aceitos e dinheiro suficiente em dólares americanos novos para câmbio.</li>
+    <li>Eletrônicos são significativamente caros no Brasil. É aconselhável que indivíduos que planejam se mudar para o Brasil comprem os eletrônicos necessários antes de sua chegada para economizar nos custos.</li>
+    <li>No Brasil, cartões de débito emitidos fora do país são frequentemente tratados como cartões de crédito pelos comerciantes locais. Para garantir transações bem-sucedidas, recomenda-se apresentar seu cartão de débito estrangeiro como cartão de crédito.</li>
+    <li>Para comprar roupas de estilistas brasileiros locais no Rio de Janeiro, evite os grandes shoppings e visite as feiras de rua tradicionais (como a Feira da Glória, que acontece aos domingos). Além disso, explore lojas locais de antiguidades e brechós para encontrar peças únicas da moda local.</li>
+    <li>Baixe o mapa de viagem interativo do Brasil para o MAPS.ME, que inclui 115 pontos de interesse, como atrações turísticas, opções gastronômicas e locais para fotos. O mapa oferece funcionalidade offline e navegação passo a passo por 599 BRL.</li>
+    <li>O envio de itens pessoais ou presentes para o Brasil via transportadoras internacionais (DHL, FedEx, UPS) acarreta um alto risco de taxas alfandegárias extremamente elevadas. As autoridades alfandegárias frequentemente ignoram os valores declarados e calculam os impostos com base no preço máximo de varejo de equivalentes locais. Para evitar taxas de importação sobre pertences pessoais enviados após a viagem, os itens devem ser declarados oficialmente como &#39;bagagem desacompanhada&#39;, o que exige comprovante da entrada recente do proprietário no Brasil. O limite de isenção de impostos padrão para viagens aéreas é de 1.000 USD.</li>
+    <li>O dinheiro em espécie é amplamente aceito no Brasil, incluindo restaurantes, lojas e serviços de táxi. O principal problema para os viajantes é a falta de troco para notas de 50 e 100 BRL. É recomendável trocar notas grandes em supermercados ou hotéis sempre que possível e carregar notas de menor valor.</li>
+    <li>Cevadinha e trigo sarraceno são difíceis de encontrar em supermercados comuns no Brasil (como o Assaí e outras 5 lojas em um local chamado &#39;Brooklyn&#39;). Fazer pedidos online pode ser a única opção.</li>
+    <li>O PIX é o principal sistema de pagamento instantâneo no Brasil. Ele opera por meio de códigos QR. Muitas carteiras digitais e plataformas de criptomoedas, como a Bybit Pay, aceitam pagamentos diretos via PIX. Ele é amplamente aceito em todos os tipos de estabelecimentos.</li>
+    <li>Ao importar e-readers usados dos EUA para o Brasil por meio de plataformas como o eBay, não há cobrança de impostos de importação. No entanto, os custos de envio podem ser desproporcionalmente altos (por exemplo, US$ 90 por um item de US$ 50). Os usuários devem avaliar cuidadosamente o custo total, incluindo o frete, pois pode ser mais econômico usar intermediários ou pedir para alguém trazer o item de outro país.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/pt/br/transportes/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transportes</span></a>
+    <a class="chip" href="/pt/br/documentos-e-vistos/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentos e Vistos</span></a>
+    <a class="chip" href="/pt/br/bilhetes-e-lazer/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Bilhetes e Lazer</span></a>
+    <a class="chip" href="/pt/br/bancos-e-finan-as/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Bancos e Finanças</span></a>
+    <a class="chip" href="/pt/br/seguran-a/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Segurança</span></a>
+    <a class="chip" href="/pt/br/alojamento/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Alojamento</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Precisa de algo para a sua situação, não em geral?</h2>
+    <p>Pergunte ao Luky — não artigos genéricos, mas detalhes para a sua situação.</p>
+    <p>E o Luky é um tradutor de voz para conversas reais: pechinche na feira como um local.</p>
+    <p class="ps">PS: se quiser, o Luky ajuda a conhecer gente sem barreira de idioma 😉</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir o Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiência real dos chats de comunidades, sem enrolação</div>
+    <nav class="f-links">
+      <a href="/pt/about/">Sobre</a>
+      <a href="/pt/br/">Todos os temas</a>
+      <a href="/pt/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">As respostas são reunidas de chats abertos de comunidades — é a experiência real das pessoas, não aconselhamento oficial. Verifique antes de decisões importantes.</p>
+    <div class="f-copy">© 2026 Luky · atualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noite", DAY="\u2600 Dia";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

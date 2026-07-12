@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vietnã: Transporte — experiência real · Luky</title>
+<meta name="description" content="Experiência real dos chats sobre Transporte em Vietnã: como é, em primeira mão. Para o seu caso — pergunte ao Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/pt/vn/transporte/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/vn/transporte/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/vn/transporte/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/vn/transporte/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/vn/transporte/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/vn/transporte/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · qualquer país · sem enrolação</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noite</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/pt/">Início</a> /
+    <a href="/pt/vn/">Vietnã</a> /
+    <b>Transporte</b>
+  </nav>
+
+
+  
+  <h1>Transporte em Vietnã: experiência real dos chats</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiência real de pessoas dos chats sobre «Transporte» em Vietnã — como é, sem enrolação. Para o seu caso — <strong>pergunte ao Luky</strong>.</div></div>
+
+  <h2>Da experiência real</h2>
+  <ul class="qlist">
+    <li>Se o seu roteiro inclui a chegada na cidade de Ho Chi Minh com hospedagem em Cam Ranh, as opções de transporte incluem um voo (aprox. 1 hora) ou um ônibus (aprox. 8 horas).</li>
+    <li>Voos internos dentro do Vietnã, como de Cam Ranh (CXR) para a cidade de Ho Chi Minh (SGN) ou vice-versa, são eficientes. Recomenda-se chegar ao aeroporto 1,5 hora antes da partida. O aeroporto da cidade de Ho Chi Minh está localizado dentro da cidade, oferecendo acesso conveniente. Os processos de segurança e embarque para voos domésticos são geralmente rápidos e simples.</li>
+    <li>Em Nha Trang, cartões SIM locais podem ser comprados para acesso à internet. Aplicativos de transporte como Maxim e Grab estão disponíveis para serviços de táxi. O Maxim é frequentemente citado como a opção mais barata, sendo o InDrive também uma alternativa com bom custo-benefício.</li>
+    <li>Serviços de táxi no Vietnã, como Grab e Indriver, podem inflacionar as tarifas adicionando cobranças por entrada no aeroporto ou pedágios. Os preços podem mudar durante a viagem, e os motoristas nem sempre comunicam esses custos extras com antecedência. Isso contrasta com a Tailândia, onde os motoristas geralmente se comunicam em inglês e confirmam rotas e taxas adicionais. Uma prática semelhante de oferecer rotas mais rápidas com sobretaxas também é observada nas Filipinas.</li>
+    <li>A Azur Air e companhias aéreas semelhantes frequentemente proíbem cestas de frutas na bagagem de mão. As frutas devem ser despachadas com taxas adicionais ou limitadas a pequenas quantidades dentro dos limites de peso/tamanho da bagagem de mão padrão. Embalar frutas dentro de mochilas/bolsas pessoais é geralmente aceito, desde que esteja dentro dos limites de peso permitidos para bagagem de mão.</li>
+    <li>Dirigir de Mui Ne a Da Nang de carro é viável, mas espere velocidades significativamente mais baixas em comparação com as estradas russas, provavelmente com uma média de 50-70 km/h devido às condições variadas da estrada, ao tráfego e às frequentes mudanças de limite de velocidade (por exemplo, 40-80 km/h). Estradas com pedágio, como a CT01, permitem velocidades maiores (até 90 km/h), enquanto a QL 1A atravessa áreas povoadas com limites menores. As multas por excesso de velocidade podem ser substanciais (por exemplo, 1 milhão de VND por 12 km/h acima do limite). Alugar um carro localmente ou por meio de serviços online é possível; compare preços e avaliações. Certifique-se de ter a carteira de motorista correta (potencialmente uma PID) e esteja ciente do tráfego caótico, especialmente envolvendo motocicletas.</li>
+    <li>Vendedores de frutas no Vietnã geralmente oferecem serviços de entrega diretamente nos hotéis. Os clientes podem fazer pedidos via WhatsApp (em russo), especificar as quantidades e solicitar embalagens especializadas para voos (cestas/caixas).</li>
+    <li>No Aeroporto de Cam Ranh (CXR), companhias aéreas fretadas (por exemplo, Red Wings, Azur Air) geralmente permitem a consolidação de bagagem para famílias viajando juntas (por exemplo, combinar duas franquias de 10 kg em uma única mala de até 20-26 kg). No entanto, os aeroportos de partida russos aplicam limites rigorosos, chegando a 200 gramas.</li>
+    <li>O usuário tem uma reserva no Vinpearl Luxury Nha Trang incluindo ingressos para o parque e quer saber se pode acessar o parque pela manhã antes do check-in no hotel e se a bagagem pode ser transferida do continente para a ilha.</li>
+    <li>Carteiras de motorista russas não são válidas para conduzir motocicletas no Vietnã; é necessária uma Permissão Internacional para Dirigir (PID). Dirigir sem uma PID pode resultar em multas.</li>
+    <li>Para encomendar um buquê de flores para entrega em hotéis em Nha Trang, recomenda-se usar o aplicativo Grab. Mais detalhes ou métodos alternativos podem estar disponíveis.</li>
+    <li>O aluguel de carros em Nha Trang (por exemplo, via &#39;rentcarnhatrang&#39;) custa cerca de US$ 55/dia com um depósito de US$ 400. Os motoristas devem possuir uma Permissão Internacional para Dirigir (PID) e se adaptar ao trânsito pela direita, com um fluxo denso e imprevisível. O trânsito em Nha Trang é comparável ao de Patong, em Phuket, enquanto o de Da Nang é mais próximo ao de Koh Samui. A buzina é amplamente usada para alertar, não como sinal de agressividade.</li>
+    <li>Natalia, uma especialista em vistos com 15 anos de experiência no Vietnã, oferece serviços que incluem processamento de vistos padrão e urgente, &#39;visa runs&#39; (Camboja, Laos, China) e serviços de &#39;fast track&#39; em aeroportos. Ela enfatiza prazos de processamento garantidos, pagamentos seguros e suporte completo. Seus serviços são personalizados para situações individuais.</li>
+    <li>Liste e descreva as opções de transporte do Aeroporto Internacional de Cam Ranh (CXR) para Nha Trang. Inclua custos estimados e tempos de viagem para opções como táxis (incluindo serviços por aplicativo) e possível transporte público. Mencione a disponibilidade de câmbio no aeroporto.</li>
+    <li>Andar de moto sem a habilitação adequada (categoria A) no Vietnã traz riscos legais significativos, incluindo a possibilidade de prisão em caso de acidentes. Alugar scooters de 50cc é a única opção legal para turistas sem carteira de motorista de moto. As verificações policiais ocorrem, e subornos são comuns, mas arriscados.</li>
+    <li>Uso de aplicativos de táxi no Vietnã: Grab, InDrive e Maxim são as principais opções. O InDrive costuma ser mais barato, pois permite que os passageiros definam o preço. A disponibilidade do serviço varia conforme a região (por exemplo, o Grab é mais confiável em Ha Long). Instale sempre os aplicativos com antecedência.</li>
+    <li>Os usuários estão pedindo recomendações de onde alugar motocicletas (motos) confiáveis em Nha Trang e Da Nang, sendo que um usuário mencionou ter alugado anteriormente uma Yamaha de 300cc.</li>
+    <li>Ao exportar animais vivos, como cobras, do Vietnã, esteja ciente de possíveis problemas, especialmente se o animal estiver em extinção ou protegido. É aconselhável pesquisar e cumprir todos os regulamentos relevantes relativos à importação e exportação de vida selvagem para evitar complicações legais.</li>
+    <li>No Vietnã, as dimensões da bagagem de mão nem sempre são rigorosamente aplicadas, especialmente para mochilas. No entanto, é aconselhável verificar as políticas específicas da companhia aérea para evitar problemas.</li>
+    <li>Explique a diferença entre o Aeroporto de Nha Trang (NHA) e o Aeroporto Internacional de Cam Ranh (CXR), incluindo sua proximidade e qual deles atende Nha Trang.</li>
+    <li>O Vexere é uma plataforma recomendada para reservar transporte no Vietnã. Ela oferece recursos como fotos de ônibus, contatos das empresas, pontos de embarque/desembarque, seleção de assentos e opções de pagamento convenientes, além de suporte ao cliente.</li>
+    <li>Compartilhe experiências e conselhos sobre como levar gatos para o Vietnã, incluindo transporte, cuidados diários e opções de tratamento veterinário disponíveis no país.</li>
+    <li>Explique o procedimento e o custo para usar o serviço de &#34;fast track&#34; no Aeroporto de Cam Ranh. Detalhe se pode ser reservado com antecedência ou na chegada e quais benefícios oferece, como imigração acelerada e verificações de segurança.</li>
+    <li>Alugar motocicletas na ilha de Phu Quoc sem uma carteira de habilitação válida pode levar a multas significativas (cerca de 100 dólares). Embora a presença policial possa parecer baixa, é melhor cumprir os regulamentos. As motocicletas geralmente disponíveis para aluguel são de 120-175cc, exigindo uma habilitação específica. O custo do aluguel pode variar de 150.000 a 200.000 VND por dia. É aconselhável obter uma Permissão Internacional para Dirigir (PID) se você planeja alugar e pilotar motocicletas. Verifique os regulamentos locais e esteja ciente dos limites de velocidade, que podem ser tão baixos quanto 40 km/h em algumas áreas.</li>
+    <li>As tarifas de táxi de Halong para o aeroporto de Hanói podem variar significativamente entre os aplicativos de transporte. O Maxim pode mostrar tarifas baixas, mas frequentemente cancela pedidos. O Grab é geralmente mais confiável, porém potencialmente mais caro. As taxas de pedágio são geralmente pagas separadamente. É aconselhável comparar preços entre os aplicativos e levar em conta possíveis custos adicionais com estradas pedagiadas.</li>
+    <li>Em Nha Trang, é possível encontrar scooters para alugar que são anunciadas como 50cc, mas que na verdade foram modificadas para ter capacidades de motor maiores (por exemplo, até 150cc). Elas geralmente possuem transmissão semiautomática e podem ser alugadas por aproximadamente 200.000 VND por dia para aluguéis de 5 dias ou mais, ou 195.000 VND por mês. Normalmente é exigido um depósito de um passaporte ou 150 USD. Estão incluídos capacetes, capa de chuva, suporte para celular e trava antifurto. Geralmente, é fornecida instrução gratuita sobre como pilotar motocicletas semiautomáticas. Observe que, embora essas motos possam ser anunciadas como não exigindo habilitação, a polícia de trânsito local ainda pode aplicar as regulamentações.</li>
+    <li>O Aeroporto Internacional de Cam Ranh (CXR) registra filas significativas para check-in e controle de passaporte. Embora os tempos de espera oscilem (de 30 minutos a mais de 2 horas), o serviço de fast-track do aeroporto é recomendado para viajantes que chegam durante períodos de pico, a fim de evitar longas demoras.</li>
+    <li>Para corridas convenientes no Vietnã, use aplicativos locais de transporte: Grab (amplamente utilizado), Maxim (mais barato, suporta interface em russo), InDrive (permite negociar preços/melhor custo-benefício) e Green SM (um excelente serviço de táxi elétrico conhecido pela rapidez no despacho e carros limpos).</li>
+    <li>Alugar uma moto no Vietnã de fornecedores locais é geralmente recomendado em vez de alugar de outros estrangeiros, pois os preços costumam ser mais baixos e a devolução do depósito é mais provável. Tenha cuidado com possíveis golpes na devolução relacionados às condições da moto. Inspecione minuciosamente o veículo antes de alugar e documente qualquer dano existente. Scooters elétricas também são uma opção, oferecendo conveniência sem custos de combustível, mas podem não ter potência para inclinações íngremes.</li>
+    <li>Informe-se sobre o horário de funcionamento dos serviços de táxi em Nha Trang. Os serviços de táxi geralmente estão disponíveis 24 horas por dia, 7 dias por semana, por meio de aplicativos de transporte como Maxim ou Grab.</li>
+    <li>Instalações de armazenamento de bagagem estão disponíveis no Aeroporto Internacional Tan Son Nhat (SGN), na cidade de Ho Chi Minh. Para tarifas e condições atuais, entre em contato diretamente com o aeroporto.</li>
+    <li>Alugar motocicletas acima de 50cc em Nha Trang sem uma Permissão Internacional para Dirigir geralmente não é permitido. Se for parado pela polícia sem a documentação adequada, tanto o condutor quanto a locadora podem enfrentar penalidades, incluindo multas e possível prisão para a agência. Mesmo com uma moto de 50cc, os condutores ainda podem estar sujeitos a verificações policiais e multas.</li>
+    <li>Para uma viagem curta a partir de Nha Trang, um usuário está considerando um passeio de um dia para Dalat e busca conselhos sobre se deve reservar um tour organizado ou viajar de forma independente, questionando o custo-benefício de cada opção.</li>
+    <li>No Vietnã, o aluguel de motocicletas exige uma carteira de motorista válida. Embora a fiscalização possa variar, conduzir sem uma pode resultar em multas significativas (cerca de 100 dólares). Recomenda-se obter uma Permissão Internacional para Dirigir (PID) que corresponda à cilindrada da moto que você pretende alugar. Ciclomotores de 50cc podem estar disponíveis, mas capacidades de motor maiores (120cc ou mais) definitivamente exigem uma habilitação apropriada. Algumas fontes sugerem que certas carteiras de motorista russas da categoria &#39;B&#39; podem não ser suficientes para motocicletas. Considere obter uma PID para ter tranquilidade e conformidade legal.</li>
+    <li>Os serviços de Fast Track em aeroportos, particularmente no Vietnã, aceleram principalmente o processo de imigração e controle de passaportes. Isso pode ser muito benéfico em centros movimentados como o Aeroporto Internacional Tan Son Nhat (SGN) na Cidade de Ho Chi Minh, onde as filas podem ser longas (até 1,5 hora). No entanto, o serviço normalmente não inclui agilidade na retirada de bagagens ou na liberação alfandegária. Em aeroportos menos congestionados como o de Hanói (HAN) ou de Nha Trang (CXR), o benefício do Fast Track pode ser menos significativo. É aconselhável avaliar os possíveis tempos de espera com base no aeroporto e no horário da viagem.</li>
+    <li>Determine a viabilidade e o processo para alugar uma motocicleta em uma cidade (por exemplo, Hanói) e devolvê-la em outra (por exemplo, Cidade de Ho Chi Minh) no Vietnã. Aconselhe sobre possíveis fornecedores ou centros de locação.</li>
+    <li>Esclareça as franquias e políticas específicas de bagagem de mão da companhia aérea Ikar, especialmente no que diz respeito a itens adicionais além da franquia padrão.</li>
+    <li>Os viajantes podem optar por não comprar passagens de volta para a Rússia imediatamente. Consulte a companhia aérea sobre políticas específicas referentes a passagens de volta ou opções de reserva flexíveis (por exemplo, passagens reembolsáveis ou com alteração de data) para manter a flexibilidade da viagem.</li>
+    <li>Descreva as condições climáticas típicas de verão em Nha Trang, Vietnã, incluindo temperatura, umidade e estado do mar. Mencione insetos comuns como mosquitos-pólvora (midges) e formigas, mas observe que há menos mosquitos. Além disso, forneça informações sobre a disponibilidade de esportes aquáticos, como jet ski, e sugira locais acessíveis para alugá-los.</li>
+    <li>A Vietnam Airlines e a Vietjet Air são companhias aéreas distintas que operam no Vietnã. A Vietnam Airlines é geralmente considerada uma transportadora de serviço completo, comparável à Aeroflot, enquanto a Vietjet Air é uma transportadora de baixo custo, semelhante à Pobeda. As diferenças residem no serviço, nas comodidades e nos preços. Os voos da Vietnam Airlines, especialmente os de longa distância (por exemplo, de Hanói para Moscou), podem oferecer um serviço de bordo melhor. O conforto e o espaço dos assentos são geralmente considerados adequados na Vietnam Airlines para voos domésticos e regionais.</li>
+    <li>Compare as ofertas de serviço &#39;fast track&#39; no Aeroporto de Cam Ranh de provedores como a Coral Travel e a Trip.com. Destaque as diferenças em termos, condições, preços e garantias, especialmente em relação a alterações ou atrasos de voos.</li>
+    <li>O Aeroporto Internacional de Da Nang sofre um congestionamento intenso durante os horários de pico, especialmente devido a grandes grupos de turistas. Serviços de atendimento rápido oficiais ou semioficiais estão frequentemente disponíveis diretamente na área de controle de passaportes por aproximadamente 10 USD por pessoa, permitindo que os viajantes evitem filas longas.</li>
+    <li>No Vietnã, o check-in antecipado em hotéis é frequentemente oferecido gratuitamente, dependendo da disponibilidade, ou simplesmente não é possível. Não é comum pagar pelo check-in antecipado. Se um quarto não estiver pronto, os hóspedes geralmente podem deixar suas bagagens e retornar mais tarde.</li>
+    <li>Descreva as melhores opções de transporte para viajar entre Nha Trang e Qui Nhon, no Vietnã. Inclua informações sobre serviços de ônibus (por exemplo, Futa Bus Line), rotas de trem ou aluguel de carro particular, juntamente com estimativas de tempo de viagem e custos.</li>
+    <li>Motos de até 50cc não exigem legalmente uma licença no Vietnã, mas o uso de capacete é estritamente fiscalizado pela polícia. Para estadias de longo prazo, esteja ciente de que muitos proprietários em cidades como Da Nang preferem contratos de aluguel de no mínimo 3 meses. Encontrar aluguéis de 1 mês pode ser difícil e geralmente implica um preço mais elevado.</li>
+    <li>Ao sair do aeroporto de Nha Trang, evite pegar táxis não oficiais, pois eles costumam inflar os preços. Em vez disso, use o Wi-Fi gratuito do aeroporto para reservar uma corrida através dos aplicativos Grab ou Maxim, o que é significativamente mais barato. Transfers pré-reservados via serviços como o Trip.com também são uma alternativa confiável e, às vezes, mais econômica.</li>
+    <li>O aluguel de jet ski está disponível em Nha Trang, Vietnã. Os locais mencionados incluem a praia de Doc Let (800.000 VND por 15 minutos) e Vinpearl (1.000.000 VND por 30 minutos). Alguns locais, como a praia de Zo Let, podem ter equipamentos que não funcionam. A Marina Beach é conhecida pelo relaxamento, e não por esportes aquáticos.</li>
+    <li>O aplicativo recomendado para reservar passagens de ônibus e trem em todo o Vietnã é o &#39;Vexere&#39;. Ele fornece horários, pontos de partida/chegada e funcionalidade de reserva, muitas vezes de forma mais confiável do que agregadores globais como a 12go para rotas domésticas.</li>
+    <li>O serviço Fast Track nos aeroportos vietnamitas visa agilizar o processo de imigração e segurança, reduzindo o estresse após o voo e permitindo que os viajantes cheguem mais rápido à piscina do hotel. Ele ajuda a evitar a espera típica de 2 horas no aeroporto.</li>
+    <li>Frutas podem ser exportadas do Vietnã na bagagem de mão ou despachada. Os regulamentos para importação na Rússia permitem até 5 kg de frutas por pessoa. Cestas plásticas especializadas são comumente usadas para o transporte; verifique as regras específicas da companhia aérea sobre itens adicionais de bagagem de mão.</li>
+    <li>Ao visitar o VinWonders no Vietnã, espere grandes multidões, especialmente durante os horários de pico. Embora o buffet geralmente não seja recomendado, a compra de um passe Fast Track é altamente aconselhável para atrações como montanhas-russas, a torre de queda e &#39;The Pearl&#39;. É recomendável comprar ingressos e passes Fast Track com antecedência pelo aplicativo VinWonders para maior comodidade. Chegar por volta das 14h às 16h pode oferecer filas mais curtas, mas fique atento aos horários de fechamento de certas atrações.</li>
+    <li>Ao alugar motocicletas (125cc ou 150cc) no Vietnã, pode ser necessário apresentar uma Permissão Internacional para Dirigir (PID), e o número dela provavelmente será registrado no contrato de locação. Embora alguns motociclistas relatem não encontrar pontos de controle policial durante suas viagens, é aconselhável possuir a PID original para evitar possíveis problemas e multas, já que uma cópia digital pode não ser aceita.</li>
+    <li>Em relação às filas de controle de passaportes no aeroporto da cidade de Ho Chi Minh, considere comprar um passe Fast Track caso queira agilizar o processo. No entanto, chegadas no início da manhã podem ter menos filas. É aconselhável verificar as condições ou recomendações atuais antes do seu voo.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/pt/vn/ingressos-e-lazer/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Ingressos e Lazer</span></a>
+    <a class="chip" href="/pt/vn/bancos-e-dinheiro/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Bancos e Dinheiro</span></a>
+    <a class="chip" href="/pt/vn/acomoda-o/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Acomodação</span></a>
+    <a class="chip" href="/pt/vn/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/pt/vn/correios-e-encomendas/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Correios e Encomendas</span></a>
+    <a class="chip" href="/pt/vn/documentos-e-vistos/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentos e Vistos</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Precisa de algo para a sua situação, não em geral?</h2>
+    <p>Pergunte ao Luky — fala como quem acabou de voltar de lá — sem enrolação.</p>
+    <p>E o Luky é um tradutor de voz para conversas reais: e o guia vai falar a sua língua.</p>
+    <p class="ps">PS: coloque o Luky numa caixa de som portátil numa festa e fale com todos de uma vez</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir o Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiência real dos chats de comunidades, sem enrolação</div>
+    <nav class="f-links">
+      <a href="/pt/about/">Sobre</a>
+      <a href="/pt/vn/">Todos os temas</a>
+      <a href="/pt/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">As respostas são reunidas de chats abertos de comunidades — é a experiência real das pessoas, não aconselhamento oficial. Verifique antes de decisões importantes.</p>
+    <div class="f-copy">© 2026 Luky · atualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noite", DAY="\u2600 Dia";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

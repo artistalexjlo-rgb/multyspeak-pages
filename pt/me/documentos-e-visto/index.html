@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Montenegro: Documentos e Visto — experiência real · Luky</title>
+<meta name="description" content="Experiência real dos chats sobre Documentos e Visto em Montenegro: como é, em primeira mão. Para o seu caso — pergunte ao Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/pt/me/documentos-e-visto/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/me/documentos-e-visto/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/me/documentos-e-visto/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/me/documentos-e-visto/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/me/documentos-e-visto/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/me/documentos-e-visto/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · qualquer país · sem enrolação</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noite</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/pt/">Início</a> /
+    <a href="/pt/me/">Montenegro</a> /
+    <b>Documentos e Visto</b>
+  </nav>
+
+
+  
+  <h1>Documentos e Visto em Montenegro: o que realmente importa saber</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiência real de pessoas dos chats sobre «Documentos e Visto» em Montenegro — como é, sem enrolação. Para o seu caso — <strong>pergunte ao Luky</strong>.</div></div>
+
+  <h2>Da experiência real</h2>
+  <ul class="qlist">
+    <li>Ao alugar um carro em Montenegro para viajar para a Bósnia e Herzegovina, você deve solicitar e obter uma &#39;permissão de travessia de fronteira&#39; (dozvola za prelazak granice) junto à locadora. Ela é necessária para evitar problemas na fronteira.</li>
+    <li>Forneça um link ou informações sobre como encontrar um tradutor juramentado em Montenegro. Um usuário compartilhou um link para uma lista atualizada de tradutores em 1º de junho de 2026.</li>
+    <li>Dirigir veículos com placas russas para Montenegro através das fronteiras da UE/Bálcãs (Bulgária, Estados Bálticos, Turquia) é atualmente altamente restrito ou impossível. As autoridades frequentemente negam a entrada ou o trânsito a veículos com placas russas, independentemente da cidadania do motorista. Recomenda-se vender tais veículos na Rússia e comprar um carro localmente em Montenegro.</li>
+    <li>O usuário relata que um guarda de fronteira montenegrino solicitou &#34;papéis rosas&#34; no posto de controle de Klobuk (fronteira entre Montenegro e Bósnia). Eles buscam esclarecimentos sobre a que esses papéis se referem, possivelmente relacionados ao registro ou à taxa turística.</li>
+    <li>Veículos com registro russo que entram na Bósnia e Herzegovina vindos de Montenegro exigem uma apólice de &#39;seguro de fronteira&#39; separada, já que a Rússia não faz mais parte do sistema Carta Verde. O seguro montenegrino local (por exemplo, Lovcen) não é válido na Bósnia e Herzegovina. Esteja ciente dos fechamentos de bancos/escritórios durante feriados locais. O seguro geralmente pode ser obtido nas passagens de fronteira (por exemplo, Klobuk) até as 18:00, horário local.</li>
+    <li>Para evitar possíveis longos tempos de espera em processos de residência ou visto em Podgorica, Montenegro, considere explorar opções em Sarajevo ou Belgrado. Esses locais alternativos podem oferecer um procedimento mais simplificado.</li>
+    <li>Em Montenegro, dirigir uma motocicleta ou scooter com cilindrada superior a 50cc (como 125cc) exige uma carteira de habilitação categoria A. Embora as empresas de locação possam sugerir o contrário e a polícia possa ser tolerante com turistas, é um requisito legal. Pilotar uma scooter abaixo de 50cc é geralmente permitido com uma carteira de categoria B. Se envolvido em um incidente, especialmente um acidente, pilotar sem a habilitação correta pode levar a sérias consequências legais.</li>
+    <li>Ao reservar acomodação em Montenegro através de plataformas como o Booking.com, o anfitrião é obrigado a registrar a sua estadia. Embora um documento de confirmação formal nem sempre seja fornecido, ter a sua confirmação de reserva é geralmente suficiente para o controle de fronteira. Se desejar, pode solicitar um &#39;potvrda&#39; ao anfitrião. O requisito principal para turistas é a própria confirmação da reserva.</li>
+    <li>Os turistas estrangeiros em Montenegro devem pagar uma taxa turística e registar-se junto das autoridades locais. Por lei, o fornecedor de alojamento é responsável pelo registo e pela cobrança da taxa. Se o anfitrião se recusar, o turista deve dirigir-se à organização turística local (TO). Não existe uma multa oficial para os turistas pelo não pagamento da taxa turística, mas o registo é obrigatório. O registo não é necessário para estadias em propriedades privadas pertencentes ao estrangeiro ou aos seus familiares/amigos.</li>
+    <li>Para menores (com menos de 18 anos) que viajam entre Montenegro e a Sérvia, especialmente sem ambos os pais, é aconselhável verificar as políticas específicas das companhias aéreas. Embora o controlo de fronteira montenegrino possa não aplicar rigorosamente os requisitos de consentimento para cidadãos estrangeiros, algumas companhias aéreas podem exigir um formulário de consentimento parental autenticado (&#39;punomoćje&#39; ou &#39;saglasnost&#39;) que permita ao menor viajar. Na Sérvia, os indivíduos com 16 anos ou mais, geralmente, não necessitam de consentimento parental para viajar.</li>
+    <li>As verificações de registro de veículos e de turistas nas fronteiras de Montenegro podem ser inconsistentes. Enquanto alguns viajantes relatam verificações regulares nas fronteiras terrestres (por exemplo, com a Sérvia), outros não passaram por nenhuma verificação nas partidas dos aeroportos, pois as informações podem estar disponíveis em sistemas digitais. Se o carimbo de entrada na fronteira estiver faltando, é aconselhável retornar e obtê-lo ou buscar assistência na Inspetoria para Estrangeiros para o registro. Esteja preparado para possíveis verificações seletivas.</li>
+    <li>A taxa turística oficial (boravišna taksa) no Montenegro é de 1 EUR por adulto por dia e 0,5 EUR para menores (12-18 anos). O registo em si é gratuito. Alguns hotéis podem tentar cobrar &#39;taxas de serviço&#39; adicionais pelo registo. Os turistas devem solicitar um recibo detalhado e verificar o valor da taxa de acordo com os regulamentos do conselho de turismo local.</li>
+    <li>Importar um drone para Montenegro exige permissão oficial via spiro.medigovic.gov.me. A importação não autorizada acarreta risco de confisco ou multas na alfândega. Embora alguns viajantes relatem sucesso anedótico ao trazer drones sem declaração formal, isso permanece um risco legal, dependendo do oficial da alfândega específico.</li>
+    <li>Em Montenegro, a taxa turística (boravišna taksa) é obrigatória para estrangeiros hospedados em acomodações. O pagamento e o registro são geridos pelo fornecedor da acomodação. Se você se hospedou em apartamentos, o anfitrião é obrigado a registrá-lo eletronicamente e cobrar a taxa. Você deve receber uma confirmação de registro. Se nenhum recibo foi fornecido, você pode informar-se em postos locais de informação turística ou correios sobre como pagar a taxa retroativamente. Embora as verificações no controle de fronteira nem sempre sejam rigorosas, é aconselhável ter o comprovante de pagamento ou registro para evitar possíveis multas. O processo de registro é eletrônico e normalmente não envolve formulários em papel, a menos que seja pago diretamente em um correio ou banco.</li>
+    <li>Viajantes em Montenegro relatam frequentemente problemas com os preços dos táxis (a falta de aplicativos como Uber/Bolt leva a preços abusivos), taxas de serviço ocultas (taxas de limpeza não divulgadas nos orçamentos iniciais) e requisitos burocráticos rígidos para viagens de ônibus (necessidade de passagens em papel). A taxa turística é obrigatória, mas os anfitriões locais muitas vezes transferem a responsabilidade do registro para os hóspedes. O pico do turismo ocorre em julho; os preços de acomodação e transfers aumentam significativamente.</li>
+    <li>Embora tecnicamente seja necessário o passaporte original para identificação em Montenegro, na prática, muitas vezes aceita-se uma cópia ou uma fotografia no telemóvel, especialmente em saídas informais, como ir à praia. As verificações policiais são pouco frequentes. No entanto, para situações mais formais ou caso transporte uma mala, é aconselhável levar o passaporte original. Uma cópia autenticada ou um print no telemóvel podem ser apresentados caso o original não esteja disponível.</li>
+    <li>Os estrangeiros em Montenegro têm atualmente um limite de 30 dias de estadia sem visto. O registo de turista é obrigatório após cada passagem de fronteira. Os gabinetes de registo podem recusar a emissão de um novo registo se o anterior ainda estiver ativo. Não existe um processo legal oficial de &#39;visa run&#39;; os viajantes saem frequentemente para países vizinhos (Bósnia, Sérvia) para renovar a sua estadia de 30 dias.</li>
+    <li>Para obter uma &#39;List nepokretnosti&#39; (certidão de propriedade/extrato do cadastro) em Budva para fins de autorização de residência (boravak), o locatário pode solicitá-la diretamente. Visite o escritório de cadastro local (localizado no TQ Plaza em Budva), preencha um formulário de solicitação, pague uma taxa de aproximadamente 5 EUR nos correios e forneça uma cópia do passaporte. O documento geralmente fica pronto em 1 ou 2 horas. O registro do cadastro é público.</li>
+    <li>O registro (boravak) é uma exigência legal para todos os estrangeiros em Montenegro, a ser tratado pelo provedor de acomodação sem custo para o hóspede. A taxa turística é cobrada separadamente e, muitas vezes, já está incluída no aluguel; não há penalidades legais para turistas em relação ao pagamento da taxa turística.</li>
+    <li>Ao viajar para Montenegro, recomenda-se a contratação de um seguro de viagem. As opções incluem apólices do Sberbank, Tinkoff e VTB. Alguns aplicativos bancários podem oferecer seguro familiar anual gratuito com cobertura de até 100.000 RUB. Por exemplo, uma apólice de 27 dias com cobertura de 100.000 foi cotada por 1285 RUB. O Sberbank é reconhecido pelo bom suporte e opções acessíveis.</li>
+    <li>O registro (prijava boravka) de um turista estrangeiro é responsabilidade legal do prestador de acomodação. O turista não é responsável caso o anfitrião não o registre. Em acomodações particulares, o registro é gratuito; a taxa de turismo é frequentemente incluída no valor do aluguel. A prova oficial de registro é um documento chamado &#39;potvrda&#39; (ficha branca), enquanto um simples recibo de pagamento da taxa de turismo não é suficiente para as autoridades de fronteira.</li>
+    <li>Condições meteorológicas adversas em Montenegro afetam significativamente as operações de voo nos aeroportos como Tivat e Podgorica. Os voos são frequentemente atrasados ou cancelados, com passageiros por vezes mantidos em autocarros ou dentro do aeroporto. Em incidentes anteriores, os voos foram desviados para Tirana e os passageiros sem os vistos necessários tiveram de recomprar os bilhetes. Os viajantes devem prever potenciais perturbações e planos de contingência.</li>
+    <li>Cidadãos do Uzbequistão com um visto de entrada múltipla dos EUA válido podem entrar em Montenegro sem visto por até 30 dias, ou até à expiração do seu visto dos EUA, o que ocorrer primeiro. Um visto de entrada única dos EUA pode não ser suficiente para esta isenção.</li>
+    <li>O registro (boravak) para estrangeiros é obrigatório ao se hospedar em propriedades alugadas. Os anfitriões devem registrar os hóspedes online por meio de uma plataforma/portal oficial. Se o anfitrião se recusar, os hóspedes devem registrar-se pessoalmente na organização de turismo local (Turistička organizacija). As penalidades por não registro incluem multas (aproximadamente 41 EUR). Exceder os limites de isenção de visto é uma violação legal separada tratada pela Inspetoria de Estrangeiros, levando a multas, proibição de entrada e possível deportação.</li>
+    <li>Turistas estrangeiros em Montenegro devem ser registrados pelo seu provedor de hospedagem. Se o proprietário não o fizer, os turistas podem enfrentar problemas no controle de fronteira. A multa por não registro é de 41 EUR. Se estiver hospedado em vários locais, o registro mais recente geralmente cobre a exigência legal para a partida.</li>
+    <li>Para viagens rodoviárias entre Montenegro, Bósnia e Herzegovina e a Sérvia, utilize as principais passagens fronteiriças (Sitnica, Klobuk, Deleusa, Gostun). Verifique as câmaras de fronteira 1-2 horas antes de atravessar. Os condutores não precisam de licenças de condução internacionais, uma vez que estes países são membros da Convenção de Viena sobre Trânsito Rodoviário. Verifique sempre se uma rota é pavimentada e se é uma passagem fronteiriça internacional válida antes de confiar em aplicações de navegação.</li>
+    <li>Ao viajar de trem de Montenegro para a Sérvia (por exemplo, de Bar para Belgrado): 1. Compre as passagens e a reserva de assento obrigatória (&#39;Rezervacija Sedišta&#39;) na estação de trem (por exemplo, em Bar); a compra online não está disponível. 2. É necessário trocar de trem na fronteira. 3. Insista em obter carimbos de entrada/saída da polícia de fronteira, pois eles nem sempre os aplicam em trens ou ônibus. 4. Os cartões SIM de Montenegro geralmente funcionam na Sérvia e em vários outros países dos Bálcãs sem taxas de roaming adicionais, o que anteriormente exigia a ativação de um serviço em um aplicativo, mas agora costuma ser automático.</li>
+    <li>Estrangeiros que permanecem no Montenegro são obrigados a registar a sua estadia. Se reservou alojamento através de plataformas como o Booking.com, o anfitrião é, normalmente, o responsável pelo registo. Se reservou diretamente ou se está hospedado em casa de amigos/familiares, deve registar-se na organização turística local (turistička organizacija) ou na polícia no prazo de 24 horas após a chegada. A falta de registo pode resultar em multas à partida. Se não tiver feito o registo, é aconselhável visitar o posto de turismo ou a polícia o mais rapidamente possível para resolver o problema e, potencialmente, mitigar penalizações.</li>
+    <li>Avise os viajantes sobre atrasos significativos nas fronteiras entre a Croácia e Montenegro, especialmente durante a alta temporada de verão. Recomende o uso de pontos de fronteira alternativos, como Vitaljina ou Herzegovina, para potencialmente evitar longas filas. Mencione que problemas técnicos com o sistema EES e o número limitado de faixas operacionais podem causar esses atrasos. Recomende verificar as atualizações sobre o status das passagens de fronteira, se possível.</li>
+    <li>Em Montenegro, o processo de registro de turistas é eletrônico. Um comprovante rosa fornecido pelo proprietário da acomodação é, geralmente, um recibo da taxa turística e não um documento de registro oficial (&#39;potvrda&#39;). Embora o banco de dados eletrônico seja o que importa para as autoridades locais, aconselha-se que os turistas garantam que o anfitrião os registre. Na prática, o recibo rosa funciona como uma confirmação indireta do cumprimento das obrigações por parte do anfitrião ou como um documento de recurso durante o controle de fronteira caso os sistemas estejam fora do ar.</li>
+    <li>As verificações de pagamento de registro na partida do aeroporto podem variar. Se você tiver uma confirmação de reserva (por exemplo, do Booking.com), ela pode ser suficiente caso seja questionado.</li>
+    <li>Produtos alimentícios enlatados são geralmente permitidos em Montenegro. Trazer carnes curadas, como salame, é algo mais incerto e pode sofrer restrições. Os supermercados locais oferecem uma variedade de produtos alimentícios, embora a qualidade das linguiças possa ser inconsistente. É aconselhável verificar as regulamentações alfandegárias oficiais para restrições específicas sobre produtos à base de carne. Trazer quantidades excessivas de comida para uma estadia longa geralmente não é recomendado, já que opções locais estão disponíveis.</li>
+    <li>Busca-se esclarecimento sobre os &#39;papéis rosa&#39; solicitados por um guarda de fronteira montenegrino no posto de controle de Klobuk. O usuário suspeita que se refira ao &#39;cartão rosa&#39; (confirmação de registro) e solicita confirmação.</li>
+    <li>Embora itens proibidos específicos além das regulamentações alfandegárias padrão não estejam detalhados neste registro, os viajantes devem estar cientes das declarações alfandegárias padrão para grandes somas de dinheiro (acima de 9.999 EUR por pessoa). Certifique-se de que toda a documentação necessária, como passaportes válidos e quaisquer autorizações exigidas, esteja em ordem.</li>
+    <li>Esclareça os requisitos de entrada para a Bósnia e Herzegovina relativamente à necessidade de numerário (80 EUR por dia por pessoa) ou comprovativo de fundos num cartão. Confirme se estes requisitos são efetivamente aplicados.</li>
+    <li>A entrada em Montenegro para turistas, particularmente via fronteiras terrestres ou aeroportos, é geralmente simples. Verificações padrão de passaporte são realizadas, mas documentos adicionais, como comprovantes de reservas de acomodação ou passagens de volta, normalmente não são solicitados. O processo costuma ser tranquilo para os turistas.</li>
+    <li>Para agendamentos relacionados a vistos ou residência que possam envolver longas esperas em Podgorica, considere marcar serviços semelhantes em Sarajevo ou Belgrado como locais alternativos. Essa estratégia pode ajudar a agilizar o processo.</li>
+    <li>Possuir um passaporte sem carimbos de entrada/saída anteriores (um passaporte &#39;vazio&#39;) geralmente não é um problema para a entrada em Montenegro. No entanto, ao transitar por outros países, como a Turquia, as companhias aéreas podem exigir prova de viagem subsequente (por exemplo, uma passagem de volta), independentemente dos carimbos no passaporte.</li>
+    <li>Ao dirigir um veículo com placas ucranianas por Montenegro, especialmente se o motorista não for o proprietário, recomenda-se geralmente uma procuração. Embora as verificações nas fronteiras possam variar, ter este documento pode evitar problemas, principalmente se o proprietário não estiver presente no veículo. A tradução para o inglês não é estritamente necessária, mas pode ser útil. Confirme os requisitos atuais com os funcionários da fronteira.</li>
+    <li>Os procedimentos de travessia de fronteira para Montenegro, particularmente a partir da Sérvia, podem envolver verificações do registro de turista. Embora alguns relatos indiquem verificações mais flexíveis em aeroportos, as fronteiras terrestres são mais propensas a verificar o registro. Se faltar um carimbo de entrada adequado, pode ser necessário retornar à fronteira ou consultar a Inspeção para Estrangeiros. A presença de dados de registro nos computadores da polícia pode agilizar o processo, mas verificações manuais ainda ocorrem.</li>
+    <li>Estrangeiros devem se registrar na polícia ou no escritório de turismo local (TO) dentro de 24 horas após a chegada. A taxa de turismo deve ser paga. A falta de apresentação do comprovante de registro na saída pode resultar em uma multa de aproximadamente 41 EUR. Os anfitriões são legalmente obrigados a registrar os hóspedes, mas alguns não o fazem; os hóspedes devem verificar o comprovante de registro (captura de tela online ou recibo em papel).</li>
+    <li>Pilotar drones em Montenegro, mesmo os leves como o DJI Mini 4 Pro (abaixo de 249g), pode exigir uma licença. Obter esta licença por e-mail pode ser um processo demorado e sem garantia de aprovação, particularmente para cidadãos russos. Embora algumas pessoas consigam trazer drones sem licenças, existe o risco de confisco. É aconselhável pesquisar os regulamentos específicos e o processo de licenciamento com antecedência.</li>
+    <li>Dicas para o comboio Belgrado-Bar (Comboio 433): 1) Os bilhetes devem ser comprados na estação de comboios (com até 60 dias de antecedência). Reservar a 1ª classe é altamente recomendado e deve ser feito com antecedência. 2) Atrasos são extremamente comuns, variando de 30 minutos a 6 horas devido às condições da linha. 3) Existem dois pontos de controlo fronteiriço durante a noite, cada um durando cerca de 40 minutos.</li>
+    <li>O registo (cartão branco/boravak) é um procedimento policial obrigatório para turistas estrangeiros em Montenegro. É gratuito. A obrigação legal de registar o hóspede recai sobre o prestador de alojamento (proprietário/hotel). NÃO é dever do turista registar-se a si próprio. A &#39;taxa turística&#39; é uma tarifa separada frequentemente cobrada pelo proprietário. Ao mudar de cidade, é necessário um novo registo para cada local. A falta de registo é uma questão administrativa comum, e a autoapresentação voluntária a um inspetor leva frequentemente a multas desnecessárias.</li>
+    <li>Atualmente, não há exigência de visto para turistas russos em Montenegro. Fontes oficiais da embaixada de Montenegro recomendam verificar a situação no final de agosto. Mudanças na política de vistos são esperadas apenas no contexto de uma futura adesão à UE, mas nenhuma data concreta ou restrição imediata foi anunciada.</li>
+    <li>O registo de turistas em Montenegro é agora digital. Os proprietários são legalmente obrigados a registar os hóspedes através de um sistema online. Se ficar em vários locais, certifique-se de que cada anfitrião confirma o registo. Se um anfitrião não registar um hóspede, isso pode causar problemas para os anfitriões seguintes no sistema. Os hóspedes podem dirigir-se a um posto de turismo local (TO) para se registarem manualmente, se necessário, fornecendo os detalhes e a morada do anfitrião.</li>
+    <li>Para uma criança com cidadania bielorrussa viajando da Polônia para Montenegro com um dos pais (mãe) e sem o outro (pai), uma autorização notarial (procuração) do pai para a saída/entrada da criança geralmente NÃO é necessária se ambos os pais e a criança possuírem passaportes bielorrussos. No entanto, é sempre aconselhável verificar as regulamentações mais recentes com a companhia aérea e as autoridades de controle de fronteira antes da viagem.</li>
+    <li>No Montenegro, os turistas são obrigados a registar a sua estadia e pagar uma taxa turística. O processo de registo é normalmente tratado pelo fornecedor de alojamento (hotel, anfitrião ou proprietário) na Organização de Turismo local ou na câmara municipal. Para estadias superiores a 24 horas, a falta de registo pode resultar em multas. A taxa turística é geralmente paga por cada dia de estadia e varia consoante o município. Embora os proprietários sejam frequentemente responsáveis pelo registo, os turistas devem garantir que este seja concluído. Se tiver dúvidas ou se o proprietário não for cooperativo, é aconselhável que o turista visite pessoalmente o escritório da Organização de Turismo para concluir o registo e pagar a taxa, a fim de evitar potenciais problemas à partida. A janela de 24 horas para o registo é uma diretriz e pode existir alguma flexibilidade, mas recomenda-se um registo imediato.</li>
+    <li>Os requisitos de visto para cidadãos russos que planejam permanecer em Montenegro além do período de isenção de visto estão sujeitos a alterações. Atualmente, as informações sugerem que os vistos podem ser obtidos por meio de centros de vistos como a Global Visa. Para detalhes específicos sobre procedimentos de solicitação, documentos necessários, prazos de processamento e possíveis locais de inscrição (por exemplo, Moscou ou Sérvia), é crucial consultar fontes oficiais de imigração de Montenegro ou os centros de vistos relevantes.</li>
+    <li>Turistas estrangeiros em Montenegro não são legalmente responsáveis pelo seu próprio registro turístico; essa é uma obrigação do proprietário. O registro pode ser feito online ou em escritórios de turismo locais. Cada novo registro substitui o anterior; portanto, apenas o registro mais recente é necessário para a partida.</li>
+    <li>Em Montenegro, estrangeiros residentes/turistas são legalmente obrigados a se registrar. O registro (&#39;boravak&#39;) é gratuito e é de responsabilidade do proprietário da acomodação. A taxa de turismo é um pagamento obrigatório separado, frequentemente cobrado pelo anfitrião. A falta de registro pode resultar em multas de até 200 EUR para o estrangeiro. O registro não é necessário se estiver hospedado com amigos em propriedade privada, mas os procedimentos oficiais para autorregistro permanecem complexos.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/pt/me/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/pt/me/ingressos-e-lazer/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Ingressos e Lazer</span></a>
+    <a class="chip" href="/pt/me/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/pt/me/banco-e-dinheiro/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Banco e Dinheiro</span></a>
+    <a class="chip" href="/pt/me/seguran-a/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Segurança</span></a>
+    <a class="chip" href="/pt/me/acomoda-o/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Acomodação</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Precisa de algo para a sua situação, não em geral?</h2>
+    <p>Pergunte ao Luky — o que a busca não mostra e nem todo blogueiro conta.</p>
+    <p>E o Luky é um tradutor de voz para conversas reais: fale com o médico e entenda o que ele disse.</p>
+    <p class="ps">PS: até com a família do seu par que não fala nada da sua língua 😄</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir o Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiência real dos chats de comunidades, sem enrolação</div>
+    <nav class="f-links">
+      <a href="/pt/about/">Sobre</a>
+      <a href="/pt/me/">Todos os temas</a>
+      <a href="/pt/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">As respostas são reunidas de chats abertos de comunidades — é a experiência real das pessoas, não aconselhamento oficial. Verifique antes de decisões importantes.</p>
+    <div class="f-copy">© 2026 Luky · atualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noite", DAY="\u2600 Dia";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

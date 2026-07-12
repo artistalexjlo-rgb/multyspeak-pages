@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Egito: Ingressos e Lazer — experiência real · Luky</title>
+<meta name="description" content="Experiência real dos chats sobre Ingressos e Lazer em Egito: como é, em primeira mão. Para o seu caso — pergunte ao Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/pt/eg/ingressos-e-lazer/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/eg/ingressos-e-lazer/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/eg/ingressos-e-lazer/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/eg/ingressos-e-lazer/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/eg/ingressos-e-lazer/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/eg/ingressos-e-lazer/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · qualquer país · sem enrolação</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noite</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/pt/">Início</a> /
+    <a href="/pt/eg/">Egito</a> /
+    <b>Ingressos e Lazer</b>
+  </nav>
+
+
+  
+  <h1>Ingressos e Lazer em Egito: o que realmente importa saber</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiência real de pessoas dos chats sobre «Ingressos e Lazer» em Egito — como é, sem enrolação. Para o seu caso — <strong>pergunte ao Luky</strong>.</div></div>
+
+  <h2>Da experiência real</h2>
+  <ul class="qlist">
+    <li>Para visitar a Baía de Abu Dabbab (Marsa Alam) de forma independente, há táxis disponíveis, com um custo relatado de 270 EGP por trecho a partir de hotéis próximos. O aplicativo InDrive funciona no Egito, incluindo a área de Marsa Alam, oferecendo uma alternativa para serviços de táxi. As taxas de entrada para a Baía de Abu Dabbab são de 20 EGP para adultos e 10 EGP para crianças. Excursões organizadas que cobrem transporte e entrada estão disponíveis, com custos relatados em torno de 35 USD.</li>
+    <li>Recomendação para visitar os museus do Cairo. O consenso é priorizar o novo Grande Museu Egípcio (GEM) em vez do antigo Museu Egípcio, já que a maioria dos artefatos significativos foi transferida para o GEM. O GEM oferece uma experiência mais moderna e abrangente da história do Egito Antigo.</li>
+    <li>Para excursões entre cidades egípcias (por exemplo, de Sharm El Sheikh para Hurghada), considere usar voos internos. As companhias aéreas locais geralmente operam voos especiais para turistas. Ao reservar tais excursões, certifique-se de que todos os vistos necessários sejam obtidos caso as viagens regionais os exijam. Pesquise por &#39;excursões de avião para Hurghada&#39; ou termos semelhantes por meio de operadores turísticos ou agregadores de voos.</li>
+    <li>O Mercado de Peixes de Hurghada apresentou, segundo relatos, uma mudança significativa para os turistas. Os preços de itens como a lagosta aumentaram de aproximadamente 25 USD no ano passado para 35-40 USD atualmente. Além disso, a qualidade do preparo dos alimentos diminuiu, com problemas como falta de limpeza e excesso de sal sendo relatados. Como resultado, muitos turistas consideram o mercado menos atraente em termos de custo-benefício e qualidade em comparação com anos anteriores.</li>
+    <li>Voos podem sofrer atrasos significativos. Os motivos podem incluir problemas de disponibilidade da tripulação (por exemplo, aguardar a chegada de comissários de bordo) ou eventos externos, como partidas esportivas envolvendo a seleção nacional, que podem causar atrasos nas operações de aeroportos e companhias aéreas. A comunicação a bordo pode ser limitada ao inglês ou árabe, e comodidades como água extra podem não ser fornecidas. Aeronaves como o Airbus A320 neo podem ser apertadas, com espaço limitado para as pernas de passageiros mais altos.</li>
+    <li>Passageiros de companhias aéreas frequentemente podem combinar suas franquias de bagagem despachada, especialmente em voos fretados. Por exemplo, uma franquia comum é de 20kg de bagagem despachada e 5kg de bagagem de mão por pessoa. Mesmo que as passagens indiquem &#39;sem refeições&#39;, as companhias aéreas ainda podem fornecer uma caixa de lanche com sanduíches, bebidas e biscoitos.</li>
+    <li>Relata-se uma experiência de viagem positiva com uma companhia aérea que voou de Moscou para Hurghada em 24 de abril. A bagagem (uma mala para dois passageiros) foi consolidada sem problemas. Água foi servida durante o voo, descrita como levemente fresca. A decolagem e a aterrissagem foram suaves, resultando em uma impressão favorável da companhia aérea.</li>
+    <li>Nos casos em que um operador turístico (por exemplo, a Fun Sun) tenha problemas técnicos que impeçam a emissão de vouchers/bilhetes físicos, os viajantes para o Egito relataram que conseguiram embarcar e fazer o check-in no hotel apenas com o passaporte e a inclusão nas listas de passageiros. Os vouchers nem sempre foram verificados. Aconselhe os viajantes a garantirem que constam nas listas oficiais de passageiros, mesmo sem documentos físicos. Esta situação acarreta riscos.</li>
+    <li>Para reservar um cruzeiro de vários dias pelo Nilo no Egito, especialmente se se encontrar atualmente na Rússia e planear voar a partir de Marrocos, considere o seguinte: Os guias locais ou as agências de viagens no Egito podem oferecer melhores preços. As plataformas online como a Tripstore são também um recurso possível para reservar pacotes de cruzeiro. Se encontrar um cruzeiro adequado for um fator determinante para a sua viagem, certifique-se de que pesquisa e reserva com antecedência.</li>
+    <li>Viajantes que reservam através da Fan San no Egito relataram problemas com bilhetes de avião e confirmações de reserva ausentes, sendo que alguns possuem apenas uma impressão da reserva. Apesar das preocupações iniciais sobre traslados e check-ins, os viajantes geralmente conseguiram seguir viagem usando apenas o passaporte e a confirmação da reserva. A segurança do aeroporto pode confiscar toda a água. A duração do voo de Moscou para Hurghada é de aproximadamente 6 horas. Alguns viajantes relataram viagens bem-sucedidas apenas com a confirmação da reserva.</li>
+    <li>Regra geral no Egito: Embora exista um equívoco comum sobre a necessidade de partir no mesmo tipo de voo (charter/regular) em que chegou, isso é amplamente um mito. A principal preocupação da imigração é cumprir a duração permitida da estadia. Na prática, partir em um tipo de voo diferente do da chegada é frequentemente permitido sem problemas. No entanto, restrições específicas podem ser aplicadas se houver mudança de aeroportos de partida ou se o bilhete tiver bloqueios específicos (por exemplo, bloqueio de charter em um voo regular). Distinguindo os tipos de voo: Voos regulares geralmente têm números de voo de 3 dígitos (por exemplo, TK700), enquanto os charters podem ser marcados como &#39;charter&#39; ou ter números de 4 dígitos. Companhias aéreas como Turkish Airlines, Egyptair, Air Cairo e Nesma Airlines operam frequentemente voos regulares. Voos com rota através da Turquia são frequentemente regulares.</li>
+    <li>Viajar de forma independente para o Egito geralmente sai mais barato do que pacotes turísticos, especialmente para famílias ou viagens com múltiplos hotéis. Estratégia para economizar: monitore passagens aéreas individuais e reserve hotéis separadamente por meio de agregadores como o Sletat.ru ou diretamente nos sites dos hotéis. Operadoras de turismo (TO) podem ser mais vantajosas para casais ou viagens curtas que aproveitem ofertas específicas de voos charter.</li>
+    <li>Para voos domésticos dentro do Egito, o Aeroporto de Marsa Alam é uma opção. O Aeroporto de Hurghada é geralmente menos movimentado para voos domésticos, sendo recomendado chegar com 1 hora e meia ou até mesmo 1 hora e 15 minutos de antecedência antes do voo.</li>
+    <li>1. **Ingressos para as Pirâmides:** Podem ser comprados no local. As filas geralmente não são um problema (até maio). O pagamento requer cartões bancários internacionais não locais, ou pode ser feito por meio de &#34;ajudantes&#34; locais mediante uma taxa adicional. 2. **Reserva de Excursões:** Guias do hotel: geralmente oferecem preços mais altos, muitas vezes alegando exclusividade ou status &#34;oficial&#34;. Vendedores de praia/rua: frequentemente revendem passeios, os preços variam, mas podem ser mais altos do que os online. Plataformas online: sites como Getyourguide e Viatour são recomendados para obter melhores preços. O pagamento geralmente requer um cartão bancário estrangeiro (não local). 3. **Exemplo de comparação de preços (excursão marítima):** Guia do hotel - US$ 60; Vendedor de praia - US$ 55; Vendedor de rua - US$ 40; Plataforma online - US$ 22.</li>
+    <li>1. **Viagem de verão (julho a agosto):** O calor extremo torna a maioria das excursões terrestres (por exemplo, Pirâmides, Luxor) um desafio. Concentre-se em atividades marítimas e relaxamento na praia; passeios noturnos de quadriciclo são aceitáveis. 2. **Hurghada para excursões terrestres:** É uma base melhor para excursões de longa distância, como as Pirâmides e Luxor. 3. **Sharm El Sheikh em agosto:** Se escolher Sharm, selecione hotéis sem recifes excessivamente longos para evitar o desconforto da exposição ao sol enquanto caminha até águas mais profundas. 4. **Mergulho:** Boas oportunidades tanto em Hurghada (e áreas vizinhas) quanto em Sharm. Hurghada é adequada para iniciantes. 5. **Recomendação geral para agosto:** Hurghada é frequentemente recomendada em vez de Sharm para um conforto geral, especialmente se você planeja fazer excursões além de apenas atividades marítimas.</li>
+    <li>Um orçamento de 220.000 rublos (aprox. 2.300 USD) é geralmente suficiente para uma viagem de 10 noites ao Egito (Sharm El Sheikh ou Hurghada) no início de setembro. Isso inclui 120.000-130.000 rublos para um pacote turístico com tudo incluído (não necessariamente de 5 estrelas) e 100.000 rublos para excursões e refeições fora do hotel. Estimativas de custos de excursões (fora das operadoras de turismo): Pirâmides via Tripster: 80-120 USD por pessoa. Passeio a cavalo/quadriciclo: 35 USD por pessoa. Mergulho: 50 USD ou mais por pessoa.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/pt/eg/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/pt/eg/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/pt/eg/sim-e-internet/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>📶 SIM e Internet</span></a>
+    <a class="chip" href="/pt/eg/bancos-e-dinheiro/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Bancos e Dinheiro</span></a>
+    <a class="chip" href="/pt/eg/documentos-e-vistos/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentos e Vistos</span></a>
+    <a class="chip" href="/pt/eg/sa-de/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Saúde</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Ainda não sabe o que fazer no seu caso?</h2>
+    <p>Pergunte ao Luky — dá o que você realmente precisa: experiência real de quem já passou por isso.</p>
+    <p>E o Luky é um tradutor de voz para conversas reais: resolva na recepção sem estresse.</p>
+    <p class="ps">PS: conversar com alguém num festival no exterior — fácil</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir o Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiência real dos chats de comunidades, sem enrolação</div>
+    <nav class="f-links">
+      <a href="/pt/about/">Sobre</a>
+      <a href="/pt/eg/">Todos os temas</a>
+      <a href="/pt/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">As respostas são reunidas de chats abertos de comunidades — é a experiência real das pessoas, não aconselhamento oficial. Verifique antes de decisões importantes.</p>
+    <div class="f-copy">© 2026 Luky · atualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noite", DAY="\u2600 Dia";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

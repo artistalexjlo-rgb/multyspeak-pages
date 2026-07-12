@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coreia do Sul: Ingressos e Lazer — experiência real · Luky</title>
+<meta name="description" content="Experiência real dos chats sobre Ingressos e Lazer em Coreia do Sul: como é, em primeira mão. Para o seu caso — pergunte ao Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/pt/kr/ingressos-e-lazer/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/kr/ingressos-e-lazer/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/kr/ingressos-e-lazer/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/kr/ingressos-e-lazer/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/kr/ingressos-e-lazer/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/kr/ingressos-e-lazer/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · qualquer país · sem enrolação</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noite</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/pt/">Início</a> /
+    <a href="/pt/kr/">Coreia do Sul</a> /
+    <b>Ingressos e Lazer</b>
+  </nav>
+
+
+  
+  <h1>Ingressos e Lazer em Coreia do Sul: experiência real dos chats</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiência real de pessoas dos chats sobre «Ingressos e Lazer» em Coreia do Sul — como é, sem enrolação. Para o seu caso — <strong>pergunte ao Luky</strong>.</div></div>
+
+  <h2>Da experiência real</h2>
+  <ul class="qlist">
+    <li>Se os códigos de verificação do K-ETA não estiverem chegando via Gmail ou Mail.ru, o uso do e-mail Yandex provou ser bem-sucedido para muitos usuários. O status do K-ETA não precisa ser atualizado após uma mudança de empregador. Se você está planejando uma viagem, não compre passagens aéreas até que seu K-ETA seja oficialmente aprovado.</li>
+    <li>Durante o feriado de Chuseok, a entrada em grandes locais turísticos, como palácios, costuma ser gratuita, embora as visitas guiadas possam ser limitadas. A maioria das grandes redes de varejo permanece aberta, enquanto pequenas empresas privadas podem fechar. Reservar transporte (trens/ônibus) com antecedência é essencial devido à alta demanda.</li>
+    <li>A Ilha de Jeju é um destino popular em julho, oferecendo belas paisagens naturais. O tubo de lava Manjanggul é uma atração recomendada. A ilha proporciona um ambiente tranquilo, adequado para os amantes da natureza.</li>
+    <li>Visitar o Secret Garden no Palácio Changdeokgung durante o Chuseok: A entrada geralmente é gratuita, mas as visitas guiadas oficiais são suspensas. Os visitantes podem explorar o local de forma independente, mas o número de visitantes é significativamente maior do que o habitual.</li>
+    <li>Os ingressos para o Seoul Robot &amp; AI Museum (RAIM) geralmente podem ser comprados na entrada, e a reserva antecipada não costuma ser necessária. Algumas áreas de exposição podem estar fechadas para eventos ou reservas de grupos. Embora a entrada seja geralmente simples, algumas seções podem ser mais interessantes para crianças. A experiência pode ser melhorada visitando como parte de um grupo, já que visitas individuais podem ter limitações.</li>
+    <li>Visitar atrações populares da Coreia do Sul, como o Jardim Secreto, pode ser muito movimentado, especialmente durante feriados como o Chuseok, quando a entrada é gratuita. É altamente recomendável reservar ingressos online com antecedência, pois apenas um número limitado está disponível. Se a reserva online for problemática, chegar cedo ao balcão de ingressos no dia da sua visita é uma alternativa. O Everland tende a ser menos movimentado nos dias úteis. Alugar um Hanbok (vestuário tradicional coreano) é uma recomendação popular para visitar palácios e mergulhar na experiência cultural.</li>
+    <li>As passagens de trem KTX para agosto na Coreia do Sul começam a ser vendidas a partir de 4 de julho. Embora a reserva possa ser possível com antecedência, a seleção específica de assentos pode ser limitada até mais perto da data da venda. É aconselhável consultar o site oficial da Korail ou plataformas de viagem confiáveis para obter horários de venda exatos e procedimentos de reserva. O &#39;Blue Line Park&#39; em Busan oferece passeios panorâmicos, e os ingressos para ele podem ser comprados no local ou com antecedência.</li>
+    <li>O pagamento de passagens aéreas com cartões UnionPay na Coreia do Sul pode ser inconsistente. Embora algumas plataformas possam aceitar UnionPay, não é universalmente garantido. Para reservas de voos internacionais, é aconselhável verificar as opções de pagamento de companhias aéreas ou agências de viagens específicas. Ter métodos de pagamento alternativos, como Visa ou Mastercard, pode garantir um processo de transação mais tranquilo.</li>
+    <li>Dicas para o Everland: 1) Instale o aplicativo oficial para obter dados de filas em tempo real, horários de shows e mapas. 2) É um parque montanhoso; calçados confortáveis são obrigatórios. 3) As atrações populares incluem Pandas, Safari World, T-Express (montanha-russa de madeira) e Amazon Express. 4) Dias da semana são altamente recomendados para evitar multidões.</li>
+    <li>O tubo de lava Manjanggul na Ilha de Jeju está aberto para visitação. É um marco natural significativo que vale a pena explorar para turistas interessados em geologia e maravilhas naturais.</li>
+    <li>Em Busan, o trem &#39;Sky Capsule&#39; é um pequeno vagão para duas pessoas que circula em trilhos elevados, o qual esgota rapidamente e exige reserva antecipada. O &#39;Coastal Train&#39; opera em uma rota regular, permitindo que os passageiros desembarquem em várias paradas para explorar atrações antes de embarcar novamente. As passagens para ambos podem ser compradas no local, mas o Coastal Train oferece mais flexibilidade para passeios turísticos.</li>
+    <li>O mercado secundário de ingressos para eventos na Coreia do Sul é restrito. Plataformas como a Yes24 normalmente exigem verificação de identidade coreana local. Sites oficiais de revenda para estrangeiros praticamente não existem; evite transferências informais arriscadas entre pessoas físicas onde os nomes nos ingressos precisam coincidir com os documentos de identidade.</li>
+    <li>As passagens de trem KTX na Coreia do Sul devem ser reservadas com 1-2 semanas de antecedência por meio de plataformas como o Trip.com. Se as passagens parecerem esgotadas, é possível comprar um bilhete de &#39;em pé&#39; na estação e ocupar assentos vazios até que o passageiro com bilhete chegue.</li>
+    <li>O Trip.com é geralmente considerado uma plataforma confiável para reservar serviços de viagem, incluindo voos, trens, hotéis, eSIMs e ingressos para atrações. Os usuários relataram experiências positivas com o suporte ao cliente e pagamentos bem-sucedidos usando vários métodos, incluindo cartões Mir, para viagens à Europa e à China. É uma opção recomendada para reservar viagens.</li>
+    <li>As passagens de trem KTX são anunciadas com um período de validade de 72 horas. No entanto, esta informação pode não estar facilmente disponível após a compra, e o mecanismo exato de sua aplicação requer esclarecimentos.</li>
+    <li>O outono na Coreia do Sul oferece oportunidades espetaculares para observar a folhagem, sendo que a alta temporada para o &#39;tanpung&#39; (folhas de bordo vermelhas) ocorre geralmente do final de outubro ao início de novembro. Locais populares para observação em Seul e arredores incluem a Seoul Forest e os parques ao redor dos palácios. Para uma experiência mais imersiva, considere um passeio de um dia ao Parque Nacional Seoraksan, embora isso exija um planejamento cuidadoso do transporte. Os viajantes que visitam entre o final de outubro e o início de novembro podem esperar ver tanto ginkgos quanto folhas de bordo. Embora o período exato do auge da folhagem possa variar anualmente, Seul e suas áreas circundantes oferecem inúmeros parques e locais naturais para apreciar as vibrantes cores do outono.</li>
+    <li>Bilhetes de trem de Seul para Busan podem ser comprados no guichê da estação (por exemplo, na Estação de Seul) para evitar as altas taxas de serviço das agências de viagens online. Os funcionários dos guichês geralmente falam inglês. Para dias de menor movimento, os bilhetes costumam estar disponíveis, embora seja recomendado reservar com antecedência para horários de partida específicos.</li>
+    <li>Informe-se sobre a disponibilidade de guias de áudio em russo no Museu Nacional da Coreia. Caso não estejam disponíveis, verifique se há suporte para o idioma russo no aplicativo oficial do museu ou em recursos alternativos.</li>
+    <li>O mês de agosto na Coreia do Sul é caracterizado por calor intenso, alta umidade e a estação chuvosa. Sombrinhas com proteção UV são altamente recomendadas. O início de setembro é geralmente mais agradável para atividades ao ar livre, embora a infraestrutura de praia (espreguiçadeiras/guarda-sóis) seja tipicamente removida após o final de agosto.</li>
+    <li>Os passeios à DMZ são organizados reservando um operador de turismo para o transporte. Os ingressos oficiais de entrada não podem ser comprados online com antecedência; eles são adquiridos no local, mediante chegada e conforme a disponibilidade para o próximo horário. O cronograma do passeio é rigorosamente fixo (Observatório Dora, túnel, lojas de lembranças), sem flexibilidade para permanecer por mais tempo em locais específicos.</li>
+    <li>Bilhetes para o ônibus de turismo &#39;Hop-on Hop-off&#39; em Seul: ~22.000 KRW online, ~27.000 KRW no balcão. O serviço inclui comentários em áudio em russo. O melhor horário para visitar é logo pela manhã (antes das 11:00) para evitar picos de lotação.</li>
+    <li>O termo &#39;artigo pessoal&#39; nas franquias de bagagem de voo refere-se geralmente a artigos como uma mala de mão ou uma mochila pequena que os passageiros podem levar para além da sua bagagem de cabine e bagagem de porão. Este artigo está normalmente incluído na franquia de bagagem total e não representa um custo extra ou uma categoria separada, a menos que especificado em contrário pela companhia aérea.</li>
+    <li>O cassino do Seoul Dragon City é descrito como uma opção moderna e esteticamente agradável em Seul, contrastando com estabelecimentos mais antigos. Ele possui um bar com vista e é conhecido por seus preços elevados.</li>
+    <li>O Naver Maps e outros serviços da Naver na Coreia do Sul frequentemente exigem conexão online e registro de conta para funcionalidade total, incluindo recursos avançados como reservas e certas capacidades de busca. Embora dados de mapa e navegação básica possam estar disponíveis offline após o download, recursos como reservas de restaurantes ou serviços específicos baseados em localização geralmente exigem uma conexão ativa com a internet e uma conta Naver registrada. Verifique os requisitos específicos para os recursos que você pretende usar.</li>
+    <li>Voos para Seul estão disponíveis não apenas saindo de Moscou, mas também de outras cidades russas como Vladivostok, geralmente com escalas na China. Rotas via Novosibirsk, Irkutsk e Ulan-Ude através da China ou Mongólia também são possíveis.</li>
+    <li>Se uma conexão de voo for perdida devido a um atraso em uma reserva de bilhete único, a companhia aérea é responsável por reacomodar o passageiro no próximo voo disponível. Isso pode envolver um período de espera.</li>
+    <li>A temporada de tangerinas na Ilha de Jeju normalmente não ocorre no final de junho. Embora não haja tangerinas frescas nas árvores, os visitantes podem explorar um Museu da Tangerina que detalha sua história e variedades, muitas vezes com exposições interativas. Jeju também oferece atrações como plantações de chá, vulcões, moinhos de vento e uma praia rasa e quente de &#39;girinos&#39;. Vários passeios educacionais estão disponíveis para crianças.</li>
+    <li>Embora alguns usuários relatem experiências negativas com o Trip.com, particularmente em relação a reservas de hotéis (overbooking, discrepâncias nos quartos), outros tiveram experiências consistentemente positivas ao reservar voos, acomodações e passeios. É aconselhável verificar a disponibilidade e os preços em diferentes agregadores, pois os valores podem variar.</li>
+    <li>As passagens de trem de Seul para Busan não possuem uma tarifa universal fixa; os preços dependem do tipo e da classe do trem. As passagens podem ser compradas por meio de agregadores terceirizados ou canais oficiais. Para fins de controle, é altamente recomendável imprimir tanto a passagem quanto a confirmação de pagamento.</li>
+    <li>O Lotte World (parque temático) e o Lotte World Aquarium são atrações separadas que exigem ingressos individuais. Plataformas de reserva online, como o Trip.com, oferecem opções combinadas. Os preços variam de acordo com o pacote (por exemplo, entrada geral versus Magic Pass para acesso rápido).</li>
+    <li>Nadar nas praias de Busan é restrito a áreas designadas e delimitadas por cordas até às boias. Nadar para lá destas boias é proibido e pode resultar na intervenção dos serviços de resgate. Embora existam praias selvagens, estas representam um risco maior de afogamento, o que as autoridades pretendem evitar para proteger a indústria do turismo.</li>
+    <li>Para visitantes de primeira viagem em Seul, recomenda-se ficar nas áreas de Jongno ou Myeongdong devido à excelente acessibilidade ao metrô. A reserva antecipada de acomodação é recomendada; o Booking.com oferece inúmeras opções, mas muitas vezes exige pré-pagamento. O Trip.com é uma alternativa adequada para viajantes da Rússia sem cartões internacionais. As principais atrações incluem os cinco palácios (considere um ingresso combinado), a Vila Bukchon Hanok, o aquário, o Everland, o distrito de Myeongdong, a Torre Namsan e o Parque Namsan, caminhar ao longo do riacho Cheonggyecheon, Ikseon-dong e o distrito de Seongsu por suas lojas pop-up e atmosfera moderna.</li>
+    <li>O cartão Namane funciona como um cartão de transporte padrão na Coreia do Sul, mas não oferece benefícios para atrações, ao contrário do Discover Seoul Pass. O Climate card é um passe de viagem ilimitado específico para Seul. O T-money é um cartão de transporte de uso geral que requer recargas individuais. Para titulares de contas bancárias coreanas, cartões de transporte vinculados podem permitir deduções mensais em vez de por viagem.</li>
+    <li>Ao reservar ingressos para espetáculos como o NANTA na Coreia do Sul, considere plataformas como Trip.com, Nole (um importante site de ingressos para shows e eventos) e Klook. Embora alguns usuários tenham relatado experiências positivas com vários sites de ingressos, mesmo aqueles com avaliações mistas, é aconselhável comparar preços e estar ciente de que as experiências podem variar. Comprar diretamente da companhia aérea ou de uma plataforma confiável como a Trip.com também é recomendado para passagens aéreas.</li>
+    <li>O Busan Sky Capsule oferece uma experiência mais panorâmica e elevada em comparação com o Blue Line Beach Train. O Sky Capsule viaja mais alto, proporcionando vistas melhores, embora seu trajeto seja mais curto. Os bilhetes para o Sky Capsule têm alta demanda e costumam esgotar com meses de antecedência durante a alta temporada. O Blue Line Beach Train circula mais próximo à costa, oferecendo vistas menos elevadas, mas pode ser percorrido a pé se o tempo permitir. Ambas as rotas cobrem áreas costeiras semelhantes.</li>
+    <li>O Busan Sky Capsule oferece um ponto de observação mais elevado e vistas melhores em comparação com o Blue Line Beach Train. A rota do Sky Capsule é mais curta e os bilhetes costumam esgotar com bastante antecedência, especialmente durante a alta temporada. O Blue Line Beach Train percorre o litoral, proporcionando uma experiência mais próxima ao solo e pode ser explorado a pé para apreciar a paisagem.</li>
+    <li>O Aeroporto Internacional de Gimhae, em Busan (PUS), oferece diversos quiosques de autoatendimento para check-in de bagagem e registro de passageiros. Ao reservar voos com escalas, verifique a política de despacho de bagagem. A bagagem pode ser despachada até o destino final ou apenas até o ponto de trânsito, exigindo um novo check-in no aeroporto de escala. Recomenda-se que os passageiros aguardem de 5 a 10 minutos após o despacho da bagagem para verificações de segurança antes de seguir para o controle de passaportes.</li>
+    <li>O transporte público em Seul e Busan utiliza cartões recarregáveis ou bilhetes de viagem única. Em Seul, cartões de viagem única podem ser comprados em máquinas, com um depósito de 500 KRW reembolsado ao sair do sistema. As máquinas podem limitar as compras a cinco bilhetes de uma vez, e a seleção da estação pode ser feita via mapa se a estação específica não estiver listada. Em Busan, as máquinas de bilhetes são mais rápidas e emitem bilhetes com código QR, sendo que os mecanismos de devolução de depósito podem ser menos comuns ou ausentes em todas as estações.</li>
+    <li>Ao entrar na Coreia do Sul, os viajantes devem possuir dinheiro equivalente a US$ 100 por dia de estadia. Passagens de volta para o país de cidadania ou residência, um hotel reservado e um itinerário turístico detalhado (pelo menos três locais logicamente planejados por dia) também são essenciais. Certifique-se de que os detalhes do K-ETA ou do visto reflitam com precisão o objetivo da visita (por exemplo, turismo versus visita a amigos) para evitar a negativa de entrada. Assistência na criação de um plano turístico ou consultas gerais sobre travessia de fronteira estão disponíveis.</li>
+    <li>Os ingressos para o teleférico do Parque Namsan podem ser adquiridos com desconto por meio de plataformas como a Trip.com. O código QR obtido na reserva deve ser trocado por um ingresso físico em um local designado: 15 Toegye-ro 14-gil, Jung-gu, Seul. Este ponto de troca está situado abaixo da estação do teleférico, exigindo uma descida e subida.</li>
+    <li>Agosto é geralmente considerado um período de baixa temporada turística na Coreia do Sul devido ao calor intenso e à umidade, especialmente após as chuvas. Atividades ao ar livre podem ser exaustivas, com as temperaturas e a umidade fazendo com que pareça um &#39;banho&#39;. Muitos moradores locais lidam com isso permanecendo em ambientes fechados com ar-condicionado. A paisagem natural também é menos atraente em comparação com a primavera e o outono. Este período é melhor evitado para passeios turísticos típicos, a menos que se esteja preparado para o clima extremo.</li>
+    <li>O clima na Coreia do Sul durante julho e agosto é caracterizado por calor intenso e umidade, frequentemente agravados pela chuva. As atividades ao ar livre podem ser muito desconfortáveis, com a sensação de estar em um &#39;banho turco&#39;. Muitos moradores e residentes buscam refúgio em espaços fechados com ar-condicionado. A paisagem natural é menos atraente do que na primavera ou no outono. Viajar para áreas costeiras como Donghae ou Sokcho pode ser uma opção, mas o mar pode estar agitado, limitando o banho. Atrações em ambientes fechados são uma alternativa mais confortável durante este período.</li>
+    <li>Verifique se um cartão UnionPay do Rosselkhozbank funciona na Coreia do Sul e se pode ser usado para comprar ingressos no NOL World, ou se um cartão coreano é necessário.</li>
+    <li>Participar do Asia Top Artist Festival na Coreia do Sul pode ser uma experiência que vale a pena, contando com artistas populares como ATEEZ, Lee Mujin, Yena e KickFlip. Os ingressos estão disponíveis em plataformas como a Nol.world. O festival oferece um repertório diversificado que vai além do K-pop, com artistas que agradam a diversos gostos.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/pt/kr/documentos-e-vistos/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentos e Vistos</span></a>
+    <a class="chip" href="/pt/kr/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/pt/kr/bancos-e-dinheiro/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Bancos e Dinheiro</span></a>
+    <a class="chip" href="/pt/kr/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/pt/kr/c-mbio-e-transfer-ncias/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Câmbio e Transferências</span></a>
+    <a class="chip" href="/pt/kr/seguran-a/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Segurança</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Cansado de pesquisar a mesma coisa?</h2>
+    <p>Pergunte ao Luky — o que a busca não mostra e nem todo blogueiro conta.</p>
+    <p>E o Luky é um tradutor de voz para conversas reais: fale com o médico e entenda o que ele disse.</p>
+    <p class="ps">PS: uma chamada de voz com aquela pessoa de outro país — também é o Luky</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir o Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiência real dos chats de comunidades, sem enrolação</div>
+    <nav class="f-links">
+      <a href="/pt/about/">Sobre</a>
+      <a href="/pt/kr/">Todos os temas</a>
+      <a href="/pt/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">As respostas são reunidas de chats abertos de comunidades — é a experiência real das pessoas, não aconselhamento oficial. Verifique antes de decisões importantes.</p>
+    <div class="f-copy">© 2026 Luky · atualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noite", DAY="\u2600 Dia";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

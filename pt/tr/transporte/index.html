@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Turquia: Transporte — experiência real · Luky</title>
+<meta name="description" content="Experiência real dos chats sobre Transporte em Turquia: como é, em primeira mão. Para o seu caso — pergunte ao Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/pt/tr/transporte/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/tr/transporte/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/tr/transporte/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/tr/transporte/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/tr/transporte/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/tr/transporte/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · qualquer país · sem enrolação</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noite</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/pt/">Início</a> /
+    <a href="/pt/tr/">Turquia</a> /
+    <b>Transporte</b>
+  </nav>
+
+
+  
+  <h1>Transporte: como é em Turquia — em primeira mão</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiência real de pessoas dos chats sobre «Transporte» em Turquia — como é, sem enrolação. Para o seu caso — <strong>pergunte ao Luky</strong>.</div></div>
+
+  <h2>Da experiência real</h2>
+  <ul class="qlist">
+    <li>Para chegar ao Esenler Otogarı (Terminal Rodoviário de Istambul), o principal ponto de partida para ônibus com destino à Bulgária, saindo do Aeroporto de Istambul (IST), os viajantes podem usar o sistema de metrô com duas baldeações; a viagem leva aproximadamente 1,5 hora. O endereço exato do Esenler Otogarı é: Altıntepsi, Esenler Otogarı Otoparkı 25-137 D:25-137, 34035 Bayrampaşa/Istambul, Turquia. Aplicativos de navegação como o Yandex Maps podem fornecer rotas detalhadas e informações sobre tarifas.</li>
+    <li>As rotas de voo Moscou-Istambul enfrentam interrupções frequentes. Evite conexões apertadas; escolha voos diurnos ou noturnos, já que os voos do início da manhã são mais propensos a cancelamentos. É recomendável reservar voos para Istambul e transporte terrestre separado para a Bulgária para mitigar os riscos de trânsito.</li>
+    <li>O check-in online para voos internacionais, particularmente com a Turkish Airlines saindo de Istambul, pode envolver taxas para a escolha de assento. Mesmo após a atribuição automática de assento durante o registro online, a alteração do assento geralmente implica uma taxa. Isso contrasta com as práticas de algumas companhias aéreas russas, onde as mudanças de assento durante o check-in online são frequentemente gratuitas.</li>
+    <li>Rota de viagem: Voo para Istambul, traslado entre os aeroportos IST/SAW (aprox. 336-360 TRY), depois ônibus para Sófia (aprox. 38 EUR). A principal travessia de fronteira para ônibus de Istambul para Sófia é Kapitan Andreevo.</li>
+    <li>Confirme as rotas de ônibus atuais para o Aeroporto de Istambul (IST). A Arda Tour geralmente atende ao terminal rodoviário principal (Otogar), enquanto a Nişancı opera rotas para o IST. Algumas rotas específicas da Arda Tour, como a das 21:55 saindo de Burgas, podem incluir uma parada no IST, mas a verificação é recomendada.</li>
+    <li>Para traslados no Aeroporto de Istambul (IST), considere o seguinte: se você não tiver bagagem despachada e tiver feito o check-in online para o seu próximo voo, especialmente se for com a mesma companhia aérea ou se puder usar a área de trânsito sem controle de passaporte, uma conexão de 2 horas pode ser viável. Alguns usuários conseguiram realizar traslados com menos de 2 horas, mesmo com uma breve saída da área de trânsito. Serviços de carrinhos pagos estão disponíveis para agilizar o deslocamento entre os portões. Esteja ciente de que atrasos nos voos podem impactar significativamente sua capacidade de realizar a conexão. Sempre verifique se você pode fazer o check-in online e se há sinalização clara para as rotas de trânsito. Pode haver uma verificação de segurança adicional dentro da área de trânsito. O controle de passaporte é necessário se você precisar sair da zona de trânsito, o que pode levar tempo extra.</li>
+    <li>Ao viajar de ônibus de Istambul, Turquia, para a Bulgária, cartões bancários russos podem não ser aceitos em alguns sites de empresas de ônibus turcas. Para reservar passagens com a Nishikli, entre em contato com eles via WhatsApp pelo número +359 89 455 9552. Eles respondem em russo e podem fornecer horários e ajudar com a reserva. Forneça seu nome completo como aparece no seu passaporte internacional. As partidas do Aeroporto de Istambul (do poste nº 19) são às 6:00 e às 15:30. As passagens da ArdaTur podem ser compradas usando Rublos russos através do serviço Tutu.ru.</li>
+    <li>Viajantes que utilizam serviços de ônibus do Aeroporto de Istambul (IST) para a Bulgária devem estar cientes de mudanças frequentes nas localizações dos pontos de ônibus e nos horários. Empresas como Arda Tur e Nişikli alteraram seus pontos de embarque, com algumas mudando para diferentes níveis ou faixas dentro do aeroporto. Além disso, os preços das passagens podem aumentar. É crucial verificar o ponto de ônibus e o horário atual pouco antes da partida para evitar perder o transporte.</li>
+    <li>Cartões bancários russos não são aceitos no portal de reservas de transporte turco Obilet ou em sites de operadoras diretas, como a Arda Tur. Para comprar passagens, os viajantes podem pagar em dinheiro (TRY) nos guichês físicos ou configurar um cartão virtual turco (como o Letim), que pode ser recarregado via SBP russo, para reservar online.</li>
+    <li>Viagem de ônibus de Istambul (Novo Aeroporto) para a Bulgária: Utilize plataformas como a Obilet para reservas. Observe que algumas rotas principais (como a Arda) podem ter horários inconsistentes ou cancelamentos durante a alta temporada. As passagens frequentemente esgotam com semanas de antecedência. Reserve sempre online e confirme o status localmente no terminal rodoviário do aeroporto (Nishikli, etc.).</li>
+    <li>Os serviços de ônibus do Aeroporto de Istambul (IST) para destinos no litoral búlgaro (por exemplo, Sunny Beach) podem ser inconsistentes. Ônibus diretos do IST podem ter partidas noturnas limitadas ou não confiáveis. Para mais opções, é mais seguro viajar do IST para o Esenler Otogarı (terminal rodoviário principal de Istambul) usando ônibus da Havatas (da plataforma 5, aproximadamente a cada meia hora). Comprar passagens da Arda Tur partindo do Esenler Otogarı é possível através do Tutu.ru, permitindo o pagamento em rublos com cartões russos, mas pode ser mais caro. Chegada ao IST: O controle de passaporte e a retirada de bagagem podem levar de 40 minutos a mais de uma hora, tornando uma conexão apertada (por exemplo, chegada às 5h para um ônibus às 6h) arriscada, especialmente com bagagem despachada.</li>
+    <li>Para reservar passagens de ônibus da Nishikli, é aconselhável entrar em contato via WhatsApp. Embora eles confirmem reservas por meio de mensagens de voz, a comunicação direta via WhatsApp é mais confiável para confirmar detalhes e garantir reservas, especialmente durante a alta temporada.</li>
+    <li>Para passageiros em trânsito no Aeroporto de Istambul (IST) com bilhetes separados e sem bagagem despachada, é geralmente possível seguir diretamente para o portão de embarque se você tiver um cartão de embarque online válido para o seu voo de conexão. Provavelmente será necessário passar pela segurança, mas não necessariamente pelo controle de passaportes, caso permaneça na zona de trânsito. Verifique o site do aeroporto para informações de voo em tempo real e mapas do aeroporto. O Wi-Fi gratuito geralmente está disponível, sendo que o registro costuma exigir a digitalização do passaporte ou detalhes do voo. Se o check-in online não for possível ou se você tiver requisitos específicos, poderá ser necessário sair da área de trânsito e passar pelos procedimentos completos de check-in e controle de passaportes.</li>
+    <li>Ao viajar de ônibus do Novo Aeroporto de Istambul (IST) para cidades da costa búlgara do Mar Negro, como Sunny Beach ou Varna:
+*   **Nishikli:** Opera serviços às 06:00 e às 15:30. O embarque é no piso -2, plataforma 19 (antiga plataforma 5, usada pela Havaist). Ao reservar online por sites como o Obilet, o sistema pode mostrar frequentemente apenas um assento disponível; isso às vezes pode ser preciso ou um comportamento comum de exibição. A disponibilidade pode mudar se reservas não pagas forem liberadas perto do horário de partida.
+*   **Arda Tur:** Tem apresentado um serviço inconsistente em relação aos embarques no aeroporto, muitas vezes não entrando no aeroporto apesar da venda de bilhetes, exigindo que os passageiros se desloquem até a rodoviária central. É aconselhável ser cauteloso ao confiar na Arda Tur para partidas diretas do aeroporto.</li>
+    <li>O check-in online da Ajet frequentemente falha em voos internacionais, pois a companhia aérea exige a verificação manual de documentos/vistos no balcão de check-in do aeroporto. O check-in no aeroporto é gratuito.</li>
+    <li>Os serviços de ônibus da Arda a partir do Aeroporto de Istambul podem estar suspensos ou operando com horários limitados, especialmente fora da alta temporada. Aconselha-se aos viajantes que verifiquem o site oficial da Arda Tur para obter o cronograma e informações de rota mais atuais. Como alternativa, serviços de traslado estão disponíveis do Aeroporto de Istambul para a rodoviária central, levando aproximadamente 40 minutos. Os horários dos ônibus e a venda de passagens para várias empresas podem ser encontrados nos sites oficiais das rodoviárias.</li>
+    <li>O serviço de ônibus &#39;Nishikli&#39; opera entre o Aeroporto de Istambul (IST) e a Bulgária (por exemplo, Burgas). As partidas confirmadas do IST para a Bulgária são às 6:00 e às 15:30. Observou-se que alguns horários, como o ônibus das 22:30 da rodoviária de Burgas Sul para o Aeroporto de Istambul, nem sempre podem estar listados no site oficial. Isso sugere que os horários online podem não ser totalmente abrangentes, e consultas locais podem revelar rotas ou horários adicionais. Outras transportadoras como &#39;Metro&#39; e &#39;ArdaTur&#39; foram mencionadas, mas nenhum detalhe de horário foi fornecido.</li>
+    <li>Os ônibus do Aeroporto de Istambul (IST) para resorts búlgaros como Sunny Beach são operados pela Nişancı. Os bilhetes podem ser comprados online através do Obilet.com ou no balcão de passagens do aeroporto. Os preços podem variar; por exemplo, os preços no início de junho giravam em torno de 30 EUR (ou 1600-1900 TRY), com potencial para aumentos.</li>
+    <li>Os requisitos de trânsito em Istambul (IST) incluem a apresentação de comprovante de viagem de ida e volta e reservas de hotel que coincidam com a data de saída. Discrepâncias entre as datas das passagens e da hospedagem podem causar problemas no check-in.</li>
+    <li>Para traslados do Aeroporto de Istambul (IST) para resorts costeiros búlgaros como Sunny Beach ou Varna, o serviço de ônibus Nishikli é uma opção recomendada, com passagens custando aproximadamente 30 EUR. Embora a Nishikli tenha um guichê no aeroporto (piso -2, plataforma 19) e ofereça reserva via WhatsApp, informações sobre reservas via WhatsApp para empresas como Arda Tur ou Metro não estão prontamente disponíveis. Recomenda-se reservar passagens da Nishikli com antecedência durante a alta temporada.</li>
+    <li>Rotas diretas de ônibus do Aeroporto de Istambul (IST) para a Bulgária não são confiáveis; muitos operadores não entram nas dependências do aeroporto apesar das listagens em agregadores. Para viagens dentro de Istambul, os ônibus de traslado HAVAIST são o padrão confiável, partindo a cada 50-60 minutos, com passagens disponíveis em seu site oficial.</li>
+    <li>O serviço de ônibus Arda Tur do Aeroporto de Istambul para a Bulgária tem se mostrado pouco confiável. Apesar de as passagens indicarem a partida do aeroporto, os ônibus podem não entrar diretamente no aeroporto ou podem sofrer atrasos significativos. Passageiros relataram a necessidade de ir a um local próximo para encontrar o ônibus ou ter que encontrar transporte alternativo. A Arda Tur pode oferecer reembolsos por embarques perdidos no aeroporto, mas esse processo pode levar vários dias e não é imediato no aeroporto.
+*   **Transporte Alternativo**: Se a Arda Tur for pouco confiável, os passageiros podem pegar a linha 5 do ônibus urbano de Istambul (ou metrô) para o principal terminal rodoviário de Istambul (Esenler Otogar).
+*   **Outras Empresas de Ônibus**: A partir de Esenler Otogar, outras empresas como a Nishikli oferecem rotas para destinos búlgaros (por exemplo, Burgas, Sunny Beach).
+*   **Recomendação**: Passageiros com passagens da Arda Tur partindo do Aeroporto de Istambul devem tentar entrar em contato diretamente com a Arda Tur antes da data da viagem para confirmar o local de embarque e o horário.</li>
+    <li>Ao voar de Istambul para o Brasil com conexão em Amsterdã, geralmente não é necessário visto se o passageiro permanecer dentro da zona de trânsito internacional do aeroporto. No entanto, se a bagagem precisar ser coletada e despachada novamente devido às condições da passagem, isso pode exigir passar pela imigração e, portanto, exigir um visto, dependendo da nacionalidade do viajante e dos regulamentos do país de trânsito.</li>
+    <li>Para voos de conexão no Aeroporto de Istambul (IST) que envolvam bilhetes separados ou a necessidade de novo check-in, recomenda-se um tempo mínimo de trânsito de 3 a 4 horas. 3 horas permitem uma transferência tranquila, enquanto janelas menores são consideradas de alto risco em caso de atrasos nos voos.</li>
+    <li>Para escalas em Istambul, especialmente com a Turkish Airlines:
+*   **Turkish Airlines**: Frequentemente exige um bilhete de regresso (preferencialmente com a Turkish Airlines) e uma reserva de hotel para toda a duração da estadia. O não cumprimento destes requisitos aumenta o risco de recusa de embarque.
+*   **Outras companhias aéreas**: Podem ser menos rigorosas; um bilhete para um terceiro país (por exemplo, Argentina) com uma companhia aérea diferente pode ser aceite.
+*   **Fatores de risco**: A falta de histórico de viagens no passaporte pode aumentar o escrutínio.
+*   **Alternativas**: Considere rotas de trânsito através de Marrocos ou da Etiópia se os requisitos da Turkish Airlines forem difíceis de cumprir.
+*   **Documentos**: Esteja preparado para apresentar bilhetes de regresso, reservas de hotel e prova de meios de subsistência.</li>
+    <li>A viagem de autocarro do Aeroporto de Istambul (IST) para a Bulgária (Varna/Burgas) é melhor reservada através do site Obilet.com. Nota: O Obilet requer uma VPN para IPs russos e os utilizadores devem definir a moeda para TRY nas definições para obter preços precisos. Nem todas as empresas de autocarros oferecem recolha direta no aeroporto; confirme rotas específicas (por exemplo, Nishikli), uma vez que as operadoras mudam frequentemente os horários e os procedimentos de reserva.</li>
+    <li>Serviços de autocarro como a Arda Tur operam do Aeroporto de Istambul para cidades costeiras búlgaras (por exemplo, Varna, Pomorie). Os horários de partida típicos situam-se entre as 20:00 e as 20:30. É aconselhável confirmar a localização da paragem de autocarro com antecedência, pois os serviços nem sempre fazem a recolha diretamente no aeroporto, apesar da venda de bilhetes. Os preços podem variar entre diferentes plataformas de reserva.</li>
+    <li>Os autocarros do Novo Aeroporto de Istambul para a Bulgária partem do nível -2 (perto das saídas 9-11). Os preços são voláteis; os custos dos bilhetes aumentaram cerca de 30% nos últimos meses, com as tarifas atuais a rondar os 2250 TRY, dependendo do destino (por exemplo, Varna). Plataformas online como a Obilet podem oferecer preços diferentes dos praticados no balcão da estação.</li>
+    <li>O Aeroporto de Istambul (IST) é vasto, exigindo um tempo significativo para trânsito e controlos de segurança. Uma janela de transferência de 2 horas é arriscada, especialmente com os atrasos frequentes nos voos. Recomenda-se reservar ligações com um intervalo de 3,5 a 4 horas para ter em conta as distâncias a pé entre as portas de embarque e potenciais filas de segurança.</li>
+    <li>Para trânsito direto entre o Novo Aeroporto de Istambul (IST) e o Aeroporto Sabiha Gökçen (SAW), utilize o ônibus executivo Havaist-13. Para viajar do Aeroporto Sabiha Gökçen (SAW) para a Praça Taksim, utilize o serviço de transporte Havabus. Verifique os sites oficiais da Havaist e da Havabus para horários e tarifas atualizadas.</li>
+    <li>A travessia de fronteira entre a Turquia e a Bulgária via traslado particular é significativamente mais rápida (aproximadamente 20 minutos) em comparação com as linhas de ônibus grandes, que estão sujeitas a verificações mais rigorosas e demoradas, priorizando muitas vezes a documentação de trânsito de imigrantes. Operadores de ônibus recomendados incluem Arda e Nishikli; as passagens podem ser reservadas pelo site obilet.com.</li>
+    <li>Viajantes em trânsito pela Turquia com voos de conexão para a América do Sul (por exemplo, Brasil) devem estar preparados para um escrutínio intenso por parte das autoridades turcas. Isso pode incluir questionamentos detalhados sobre os planos de viagem, o objetivo da viagem e a verificação de passagens de retorno. Houve casos em que companhias aéreas turcas ou o controle de fronteira negaram o embarque sem explicações claras, exigindo que os passageiros realizassem uma nova reserva com outras companhias por conta própria. É aconselhável ter toda a documentação de viagem, incluindo itinerários detalhados e passagens de retorno, facilmente acessível e estar preparado para questionamentos minuciosos.</li>
+    <li>Para viajar do Aeroporto de Istambul (IST) para Sunny Beach, na Bulgária, usando o ônibus da Nisikli/Havalines: o balcão e o ponto de ônibus estão localizados no andar -2 do aeroporto. A partir da Saída B, vire à direita e siga em direção à plataforma 19 (ou 20). O quiosque de passagens é um dos balcões mais distantes neste nível, em frente a onde os ônibus costumam aguardar. O pagamento pode ser feito em dinheiro (Lira, Euro) ou por cartão. Embora a confirmação da reserva seja enviada por e-mail, recomenda-se fortemente a compra das passagens com antecedência. Reservas não pagas podem ser canceladas caso o ônibus lote, especialmente em rotas diurnas, levando à negação de embarque de passageiros que possuem apenas uma reserva.</li>
+    <li>Para serviços de táxi na Turquia, aplicativos confiáveis incluem BiTaksi, Uber, inDrive e Yandex Go. Esses aplicativos permitem que os usuários definam pontos de embarque manualmente no mapa caso os serviços de localização estejam desativados, proporcionando uma alternativa econômica aos traslados organizados por hotéis.</li>
+    <li>Para viagens de ônibus do Aeroporto de Istambul (IST) para a Bulgária, a &#39;Nishikli&#39; oferece um serviço confiável com partidas agendadas às 06:00 e 15:30. A &#39;Arda Tur&#39; exibe paradas no aeroporto em alguns horários, mas o embarque é inconsistente. Aconselha-se aos viajantes confirmar a disponibilidade ou planejar uma transferência para o terminal rodoviário principal.</li>
+    <li>Ao viajar entre Fethiye e Marmaris, considere as opções de balsa e ônibus. Ônibus para Marmaris custam cerca de 60 EUR. As balsas podem ser mais baratas devido a promoções, especialmente até setembro. Esteja ciente das taxas portuárias: elas geralmente estão incluídas nas passagens de balsa de Marmaris, mas são adicionais nas partidas de Fethiye. Ida e volta de Marmaris: ~95 EUR. De Fethiye: ~85 EUR + ~20 EUR de taxa portuária. A taxa portuária em Fethiye é de cerca de 6 EUR, enquanto em Rodes pode ser de 10 EUR. O custo final pode ser semelhante após contabilizar todas as taxas.</li>
+    <li>Serviços de ônibus do Aeroporto de Istambul (IST) para Sunny Beach e Burgas estão disponíveis via Nishikli. O preço aproximado da passagem é de 1300 TRY (cerca de 30 EUR). Os ônibus partem às 6:00 e às 15:30. As passagens podem ser compradas na bilheteria da Nishikli localizada no piso -2, plataforma 19. Recomenda-se a reserva antecipada via WhatsApp, especialmente durante a alta temporada. O pagamento é aceito em EUR ou USD, com troco fornecido.</li>
+    <li>Para voos da Turkish Airlines, o check-in pode ser feito online ou no aeroporto. O pagamento das passagens pode ser feito geralmente via cartão de crédito/débito ou transferência bancária. Para métodos de pagamento específicos aceitos ou quaisquer restrições potenciais, é melhor consultar o site oficial ou o atendimento ao cliente da companhia aérea.</li>
+    <li>Se um voo (por exemplo, Pegasus, Moscou-Antália-Bremen) for cancelado devido a eventos externos, como uma cúpula da OTAN na Turquia, os passageiros devem entrar em contato com a agência de reservas (por exemplo, City Travel) ou diretamente com a companhia aérea. As companhias aéreas normalmente oferecem reembolsos para voos cancelados. Este é um procedimento comum para interrupções operacionais imprevistas.</li>
+    <li>Operadores de ônibus confiáveis na Turquia para traslados incluem a Kamil Koç e a Isparta. Os bilhetes podem ser comprados no local. Espere possíveis atrasos nas passagens de fronteira e terminais de ferry (recomenda-se uma margem de segurança de até 2 horas). Evite a linha &#39;Bati&#39; se o conforto for uma prioridade.</li>
+    <li>O aplicativo móvel oficial do Aeroporto de Istambul oferece navegação e informações de portão em tempo real para os passageiros, muitas vezes atualizando antes dos painéis físicos do terminal.</li>
+    <li>Podem ocorrer discrepâncias significativas de preço para passagens de ônibus do Aeroporto de Istambul (IST) para destinos na Bulgária. Plataformas online como a Obilet podem mostrar preços diferentes em comparação com compras diretas no aeroporto ou em rodoviárias. A empresa &#39;Balkan&#39; é identificada como um possível revendedor, o que pode contribuir para custos mais altos. Uma compra direta para Sunny Beach no aeroporto foi registrada por 30 EUR ou 1500 TRY.</li>
+    <li>Os ônibus do Aeroporto de Istambul (IST) para Sunny Beach, na Bulgária, são operados pela Nishikli. O preço da passagem é de aproximadamente 30 EUR (ou 1300 TRY). A bilheteria está localizada no piso -2, plataforma 19. Recomenda-se reservar com antecedência via WhatsApp, especialmente durante a alta temporada. O pagamento é aceito em EUR ou USD dentro do ônibus, e há troco disponível.</li>
+    <li>Na Turquia, o setor de turismo está passando por interrupções significativas. Inúmeros hotéis fecharam, levando a grandes problemas nos aeroportos. Passageiros de vários voos da Turkish Airlines enfrentaram atrasos de até 10 horas após o check-in e a entrega de bagagem, com alguns casos em que foram obrigados a desembarcar e passar novamente pela segurança. Além disso, a Turkish Airlines teria começado a incluir passageiros identificados como &#39;problemáticos&#39; em uma lista negra.</li>
+    <li>No Novo Aeroporto de Istambul (IST), os portões de embarque são frequentemente alterados até 40 minutos antes da partida. Os passageiros devem permanecer na área da praça central, perto dos painéis principais de informações de voo, até exatamente 40 minutos antes do embarque. Uma vez que o portão é confirmado nesse momento, ele é definitivo. Caminhar até os portões mais distantes a partir do centro pode levar de 15 a 20 minutos.</li>
+    <li>Os ônibus que partem do Aeroporto de Istambul (IST) podem ter tempos de espera prolongados durante o embarque e a partida. Por exemplo, observou-se um ônibus que aguardou aproximadamente 45 minutos (das 6h15 às 6h55) para permitir que os passageiros embarcassem, verificassem as passagens e cuidassem das bagagens com etiquetas de identificação. Isso sugere que os passageiros podem não precisar correr excessivamente para cumprir o horário de partida, já que o ônibus frequentemente espera por um período considerável.</li>
+    <li>No terminal rodoviário de Bayrampaşa, em Istambul, você pode comprar passagens de ônibus usando Euros. Embora a Lira Turca também seja aceita, ter Euros é uma opção conveniente para pagamento.</li>
+    <li>Ônibus diretos partem do Aeroporto de Istambul (IST) para o terminal rodoviário Esenler Otogarı. Embora a reserva geralmente não seja necessária, os assentos não são garantidos, e o serviço funciona mais como um transporte compartilhado. Se você perder um ônibus devido à falta de assentos, terá que esperar pelo próximo. É aconselhável dirigir-se ao terminal rodoviário prontamente após a chegada.</li>
+    <li>Para ir do Aeroporto Sabiha Gökçen (SAW) ao terminal rodoviário principal (Esenler Otogarı) em Istambul, você pode usar uma combinação de transporte público. Embora não haja uma linha de metrô direta, você pode pegar o metrô (M11) a partir de SAW e depois transferir para outras linhas ou usar um serviço de trem como o Marmaray para chegar a Esenler. Alternativamente, procure por serviços de traslado ou táxis.</li>
+    <li>Não existem autocarros diretos do Aeroporto Sabiha Gökçen (SAW), em Istambul, para Sunny Beach, na Bulgária. Primeiro, terá de viajar para um grande terminal rodoviário intermunicipal em Istambul (como a Esenler Otogarı) e depois procurar um serviço de autocarro para a Bulgária. Algumas empresas de autocarros, como a Arda Tur e a Metro Turizm, operam rotas de Istambul para cidades búlgaras, incluindo Burgas. É aconselhável consultar os horários e reservar os bilhetes com antecedência, especialmente para chegadas tardias.</li>
+    <li>Se você estiver solicitando um visto e seu itinerário incluir uma escala em um terceiro país (por exemplo, Ancara no caminho da Bulgária para Moscou), você deve incluir essas informações no seu plano de viagem. Pode ser necessário apresentar comprovante de viagem para essa cidade de escala (por exemplo, uma passagem da Bulgária para Ancara) e explicar seus planos de viagem. Consulte a embaixada ou o consulado específico para obter os requisitos exatos.</li>
+    <li>O trânsito por Istambul para a França é comum. Funcionários das companhias aéreas (Turkish Airlines, Pegasus) verificam vistos Schengen. Esteja preparado para apresentar reservas de acomodação e detalhes do voo de volta, se solicitado. Tenha sempre cópias digitais ou físicas dos documentos de viagem disponíveis durante o trânsito para evitar problemas no embarque.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/pt/tr/documentos-e-vistos/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentos e Vistos</span></a>
+    <a class="chip" href="/pt/tr/dinheiro-e-bancos/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Dinheiro e Bancos</span></a>
+    <a class="chip" href="/pt/tr/seguran-a/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Segurança</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Cansado de pesquisar a mesma coisa?</h2>
+    <p>Pergunte ao Luky — fala como quem acabou de voltar de lá — sem enrolação.</p>
+    <p>E o Luky é um tradutor de voz para conversas reais: e o guia vai falar a sua língua.</p>
+    <p class="ps">PS: se quiser, o Luky ajuda a conhecer gente sem barreira de idioma 😉</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir o Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiência real dos chats de comunidades, sem enrolação</div>
+    <nav class="f-links">
+      <a href="/pt/about/">Sobre</a>
+      <a href="/pt/tr/">Todos os temas</a>
+      <a href="/pt/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">As respostas são reunidas de chats abertos de comunidades — é a experiência real das pessoas, não aconselhamento oficial. Verifique antes de decisões importantes.</p>
+    <div class="f-copy">© 2026 Luky · atualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noite", DAY="\u2600 Dia";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bulgária: Documentos e Vistos — experiência real · Luky</title>
+<meta name="description" content="Experiência real dos chats sobre Documentos e Vistos em Bulgária: como é, em primeira mão. Para o seu caso — pergunte ao Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/pt/bg/documentos-e-vistos/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/bg/documentos-e-vistos/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/bg/documentos-e-vistos/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/bg/documentos-e-vistos/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/bg/documentos-e-vistos/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/bg/documentos-e-vistos/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · qualquer país · sem enrolação</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noite</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/pt/">Início</a> /
+    <a href="/pt/bg/">Bulgária</a> /
+    <b>Documentos e Vistos</b>
+  </nav>
+
+
+  
+  <h1>Documentos e Vistos em Bulgária: o que realmente importa saber</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiência real de pessoas dos chats sobre «Documentos e Vistos» em Bulgária — como é, sem enrolação. Para o seu caso — <strong>pergunte ao Luky</strong>.</div></div>
+
+  <h2>Da experiência real</h2>
+  <ul class="qlist">
+    <li>Ao atuar como patrocinador financeiro para um pedido de visto, a documentação principal exigida diz respeito à sua capacidade financeira. Uma carta de referência de trabalho para o requerente, embora potencialmente útil para o pedido dele, geralmente não substitui a comprovação do seu suporte financeiro.</li>
+    <li>A política oficial dos centros de visto da Bulgária em Moscou proíbe a transferência de agendamentos. Pedidos para reatribuir vagas a outras pessoas são normalmente rejeitados, e a orientação padrão é cancelar o agendamento existente e marcar um novo.</li>
+    <li>Mudar-se para a Bulgária com animais de estimação exige a compreensão de regulamentações veterinárias específicas. Os passos principais incluem a vacinação contra a raiva, seguida por um teste de titulação pelo menos um mês depois. A viagem só é permitida três meses após o teste de titulação apresentar um resultado positivo (acima de 0,5 UI/ml). Alguns viajantes optam por transporte privado ou ônibus, negociando os termos com as empresas transportadoras com antecedência. O traslado do aeroporto de Istambul para Burgas pode ser caro; recomenda-se buscar recomendações em comunidades de donos de animais de estimação. Esteja ciente das regulamentações de trânsito através da Turquia, que oficialmente exige documentação semelhante. Às vezes, os viajantes assumem riscos pessoais se as restrições de tempo impedirem o cumprimento do período de espera total de três meses, o que muitas vezes exige a assinatura de termos de responsabilidade reconhecendo esse risco. Verifique sempre os requisitos atuais com fontes oficiais, pois as regulamentações podem mudar.</li>
+    <li>Ao enviar uma &#39;Pokana Deklaratsia&#39; (carta-convite) para um visto búlgaro, não é necessária uma carta de apresentação adicional especificando o propósito da visita. A própria &#39;Pokana Deklaratsia&#39; contém todas as informações necessárias sobre o propósito da estadia.</li>
+    <li>Reservar agendamentos para visto búlgaro online, especialmente em Moscou, é extremamente difícil. Embora alguns usuários tenham relatado breves janelas de disponibilidade (por exemplo, 2 minutos) em São Petersburgo em abril, essas vagas foram preenchidas rapidamente. O acesso à sala VIP também é altamente competitivo. Depender de bots ou contato direto por e-mail/telefone com o centro de vistos podem ser estratégias alternativas, mas espere longos tempos de espera.</li>
+    <li>O status do pedido de visto de turista búlgaro varia. Alguns solicitantes em abril receberam vistos em uma semana, enquanto outros que solicitaram no final de abril via serviço VIP de Moscou enfrentaram atrasos significativos, com passaportes ainda no consulado no final de maio. Agendamentos de visto em São Petersburgo para junho foram supostamente cancelados sem notificação, com entradas desaparecendo das contas pessoais. Vagas VIP em Moscou são difíceis de conseguir, geralmente disponíveis ligando entre os dias 19 e 20 do mês anterior para agendamentos do mês seguinte, ou conseguindo raras vagas de cancelamento online.</li>
+    <li>A alfândega de fronteira terrestre para a Bulgária limita rigorosamente o tabaco a 2 maços por pessoa. Viagens aéreas permitem 10 maços (1 pacote). Os oficiais da alfândega inspecionam frequentemente a bagagem de mão em busca de produtos de origem animal e grandes quantidades de medicamentos (exige prescrição médica). Cidadãos de fora da UE estão sujeitos a verificações de antecedentes mais longas em relação a autorizações de trabalho.</li>
+    <li>Para obter um visto búlgaro com base na propriedade de um imóvel, normalmente é necessário apresentar a documentação de propriedade e possivelmente seguir um processo de candidatura semelhante ao de outros tipos de visto, o que pode incluir extratos financeiros e outros documentos de suporte. Os requisitos específicos podem variar.</li>
+    <li>Ao consultar o estado do visto búlgaro em Moscovo, envie um e-mail simultaneamente para infomos@bul.com, Embassy.Moscow.bg e secretary.ru. Inclua a data de apresentação dos documentos, o nome completo conforme consta no passaporte e o número do passaporte. As respostas são normalmente esperadas dentro de 2 a 3 dias úteis. Para vistos de reagrupamento familiar (Tipo D), apenas é necessária a autorização oficial de residência; provas financeiras/de habitação são desnecessárias.</li>
+    <li>Para candidaturas a vistos de menores entre os 14 e os 18 anos, o formulário de candidatura deve ser assinado em três locais designados por ambos os pais e pela própria criança. Esta informação encontra-se normalmente no site oficial do centro de pedidos de visto.</li>
+    <li>Determine se é necessária uma fotocópia do passaporte interno russo ao solicitar um visto de turista búlgaro, além da cópia do passaporte estrangeiro. Especifique se todas as páginas preenchidas do passaporte interno são necessárias.</li>
+    <li>Documentação de visto para a Bulgária (escritório de São Petersburgo): 1. Extratos financeiros devem ter carimbos azuis originais. 2. O consentimento notariado para a saída de uma criança é oficialmente válido pela duração declarada, mas os funcionários preferem documentos emitidos nos últimos 6 meses para evitar escrutínio. 3. Certificados de emprego referentes a licenças só são obrigatórios para estadias superiores a 30 dias.</li>
+    <li>Estudantes internacionais que se candidatam a universidades búlgaras devem preparar-se para pagar propinas, independentemente do tipo de instituição (pública ou privada). Os requisitos principais incluem históricos escolares, certificados de proficiência linguística e consultas diretas ao departamento de admissões da instituição específica ou ao Ministério da Educação e Ciência (MON).</li>
+    <li>Explique o processo de solicitação de visto para um cônjuge que precisa de um visto de 2 a 3 semanas para viajar com um parceiro e um filho que são cidadãos búlgaros residentes na Federação Russa. Determine se a solicitação padrão de visto de turista via centro de vistos é aplicável ou se o processo deve ser tratado através do consulado.</li>
+    <li>Para não pensionistas que possuem propriedades na Bulgária, os caminhos potenciais para obter uma autorização de residência (VGN) incluem o registro como &#39;Representante Comercial&#39; (exigindo aproximadamente €2500) ou possivelmente através da rota de visto de &#39;Nômade Digital&#39;. Essas opções geralmente exigem a demonstração de meios financeiros suficientes.</li>
+    <li>A solicitação de visto para a Bulgária requer um prazo de aproximadamente 1 mês. Documentos essenciais incluem extratos bancários (saldo e histórico de transações dos últimos 3 meses) carimbados com um selo físico. O agendamento é feito atualmente por telefone; os tempos de espera podem exceder 2 horas.</li>
+    <li>Esclareça os requisitos de reconhecimento de firma para um formulário de consentimento de um proprietário de imóvel para que alguém resida na Bulgária. Determine se uma cópia simples é suficiente ou se uma cópia autenticada é obrigatória. Aborde o cenário em que um formulário de consentimento lista várias pessoas.</li>
+    <li>Aconselhe indivíduos com residência búlgara e vistos que planejam viajar para a Itália por uma semana antes de seguirem para a Bulgária. Informe sobre possíveis problemas no aeroporto de Roma e ao solicitar um novo visto posteriormente. Observe que o controle de fronteira em Roma é geralmente tolerante.</li>
+    <li>Para um visto búlgaro, os solicitantes devem fornecer prova de solvência. Isso normalmente inclui dois tipos de extratos bancários: um mostrando o saldo da conta e outro detalhando as transações nos últimos três meses. É crucial que o extrato de saldo seja muito recente, idealmente datado no dia da solicitação do visto. Tanto contas correntes quanto contas de poupança/depósito (incluindo contas de investimento) podem ser usadas para demonstrar fundos. Algumas agências de vistos podem aconselhar incorretamente contra a apresentação de contas de depósito, mas isso geralmente não é uma restrição. O objetivo do histórico de transações é mostrar atividade financeira regular, não necessariamente grandes depósitos.</li>
+    <li>O processamento de vistos Schengen búlgaros para cidadãos russos está passando atualmente por atrasos significativos (de até 2 meses). As notificações por SMS dos centros de visto não são confiáveis; os usuários devem rastrear o status pelo portal oficial usando o código QR do recibo. Os vistos são frequentemente emitidos com datas posteriores às reservas de voo originais, forçando os usuários a remarcar. Não existe uma categoria de visto especial de &#39;proprietário de imóvel&#39;; todos são vistos de Turista C. A comprovação financeira (50 EUR/dia) pode ser demonstrada por meio de extratos bancários, incluindo limites de cartão de crédito, embora os fundos devam ser suficientes e líquidos.</li>
+    <li>Conseguir um agendamento de visto para a Bulgária pode ser um desafio. As vagas em Moscou são extremamente limitadas, muitas vezes reservadas com meses de antecedência. São Petersburgo tem tido mais disponibilidade, com alguns usuários conseguindo reservar horários online em abril. A reserva pode ser difícil, com as vagas muitas vezes desaparecendo em questão de minutos. As salas VIP (premium lounges) também são altamente concorridas. A reserva direta no site oficial do centro de vistos é o método principal, mas a disponibilidade é escassa. Alguns usuários optam por serviços premium via e-mail ou telefone, mas isso também envolve espera e esforço.</li>
+    <li>Um usuário e seu cônjuge solicitaram vistos no dia 24 de abril através do serviço VIP em Moscou. A prontidão dos documentos foi atualizada no site do Centro de Vistos em 9 de junho, sendo que o envio real para o consulado ocorreu em 27 de abril. Eles receberam vistos de entrada única válidos por 30 dias, correspondentes às suas passagens aéreas e à estadia planejada de 15 dias. As notificações pagas por SMS não foram recebidas.</li>
+    <li>Ao sair da Bulgária de ônibus, particularmente em rotas para a Turquia (por exemplo, a &#39;Nishikli&#39; de Sunny Beach para Istambul), inspeções de bagagem pelas autoridades de fronteira búlgaras são possíveis. Apesar da crença comum de que as inspeções ocorrem apenas na entrada, um usuário relatou que sua bagagem foi verificada no lado búlgaro ao sair em março.</li>
+    <li>Os prazos de processamento para vistos búlgaros Schengen (Tipo C) e nacionais (Tipo D) variam tipicamente entre 40 a 45 dias. A duração para vistos do Tipo D pode ser bastante variável, dependendo da base do pedido e da documentação apresentada. A disponibilidade atual de agendamentos para pedidos de visto do Tipo D está, segundo informações, apenas para dezembro. Pedidos de visto de turista são aceitos atualmente apenas em Moscou e São Petersburgo.</li>
+    <li>Para pedidos de visto búlgaro na Rússia, o comprovante de emprego deve ser um documento original. Para carteiras de trabalho (trudovaya knizhka) e carteiras de identidade de aposentado, envie fotocópias (leve os originais apenas para verificação). Extratos bancários com assinaturas digitais (por exemplo, do T-Bank) são oficialmente aceitos em formato eletrônico impresso.</li>
+    <li>A partir de junho de 2026, o processamento de vistos búlgaros para cidadãos russos excede 45-50 dias. A maioria dos vistos emitidos é de entrada única, válida apenas para datas de viagem específicas. Estratégias que envolvem datas de início diferidas ou vistos de entrada múltipla de longa duração atualmente não são consistentemente bem-sucedidas.</li>
+    <li>Os prazos de processamento para vistos búlgaros a partir de São Petersburgo podem variar. Pedidos enviados em 1º de abril foram despachados por correio até 12 de maio (42 dias). Os agendamentos no centro de vistos de Moscou são escassos, com disponibilidade apenas para o final de julho. Alguns requerentes passam por períodos de espera de 1,5 meses ou mais.</li>
+    <li>O &#39;corredor&#39; em um visto búlgaro D refere-se ao período (por exemplo, 105 dias) durante o qual o visto é válido para entrada e permanência. Dentro deste corredor, o titular tem permissão para uma permanência máxima de 90 dias. Por exemplo, um visto válido de 27 de maio a 8 de setembro (105 dias) permite uma permanência máxima de 90 dias, que pode ser usufruída de forma consecutiva ou com intervalos, desde que a entrada ocorra dentro da data de início do corredor e a saída não seja posterior à data de término do corredor, respeitando o limite de 90 dias.</li>
+    <li>A compra de seguro viagem para pedidos de visto na Bulgária pode variar significativamente de preço. Enquanto um usuário pagou 177 € por uma apólice anual em um centro de vistos, agentes locais ofereceram cobertura semelhante por 80 €. É aconselhável comparar preços e opções de diferentes provedores e agentes locais, em vez de depender exclusivamente das ofertas do centro de vistos. Provedores de seguro búlgaros comuns incluem &#39;Unika&#39; e &#39;BI&#39;.</li>
+    <li>Para solicitações de visto, geralmente é aceitável enviar um itinerário ou reserva de voo em vez de passagens totalmente compradas. Certifique-se de que o itinerário inclua detalhes precisos do voo. Essa abordagem pode mitigar o risco financeiro se o visto for negado, especialmente se for adquirido um seguro de viagem contra a rejeição de visto. Sempre confirme os requisitos específicos com o centro de solicitação de visto ou consulado relevante.</li>
+    <li>Os tempos de processamento de pedidos de visto búlgaro a partir da Rússia podem ser longos, excedendo frequentemente os 45 dias. As salas VIP podem oferecer um processamento mais rápido, mas os atrasos ainda são possíveis. A obtenção de vistos de entrada múltipla é um desafio para os cidadãos russos devido às sanções, mesmo para aqueles que trabalham em entidades não sancionadas. A rejeição ao abrigo do &#39;ponto 7&#39; (relacionado com sanções) é um problema conhecido, com sucesso limitado nos recursos. Os requerentes devem estar preparados para períodos de espera prolongados e possíveis rejeições.</li>
+    <li>Atravessar a fronteira para a Sérvia e reentrar na Bulgária com um carro registado na Bulgária usando uma Procuração (POA) emitida na Bulgária é, geralmente, possível. No entanto, os detalhes, especialmente no que diz respeito a potenciais problemas se o proprietário permanecer na Turquia e o carro for libertado com dificuldade, exigem uma verificação cuidadosa. Embora uma procuração facilite a condução do veículo, os regulamentos de saída e reentrada, particularmente no que diz respeito à propriedade e residência, podem ser complexos. É aconselhável consultar as autoridades aduaneiras búlgaras e sérvias ou fóruns especializados em regulamentos transfronteiriços de veículos para obter uma orientação definitiva, uma vez que questões relacionadas com a propriedade do veículo e o movimento transfronteiriço podem levar a complicações, especialmente se o proprietário não estiver presente.</li>
+    <li>Para um visto búlgaro de Tipo C (curta duração), o &#34;corredor&#34; refere-se ao período de validade especificado como &#34;de-até&#34;. Se um requerente entrar na Bulgária no próprio último dia desse período de validade declarado, é também obrigado a sair da Bulgária nesse mesmo dia. A duração do visto (por exemplo, 30 dias) deve ser respeitada dentro do corredor de validade global.</li>
+    <li>Os cidadãos búlgaros com um passaporte expirado, mas com um cartão de cidadão búlgaro válido (cartão de plástico), podem entrar na Bulgária utilizando o cartão de cidadão. O país de cidadania deve permitir a reentrada dos seus cidadãos.</li>
+    <li>1. Vistos Nacionais Búlgaros: Os vistos nacionais búlgaros emitidos antes da entrada da Bulgária no Espaço Schengen continuam válidos para a entrada na Bulgária. Os utilizadores confirmaram a entrada com sucesso (por exemplo, via Malko Tarnovo). 2. Primeira Entrada com Visto Schengen: Está confirmado que a entrada na Bulgária com um visto Schengen emitido por outro Estado-membro (por exemplo, um visto italiano), onde a Bulgária é o primeiro ponto de entrada no Espaço Schengen, é permitida e funciona da mesma forma que antes de a Bulgária aderir a Schengen.</li>
+    <li>Um utilizador recebeu uma confirmação por e-mail de uma marcação após as 20h, sugerindo um possível problema no servidor que foi posteriormente resolvido. Isto indica que as confirmações de marcações podem sofrer atrasos.</li>
+    <li>Recentemente (maio de 2026), a taxa consular para um visto búlgaro na Rússia pode ser paga em rublos russos (RUB) em vez de euros. O pagamento com cartão também é aceite. Isto aplica-se a centros de vistos como o de São Petersburgo.</li>
+    <li>Para pedidos urgentes de visto búlgaro submetidos através da VFS em Moscovo, esteja ciente de que as ofertas de processamento rápido a um custo elevado (por exemplo, 85.000 RUB por 2 vistos em 2 meses) podem provir de agências e não do centro oficial da VFS. Recomenda-se o contacto direto com a VFS por e-mail (infomosbul.com) para casos genuinamente urgentes. Indique claramente a urgência e a disponibilidade para utilizar serviços como a sala VIP. Poderão ser necessários vários e-mails. Seja cético em relação a afirmações de agências sobre &#34;portas laterais&#34; ou &#34;acesso especial&#34;, uma vez que os canais oficiais são normalmente baseados em bots ou filas de espera. Os prazos de processamento de vistos estão atualmente estimados num mínimo de 5 semanas.</li>
+    <li>Um cidadão do Tajiquistão com uma autorização de residência moldava necessita de um visto para entrar na Bulgária, uma vez que a Moldávia não faz parte do Espaço Schengen. Recomenda-se que se informe sobre os custos e procedimentos de visto na embaixada da Bulgária na Moldávia.</li>
+    <li>Os titulares de um visto Schengen emitido pela Bulgária podem viajar por todo o Espaço Schengen, independentemente de ser de entrada única ou múltipla, desde que não saiam da zona Schengen. A viagem da Bulgária para outros países Schengen, como a Hungria ou a Áustria, é permitida. Se o visto for de entrada única, sair do Espaço Schengen e tentar reentrar pode ser problemático, mas a reentrada na Bulgária a partir de outro país Schengen não é geralmente considerada uma &#34;saída&#34; da zona que invalidaria um visto de entrada única para viagens adicionais dentro do Espaço Schengen. Alguns relatos anedóticos sugerem confusão ou restrições específicas por parte de consulados, mas o princípio fundamental do Acordo de Schengen permite a livre circulação nos seus estados-membros.</li>
+    <li>Com um visto Schengen búlgaro de entrada única, os viajantes podem entrar na Bulgária e depois viajar para outros países Schengen (por exemplo, Hungria, Áustria, Grécia) por via aérea ou terrestre, uma vez que as fronteiras internas de Schengen normalmente não têm controlo de passaportes. O regresso ao país de origem (por exemplo, Rússia) não tem obrigatoriamente de ser feito a partir da Bulgária; pode-se partir de qualquer país Schengen, como a Grécia.</li>
+    <li>Os serviços de sala VIP nos escritórios da VFS Global não agilizam os prazos de processamento de visto pelo consulado. O serviço proporciona principalmente conforto durante o processo de submissão. Os custos são de aproximadamente 90 EUR ou 17.900 RUB. A disponibilidade de agendamento para vagas VIP não garante um processamento administrativo mais rápido.</li>
+    <li>Para uma solicitação de visto búlgaro em Moscou, não é estritamente necessário fornecer passagens aéreas compradas para Istambul; passagens reservadas (não pagas) são aceitáveis como prova dos planos de viagem.</li>
+    <li>Para agendar um atendimento na VFS Global Premium Hall em Moscou para um visto búlgaro, envie um e-mail para `infomosbul.com`. Os tempos de resposta variam de imediato (se não houver vagas disponíveis) a 2-3 dias. Uma resposta automática deve ser recebida primeiro; caso não chegue em 24 horas, reenvie o e-mail. A persistência é fundamental, pois as vagas são limitadas.</li>
+    <li>O tempo de processamento do visto búlgaro para proprietários de imóveis atualmente supera 45 dias úteis. Os documentos são entregues exclusivamente em Moscou e São Petersburgo. Recomenda-se fortemente que os requerentes possuam um segundo passaporte internacional (válido) para garantir a capacidade de viajar enquanto o principal estiver sob análise consular.</li>
+    <li>O processamento do visto Schengen búlgaro leva atualmente entre 55 a 60+ dias. As atualizações oficiais de status via SMS não são confiáveis. Os requerentes devem monitorar seu status usando o site do EES (sistema de entrada/saída). Vagas de envio &#39;prioritário&#39; (aproximadamente 9.000 RUB em Moscou, 5.000 RUB em São Petersburgo) não garantem um processamento mais rápido. Em caso de atrasos extremos, consultas por e-mail ao consulado ou centro de vistos podem ajudar, embora as respostas sejam inconsistentes.</li>
+    <li>Embora seja possível entrar na Bulgária usando um visto Schengen emitido por outro país (como a Espanha), deixar de visitar o país emissor representa um risco para futuras solicitações de visto. Se o visto for usado principalmente na Bulgária, apesar de ter sido emitido em outro lugar, é aconselhável manter comprovantes secundários de viagem (recibos, extratos bancários, fotos) para mitigar possíveis problemas ou rejeições durante o processamento futuro de vistos.</li>
+    <li>O processo de solicitação de visto búlgaro pode ter tempos de processamento estendidos, às vezes chegando a 3 meses ou mais. Recomenda-se enviar as solicitações com bastante antecedência e fazer o acompanhamento com os consulados (por exemplo, em Moscou ou São Petersburgo) por e-mail, se necessário. Esteja preparado para possíveis atrasos e mantenha os canais de comunicação abertos.</li>
+    <li>Ao receber uma autorização de residência búlgara (VnZh), os documentos necessários são: o seu passaporte estrangeiro, qualquer cartão de residência anterior (em caso de renovação) e um cartão bancário ou dinheiro para pagar as taxas de emissão do novo cartão. O passaporte nacional (por exemplo, o passaporte russo) não é necessário para o processo de recolha. O passaporte estrangeiro não é entregue, sendo apenas apresentado para receber o carimbo ou o cartão de VnZh.</li>
+    <li>Candidatos rejeitados para um visto búlgaro, especialmente sob o Artigo 7 (ameaça à segurança), consideram frequentemente que os recursos não são úteis. As razões comuns para a recusa são muitas vezes pouco claras, afetando proprietários de imóveis e funcionários de empresas estatais, mesmo que não estejam diretamente sancionados. Após uma recusa búlgara, a Itália e a Hungria são frequentemente recomendadas como países com maior probabilidade de emitir vistos Schengen. Alguns sugerem que as sanções extraterritoriais dos &#39;Five Eyes&#39; também podem desempenhar um papel nas decisões de visto para aqueles que trabalham em cargos afiliados ao Estado.</li>
+    <li>O escrutínio consular para vistos búlgaros está a aumentar, particularmente para candidatos associados a instituições de investigação ou educativas estatais russas (como o MAI) que possam figurar em listas de sanções internacionais, mesmo que não estejam explicitamente restringidos pela UE.</li>
+    <li>O centro de pedidos de visto em Sófia está localizado na Marata 5, dentro do edifício &#39;Olympic Plaza&#39;. O acesso ao centro de vistos é feito pela rua Marata.</li>
+    <li>Se o seu visto nacional búlgaro expirar a 8 de julho, pode atravessar legalmente a fronteira entre a Bulgária e a Turquia no dia 8 de julho, uma vez que a data de expiração é inclusiva. Por precaução adicional, partir no dia 7 de julho também é uma opção.</li>
+    <li>Determine se a entrada na Bulgária é permitida com um visto Schengen búlgaro ou qualquer outro visto Schengen ao transitar pela Alemanha. Compreenda o escrutínio do controlo de fronteira alemão sobre vistos Schengen não nacionais e as questões históricas com pedidos &#39;duvidosos&#39;. Aconselhe sobre a importância de explicar a rota de entrada. Note que Roma tem geralmente uma abordagem mais relaxada em relação ao controlo de fronteiras.</li>
+    <li>Para consultas relacionadas a vistos e agendamento de consultas para a Bulgária, entre em contato com os seguintes endereços de e-mail: Moscou: infomosbul@email.com, São Petersburgo: infospbbul@email.com.</li>
+    <li>Um usuário enviou um pedido de visto em Moscou em 15 de abril e recebeu seu passaporte com o visto em 8 de junho. A informação sobre a prontidão dos documentos apareceu no site do Centro de Vistos em 9 de junho. O visto emitido é de entrada única com validade de 30 dias, correspondendo às passagens aéreas do usuário e à estadia de 15 dias. Notificações pagas por SMS não foram recebidas.</li>
+    <li>Os tempos de processamento de vistos para a Bulgária podem variar significativamente, com alguns candidatos relatando tempos de espera de 40 a 45 dias. Embora alguns vistos possam ser emitidos mais perto da data da viagem, é aconselhável solicitar com bastante antecedência, potencialmente até 6 meses antes da partida, devido a possíveis atrasos. Existem relatos anedóticos de vistos sendo emitidos após as datas de viagem reservadas, levando à perda de passagens. O processo de recurso para recusas de visto pode ser longo e complexo.</li>
+    <li>Os extratos bancários para residência búlgara (VNZH) são válidos a partir da data de emissão. As autoridades de migração não monitoram a conta para saques subsequentes; o sigilo bancário impede a verificação contínua do saldo pelos escritórios de imigração.</li>
+    <li>Para a solicitação de cidadania búlgara, o consulado ainda solicita o atestado médico Formulário 082. No entanto, este formulário pode não ser mais considerado válido ou estar disponível em algumas policlínicas (por exemplo, na Rússia). Os candidatos enfrentam uma discrepância entre a exigência do consulado e a disponibilidade atual de documentos médicos. Não está claro se a conclusão de um clínico geral é suficiente.</li>
+    <li>Avalie a segurança e os possíveis problemas de voar para Burgas via Munique com um visto búlgaro de entrada única. Especificamente, informe-se sobre os procedimentos de controle de fronteira alemães e possíveis perguntas na entrada. Confirme se a entrada é permitida, dado que o viajante possui propriedade e tem todos os documentos necessários. Avalie o risco de uma escala de 1 hora e 15 minutos com os novos procedimentos de verificação de segurança.</li>
+    <li>Os prazos padrão de processamento de vistos búlgaros em Moscou estenderam-se atualmente para 60 a 90 dias. Os candidatos são aconselhados a monitorar o status via VFS e considerar o envio de consultas formais se os prazos padrão forem excedidos. Serviços de coleta em horário nobre podem ser necessários para horários de expediente específicos.</li>
+    <li>Na sala VIP da VFS Global em Moscovo para pedidos de visto búlgaro, a equipa presta serviços como tirar fotografias aos requerentes e ajudar no preenchimento dos formulários de pedido de visto.</li>
+    <li>O custo da sala VIP (referida como &#39;submissão prioritária&#39;) para pedidos de visto é de aproximadamente 5.000 rublos russos por requerente.</li>
+    <li>Acompanhar o estado do pedido de visto búlgaro online pode ser difícil devido a potenciais erros de introdução de dados (por exemplo, formato incorreto do código de referência como MQAC em vez de MOAC) ou ao estado do pedido ainda não ter sido atualizado no sistema, especialmente se os documentos tiverem sido entregues a serviços de estafetas. Certifique-se de que insere os detalhes do recibo com precisão. Se o erro &#39;não encontrado&#39; persistir, recomenda-se contactar diretamente o centro de vistos.</li>
+    <li>O tempo de processamento do visto búlgaro é atualmente muito variável. Os requerentes devem confiar no acompanhamento manual através do portal oficial do centro de vistos utilizando o número de referência e o apelido, em vez de alertas por SMS. Relatos recentes indicam um maior escrutínio e potenciais recusas para requerentes empregados por entidades sancionadas. Acompanhamento do estado: sítio web oficial -&gt; &#39;Verificar estado do pedido&#39; -&gt; introduza o número de referência MOAC e o apelido.</li>
+    <li>Os viajantes têm questionado sobre a aceitação de passaportes estrangeiros com 5 anos de validade para atravessar a fronteira Turquia-Bulgária. Embora a informação atual sugira a aceitação, existe incerteza sobre os regulamentos de entrada com passaportes de 5 anos após 2027, levando a considerações sobre a obtenção de passaportes de 10 anos.</li>
+    <li>Ao preencher um formulário de pedido de visto para a Bulgária, questões sobre a ocupação, como &#39;dona de casa&#39; ou &#39;desempregado&#39; e &#39;empreendedor individual&#39; ou profissão específica, devem ser esclarecidas com o centro de vistos. É aconselhável preparar respostas alternativas ou consultar a equipe do centro de vistos para obter uma orientação precisa.</li>
+    <li>Para vagas prioritárias de solicitação de visto em São Petersburgo: um usuário reservou em março uma consulta para maio, que foi posteriormente reagendada para julho. Outro usuário reservou em fevereiro uma consulta para maio. É aconselhável enviar um e-mail para o centro VFS em infospbbul.com. Vagas para julho estavam disponíveis muito recentemente, e a reserva pode exigir o envio persistente de e-mails. Anteriormente, as vagas para junho foram reservadas em março.</li>
+    <li>Os requerentes podem solicitar oficialmente um visto búlgaro de múltiplas entradas, e a equipe do centro de vistos pode anotar essa solicitação. No entanto, a experiência prática sugere que tais solicitações raramente resultam em um visto de múltiplas entradas, a menos que circunstâncias específicas e convincentes (por exemplo, ser um &#39;peregrino&#39;) sejam atendidas, levando a resultados semelhantes aos de pedidos padrão de entrada única.</li>
+    <li>O processamento do visto Schengen búlgaro leva atualmente de 45 a 50 dias úteis. O rastreamento de status no site da VFS Global é propenso a erros; os usuários relatam sucesso ao alternar navegadores, dispositivos ou atualizar a página até que o sistema responda. As políticas de notificação por SMS variam por região (por exemplo, centros de São Petersburgo vs. Moscou) e nem sempre são confiáveis.</li>
+    <li>Requisitos para trazer um animal de estimação para a Bulgária de países fora da UE: 1. Passaporte veterinário internacional. 2. Microchip. 3. Vacinação antirrábica válida. 4. Teste de titulação de anticorpos antirrábicos (deve ser feito pelo menos 3 meses antes da viagem). 5. Certificado do formulário F1 das autoridades veterinárias locais, trocado por um certificado de saúde da UE na fronteira/aeroporto.</li>
+    <li>Se o seu agendamento de visto foi cancelado, você pode receber um aviso de cancelamento por e-mail. Nos casos em que nenhum e-mail de cancelamento for recebido, mas você for informado de que sua vaga é inválida, é recomendável monitorar seu e-mail regularmente para quaisquer atualizações. Entrar em contato com o centro de vistos por telefone ou e-mail pode fornecer mais esclarecimentos, embora as informações possam ser limitadas.</li>
+    <li>Para obter um extrato bancário búlgaro para uma solicitação de visto D do exterior, os solicitantes podem emitir uma Procuração para um representante de confiança na Bulgária. O representante pode abrir uma conta (por exemplo, no Bulgarian-American Credit Bank - BACB) e retirar o extrato bancário físico para enviar de volta por correio ou transportadora.</li>
+    <li>O seguro de viagem da VTB com cobertura de 50.000 EUR é aceito para solicitações de visto búlgaro, apesar de ser significativamente mais barato (aprox. 680 RUB) do que as ofertas dos concorrentes.</li>
+    <li>Explica como preencher a seção de &#39;empregador&#39; em um pedido de visto quando se trabalha sob um Contrato de Direito Civil (GPD). Aconselha listar &#39;Contratado&#39;, &#39;Freelancer&#39; ou &#39;Consultor&#39; como cargo e o nome da empresa contratante como empregador. Também menciona a anexação de documentos comprobatórios como o certificado 2-NDFL (se aplicável) e enfatiza que os consulados focam na estabilidade da renda e na clareza da fonte, em vez do tipo de contrato em si.</li>
+    <li>A entrevista para cidadania búlgara (DANS) geralmente cobre perguntas sobre feriados búlgaros, o presidente e a motivação do candidato para a cidadania. Um conselho importante é evitar criticar o seu próprio país de origem e declarar &#39;búlgara&#39; como nacionalidade. Embora as entrevistas possam ser realizadas em búlgaro, os funcionários podem permitir o russo se o candidato tiver dificuldades. Alguns candidatos relataram que suas entrevistas ocorreram em russo (por exemplo, na Moldávia). O uso de um tradutor é geralmente desencorajado, pois pode impactar negativamente a candidatura. A duração da entrevista é tipicamente curta (cerca de 5 minutos).</li>
+    <li>Explique o processo de agendamento de horários para solicitação de visto. Enfatize que os agendamentos são gerenciados por meio de vagas eletrônicas, não por filas tradicionais. Detalhe as opções: garantir uma vaga, usar salas VIP ou contratar facilitadores. Avise que solicitações tardias podem ser processadas apenas para a temporada seguinte.</li>
+    <li>1. Agendamento de Visto para a Bulgária na VFS Global: Os agendamentos para solicitações de visto búlgaro nos centros VFS Global (Moscou, São Petersburgo) podem ser feitos por e-mail. 2. Processo: Encontre o endereço de e-mail específico da VFS no site deles. Envie um e-mail solicitando um agendamento, listando os nomes completos (em caracteres latinos, como no passaporte) e as datas de nascimento de todos os requerentes. Nenhum documento precisa ser anexado ao e-mail. 3. Benefícios: O agendamento por e-mail é gratuito. As solicitações em Moscou podem ser direcionadas para a sala VIP, enquanto as solicitações em São Petersburgo recebem prioridade de envio. 4. Exemplo de cronograma: O usuário enviou um e-mail em 30 de março e recebeu a confirmação do agendamento em 31 de março.</li>
+    <li>Para consultas sobre o status da solicitação de visto búlgaro, envie um e-mail para: infomosbul.com. Os verificadores de status online podem ocasionalmente apresentar instabilidade técnica; a comunicação por e-mail é frequentemente uma alternativa mais rápida.</li>
+    <li>Para um pedido de visto búlgaro, alguns centros VFS Global podem exigir passagens aéreas totalmente pagas em vez de apenas reservas. Uma solução comum envolve a compra de passagens reembolsáveis (potencialmente feitas diretamente no centro VFS, se disponível), apresentá-las com o pedido e, em seguida, cancelá-las após a submissão.</li>
+    <li>Esclareça se um visto de turista nacional búlgaro válido até julho permite a entrada atual na Bulgária ou se um visto Schengen é agora exigido. Confirme as possibilidades de entrada com um visto nacional.</li>
+    <li>As apólices de seguro de viagem emitidas pelo T-Bank são aceitas para pedidos de visto processados via VFS. Os requerentes não são obrigados a comprar seguro adicional fornecido pelo centro de vistos.</li>
+    <li>Os pedidos de visto búlgaro na Federação Russa são processados exclusivamente nos centros de visto em Moscou e São Petersburgo. Os tempos de processamento variam significativamente, excedendo frequentemente os 40 dias úteis. Os requerentes devem basear-se em informações oficiais e evitar rumores de terceiros sobre centros de processamento regionais.</li>
+    <li>As informações atuais sugerem que agendamentos diretos ou acesso por fila no Centro de Solicitação de Visto VFS Global em Moscou para a Bulgária já não são um método confiável para enviar pedidos de visto, especialmente desde maio. Embora alguns usuários relatem sucesso em fevereiro, os representantes da VFS indicaram uma mudança em relação a essa prática. Os principais métodos recomendados para agendar atendimentos, particularmente para casos urgentes, envolvem o envio de e-mail para a VFS (infomosbul.com) e potencialmente a utilização de serviços como a sala VIP, se disponível através dos canais oficiais. Seja cauteloso com evidências anedóticas que sugerem que métodos desatualizados ainda funcionam.</li>
+    <li>Para um pedido de visto búlgaro para si e para uma criança por 21 dias, como proprietário de um imóvel, uma reserva financeira de aproximadamente 210.000 rublos (21 dias * 50 EUR/pessoa * 2 pessoas) pode ser suficiente. No entanto, apresentar um valor maior, como 600.000 rublos, é aconselhável para maior segurança.</li>
+    <li>Requisitos para o pedido de Visto C para a Bulgária: Se entrar via Istambul, os bilhetes de autocarro não são estritamente exigidos. Um itinerário detalhado (marshrutyi list) mencionando um transfer em grupo de Istambul para Sófia é suficiente.</li>
+    <li>Os tempos de processamento do visto búlgaro para cidadãos russos rondam atualmente os 45+ dias. Os vistos são geralmente emitidos como entrada única para a duração exata dos bilhetes de viagem. Os menores (3-5 anos de idade) não precisam, regra geral, de estar fisicamente presentes no centro de pedidos de visto.</li>
+    <li>Distinga entre o Centro de Vistos (CV) e a Embaixada para pedidos de visto. Esclareça o processo para candidatos com apelidos diferentes (por exemplo, sogra e nora) que se candidatam a tipos de visto diferentes (C e D). Investigue os tempos de espera para marcações no CV em comparação com a embaixada.</li>
+    <li>O visto de tipo D (longa duração) para a Bulgária deve ser solicitado num consulado ou embaixada búlgara no país de cidadania do requerente. Informações completas, incluindo a lista de motivos elegíveis para a candidatura e os documentos necessários, estão disponíveis no sítio Web oficial da Embaixada da República da Bulgária.</li>
+    <li>O site do EES (Sistema de Entrada/Saída Europeu) pode fornecer atualizações sobre o status do visto antes de você receber fisicamente o seu passaporte. Um usuário, após se candidatar em 21 de maio, viu seu status mudar para &#39;OK&#39; no site do EES, indicando a aprovação do visto e o tempo de permanência permitido, mesmo antes de retirar o passaporte no Centro de Solicitação de Vistos.</li>
+    <li>Os prazos de processamento de vistos podem variar. Um usuário solicitou em 8 de maio em São Petersburgo, teve os documentos no consulado em 14 de maio e recebeu seu passaporte com visto em 3 de julho. O visto tinha uma janela de viagem de 4 de julho a 12 de outubro. Isso indica um tempo de processamento de aproximadamente 86 dias desde a entrega dos documentos até a devolução do passaporte.</li>
+    <li>Para um pedido de Visto D búlgaro, um seguro de visto Schengen de turista (Tipo C) não é geralmente suficiente. Normalmente, é necessário um seguro específico para o Visto D, que pode ter requisitos de cobertura diferentes. Além disso, esteja ciente de que os documentos oficiais apresentados aos consulados búlgaros requerem frequentemente tradução para búlgaro e podem necessitar de selos oficiais ou assinaturas eletrónicas.</li>
+    <li>Os prazos de processamento de vistos podem ser imprevisíveis. Um requerente que enviou o pedido em 20 de maio ainda estava aguardando, enquanto outros que se candidataram em meados de maio já haviam recebido seus vistos. Isso destaca a variabilidade nos tempos de processamento e a importância de solicitar o visto com bastante antecedência em relação à viagem planejada.</li>
+    <li>As recusas de visto sob o &#39;Ponto 7&#39; referem-se tipicamente a &#39;ameaça à segurança nacional&#39;. Isso aplica-se frequentemente a indivíduos que trabalham ou estão associados a empresas estatais sancionadas, indústrias de defesa ou entidades governamentais. Embora não exista um registro público único, informações sobre esses fundamentos podem ser encontradas através dos regulamentos oficiais de visto e observando os motivos comuns de rejeição. Indivíduos que tiveram uma recusa baseada no Ponto 7 podem enfrentar dificuldades para obter outros tipos de visto, como o visto de Tipo D, com solicitações subsequentes registrando a recusa anterior.</li>
+    <li>Para um visto búlgaro, é necessária uma apólice de seguro médico com cobertura suficiente (por exemplo, 100.000 RUB). Embora alguns candidatos consigam apresentar apólices de baixo custo ou afiliadas a bancos (por exemplo, VTB/Rosgosstrakh), é crucial garantir a confiabilidade da apólice e a disposição da empresa de assistência em cobrir despesas, não apenas sua aceitação para o pedido de visto. O custo de uma apólice respeitável é geralmente mais alto do que ofertas muito baratas.</li>
+    <li>1. Pedido de Visto Búlgaro (SPb/Moscou): Documentos enviados em São Petersburgo (21 de abril) foram processados em Moscou, com vistos emitidos em 4 de junho (42 dias após o recebimento pelo consulado). Vistos de entrada única foram concedidos pela duração solicitada mais um corredor de 15 dias. O requerente não anexou reservas de voo/hotel, mas forneceu um itinerário impresso, documentos do carro e carteiras de motorista (declarou viagem de carro). 2. Entrada de carros com placa russa na Bulgária: Embora existam alguns casos anedóticos raros de carros com placa russa entrando na UE via Grécia (especialmente para indivíduos com autorização de residência), o consenso geral e a experiência dos usuários sugerem que carros com placa russa *não* têm permissão para entrar na Bulgária a partir da Turquia. A solução proposta é deixar o carro em um estacionamento pago na Turquia (por exemplo, Kırklareli) e usar um transfer para cruzar a fronteira para a Bulgária. É necessária a declaração do carro antes de sair da Turquia.</li>
+    <li>Os tempos de processamento do visto búlgaro variam significativamente. Declarações oficiais sugerem de 35 a 45 dias úteis, mas as esperas reais podem se estender por dois meses ou mais. Alguns requerentes relatam ter recebido seus vistos (via entrega) antes que o sistema de rastreamento online fosse atualizado. Se o rastreamento no site da VFS Global não for confiável, os requerentes (especialmente aqueles que utilizam serviços premium) podem obter atualizações de status enviando um e-mail diretamente ao centro de vistos.</li>
+    <li>Requerentes de um visto D búlgaro a partir da Rússia (por exemplo, submetendo no final de abril) estão enfrentando tempos de processamento prolongados. Os documentos são processados em Moscou, o que aumenta o período total de espera devido ao trânsito. Os requerentes relatam não receber chamadas ou atualizações dos serviços de migração, permanecendo com o status &#39;no consulado&#39; por um período prolongado. É necessária paciência, pois o processo pode levar várias semanas ou meses.</li>
+    <li>Existem informações conflitantes sobre o período ideal para solicitar a renovação de uma autorização de residência búlgara (cartão). Alguns requerentes relatam ter sido orientados pelo Departamento de Migração em Burgas a solicitar &#39;não antes de um mês e não depois de 14 dias antes da data de validade do cartão&#39;. No entanto, outros alegam que é permitido solicitar com até três meses de antecedência, com a ressalva de que o período de validade da nova autorização pode começar a partir da data do pedido, em vez do vencimento do cartão anterior, efetivamente &#39;cortando&#39; parte da validade potencial.</li>
+    <li>Viajantes que planejam rotas de carro da Turquia para a Sérvia passando pela Bulgária podem usar um visto Schengen obtido em outro país da UE (por exemplo, Grécia) para entrar na Bulgária. No entanto, esteja preparado para possíveis questionamentos na fronteira, especialmente se chegar de carro com um visto de um país que não está em sua rota direta. Ter uma explicação plausível para seus planos de viagem, como a intenção de visitar o país que emitiu o visto, é aconselhável.</li>
+    <li>Para pedidos de visto, a taxa de serviço foi de 29,89 EUR (paga em rublos à taxa de câmbio atual). A entrega do passaporte custou 720 rublos, ou você poderia retirá-lo pessoalmente. Um usuário pagou 19610 rublos pelo seu pedido enviado em 3 de julho.</li>
+    <li>O erro 403203 no site da VFS Global indica um conflito de sessão ou permissão, ocorrendo frequentemente devido ao tráfego intenso ou sobrecarga do site. Os usuários relatam que este erro é comum para solicitantes de visto búlgaro. Reservar horários pelo site não é confiável; recomenda-se que os solicitantes utilizem métodos de contato direto, como ligar para o consulado ou enviar e-mails, para um agendamento mais consistente.</li>
+    <li>Ao solicitar um VNZh (autorização de residência) búlgaro, certifique-se de que a validade da sua apólice de seguro se estenda até a data final do cartão de residência proposto. Se a apólice terminar mesmo um dia antes, ela pode ser rejeitada. Alguns usuários enfrentaram problemas com seguradoras que alteraram seu processo de solicitação ou que são lentas para responder. As seguradoras recomendadas incluem &#39;Bulstrad&#39; e &#39;Bulgaria Insurance&#39;. Pode ser necessário renovar a apólice de seguro após obter o novo cartão VNZh ou esclarecer com a seguradora como obter uma apólice com o período de validade estendido necessário.</li>
+    <li>Ao solicitar um visto búlgaro, o formulário de inscrição deve ser preenchido digitalmente e impresso; formulários manuscritos não são aceitos. Documentos de suporte, como números de identificação fiscal (INN, OGRN), extratos bancários e comprovantes de renda devem ser enviados como impressões com assinaturas eletrônicas ou carimbos oficiais do banco. O seguro de viagem pode ser obtido por meio de aplicativos específicos (por exemplo, VTB) para reduzir custos. Os pagamentos das taxas de visto geralmente são exigidos em Euros, e apenas notas em perfeitas condições são aceitas.</li>
+    <li>O processamento do visto D na Bulgária está sofrendo atrasos significativos e mudanças nos requisitos. Os solicitantes relatam tempos de espera de mais de 3 meses, sem prazo fixo para o processamento. Alguns centros de vistos estariam suspendendo pedidos ou remarcando consultas em várias semanas sem motivos claros. Novos requisitos, como a prova de renda para aposentados em Sófia, estão sendo implementados. É aconselhável que os solicitantes permaneçam pacientes, acompanhem regularmente e estejam preparados para possíveis obstáculos administrativos.</li>
+    <li>Para solicitar a cidadania búlgara, reúna os seguintes documentos: certidão de nascimento do pai (se for búlgaro), certidão de nascimento da mãe (se for russa), certidão de casamento dos pais e sua própria certidão de nascimento (se for búlgaro). As candidaturas podem ser apresentadas em Moscovo, com opções de levantamento do passaporte em Sófia. Um decreto recente pode impactar o processo. Após a aprovação da cidadania, solicite um visto para levantar o passaporte.</li>
+    <li>Os cidadãos russos que solicitam um visto búlgaro devem fazê-lo na Rússia, a menos que possuam uma autorização de residência noutro país. Não é possível solicitar um visto búlgaro a partir de um terceiro país sem residência local. Para aqueles com residência noutros países, solicitar um visto Schengen geral (por exemplo, italiano, francês ou grego) pode ser uma alternativa, embora os tempos de espera ainda possam ser significativos.</li>
+    <li>Ao solicitar vistos, especialmente para países Schengen, preste muita atenção aos requisitos específicos de cada centro de vistos e consulado. Os requisitos podem variar consoante o país, a cidade de candidatura e o tipo de visto. Documentos como prova de emprego, educação ou rendimentos precisam de ser apresentados no formato solicitado pela autoridade específica. Em caso de dúvida, consulte comunidades online relevantes ou consultores de vistos. Esteja ciente de que uma recusa de visto anterior pode complicar futuras candidaturas. Embora os agentes de vistos possam aumentar as hipóteses de sucesso, eles não garantem um visto. Uma preparação minuciosa e precisa dos documentos é fundamental.</li>
+    <li>A coleta de dados biométricos (impressões digitais e fotos) na fronteira búlgara causa principalmente atrasos na entrada na Bulgária. Os procedimentos de saída são geralmente mais ágeis e menos demorados em relação à biometria. No entanto, possíveis problemas com documentos de especialistas estrangeiros ainda podem levar a atrasos significativos para todos os passageiros.</li>
+    <li>Esclareça a política referente à transferência de horários de agendamento de vistos. Alguns usuários relatam que os horários não podem ser transferidos ou que o nome do requerente não pode ser alterado, enquanto outros conseguiram registrar novamente os requerentes por meio de solicitações por e-mail, fornecendo os detalhes originais da reserva e as informações do novo requerente. Aconselhe os usuários a confirmar a política específica do centro de vistos, já que as experiências variam. Mencione que alguns centros de vistos podem ter aceitado um requerente diferente no passado, mas não é um procedimento garantido.</li>
+    <li>O tempo de processamento típico para um visto Schengen búlgaro varia de 30 a 50 dias a partir da data de envio da solicitação até que o passaporte esteja pronto. Solicitações individuais dentro do mesmo lote podem ter durações de processamento ligeiramente diferentes.</li>
+    <li>Os prazos de processamento do Visto D na Bulgária variam de 3 semanas a vários meses, dependendo do motivo da solicitação. Uma tabela com esses prazos está disponível no grupo de bate-papo dedicado ao &#39;Visto D&#39;. A pessoa responsável pelo suporte administrativo pode fornecer o link do chat.</li>
+    <li>Não é estritamente obrigatório fazer a primeira entrada no Espaço Schengen via Bulgária ao possuir um visto Schengen búlgaro. De acordo com a experiência recente dos usuários, viajar para outros países europeus sem entrar primeiro na Bulgária não afetou negativamente solicitações de visto subsequentes. Isso contradiz o equívoco comum de uma rígida &#34;regra de primeira entrada&#34;.</li>
+    <li>Ao verificar o status do visto no site oficial do centro de vistos, ignore o CAPTCHA &#39;Não sou um robô&#39; se ele aparecer durante o processo; muitas vezes, o status é exibido em texto azul na parte inferior da página após clicar em &#39;enviar&#39; com seu código.</li>
+    <li>O caminho para o visto D e residência (VNZH) na Bulgária é mais bem gerido preparando a documentação de forma independente. Utilize fontes oficiais para obter as listas de verificação. Em cidades como Burgas, centros comunitários locais fornecem assistência gratuita ou de baixo custo para a organização de documentos. Cuidado com intermediários privados com avaliações mistas; verifique seu histórico antes de contratá-los. O processo central envolve comprovar uma base legal (como abrir uma empresa) e apresentar a documentação compilada no escritório de imigração.</li>
+    <li>Se um usuário encontrar &#39;nenhum registro encontrado&#39; ou erros ao verificar o status do visto Schengen nos sites da VFS Global, certifique-se do seguinte: 1. Não use uma VPN, pois ela pode interferir no redirecionamento do site específico da região. 2. Use uma pesquisa direta via Google/Chrome em vez do Yandex. 3. Verifique novamente se há erros de digitação no número de referência e na data de nascimento. 4. Certifique-se de que você está no domínio nacional da VFS correto para a Bulgária.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/pt/bg/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/pt/bg/bancos-e-dinheiro/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Bancos e Dinheiro</span></a>
+    <a class="chip" href="/pt/bg/c-mbio-e-transfer-ncias/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Câmbio e Transferências</span></a>
+    <a class="chip" href="/pt/bg/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/pt/bg/seguran-a/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Segurança</span></a>
+    <a class="chip" href="/pt/bg/acomoda-o/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Acomodação</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Cansado de pesquisar a mesma coisa?</h2>
+    <p>Pergunte ao Luky — o que a busca não mostra e nem todo blogueiro conta.</p>
+    <p>E o Luky é um tradutor de voz para conversas reais: fale com os locais diretamente.</p>
+    <p class="ps">PS: tenha uma conversa por voz com um amigo no exterior como se estivesse ao lado</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir o Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiência real dos chats de comunidades, sem enrolação</div>
+    <nav class="f-links">
+      <a href="/pt/about/">Sobre</a>
+      <a href="/pt/bg/">Todos os temas</a>
+      <a href="/pt/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">As respostas são reunidas de chats abertos de comunidades — é a experiência real das pessoas, não aconselhamento oficial. Verifique antes de decisões importantes.</p>
+    <div class="f-copy">© 2026 Luky · atualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noite", DAY="\u2600 Dia";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

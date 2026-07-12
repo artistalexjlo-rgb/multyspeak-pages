@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Indonésia: Segurança — experiência real · Luky</title>
+<meta name="description" content="Experiência real dos chats sobre Segurança em Indonésia: como é, em primeira mão. Para o seu caso — pergunte ao Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/pt/id/seguran-a/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/id/seguran-a/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/id/seguran-a/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/id/seguran-a/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/id/seguran-a/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/id/seguran-a/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · qualquer país · sem enrolação</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noite</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/pt/">Início</a> /
+    <a href="/pt/id/">Indonésia</a> /
+    <b>Segurança</b>
+  </nav>
+
+
+  
+  <h1>Segurança em Indonésia: o que realmente importa saber</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiência real de pessoas dos chats sobre «Segurança» em Indonésia — como é, sem enrolação. Para o seu caso — <strong>pergunte ao Luky</strong>.</div></div>
+
+  <h2>Da experiência real</h2>
+  <ul class="qlist">
+    <li>O utilizador partilha uma preocupação de segurança pessoal sobre ter sido abordado de forma agressiva enquanto conduzia uma mota sozinho à noite em Bali e pede conselhos sobre como lidar com tais situações e quão comuns elas são.</li>
+    <li>Golpes de aluguel de vilas de curto prazo em Bali são frequentes. Sinais de alerta incluem: ausência de contrato formal, solicitações de pagamentos via P2P/dinheiro e preços significativamente mais baixos (20-40% de desconto) em comparação com as taxas de mercado. Use agregadores conceituados como Booking.com ou Airbnb para reservas iniciais, a fim de garantir proteção financeira. Verifique as credenciais da empresa de gestão de propriedades local antes de fazer transferências bancárias diretas.</li>
+    <li>Recursos recomendados para encontrar acomodação de longo prazo em Bali: Booking.com, Agoda, Trip.com (para a estadia inicial de curto prazo), Facebook Marketplace e Rumah123. Para grupos maiores (por exemplo, 8 pessoas), é mais seguro reservar um hotel primeiro e procurar villas localmente para evitar golpes e garantir que a propriedade corresponda às expectativas.</li>
+    <li>Seja cauteloso com cartões bancários indonésios (especialmente BNI). Há relatos de tentativas de débito não autorizadas que podem levar contas ao cheque especial (saldo negativo) sem OTP ou solicitações de confirmação, muitas vezes aparecendo como bloqueios pendentes em vez de transações diretas no histórico. Os usuários devem evitar deixar os cartões à vista dos caixas para evitar clonagem e evitar manter grandes saldos em cartões usados para pagamentos diários em terminais.</li>
+    <li>Esteja ciente dos riscos de envenenamento por metanol devido ao álcool não regulamentado. Em caso de envenenamento, preserve o recipiente para análise. O tratamento médico em Bali para toxicidade grave (por exemplo, filtração de sangue) é extremamente caro, custando centenas de milhões de IDR. Certifique-se de que o seu seguro de viagem/expatriado esteja ativo e cubra especificamente a evacuação de emergência.</li>
+    <li>O clima em Bali no início de novembro é um período de transição entre as estações seca e chuvosa. A ocorrência de chuvas é possível, conforme indicado por um relato de chuva em 1º de novembro do ano anterior. A duração e a intensidade da chuva podem variar.</li>
+    <li>Dirigir sem uma habilitação válida na Indonésia acarreta o risco de apreensão do veículo e multas oficiais. Durante blitzes policiais, negociar com os oficiais costuma ser ineficaz e pode levar à apreensão do veículo. Use sempre capacete e vista-se de forma discreta para atrair menos atenção das autoridades de trânsito.</li>
+    <li>As paradas policiais em motos em Bali são menos prováveis se você estiver usando capacete, vestido adequadamente e seguindo as regras de trânsito. Se você pilotar de forma imprudente (por exemplo, sem camisa, avançando sinais vermelhos), a chance de ser parado aumenta significativamente. Existem áreas específicas onde a polícia monta postos de controle com frequência.</li>
+    <li>Dica de segurança na praia: pendure objetos de valor em uma mochila em um guarda-sol alto ou no galho de uma árvore, em vez de deixá-los no nível do chão. Alugar espreguiçadeiras é geralmente considerado a forma mais segura de proteger seus pertences em praias públicas.</li>
+    <li>Praias seguras para nadar em Bali: Sanur, Nusa Dua e Geger, devido à proteção dos recifes. Os viajantes devem estar cientes das correntes de retorno: não nade contra elas; nade paralelamente à costa para escapar da corrente. Sempre verifique as tabelas de marés e as bandeiras de aviso nas praias.</li>
+    <li>Para reciclagem de baterias em Bali, algumas lojas Bali Buda possuem caixas de coleta. As lojas Erafone podem não aceitar aparelhos ou baterias antigos. Para outros dispositivos eletrônicos, pode ser necessário recorrer a centros de reciclagem especializados ou iniciativas comunitárias. O descarte comum de lixo não é recomendado para baterias e eletrônicos devido a preocupações ambientais.</li>
+    <li>Máscaras de snorkel de rosto inteiro com válvulas integradas não são recomendadas para natação em águas abertas devido a possíveis problemas de acúmulo de CO2, que podem levar a riscos de desmaio e afogamento. Conjuntos padrão de máscara e snorkel de duas peças são recomendados para um mergulho seguro.</li>
+    <li>Fraudes em aluguéis são comuns no mercado informal de Bali. Protocolos de segurança essenciais: evite qualquer pagamento antecipado antes da inspeção física, verifique a documentação de propriedade, assine contratos localmente e priorize plataformas conhecidas (como Booking.com) em vez de transferências privadas diretas em aplicativos de mensagens.</li>
+    <li>Um usuário perdeu um item importante relacionado à saúde em Nusa Penida e agora está em Gili Trawangan. Ele busca a ajuda de alguém que esteja viajando entre esses locais ou de Nusa Penida para Bali para recuperar e entregar o item.</li>
+    <li>Durante o auge da estação seca em agosto e setembro, Bali experimenta temperaturas mais amenas e ventos noturnos frios provocados por massas de ar de inverno que vêm da Austrália. A temperatura da água do mar também cai alguns graus. Viajantes que planejam passeios noturnos de scooter ou que ficarão perto de áreas costeiras devem levar jaquetas leves ou moletons.</li>
+    <li>Serviços de entrega de comida (Grab, Gojek) na Indonésia podem apresentar problemas com motoristas que solicitam cancelamentos, taxas adicionais ou que violam pedidos. Recomenda-se usar um número de telefone local, um nome neutro (local) e um cartão bancário local para pagamento, a fim de minimizar solicitações fraudulentas e melhorar a confiabilidade do serviço.</li>
+    <li>O roubo de celulares por pessoas em motocicletas é um crime comum em Bali (Canggu, Kuta, Ubud, Uluwatu). Evite usar suportes de celular no guidão, pois eles tornam os aparelhos alvos fáceis para ladrões. Prática de segurança recomendada: use um fone de ouvido para áudio de navegação, não segure o celular enquanto dirige e tenha cautela em áreas lotadas ou muito frequentadas por turistas.</li>
+    <li>Há relatos recorrentes de envenenamento por metanol devido a álcool adulterado em Bali. Os sintomas incluem náusea súbita, tontura, sensibilidade à luz e grave desconforto respiratório. Procure atendimento hospitalar imediato (BIMC ou similar) se houver suspeita de envenenamento. Evite álcool sem marca ou barato vendido em ambientes informais.</li>
+    <li>Segurança do álcool em Bali: para evitar o envenenamento por metanol, compre álcool apenas em fontes confiáveis, como supermercados, lojas de vinhos e restaurantes estabelecidos. Evite álcool barato e sem marca de vendedores de rua ou comerciantes informais, pois pode ser falsificado ou conter substâncias nocivas como metanol.</li>
+    <li>Os custos médicos na Indonésia, especialmente em hospitais particulares como o BIMC, podem chegar a 300 milhões de IDR por alguns dias de terapia intensiva. O seguro de viagem é altamente recomendado, mesmo para estadias de curta duração, devido a riscos que incluem acidentes de trânsito, intoxicação alimentar e mordidas de animais. Apólices padrão estão disponíveis por meio de assinaturas bancárias premium ou agregadores de seguros de viagem dedicados.</li>
+    <li>Viajantes relatam golpes frequentes envolvendo agentes de bilheteria terceirizados fraudulentos para traslados de Bali para as ilhas. Verifique as agências de venda de passagens por meio de fontes oficiais ou compre diretamente nos balcões dos portos para evitar golpes de &#39;não comparecimento&#39;, nos quais as reservas são inválidas ou inexistentes.</li>
+    <li>Há relatos de suspeitas de envenenamento por metanol devido a álcool falsificado em Bali, incluindo vinho local e arak. Embora a causa exata e a escala estejam sob investigação, recomenda-se comprar bebidas alcoólicas em supermercados conceituados, em vez de vendedores ambulantes ou pequenas lojas, para minimizar o risco. O consumo excessivo de metanol pode ser fatal.</li>
+    <li>A partir de 1º de julho de 2026, a separação de resíduos será obrigatória para todas as regiões em Bali. Até 1º de agosto de 2026, Bali encerrará oficialmente o descarte de resíduos a céu aberto no aterro sanitário de Suwung, fazendo a transição para protocolos de processamento e tratamento gerenciados.</li>
+    <li>O governo indonésio está implementando um sistema de classificação por estrelas para vilas e reprimindo propriedades de aluguel de curta temporada não licenciadas. Aproximadamente 1.600 propriedades em situação irregular foram identificadas para possível remoção das principais plataformas de reserva. Os proprietários estão sendo incentivados a formalizar seu status comercial para garantir a transparência do mercado.</li>
+    <li>Andar de moto sem capacete é extremamente perigoso e comum em Bali. As autoridades locais e os moradores aplicam rigorosamente as regras sobre capacetes em estradas com pedágio. É altamente recomendável usar um capacete pessoal que sirva bem.</li>
+    <li>Um método para lidar com paradas de moto ao dirigir sem habilitação: esconda as chaves, a carteira de motorista e o passaporte no hotel. Ameaçar com o reboque do veículo ajuda a negociar uma multa menor.</li>
+    <li>Cofres de hotel podem não ser totalmente seguros. As recomendações incluem distribuir dinheiro/objetos de valor em várias malas trancadas, minimizar a quantidade de dinheiro mantida no quarto e usar pequenas câmeras Wi-Fi conectadas à nuvem para monitoramento, se necessário. Não carregue todos os documentos e dinheiro em uma única bolsa enquanto explora a cidade.</li>
+    <li>Bali experimenta uma &#39;estação seca&#39; (inverno) mais fresca durante os meses de junho a agosto, onde as temperaturas à noite e no início da manhã podem parecer frias, especialmente ao andar de scooter. As temperaturas da água também caem alguns graus em comparação com o pico da estação chuvosa em dezembro.</li>
+    <li>Identifique e ignore spam de recrutamento, golpes financeiros e ofertas de &#39;trabalho&#39; fraudulentas comuns em grupos de Telegram para viagens/expatriados. Não interaja com usuários que prometem renda diária alta para um esforço mínimo. Denuncie contas que solicitem códigos de SMS ou taxas de &#39;inscrição&#39;.</li>
+    <li>As praias recomendadas para nadar em Bali incluem Nusa Dua (Geger, Mengiat) devido às águas calmas. Canggu e Seminyak são destinadas principalmente ao surfe e à vida noturna. Espere condições variáveis nas praias; nadar em praias de surfe pode ser perigoso.</li>
+    <li>Na Indonésia, um passageiro que abre a porta de um veículo no trânsito é geralmente considerado responsável pela colisão resultante. O seguro local raramente cobre isso se o passageiro agiu com negligência. Sempre verifique os espelhos e o tráfego antes de abrir as portas.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/pt/id/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/pt/id/documentos-e-vistos/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentos e Vistos</span></a>
+    <a class="chip" href="/pt/id/ingressos-e-lazer/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Ingressos e Lazer</span></a>
+    <a class="chip" href="/pt/id/sa-de/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Saúde</span></a>
+    <a class="chip" href="/pt/id/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/pt/id/c-mbio-e-transfer-ncias/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Câmbio e Transferências</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Ainda não sabe o que fazer no seu caso?</h2>
+    <p>Pergunte ao Luky — não artigos genéricos, mas detalhes para a sua situação.</p>
+    <p>E o Luky é um tradutor de voz para conversas reais: pechinche na feira como um local.</p>
+    <p class="ps">PS: conversar com alguém num festival no exterior — fácil</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir o Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiência real dos chats de comunidades, sem enrolação</div>
+    <nav class="f-links">
+      <a href="/pt/about/">Sobre</a>
+      <a href="/pt/id/">Todos os temas</a>
+      <a href="/pt/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">As respostas são reunidas de chats abertos de comunidades — é a experiência real das pessoas, não aconselhamento oficial. Verifique antes de decisões importantes.</p>
+    <div class="f-copy">© 2026 Luky · atualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noite", DAY="\u2600 Dia";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

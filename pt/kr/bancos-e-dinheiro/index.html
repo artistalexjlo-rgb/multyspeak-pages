@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coreia do Sul: Bancos e Dinheiro — experiência real · Luky</title>
+<meta name="description" content="Experiência real dos chats sobre Bancos e Dinheiro em Coreia do Sul: como é, em primeira mão. Para o seu caso — pergunte ao Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/pt/kr/bancos-e-dinheiro/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/kr/bancos-e-dinheiro/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/kr/bancos-e-dinheiro/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/kr/bancos-e-dinheiro/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/kr/bancos-e-dinheiro/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/kr/bancos-e-dinheiro/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · qualquer país · sem enrolação</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noite</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/pt/">Início</a> /
+    <a href="/pt/kr/">Coreia do Sul</a> /
+    <b>Bancos e Dinheiro</b>
+  </nav>
+
+
+  
+  <h1>Bancos e Dinheiro em Coreia do Sul: experiência real dos chats</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiência real de pessoas dos chats sobre «Bancos e Dinheiro» em Coreia do Sul — como é, sem enrolação. Para o seu caso — <strong>pergunte ao Luky</strong>.</div></div>
+
+  <h2>Da experiência real</h2>
+  <ul class="qlist">
+    <li>Para sacar won sul-coreano usando um cartão UnionPay russo: 1) Recomenda-se usar os caixas eletrônicos do KB Kookmin Bank por taxas de comissão mais baixas. 2) Ao usar o caixa eletrônico, selecione a interface &#39;Global&#39; e escolha o idioma russo, se disponível. 3) Espere taxas em torno de 3.500 KRW por transação. Alternativamente, carregar fundos em um cartão Wowpass/Namane através de máquinas de depósito em dinheiro pode ser mais econômico.</li>
+    <li>Procedimentos do Aeroporto de Incheon para cartões SIM e câmbio: cartões SIM estão prontamente disponíveis e são fáceis de comprar no aeroporto após a retirada de bagagem, com diversos quiosques. O eSIM é uma alternativa caso seja compatível. As taxas de câmbio no aeroporto geralmente não são boas; é aconselhável trocar apenas uma pequena quantia para necessidades imediatas e o restante em Seul. O T-money e o Wowpass também são adquiridos ou recarregados com mais conveniência na cidade.</li>
+    <li>Ao sacar dinheiro na Coreia do Sul usando cartões estrangeiros como o RSB Global UnionPay, é importante usar caixas eletrônicos localizados dentro de agências bancárias (por exemplo, KB-bank, Woori Bank) e garantir a seleção da opção para transações com cartão estrangeiro. Caixas eletrônicos comuns na rua podem não ser compatíveis. O código PIN pode ter seis dígitos. Se encontrar problemas, tente caixas eletrônicos de diferentes bancos ou consulte a equipe do banco. Ter um plano alternativo, como usar um cartão de uma rede diferente ou ter dinheiro suficiente, é aconselhável.</li>
+    <li>O pagamento com cartões UnionPay russos na Coreia do Sul é inconsistente. Embora alguns usuários relatem transações bem-sucedidas em várias lojas (por exemplo, Olive Young, Daiso, lojas de roupas), muitos enfrentam dificuldades ou rejeições diretas. Os cartões são geralmente mais confiáveis para saques em caixas eletrônicos. A taxa de sucesso pode variar dependendo do banco e do estabelecimento específico. É aconselhável ter métodos de pagamento alternativos, como dólares em espécie para câmbio ou um cartão local coreano.</li>
+    <li>Para ativar um WOWPASS, realize o registro físico em um quiosque. Em seguida, no aplicativo móvel WOWPASS, selecione &#39;Adicionar Cartão&#39; e escaneie o código de barras no verso do cartão físico. Se o aplicativo falhar ao escanear o passaporte, insira os dados manualmente ou tente novamente no quiosque.</li>
+    <li>Cartões de transporte e pagamento na Coreia do Sul: 1. Os cartões WowPass possuem a funcionalidade T-Money integrada. 2. O WowPass atua como um cartão de débito/pré-pago para lojas, enquanto o T-Money é estritamente para transporte público. 3. O saldo restante no T-Money pode ser reembolsado em lojas de conveniência (como 7-Eleven, CU) para valores abaixo de 20.000 KRW. Reembolsos maiores exigem um escritório do T-Money. 4. Se um aplicativo indicar que um cartão já foi emitido, você pode realizar a reemissão do cartão em um quiosque físico nas estações de metrô.</li>
+    <li>Cartões bancários russos, particularmente aqueles de bancos não sancionados, podem ter funcionalidade limitada na Coreia do Sul. Cartões UnionPay de bancos russos específicos, como o Rosselkhozbank e o Asia-Pacific Bank, são mencionados como potencialmente funcionais para saques em dinheiro. Pagamentos via código QR, que são comuns na China, geralmente não funcionam com cartões bancários russos na Coreia devido a restrições políticas e bancárias.</li>
+    <li>O T-money é o cartão de transporte público padrão na Coreia do Sul, podendo ser comprado e recarregado em lojas de conveniência. Os cartões Wowpass incluem um chip T-money, mas exigem gestão de saldo separada. O Climate Card oferece viagens ilimitadas e está disponível nos balcões de informações das estações de metrô e em lojas de conveniência selecionadas.</li>
+    <li>Cartões de pagamento russos, particularmente UnionPay de bancos como o RSB, podem ter aceitação limitada na Coreia do Sul, inclusive em algumas Apple Stores em Seul. Saques em caixas eletrônicos são geralmente possíveis. É aconselhável usar notas de dólares americanos mais novas para câmbio, já que notas antigas podem não ser aceitas em todos os lugares. Casas de câmbio menores, como as de Myeongdong, frequentemente oferecem taxas mais favoráveis do que os grandes bancos.</li>
+    <li>Os cartões Wowpass podem ser recarregados em terminais dedicados usando dinheiro ou cartão. Alguns cartões bancários russos, como os do RosSelkhozbank, podem funcionar. Se as recargas pelo aplicativo falharem, localize um terminal. A taxa de câmbio usada nos terminais está alinhada com a taxa do aplicativo, que pode ser mais vantajosa do que a das casas de câmbio locais, especialmente ao trocar notas de dólares americanos mais antigas.</li>
+    <li>Na Coreia do Sul, as unidades monetárias podem ser confusas para os turistas. Preços rotulados como &#39;man&#39; referem-se a unidades de 10.000 KRW (por exemplo, 2 man = 20.000 KRW). Sempre esclareça o valor numérico antes do pagamento para evitar pagar a mais.</li>
+    <li>Câmbio e disponibilidade de caixas eletrônicos na Ilha de Jeju: Bancos e casas de câmbio existem, mas são menos numerosos do que em Seul e exigem uma viagem específica. Os terminais Wowpass eram escassos (2 para toda a ilha anteriormente). Nonghyup e NH Bank oferecem boas taxas de câmbio sem necessidade de documento de identidade, muitas vezes melhores do que os caixas eletrônicos do aeroporto ou do Wowpass. Caixas eletrônicos do Woori Bank podem ser encontrados em empresas de transporte. Os funcionários locais geralmente podem ajudar a localizar caixas eletrônicos.</li>
+    <li>Um usuário perdeu seu cartão Wowpass na Coreia e quer saber se pode obter um novo usando o mesmo passaporte. Devem ser fornecidas instruções sobre como substituir um cartão Wowpass perdido, incluindo informações sobre se isso pode ser feito pelo aplicativo e se o mesmo passaporte pode ser usado.</li>
+    <li>Embora a Coreia do Sul tenha adotado pagamentos sem dinheiro, ainda é aconselhável carregar um pouco de moeda local (Won sul-coreano - KRW). O dinheiro é particularmente útil para transações em mercados tradicionais, vendedores de comida de rua e, ocasionalmente, para táxis, especialmente em ilhas como Jeju. Embora cartões de pagamento e serviços como o Wowpass sejam amplamente aceitos, exceções ocorrem ocasionalmente. Ter dinheiro em mãos oferece uma alternativa caso haja problemas com o cartão, limites de saque ou políticas específicas de comerciantes que favoreçam pagamentos em dinheiro.</li>
+    <li>Sistemas de pagamento na Coreia do Sul: O WOWPASS funciona como cartão de débito e T-money (cartão de transporte) em um só. Os cartões T-money são essenciais para o transporte público (ônibus, metrôs), já que muitos ônibus estão se tornando livres de dinheiro. O T-money pode ser comprado e recarregado em lojas de conveniência (GS25, CU, 7-Eleven) ou quiosques de estações de metrô. Sempre encoste o cartão ao entrar e sair dos ônibus para garantir o cálculo correto da tarifa e os descontos de transferência.</li>
+    <li>O WOWPASS é um cartão pré-pago e T-money (cartão de transporte) em um só. Usar o aplicativo móvel pode exigir uma VPN se acessado do exterior. Recomenda-se comprar e recarregar nas máquinas na cidade em vez do aeroporto devido às longas filas. Converter USD para KRW em casas de câmbio independentes (por exemplo, Money Box) antes de carregar o cartão oferece uma taxa de câmbio melhor do que a conversão direta de USD no terminal.</li>
+    <li>O cartão Wowpass serve tanto como um cartão de pagamento geral quanto como um cartão de transporte (T-money). No entanto, os saldos para o lado de pagamento e o lado de transporte são gerenciados separadamente. O T-money pode ser recarregado nos balcões de lojas de conveniência ou em quiosques de autoatendimento. Os usuários podem verificar seu saldo T-money escaneando o cartão via NFC em um smartphone usando o aplicativo Wowpass.</li>
+    <li>Cartões UnionPay emitidos na Rússia têm aceitação muito limitada na Coreia do Sul. Confiabilidade: 1. O pagamento direto em terminais POS é raro (principalmente Daiso, Olive Young, terminais NICE). 2. Saques em dinheiro em caixas eletrônicos (o Woori Bank é relatado como confiável) são o principal caso de uso. 3. Para pagamentos estáveis, considere usar o Wowpass (pode ser carregado via intermediários) ou cartões internacionais emitidos em países da CEI.</li>
+    <li>Os usuários podem ter problemas com o saldo do cartão Woori Bank Pass não sendo refletido no aplicativo após uma recarga. Isso pode ser devido a erros de exibição. O saldo pode ser verificado através da versão web do aplicativo ou em terminais de metrô. É possível usar um número de telefone russo para verificação.</li>
+    <li>Considere solicitar um pacote combinado de cartão WoWpass e chip (SIM) para maior conveniência. Informe-se sobre a aceitação do UnionPay para pagamentos relacionados a este pacote.</li>
+    <li>Os cartões T-Money podem ser comprados e recarregados em lojas de conveniência (incluindo as de 24 horas) e em máquinas de venda automática em estações de metrô e aeroportos na Coreia do Sul. O Aeroporto de Jeju provavelmente possui essas instalações.</li>
+    <li>Para russos que viajam para a Coreia do Sul, cartões bancários russos, incluindo UnionPay, têm aceitação muito limitada. É aconselhável levar dinheiro em espécie (USD/EUR) ou obter um cartão emitido no exterior. A UnionPay do Asia-Pacific Bank é mencionada como funcionando melhor com o AliPay. Relata-se que cartões cazaques, como o Kaspi, são amplamente aceitos. O ATB UnionPay também é sugerido para saques em dinheiro e uso potencial no Japão e na UE. Dinheiro em espécie é geralmente recomendado como reserva, sendo o dólar americano uma escolha comum.</li>
+    <li>O cartão Wowpass pode ser obtido com antecedência pelo aplicativo ou na chegada ao Aeroporto de Incheon. Recomenda-se a pré-reserva (com pelo menos 24 horas de antecedência) para maior conveniência, com opções de retirada em lojas CU do aeroporto ou balcões dedicados (caso um pacote de chip SIM esteja incluído). Alternativamente, os cartões podem ser adquiridos nas máquinas Wowpass localizadas por toda a cidade. Embora as taxas de câmbio do aeroporto para recarga possam ser menos favoráveis, a troca de dinheiro ainda é possível para as necessidades iniciais da viagem.</li>
+    <li>O transporte público na Coreia do Sul, incluindo ônibus e metrôs em todo o país (mesmo na Ilha de Jeju), é pago principalmente usando cartões T-Money. Os cartões Climate são restritos à área metropolitana de Seul. Cada passageiro, incluindo crianças de 14 e 16 anos, precisa de seu próprio cartão T-Money individual. Os cartões podem ser comprados e recarregados em aeroportos ou lojas de conveniência 24 horas.</li>
+    <li>Para titulares de cartões UnionPay, priorize caixas eletrônicos (ATMs) identificados como &#39;Global ATM&#39;. Grandes bancos como o Woori geralmente aceitam cartões internacionais. É estritamente recomendado portar dinheiro em espécie na fronteira, calculando aproximadamente US$ 100 por dia de estadia, mesmo que possua um cartão de débito/crédito estrangeiro.</li>
+    <li>Na Coreia do Sul, os cartões T-Money podem ser recarregados com dinheiro em qualquer loja de conveniência (CU, GS25). As máquinas para cartões Wowpass, destinadas ao câmbio e recarga, estão amplamente disponíveis, incluindo opções 24 horas por dia, 7 dias por semana em áreas como Myeongdong (verifique o aplicativo Wowpass para localizar). As taxas de câmbio fora do aeroporto, especialmente em áreas turísticas populares como Myeongdong, podem ser muitas vezes mais favoráveis do que as taxas do aeroporto. O Wowpass não pode ser recarregado online; apenas recargas físicas nas máquinas são possíveis. Para cartões Union Pay (como o RSKHB), é possível sacar dinheiro em caixas eletrônicos (como o Woori Bank) e depois usar o dinheiro para carregar o Wowpass.</li>
+    <li>Bilhetes de trem de Seul para Busan podem ser comprados no guichê da estação (por exemplo, na Estação de Seul) para evitar as altas taxas de serviço das agências de viagens online. Os funcionários dos guichês geralmente falam inglês. Para dias de menor movimento, os bilhetes costumam estar disponíveis, embora seja recomendado reservar com antecedência para horários de partida específicos.</li>
+    <li>Transporte do Aeroporto de Incheon para Seul: 1. O AREX (trem expresso) é altamente eficiente. 2. Os ônibus tipo limusine custam aproximadamente 17.000 KRW. 3. Os táxis custam entre 50.000 e 80.000 KRW. Obtenha sempre um cartão T-money no aeroporto e recarregue-o em lojas de conveniência como a CU para uma viagem tranquila.</li>
+    <li>Ao pagar na Coreia do Sul, esteja preparado para a variabilidade na aceitação de cartões. Cartões de bancos russos, especialmente UnionPay (mesmo de bancos como o Rosselkhozbank - RSB), têm aceitação limitada, principalmente para saques em caixas eletrônicos. Grandes varejistas como o Lotte podem recusar o Visa Gold padrão, mas aceitam o Visa Platinum. Lojas menores, cafés e lavanderias podem aceitar os mesmos cartões sem problemas. Cartões estrangeiros geralmente têm limites diários de saque (cerca de 700.000 KRW) e taxas de transação. Para compras significativas, planeje dividir os pagamentos ao longo de vários dias e localize caixas eletrônicos compatíveis. É aconselhável portar moeda local (KRW), especialmente para mercados e comida de rua. Para transporte, o cartão T-money é essencial e pode ser recarregado pelo aplicativo Wowpass ou em lojas de conveniência (CU, GS25, 7/11). O cartão de turista Wowpass é amplamente aceito, mas há relatos de falhas em táxis na Ilha de Jeju, tornando o dinheiro em espécie uma opção mais segura por lá.</li>
+    <li>Para viajar para a Coreia do Sul, recomenda-se ter algum Won coreano para despesas iniciais, como transporte do aeroporto. Dólares americanos ou Yuan chinês são sugeridos para quantias maiores, já que trocar USD por KRW dentro da Coreia pode ser difícil. As passagens de ônibus para o aeroporto podem ser compradas com o cartão T-money ou em dinheiro diretamente no ônibus (cerca de 17.000 KRW). Cartões UnionPay russos podem enfrentar problemas, às vezes exigindo dígitos adicionais após o PIN ou enfrentando bloqueios.</li>
+    <li>Ao comparar os cartões Wowpass e CU na Coreia do Sul, o Wowpass oferece funcionalidade de transporte T-Money integrada, cashback e descontos, tornando-o geralmente preferido pelos turistas. Os cartões CU servem principalmente como cartões de transporte. Embora ambos possam ser recarregados, o Wowpass permite recargas em várias moedas pelo seu aplicativo e terminais, o que pode ser mais conveniente do que as opções do CU. Nem todos os terminais e lojas aceitam universalmente ambos.</li>
+    <li>O Wowpass é um cartão pré-pago amplamente aceito na maioria dos terminais de varejo na Coreia do Sul. É recomendado como um método de pagamento confiável para turistas, especialmente para aqueles cujos cartões bancários estrangeiros podem ser recusados intermitentemente. Ele não é aceito em locais que aceitam apenas dinheiro, como alguns mercados tradicionais.</li>
+    <li>O T-money é o método de pagamento padrão para ônibus e metrôs em Seul. O pagamento do transporte público não pode ser feito diretamente com cartões de crédito internacionais. Os cartões T-money podem ser comprados e recarregados com dinheiro em lojas de conveniência (GS25, etc.). Para usuários do Wowpass, os fundos devem ser transferidos para o saldo interno do T-money.</li>
+    <li>O transporte público (metrô/ônibus) na Coreia do Sul exige rigorosamente cartões T-Money ou bilhetes unitários comprados nas estações. O WOWPASS possui o T-Money integrado, mas ele deve ser recarregado separadamente do saldo do cartão. O pagamento do transporte não pode ser feito diretamente com cartões bancários estrangeiros ou UnionPay padrão.</li>
+    <li>Gmoneytrans é um serviço de remessas que pode ser utilizado na Coreia com um passaporte e um número de telefone coreano para o registro inicial. Embora um número coreano seja necessário para a configuração, pode ser possível alterá-lo posteriormente. Um cartão Gmoney físico (cartão Quick) pode ser obtido com um passaporte russo, permitindo saques em dinheiro mesmo que o número de telefone coreano se torne inativo. Há uma taxa de saque de 1500 won, e o cartão funciona como um cartão de transporte.</li>
+    <li>Cartões UnionPay emitidos na Rússia têm limitações na Coreia do Sul. Cartões denominados em CNY são geralmente mais econômicos devido a taxas de conversão melhores em comparação com cartões denominados em RUB. A confiabilidade para pagamentos diretos em POS é baixa; a utilidade principal é o saque em dinheiro em caixas eletrônicos.</li>
+    <li>O WOWPASS é amplamente aceito em toda a Coreia do Sul, mas pode apresentar problemas com notas de dólar americano mais antigas (anteriores a 1996). Embora cartões estrangeiros (como os emitidos no Cazaquistão) funcionem para pagamentos, eles não podem ser usados para recarregar cartões de transporte T-money diretamente; frequentemente, é necessário dinheiro em espécie para recargas de T-money em quiosques. Levar um pouco de moeda local (KRW) é essencial para lojas pequenas, áreas rurais ou para a Ilha de Jeju, onde pagamentos com cartão podem não ser aceitos.</li>
+    <li>Ao viajar para a Coreia do Sul, é aconselhável ter dinheiro em espécie à mão (cerca de US$ 100 por dia), mesmo que você tenha cartões bancários estrangeiros. Notas antigas de dólar americano podem ser aceitas, especialmente se trocadas através de serviços como o Wowpass, que oferece uma taxa de câmbio decente. Para sacar Won coreano, considere usar bancos como o Woori ou o KB-bank. Cartões como o RSB UnionPay com uma conta em Yuan também podem ser utilizáveis para saques. Dinheiro pode ser trocado em vários locais, incluindo casas de câmbio dedicadas em áreas como Myeongdong.</li>
+    <li>Para sacar dinheiro em caixas eletrônicos na Coreia do Sul usando cartões estrangeiros, priorize os caixas com a etiqueta &#39;Global ATM&#39; ou aqueles que suportam explicitamente redes internacionais de cartões. Se estiver usando um cartão UnionPay, procure caixas eletrônicos com o logotipo &#39;UP&#39;. Nem todos os caixas eletrônicos estão equipados para processar cartões estrangeiros. Esteja preparado para possíveis taxas de transação e limites diários de saque estabelecidos tanto pelo operador local do caixa eletrônico quanto pelo seu banco. Recomenda-se confirmar esses detalhes com seu banco antes de viajar.</li>
+    <li>Cartões de transporte público em Seul podem ser comprados e recarregados em máquinas. Um depósito de 500 KRW é reembolsável ao devolver o cartão em uma máquina designada. Para usuários de iPhone, transferir fundos entre o T-Money e o Wowpass pode exigir procedimentos específicos no aplicativo ou o uso direto do cartão nas máquinas. Problemas com a leitura do cartão nas catracas podem exigir assistência dos funcionários do transporte.</li>
+    <li>O Wowpass é um cartão turístico com duas carteiras distintas: 1) Um saldo pré-pago para compras no varejo (via chip). 2) Um saldo integrado T-money para transporte público. Os depósitos devem ser alocados na carteira correta. O saque do saldo excedente do T-money é restritivo; muitas vezes requer uma visita a um centro de atendimento principal da T-money se o valor exceder a capacidade de uma loja de conveniência.</li>
+    <li>Solução de problemas no registro do Wowpass: verifique a complexidade da senha (letras maiúsculas/minúsculas, números, caracteres especiais). Se o botão &#39;Registrar&#39; permanecer inativo, tente alterar as configurações de região para Rússia e desativar a VPN. O Wowpass é um cartão de pagamento offline, não uma carteira para cartões externos; ele pode ser recarregado em quiosques usando dinheiro ou UnionPay.</li>
+    <li>Sacar dinheiro em caixas eletrônicos na Coreia do Sul é geralmente possível usando cartões UnionPay nos caixas eletrônicos dos principais bancos coreanos (Shinhan, NH, Woori, Hana). Cartões de bancos russos, como o RosSelkhozbank, podem funcionar, mas é aconselhável confirmar as condições com antecedência. Para troca de moeda, particularmente para notas de dólar americano mais antigas, recomenda-se usar casas de câmbio em centros urbanos como Myeong-dong, já que as taxas geralmente são melhores do que no aeroporto. As casas de câmbio podem oferecer taxas ligeiramente menos favoráveis para notas de dólar mais antigas em comparação com as mais novas, mas ainda assim é uma opção viável.</li>
+    <li>Para transporte público na Coreia do Sul, os cartões T-Money são recomendados, especialmente ao viajar com crianças. Os cartões T-Money podem ser comprados e recarregados em lojas de conveniência (7-Eleven, CU, GS25) ou em máquinas de bilhetes em estações de metrô e aeroportos. Tarifas específicas para crianças estão disponíveis e oferecem preços mais baixos; estas devem ser ativadas se a criança atender aos critérios de idade. Embora o Wowpass possa ser usado, ele não facilita o carregamento de cartões T-Money infantis. Os cartões T-Money infantis podem ser recarregados via máquinas de bilhetes ou no caixa de lojas de conveniência. Vários designs de cartão estão disponíveis, incluindo coleções temáticas.</li>
+    <li>Os cartões Union Pay de bancos russos têm baixa aceitação em lojas de varejo e táxis na Coreia do Sul. Dinheiro em espécie é essencial. Caixas eletrônicos do Hana Bank e do Shinhan Bank são conhecidos por aceitar saques, mas os usuários relatam taxas de transação (por exemplo, cerca de 5.700 KRW para um saque de 200.000 KRW).</li>
+    <li>Os cartões WOWPASS podem ser recarregados usando cartões UnionPay russos (como o RSHB), mas isso depende do hardware; nem todos os terminais funcionam. A taxa de recarga padrão é de 12.000 KRW. O dinheiro em espécie continua sendo a opção de reserva mais confiável.</li>
+    <li>Os cartões Wowpass podem ser recarregados em alguns quiosques de estações de metrô usando cartões UnionPay emitidos no exterior. Ao usar o quiosque, selecione a opção de pagamento com cartão de crédito em vez de dinheiro. Isso oferece uma forma digital de carregar o cartão sem precisar portar notas de won.</li>
+    <li>Cartões bancários da Bielorrússia, especificamente cartões denominados em dólares do BSB Bank e do Alfa-Bank, funcionam na Coreia do Sul, segundo relatos. Os usuários conseguiram efetuar pagamentos com sucesso usando esses cartões.</li>
+    <li>Cartões T-money virtuais podem ser criados no aplicativo móvel T-money e adicionados à Apple Wallet. Ao se cadastrar ou recarregar no aplicativo, os usuários devem selecionar a opção &#39;Estrangeiro&#39; (Foreigner) para evitar problemas de autorização. Cartões de crédito estrangeiros (Mastercard/Visa) podem ser aceitos para recargas, dependendo do banco e da versão do aplicativo.</li>
+    <li>Recuperação de conta WOWPASS: Se uma conta for perdida ou o acesso for esquecido, um novo cartão não poderá ser emitido para o mesmo passaporte sem vincular a conta antiga. O usuário deve entrar em contato diretamente com o suporte ao cliente da WOWPASS ou restaurar o acesso à conta original usando o processo de verificação de passaporte registrado.</li>
+    <li>Para sacar dinheiro com cartões UnionPay (por exemplo, RSHB) em Seul, procure caixas eletrônicos nas agências do KB Kookmin Bank, especificamente as máquinas com a etiqueta &#39;Global ATM&#39;. O horário de funcionamento dos caixas eletrônicos no saguão varia, mas muitos dos externos funcionam 24 horas por dia, 7 dias por semana. Digitação do PIN: tente primeiro 4 dígitos; se rejeitado, tente 6 dígitos adicionando &#39;00&#39; ao código de 4 dígitos. A taxa de saque é de aproximadamente 3500 KRW.</li>
+    <li>Cartões UnionPay, especialmente aqueles emitidos por bancos russos (por exemplo, Rosselkhozbank - RSB), têm aceitação extremamente limitada na Coreia do Sul. Sua funcionalidade é restrita principalmente a caixas eletrônicos específicos para saques em dinheiro. Transações em pontos de venda são geralmente pouco confiáveis. Os viajantes devem contar com métodos de pagamento alternativos, como Visa ou Mastercard internacionais, ou levar won sul-coreano (KRW) suficiente para as transações.</li>
+    <li>É permitido usar notas de dólar americano mais antigas na Coreia do Sul para câmbio. No entanto, espere uma taxa de câmbio um pouco menos favorável em comparação com notas mais novas, com diferenças potenciais em torno de 1-2% ou aproximadamente 100 KRW por 100 USD. Para fins práticos, especialmente quando é necessária moeda local imediata, essa pequena diferença na taxa de câmbio é frequentemente negligenciável.</li>
+    <li>O cartão T-money é indispensável para usar o transporte público na Coreia do Sul, incluindo metrôs, ônibus e alguns táxis. Opções de compra e recarga estão disponíveis em lojas de conveniência (CU, GS25, 7-Eleven), máquinas de venda automática em estações de metrô e outros locais de varejo. O cartão Wowpass também pode ser carregado com a funcionalidade T-money. O uso envolve aproximar o cartão nos leitores designados ao entrar e sair de estações de metrô ou ao embarcar em ônibus. Manter um saldo adequado é crucial para uma viagem tranquila.</li>
+    <li>Para cartões UnionPay russos (como o RSHB) na Coreia do Sul: 1) Use caixas eletrônicos específicos, preferencialmente do Woori Bank ou Hana Bank com sinalização &#39;Global ATM&#39;. 2) Se a interface do caixa eletrônico suportar o idioma russo, é mais provável que o cartão seja aceito. 3) Se for solicitado um PIN de 6 dígitos, insira o PIN de 4 dígitos seguido de &#39;00&#39;.</li>
+    <li>O cartão Namane funciona de forma semelhante ao Woopaass, oferecendo seu próprio aplicativo para gerenciar fundos. Para crianças de até 18 anos, recomenda-se obter um cartão T-money separado e solicitar uma tarifa juvenil apresentando o passaporte da criança no balcão de recarga para obter tarifas com desconto. Um cartão T-money pode ser adquirido independentemente dos cartões Woopaass ou Namane.</li>
+    <li>Um único cartão Wowpass está vinculado a uma conta T-money. Para vários viajantes, um Wowpass pode ser usado, com cartões T-money adicionais comprados separadamente para outros membros da família. Para obter tarifas com desconto para menores (menores de 18 anos), é necessário o passaporte da criança ao solicitar uma tarifa jovem em um posto de recarga T-money. Se pagamentos sem dinheiro contínuos forem desejados para todos, considere que apenas um Wowpass pode ser integrado a uma conta T-money.</li>
+    <li>O número de máquinas WOWPASS em Daegu, Coreia do Sul, pode ser limitado porque não é um destino turístico primário em comparação com cidades como Seul ou Busan. Os turistas podem encontrar menos pontos de atendimento em cidades menos frequentadas. É aconselhável verificar a disponibilidade de máquinas WOWPASS com antecedência se planeja depender delas em Daegu.</li>
+    <li>A abertura de uma conta bancária na Coreia do Sul requer atualmente um documento de identidade formal, como um Cartão de Registro de Estrangeiro (ARC). Embora alguns residentes estrangeiros possam ter conseguido abrir contas com menos documentação no passado, a maioria dos bancos agora adere estritamente à exigência de um documento de identidade válido. Considere obter um cartão pré-pago como o GmoneyTrans como uma solução temporária.</li>
+    <li>O cartão Namane é uma opção de pagamento versátil na Coreia do Sul, funcionando tanto como um cartão de pagamento geral (&#39;Pay Balance&#39;) quanto como um cartão de transporte público (&#39;T-money&#39;). É aceito na maioria dos estabelecimentos comerciais e para tarifas de táxi. Fundos podem ser adicionados via quiosques Namane ou lojas de conveniência CU. O aplicativo móvel que o acompanha permite transferências de saldo, designs personalizados de cartão e, potencialmente, acesso a ofertas exclusivas.</li>
+    <li>Ao usar cartões de viagem como o Wowpass na Coreia do Sul com uma criança, é necessário um cartão separado para cada pessoa para o transporte público (metrô e ônibus). Isso ocorre porque as tarifas são geralmente cobradas tanto na entrada quanto na saída, e a tarifa infantil pode ser diferente. Embora possa ser possível negociar com o motorista do ônibus o uso de um único cartão, não é um método confiável. Portanto, é necessário comprar cartões de transporte individuais para crianças.</li>
+    <li>Pode ser difícil abrir uma conta bancária tradicional na Coreia do Sul apenas com um recibo temporário ou comprovante de imigração. Embora alguns bancos pudessem ter oferecido isso no passado, as regulamentações atuais frequentemente exigem um Cartão de Registro de Estrangeiro (ARC) ou um documento de identidade coreano formal. Considere opções alternativas, como cartões pré-pagos ou carteiras digitais, se precisar de acesso imediato a serviços bancários.</li>
+    <li>Verifique se um cartão UnionPay do Rosselkhozbank funciona na Coreia do Sul e se pode ser usado para comprar ingressos no NOL World, ou se um cartão coreano é necessário.</li>
+    <li>Sacar dinheiro de cartões russos (por exemplo, RSHB UP) na Coreia do Sul é possível nos caixas eletrônicos (ATMs) do Woori Bank, Hana Bank e Kookmin Bank (Global ATM). Uma taxa de comissão pode ser aplicada. Alguns caixas eletrônicos do Kookmin Bank oferecem opções específicas para usuários de cartões estrangeiros.</li>
+    <li>Se você encontrar problemas de pagamento com o K-ETA (botão sem resposta), tente usar uma VPN. Alguns usuários também tiveram sucesso alternando o uso da VPN durante o processo de pagamento. Certifique-se de que seu provedor de e-mail (por exemplo, Mail, Yandex) não esteja causando problemas, pois serviços de e-mail alternativos podem ser mais confiáveis para pagamentos do K-ETA.</li>
+    <li>Para turistas na Coreia do Sul que precisam de um cartão bancário local, os bancos NongHyup, Shinhan e Kookmin oferecem emissão de cartão relativamente rápida (cerca de 2 horas). Esses cartões podem ser usados para pagamentos e serviços online. Cartões russos como o RSHB UP podem ser usados para saques em caixas eletrônicos (por exemplo, Woori Bank, KB), mas espere pagar uma comissão. Alguns caixas eletrônicos do KB possuem opções específicas para cartões estrangeiros. Para o Apple Pay, pode ser necessária uma mudança de região nas configurações.</li>
+    <li>Cartões do sistema de pagamento russo MIR não funcionam em caixas eletrônicos ou terminais de pagamento na Coreia do Sul. Transações internacionais de bancos russos (Visa/Mastercard) estão bloqueadas devido às restrições do SWIFT. Os viajantes devem contar com dinheiro em espécie ou cartões internacionais não emitidos na Rússia.</li>
+    <li>O Wowpass é um cartão de débito pré-pago para estrangeiros com um chip T-Money integrado. Ele é aceito na maioria dos terminais que processam cartões de crédito comuns. O T-Money é destinado principalmente ao transporte público, com aceitação limitada apenas em lojas de conveniência. Os usuários podem recarregar os terminais Wowpass usando dinheiro ou cartões UnionPay.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/pt/kr/documentos-e-vistos/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentos e Vistos</span></a>
+    <a class="chip" href="/pt/kr/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/pt/kr/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/pt/kr/ingressos-e-lazer/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Ingressos e Lazer</span></a>
+    <a class="chip" href="/pt/kr/c-mbio-e-transfer-ncias/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Câmbio e Transferências</span></a>
+    <a class="chip" href="/pt/kr/seguran-a/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Segurança</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Vasculhou a busca e ainda está na dúvida?</h2>
+    <p>Pergunte ao Luky — tenta entender a sua situação e responder com mais precisão.</p>
+    <p>E o Luky é um tradutor de voz para conversas reais: peça informações e entenda a resposta de verdade.</p>
+    <p class="ps">PS: tenha uma conversa por voz com um amigo no exterior como se estivesse ao lado</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir o Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiência real dos chats de comunidades, sem enrolação</div>
+    <nav class="f-links">
+      <a href="/pt/about/">Sobre</a>
+      <a href="/pt/kr/">Todos os temas</a>
+      <a href="/pt/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">As respostas são reunidas de chats abertos de comunidades — é a experiência real das pessoas, não aconselhamento oficial. Verifique antes de decisões importantes.</p>
+    <div class="f-copy">© 2026 Luky · atualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noite", DAY="\u2600 Dia";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

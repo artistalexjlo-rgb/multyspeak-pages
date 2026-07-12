@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coreia do Sul: Compras — experiência real · Luky</title>
+<meta name="description" content="Experiência real dos chats sobre Compras em Coreia do Sul: como é, em primeira mão. Para o seu caso — pergunte ao Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/pt/kr/compras/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/kr/compras/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/kr/compras/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/kr/compras/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/kr/compras/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/kr/compras/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · qualquer país · sem enrolação</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noite</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/pt/">Início</a> /
+    <a href="/pt/kr/">Coreia do Sul</a> /
+    <b>Compras</b>
+  </nav>
+
+
+  
+  <h1>Compras: como é em Coreia do Sul — em primeira mão</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiência real de pessoas dos chats sobre «Compras» em Coreia do Sul — como é, sem enrolação. Para o seu caso — <strong>pergunte ao Luky</strong>.</div></div>
+
+  <h2>Da experiência real</h2>
+  <ul class="qlist">
+    <li>Durante o feriado de Chuseok, a entrada em grandes locais turísticos, como palácios, costuma ser gratuita, embora as visitas guiadas possam ser limitadas. A maioria das grandes redes de varejo permanece aberta, enquanto pequenas empresas privadas podem fechar. Reservar transporte (trens/ônibus) com antecedência é essencial devido à alta demanda.</li>
+    <li>Os quiosques de reembolso de impostos (Tax-free) no Aeroporto de Incheon (ICN) estão localizados no centro do saguão, geralmente sinalizados entre os portões G e H. Os usuários devem verificar o mapa fornecido com seus recibos de reembolso de impostos para a localização exata.</li>
+    <li>Importação de cosméticos da Coreia do Sul para a Rússia/outros países: a alfândega geralmente permite quantidades para uso pessoal. Evite remessas com aparência comercial (por exemplo, dezenas de itens idênticos). Se estiver transportando grandes quantidades, distribua os itens entre vários viajantes para evitar que a alfândega suspeite de intenção comercial durante a inspeção.</li>
+    <li>Para navegar no mercado de cosméticos coreano, use o aplicativo Hwahae para analisar a segurança dos ingredientes. Redes de varejo populares como a Olive Young são os principais pontos para encontrar itens em alta. Recomenda-se uma análise de pele profissional em clínicas de estética locais para um regime de cuidados com a pele personalizado.</li>
+    <li>A Coreia do Sul possui várias redes de supermercados importantes. O Emart opera como grandes hipermercados, oferecendo uma ampla seleção de produtos. O Emart24 funciona como lojas de conveniência, semelhantes à 7-Eleven, para compras menores e mais rápidas. Outras redes como o TOP MART também estão presentes. Varejistas de desconto como o NO BRAND devem ser abordados com cautela em relação à qualidade do produto versus preço. Utilizar serviços de mapas para pesquisar &#39;MART&#39; pode ajudar a identificar mercearias próximas.</li>
+    <li>A importação de itens alimentícios como trigo sarraceno (grechka), bulgur ou milho para a Coreia do Sul é geralmente permitida em quantidades razoáveis como bagagem despachada. O trigo sarraceno também está disponível para compra dentro da Coreia do Sul, embora a disponibilidade e a variedade possam diferir.</li>
+    <li>Os preços dos produtos Apple na Coreia do Sul podem ser competitivos, especialmente ao considerar os reembolsos de impostos (Tax Free). Embora os preços da Apple Store oficial possam parecer altos, opções como descontos para estudantes (às vezes aplicados de forma flexível) ou a compra pelo site oficial com retirada na loja podem levar a economias. Por exemplo, um MacBook Neo poderia ser comprado por aproximadamente US$ 540 a US$ 640 após considerar possíveis descontos e reembolsos de impostos. Comparar preços em diferentes varejistas e considerar o processo de reembolso de impostos é recomendado para obter as melhores ofertas.</li>
+    <li>Preços de malas em Seul: malas de tamanho grande (G) podem ser encontradas por cerca de 70.000 KRW, particularmente em áreas como Myeongdong. Negociar é comum e pode levar a um preço final mais baixo.</li>
+    <li>Reembolso de imposto no Aeroporto de Incheon: Reserve pelo menos 60 minutos para o processo devido a possíveis filas nos terminais e pontos de resgate. Recomenda-se ter em mãos recibos detalhados e o passaporte. Alguns viajantes utilizam com sucesso os quiosques de autoatendimento, mas itens de alto valor ou específicos podem exigir processamento manual no balcão.</li>
+    <li>Viajantes com destino à Coreia do Sul frequentemente enfrentam desafios com a bagagem devido às compras extensas. Alguns tiveram que deixar itens para trás ou lidar com excesso de peso. Comprar uma mala adicional na chegada é uma estratégia comum, especialmente para cosméticos, que são significativamente mais baratos. Os ônibus executivos (Limousine buses) geralmente aceitam duas malas despachadas sem custo adicional.</li>
+    <li>Comprar hardware customizado da Apple na Coreia do Sul é difícil para turistas, já que as lojas online locais geralmente exigem um número de telefone e um cartão bancário locais. O estoque de configurações não padrão (por exemplo, 64 GB de RAM) em lojas físicas é raro. Comprar pela loja oficial da Coupang é uma alternativa possível, se os prazos de entrega permitirem.</li>
+    <li>Processo de reembolso de impostos na Coreia do Sul: Novos terminais permitem reembolsos de impostos no ato da compra em lojas participantes. Alternativamente, os reembolsos ainda podem ser processados no aeroporto. Se estiver usando vários passaportes ou fizer compras sem o passaporte, gerencie o uso do terminal de reembolso de forma eficiente para evitar filas antes da segurança, especialmente em aeroportos movimentados. As compras registradas no passaporte são pré-carregadas no sistema do aeroporto para o processamento do reembolso.</li>
+    <li>Tinturas de cabelo profissionais de marcas como a L&#39;Oréal Professional podem não estar disponíveis em farmácias comuns ou plataformas online como a Coupang em Seul. Lojas especializadas em artigos de beleza ou salões profissionais podem oferecer esses produtos.</li>
+    <li>Ao comprar laptops Apple em Seul, considere a disponibilidade de layouts de teclado dos EUA e a opção de isenção de impostos. Verifique os prazos estimados de entrega para configurações personalizadas. Embora os layouts coreanos sejam uma alternativa, layouts dos EUA podem ser encomendados, potencialmente oferecendo economia de custos após o reembolso de impostos.</li>
+    <li>Na Coreia do Sul, embora alguns idosos possam oferecer opiniões não solicitadas sobre vestuário, particularmente em relação a ombros expostos ou decotes, a tendência geral é de uma maior aceitação de escolhas de moda diversificadas. A sociedade coreana moderna, especialmente em centros urbanos como Seul, é amplamente tolerante com trajes de estilo ocidental, incluindo blusas sem mangas e vestidos curtos. Ao contrário de algumas outras culturas ou períodos históricos, não existem proibições legais rígidas ou proibições culturais generalizadas contra tais vestimentas. Isso é frequentemente comparado a diferenças geracionais semelhantes em opiniões sobre códigos de vestimenta observadas em outros países. A ênfase recai sobre o conforto pessoal e as normas sociais predominantes que, em sua maioria, não restringem as escolhas individuais de vestuário.</li>
+    <li>Os produtos Sulwhasoo estão disponíveis fora das lojas duty-free em Seul. Recomenda-se verificar as principais lojas de departamentos e boutiques emblemáticas em Bukchon e Gangnam para preços de varejo padrão.</li>
+    <li>Os terminais Wowpass na Coreia do Sul oferecem uma maneira conveniente de trocar moeda a uma taxa unificada e solicitar reembolsos de impostos. Embora existam casas de câmbio disponíveis, suas taxas podem ser um pouco menos favoráveis (cerca de 10 KRW de diferença). Reembolsos de impostos também são possíveis em compras feitas em lojas oficiais da Apple ao usar o Wowpass ou outros métodos elegíveis.</li>
+    <li>O WOWPASS é um cartão pré-pago altamente recomendado para turistas na Coreia do Sul. Ele pode ser usado para transporte público e compras em geral. Os cartões são recarregados via quiosques usando dinheiro (USD ou outras moedas). É uma alternativa confiável aos cartões de crédito para visitantes.</li>
+    <li>Embora a Coreia do Sul tenha adotado pagamentos sem dinheiro, ainda é aconselhável carregar um pouco de moeda local (Won sul-coreano - KRW). O dinheiro é particularmente útil para transações em mercados tradicionais, vendedores de comida de rua e, ocasionalmente, para táxis, especialmente em ilhas como Jeju. Embora cartões de pagamento e serviços como o Wowpass sejam amplamente aceitos, exceções ocorrem ocasionalmente. Ter dinheiro em mãos oferece uma alternativa caso haja problemas com o cartão, limites de saque ou políticas específicas de comerciantes que favoreçam pagamentos em dinheiro.</li>
+    <li>Considere solicitar um pacote combinado de cartão WoWpass e chip (SIM) para maior conveniência. Informe-se sobre a aceitação do UnionPay para pagamentos relacionados a este pacote.</li>
+    <li>O pagamento no Coupang usando cartões Visa emitidos por bancos estrangeiros, como os do Quirguistão (por exemplo, Bakai Bank), pode encontrar problemas. Usuários relataram dificuldades em concluir pagamentos com tais cartões.</li>
+    <li>Para russos que viajam para a Coreia do Sul, cartões bancários russos, incluindo UnionPay, têm aceitação muito limitada. É aconselhável levar dinheiro em espécie (USD/EUR) ou obter um cartão emitido no exterior. A UnionPay do Asia-Pacific Bank é mencionada como funcionando melhor com o AliPay. Relata-se que cartões cazaques, como o Kaspi, são amplamente aceitos. O ATB UnionPay também é sugerido para saques em dinheiro e uso potencial no Japão e na UE. Dinheiro em espécie é geralmente recomendado como reserva, sendo o dólar americano uma escolha comum.</li>
+    <li>Cigarros eletrônicos, como o IQOS, podem ser comprados na Coreia do Sul em lojas de eletrônicos ou pontos de venda dedicados da marca. Os preços variam de acordo com o modelo, com dispositivos mais simples custando cerca de 10.000 KRW e os mais avançados chegando a 20.000 KRW. Locais populares para compra incluem grandes cidades como Seul e Busan. Embora o fumo seja frequentemente tolerado em áreas públicas movimentadas, especialmente à noite, é aconselhável ser discreto se os moradores locais não estiverem fumando.</li>
+    <li>Para solicitar reembolsos de impostos (tax-free) na Coreia do Sul, tanto o recibo da compra quanto os próprios produtos devem ser apresentados. Os itens podem ser despachados na bagagem caso o valor total da compra por recibo não exceda 1 milhão de KRW. Para descontos imediatos no ponto de venda ou para valores que excedam o limite, é recomendável verificar a política específica da loja, pois algumas podem exigir que as mercadorias sejam apresentadas no momento da partida.</li>
+    <li>Para entrega de supermercado na Coreia do Sul além do Coupang, o &#39;Zetta&#39; é o aplicativo de entrega dedicado ao Lotte Mart. Os usuários o recomendam pela maior variedade e por descontos em lojas específicas.</li>
+    <li>Ao pagar na Coreia do Sul, esteja preparado para a variabilidade na aceitação de cartões. Cartões de bancos russos, especialmente UnionPay (mesmo de bancos como o Rosselkhozbank - RSB), têm aceitação limitada, principalmente para saques em caixas eletrônicos. Grandes varejistas como o Lotte podem recusar o Visa Gold padrão, mas aceitam o Visa Platinum. Lojas menores, cafés e lavanderias podem aceitar os mesmos cartões sem problemas. Cartões estrangeiros geralmente têm limites diários de saque (cerca de 700.000 KRW) e taxas de transação. Para compras significativas, planeje dividir os pagamentos ao longo de vários dias e localize caixas eletrônicos compatíveis. É aconselhável portar moeda local (KRW), especialmente para mercados e comida de rua. Para transporte, o cartão T-money é essencial e pode ser recarregado pelo aplicativo Wowpass ou em lojas de conveniência (CU, GS25, 7/11). O cartão de turista Wowpass é amplamente aceito, mas há relatos de falhas em táxis na Ilha de Jeju, tornando o dinheiro em espécie uma opção mais segura por lá.</li>
+    <li>Os aplicativos móveis essenciais para viajar na Coreia do Sul incluem: Naver Map (recomendado em vez do Google Maps para navegação), Wowpass (para um cartão de pagamento local), Subway (para transporte público) e Kakao Taxi/K.Ride (para serviços de transporte por aplicativo). Também é aconselhável configurar o KakaoTalk antes da chegada, pois os códigos de registro podem sofrer atrasos.</li>
+    <li>Ao comparar os cartões Wowpass e CU na Coreia do Sul, o Wowpass oferece funcionalidade de transporte T-Money integrada, cashback e descontos, tornando-o geralmente preferido pelos turistas. Os cartões CU servem principalmente como cartões de transporte. Embora ambos possam ser recarregados, o Wowpass permite recargas em várias moedas pelo seu aplicativo e terminais, o que pode ser mais conveniente do que as opções do CU. Nem todos os terminais e lojas aceitam universalmente ambos.</li>
+    <li>Os códigos de vestimenta na Coreia do Sul são geralmente informais e liberais; turistas podem usar ombros à mostra, minissaias ou roupas casuais sem serem julgados. No entanto, recomenda-se proteção solar devido aos fortes raios UV, e camadas leves são recomendadas para o ar-condicionado interno.</li>
+    <li>O Wowpass é um cartão pré-pago amplamente aceito na maioria dos terminais de varejo na Coreia do Sul. É recomendado como um método de pagamento confiável para turistas, especialmente para aqueles cujos cartões bancários estrangeiros podem ser recusados intermitentemente. Ele não é aceito em locais que aceitam apenas dinheiro, como alguns mercados tradicionais.</li>
+    <li>Para solicitar um reembolso de Tax Free no Aeroporto de Incheon: 1) Escaneie os recibos nos quiosques automatizados localizados perto dos balcões de check-in. 2) Esteja preparado para mostrar itens de alto valor (geralmente acima de $1000) caso solicitado pela alfândega. 3) Após passar pela segurança, visite o escritório de reembolso (geralmente localizado perto do portão 28) para retirar o reembolso em dinheiro ou processá-lo para o seu cartão.</li>
+    <li>Para receber descontos no Lotte Mart, os clientes geralmente precisam de um cartão de fidelidade da loja ou de um programa de associação específico. Informe-se no balcão de atendimento ao cliente sobre como obter um cartão temporário ou se há promoções atuais que se apliquem sem ele. Alguns descontos também podem estar vinculados a métodos de pagamento.</li>
+    <li>A compra de smartphones desbloqueados (por exemplo, iPhone) na Coreia do Sul não requer contratos com operadoras. As compras podem ser feitas em lojas oficiais. O Tax Free é aplicável a turistas estrangeiros; guarde o recibo e a embalagem do dispositivo, pois os oficiais da alfândega no aeroporto podem solicitar a verificação do item antes de processar o reembolso do imposto.</li>
+    <li>Para comprar um celular novo em Busan, Coreia do Sul, visite lojas oficiais da Samsung ou outros grandes varejistas de eletrônicos. Informe-se sobre a versão do telefone (global vs. asiática), pois os modelos locais podem não oferecer suporte às configurações do idioma russo. As versões globais geralmente podem ser alteradas para russo. Os preços podem ser mais baixos do que na Rússia, especialmente com as opções de isenção de impostos (tax-free). Modelos mais antigos e básicos também estão disponíveis.</li>
+    <li>O usuário soube dos procedimentos de isenção de impostos na clínica Vands e deseja entender as condições e o processo, já que pensava anteriormente que a isenção de impostos era apenas para residentes locais.</li>
+    <li>Serviços de cabeleireiro em Seul: os cortes de cabelo são geralmente seguros, mas tratamentos químicos como coloração têm opiniões mistas e potencial para danificar o cabelo. Recomenda-se procurar salões adaptados a estrangeiros ou locais geridos por academias, como a Juno Academy. O preço médio para uma sessão de corte e coloração é de cerca de 150.000 KRW.</li>
+    <li>Óticas em Seul (por exemplo, Davich Optical) oferecem montagem rápida de óculos, geralmente entre 40 a 60 minutos. O preço padrão para armações e lentes começa em cerca de 120.000 KRW. A maioria das lojas está equipada com aparelhos de diagnóstico para testes de visão. É recomendável levar uma prescrição atual, se possível, para economizar tempo.</li>
+    <li>O WOWPASS é amplamente aceito em toda a Coreia do Sul, mas pode apresentar problemas com notas de dólar americano mais antigas (anteriores a 1996). Embora cartões estrangeiros (como os emitidos no Cazaquistão) funcionem para pagamentos, eles não podem ser usados para recarregar cartões de transporte T-money diretamente; frequentemente, é necessário dinheiro em espécie para recargas de T-money em quiosques. Levar um pouco de moeda local (KRW) é essencial para lojas pequenas, áreas rurais ou para a Ilha de Jeju, onde pagamentos com cartão podem não ser aceitos.</li>
+    <li>Para um café da manhã cedo em Seul, procure redes de padarias como Paris Baguette ou Tous Les Jours. Elas oferecem saladas, sanduíches e doces. Os preços para um café da manhã leve para duas pessoas giram em torno de 20.000 a 22.000 KRW.</li>
+    <li>É possível comprar telefones celulares na Coreia do Sul usando cartões bancários russos, particularmente em lojas oficiais da Samsung ou grandes varejistas de eletrônicos. Certifique-se de especificar se uma versão global é necessária para suporte ao idioma russo, já que os modelos locais podem ser específicos da região. As lojas geralmente podem ajudar com as configurações de idioma. Os preços podem ser mais competitivos do que na Rússia, especialmente ao utilizar opções de isenção de impostos (tax-free).</li>
+    <li>Os cartões Union Pay de bancos russos têm baixa aceitação em lojas de varejo e táxis na Coreia do Sul. Dinheiro em espécie é essencial. Caixas eletrônicos do Hana Bank e do Shinhan Bank são conhecidos por aceitar saques, mas os usuários relatam taxas de transação (por exemplo, cerca de 5.700 KRW para um saque de 200.000 KRW).</li>
+    <li>Embora alguns usuários relatem experiências negativas com o Trip.com, particularmente em relação a reservas de hotéis (overbooking, discrepâncias nos quartos), outros tiveram experiências consistentemente positivas ao reservar voos, acomodações e passeios. É aconselhável verificar a disponibilidade e os preços em diferentes agregadores, pois os valores podem variar.</li>
+    <li>Cartões UnionPay, especialmente aqueles emitidos por bancos russos (por exemplo, Rosselkhozbank - RSB), têm aceitação extremamente limitada na Coreia do Sul. Sua funcionalidade é restrita principalmente a caixas eletrônicos específicos para saques em dinheiro. Transações em pontos de venda são geralmente pouco confiáveis. Os viajantes devem contar com métodos de pagamento alternativos, como Visa ou Mastercard internacionais, ou levar won sul-coreano (KRW) suficiente para as transações.</li>
+    <li>Loja de conveniência específica para produtos russos/do Leste Europeu em Seul: a loja &#39;Medovik&#39;, localizada na área de Dongdaemun, oferece itens como creme azedo (smetana), queijo cottage (tvorog), leite condensado, espadilha e tipos familiares de pães/produtos de farinha.</li>
+    <li>É possível encontrar culinária uzbeque em Seul, com um viajante descobrindo um bairro uzbeque. Embora alguns afirmem que restaurantes uzbeques estão disponíveis em todas as cidades coreanas, outro usuário não os encontrou em Busan. As localizações dos restaurantes podem variar, com alguns tendo se situado anteriormente na Texas Street.</li>
+    <li>Marcas estrangeiras de cosméticos como a No. 7 não são amplamente disponíveis em Seul, particularmente em áreas como Myeongdong. Marcas populares de cosméticos coreanos como Hera, Clio e Jung Saem Mool são facilmente encontradas e recomendadas, sendo o cushion da Jung Saem Mool um produto notável.</li>
+    <li>O Apple Pay funciona na Coreia do Sul, particularmente com terminais mais novos encontrados em grandes redes varejistas, shopping centers e restaurantes. No entanto, pode não ser aceito em estabelecimentos com terminais de pagamento mais antigos, como lojas menores, táxis ou restaurantes familiares. É aconselhável levar métodos de pagamento alternativos, como cartões de crédito/débito emitidos no exterior e dinheiro.</li>
+    <li>Os principais locais de compras em Seul incluem o Goto Mall, uma extensa área de compras subterrânea localizada sob a estação do Terminal de Ônibus Expresso, que conta com mais de 600 lojas. O distrito de Songpa é conhecido por suas lojas temporárias (pop-up stores) e outlets de marcas como Gentle Monster, Blue Elephant, Tamburins, Dior e Tir Tir.</li>
+    <li>Informe-se sobre a disponibilidade de sprays e lenços refrescantes japoneses em lojas sul-coreanas como Daiso ou Olive Young. Embora os sprays refrescantes possam estar disponíveis, a disponibilidade de lenços refrescantes é menos certa e potencialmente limitada ao Japão.</li>
+    <li>Devoluções na Olive Young, na Coreia do Sul, estão sujeitas à política de devolução da loja. Geralmente, os itens podem ser devolvidos se estiverem em sua condição e embalagem originais. Para eletrônicos como power banks, a embalagem original e quaisquer acessórios que acompanham o produto devem estar intactos. Para compras isentas de impostos (Tax-Free), os itens geralmente não precisam estar lacrados, mas os bens adquiridos devem ser apresentados aos funcionários da alfândega no momento da partida. É aconselhável manter todos os recibos e a embalagem original para devoluções.</li>
+    <li>Para fazer compras no Joonggonara, um site de classificados coreano, geralmente é necessária uma identidade coreana para o registro. Se o usuário não possuir uma identidade coreana, pode ser necessário recorrer a serviços de compra por procuração ou agentes de &#39;compras em meu nome&#39; que possam facilitar a transação em seu lugar.</li>
+    <li>Comprar uma mala tarde da noite na Coreia do Sul pode se limitar a lojas de conveniência 24 horas ou grandes supermercados que funcionam em horário estendido. Lojas especializadas em bagagens geralmente têm horários de funcionamento fixos. É aconselhável verificar com antecedência o horário de funcionamento das lojas próximas ou considerar plataformas de compras online que ofereçam opções de entrega rápida.</li>
+    <li>Itens comprados em lojas duty-free, como a Lotte Duty Free na Coreia do Sul, podem ser retirados por um destinatário designado em Moscou. O preço deste serviço é de aproximadamente 70.000 KRW. É importante organizar a retirada e a entrega com bastante antecedência, especialmente se os itens forem incluídos como parte da bagagem despachada.</li>
+    <li>Os turistas agora podem comprar novos telefones celulares da Samsung na Coreia do Sul. Recomenda-se visitar lojas oficiais da Samsung ou departamentos de eletrônicos em grandes shoppings. A disponibilidade pode variar e alguns itens podem precisar ser encomendados do depósito. Esta é uma mudança em relação aos anos anteriores, quando comprar telefones novos como turista era mais difícil.</li>
+    <li>Em Seul, os mercados ainda podem ser um bom lugar para encontrar roupas da moda, particularmente estilos das décadas de 90 e Y2K. Os consumidores coreanos frequentemente adotam essas tendências retrô. Para roupas vintage, recomenda-se verificar endereços no Instagram e explorar lojas em áreas como Hongdae.</li>
+    <li>Produtos de beleza coreanos recomendados incluem: base Parnell Cicamanu Skin Fit (leve, FPS 30, tom 0.5-21) e cushion da Laneige e Tir Tir. Outro usuário mencionou os cushions da Clio em pote de vidro, observando que proporcionam um acabamento radiante e uma boa aparência à pele, embora não ofereçam cobertura total pesada.</li>
+    <li>Para aqueles que procuram tecidos de algodão coreanos para patchwork em Seul, existe um grande mercado de artesanato localizado em 266, Jong-ro, Jongno-gu, Seul. Embora o algodão não seja cultivado na Coreia, este mercado provavelmente oferecerá uma variedade de materiais adequados para artesanato e patchwork.</li>
+    <li>O cartão Namane é uma opção de pagamento versátil na Coreia do Sul, funcionando tanto como um cartão de pagamento geral (&#39;Pay Balance&#39;) quanto como um cartão de transporte público (&#39;T-money&#39;). É aceito na maioria dos estabelecimentos comerciais e para tarifas de táxi. Fundos podem ser adicionados via quiosques Namane ou lojas de conveniência CU. O aplicativo móvel que o acompanha permite transferências de saldo, designs personalizados de cartão e, potencialmente, acesso a ofertas exclusivas.</li>
+    <li>Informe-se sobre a existência de uma loja oficial da Stanley em Seul. Um usuário viu uma seção de exposição em uma loja de esportes em Myeongdong e está curioso para saber se existe uma loja independente dedicada.</li>
+    <li>Na Coreia do Sul, copos grandes de Americano em cafeterias particulares podem ser comprados por aproximadamente 2.000 KRW (cerca de US$ 1,50) e, em redes de cafeterias como a Compose Coffee, por cerca de 1.500 KRW. Este preço é notavelmente barato.</li>
+    <li>Ao escolher entre o T-Money e o Climate Card para transporte público em Seul, considere suas funcionalidades. O Climate Card é geralmente mais barato, mas restrito aos limites administrativos de Seul e utilizável apenas para transporte. O T-Money, embora potencialmente mais caro, é mais versátil, servindo para transporte, lojas de conveniência e lojas como a Daiso, além de cobrir uma área mais ampla, incluindo o transporte de/para o Aeroporto de Incheon.</li>
+    <li>O Wowpass é um cartão de débito pré-pago para estrangeiros com um chip T-Money integrado. Ele é aceito na maioria dos terminais que processam cartões de crédito comuns. O T-Money é destinado principalmente ao transporte público, com aceitação limitada apenas em lojas de conveniência. Os usuários podem recarregar os terminais Wowpass usando dinheiro ou cartões UnionPay.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/pt/kr/documentos-e-vistos/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Documentos e Vistos</span></a>
+    <a class="chip" href="/pt/kr/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/pt/kr/bancos-e-dinheiro/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Bancos e Dinheiro</span></a>
+    <a class="chip" href="/pt/kr/ingressos-e-lazer/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Ingressos e Lazer</span></a>
+    <a class="chip" href="/pt/kr/c-mbio-e-transfer-ncias/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Câmbio e Transferências</span></a>
+    <a class="chip" href="/pt/kr/seguran-a/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Segurança</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Existem artigos genéricos — mas uma solução para você?</h2>
+    <p>Pergunte ao Luky — responde para o seu caso, com base em relatos recentes, não em artigos genéricos.</p>
+    <p>E o Luky é um tradutor de voz para conversas reais: e o guia vai falar a sua língua.</p>
+    <p class="ps">PS: uma chamada de voz com aquela pessoa de outro país — também é o Luky</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir o Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiência real dos chats de comunidades, sem enrolação</div>
+    <nav class="f-links">
+      <a href="/pt/about/">Sobre</a>
+      <a href="/pt/kr/">Todos os temas</a>
+      <a href="/pt/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">As respostas são reunidas de chats abertos de comunidades — é a experiência real das pessoas, não aconselhamento oficial. Verifique antes de decisões importantes.</p>
+    <div class="f-copy">© 2026 Luky · atualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noite", DAY="\u2600 Dia";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

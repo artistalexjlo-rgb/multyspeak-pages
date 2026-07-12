@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Japão: Documentos e Vistos — experiência real · Luky</title>
+<meta name="description" content="Experiência real dos chats sobre Documentos e Vistos em Japão: como é, em primeira mão. Para o seu caso — pergunte ao Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/pt/jp/documentos-e-vistos/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/jp/documentos-e-vistos/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/jp/documentos-e-vistos/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/jp/documentos-e-vistos/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/jp/documentos-e-vistos/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/jp/documentos-e-vistos/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · qualquer país · sem enrolação</span>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noite</span></button>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/pt/">Início</a> /
+    <a href="/pt/jp/">Japão</a> /
+    <b>Documentos e Vistos</b>
+  </nav>
+
+
+  
+  <h1>Documentos e Vistos em Japão: o que realmente importa saber</h1>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiência real de pessoas dos chats sobre «Documentos e Vistos» em Japão — como é, sem enrolação. Para o seu caso — <strong>pergunte ao Luky</strong>.</div></div>
+
+  <h2>Da experiência real</h2>
+  <ul class="qlist">
+    <li>Em relação a um pedido de visto japonês onde uma pessoa está patrocinando outra (mãe). A questão é se o extrato bancário e o comprovante de emprego do patrocinador são suficientes, ou se o comprovante de emprego da pessoa patrocinada também é necessário, especialmente se ela estiver próxima da aposentadoria com um salário baixo.</li>
+    <li>Os requisitos para o visto de turista para o Japão mudaram; reservas de hotel geralmente não são necessárias para o envio, mas o nome do hotel, endereço e número de telefone devem ser fornecidos no itinerário da estadia. Formulários preenchidos à mão são frequentemente rejeitados; a preparação digital é obrigatória. Múltiplos candidatos podem ser representados por uma única pessoa no centro de vistos por meio de uma procuração.</li>
+    <li>Ao transportar um MacBook do Japão para a Rússia passando pela China, considere o seguinte: 1. Uso pessoal: Levar o dispositivo sem a caixa original e sem ativá-lo pode ajudar a apresentá-lo como uso pessoal para a alfândega. 2. Compras isentas de impostos: Reembolsos de impostos (tax-free) são frequentemente processados na exportação. Guarde os recibos e o próprio item para inspeção. Para eletrônicos como notebooks, informe-se sobre os regulamentos alfandegários específicos tanto para a exportação do Japão quanto para a importação na Rússia e na China. Alguns varejistas podem oferecer opções de isenção de impostos, mas é crucial entender as implicações para as declarações alfandegárias.</li>
+    <li>Um visto de turista japonês de entrada única funciona como uma janela de 90 dias para entrada a partir da data de emissão. Ao entrar no país, os agentes de imigração concedem um período de estadia (geralmente de 15 ou 30 dias) com base na solicitação. A entrada deve ocorrer antes da &#39;Data de Expiração&#39; impressa no selo do visto.</li>
+    <li>O Nurofen padrão (ibuprofeno) é legal para importação no Japão. No entanto, medicamentos que contenham codeína ou metilefedrina (por exemplo, Paburon e algumas versões &#39;plus&#39; de medicamentos comuns) são estritamente proibidos e podem causar problemas legais na alfândega. Os habitantes locais usam EVE ou Loxonin S (loxoprofeno) para alívio da dor, que estão disponíveis sem receita médica.</li>
+    <li>Os vistos de turista japonês permitem a entrada dentro de 90 dias após a emissão. Uma vez dentro do país, a duração permitida da estadia (15 ou 30 dias) é contada a partir da data de chegada, independentemente da data de validade original do visto. Você pode entrar no país no último dia de validade do visto.</li>
+    <li>Os vistos japoneses de entrada única tornam-se tipicamente válidos na data de emissão ou na data de início específica indicada. Entrar no Japão antes desta data é impossível. Se um trecho de voo for perdido em uma reserva única (por exemplo, Pequim-Tóquio), as companhias aéreas geralmente cancelam automaticamente os trechos subsequentes (política de no-show). Sempre verifique as datas de validade do visto em relação aos horários dos voos antes de reservar.</li>
+    <li>Não existe um valor fixo único exigido para um visto de turista japonês. Os fatores incluem histórico de emprego, histórico de viagens anteriores e a integridade geral do processo. Contas de corretagem servem apenas como documentação de apoio e não podem substituir o requisito principal de demonstrar fundos líquidos em uma conta bancária. Um valor mínimo recomendado comum para um solicitante de primeira viagem é de 200.000 a 400.000 RUB, embora valores mais altos sejam preferíveis.</li>
+    <li>O processo de visto japonês é transparente. As solicitações são tratadas via VFS Global ou consulados. Requisitos: fotos de passaporte padrão, comprovante oficial de emprego e um plano de viagem. Equívocos comuns: agentes frequentemente afirmam que regiões ou históricos específicos levam à rejeição automática, mas os consulados processam cada caso individualmente. Para consultas, o suporte por e-mail oficial está disponível; siga rigorosamente a lista de verificação do site oficial para evitar rejeições desnecessárias.</li>
+    <li>Os vistos de turista japonês permitem uma janela de 90 dias para entrar no país após a aprovação. Ao entrar, a duração específica da estadia (15 ou 30 dias) é determinada pelo oficial de imigração (permissão de desembarque) com base no itinerário enviado e na solicitação, independentemente da data de validade inicial do visto.</li>
+    <li>Viajantes que vão ao Japão pela primeira vez podem se beneficiar de conselhos sobre costumes, câmbio, transporte e compras. As principais recomendações incluem: não haver restrições de líquidos na bagagem de mão, utilizar casas de câmbio como a Ninja Exchange para taxas favoráveis, usar o Google Maps e cartões ICOCA para transporte público e escolher lojas apropriadas para compras específicas (por exemplo, Don Quijote para doces, farmácias para cosméticos). Esteja ciente de possíveis inspeções de bagagem em países de trânsito.</li>
+    <li>Para pedidos de visto japonês, recomenda-se solicitar não antes de 90 dias antes da data pretendida da viagem e, idealmente, cerca de um mês antes da partida. Solicitar muito cedo pode levar a complicações, enquanto solicitar muito tarde traz o risco de perder a janela de viagem devido aos prazos de processamento.</li>
+    <li>Importação de medicamentos prescritos para o Japão: Medicamentos de venda livre (OTC) raramente são inspecionados. Para psicotrópicos, antidepressivos e analgésicos fortes, é obrigatório portar a receita médica (preferencialmente em inglês ou com um rótulo claro) para evitar problemas na alfândega. Mantenha sempre o medicamento em sua embalagem original e não aberta.</li>
+    <li>Oferecemos serviços de solicitação de visto para o Japão, incluindo preparação de documentos, envio sem necessidade de visitas presenciais ao centro de vistos e assistência com planos de viagem e cartas de motivação. Os serviços estão disponíveis para cidadãos de todas as regiões da Rússia. Vários pacotes e opções de preços são apresentados.</li>
+    <li>Esclareça os requisitos para obter um visto japonês. Especifique o orçamento diário recomendado (por exemplo, US$ 200 por dia), o saldo bancário necessário para uma viagem de 12 dias (por exemplo, 160-170 mil JPY) e se as reservas de hotel são obrigatórias ou recomendadas. Além disso, confirme o processo atual de solicitação (por exemplo, centro de vistos versus envio direto à embaixada) e os prazos típicos de processamento.</li>
+    <li>O passaporte de um viajante, contendo um visto japonês válido, foi levemente danificado pela água (um vaso caiu sobre ele). Todos os dados, incluindo os carimbos de visto, estão legíveis. Avalie a probabilidade de o passaporte e o visto serem aceitos para viagem ao Japão e aconselhe se medidas emergenciais (como a reemissão do passaporte/visto) são necessárias.</li>
+    <li>Ao viajar para o Japão com medicamentos, especialmente injetáveis que requerem condições específicas de armazenamento (como refrigeração), é crucial planejar com antecedência. Os viajantes devem se informar sobre a necessidade de uma receita médica e se é necessário um armazenamento especializado (por exemplo, uma mini geladeira). É geralmente recomendado trazer o medicamento na embalagem original com a receita para facilitar os procedimentos alfandegários.</li>
+    <li>Como indicar que ficará hospedado com amigos/familiares em vez de em um hotel em um pedido de visto japonês. Buscam-se informações sobre os formulários e procedimentos necessários, especialmente se estiver solicitando de fora da Rússia.</li>
+    <li>Importação de medicamentos de uso pessoal: é possível levar para o Japão um suprimento de até um mês de medicamentos prescritos sem declaração alfandegária. Para narcóticos, psicotrópicos ou estimulantes, é necessário um &#39;Yunyu Kakunin-sho&#39; (certificado de importação) específico. Leve prescrições em inglês para todos os medicamentos de uso regular. Medicamentos de venda livre nas embalagens originais raramente causam problemas.</li>
+    <li>Para a obtenção de um visto para o Japão, são oferecidos serviços de preparação e envio de documentos sem a necessidade de os requerentes visitarem centros de visto ou Moscou. Isso inclui a criação de itinerários de viagem e cartas de motivação para vistos de múltiplas entradas. Alguns serviços oferecem revisão e envio de documentos por uma taxa, com o pagamento frequentemente estruturado como uma porcentagem após a aprovação do visto. Uma taxa fixa de 8.000 rublos por pessoa cobre todo o processo, incluindo preparação de documentos, envio e reserva de voos, se necessário. Uma taxa menor de 5.000 rublos está disponível para o envio de documentos pré-preparados.</li>
+    <li>Viajantes em trânsito por aeroportos chineses após sair do Japão devem estar cientes de possíveis inspeções de bagagem. Um viajante relatou que sua mala despachada foi aberta e um carregador portátil (power bank) de um ventilador portátil foi removido, com um bilhete deixado no local. É aconselhável levar esses itens na bagagem de mão para facilitar a inspeção e evitar possíveis confiscos. Os controles alfandegários e de imigração no Japão foram mínimos, sem perguntas sobre recibos, mercadorias ou dinheiro em espécie transportado.</li>
+    <li>Para a retirada do passaporte após a solicitação de um visto japonês, não dependa apenas de notificações por SMS ou e-mail, pois muitas vezes elas não são enviadas. É aconselhável ligar para o Centro de Solicitação de Vistos (VAC) aproximadamente 7 dias após o envio. Se o verificador de status online estiver com defeito, recomenda-se entrar em contato diretamente com o VAC. Os serviços de notificação por SMS podem não ser confiáveis e acarretar custos adicionais.</li>
+    <li>Obter um visto japonês em um curto prazo (12-14 dias) é viável. Existem serviços disponíveis que podem ajudar na preparação de documentos, no envio da solicitação sem visitas presenciais ao centro de vistos e no planejamento do itinerário. Os custos variam de 5.000 a 8.000 JPY por pessoa, dependendo do nível de serviço. Os requisitos principais incluem um comprovante de trabalho e, potencialmente, reservas de voo. A preparação antecipada e o uso de serviços acelerados podem ajudar a cumprir prazos apertados.</li>
+    <li>Para pedidos de visto japonês, um parceiro não casado não pode atuar como patrocinador. O patrocínio é geralmente limitado a parentes próximos (pais, irmãos). Se um dos requerentes não tiver rendimento oficial suficiente, deve garantir que possui fundos pessoais adequados, procurar o patrocínio de um parente ou, potencialmente, registrar-se como trabalhador independente para comprovar rendimentos. O montante total no cartão deve parecer suficiente.</li>
+    <li>Para pedidos de visto japonês, reservas de hotel pagas e confirmadas não são obrigatórias. É suficiente fornecer os detalhes do hotel (endereço, informações de contato) no itinerário. Se visitar várias cidades e não tiver certeza sobre acomodações específicas, listar apenas o hotel em Tóquio e marcar as outras cidades como passeios de um dia é aceitável. O pedido de visto foca em um plano de viagem lógico.</li>
+    <li>Ao enviar uma solicitação de visto japonês em nome de outra pessoa (por exemplo, um cônjuge), um formulário de procuração simples, sem reconhecimento de firma, geralmente é suficiente. O formulário oficial geralmente pode ser baixado no site do centro de solicitação de visto. Certifique-se de que o formulário esteja atualizado, pois os requisitos podem mudar.</li>
+    <li>Ao usar o Visit Japan Web, registrar menores de idade requer atenção cuidadosa às configurações iniciais. Os usuários não devem presumir que as crianças são vinculadas automaticamente ao código QR do adulto. Para obter códigos QR individuais para cada membro da família, certifique-se de que todos os dependentes sejam adicionados à conta do adulto e selecionados antes de gerar os códigos. Se o sistema não exibir vários códigos, geralmente é uma questão de configuração no início do formulário de registro.</li>
+    <li>Para viajantes que planejam cruzeiros que envolvem entrar no Japão, sair para um terceiro país (por exemplo, Coreia do Sul) e retornar ao Japão, um visto de entrada única é insuficiente. Ao solicitar um visto japonês, deve-se solicitar explicitamente um visto de &#39;dupla&#39; ou &#39;múltipla&#39; entrada na solicitação e fornecer um itinerário de viagem detalhado cobrindo todos os pontos de entrada. Listar simplesmente o itinerário do cruzeiro no programa de viagem é frequentemente insuficiente se o tipo de visto solicitado no formulário de aplicação for &#39;única&#39;.</li>
+    <li>Informe-se sobre o processo e as limitações para reagendar compromissos na VFS (Visa Facilitation Services) para solicitações de visto japonês, especificamente quantas vezes isso pode ser feito e com quanta antecedência.</li>
+    <li>No Japão, se os itens individuais comprados com status de isenção de impostos custarem menos de 100.000 JPY, geralmente não exigem declaração alfandegária na exportação, mesmo se transportados na bagagem de mão, desde que sejam para uso pessoal. A exigência de declaração baseia-se normalmente no valor total das mercadorias e em categorias específicas de itens, não apenas na soma dos itens individuais isentos de impostos.</li>
+    <li>Os procedimentos de solicitação de visto para o Japão podem ser simplificados para residentes fora de grandes cidades como Moscou e São Petersburgo. Em regiões como Vladivostok, observou-se requisitos de documentação menos rigorosos, como a aceitação de extratos bancários impressos de portais de internet banking em vez de documentos oficiais emitidos pelo banco. O custo do processamento de visto por meio de agências também pode ser menor em centros regionais em comparação com as despesas de viagem até a capital.</li>
+    <li>É aceitável usar um passaporte do modelo antigo de 5 ou 10 anos para uma solicitação de visto japonês, desde que ele permaneça válido por pelo menos seis meses a partir da data da solicitação. Esta é uma prática comum, e solicitantes com esses passaportes tiveram sucesso no envio de suas solicitações.</li>
+    <li>Em situações em que tufões causem cancelamentos de voos e impeçam a partida dentro do prazo do Japão, os viajantes devem estar preparados para circunstâncias imprevistas. É aconselhável obter uma confirmação oficial do cancelamento do voo junto à companhia aérea. Se a duração do visto ou da estadia permitida for impactada, pode ser necessário entrar em contato com as autoridades de imigração japonesas para possivelmente garantir uma extensão temporária. Manter a calma e ter planos de contingência é fundamental.</li>
+    <li>Visitantes do Japão devem estar cientes dos procedimentos de entrada. Embora um visto seja geralmente exigido, alguns viajantes podem ser elegíveis para entrada sem visto, dependendo de sua nacionalidade e do propósito da visita. É crucial verificar os requisitos de visto e regulamentos de entrada mais recentes antes de viajar. O sistema Visit Japan Web pode ser usado para procedimentos pré-viagem, embora formulários em papel também estejam disponíveis no aeroporto.</li>
+    <li>O limite para a saída de dinheiro em espécie do Japão é equivalente a 100.000 ienes japoneses por pessoa, independentemente da moeda. Aconselha-se aos viajantes que declarem valores que excedam esse limite. Durante a partida, as autoridades alfandegárias podem perguntar seletivamente sobre a quantia em dinheiro que está sendo transportada, especialmente para aqueles que viajam para a Rússia.</li>
+    <li>É necessário declarar joias de ouro (com diamantes, valor inferior a US$ 1.000) ao entrar no Japão, especialmente se ainda estiverem com etiqueta e destinadas a um pedido de casamento?</li>
+    <li>Os serviços de solicitação de visto para o Japão estão disponíveis remotamente, eliminando a necessidade de visitas presenciais a centros de vistos ou consulados em Moscou. Os serviços incluem preparação de documentos, envio de solicitação de visto e obtenção do visto sem que o solicitante precise viajar. Este processo é coberto por um contrato, garantindo transparência e pagamento após a aprovação do visto. Mais de 1800 vistos foram processados desta forma.</li>
+    <li>Um visto japonês normalmente concede um período de 90 dias a partir da data de emissão para entrar no país. Ao entrar, um período de estadia separado (por exemplo, 15 ou 30 dias) começa, com base na duração solicitada durante a solicitação. É permitido entrar no Japão no último dia de validade do visto, desde que a duração da estadia permitida não seja excedida.</li>
+    <li>Ao solicitar um visto japonês através de um centro de vistos, observe que uma procuração não autenticada é geralmente suficiente caso outra pessoa envie os documentos em seu nome. O processo envolve a apresentação dos mesmos documentos exigidos para solicitações diretas na embaixada, além de um formulário de consentimento adicional para processamento de dados pelo centro de vistos. A taxa de serviço para solicitações em centros de vistos é de aproximadamente 1000 JPY.</li>
+    <li>A duração da estadia para um visto japonês é calculada de forma inclusiva. O dia da chegada e o dia da partida são contados como parte da estadia total permitida. Por exemplo, um visto de 15 dias com chegada em 28 de julho significa que o último dia de estadia legal é 12 de agosto. A partida deve ocorrer na data de expiração do visto ou antes.</li>
+    <li>Para uma solicitação de visto japonês como autônomo com baixa renda, o patrocínio é uma estratégia viável. É necessária uma carta de patrocínio em formato livre. Os centros de visto são eficientes e possuem uma equipe amigável. As solicitações obtiveram sucesso ao conseguir um visto de 30 dias quando 22 dias foram solicitados. Vistos de múltiplas entradas foram negados para um solicitante de primeira viagem. Passagens aéreas de volta para o país de origem são necessárias e, se não estiverem disponíveis no momento da solicitação, o centro de vistos pode entrar em contato com o solicitante posteriormente.</li>
+    <li>Viajantes entrando no Japão são aconselhados a usar o portal &#39;Visit Japan Web&#39; para gerar códigos QR para imigração e alfândega. É possível registrar vários membros da família em uma única conta principal usando a função &#39;adicionar membro da família&#39; ao final do processo de registro. Concluir isso online economiza um tempo significativo em comparação com o preenchimento de formulários em papel na chegada.</li>
+    <li>Solicitantes de visto da Rússia para o Japão geralmente são obrigados a fornecer comprovante de fundos. Uma referência comum é de pelo menos US$ 150 por dia de estadia, com um saldo total na conta não inferior a 200.000 RUB. Ao preencher as solicitações, o país de nascimento para aqueles nascidos na URSS deve ser inserido manualmente como &#39;URSS&#39; caso não esteja presente na lista suspensa de preenchimento automático.</li>
+    <li>Candidatos a um visto japonês que nasceram na Crimeia, nas regiões recém-anexadas da Ucrânia, na Ossétia do Sul, na Abecásia ou nas Ilhas Curilas enfrentam um risco significativamente elevado de recusa de visto. É fortemente aconselhável que não comprem passagens aéreas não reembolsáveis até que o visto seja oficialmente aprovado.</li>
+    <li>Alertas de tufão e consequentes cancelamentos de voos estão causando interrupções significativas para os viajantes no Japão. Muitos estão tentando desesperadamente remarcar voos, com alguns recorrendo à compra de novas passagens a preços mais altos para cumprir prazos de visto. Recomenda-se aos viajantes que monitorem as previsões meteorológicas, as notificações das companhias aéreas e que entrem em contato proativamente com suas companhias aéreas ou agentes de viagens para opções de remarcação. Esteja ciente das datas de expiração do visto e de possíveis penalidades por permanência prolongada. Considere rotas ou transportadoras alternativas se os voos diretos estiverem indisponíveis ou cancelados.</li>
+  </ul>
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/pt/jp/transporte/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte</span></a>
+    <a class="chip" href="/pt/jp/compras/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Compras</span></a>
+    <a class="chip" href="/pt/jp/ingressos-e-lazer/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Ingressos e Lazer</span></a>
+    <a class="chip" href="/pt/jp/bancos-e-finan-as/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Bancos e Finanças</span></a>
+    <a class="chip" href="/pt/jp/seguran-a/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Segurança</span></a>
+    <a class="chip" href="/pt/jp/c-mbio-e-transfer-ncias/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💱 Câmbio e Transferências</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Em todo lugar a mesma coisa, mas o seu caso é especial?</h2>
+    <p>Pergunte ao Luky — relatos frescos, não um artigo de cinco anos atrás.</p>
+    <p>E o Luky é um tradutor de voz para conversas reais: converse no lobby com viajantes de outros países.</p>
+    <p class="ps">PS: até com a família do seu par que não fala nada da sua língua 😄</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir o Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiência real dos chats de comunidades, sem enrolação</div>
+    <nav class="f-links">
+      <a href="/pt/about/">Sobre</a>
+      <a href="/pt/jp/">Todos os temas</a>
+      <a href="/pt/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">As respostas são reunidas de chats abertos de comunidades — é a experiência real das pessoas, não aconselhamento oficial. Verifique antes de decisões importantes.</p>
+    <div class="f-copy">© 2026 Luky · atualizado 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noite", DAY="\u2600 Dia";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>
