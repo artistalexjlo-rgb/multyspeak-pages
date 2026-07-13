@@ -69,6 +69,13 @@ a:hover{text-decoration:underline}
   background:transparent;border:none}
 .toggle .oct path{fill:var(--card);stroke:var(--border)}
 .toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
 .crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
   text-transform:uppercase;margin-bottom:14px}
 .crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
@@ -118,6 +125,31 @@ details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
 .card.soon{cursor:default;pointer-events:none}
 .card.soon .ti{color:var(--muted)}
 .card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
 
 .cta{margin-top:34px}
 .cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
@@ -154,7 +186,15 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
       </span>
       <span class="brand-sub">portal de info · cualquier país · sin relleno</span>
     </div>
-    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noche</span></button>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="" href="/ru/bg/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/en/bg/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="on" href="/es/bg/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/pt/bg/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noche</span></button>
+    </div>
   </div>
 
   
@@ -167,7 +207,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
 
   
   <h1>Seguridad en Bulgaria: experiencia real de los chats</h1>
-  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiencia real de gente de los chats sobre «Seguridad» en Bulgaria — tal cual, sin relleno. Para tu caso — <strong>pregúntale a Luky</strong>.</div></div>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Experiencia real de gente de los chats sobre «Seguridad» en Bulgaria — tal cual, sin relleno. Para tu caso — <a href="https://multyspeak.online" target="_blank" rel="noopener">pregúntale a Luky</a>.</div></div>
 
   <h2>De la experiencia real</h2>
   <ul class="qlist">

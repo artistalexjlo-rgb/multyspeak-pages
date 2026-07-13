@@ -69,6 +69,13 @@ a:hover{text-decoration:underline}
   background:transparent;border:none}
 .toggle .oct path{fill:var(--card);stroke:var(--border)}
 .toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
 .crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
   text-transform:uppercase;margin-bottom:14px}
 .crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
@@ -118,6 +125,31 @@ details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
 .card.soon{cursor:default;pointer-events:none}
 .card.soon .ti{color:var(--muted)}
 .card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
 
 .cta{margin-top:34px}
 .cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
@@ -154,51 +186,27 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
       </span>
       <span class="brand-sub">info portal · any country · no fluff</span>
     </div>
-    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="" href="/ru/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="on" href="/en/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/pt/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+    </div>
   </div>
 
   
-
 
   
   <h1>Where are you headed?</h1>
-  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of those who already went through the local confusions — to the point, no fluff. Pick a country, and for your case <strong>ask Luky</strong>.</div></div><h2>Countries</h2>
-  <div class="grid">
-    <a class="card" href="/en/ar/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇦🇷 Argentina</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/at/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇦🇹 Austria</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/au/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇦🇺 Australia</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/be/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇧🇪 Belgium</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/bg/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇧🇬 Bulgaria</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/br/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇧🇷 Brazil</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/by/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇧🇾 Belarus</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/ch/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇨🇭 Switzerland</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/cl/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇨🇱 Chile</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/cn/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇨🇳 China</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/cu/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇨🇺 Cuba</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/cz/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇨🇿 Czechia</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/de/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇩🇪 Germany</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/eg/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇪🇬 Egypt</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/fi/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇫🇮 Finland</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/fr/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇫🇷 France</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/gb/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇬🇧 United Kingdom</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/ge/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇬🇪 Georgia</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/gr/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇬🇷 Greece</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/hr/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇭🇷 Croatia</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/hu/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇭🇺 Hungary</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/id/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇮🇩 Indonesia</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/il/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇮🇱 Israel</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/in/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇮🇳 India</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/jp/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇯🇵 Japan</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/kr/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇰🇷 South Korea</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/kz/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇰🇿 Kazakhstan</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/lk/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇱🇰 Sri Lanka</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/me/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇲🇪 Montenegro</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/mu/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇲🇺 Mauritius</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/ph/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇵🇭 Philippines</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/ru/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇷🇺 Russia</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/tr/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇹🇷 Turkey</span><span class="ds">real experience</span></a>
-    <a class="card" href="/en/vn/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇻🇳 Vietnam</span><span class="ds">real experience</span></a>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Real experience of those who already went through the local confusions — to the point, no fluff. Pick a country, and for your case <a href="https://multyspeak.online" target="_blank" rel="noopener">ask Luky</a>.</div></div>
+
+  <div class="search"><svg class="oct" data-cant="10" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg>
+    <input id="q" placeholder="Start typing a country…" autocomplete="off" aria-label="Start typing a country…">
   </div>
+  <div id="sugg"></div>
 
   <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
     <h2>Generic articles exist — but a solution for you?</h2>
@@ -207,6 +215,83 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
     <p class="ps">PS: meet someone at a bar who speaks another language</p>
     <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
   </div></div>
+  <h2>Countries</h2>
+  <span class="section-label">Popular</span>
+  <div class="grid">
+    <a class="card" href="/en/br/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti"><span class="fl">🇧🇷</span> Brazil</span></a>
+    <a class="card" href="/en/mu/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti"><span class="fl">🇲🇺</span> Mauritius</span></a>
+    <a class="card" href="/en/ph/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti"><span class="fl">🇵🇭</span> Philippines</span></a>
+    <a class="card" href="/en/kr/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti"><span class="fl">🇰🇷</span> South Korea</span></a>
+    <a class="card" href="/en/au/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti"><span class="fl">🇦🇺</span> Australia</span></a>
+    <a class="card" href="/en/de/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti"><span class="fl">🇩🇪</span> Germany</span></a>
+    <a class="card" href="/en/in/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti"><span class="fl">🇮🇳</span> India</span></a>
+    <a class="card" href="/en/id/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti"><span class="fl">🇮🇩</span> Indonesia</span></a>
+    <a class="card" href="/en/vn/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti"><span class="fl">🇻🇳</span> Vietnam</span></a>
+    <a class="card" href="/en/ar/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti"><span class="fl">🇦🇷</span> Argentina</span></a>
+    <a class="card" href="/en/by/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti"><span class="fl">🇧🇾</span> Belarus</span></a>
+    <a class="card" href="/en/bg/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti"><span class="fl">🇧🇬</span> Bulgaria</span></a>
+  </div>
+  <span class="section-label" style="margin-top:22px;display:block">By region</span>
+  <div class="regions">
+    <details class="reg"><summary>Latin America<span class="cnt">4</span></summary>
+      <div class="rlist">
+        <a href="/en/ar/">🇦🇷 Argentina</a>
+        <a href="/en/br/">🇧🇷 Brazil</a>
+        <a href="/en/cl/">🇨🇱 Chile</a>
+        <a href="/en/cu/">🇨🇺 Cuba</a>
+      </div>
+    </details>
+    <details class="reg"><summary>Europe<span class="cnt">13</span></summary>
+      <div class="rlist">
+        <a href="/en/at/">🇦🇹 Austria</a>
+        <a href="/en/be/">🇧🇪 Belgium</a>
+        <a href="/en/bg/">🇧🇬 Bulgaria</a>
+        <a href="/en/hr/">🇭🇷 Croatia</a>
+        <a href="/en/cz/">🇨🇿 Czechia</a>
+        <a href="/en/fi/">🇫🇮 Finland</a>
+        <a href="/en/fr/">🇫🇷 France</a>
+        <a href="/en/de/">🇩🇪 Germany</a>
+        <a href="/en/gr/">🇬🇷 Greece</a>
+        <a href="/en/hu/">🇭🇺 Hungary</a>
+        <a href="/en/me/">🇲🇪 Montenegro</a>
+        <a href="/en/ch/">🇨🇭 Switzerland</a>
+        <a href="/en/gb/">🇬🇧 United Kingdom</a>
+      </div>
+    </details>
+    <details class="reg"><summary>Asia<span class="cnt">10</span></summary>
+      <div class="rlist">
+        <a href="/en/cn/">🇨🇳 China</a>
+        <a href="/en/ge/">🇬🇪 Georgia</a>
+        <a href="/en/in/">🇮🇳 India</a>
+        <a href="/en/id/">🇮🇩 Indonesia</a>
+        <a href="/en/jp/">🇯🇵 Japan</a>
+        <a href="/en/kz/">🇰🇿 Kazakhstan</a>
+        <a href="/en/ph/">🇵🇭 Philippines</a>
+        <a href="/en/kr/">🇰🇷 South Korea</a>
+        <a href="/en/lk/">🇱🇰 Sri Lanka</a>
+        <a href="/en/vn/">🇻🇳 Vietnam</a>
+      </div>
+    </details>
+    <details class="reg"><summary>Middle East &amp; Africa<span class="cnt">4</span></summary>
+      <div class="rlist">
+        <a href="/en/eg/">🇪🇬 Egypt</a>
+        <a href="/en/il/">🇮🇱 Israel</a>
+        <a href="/en/mu/">🇲🇺 Mauritius</a>
+        <a href="/en/tr/">🇹🇷 Turkey</a>
+      </div>
+    </details>
+    <details class="reg"><summary>CIS<span class="cnt">2</span></summary>
+      <div class="rlist">
+        <a href="/en/by/">🇧🇾 Belarus</a>
+        <a href="/en/ru/">🇷🇺 Russia</a>
+      </div>
+    </details>
+    <details class="reg"><summary>Oceania<span class="cnt">1</span></summary>
+      <div class="rlist">
+        <a href="/en/au/">🇦🇺 Australia</a>
+      </div>
+    </details>
+  </div>
 
 
   <footer>
@@ -259,6 +344,24 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
   function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
   if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
   if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+<script>
+/* поиск по странам: подсказки → страница страны */
+(function(){
+  var IDX=[{"flag": "\ud83c\udde6\ud83c\uddf7", "name": "Argentina", "url": "/en/ar/"}, {"flag": "\ud83c\udde6\ud83c\uddfa", "name": "Australia", "url": "/en/au/"}, {"flag": "\ud83c\udde6\ud83c\uddf9", "name": "Austria", "url": "/en/at/"}, {"flag": "\ud83c\udde7\ud83c\uddfe", "name": "Belarus", "url": "/en/by/"}, {"flag": "\ud83c\udde7\ud83c\uddea", "name": "Belgium", "url": "/en/be/"}, {"flag": "\ud83c\udde7\ud83c\uddf7", "name": "Brazil", "url": "/en/br/"}, {"flag": "\ud83c\udde7\ud83c\uddec", "name": "Bulgaria", "url": "/en/bg/"}, {"flag": "\ud83c\udde8\ud83c\uddf1", "name": "Chile", "url": "/en/cl/"}, {"flag": "\ud83c\udde8\ud83c\uddf3", "name": "China", "url": "/en/cn/"}, {"flag": "\ud83c\udded\ud83c\uddf7", "name": "Croatia", "url": "/en/hr/"}, {"flag": "\ud83c\udde8\ud83c\uddfa", "name": "Cuba", "url": "/en/cu/"}, {"flag": "\ud83c\udde8\ud83c\uddff", "name": "Czechia", "url": "/en/cz/"}, {"flag": "\ud83c\uddea\ud83c\uddec", "name": "Egypt", "url": "/en/eg/"}, {"flag": "\ud83c\uddeb\ud83c\uddee", "name": "Finland", "url": "/en/fi/"}, {"flag": "\ud83c\uddeb\ud83c\uddf7", "name": "France", "url": "/en/fr/"}, {"flag": "\ud83c\uddec\ud83c\uddea", "name": "Georgia", "url": "/en/ge/"}, {"flag": "\ud83c\udde9\ud83c\uddea", "name": "Germany", "url": "/en/de/"}, {"flag": "\ud83c\uddec\ud83c\uddf7", "name": "Greece", "url": "/en/gr/"}, {"flag": "\ud83c\udded\ud83c\uddfa", "name": "Hungary", "url": "/en/hu/"}, {"flag": "\ud83c\uddee\ud83c\uddf3", "name": "India", "url": "/en/in/"}, {"flag": "\ud83c\uddee\ud83c\udde9", "name": "Indonesia", "url": "/en/id/"}, {"flag": "\ud83c\uddee\ud83c\uddf1", "name": "Israel", "url": "/en/il/"}, {"flag": "\ud83c\uddef\ud83c\uddf5", "name": "Japan", "url": "/en/jp/"}, {"flag": "\ud83c\uddf0\ud83c\uddff", "name": "Kazakhstan", "url": "/en/kz/"}, {"flag": "\ud83c\uddf2\ud83c\uddfa", "name": "Mauritius", "url": "/en/mu/"}, {"flag": "\ud83c\uddf2\ud83c\uddea", "name": "Montenegro", "url": "/en/me/"}, {"flag": "\ud83c\uddf5\ud83c\udded", "name": "Philippines", "url": "/en/ph/"}, {"flag": "\ud83c\uddf7\ud83c\uddfa", "name": "Russia", "url": "/en/ru/"}, {"flag": "\ud83c\uddf0\ud83c\uddf7", "name": "South Korea", "url": "/en/kr/"}, {"flag": "\ud83c\uddf1\ud83c\uddf0", "name": "Sri Lanka", "url": "/en/lk/"}, {"flag": "\ud83c\udde8\ud83c\udded", "name": "Switzerland", "url": "/en/ch/"}, {"flag": "\ud83c\uddf9\ud83c\uddf7", "name": "Turkey", "url": "/en/tr/"}, {"flag": "\ud83c\uddec\ud83c\udde7", "name": "United Kingdom", "url": "/en/gb/"}, {"flag": "\ud83c\uddfb\ud83c\uddf3", "name": "Vietnam", "url": "/en/vn/"}];
+  var q=document.getElementById('q'), sg=document.getElementById('sugg');
+  if(!q) return;
+  q.addEventListener('input',function(){
+    var v=q.value.trim().toLowerCase(); if(!v){sg.style.display='none';return;}
+    var m=IDX.filter(function(c){return c.name.toLowerCase().indexOf(v)>=0}).slice(0,8);
+    sg.innerHTML = m.length
+      ? m.map(function(c){return '<a href="'+c.url+'">'+c.flag+' '+c.name+'</a>'}).join('')
+      : '<a class="nores">'+"nothing found"+'</a>';
+    sg.style.display='block';
+  });
+  document.addEventListener('click',function(e){if(!e.target.closest('.search')&&e.target.id!=='q')sg.style.display='none';});
 })();
 </script>
 

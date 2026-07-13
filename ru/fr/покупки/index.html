@@ -69,6 +69,13 @@ a:hover{text-decoration:underline}
   background:transparent;border:none}
 .toggle .oct path{fill:var(--card);stroke:var(--border)}
 .toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
 .crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
   text-transform:uppercase;margin-bottom:14px}
 .crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
@@ -118,6 +125,31 @@ details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
 .card.soon{cursor:default;pointer-events:none}
 .card.soon .ti{color:var(--muted)}
 .card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
 
 .cta{margin-top:34px}
 .cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
@@ -154,7 +186,15 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
       </span>
       <span class="brand-sub">инфопортал · в любой стране · без воды</span>
     </div>
-    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Ночь</span></button>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="on" href="/ru/fr/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/en/fr/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/fr/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/pt/fr/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Ночь</span></button>
+    </div>
   </div>
 
   
@@ -167,13 +207,11 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
 
   
   <h1>Покупки: как это в Франция — из первых рук</h1>
-  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Реальный опыт людей из чатов по теме «покупки» в Франция — как есть, без воды. Под свой случай — <strong>спроси Luky</strong>.</div></div>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Реальный опыт людей из чатов по теме «покупки» в Франция — как есть, без воды. Под свой случай — <a href="https://multyspeak.online" target="_blank" rel="noopener">спроси Luky</a>.</div></div>
 
   <h2>Из живого опыта</h2>
   <ul class="qlist">
-    <li>Во Франции оплата картами и Apple Pay принимается повсеместно. Убедитесь, что ваша карта не является российской картой «Мир», чтобы обеспечить более широкое принятие, особенно в небольших заведениях.</li>
     <li>Для покупки техники Apple в Париже, хотя официальный Apple Store — это вариант, рассмотрите возможность проверки крупных розничных сетей электроники, таких как Fnac, Darty и Boulanger. Для потенциально более низких цен изучите раздел восстановленных товаров на веб-сайте Apple во Франции или поищите подержанные товары на таких платформах, как Leboncoin. Будьте осторожны с мошенничеством при покупке у неофициальных реселлеров.</li>
-    <li>Наличные широко принимаются во Франции, хотя наличие монет необходимо для автоматов по продаже билетов на общественный транспорт (например, на трамвайных остановках в Ницце). Хотя кредитные карты рекомендуются для удобства, наличные остаются приемлемой альтернативой для туристов.</li>
     <li>Во Франции, как и во многих европейских странах, продавцы могут устанавливать минимальную сумму транзакции для оплаты кредитной или дебетовой картой. Эта практика распространена в небольших магазинах, пекарнях, кафе и при совершении мелких покупок. Основные моменты: 1. Минимальная сумма покупки: как правило, лимит варьируется от 3 до 5 евро, но иногда может достигать 10 или 20 евро, в зависимости от заведения. 2. Причина: эта политика помогает продавцам компенсировать банковские комиссии, которые могут быть непропорционально высокими для очень маленьких покупок. 3. Рекомендуется иметь наличные: путешественникам рекомендуется иметь при себе немного наличных, особенно купюры мелкого номинала (например, 5, 10, 20 евро), чтобы оплачивать мелкие покупки там, где оплата картой может быть не принята. 4. Прием карт варьируется: в то время как крупные магазины и супермаркеты обычно принимают карты без минимального лимита, малый бизнес может строго соблюдать свою политику. Всегда будьте готовы использовать наличные для небольших расходов.</li>
     <li>Свежая черешня доступна во Франции в сезон, который обычно начинается в июне. Её можно найти на местных рынках в таких городах, как Ментона и Ницца.</li>
     <li>Для трехдневной поездки в Лион рассмотрите посещение Старого города (Vieux Lyon), поездку на фуникулере к базилике Нотр-Дам-де-Фурвьер и римским театрам для панорамных видов на город. Исследуйте местную кухню в таких местах, как Brasserie Georges (ищите «menu du jour») или продовольственный рынок Поля Бокюза. Используйте автобусные туры hop-on-hop-off или лодочные экскурсии для эффективного осмотра достопримечательностей. Прогулки пешком также являются подходящим вариантом для изучения центра города.</li>
@@ -187,6 +225,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
     <li>Возврат налога (tax-free) за покупки, сделанные в пределах Шенгенской зоны, должен оформляться в стране, где была совершена покупка, при выезде из этой страны. Невозможно объединить и запросить возврат за покупки из нескольких стран Шенгена в одном пункте выезда (например, при выезде из России, если покупки были сделаны во Франции и Италии). Процедуру tax-free каждой страны необходимо проходить индивидуально.</li>
     <li>Роскошные бренды во Франции (в частности LV) обеспечивают строгое соблюдение правил в отношении граждан России. Покупки часто требуют регистрации в CRM-системе бренда, где проверяется удостоверение личности. Клиенты с российскими паспортами могут столкнуться с отказом в продаже. Оплата наличными выше определенных порогов ограничена для борьбы с отмыванием денег. Менее крупные бренды, как правило, менее строги, но корпоративный комплаенс значительно различается.</li>
     <li>Чтобы купить оригинальную сумку Louis Vuitton (LV) во Франции, посетите официальные бутики Louis Vuitton или авторизованные универмаги. Избегайте неавторизованных продавцов, чтобы гарантировать подлинность. Учитывайте возможность наличия списков ожидания на популярные товары. Вы можете проверить официальный сайт Louis Vuitton для поиска адресов магазинов и наличия товаров.</li>
+    <li>Будьте осторожны с возможным мошенничеством при оплате наличными во французских заведениях. Сообщалось о случаях выдачи неправильной сдачи или завышения цены за заказы. Рекомендуется всегда проверять чек и тщательно пересчитывать сдачу. Если вы подозреваете ошибку или переплату, настойчиво требуйте исправления или возврата средств. Понимание местного языка может быть полезным в разрешении таких проблем. Некоторые советуют быть твердыми с кассирами и продавцами, чтобы предотвратить попытки завышения цены.</li>
   </ul>
   <h2>Смежные темы</h2>
   <div class="chips">

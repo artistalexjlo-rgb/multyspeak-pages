@@ -69,6 +69,13 @@ a:hover{text-decoration:underline}
   background:transparent;border:none}
 .toggle .oct path{fill:var(--card);stroke:var(--border)}
 .toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
 .crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
   text-transform:uppercase;margin-bottom:14px}
 .crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
@@ -118,6 +125,31 @@ details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
 .card.soon{cursor:default;pointer-events:none}
 .card.soon .ti{color:var(--muted)}
 .card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
 
 .cta{margin-top:34px}
 .cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
@@ -154,7 +186,15 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
       </span>
       <span class="brand-sub">инфопортал · в любой стране · без воды</span>
     </div>
-    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Ночь</span></button>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="on" href="/ru/me/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/en/me/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/me/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/pt/me/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Ночь</span></button>
+    </div>
   </div>
 
   
@@ -167,7 +207,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
 
   
   <h1>Здоровье: как это в Черногория — из первых рук</h1>
-  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Реальный опыт людей из чатов по теме «здоровье» в Черногория — как есть, без воды. Под свой случай — <strong>спроси Luky</strong>.</div></div>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Реальный опыт людей из чатов по теме «здоровье» в Черногория — как есть, без воды. Под свой случай — <a href="https://multyspeak.online" target="_blank" rel="noopener">спроси Luky</a>.</div></div>
 
   <h2>Из живого опыта</h2>
   <ul class="qlist">
@@ -176,13 +216,12 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
     <li>Черногория считается эндемичной зоной по лейшманиозу, что представляет риск для здоровья домашних животных. Управление популяцией бездомных животных ограничено и в значительной степени полагается на инициативы волонтеров и частные пожертвования. Посетителям, желающим помочь, рекомендуется поддерживать признанные местные организации, такие как «Kotor Kitties», а не просто предоставлять временную еду.</li>
     <li>Будьте осторожны с морскими ежами в водах Будвы. Рекомендуется носить специальную обувь для плавания и смотреть под ноги, особенно в местах с галькой. На песчаных пляжах морских ежей обычно нет.</li>
     <li>Обсуждение присутствия акул в водах Черногории и безопасности купания. Пользователи делятся опасениями и информацией о зафиксированных случаях появления акул, включая недавнее наблюдение большой синей акулы. Запрашиваются советы по безопасным методам купания, включая время, которого следует избегать (утро/ночь), и конкретные места, известные такими случаями. Также упоминаются мелкая рыба («малек»), которая может кусаться, и прошлые инциденты, включая смертельное нападение в 1970-х годах.</li>
-    <li>Чтобы найти информацию об обучении на парамедика в Черногории, следует проконсультироваться с каталогами университетов и колледжей или навести справки в образовательных чат-группах.</li>
+    <li>При поездке в Черногорию рекомендуется приобрести туристическую страховку. Варианты включают полисы от Сбербанка, Тинькофф и ВТБ. Некоторые банковские приложения могут предлагать бесплатную годовую семейную страховку с покрытием до 100 000 рублей. Например, 27-дневный полис с покрытием 100 000 стоил 1285 рублей. Сбербанк отмечают за хорошую поддержку и доступные варианты.</li>
     <li>Для сдачи медицинских анализов (например, общего анализа крови, ферритина, на хеликобактер пилори) в Будве, Черногория, рассмотрите лаборатории &#39;Smart Lab&#39; и &#39;Moj Lab&#39;. Обычно они принимают без предварительной записи по утрам. Хотя их веб-сайты не всегда содержат полный перечень услуг или цен, рекомендуется связаться с ними через Instagram или по электронной почте для уточнения деталей, так как они известны своей готовностью отвечать на запросы.</li>
     <li>Солнце в Черногории интенсивное, с высоким УФ-индексом. Рекомендуется высокий SPF (например, SPF 50), а также советуется избегать прямого воздействия солнца с 11:00 до 16:00, чтобы предотвратить солнечные ожоги. Кожа может сгореть очень быстро.</li>
     <li>Температура воды в Будве сейчас комфортна для купания детей. Вода поначалу может казаться прохладной, но становится комфортной в течение нескольких минут. Рекомендуется соблюдать осторожность из-за присутствия морских ежей на пляжах в этом году; для безопасности рекомендуются специальные аквашузы.</li>
     <li>Пляжи в Рисане и Тивате состоят преимущественно из каменных пирсов или гальки, а не из песка. Для тех, кто ищет песчаные пляжи, эти места могут быть не идеальны. Рекомендуется проверять наличие знака «Голубой флаг», подтверждающего качество воды, для пляжей в Которском заливе.</li>
     <li>Морские ежи встречаются на пляже Могрен в Будве. Их распространенность может меняться в зависимости от сезона, в сентябре их потенциально меньше по сравнению с предыдущими годами.</li>
-    <li>В Тивате варианты для фитнеса включают «Big Body» (считается посредственным), «PM» в яхт-клубе (также посредственный) и «Boka Place» (по отзывам лучший, расположен на верхнем этаже; спросите менеджера Дмитрия, который говорит по-русски).</li>
     <li>В этом году на пляжах Будвы наблюдается большое количество морских ежей. Купающимся рекомендуется соблюдать осторожность и подумать о ношении защитной акваобуви, чтобы избежать травм.</li>
     <li>Получение рецептурных препаратов, таких как таблетки метотрексата, в качестве туриста во время короткого пребывания в Черногории может быть затруднительным. Настоятельно рекомендуется проконсультироваться с местными медицинскими работниками или аптеками заблаговременно до поездки или по прибытии, чтобы выяснить наличие и юридические требования для получения таких лекарств. Самый надежный способ — привезти достаточный запас из вашей страны с действительным рецептом.</li>
     <li>Иглы морского ежа состоят из карбоната кальция, и их можно растворить с помощью слабых кислот, таких как уксус или лимонная кислота. Лечение включает замачивание пораженной области в уксусе, использование антигистаминных препаратов для снятия отека и профессиональное извлечение игл в клинике для предотвращения бактериальной инфекции, если иглы засели глубоко.</li>
@@ -197,8 +236,8 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
     <a class="chip" href="/ru/me/билеты-и-развлечения/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🎟 Билеты и развлечения</span></a>
     <a class="chip" href="/ru/me/документы-и-виза/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Документы и виза</span></a>
     <a class="chip" href="/ru/me/покупки/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛒 Покупки</span></a>
-    <a class="chip" href="/ru/me/банк-и-деньги/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Банк и деньги</span></a>
     <a class="chip" href="/ru/me/безопасность/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛡 Безопасность</span></a>
+    <a class="chip" href="/ru/me/банк-и-деньги/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Банк и деньги</span></a>
   </div>
 
   <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">

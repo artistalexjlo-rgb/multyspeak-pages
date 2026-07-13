@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Luky — живой опыт по странам: документы, деньги, жильё</title>
-<meta name="description" content="Инфопортал Luky: реальный опыт из чатов по странам — документы, деньги, жильё, безопасность. Без воды, под твой случай.">
+<title>Luky — живой опыт по странам: деньги, документы, жильё</title>
+<meta name="description" content="Инфопортал Luky: реальный опыт из чатов сообществ по странам — деньги, документы, жильё, безопасность. Без воды, под твой случай.">
 <link rel="canonical" href="https://info.multyspeak.online/ru/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/">
@@ -69,6 +69,13 @@ a:hover{text-decoration:underline}
   background:transparent;border:none}
 .toggle .oct path{fill:var(--card);stroke:var(--border)}
 .toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
 .crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
   text-transform:uppercase;margin-bottom:14px}
 .crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
@@ -118,6 +125,31 @@ details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
 .card.soon{cursor:default;pointer-events:none}
 .card.soon .ti{color:var(--muted)}
 .card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
 
 .cta{margin-top:34px}
 .cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
@@ -154,39 +186,27 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
       </span>
       <span class="brand-sub">инфопортал · в любой стране · без воды</span>
     </div>
-    <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Ночь</span></button>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="on" href="/ru/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/en/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/pt/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Ночь</span></button>
+    </div>
   </div>
 
   
-
 
   
   <h1>Куда едешь?</h1>
-  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Реальный опыт тех, кто уже прошёл через местные непонятки — по делу, без воды. Выбери страну, а под свой случай <strong>спроси Luky</strong>.</div></div><h2>Страны</h2>
-  <div class="grid">
-    <a class="card" href="/ru/br/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇧🇷 Бразилия</span><span class="ds">13 тем · живой опыт</span></a>
-    <a class="card" href="/ru/vn/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇻🇳 Вьетнам</span><span class="ds">9 тем · живой опыт</span></a>
-    <a class="card" href="/ru/me/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇲🇪 Черногория</span><span class="ds">4 тем · живой опыт</span></a>
-    <a class="card" href="/ru/id/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇮🇩 Индонезия</span><span class="ds">6 тем · живой опыт</span></a>
-    <a class="card" href="/ru/gr/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇬🇷 Греция</span><span class="ds">2 тем · живой опыт</span></a>
-    <a class="card" href="/ru/kr/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇰🇷 Южная Корея</span><span class="ds">6 тем · живой опыт</span></a>
-    <a class="card" href="/ru/ph/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇵🇭 Филиппины</span><span class="ds">4 тем · живой опыт</span></a>
-    <a class="card" href="/ru/de/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇩🇪 Германия</span><span class="ds">2 тем · живой опыт</span></a>
-    <a class="card" href="/ru/gb/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇬🇧 Великобритания</span><span class="ds">2 тем · живой опыт</span></a>
-    <a class="card" href="/ru/bg/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇧🇬 Болгария</span><span class="ds">3 тем · живой опыт</span></a>
-    <a class="card" href="/ru/jp/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇯🇵 Япония</span><span class="ds">5 тем · живой опыт</span></a>
-    <a class="card" href="/ru/by/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇧🇾 Беларусь</span><span class="ds">4 тем · живой опыт</span></a>
-    <a class="card" href="/ru/fr/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇫🇷 Франция</span><span class="ds">4 тем · живой опыт</span></a>
-    <a class="card" href="/ru/au/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇦🇺 Австралия</span><span class="ds">2 тем · живой опыт</span></a>
-    <a class="card" href="/ru/ar/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇦🇷 Аргентина</span><span class="ds">3 тем · живой опыт</span></a>
-    <a class="card" href="/ru/hu/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇭🇺 Венгрия</span><span class="ds">1 тем · живой опыт</span></a>
-    <a class="card" href="/ru/at/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇦🇹 Австрия</span><span class="ds">1 тем · живой опыт</span></a>
-    <a class="card" href="/ru/ru/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇷🇺 Россия</span><span class="ds">1 тем · живой опыт</span></a>
-    <a class="card" href="/ru/cl/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇨🇱 Чили</span><span class="ds">1 тем · живой опыт</span></a>
-    <a class="card" href="/ru/fi/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇫🇮 Финляндия</span><span class="ds">1 тем · живой опыт</span></a>
-    <a class="card" href="/ru/tr/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇹🇷 Турция</span><span class="ds">1 тем · живой опыт</span></a>
-    <a class="card" href="/ru/ge/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti">🇬🇪 Грузия</span><span class="ds">1 тем · живой опыт</span></a>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">Реальный опыт тех, кто уже прошёл через местные непонятки — по делу, без воды. Выбери страну, а под свой случай <a href="https://multyspeak.online" target="_blank" rel="noopener">спроси Luky</a>.</div></div>
+
+  <div class="search"><svg class="oct" data-cant="10" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg>
+    <input id="q" placeholder="Начни печатать страну…" autocomplete="off" aria-label="Начни печатать страну…">
   </div>
+  <div id="sugg"></div>
 
   <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
     <h2>Нужно под твою ситуацию, а не вообще?</h2>
@@ -195,6 +215,84 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
     <p class="ps">PS: даже с роднёй собеседника, что не знает ни слова по-твоему 😄</p>
     <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Открыть Luky</span></a>
   </div></div>
+  <h2>Страны</h2>
+  <span class="section-label">Популярные</span>
+  <div class="grid">
+    <a class="card" href="/ru/br/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti"><span class="fl">🇧🇷</span> Бразилия</span><span class="ds">Карнавалы и фавелы. Самба и футбол</span></a>
+    <a class="card" href="/ru/vn/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti"><span class="fl">🇻🇳</span> Вьетнам</span><span class="ds">Байки и фо. Джунгли и океан</span></a>
+    <a class="card" href="/ru/mu/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti"><span class="fl">🇲🇺</span> Маврикий</span><span class="ds">Пляжи и лагуны. Океан и пальмы</span></a>
+    <a class="card" href="/ru/me/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti"><span class="fl">🇲🇪</span> Черногория</span><span class="ds">Горы над Адриатикой. Евро без ЕС</span></a>
+    <a class="card" href="/ru/ar/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti"><span class="fl">🇦🇷</span> Аргентина</span><span class="ds">Танго и стейки. Футбол и инфляция</span></a>
+    <a class="card" href="/ru/id/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti"><span class="fl">🇮🇩</span> Индонезия</span><span class="ds">Вулканы и рис. Бали и сёрф</span></a>
+    <a class="card" href="/ru/kr/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti"><span class="fl">🇰🇷</span> Южная Корея</span><span class="ds">Кимчи и небоскрёбы. K-pop и корпорации</span></a>
+    <a class="card" href="/ru/in/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti"><span class="fl">🇮🇳</span> in</span><span class="ds">Специи и хаос. Тадж и краски</span></a>
+    <a class="card" href="/ru/de/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti"><span class="fl">🇩🇪</span> Германия</span><span class="ds">Орднунг и автобаны. Пиво и бумаги</span></a>
+    <a class="card" href="/ru/lk/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti"><span class="fl">🇱🇰</span> Шри-Ланка</span><span class="ds">Чай и слоны. Пляжи и муссоны</span></a>
+    <a class="card" href="/ru/jp/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti"><span class="fl">🇯🇵</span> Япония</span><span class="ds">Синкансэны и храмы. Вежливость и неон</span></a>
+    <a class="card" href="/ru/by/"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><span class="ti"><span class="fl">🇧🇾</span> Беларусь</span><span class="ds">Драники и зубры. Тишь и порядок</span></a>
+  </div>
+  <span class="section-label" style="margin-top:22px;display:block">По регионам</span>
+  <div class="regions">
+    <details class="reg"><summary>Латинская Америка<span class="cnt">4</span></summary>
+      <div class="rlist">
+        <a href="/ru/cu/">🇨🇺 cu</a>
+        <a href="/ru/ar/">🇦🇷 Аргентина</a>
+        <a href="/ru/br/">🇧🇷 Бразилия</a>
+        <a href="/ru/cl/">🇨🇱 Чили</a>
+      </div>
+    </details>
+    <details class="reg"><summary>Европа<span class="cnt">13</span></summary>
+      <div class="rlist">
+        <a href="/ru/be/">🇧🇪 be</a>
+        <a href="/ru/ch/">🇨🇭 ch</a>
+        <a href="/ru/hr/">🇭🇷 hr</a>
+        <a href="/ru/at/">🇦🇹 Австрия</a>
+        <a href="/ru/bg/">🇧🇬 Болгария</a>
+        <a href="/ru/gb/">🇬🇧 Великобритания</a>
+        <a href="/ru/hu/">🇭🇺 Венгрия</a>
+        <a href="/ru/de/">🇩🇪 Германия</a>
+        <a href="/ru/gr/">🇬🇷 Греция</a>
+        <a href="/ru/fi/">🇫🇮 Финляндия</a>
+        <a href="/ru/fr/">🇫🇷 Франция</a>
+        <a href="/ru/me/">🇲🇪 Черногория</a>
+        <a href="/ru/cz/">🇨🇿 Чехия</a>
+      </div>
+    </details>
+    <details class="reg"><summary>Азия<span class="cnt">11</span></summary>
+      <div class="rlist">
+        <a href="/ru/cn/">🇨🇳 cn</a>
+        <a href="/ru/in/">🇮🇳 in</a>
+        <a href="/ru/kg/">🇰🇬 kg</a>
+        <a href="/ru/kz/">🇰🇿 kz</a>
+        <a href="/ru/vn/">🇻🇳 Вьетнам</a>
+        <a href="/ru/ge/">🇬🇪 Грузия</a>
+        <a href="/ru/id/">🇮🇩 Индонезия</a>
+        <a href="/ru/ph/">🇵🇭 Филиппины</a>
+        <a href="/ru/lk/">🇱🇰 Шри-Ланка</a>
+        <a href="/ru/kr/">🇰🇷 Южная Корея</a>
+        <a href="/ru/jp/">🇯🇵 Япония</a>
+      </div>
+    </details>
+    <details class="reg"><summary>Ближний Восток и Африка<span class="cnt">4</span></summary>
+      <div class="rlist">
+        <a href="/ru/eg/">🇪🇬 eg</a>
+        <a href="/ru/il/">🇮🇱 il</a>
+        <a href="/ru/tr/">🇹🇷 tr</a>
+        <a href="/ru/mu/">🇲🇺 Маврикий</a>
+      </div>
+    </details>
+    <details class="reg"><summary>СНГ<span class="cnt">2</span></summary>
+      <div class="rlist">
+        <a href="/ru/by/">🇧🇾 Беларусь</a>
+        <a href="/ru/ru/">🇷🇺 Россия</a>
+      </div>
+    </details>
+    <details class="reg"><summary>Океания<span class="cnt">1</span></summary>
+      <div class="rlist">
+        <a href="/ru/au/">🇦🇺 Австралия</a>
+      </div>
+    </details>
+  </div>
 
 
   <footer>
@@ -247,6 +345,24 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color
   function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
   if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
   if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+<script>
+/* поиск по странам: подсказки → страница страны */
+(function(){
+  var IDX=[{"flag": "\ud83c\udde7\ud83c\uddea", "name": "be", "url": "/ru/be/"}, {"flag": "\ud83c\udde8\ud83c\udded", "name": "ch", "url": "/ru/ch/"}, {"flag": "\ud83c\udde8\ud83c\uddf3", "name": "cn", "url": "/ru/cn/"}, {"flag": "\ud83c\udde8\ud83c\uddfa", "name": "cu", "url": "/ru/cu/"}, {"flag": "\ud83c\uddea\ud83c\uddec", "name": "eg", "url": "/ru/eg/"}, {"flag": "\ud83c\udded\ud83c\uddf7", "name": "hr", "url": "/ru/hr/"}, {"flag": "\ud83c\uddee\ud83c\uddf1", "name": "il", "url": "/ru/il/"}, {"flag": "\ud83c\uddee\ud83c\uddf3", "name": "in", "url": "/ru/in/"}, {"flag": "\ud83c\uddf0\ud83c\uddec", "name": "kg", "url": "/ru/kg/"}, {"flag": "\ud83c\uddf0\ud83c\uddff", "name": "kz", "url": "/ru/kz/"}, {"flag": "\ud83c\uddf9\ud83c\uddf7", "name": "tr", "url": "/ru/tr/"}, {"flag": "\ud83c\udde6\ud83c\uddfa", "name": "\u0410\u0432\u0441\u0442\u0440\u0430\u043b\u0438\u044f", "url": "/ru/au/"}, {"flag": "\ud83c\udde6\ud83c\uddf9", "name": "\u0410\u0432\u0441\u0442\u0440\u0438\u044f", "url": "/ru/at/"}, {"flag": "\ud83c\udde6\ud83c\uddf7", "name": "\u0410\u0440\u0433\u0435\u043d\u0442\u0438\u043d\u0430", "url": "/ru/ar/"}, {"flag": "\ud83c\udde7\ud83c\uddfe", "name": "\u0411\u0435\u043b\u0430\u0440\u0443\u0441\u044c", "url": "/ru/by/"}, {"flag": "\ud83c\udde7\ud83c\uddec", "name": "\u0411\u043e\u043b\u0433\u0430\u0440\u0438\u044f", "url": "/ru/bg/"}, {"flag": "\ud83c\udde7\ud83c\uddf7", "name": "\u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f", "url": "/ru/br/"}, {"flag": "\ud83c\uddec\ud83c\udde7", "name": "\u0412\u0435\u043b\u0438\u043a\u043e\u0431\u0440\u0438\u0442\u0430\u043d\u0438\u044f", "url": "/ru/gb/"}, {"flag": "\ud83c\udded\ud83c\uddfa", "name": "\u0412\u0435\u043d\u0433\u0440\u0438\u044f", "url": "/ru/hu/"}, {"flag": "\ud83c\uddfb\ud83c\uddf3", "name": "\u0412\u044c\u0435\u0442\u043d\u0430\u043c", "url": "/ru/vn/"}, {"flag": "\ud83c\udde9\ud83c\uddea", "name": "\u0413\u0435\u0440\u043c\u0430\u043d\u0438\u044f", "url": "/ru/de/"}, {"flag": "\ud83c\uddec\ud83c\uddf7", "name": "\u0413\u0440\u0435\u0446\u0438\u044f", "url": "/ru/gr/"}, {"flag": "\ud83c\uddec\ud83c\uddea", "name": "\u0413\u0440\u0443\u0437\u0438\u044f", "url": "/ru/ge/"}, {"flag": "\ud83c\uddee\ud83c\udde9", "name": "\u0418\u043d\u0434\u043e\u043d\u0435\u0437\u0438\u044f", "url": "/ru/id/"}, {"flag": "\ud83c\uddf2\ud83c\uddfa", "name": "\u041c\u0430\u0432\u0440\u0438\u043a\u0438\u0439", "url": "/ru/mu/"}, {"flag": "\ud83c\uddf7\ud83c\uddfa", "name": "\u0420\u043e\u0441\u0441\u0438\u044f", "url": "/ru/ru/"}, {"flag": "\ud83c\uddf5\ud83c\udded", "name": "\u0424\u0438\u043b\u0438\u043f\u043f\u0438\u043d\u044b", "url": "/ru/ph/"}, {"flag": "\ud83c\uddeb\ud83c\uddee", "name": "\u0424\u0438\u043d\u043b\u044f\u043d\u0434\u0438\u044f", "url": "/ru/fi/"}, {"flag": "\ud83c\uddeb\ud83c\uddf7", "name": "\u0424\u0440\u0430\u043d\u0446\u0438\u044f", "url": "/ru/fr/"}, {"flag": "\ud83c\uddf2\ud83c\uddea", "name": "\u0427\u0435\u0440\u043d\u043e\u0433\u043e\u0440\u0438\u044f", "url": "/ru/me/"}, {"flag": "\ud83c\udde8\ud83c\uddff", "name": "\u0427\u0435\u0445\u0438\u044f", "url": "/ru/cz/"}, {"flag": "\ud83c\udde8\ud83c\uddf1", "name": "\u0427\u0438\u043b\u0438", "url": "/ru/cl/"}, {"flag": "\ud83c\uddf1\ud83c\uddf0", "name": "\u0428\u0440\u0438-\u041b\u0430\u043d\u043a\u0430", "url": "/ru/lk/"}, {"flag": "\ud83c\uddf0\ud83c\uddf7", "name": "\u042e\u0436\u043d\u0430\u044f \u041a\u043e\u0440\u0435\u044f", "url": "/ru/kr/"}, {"flag": "\ud83c\uddef\ud83c\uddf5", "name": "\u042f\u043f\u043e\u043d\u0438\u044f", "url": "/ru/jp/"}];
+  var q=document.getElementById('q'), sg=document.getElementById('sugg');
+  if(!q) return;
+  q.addEventListener('input',function(){
+    var v=q.value.trim().toLowerCase(); if(!v){sg.style.display='none';return;}
+    var m=IDX.filter(function(c){return c.name.toLowerCase().indexOf(v)>=0}).slice(0,8);
+    sg.innerHTML = m.length
+      ? m.map(function(c){return '<a href="'+c.url+'">'+c.flag+' '+c.name+'</a>'}).join('')
+      : '<a class="nores">'+"\u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e"+'</a>';
+    sg.style.display='block';
+  });
+  document.addEventListener('click',function(e){if(!e.target.closest('.search')&&e.target.id!=='q')sg.style.display='none';});
 })();
 </script>
 
