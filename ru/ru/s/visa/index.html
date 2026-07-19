@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Россия: визовые процедуры — живой опыт из чатов · Luky</title>
+<meta name="description" content="Живой опыт по теме «визовые процедуры» в России: реальные советы, случаи и правила из чатов. Под твой случай — у Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/ru/ru/s/visa/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/ru/s/visa/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/ru/s/visa/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/ru/s/visa/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/ru/s/visa/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/ru/s/visa/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+/* тег типа абзаца (хвост-антологии: lifehack/reglament/howto/risk/case/service) */
+.tag{display:inline-block;font-family:var(--font-mono);font-weight:400;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);
+  border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:2px;white-space:nowrap}
+.tag.risk{color:var(--red);border-color:var(--red)}
+.tag.reglament{color:var(--accent);border-color:var(--accent)}
+.tag.lifehack{color:var(--green);border-color:var(--green)}
+.tag.service{color:var(--yellow);border-color:var(--yellow)}
+.tag.howto{color:var(--hud);border-color:var(--hud)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">инфопортал · в любой стране · без воды</span>
+    </div>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="on" href="/ru/ru/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/en/ru/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/ru/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/pt/ru/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Ночь</span></button>
+    </div>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/ru/">Главная</a> /
+    <a href="/ru/ru/">Россия</a> /
+    <b>Визовые процедуры</b>
+  </nav>
+
+
+  
+  <h1>Визовые процедуры: как это в России — из первых рук</h1>
+
+  <h2>Из живого опыта</h2>
+  <details open><summary><span class="sumq"><span class="tag case">кейс</span>Заявитель в Москве (Россия) подал заявление на греческую визу 29 мая.</span><span></span></summary>
+    <div class="a">Статус EES обновился 25 июня, паспорт был получен 1 июля. Была выдана однократная виза на 30 дней, что соответствует сроку приглашения, несмотря на то, что заявитель запрашивал только 13 дней. Были поданы все стандартные документы (кроме SFR), включая купленные билеты. Заявитель имел сильную визовую историю: две правильно использованные шестимесячные многократные итальянские визы за предыдущие 3 года.
+    <div class="src">✓ 2 сообщения из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Для бронирования приоритетного слота на подачу заявления на визу в Санкт-Петербурге, Россия, можно бесплатно обратиться напрямую в Визовый центр по электронной почте.</span><span></span></summary>
+    <div class="a">Например, бронирование 30 марта на слот 21 апреля прошло успешно через email. Агентства часто взимают от 3 000 до 14 000 рублей за запись, плюс примерно 5 000 рублей с заявителя сверх визового сбора (около 5 200 рублей с человека за саму приоритетную подачу). Эти агентские сборы за бронирование не включают дополнительные услуги, такие как фото или ксерокопирование. Сама приоритетная подача не включает никаких дополнительных услуг. Визовый центр в Санкт-Петербурге начал принимать заявления с 1 апреля. Агентство, которое, как сообщается, предоставляет такие услуги — «Инпредсервис СПб», расположенное на Марата, 9, с другим офисом рядом с метро «Чернышевская», и Telegram-канал «V Schengen».
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>Для сдачи биометрии на австралийскую визу в VFS Global (например, в Екатеринбурге, Россия): приходите за 30 минут до назначенного времени для заполнения форм.</span><span></span></summary>
+    <div class="a">При наличии заявителей на визу в Великобританию им может быть отдано предпочтение. Необходимые документы: распечатанная форма со штрих-кодом, подтверждение записи в VFS Global, заграничный паспорт и внутренний российский паспорт (обязателен для идентификации, даже если не указан в списке). Процедура включает фото и отпечатки пальцев (с мизинцами часто возникают проблемы). Оплата принимается картой или наличными. Общее время: около 20 минут. Стоимость: 1936 рублей (по предварительной записи), около 3500 рублей (без записи). VFS в Екатеринбурге работает с 09:00 до 14:00, VFS в Москве — с 09:00 до 16:30.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Сроки обработки визовых заявлений в российских визовых центрах (например, для Болгарии) значительно различаются между залами общего пользования и залами приоритетного (VIP) обслуживания.</span><span></span></summary>
+    <div class="a">В зале общего пользования, несмотря на подготовленные документы, заявители могут столкнуться с длительным ожиданием, зачастую 3 часа и более. Это включает задержки вызова, очереди на снятие отпечатков пальцев и оплату услуг. В зале приоритетного (VIP) обслуживания время ожидания значительно сокращается. Для семьи (например, 3 взрослых, 2 детей) весь процесс может занять около 1,5 часов, с минимальными задержками при вызове и отсутствием очередей на дополнительные услуги, такие как фотографии, отпечатки пальцев или оплата. Документы проверяются оперативно.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Бронирование слотов на шенгенскую визу из России (например, в Санкт-Петербурге) — задача крайне сложная.</span><span></span></summary>
+    <div class="a">Процесс характеризуется техническими трудностями (например, блокировками аккаунтов, ошибками на финальной странице подачи заявления) и быстрым исчерпанием доступных слотов, которые часто оказываются ложными. Кроме того, встречи, включая VIP-услуги, могут быть отменены или перенесены из-за директив по сокращению числа заявителей. Заявителей обычно уведомляют об отмене по электронной почте и рекомендуют связаться с консульством или визовым центром по почте для запроса более ранней переброни, особенно если планы поездки уже утверждены. Отправка скриншотов неудачных попыток бронирования вряд ли поможет получить слот.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Для граждан России, стремящихся получить шенгенскую визу, подача заявления во Францию может быть сложной из-за высокого спроса, часто требующего конкуренции с ботами за слоты для записи (иногда с помощью платных сервисов).</span><span></span></summary>
+    <div class="a">Альтернативой является подача заявления на венгерскую шенгенскую визу, что может предложить более простую запись, но потенциально более сложную процедуру рассмотрения. Заявителям следует помнить, что предоплаченное бронирование жилья для визовых заявлений, если оно отменено после выдачи визы (например, для поездки в другую страну Шенгена), может привести к аннулированию визы. За подробной информацией часто обращаются к специализированным туристическим форумам (например, Форум Винского).
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Исторически, до 2022 года, существовало мнение, что подача на израильскую репатриацию в консульствах стран, соседствующих с Россией, может быть быстрее из-за меньших очередей.</span><span></span></summary>
+    <div class="a">После 2022 года очереди в российских консульствах, особенно в Москве, растянулись на шесть месяцев и более. В настоящее время (по состоянию на середину 202X года) ситуация нормализовалась: заявители могут заполнить онлайн-анкету, получить ссылку на самостоятельную запись в течение 2-4 дней и забронировать встречу на следующий месяц (например, на август при подаче в июле). Главное различие между консульствами сейчас заключается в основном в сроках ожидания приема, которые значительно улучшились в России.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Требования для безработных лиц или домохозяек, подающих документы на болгарскую визу из России, могут различаться.</span><span></span></summary>
+    <div class="a">Некоторые заявители, определяющие себя как домохозяйки без формального стажа работы, успешно получили визы без необходимости предоставлять трудовую книжку. С другой стороны, другие отчеты предполагают, что у заявителей без текущего места работы могут попросить предоставить электронную трудовую книжку, подтверждающую статус безработного, наряду с подтверждением владения собственностью или другими финансовыми связями. Заявители должны быть готовы к возможным запросам дополнительных документов для подтверждения финансовой стабильности и намерения вернуться.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Для бронирования слотов на швейцарскую визу в России через VFS Global: сайт часто нестабилен, слоты появляются спорадически (например, в Санкт-Петербурге, но не в Москве).</span><span></span></summary>
+    <div class="a">Частое обновление страницы может привести к блокировке на 1-3 дня. Попробуйте зайти на сайт через разных интернет-провайдеров или мобильную сеть. Звонки в визовый центр обычно неэффективны. Эффективная альтернатива — написать напрямую в консульство Швейцарии в Санкт-Петербурге. Укажите, что сайт VFS не работает, предоставьте необходимые данные для заявления (имя, город и т.д.) и запросите ближайшее доступное время приема. Консульство обязано содействовать подаче документов.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Пара подала документы на визу в Грецию в Москве (Россия) 2 июня и 29 июня получила 14-дневные однократные визы (с коридором в один месяц), как и запрашивала.</span><span></span></summary>
+    <div class="a">Они предоставили все документы согласно списку ЕГРН, доказательства достаточных финансовых средств, купленные авиабилеты и брони отелей. У первого заявителя были шенгенские визы до пандемии (все испанские) и недавние визы Японии и Кореи. У второго заявителя была недавняя немецкая шенгенская виза, просроченный вид на жительство во Франции, а также виза Японии. Их маршрут включал 14 дней в Афинах: 3 дня в центре города и остальное время в приморских апартаментах.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Сроки оформления немецких виз в России, в частности при подаче через региональные центры VisaMetric (например, в Новосибирске), могут быть значительно дольше первоначальных оценок.</span><span></span></summary>
+    <div class="a">Хотя иногда упоминаются 2 недели, фактические сроки могут растягиваться до 18-22 дней или даже до 45 рабочих дней в пиковый сезон (лето). На это влияют праздники и время, необходимое для пересылки документов из региональных центров в посольство/консульство Германии в Москве. Внутреннее рассмотрение в посольстве может занимать 5 дней, но общий процесс от подачи заявления до получения паспорта может быть гораздо дольше из-за логистики.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>При подаче на шенгенскую визу граждане России могут использовать свой действующий внутренний паспорт для процесса подачи заявления.</span><span></span></summary>
+    <div class="a">После того как виза выдана в заграничном паспорте, они могут заменить свой внутренний паспорт (например, по возрасту) и путешествовать с новым внутренним паспортом при условии, что заграничный паспорт с визой остается действующим. Критически важно, чтобы внутренний паспорт был действителен на момент подачи заявления. Если личные данные меняются после подачи, рекомендуется сохранить копию старого внутреннего паспорта для возможных проверок на границе или дополнительной верификации.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Слоты для подачи на визу в Болгарию в центрах VFS Global в России (например, в Санкт-Петербурге и Москве) пользуются высоким спросом и очень быстро исчезают.</span><span></span></summary>
+    <div class="a">Слоты могут появляться внезапно, иногда оставаясь доступными всего несколько минут (например, наблюдалось с 18:58 до 19:04). Пользователи часто полагаются на автоматизированных ботов для отслеживания доступности слотов. Распространенные проблемы включают ошибки входа (например, 403201), которые могут помешать бронированию вручную за короткое время. Слоты обычно выкладываются по понедельникам и могут быть как для одного, так и для нескольких заявителей.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>Пользователи, пытающиеся занять слоты на подачу визы путем частого обновления страницы бронирования, могут столкнуться с блокировкой аккаунта из-за «подозрительной активности».</span><span></span></summary>
+    <div class="a">Система может интерпретировать быстрый, повторяющийся доступ как поведение бота. Решение обычно включает ожидание в течение некоторого периода (например, 2–24 часа) или обращение в службу поддержки клиентов. Некоторые источники предполагают, что смена IP-адреса может помочь, но это не всегда эффективно. Аккаунты, заблокированные по этой причине, обычно разблокируются автоматически через некоторое время.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Граждане России могут на законных основаниях иметь одновременно два действующих 10-летних заграничных паспорта.</span><span></span></summary>
+    <div class="a">Это настоятельно рекомендуется для тех, кто часто путешествует, особенно при подаче на визы (например, шенгенские), так как основной паспорт находится в консульстве в течение процесса рассмотрения (который может занимать 1-3 месяца, а Италия — потенциально до 2-3 месяцев). Второй паспорт позволяет совершать беспрепятственные международные поездки в безвизовые страны, отправляться в командировки или подавать на другие визы в период ожидания.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Чтобы найти доступные слоты для подачи заявления на визу, пользователям следует почаще обновлять страницу бронирования.</span><span></span></summary>
+    <div class="a">Переключение между вариантами разных городов с последующим возвратом к нужному городу может помочь увидеть доступные слоты. Помните, что чрезмерное обновление страницы может привести к временной блокировке аккаунта из-за подозрительной активности. Ожидание в течение нескольких часов или смена IP-адреса могут решить эту проблему. Некоторые пользователи сообщают об успехе этого метода, особенно для туристических виз.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Слоты для записи на стандартную гостевую визу Великобритании в Москве крайне ограничены.</span><span></span></summary>
+    <div class="a">Хотя официальные правила требуют предварительной записи, существует распространенная практика (неофициальное правило), согласно которой близкие родственники граждан Великобритании могут быть допущены в визовый центр без записи. Сроки рассмотрения для владельцев российских паспортов обычно составляют 4-6 недель, независимо от срока действия визы. Для отслеживания доступных слотов часто используются онлайн-инструменты и «боты».
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>Для записи на подачу документов на ВНЖ в российский визовый центр в Москве: 1. Первоначальный контакт: отправьте заявление и запрос на запись (например, на 25-е число месяца) на русском языке.</span><span></span></summary>
+    <div class="a">2. Задержка ответа: будьте готовы к задержке. Если через некоторое время вы не получили предложенную дату, отправьте повторный запрос. 3. Роль визового центра: визовый центр в конечном итоге предложит доступные слоты для записи. 4. Запись: вы сможете выбрать желаемую дату приема из предложенных центром вариантов.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Для получения слота на подачу заявления на финскую визу в Москве имейте в виду, что слоты открываются ежемесячно в период с 20-го по 24-е число на следующий месяц.</span><span></span></summary>
+    <div class="a">Эти слоты разбирают очень быстро. Чрезмерная активность в системе бронирования может привести к временному бану. Альтернативным подходом в особых случаях, например, при посещении близких родственников, может быть прямое обращение в посольство Финляндии для уточнения наличия свободных мест, хотя актуальность этого метода может варьироваться.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Для российских заявителей срок рассмотрения болгарской визы категории C в настоящее время составляет в среднем 5–6 недель, в некоторых случаях увеличиваясь до 40–45 рабочих дней или дольше (до 1,5 месяцев).</span><span></span></summary>
+    <div class="a">Максимальный срок рассмотрения может составлять до 45 рабочих дней. Попытки подачи документов раньше назначенной даты приема больше не допускаются, начиная с февраля, и заявителям будет отказано. Крайне важно планировать подачу на визу заранее, учитывая возможные существенные задержки в обработке.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Сроки оформления болгарской визы типа D в посольстве в Москве могут сильно варьироваться и затягиваться, в некоторых случаях процесс занимает 50–80 и более дней.</span><span></span></summary>
+    <div class="a">Бывает, что визы выдают непосредственно перед датами поездки. Дозвониться в посольство по телефону сложно; как сообщается, метод упорных и многократных звонков в течение длительного времени (например, часа) помогает дозвониться. Решения по визам для всех членов семьи, подающих документы вместе, могут приниматься не одновременно.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Для подачи на болгарскую визу из России авиабилеты в Стамбул, Турция, обычно принимаются как подтверждение въезда.</span><span></span></summary>
+    <div class="a">Если дальнейшая поездка в Болгарию осуществляется индивидуальным трансфером (например, на машине или другом автобусе), маршрутный лист с описанием запланированного пути по Болгарии можно получить и заполнить прямо на входе в визовый центр. В таких случаях, помимо авиабилета до Стамбула и этого маршрутного листа, дополнительные подтверждающие документы обычно не требуются.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Встречи в консульстве строго ограничены по времени.</span><span></span></summary>
+    <div class="a">Не рассчитывайте, что сможете сопровождать супруга в другую дату; скорее всего, в этом откажут. Рекомендуемая стратегия: заранее свяжитесь с консульством по электронной почте, чтобы запросить совместную дату встречи, сославшись на расстояние до места поездки. Всегда следите за тем, чтобы подкатегория визы (например, «Прочее и туризм») точно соответствовала цели пребывания; несоответствия приводят к немедленному отказу.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Для записи на подачу документов на визу в визовый центр в Москве заявители испытывают значительные трудности.</span><span></span></summary>
+    <div class="a">Многие пытаются почти месяц получить слот как онлайн, так и через премиум-услуги, безрезультатно. Некоторые советуют пробовать другие города или искать помощи у агентств. Один пользователь упомянул, что агентству удалось поймать для него отмененный слот. Другой пользователь сообщил об успешной записи на прием в Москве после двух недель настойчивых попыток.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>Подача заявления на визу в США из России часто подразумевает оплату визового сбора.</span><span></span></summary>
+    <div class="a">Хотя онлайн-оплата может быть ограничена, можно договориться об оплате через контактное лицо в другой стране (например, в Молдове или Польше), которое может оплатить сбор в местном банке. Процесс заполнения формы DS-160 и назначения собеседования обычно занимает около 40 минут. Использование услуг агентов, как правило, не требуется, если нет особых сложных обстоятельств.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>Оформление российской электронной визы занимает ровно 4 дня.</span><span></span></summary>
+    <div class="a">Советы по оплате: 1. Платежи картами Mastercard часто не проходят; рекомендуется использовать Visa. 2. Если платеж заблокирован, свяжитесь с банком-эмитентом карты, чтобы разрешить транзакции за пределами ЕС. 3. Настоятельно рекомендуется оформить туристическую страховку; полисы российских банков обычно стоят около 1500 рублей на двух человек с лимитом покрытия 3 миллиона рублей.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Заявители на получение виз в Санкт-Петербурге могут подлежать требованиям о наличии местной регистрации.</span><span></span></summary>
+    <div class="a">Хотя некоторые источники указывают, что заявители должны иметь местную регистрацию, существуют неподтвержденные свидетельства успешных подач от лиц с иногородней регистрацией, особенно если адрес их работы или учебы находится в Санкт-Петербурге. В Москве заявления, как правило, принимаются от лиц с любой регистрацией.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>При записи на визовое собеседование через VFS Global распространенные ошибки, такие как «session expired» (сессия истекла), часто возникают из-за высокой нагрузки или перегрузки сервера.</span><span></span></summary>
+    <div class="a">Использование режима инкогнито, очистка кеша браузера или смена устройства или сети могут решить проблемы с доступом. Свободные окна часто появляются рано утром (около 06:00 по местному времени) из-за отмен записей другими заявителями.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Чтобы получить более раннее время для подачи на визу в центрах VFS (например, в Москве на шенгенскую визу), чем те, что предложены, пользователи часто прибегают к помощи платных «ботов».</span><span></span></summary>
+    <div class="a">Эти боты отслеживают «отмененные слоты» (время, освободившееся из-за отмены записей другими заявителями) и мгновенно бронируют их. Отмечается, что даже у таких бот-сервисов могут быть длинные очереди из-за высокого спроса.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>При консультировании заявителей из России по бронированию мест на визу, особенно в популярных направлениях: 1. Сообщайте пользователям, что наличие мест в Москве может быть крайне ограниченным, а настойчивые попытки могут привести к временной блокировке сайта.</span><span></span></summary>
+    <div class="a">2. Рекомендуйте активно проверять наличие мест в других городах России как альтернативу Москве, чтобы повысить шансы на получение записи.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Сроки обработки заявлений на шенгенскую визу категории C в Болгарию из России: заявления, поданные 22 мая в Санкт-Петербурге, привели к выдаче визы 8 июля и возврату паспорта 10 июля (всего около 49 дней с момента подачи).</span><span></span></summary>
+    <div class="a">Заявления, поданные 27 мая в VIP-зале в Москве, были готовы к получению через 43 календарных дня; были выданы однократные визы на запрошенный срок плюс 15-дневный коридор.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Услуги Prime Time и VIP в визовых центрах — это разные вещи.</span><span></span></summary>
+    <div class="a">«Prime Time» означает запись на прием в нерабочее время (например, после 16:00) в общем зале за дополнительную плату. «VIP» дает доступ в отдельную приватную комнату с собственными стойками обслуживания, предлагая более комфортные и приватные условия оформления. Ни одна из этих услуг не влияет на решение консульства.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>После успешного онлайн-бронирования для подачи заявления на болгарскую туристическую визу на адрес электронной почты, использованный при регистрации записи, обычно отправляется подтверждение (включающее 6-значный код или номер бронирования в формате XYZ10591666121).</span><span></span></summary>
+    <div class="a">Это электронное подтверждение служит вашим справочным материалом или «номером лота» для отслеживания.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Требования к копиям документов в VFS Global различаются в зависимости от города: в Москве часто принимают один комплект копий для совместно путешествующих, тогда как в Казани и Екатеринбурге могут потребоваться отдельные комплекты для каждого заявителя.</span><span></span></summary>
+    <div class="a">Всегда берите дополнительные копии, чтобы избежать высоких цен на распечатку на месте в визовом центре.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Для подачи заявлений на болгарскую визу в Москве теперь требуется подтверждение бронирования билетов.</span><span></span></summary>
+    <div class="a">Ранее это требование не применялось повсеместно во всех визовых центрах России (например, в Санкт-Петербурге). Заявителям следует быть готовыми предоставить подтверждение бронирования, которое можно даже приобрести на месте в визовом центре.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Если вы подаете на визу в Санкт-Петербурге, Россия, и хотите получить паспорт с визой в другом городе, вы можете организовать курьерскую доставку.</span><span></span></summary>
+    <div class="a">О конкретных курьерских службах и ценах следует узнавать непосредственно в визовом центре (например, VFS Global), так как эти детали могут варьироваться в зависимости от города назначения.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>Чтобы забрать паспорт супруга из визового центра (например, VFS Global) в России, получающий супруг должен предъявить свой внутренний российский паспорт, оригиналы квитанций, выданных VFS при подаче документов, и свидетельство о браке.</span><span></span></summary>
+    <div class="a">Также рекомендуется ознакомиться с конкретными условиями, изложенными в сервисном соглашении VFS.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Заявитель на французскую шенгенскую визу в Москве, подавший документы 20 мая на 10-дневный период со стандартным пакетом документов, получил визу на 28 дней.</span><span></span></summary>
+    <div class="a">Дата вылета была 19 июля. Это указывает на то, что французские консульства могут выдавать визы на более длительный срок, чем запрашивалось, даже по стандартным заявлениям.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>Поступили сообщения о том, что билеты, приобретенные через Ozon Travel, больше могут не принимать для подачи на визу в Санкт-Петербурге.</span><span></span></summary>
+    <div class="a">Заявителям, столкнувшимся с этой проблемой, следует уточнить актуальные требования в визовом центре или рассмотреть возможность покупки билетов у других поставщиков.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>При оплате визовых сборов VFS Global в Москве: 1. Сборы принимаются только в российских рублях, не в евро.</span><span></span></summary>
+    <div class="a">2. Оплата возможна наличными или банковской картой. 3. Используется курс обмена валют, как правило, по курсу Центрального банка на день оплаты или по курсу австрийского консульства.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Для граждан Великобритании не существует электронной визы (eVisa) в Россию.</span><span></span></summary>
+    <div class="a">Гражданам Великобритании требуется традиционная визовая наклейка в паспорте, которую необходимо получить через соответствующий процесс подачи заявления. Приглашение можно оформить через портал «Госуслуги».
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Финские визы можно оформить в визовом центре на улице Марата в Санкт-Петербурге, примерный срок рассмотрения составляет один месяц.</span><span></span></summary>
+    <div class="a">Однако сейчас трудно записаться на прием через официальный сайт из-за отсутствия доступных слотов.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Для подачи заявления на швейцарскую туристическую визу в Москве был зафиксирован один случай отказа, рассмотрение которого заняло ровно две недели.</span><span></span></summary>
+    <div class="a">Заявителям следует учитывать возможные задержки в сроках обработки документов.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>С 1 июня визовые сборы в России можно оплатить дебетовой или кредитной картой в российских рублях.</span><span></span></summary>
+    <div class="a">Требования платить в евро больше нет. Это относится ко всем сопутствующим расходам в процессе подачи заявления.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Кто-то отменил слот для записи на подачу заявления на визу на завтра, 10 июня, в 10:00 утра в Визовом центре в Ростове.</span><span></span></summary>
+    <div class="a">Эта информация может быть полезна тому, кому срочно нужно записаться на прием.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Услуга VIP-зала в визовом центре в Москве стоит 90 евро (оплачивается в рублях по текущему курсу).</span><span></span></summary>
+    <div class="a">Услуга включает бесплатную помощь в заполнении визовой анкеты и фотоуслуги на месте.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Был направлен запрос относительно реализации оплаты консульских сборов за туристические визы в консульстве во Владивостоке.</span><span></span></summary>
+    <div class="a">Ответ гласит, что в настоящее время это не планируется.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Заявление на визу, поданное 15 апреля в Санкт-Петербурге, Россия, привело к получению паспорта 2 июня.</span><span></span></summary>
+    <div class="a">Это указывает на время обработки приблизительно 48 дней (7 недель).
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Слоты для записи на визу доступны в Москве с 25 по 29 августа.</span><span></span></summary>
+    <div class="a">Слот на 27 июля в Санкт-Петербурге был отменен и может стать доступным. Проверяйте обновления.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Процесс получения визы цифрового кочевника в Россию в целом прост при условии, что заявитель соответствует всем указанным требованиям.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+
+  <h2>Смежные темы</h2>
+  <div class="chips">
+    <a class="chip" href="/ru/ru/s/border/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Пограничный и миграционный контроль</span></a>
+    <a class="chip" href="/ru/ru/s/docs/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Документальное сопровождение</span></a>
+    <a class="chip" href="/ru/ru/s/finance/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💰 Финансы и банковские услуги</span></a>
+    <a class="chip" href="/ru/ru/s/transport/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Транспорт и логистика</span></a>
+    <a class="chip" href="/ru/ru/s/life/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💼 Работа, учёба, сообщества и быт</span></a>
+    <a class="chip" href="/ru/ru/s/customs/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Таможенные правила</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Поиск отвечает всем подряд — а тебе?</h2>
+    <p>Спроси Luky — ответит под твой случай, по недавним отзывам, а не общим статьям.</p>
+    <p>А ещё Luky — голосовой переводчик живого разговора: и гид заговорит на твоём языке.</p>
+    <p class="ps">PS: созвониться голосом с тем самым человеком из другой страны — тоже он</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Открыть Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — живой опыт из чатов сообществ, без воды</div>
+    <nav class="f-links">
+      <a href="/ru/about/">О проекте</a>
+      <a href="/ru/ru/">Все темы</a>
+      <a href="/ru/">Страны</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Ответы собраны из открытых чатов сообществ — это живой опыт людей, а не официальная консультация. Перед важными решениями проверяйте актуальность.</p>
+    <div class="f-copy">© 2026 Luky · обновлено 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"\u0417\u0430\u044f\u0432\u0438\u0442\u0435\u043b\u044c \u0432 \u041c\u043e\u0441\u043a\u0432\u0435 (\u0420\u043e\u0441\u0441\u0438\u044f) \u043f\u043e\u0434\u0430\u043b \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u0435 \u043d\u0430 \u0433\u0440\u0435\u0447\u0435\u0441\u043a\u0443\u044e \u0432\u0438\u0437\u0443 29 \u043c\u0430\u044f."},
+{"@type":"ListItem","position":2,"name":"\u0414\u043b\u044f \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u043f\u0440\u0438\u043e\u0440\u0438\u0442\u0435\u0442\u043d\u043e\u0433\u043e \u0441\u043b\u043e\u0442\u0430 \u043d\u0430 \u043f\u043e\u0434\u0430\u0447\u0443 \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u044f \u043d\u0430 \u0432\u0438\u0437\u0443 \u0432 \u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433\u0435, \u0420\u043e\u0441\u0441\u0438\u044f, \u043c\u043e\u0436\u043d\u043e \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u043e \u043e\u0431\u0440\u0430\u0442\u0438\u0442\u044c\u0441\u044f \u043d\u0430\u043f\u0440\u044f\u043c\u0443\u044e \u0432 \u0412\u0438\u0437\u043e\u0432\u044b\u0439 \u0446\u0435\u043d\u0442\u0440 \u043f\u043e \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u043e\u0439 \u043f\u043e\u0447\u0442\u0435."},
+{"@type":"ListItem","position":3,"name":"\u0414\u043b\u044f \u0441\u0434\u0430\u0447\u0438 \u0431\u0438\u043e\u043c\u0435\u0442\u0440\u0438\u0438 \u043d\u0430 \u0430\u0432\u0441\u0442\u0440\u0430\u043b\u0438\u0439\u0441\u043a\u0443\u044e \u0432\u0438\u0437\u0443 \u0432 VFS Global (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0432 \u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0431\u0443\u0440\u0433\u0435, \u0420\u043e\u0441\u0441\u0438\u044f): \u043f\u0440\u0438\u0445\u043e\u0434\u0438\u0442\u0435 \u0437\u0430 30 \u043c\u0438\u043d\u0443\u0442 \u0434\u043e \u043d\u0430\u0437\u043d\u0430\u0447\u0435\u043d\u043d\u043e\u0433\u043e \u0432\u0440\u0435\u043c\u0435\u043d\u0438 \u0434\u043b\u044f \u0437\u0430\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u0444\u043e\u0440\u043c."},
+{"@type":"ListItem","position":4,"name":"\u0421\u0440\u043e\u043a\u0438 \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0438 \u0432\u0438\u0437\u043e\u0432\u044b\u0445 \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u0439 \u0432 \u0440\u043e\u0441\u0441\u0438\u0439\u0441\u043a\u0438\u0445 \u0432\u0438\u0437\u043e\u0432\u044b\u0445 \u0446\u0435\u043d\u0442\u0440\u0430\u0445 (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0434\u043b\u044f \u0411\u043e\u043b\u0433\u0430\u0440\u0438\u0438) \u0437\u043d\u0430\u0447\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u0440\u0430\u0437\u043b\u0438\u0447\u0430\u044e\u0442\u0441\u044f \u043c\u0435\u0436\u0434\u0443 \u0437\u0430\u043b\u0430\u043c\u0438 \u043e\u0431\u0449\u0435\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u0438 \u0437\u0430\u043b\u0430\u043c\u0438 \u043f\u0440\u0438\u043e\u0440\u0438\u0442\u0435\u0442\u043d\u043e\u0433\u043e (VIP) \u043e\u0431\u0441\u043b\u0443\u0436\u0438\u0432\u0430\u043d\u0438\u044f."},
+{"@type":"ListItem","position":5,"name":"\u0411\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u0441\u043b\u043e\u0442\u043e\u0432 \u043d\u0430 \u0448\u0435\u043d\u0433\u0435\u043d\u0441\u043a\u0443\u044e \u0432\u0438\u0437\u0443 \u0438\u0437 \u0420\u043e\u0441\u0441\u0438\u0438 (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0432 \u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433\u0435) \u2014 \u0437\u0430\u0434\u0430\u0447\u0430 \u043a\u0440\u0430\u0439\u043d\u0435 \u0441\u043b\u043e\u0436\u043d\u0430\u044f."},
+{"@type":"ListItem","position":6,"name":"\u0414\u043b\u044f \u0433\u0440\u0430\u0436\u0434\u0430\u043d \u0420\u043e\u0441\u0441\u0438\u0438, \u0441\u0442\u0440\u0435\u043c\u044f\u0449\u0438\u0445\u0441\u044f \u043f\u043e\u043b\u0443\u0447\u0438\u0442\u044c \u0448\u0435\u043d\u0433\u0435\u043d\u0441\u043a\u0443\u044e \u0432\u0438\u0437\u0443, \u043f\u043e\u0434\u0430\u0447\u0430 \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u044f \u0432\u043e \u0424\u0440\u0430\u043d\u0446\u0438\u044e \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c \u0441\u043b\u043e\u0436\u043d\u043e\u0439 \u0438\u0437-\u0437\u0430 \u0432\u044b\u0441\u043e\u043a\u043e\u0433\u043e \u0441\u043f\u0440\u043e\u0441\u0430, \u0447\u0430\u0441\u0442\u043e \u0442\u0440\u0435\u0431\u0443\u044e\u0449\u0435\u0433\u043e \u043a\u043e\u043d\u043a\u0443\u0440\u0435\u043d\u0446\u0438\u0438 \u0441 \u0431\u043e\u0442\u0430\u043c\u0438 \u0437\u0430 \u0441\u043b\u043e\u0442\u044b \u0434\u043b\u044f \u0437\u0430\u043f\u0438\u0441\u0438 (\u0438\u043d\u043e\u0433\u0434\u0430 \u0441 \u043f\u043e\u043c\u043e\u0449\u044c\u044e \u043f\u043b\u0430\u0442\u043d\u044b\u0445 \u0441\u0435\u0440\u0432\u0438\u0441\u043e\u0432)."},
+{"@type":"ListItem","position":7,"name":"\u0418\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438, \u0434\u043e 2022 \u0433\u043e\u0434\u0430, \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043e\u0432\u0430\u043b\u043e \u043c\u043d\u0435\u043d\u0438\u0435, \u0447\u0442\u043e \u043f\u043e\u0434\u0430\u0447\u0430 \u043d\u0430 \u0438\u0437\u0440\u0430\u0438\u043b\u044c\u0441\u043a\u0443\u044e \u0440\u0435\u043f\u0430\u0442\u0440\u0438\u0430\u0446\u0438\u044e \u0432 \u043a\u043e\u043d\u0441\u0443\u043b\u044c\u0441\u0442\u0432\u0430\u0445 \u0441\u0442\u0440\u0430\u043d, \u0441\u043e\u0441\u0435\u0434\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u0445 \u0441 \u0420\u043e\u0441\u0441\u0438\u0435\u0439, \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c \u0431\u044b\u0441\u0442\u0440\u0435\u0435 \u0438\u0437-\u0437\u0430 \u043c\u0435\u043d\u044c\u0448\u0438\u0445 \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439."},
+{"@type":"ListItem","position":8,"name":"\u0422\u0440\u0435\u0431\u043e\u0432\u0430\u043d\u0438\u044f \u0434\u043b\u044f \u0431\u0435\u0437\u0440\u0430\u0431\u043e\u0442\u043d\u044b\u0445 \u043b\u0438\u0446 \u0438\u043b\u0438 \u0434\u043e\u043c\u043e\u0445\u043e\u0437\u044f\u0435\u043a, \u043f\u043e\u0434\u0430\u044e\u0449\u0438\u0445 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b \u043d\u0430 \u0431\u043e\u043b\u0433\u0430\u0440\u0441\u043a\u0443\u044e \u0432\u0438\u0437\u0443 \u0438\u0437 \u0420\u043e\u0441\u0441\u0438\u0438, \u043c\u043e\u0433\u0443\u0442 \u0440\u0430\u0437\u043b\u0438\u0447\u0430\u0442\u044c\u0441\u044f."},
+{"@type":"ListItem","position":9,"name":"\u0414\u043b\u044f \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u0441\u043b\u043e\u0442\u043e\u0432 \u043d\u0430 \u0448\u0432\u0435\u0439\u0446\u0430\u0440\u0441\u043a\u0443\u044e \u0432\u0438\u0437\u0443 \u0432 \u0420\u043e\u0441\u0441\u0438\u0438 \u0447\u0435\u0440\u0435\u0437 VFS Global: \u0441\u0430\u0439\u0442 \u0447\u0430\u0441\u0442\u043e \u043d\u0435\u0441\u0442\u0430\u0431\u0438\u043b\u0435\u043d, \u0441\u043b\u043e\u0442\u044b \u043f\u043e\u044f\u0432\u043b\u044f\u044e\u0442\u0441\u044f \u0441\u043f\u043e\u0440\u0430\u0434\u0438\u0447\u0435\u0441\u043a\u0438 (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0432 \u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433\u0435, \u043d\u043e \u043d\u0435 \u0432 \u041c\u043e\u0441\u043a\u0432\u0435)."},
+{"@type":"ListItem","position":10,"name":"\u041f\u0430\u0440\u0430 \u043f\u043e\u0434\u0430\u043b\u0430 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b \u043d\u0430 \u0432\u0438\u0437\u0443 \u0432 \u0413\u0440\u0435\u0446\u0438\u044e \u0432 \u041c\u043e\u0441\u043a\u0432\u0435 (\u0420\u043e\u0441\u0441\u0438\u044f) 2 \u0438\u044e\u043d\u044f \u0438 29 \u0438\u044e\u043d\u044f \u043f\u043e\u043b\u0443\u0447\u0438\u043b\u0430 14-\u0434\u043d\u0435\u0432\u043d\u044b\u0435 \u043e\u0434\u043d\u043e\u043a\u0440\u0430\u0442\u043d\u044b\u0435 \u0432\u0438\u0437\u044b (\u0441 \u043a\u043e\u0440\u0438\u0434\u043e\u0440\u043e\u043c \u0432 \u043e\u0434\u0438\u043d \u043c\u0435\u0441\u044f\u0446), \u043a\u0430\u043a \u0438 \u0437\u0430\u043f\u0440\u0430\u0448\u0438\u0432\u0430\u043b\u0430."},
+{"@type":"ListItem","position":11,"name":"\u0421\u0440\u043e\u043a\u0438 \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u044f \u043d\u0435\u043c\u0435\u0446\u043a\u0438\u0445 \u0432\u0438\u0437 \u0432 \u0420\u043e\u0441\u0441\u0438\u0438, \u0432 \u0447\u0430\u0441\u0442\u043d\u043e\u0441\u0442\u0438 \u043f\u0440\u0438 \u043f\u043e\u0434\u0430\u0447\u0435 \u0447\u0435\u0440\u0435\u0437 \u0440\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0435 \u0446\u0435\u043d\u0442\u0440\u044b VisaMetric (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0432 \u041d\u043e\u0432\u043e\u0441\u0438\u0431\u0438\u0440\u0441\u043a\u0435), \u043c\u043e\u0433\u0443\u0442 \u0431\u044b\u0442\u044c \u0437\u043d\u0430\u0447\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u0434\u043e\u043b\u044c\u0448\u0435 \u043f\u0435\u0440\u0432\u043e\u043d\u0430\u0447\u0430\u043b\u044c\u043d\u044b\u0445 \u043e\u0446\u0435\u043d\u043e\u043a."},
+{"@type":"ListItem","position":12,"name":"\u041f\u0440\u0438 \u043f\u043e\u0434\u0430\u0447\u0435 \u043d\u0430 \u0448\u0435\u043d\u0433\u0435\u043d\u0441\u043a\u0443\u044e \u0432\u0438\u0437\u0443 \u0433\u0440\u0430\u0436\u0434\u0430\u043d\u0435 \u0420\u043e\u0441\u0441\u0438\u0438 \u043c\u043e\u0433\u0443\u0442 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c \u0441\u0432\u043e\u0439 \u0434\u0435\u0439\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u0439 \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0438\u0439 \u043f\u0430\u0441\u043f\u043e\u0440\u0442 \u0434\u043b\u044f \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0430 \u043f\u043e\u0434\u0430\u0447\u0438 \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u044f."},
+{"@type":"ListItem","position":13,"name":"\u0421\u043b\u043e\u0442\u044b \u0434\u043b\u044f \u043f\u043e\u0434\u0430\u0447\u0438 \u043d\u0430 \u0432\u0438\u0437\u0443 \u0432 \u0411\u043e\u043b\u0433\u0430\u0440\u0438\u044e \u0432 \u0446\u0435\u043d\u0442\u0440\u0430\u0445 VFS Global \u0432 \u0420\u043e\u0441\u0441\u0438\u0438 (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0432 \u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433\u0435 \u0438 \u041c\u043e\u0441\u043a\u0432\u0435) \u043f\u043e\u043b\u044c\u0437\u0443\u044e\u0442\u0441\u044f \u0432\u044b\u0441\u043e\u043a\u0438\u043c \u0441\u043f\u0440\u043e\u0441\u043e\u043c \u0438 \u043e\u0447\u0435\u043d\u044c \u0431\u044b\u0441\u0442\u0440\u043e \u0438\u0441\u0447\u0435\u0437\u0430\u044e\u0442."},
+{"@type":"ListItem","position":14,"name":"\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0438, \u043f\u044b\u0442\u0430\u044e\u0449\u0438\u0435\u0441\u044f \u0437\u0430\u043d\u044f\u0442\u044c \u0441\u043b\u043e\u0442\u044b \u043d\u0430 \u043f\u043e\u0434\u0430\u0447\u0443 \u0432\u0438\u0437\u044b \u043f\u0443\u0442\u0435\u043c \u0447\u0430\u0441\u0442\u043e\u0433\u043e \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u044f \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f, \u043c\u043e\u0433\u0443\u0442 \u0441\u0442\u043e\u043b\u043a\u043d\u0443\u0442\u044c\u0441\u044f \u0441 \u0431\u043b\u043e\u043a\u0438\u0440\u043e\u0432\u043a\u043e\u0439 \u0430\u043a\u043a\u0430\u0443\u043d\u0442\u0430 \u0438\u0437-\u0437\u0430 \u00ab\u043f\u043e\u0434\u043e\u0437\u0440\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0439 \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u0438\u00bb."},
+{"@type":"ListItem","position":15,"name":"\u0413\u0440\u0430\u0436\u0434\u0430\u043d\u0435 \u0420\u043e\u0441\u0441\u0438\u0438 \u043c\u043e\u0433\u0443\u0442 \u043d\u0430 \u0437\u0430\u043a\u043e\u043d\u043d\u044b\u0445 \u043e\u0441\u043d\u043e\u0432\u0430\u043d\u0438\u044f\u0445 \u0438\u043c\u0435\u0442\u044c \u043e\u0434\u043d\u043e\u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e \u0434\u0432\u0430 \u0434\u0435\u0439\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u0445 10-\u043b\u0435\u0442\u043d\u0438\u0445 \u0437\u0430\u0433\u0440\u0430\u043d\u0438\u0447\u043d\u044b\u0445 \u043f\u0430\u0441\u043f\u043e\u0440\u0442\u0430."},
+{"@type":"ListItem","position":16,"name":"\u0427\u0442\u043e\u0431\u044b \u043d\u0430\u0439\u0442\u0438 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b\u0435 \u0441\u043b\u043e\u0442\u044b \u0434\u043b\u044f \u043f\u043e\u0434\u0430\u0447\u0438 \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u044f \u043d\u0430 \u0432\u0438\u0437\u0443, \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f\u043c \u0441\u043b\u0435\u0434\u0443\u0435\u0442 \u043f\u043e\u0447\u0430\u0449\u0435 \u043e\u0431\u043d\u043e\u0432\u043b\u044f\u0442\u044c \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f."},
+{"@type":"ListItem","position":17,"name":"\u0421\u043b\u043e\u0442\u044b \u0434\u043b\u044f \u0437\u0430\u043f\u0438\u0441\u0438 \u043d\u0430 \u0441\u0442\u0430\u043d\u0434\u0430\u0440\u0442\u043d\u0443\u044e \u0433\u043e\u0441\u0442\u0435\u0432\u0443\u044e \u0432\u0438\u0437\u0443 \u0412\u0435\u043b\u0438\u043a\u043e\u0431\u0440\u0438\u0442\u0430\u043d\u0438\u0438 \u0432 \u041c\u043e\u0441\u043a\u0432\u0435 \u043a\u0440\u0430\u0439\u043d\u0435 \u043e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d\u044b."},
+{"@type":"ListItem","position":18,"name":"\u0414\u043b\u044f \u0437\u0430\u043f\u0438\u0441\u0438 \u043d\u0430 \u043f\u043e\u0434\u0430\u0447\u0443 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u043e\u0432 \u043d\u0430 \u0412\u041d\u0416 \u0432 \u0440\u043e\u0441\u0441\u0438\u0439\u0441\u043a\u0438\u0439 \u0432\u0438\u0437\u043e\u0432\u044b\u0439 \u0446\u0435\u043d\u0442\u0440 \u0432 \u041c\u043e\u0441\u043a\u0432\u0435: 1. \u041f\u0435\u0440\u0432\u043e\u043d\u0430\u0447\u0430\u043b\u044c\u043d\u044b\u0439 \u043a\u043e\u043d\u0442\u0430\u043a\u0442: \u043e\u0442\u043f\u0440\u0430\u0432\u044c\u0442\u0435 \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u0435 \u0438 \u0437\u0430\u043f\u0440\u043e\u0441 \u043d\u0430 \u0437\u0430\u043f\u0438\u0441\u044c (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u043d\u0430 25-\u0435 \u0447\u0438\u0441\u043b\u043e \u043c\u0435\u0441\u044f\u0446\u0430) \u043d\u0430 \u0440\u0443\u0441\u0441\u043a\u043e\u043c \u044f\u0437\u044b\u043a\u0435."},
+{"@type":"ListItem","position":19,"name":"\u0414\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0441\u043b\u043e\u0442\u0430 \u043d\u0430 \u043f\u043e\u0434\u0430\u0447\u0443 \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u044f \u043d\u0430 \u0444\u0438\u043d\u0441\u043a\u0443\u044e \u0432\u0438\u0437\u0443 \u0432 \u041c\u043e\u0441\u043a\u0432\u0435 \u0438\u043c\u0435\u0439\u0442\u0435 \u0432 \u0432\u0438\u0434\u0443, \u0447\u0442\u043e \u0441\u043b\u043e\u0442\u044b \u043e\u0442\u043a\u0440\u044b\u0432\u0430\u044e\u0442\u0441\u044f \u0435\u0436\u0435\u043c\u0435\u0441\u044f\u0447\u043d\u043e \u0432 \u043f\u0435\u0440\u0438\u043e\u0434 \u0441 20-\u0433\u043e \u043f\u043e 24-\u0435 \u0447\u0438\u0441\u043b\u043e \u043d\u0430 \u0441\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0439 \u043c\u0435\u0441\u044f\u0446."},
+{"@type":"ListItem","position":20,"name":"\u0414\u043b\u044f \u0440\u043e\u0441\u0441\u0438\u0439\u0441\u043a\u0438\u0445 \u0437\u0430\u044f\u0432\u0438\u0442\u0435\u043b\u0435\u0439 \u0441\u0440\u043e\u043a \u0440\u0430\u0441\u0441\u043c\u043e\u0442\u0440\u0435\u043d\u0438\u044f \u0431\u043e\u043b\u0433\u0430\u0440\u0441\u043a\u043e\u0439 \u0432\u0438\u0437\u044b \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438 C \u0432 \u043d\u0430\u0441\u0442\u043e\u044f\u0449\u0435\u0435 \u0432\u0440\u0435\u043c\u044f \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u0442 \u0432 \u0441\u0440\u0435\u0434\u043d\u0435\u043c 5\u20136 \u043d\u0435\u0434\u0435\u043b\u044c, \u0432 \u043d\u0435\u043a\u043e\u0442\u043e\u0440\u044b\u0445 \u0441\u043b\u0443\u0447\u0430\u044f\u0445 \u0443\u0432\u0435\u043b\u0438\u0447\u0438\u0432\u0430\u044f\u0441\u044c \u0434\u043e 40\u201345 \u0440\u0430\u0431\u043e\u0447\u0438\u0445 \u0434\u043d\u0435\u0439 \u0438\u043b\u0438 \u0434\u043e\u043b\u044c\u0448\u0435 (\u0434\u043e 1,5 \u043c\u0435\u0441\u044f\u0446\u0435\u0432)."},
+{"@type":"ListItem","position":21,"name":"\u0421\u0440\u043e\u043a\u0438 \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u044f \u0431\u043e\u043b\u0433\u0430\u0440\u0441\u043a\u043e\u0439 \u0432\u0438\u0437\u044b \u0442\u0438\u043f\u0430 D \u0432 \u043f\u043e\u0441\u043e\u043b\u044c\u0441\u0442\u0432\u0435 \u0432 \u041c\u043e\u0441\u043a\u0432\u0435 \u043c\u043e\u0433\u0443\u0442 \u0441\u0438\u043b\u044c\u043d\u043e \u0432\u0430\u0440\u044c\u0438\u0440\u043e\u0432\u0430\u0442\u044c\u0441\u044f \u0438 \u0437\u0430\u0442\u044f\u0433\u0438\u0432\u0430\u0442\u044c\u0441\u044f, \u0432 \u043d\u0435\u043a\u043e\u0442\u043e\u0440\u044b\u0445 \u0441\u043b\u0443\u0447\u0430\u044f\u0445 \u043f\u0440\u043e\u0446\u0435\u0441\u0441 \u0437\u0430\u043d\u0438\u043c\u0430\u0435\u0442 50\u201380 \u0438 \u0431\u043e\u043b\u0435\u0435 \u0434\u043d\u0435\u0439."},
+{"@type":"ListItem","position":22,"name":"\u0414\u043b\u044f \u043f\u043e\u0434\u0430\u0447\u0438 \u043d\u0430 \u0431\u043e\u043b\u0433\u0430\u0440\u0441\u043a\u0443\u044e \u0432\u0438\u0437\u0443 \u0438\u0437 \u0420\u043e\u0441\u0441\u0438\u0438 \u0430\u0432\u0438\u0430\u0431\u0438\u043b\u0435\u0442\u044b \u0432 \u0421\u0442\u0430\u043c\u0431\u0443\u043b, \u0422\u0443\u0440\u0446\u0438\u044f, \u043e\u0431\u044b\u0447\u043d\u043e \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u044e\u0442\u0441\u044f \u043a\u0430\u043a \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u0435 \u0432\u044a\u0435\u0437\u0434\u0430."},
+{"@type":"ListItem","position":23,"name":"\u0412\u0441\u0442\u0440\u0435\u0447\u0438 \u0432 \u043a\u043e\u043d\u0441\u0443\u043b\u044c\u0441\u0442\u0432\u0435 \u0441\u0442\u0440\u043e\u0433\u043e \u043e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d\u044b \u043f\u043e \u0432\u0440\u0435\u043c\u0435\u043d\u0438."},
+{"@type":"ListItem","position":24,"name":"\u0414\u043b\u044f \u0437\u0430\u043f\u0438\u0441\u0438 \u043d\u0430 \u043f\u043e\u0434\u0430\u0447\u0443 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u043e\u0432 \u043d\u0430 \u0432\u0438\u0437\u0443 \u0432 \u0432\u0438\u0437\u043e\u0432\u044b\u0439 \u0446\u0435\u043d\u0442\u0440 \u0432 \u041c\u043e\u0441\u043a\u0432\u0435 \u0437\u0430\u044f\u0432\u0438\u0442\u0435\u043b\u0438 \u0438\u0441\u043f\u044b\u0442\u044b\u0432\u0430\u044e\u0442 \u0437\u043d\u0430\u0447\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0435 \u0442\u0440\u0443\u0434\u043d\u043e\u0441\u0442\u0438."},
+{"@type":"ListItem","position":25,"name":"\u041f\u043e\u0434\u0430\u0447\u0430 \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u044f \u043d\u0430 \u0432\u0438\u0437\u0443 \u0432 \u0421\u0428\u0410 \u0438\u0437 \u0420\u043e\u0441\u0441\u0438\u0438 \u0447\u0430\u0441\u0442\u043e \u043f\u043e\u0434\u0440\u0430\u0437\u0443\u043c\u0435\u0432\u0430\u0435\u0442 \u043e\u043f\u043b\u0430\u0442\u0443 \u0432\u0438\u0437\u043e\u0432\u043e\u0433\u043e \u0441\u0431\u043e\u0440\u0430."},
+{"@type":"ListItem","position":26,"name":"\u041e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u0435 \u0440\u043e\u0441\u0441\u0438\u0439\u0441\u043a\u043e\u0439 \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u043e\u0439 \u0432\u0438\u0437\u044b \u0437\u0430\u043d\u0438\u043c\u0430\u0435\u0442 \u0440\u043e\u0432\u043d\u043e 4 \u0434\u043d\u044f."},
+{"@type":"ListItem","position":27,"name":"\u0417\u0430\u044f\u0432\u0438\u0442\u0435\u043b\u0438 \u043d\u0430 \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u0435 \u0432\u0438\u0437 \u0432 \u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433\u0435 \u043c\u043e\u0433\u0443\u0442 \u043f\u043e\u0434\u043b\u0435\u0436\u0430\u0442\u044c \u0442\u0440\u0435\u0431\u043e\u0432\u0430\u043d\u0438\u044f\u043c \u043e \u043d\u0430\u043b\u0438\u0447\u0438\u0438 \u043c\u0435\u0441\u0442\u043d\u043e\u0439 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438."},
+{"@type":"ListItem","position":28,"name":"\u041f\u0440\u0438 \u0437\u0430\u043f\u0438\u0441\u0438 \u043d\u0430 \u0432\u0438\u0437\u043e\u0432\u043e\u0435 \u0441\u043e\u0431\u0435\u0441\u0435\u0434\u043e\u0432\u0430\u043d\u0438\u0435 \u0447\u0435\u0440\u0435\u0437 VFS Global \u0440\u0430\u0441\u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0435\u043d\u043d\u044b\u0435 \u043e\u0448\u0438\u0431\u043a\u0438, \u0442\u0430\u043a\u0438\u0435 \u043a\u0430\u043a \u00absession expired\u00bb (\u0441\u0435\u0441\u0441\u0438\u044f \u0438\u0441\u0442\u0435\u043a\u043b\u0430), \u0447\u0430\u0441\u0442\u043e \u0432\u043e\u0437\u043d\u0438\u043a\u0430\u044e\u0442 \u0438\u0437-\u0437\u0430 \u0432\u044b\u0441\u043e\u043a\u043e\u0439 \u043d\u0430\u0433\u0440\u0443\u0437\u043a\u0438 \u0438\u043b\u0438 \u043f\u0435\u0440\u0435\u0433\u0440\u0443\u0437\u043a\u0438 \u0441\u0435\u0440\u0432\u0435\u0440\u0430."},
+{"@type":"ListItem","position":29,"name":"\u0427\u0442\u043e\u0431\u044b \u043f\u043e\u043b\u0443\u0447\u0438\u0442\u044c \u0431\u043e\u043b\u0435\u0435 \u0440\u0430\u043d\u043d\u0435\u0435 \u0432\u0440\u0435\u043c\u044f \u0434\u043b\u044f \u043f\u043e\u0434\u0430\u0447\u0438 \u043d\u0430 \u0432\u0438\u0437\u0443 \u0432 \u0446\u0435\u043d\u0442\u0440\u0430\u0445 VFS (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0432 \u041c\u043e\u0441\u043a\u0432\u0435 \u043d\u0430 \u0448\u0435\u043d\u0433\u0435\u043d\u0441\u043a\u0443\u044e \u0432\u0438\u0437\u0443), \u0447\u0435\u043c \u0442\u0435, \u0447\u0442\u043e \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u044b, \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0438 \u0447\u0430\u0441\u0442\u043e \u043f\u0440\u0438\u0431\u0435\u0433\u0430\u044e\u0442 \u043a \u043f\u043e\u043c\u043e\u0449\u0438 \u043f\u043b\u0430\u0442\u043d\u044b\u0445 \u00ab\u0431\u043e\u0442\u043e\u0432\u00bb."},
+{"@type":"ListItem","position":30,"name":"\u041f\u0440\u0438 \u043a\u043e\u043d\u0441\u0443\u043b\u044c\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0438 \u0437\u0430\u044f\u0432\u0438\u0442\u0435\u043b\u0435\u0439 \u0438\u0437 \u0420\u043e\u0441\u0441\u0438\u0438 \u043f\u043e \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044e \u043c\u0435\u0441\u0442 \u043d\u0430 \u0432\u0438\u0437\u0443, \u043e\u0441\u043e\u0431\u0435\u043d\u043d\u043e \u0432 \u043f\u043e\u043f\u0443\u043b\u044f\u0440\u043d\u044b\u0445 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f\u0445: 1. \u0421\u043e\u043e\u0431\u0449\u0430\u0439\u0442\u0435 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f\u043c, \u0447\u0442\u043e \u043d\u0430\u043b\u0438\u0447\u0438\u0435 \u043c\u0435\u0441\u0442 \u0432 \u041c\u043e\u0441\u043a\u0432\u0435 \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c \u043a\u0440\u0430\u0439\u043d\u0435 \u043e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d\u043d\u044b\u043c, \u0430 \u043d\u0430\u0441\u0442\u043e\u0439\u0447\u0438\u0432\u044b\u0435 \u043f\u043e\u043f\u044b\u0442\u043a\u0438 \u043c\u043e\u0433\u0443\u0442 \u043f\u0440\u0438\u0432\u0435\u0441\u0442\u0438 \u043a \u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e\u0439 \u0431\u043b\u043e\u043a\u0438\u0440\u043e\u0432\u043a\u0435 \u0441\u0430\u0439\u0442\u0430."},
+{"@type":"ListItem","position":31,"name":"\u0421\u0440\u043e\u043a\u0438 \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0438 \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u0439 \u043d\u0430 \u0448\u0435\u043d\u0433\u0435\u043d\u0441\u043a\u0443\u044e \u0432\u0438\u0437\u0443 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438 C \u0432 \u0411\u043e\u043b\u0433\u0430\u0440\u0438\u044e \u0438\u0437 \u0420\u043e\u0441\u0441\u0438\u0438: \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u044f, \u043f\u043e\u0434\u0430\u043d\u043d\u044b\u0435 22 \u043c\u0430\u044f \u0432 \u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433\u0435, \u043f\u0440\u0438\u0432\u0435\u043b\u0438 \u043a \u0432\u044b\u0434\u0430\u0447\u0435 \u0432\u0438\u0437\u044b 8 \u0438\u044e\u043b\u044f \u0438 \u0432\u043e\u0437\u0432\u0440\u0430\u0442\u0443 \u043f\u0430\u0441\u043f\u043e\u0440\u0442\u0430 10 \u0438\u044e\u043b\u044f (\u0432\u0441\u0435\u0433\u043e \u043e\u043a\u043e\u043b\u043e 49 \u0434\u043d\u0435\u0439 \u0441 \u043c\u043e\u043c\u0435\u043d\u0442\u0430 \u043f\u043e\u0434\u0430\u0447\u0438)."},
+{"@type":"ListItem","position":32,"name":"\u0423\u0441\u043b\u0443\u0433\u0438 Prime Time \u0438 VIP \u0432 \u0432\u0438\u0437\u043e\u0432\u044b\u0445 \u0446\u0435\u043d\u0442\u0440\u0430\u0445 \u2014 \u044d\u0442\u043e \u0440\u0430\u0437\u043d\u044b\u0435 \u0432\u0435\u0449\u0438."},
+{"@type":"ListItem","position":33,"name":"\u041f\u043e\u0441\u043b\u0435 \u0443\u0441\u043f\u0435\u0448\u043d\u043e\u0433\u043e \u043e\u043d\u043b\u0430\u0439\u043d-\u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u0434\u043b\u044f \u043f\u043e\u0434\u0430\u0447\u0438 \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u044f \u043d\u0430 \u0431\u043e\u043b\u0433\u0430\u0440\u0441\u043a\u0443\u044e \u0442\u0443\u0440\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0443\u044e \u0432\u0438\u0437\u0443 \u043d\u0430 \u0430\u0434\u0440\u0435\u0441 \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u043e\u0439 \u043f\u043e\u0447\u0442\u044b, \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u043d\u044b\u0439 \u043f\u0440\u0438 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u0437\u0430\u043f\u0438\u0441\u0438, \u043e\u0431\u044b\u0447\u043d\u043e \u043e\u0442\u043f\u0440\u0430\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u0435 (\u0432\u043a\u043b\u044e\u0447\u0430\u044e\u0449\u0435\u0435 6-\u0437\u043d\u0430\u0447\u043d\u044b\u0439 \u043a\u043e\u0434 \u0438\u043b\u0438 \u043d\u043e\u043c\u0435\u0440 \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u0432 \u0444\u043e\u0440\u043c\u0430\u0442\u0435 XYZ10591666121)."},
+{"@type":"ListItem","position":34,"name":"\u0422\u0440\u0435\u0431\u043e\u0432\u0430\u043d\u0438\u044f \u043a \u043a\u043e\u043f\u0438\u044f\u043c \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u043e\u0432 \u0432 VFS Global \u0440\u0430\u0437\u043b\u0438\u0447\u0430\u044e\u0442\u0441\u044f \u0432 \u0437\u0430\u0432\u0438\u0441\u0438\u043c\u043e\u0441\u0442\u0438 \u043e\u0442 \u0433\u043e\u0440\u043e\u0434\u0430: \u0432 \u041c\u043e\u0441\u043a\u0432\u0435 \u0447\u0430\u0441\u0442\u043e \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u044e\u0442 \u043e\u0434\u0438\u043d \u043a\u043e\u043c\u043f\u043b\u0435\u043a\u0442 \u043a\u043e\u043f\u0438\u0439 \u0434\u043b\u044f \u0441\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u043e \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u0445, \u0442\u043e\u0433\u0434\u0430 \u043a\u0430\u043a \u0432 \u041a\u0430\u0437\u0430\u043d\u0438 \u0438 \u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0431\u0443\u0440\u0433\u0435 \u043c\u043e\u0433\u0443\u0442 \u043f\u043e\u0442\u0440\u0435\u0431\u043e\u0432\u0430\u0442\u044c\u0441\u044f \u043e\u0442\u0434\u0435\u043b\u044c\u043d\u044b\u0435 \u043a\u043e\u043c\u043f\u043b\u0435\u043a\u0442\u044b \u0434\u043b\u044f \u043a\u0430\u0436\u0434\u043e\u0433\u043e \u0437\u0430\u044f\u0432\u0438\u0442\u0435\u043b\u044f."},
+{"@type":"ListItem","position":35,"name":"\u0414\u043b\u044f \u043f\u043e\u0434\u0430\u0447\u0438 \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u0439 \u043d\u0430 \u0431\u043e\u043b\u0433\u0430\u0440\u0441\u043a\u0443\u044e \u0432\u0438\u0437\u0443 \u0432 \u041c\u043e\u0441\u043a\u0432\u0435 \u0442\u0435\u043f\u0435\u0440\u044c \u0442\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u0435 \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u0431\u0438\u043b\u0435\u0442\u043e\u0432."},
+{"@type":"ListItem","position":36,"name":"\u0415\u0441\u043b\u0438 \u0432\u044b \u043f\u043e\u0434\u0430\u0435\u0442\u0435 \u043d\u0430 \u0432\u0438\u0437\u0443 \u0432 \u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433\u0435, \u0420\u043e\u0441\u0441\u0438\u044f, \u0438 \u0445\u043e\u0442\u0438\u0442\u0435 \u043f\u043e\u043b\u0443\u0447\u0438\u0442\u044c \u043f\u0430\u0441\u043f\u043e\u0440\u0442 \u0441 \u0432\u0438\u0437\u043e\u0439 \u0432 \u0434\u0440\u0443\u0433\u043e\u043c \u0433\u043e\u0440\u043e\u0434\u0435, \u0432\u044b \u043c\u043e\u0436\u0435\u0442\u0435 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u043e\u0432\u0430\u0442\u044c \u043a\u0443\u0440\u044c\u0435\u0440\u0441\u043a\u0443\u044e \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0443."},
+{"@type":"ListItem","position":37,"name":"\u0427\u0442\u043e\u0431\u044b \u0437\u0430\u0431\u0440\u0430\u0442\u044c \u043f\u0430\u0441\u043f\u043e\u0440\u0442 \u0441\u0443\u043f\u0440\u0443\u0433\u0430 \u0438\u0437 \u0432\u0438\u0437\u043e\u0432\u043e\u0433\u043e \u0446\u0435\u043d\u0442\u0440\u0430 (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, VFS Global) \u0432 \u0420\u043e\u0441\u0441\u0438\u0438, \u043f\u043e\u043b\u0443\u0447\u0430\u044e\u0449\u0438\u0439 \u0441\u0443\u043f\u0440\u0443\u0433 \u0434\u043e\u043b\u0436\u0435\u043d \u043f\u0440\u0435\u0434\u044a\u044f\u0432\u0438\u0442\u044c \u0441\u0432\u043e\u0439 \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0438\u0439 \u0440\u043e\u0441\u0441\u0438\u0439\u0441\u043a\u0438\u0439 \u043f\u0430\u0441\u043f\u043e\u0440\u0442, \u043e\u0440\u0438\u0433\u0438\u043d\u0430\u043b\u044b \u043a\u0432\u0438\u0442\u0430\u043d\u0446\u0438\u0439, \u0432\u044b\u0434\u0430\u043d\u043d\u044b\u0445 VFS \u043f\u0440\u0438 \u043f\u043e\u0434\u0430\u0447\u0435 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u043e\u0432, \u0438 \u0441\u0432\u0438\u0434\u0435\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u043e \u043e \u0431\u0440\u0430\u043a\u0435."},
+{"@type":"ListItem","position":38,"name":"\u0417\u0430\u044f\u0432\u0438\u0442\u0435\u043b\u044c \u043d\u0430 \u0444\u0440\u0430\u043d\u0446\u0443\u0437\u0441\u043a\u0443\u044e \u0448\u0435\u043d\u0433\u0435\u043d\u0441\u043a\u0443\u044e \u0432\u0438\u0437\u0443 \u0432 \u041c\u043e\u0441\u043a\u0432\u0435, \u043f\u043e\u0434\u0430\u0432\u0448\u0438\u0439 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b 20 \u043c\u0430\u044f \u043d\u0430 10-\u0434\u043d\u0435\u0432\u043d\u044b\u0439 \u043f\u0435\u0440\u0438\u043e\u0434 \u0441\u043e \u0441\u0442\u0430\u043d\u0434\u0430\u0440\u0442\u043d\u044b\u043c \u043f\u0430\u043a\u0435\u0442\u043e\u043c \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u043e\u0432, \u043f\u043e\u043b\u0443\u0447\u0438\u043b \u0432\u0438\u0437\u0443 \u043d\u0430 28 \u0434\u043d\u0435\u0439."},
+{"@type":"ListItem","position":39,"name":"\u041f\u043e\u0441\u0442\u0443\u043f\u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u044f \u043e \u0442\u043e\u043c, \u0447\u0442\u043e \u0431\u0438\u043b\u0435\u0442\u044b, \u043f\u0440\u0438\u043e\u0431\u0440\u0435\u0442\u0435\u043d\u043d\u044b\u0435 \u0447\u0435\u0440\u0435\u0437 Ozon Travel, \u0431\u043e\u043b\u044c\u0448\u0435 \u043c\u043e\u0433\u0443\u0442 \u043d\u0435 \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0434\u0430\u0447\u0438 \u043d\u0430 \u0432\u0438\u0437\u0443 \u0432 \u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433\u0435."},
+{"@type":"ListItem","position":40,"name":"\u041f\u0440\u0438 \u043e\u043f\u043b\u0430\u0442\u0435 \u0432\u0438\u0437\u043e\u0432\u044b\u0445 \u0441\u0431\u043e\u0440\u043e\u0432 VFS Global \u0432 \u041c\u043e\u0441\u043a\u0432\u0435: 1. \u0421\u0431\u043e\u0440\u044b \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u044e\u0442\u0441\u044f \u0442\u043e\u043b\u044c\u043a\u043e \u0432 \u0440\u043e\u0441\u0441\u0438\u0439\u0441\u043a\u0438\u0445 \u0440\u0443\u0431\u043b\u044f\u0445, \u043d\u0435 \u0432 \u0435\u0432\u0440\u043e."},
+{"@type":"ListItem","position":41,"name":"\u0414\u043b\u044f \u0433\u0440\u0430\u0436\u0434\u0430\u043d \u0412\u0435\u043b\u0438\u043a\u043e\u0431\u0440\u0438\u0442\u0430\u043d\u0438\u0438 \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442 \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u043e\u0439 \u0432\u0438\u0437\u044b (eVisa) \u0432 \u0420\u043e\u0441\u0441\u0438\u044e."},
+{"@type":"ListItem","position":42,"name":"\u0424\u0438\u043d\u0441\u043a\u0438\u0435 \u0432\u0438\u0437\u044b \u043c\u043e\u0436\u043d\u043e \u043e\u0444\u043e\u0440\u043c\u0438\u0442\u044c \u0432 \u0432\u0438\u0437\u043e\u0432\u043e\u043c \u0446\u0435\u043d\u0442\u0440\u0435 \u043d\u0430 \u0443\u043b\u0438\u0446\u0435 \u041c\u0430\u0440\u0430\u0442\u0430 \u0432 \u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433\u0435, \u043f\u0440\u0438\u043c\u0435\u0440\u043d\u044b\u0439 \u0441\u0440\u043e\u043a \u0440\u0430\u0441\u0441\u043c\u043e\u0442\u0440\u0435\u043d\u0438\u044f \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u0442 \u043e\u0434\u0438\u043d \u043c\u0435\u0441\u044f\u0446."},
+{"@type":"ListItem","position":43,"name":"\u0414\u043b\u044f \u043f\u043e\u0434\u0430\u0447\u0438 \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u044f \u043d\u0430 \u0448\u0432\u0435\u0439\u0446\u0430\u0440\u0441\u043a\u0443\u044e \u0442\u0443\u0440\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0443\u044e \u0432\u0438\u0437\u0443 \u0432 \u041c\u043e\u0441\u043a\u0432\u0435 \u0431\u044b\u043b \u0437\u0430\u0444\u0438\u043a\u0441\u0438\u0440\u043e\u0432\u0430\u043d \u043e\u0434\u0438\u043d \u0441\u043b\u0443\u0447\u0430\u0439 \u043e\u0442\u043a\u0430\u0437\u0430, \u0440\u0430\u0441\u0441\u043c\u043e\u0442\u0440\u0435\u043d\u0438\u0435 \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u0437\u0430\u043d\u044f\u043b\u043e \u0440\u043e\u0432\u043d\u043e \u0434\u0432\u0435 \u043d\u0435\u0434\u0435\u043b\u0438."},
+{"@type":"ListItem","position":44,"name":"\u0421 1 \u0438\u044e\u043d\u044f \u0432\u0438\u0437\u043e\u0432\u044b\u0435 \u0441\u0431\u043e\u0440\u044b \u0432 \u0420\u043e\u0441\u0441\u0438\u0438 \u043c\u043e\u0436\u043d\u043e \u043e\u043f\u043b\u0430\u0442\u0438\u0442\u044c \u0434\u0435\u0431\u0435\u0442\u043e\u0432\u043e\u0439 \u0438\u043b\u0438 \u043a\u0440\u0435\u0434\u0438\u0442\u043d\u043e\u0439 \u043a\u0430\u0440\u0442\u043e\u0439 \u0432 \u0440\u043e\u0441\u0441\u0438\u0439\u0441\u043a\u0438\u0445 \u0440\u0443\u0431\u043b\u044f\u0445."},
+{"@type":"ListItem","position":45,"name":"\u041a\u0442\u043e-\u0442\u043e \u043e\u0442\u043c\u0435\u043d\u0438\u043b \u0441\u043b\u043e\u0442 \u0434\u043b\u044f \u0437\u0430\u043f\u0438\u0441\u0438 \u043d\u0430 \u043f\u043e\u0434\u0430\u0447\u0443 \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u044f \u043d\u0430 \u0432\u0438\u0437\u0443 \u043d\u0430 \u0437\u0430\u0432\u0442\u0440\u0430, 10 \u0438\u044e\u043d\u044f, \u0432 10:00 \u0443\u0442\u0440\u0430 \u0432 \u0412\u0438\u0437\u043e\u0432\u043e\u043c \u0446\u0435\u043d\u0442\u0440\u0435 \u0432 \u0420\u043e\u0441\u0442\u043e\u0432\u0435."},
+{"@type":"ListItem","position":46,"name":"\u0423\u0441\u043b\u0443\u0433\u0430 VIP-\u0437\u0430\u043b\u0430 \u0432 \u0432\u0438\u0437\u043e\u0432\u043e\u043c \u0446\u0435\u043d\u0442\u0440\u0435 \u0432 \u041c\u043e\u0441\u043a\u0432\u0435 \u0441\u0442\u043e\u0438\u0442 90 \u0435\u0432\u0440\u043e (\u043e\u043f\u043b\u0430\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044f \u0432 \u0440\u0443\u0431\u043b\u044f\u0445 \u043f\u043e \u0442\u0435\u043a\u0443\u0449\u0435\u043c\u0443 \u043a\u0443\u0440\u0441\u0443)."},
+{"@type":"ListItem","position":47,"name":"\u0411\u044b\u043b \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d \u0437\u0430\u043f\u0440\u043e\u0441 \u043e\u0442\u043d\u043e\u0441\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u0440\u0435\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u0438 \u043e\u043f\u043b\u0430\u0442\u044b \u043a\u043e\u043d\u0441\u0443\u043b\u044c\u0441\u043a\u0438\u0445 \u0441\u0431\u043e\u0440\u043e\u0432 \u0437\u0430 \u0442\u0443\u0440\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0432\u0438\u0437\u044b \u0432 \u043a\u043e\u043d\u0441\u0443\u043b\u044c\u0441\u0442\u0432\u0435 \u0432\u043e \u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a\u0435."},
+{"@type":"ListItem","position":48,"name":"\u0417\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u0435 \u043d\u0430 \u0432\u0438\u0437\u0443, \u043f\u043e\u0434\u0430\u043d\u043d\u043e\u0435 15 \u0430\u043f\u0440\u0435\u043b\u044f \u0432 \u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433\u0435, \u0420\u043e\u0441\u0441\u0438\u044f, \u043f\u0440\u0438\u0432\u0435\u043b\u043e \u043a \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044e \u043f\u0430\u0441\u043f\u043e\u0440\u0442\u0430 2 \u0438\u044e\u043d\u044f."},
+{"@type":"ListItem","position":49,"name":"\u0421\u043b\u043e\u0442\u044b \u0434\u043b\u044f \u0437\u0430\u043f\u0438\u0441\u0438 \u043d\u0430 \u0432\u0438\u0437\u0443 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b \u0432 \u041c\u043e\u0441\u043a\u0432\u0435 \u0441 25 \u043f\u043e 29 \u0430\u0432\u0433\u0443\u0441\u0442\u0430."},
+{"@type":"ListItem","position":50,"name":"\u041f\u0440\u043e\u0446\u0435\u0441\u0441 \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0432\u0438\u0437\u044b \u0446\u0438\u0444\u0440\u043e\u0432\u043e\u0433\u043e \u043a\u043e\u0447\u0435\u0432\u043d\u0438\u043a\u0430 \u0432 \u0420\u043e\u0441\u0441\u0438\u044e \u0432 \u0446\u0435\u043b\u043e\u043c \u043f\u0440\u043e\u0441\u0442 \u043f\u0440\u0438 \u0443\u0441\u043b\u043e\u0432\u0438\u0438, \u0447\u0442\u043e \u0437\u0430\u044f\u0432\u0438\u0442\u0435\u043b\u044c \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u0435\u0442 \u0432\u0441\u0435\u043c \u0443\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u043c \u0442\u0440\u0435\u0431\u043e\u0432\u0430\u043d\u0438\u044f\u043c."}
+]}
+</script>
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 \u041d\u043e\u0447\u044c", DAY="\u2600 \u0414\u0435\u043d\u044c";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>
