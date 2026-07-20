@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Бразилия: такси, приложения и аренда авто — живой опыт из чатов · Luky</title>
+<meta name="description" content="Живой опыт по теме «такси, приложения и аренда авто» в Бразилии: реальные советы, случаи и правила из чатов. Под твой случай — у Luky.">
+<link rel="canonical" href="https://info.multyspeak.ru/ru/br/s/transport/taksi-prilozheniya-i-arenda-avto/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.ru/ru/br/s/transport/taksi-prilozheniya-i-arenda-avto/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.ru/en/br/s/transport/taksi-prilozheniya-i-arenda-avto/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.ru/es/br/s/transport/taksi-prilozheniya-i-arenda-avto/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.ru/pt/br/s/transport/taksi-prilozheniya-i-arenda-avto/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.ru/ru/br/s/transport/taksi-prilozheniya-i-arenda-avto/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+/* тег типа абзаца (хвост-антологии: lifehack/reglament/howto/risk/case/service) */
+.tag{display:inline-block;font-family:var(--font-mono);font-weight:400;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);
+  border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:2px;white-space:nowrap}
+.tag.risk{color:var(--red);border-color:var(--red)}
+.tag.reglament{color:var(--accent);border-color:var(--accent)}
+.tag.lifehack{color:var(--green);border-color:var(--green)}
+.tag.service{color:var(--yellow);border-color:var(--yellow)}
+.tag.howto{color:var(--hud);border-color:var(--hud)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">инфопортал · в любой стране · без воды</span>
+    </div>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="on" href="/ru/br/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/en/br/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/br/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/pt/br/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Ночь</span></button>
+    </div>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/ru/">Главная</a> /
+    <a href="/ru/br/">Бразилия</a> /
+    <b>Такси, приложения и аренда авто</b>
+  </nav>
+
+
+  
+  <h1>Такси, приложения и аренда авто: как это в Бразилии — из первых рук</h1>
+
+  <h2>Из живого опыта</h2>
+  <details open><summary><span class="sumq"><span class="tag howto">инструкция</span>Использование приложений для совместных поездок, таких как Uber и 99 в Бразилии, без CPF может быть сложной задачей, но это возможно: Uber: Установка за пределами Бразилии: Установите и зарегистрируйте Uber в другой стране (например, в Турции) с использованием небразильского номера телефона и иностранной банковской карты.</span><span></span></summary>
+    <div class="a">Эта настройка может позволить использовать приложение в Бразилии без необходимости наличия CPF. Изменения политики: Помните, что правила Uber могут меняться, и предыдущие обходные пути могут перестать работать. Некоторые пользователи сообщают о проблемах даже с давно созданными аккаунтами. Оплата: Иностранные банковские карты (например, грузинские) обычно работают, если они привязаны к аккаунту, созданному за границей. Российские карты не работают. 99 (местное бразильское приложение): Некоторые пользователи сообщают об успешной регистрации и использовании без CPF, так как приложение может позволить пропустить ввод CPF при настройке. Альтернативы: Официальные такси в аэропортах: Доступны в аэропортах (например, Guarucoop в GRU) с фиксированными тарифами по районам; более дорогие, но надежные и безопасные. Местные такси: Можно поймать на улице, но это может быть более рискованно, особенно ночью или в незнакомых местах. Генераторы CPF: Существуют, но их использование для официальных регистраций несет в себе риски.
+    <div class="src">✓ 4 сообщения из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>В Бразилии некоторые водители Uber могут ложно сообщать о неоплате после поездок за наличные, из-за чего в приложении пользователя появляется «долг», который можно погасить только электронным платежом.</span><span></span></summary>
+    <div class="a">Чтобы этого избежать: пользователям следует либо настойчиво обращаться в службу поддержки Uber для оспаривания списаний, либо перейти на оплату картой, либо использовать проверочный код при начале поездки, если он доступен, чтобы обеспечить корректное завершение транзакции.
+    <div class="src">✓ 3 сообщения из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>Российские банковские карты (например, МИР) в основном не принимаются для оплаты Uber в Бразилии.</span><span></span></summary>
+    <div class="a">Хотя Uber — это глобальный сервис, он требует местные способы оплаты или карты из поддерживаемых стран. Попытка оплаты наличными все равно может потребовать привязки карты или регистрации CPF в приложении на начальном этапе. Альтернативные приложения для поездок, такие как «99» (которое также принимает оплату наличными, хотя может потребовать карту для первичной настройки), или организация транспорта через отели являются рабочими вариантами. Некоторые пользователи предлагают пробовать карты из других стран (например, Казахстана). Возможно, удастся выбрать оплату наличными после первичной регистрации в Uber, даже если карта изначально требуется.
+    <div class="src">✓ 2 сообщения из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>В Бразилии широко используется Uber, но также доступны альтернативы, такие как 99, которые зачастую дешевле.</span><span></span></summary>
+    <div class="a">При регистрации в Uber с российскими номерами телефонов могут возникать проблемы; попробуйте использовать VPN во время настройки или создать новый аккаунт. Оплату можно производить картой (включая европейские и российские карты) или наличными. Если Uber вызывает трудности, рассмотрите 99 или inDrive. Общественный транспорт работает допоздна, но для ночных поездок рекомендуется такси. Убедитесь, что у вас привязан действительный способ оплаты, будь то карта или наличные, так как в некоторых сценариях это может потребоваться.
+    <div class="src">✓ 2 сообщения из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Использование мототакси в Бразилии предлагает более быстрый вариант передвижения по сравнению с автомобилями, особенно в условиях дорожного движения.</span><span></span></summary>
+    <div class="a">К основным советам по безопасности относятся: хранение всех ценных вещей в рюкзаке, извлечение предметов из карманов (очков, телефонов) и ношение шлема (при желании можно взять свою балаклаву). Длинные волосы следует собрать или прикрыть. Несмотря на скорость, водители мототакси придерживаются быстрого темпа езды.
+    <div class="src">✓ 2 сообщения из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Стоимость такси из аэропорта Гуарульюс (GRU) в Сан-Паулу до центра города может значительно варьироваться.</span><span></span></summary>
+    <div class="a">Поездка на такси по счетчику из Паулисты стоит 269 реалов. Uber Comfort из аэропорта до Вила-Нова-Консейсан стоил 120 реалов, цена на UberX оценивалась в 95 реалов (но он был недоступен). Служба такси Guarocoop предлагает фиксированные тарифы, например, 200 реалов до Вила-Нова-Консейсан.
+    <div class="src">✓ 2 сообщения из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Ключевые практические советы для путешествий по Бразилии включают: 1. Транспорт: Для приложения 99 требуется CPF (бразильский идентификатор налогоплательщика); Uber работает без него.</span><span></span></summary>
+    <div class="a">Оплату в Uber можно производить наличными, но учитывайте возможность корректировки тарифа или наличия неоплаченных счетов. В аэропорту Рио посадка на 99 происходит на 2-м этаже, а Uber находится в нескольких минутах ходьбы от выхода. 2. SIM-карты: SIM-карты можно купить без CPF в торговом центре RioSul (около 70 BRL), обычно в газетных киосках. 3. Обмен валюты: Курсы обмена в аэропорту невыгодные (приблизительно 3.6 BRL/USD); снятие наличных в банкоматах предлагает лучшие курсы (приблизительно 4.2 BRL/USD с учетом комиссий). 4. Безопасность: Такие районы, как Копакабана, Ипанема и центр Рио, в целом считаются безопасными, даже вечером, при условии соблюдения базовой бдительности и своевременного убирания телефонов после использования. 5. Экскурсии: Рекомендуется нанимать гида для таких мероприятий, как туры по фавелам или вертолетные прогулки. 6. Еда: Попробуйте экзотические фрукты на Муниципальном рынке Сан-Паулу. 7. Водопады Игуасу: Посетите парк птиц; одного дня достаточно для аргентинской стороны, но обратите внимание на расписание последнего поезда к «Глотке дьявола».
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Обмен опытом путешествий и логистические советы по передвижению по Бразилии, особенно в отношении авиарейсов и местного транспорта.</span><span></span></summary>
+    <div class="a">Пользователи обсуждают потенциальные проблемы с рейсами Ethiopian Airlines, включая незапланированные дозаправки и задержки. В Сан-Паулу отмечаются сложности с сервисами заказа поездок, такими как Uber, при путешествии группами: водители иногда отказывают большим группам или требуют оформления нескольких заказов. Предлагаются альтернативы, такие как поезда или отдельные поездки на Uber. Также затрагивается информация об использовании местной валюты в сравнении с долларами для оплаты транспорта.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>В Бразилии водители приложений для заказа поездок (например, 99 app) могут ложно заявлять о неоплате, если пассажиры платят наличными или через Pix.</span><span></span></summary>
+    <div class="a">Чтобы снизить риск мошенничества: 1. Отдавайте предпочтение оплате картой в приложении. 2. При использовании Pix сохраняйте скриншот подтверждения платежа. 3. Если мошенничество произошло, немедленно свяжитесь со службой поддержки приложения; некоторые пользователи сообщают об успешном получении возврата средств или кредитов. 4. Всегда ставьте низкие оценки нечестным водителям. 5. Помните о потенциальной нечестности, особенно при взаимодействии с иностранными пассажирами.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>Чтобы заказать такси в Бразилии без CPF (налогового номера): 1) Используйте уже существующий старый аккаунт Uber, зарегистрированный на иностранный номер телефона, так как только новые аккаунты в Бразилии требуют обязательной проверки CPF.</span><span></span></summary>
+    <div class="a">2) Установите способ оплаты наличными или иностранной кредитной картой. 3) Альтернативно используйте приложения для совместных поездок, такие как InDrive или 99 Taxi, которые менее строги в отношении CPF. 4) В небольших муниципалитетах в таких штатах, как Параиба, Пернамбуку или Парана, можно использовать приложение такси «Maxim» без требований CPF при оплате наличными.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Варианты транспорта в Рио-де-Жанейро включают такси (Uber), междугородние автобусы, общественные автобусы и метро.</span><span></span></summary>
+    <div class="a">Такси/Uber удобны, но стоят дороже. Междугородние автобусы в целом считаются безопасными и подходящими для поездок с багажом. Общественные автобусы и метро пригодны для использования, хотя в метро бывает многолюдно. После мероприятий на стадионе «Маракана» рекомендуется пользоваться метро из соображений эффективности. Uber предлагает опцию «Pet» для поездок с животными, требующую предварительного бронирования или прямой договоренности с водителем.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>При поездках между городами в Бразилии (например, из Сан-Паулу в Сантос) с тяжелым багажом (3+ чемодана, коляска, автокресло) и несколькими пассажирами, заказ Uber Comfort является приемлемым вариантом.</span><span></span></summary>
+    <div class="a">Хотя приложение может назначить компактный или средний седан (например, Volkswagen), водители очень отзывчивы и умеют размещать большое количество багажа в багажнике и салоне. Для гарантированного спокойствия рекомендуется связаться с частными трансферами или бронировать автомобили более высокого класса, но на практике часто хватает стандартного Uber Comfort.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Для безопасных поездок на такси из аэропорта Сан-Паулу GRU (особенно ночью) до отелей рекомендуется использовать приложения для совместных поездок, такие как Uber или 99, либо официальные такси аэропорта.</span><span></span></summary>
+    <div class="a">Избегайте непроверенных местных такси. Uber в целом считается безопасным, пользователи сообщают о множестве поездок без происшествий. Приложение 99 также надежно и часто дешевле, чем Uber. Рассмотрите возможность подписки на Uber One для доступа к опытным водителям и кешбэка за поездки (приблизительно 400 рублей в месяц или потенциально бесплатно).
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Такси и сервисы совместных поездок, такие как Uber, в Бразилии в целом воспринимаются как доступные: короткие поездки стоят около 20 бразильских реалов, а скидки иногда значительно снижают эту стоимость.</span><span></span></summary>
+    <div class="a">Несмотря на более высокие расходы на топливо по сравнению с Россией, общие цены считаются низкими. Тем не менее, прибыльность для водителей ставится под сомнение, и сообщалось об отдельных проблемах, таких как незавершенные поездки, хотя обычно они решаются через возврат средств. Иногда упоминаются очереди в аэропортах.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>В аэропорту GRU (Сан-Паулу) Uber значительно дешевле, чем официальные такси аэропорта (Guarucoop).</span><span></span></summary>
+    <div class="a">Путешественникам без работающей международной кредитной карты рекомендуется использовать виртуальную банковскую карту или местные способы цифровой оплаты. Если платить наличными в Uber, сдача часто зачисляется как баланс в приложении для будущих поездок. Пункты обмена валюты в аэропорту ночью в Бразилии могут быть закрыты или ненадежны, поэтому критически важно настроить способ цифровой оплаты до прибытия.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Такси-приложения (99, Uber, InDrive) нельзя зарегистрировать или открыть, находясь за пределами Бразилии.</span><span></span></summary>
+    <div class="a">Пользователи с иностранными номерами (например, российскими) могут зарегистрироваться в приложении «99» по прибытии в Бразилию, используя Wi-Fi в аэропорту. Хотя Uber доступен, некоторые сообщения указывают, что для него может потребоваться местный бразильский номер телефона. Советуем путешественникам пользоваться официальными службами такси в аэропорту или приложениями уже после прибытия.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Сан-Паулу — не прибрежный город; ближайшие пляжи (например, Сантус, Гуаружа) находятся в 2+ часах езды по дороге, на которую сильно влияет трафик.</span><span></span></summary>
+    <div class="a">Общественные автобусы и такси обычное дело, но непредсказуемы из-за серьезных пробок. В сервисах райдшеринга (Uber/99) ожидайте возможные отмены поездок водителями для дальних поездок на пляж. Официальные стоянки такси в аэропорту предлагают варианты с фиксированной ценой, часто более безопасные, но более дорогие, чем приложения для райдшеринга.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Чтобы добраться на такси из аэропорта GRU до центра Сан-Паулу, используйте приложения для заказа поездок, такие как Uber (скачайте заранее, чтобы избежать проблем с капчей).</span><span></span></summary>
+    <div class="a">Агрегаторы стоят около 3500 рублей. Курсы обмена валюты в аэропорту невыгодные (например, 3,6 бразильских реала за доллар). Водители такси могут предложить более выгодные неформальные курсы (например, 4,7–5,0 реалов за доллар). Самые выгодные курсы обмена (от 5,1 реала за доллар) обычно можно найти в городе по будням.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Проблема использования российских банковских карт, в частности UnionPay от РСХБ, в сервисах такси вроде Uber в Бразилии.</span><span></span></summary>
+    <div class="a">Отзывы разнятся: некоторые пользователи успешно привязали карту и оплатили поездку, тогда как у других возникли проблемы, и им пришлось платить наличными. Существуют опасения насчет блокировки карт. Также упоминается приложение 99, в котором есть проблемы с вводом геолокации. Uber работает, но используйте его с осторожностью из-за вопросов совместимости карт.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>Хотя некоторые пользователи сообщают, что не сталкивались с мошенничеством при оплате наличными в Uber в Бразилии, подобные инциденты часто описываются в Чили и Перу, где водители нередко забывают отметить получение наличных, если их об этом прямо не попросить.</span><span></span></summary>
+    <div class="a">Служба поддержки Uber обычно аннулирует такие задолженности несколько раз, но в конечном итоге от пользователей могут потребовать оплаты. Всегда следите за тем, чтобы водитель подтвердил оплату в приложении.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>Путешественники, прибывающие в аэропорт Гуарульюс (GRU) в Сан-Паулу, могут столкнуться с трудностями при использовании местных приложений такси, таких как Uber и Indrive, из-за требований к наличию CPF (бразильского налогового номера).</span><span></span></summary>
+    <div class="a">Приложение 99 также может выходить из учетной записи пользователей, находящихся за границей. Возможный обходной путь — использование стороннего сервиса трансферов, который принимает UnionPay, российские карты и наличные доллары США.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Пользователь делится положительным опытом использования Uber в Сан-Паулу, отметив, что это быстрее и в два раза дешевле официальных такси.</span><span></span></summary>
+    <div class="a">Оплата производилась наличными. Запрашивается совет по безопасности ночных поездок из аэропорта на Uber, предпочтительный способ оплаты (карта или наличные) и примерная стоимость поездки из аэропорта Сан-Паулу до центра города. Стоимость официального такси на этом же маршруте (30-40 минут) составила 178 бразильских реалов.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Путешественники могут использовать eSIM в Бразилии для доступа к приложениям такси, таким как Uber и 99. Местный номер телефона, как правило, не требуется для работы этих приложений, если аккаунт Uber верифицирован (фото паспорта и селфи).</span><span></span></summary>
+    <div class="a">Оплата может быть привязана к международной карте, также в некоторых странах доступна опция оплаты наличными в Uber. Полезный ресурс для поиска провайдеров eSIM — esimdb.com. CPF не требуется для услуг передачи данных eSIM.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Uber, как правило, является надежным и удобным вариантом транспорта по всей Бразилии, включая крупные города, такие как Рио-де-Жанейро и Сан-Паулу, а также различные туристические направления.</span><span></span></summary>
+    <div class="a">Поездки обычно безопасны, оперативны и доступны по цене. Однако доступность может быть проблемой на аргентинской стороне водопадов Игуасу. Для регистрации в местном приложении '99' требуется CPF (бразильский налоговый номер).
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>Опишите способы оплаты и потенциальные проблемы с сервисами совместных поездок, такими как Uber, в Бразилии.</span><span></span></summary>
+    <div class="a">При оплате наличными требуется внимательный контроль завершения поездки водителем, чтобы избежать зависших долгов в приложении, которые сложно разрешить без привязанной карты. Некоторые пользователи находят систему оплаты наличными в inDrive более простой. Даже оплата картой иногда может быть проблемной.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Для передвижения в Рио-де-Жанейро Uber является широко доступным вариантом, который часто хорошо работает с оплатой наличными и местными номерами телефонов.</span><span></span></summary>
+    <div class="a">Местное приложение '99' — еще одна альтернатива. Убедитесь, что у вас установлена правильная международная версия Uber, если ваша российская версия не работает за границей. Автобусные маршруты также являются вариантом, если другие службы не работают.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Поездки на Uber из аэропорта Рио-де-Жанейро (Галеан) до Копакабаны стоят примерно 72-86 бразильских реалов.</span><span></span></summary>
+    <div class="a">Будьте осторожны: местные таксисты могут отговаривать от использования Uber и давать ложную информацию о местах посадки. Официальная точка посадки Uber находится на территории аэропорта, примерно в 150 метрах от выхода. Оплату можно произвести международными картами (например, из Казахстана).
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Пользователь в Рио-де-Жанейро столкнулся с проблемами в приложении такси 99: его ложно обвинили в неуплате за прошлую поездку, из-за чего заблокировали возможность заказывать новые.</span><span></span></summary>
+    <div class="a">Также он встретил водителя, пытавшегося получить двойную оплату, и закрытый музей в качестве пункта назначения. Разрешение ситуации с мошенническим списанием потребовало длительного общения со службой поддержки.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Приложения Uber, скачанные в России, работают по всему миру в Бразилии.</span><span></span></summary>
+    <div class="a">Существующие аккаунты, привязанные к российским мобильным номерам, остаются действительными; проверочные коды обычно отправляются по электронной почте. Для новых аккаунтов рекомендуется местная SIM-карта, так как некоторые eSIM только для передачи данных не поддерживают SMS-подтверждение для создания аккаунта.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Безопасность путешествий в Бразилии: избегайте демонстрации богатства, храните ценные вещи в водонепроницаемых чехлах на пляже и оставайтесь в благополучных районах.</span><span></span></summary>
+    <div class="a">Общественный транспорт, такой как «99 Taxi», доступен с международными/российскими номерами. Мелкая преступность существует, но многие туристы сообщают о безопасном опыте при соблюдении базовых мер предосторожности.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Граждане России могут водить машину в Бразилии по своим национальным водительским правам до 6 месяцев, так как обе страны подписали Венскую конвенцию о дорожном движении.</span><span></span></summary>
+    <div class="a">После 6 месяцев непрерывного пребывания, как правило, требуются бразильские водительские права. Компании по аренде автомобилей и местная полиция обычно принимают российские права у краткосрочных посетителей.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Доступность Uber может существенно различаться между соседними южноамериканскими городами.</span><span></span></summary>
+    <div class="a">В Пуэрто-Игуасу, Аргентина, сервисы Uber, по сообщениям, отсутствуют, что требует альтернативного транспорта, такого как мотоциклы. Напротив, в Бразилии Uber легко доступен, там новые автомобили и короткое время ожидания. Планируйте свой транспорт соответственно при пересечении границ.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Компании по аренде автомобилей в Бразилии (Localiza, Foco, Movida) официально требуют кредитные карты, но международные дебетовые карты часто принимаются, если они проходят как «кредитные».</span><span></span></summary>
+    <div class="a">На счете должно быть достаточно средств для внесения залога. Страховку следует приобретать на месте, чтобы избежать проблем с международным покрытием для граждан России.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Uber надежно работает в Фос-ду-Игуасу (Бразилия), но практически недоступен или не работает в Пуэрто-Игуасу (Аргентина).</span><span></span></summary>
+    <div class="a">Кроме того, автомобили Uber нельзя использовать для пересечения международной границы между Бразилией и Аргентиной; путешественники должны использовать общественные автобусы, официальные такси или частные трансферы для пересечения.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Приложение для совместных поездок 99 (аналог Uber) может вызывать проблемы с установкой или регистрацией при использовании российского номера телефона за пределами Бразилии.</span><span></span></summary>
+    <div class="a">Пользователи сообщали об успешной регистрации после подключения к Wi-Fi по прибытии в Бразилию. После регистрации приложение работает корректно, и принимаются наличные платежи.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>В аэропорту Рио-Галеан (GIG) главная проблема при попытке заказать Uber или найти такси заключается в том, что сигнал Wi-Fi может быть слабым или недоступным в специальных зонах посадки.</span><span></span></summary>
+    <div class="a">Путешественникам следует знать об этой возможной проблеме и планировать заранее, например, иметь мобильный интернет или искать точки доступа Wi-Fi.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>В аэропорту Галеан (GIG) в Рио-де-Жанейро у такси iNdriver обычно есть специальные зоны посадки.</span><span></span></summary>
+    <div class="a">Они, как правило, находятся снаружи терминалов, следуйте указателям «Taxis» или «Ride-Sharing Pick-up». Рекомендуется искать официальные таблички или спрашивать у персонала аэропорта конкретное место встречи с iNdriver по прибытии.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Российская версия приложения Uber (которая является заглушкой совместного предприятия с Яндексом) не работает в Бразилии.</span><span></span></summary>
+    <div class="a">Путешественникам необходимо использовать стандартное международное приложение Uber (то же самое, что используется в Европе, США, Казахстане и т.д.), которое автоматически адаптируется к Бразилии через GPS.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Выпущенные в России карты UnionPay работают в Бразилии, в частности в банкоматах Banco24Horas (красные).</span><span></span></summary>
+    <div class="a">Комиссия за снятие составляет примерно 24 бразильских реала за операцию. Виртуальные карты обычно не подходят для аренды автомобилей, для которой требуется физическая кредитная карта на имя водителя для внесения залога.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Поездка на Uber ночью между аэропортами Гуарульюс (GRU) и Виракопус (VCP) в Сан-Паулу в целом считается безопасной.</span><span></span></summary>
+    <div class="a">Нет существенной необходимости бронировать отдельный трансфер. Для дополнительной уверенности можно заказать аэропортовое такси, которое может быть немного дороже, но предлагает гарантированную надежность.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Рекомендуемые занятия в Бразилии включают 10-минутный полет на вертолете над водопадами за 685 бразильских реалов, поездки на такси в городах (цена обсуждается от 350 до 200 реалов), использование Uber и групповые экскурсии в фавелы в Рио с русскоговорящим гидом для экономии.</span><span></span></summary>
+    <div class="a">Также доступны уникальные местные туры.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Россия подписала Венскую конвенцию о дорожном движении, и бразильские власти, как правило, принимают стандартные российские водительские удостоверения без необходимости оформления международного водительского удостоверения (МВУ) или заверенных переводов, поскольку информация в них представлена латинскими символами.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>Чтобы использовать оплату наличными в Uber в Бразилии, убедитесь, что приложение обновлено.</span><span></span></summary>
+    <div class="a">В некоторых случаях, если в приложении отображаются только варианты «Uber Cash» или кредитная карта, может потребоваться переустановка приложения, чтобы активировать выбор оплаты «Наличные» в процессе создания поездки.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Самые простые и выгодные способы добраться из Копакабаны до вертолетной компании rio2fly в Рио-де-Жанейро.</span><span></span></summary>
+    <div class="a">Включите расчетное время в пути и стоимость с использованием сервисов такси, таких как Uber. Дайте совет по лучшему времени для выезда, чтобы гарантировать пунктуальность, учитывая возможный трафик.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>Чтобы добраться до порта Сантос из Сан-Паулу для круизного лайнера, у путешественников есть два основных варианта: 1. Сесть на автобус из Сан-Паулу до Сантоса, затем воспользоваться Uber до порта.</span><span></span></summary>
+    <div class="a">2. Взять Uber напрямую из Сан-Паулу до порта Сантос. Второй вариант дороже, но обеспечивает прямую поездку.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Иностранные водительские права действительны в Бразилии для туристов на срок до 6 месяцев.</span><span></span></summary>
+    <div class="a">После 6 месяцев проживания или длительного пребывания лица должны обменять свои иностранные права на бразильские. Однако на практике многие люди продолжают использовать свои оригинальные права в статусе туриста.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Выпущенные в Кыргызстане карты Visa (например, Aiyl Bank) широко используются гражданами России в Бразилии для ежедневных транзакций (розничная торговля, транспорт).</span><span></span></summary>
+    <div class="a">Эти карты можно пополнять с российских банковских счетов. Доставка из Кыргызстана в Россию (Санкт-Петербург) занимает примерно 2 недели.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>Если водитель Uber в Бразилии не завершил поездку с оплатой наличными, что привело к образованию задолженности в аккаунте пользователя, обращение в службу поддержки Uber может решить эту проблему.</span><span></span></summary>
+    <div class="a">Служба поддержки Uber обычно аннулирует такие задолженности и корректно закрывает поездки.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>Такси в Бразилии (например, приложение 99) часто неохотно пересекают границу с аргентинской стороной Игуасу.</span><span></span></summary>
+    <div class="a">Водители могут довезти вас только до границы и передать другому водителю. Рекомендуется подтвердить, довезет ли вас сервис до самого Пуэрто-Игуасу, прежде чем оформлять заказ.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Узнайте о конкретном таксисте в Рио-де-Жанейро, который работает на желтой машине и берет около 120 бразильских реалов за поездку из аэропорта до Копакабаны.</span><span></span></summary>
+    <div class="a">Ранее пользователь пользовался приложением «Indrive», но столкнулся с проблемами с водителями и теперь ищет надежный контакт.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Запланированные поездки Uber в Бразилии работают путем рассылки запроса на поездку близлежащим водителям заранее.</span><span></span></summary>
+    <div class="a">Как только водитель принимает запрос, подтверждение появится в приложении Uber пользователя. Если никто из водителей не примет запрос, пользователь получит уведомление.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Такси в аэропорту Рио-де-Жанейро (GIG) могут быть значительно дороже (до 3 раз), чем приложения для заказа поездок, такие как InDrive.</span><span></span></summary>
+    <div class="a">Рекомендуется путешественникам пользоваться сервисами заказа такси, если это возможно, убедившись, что мобильный интернет работает по прилете.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>Узнайте о ситуациях, когда водитель Uber заявляет, что оплата наличными не была получена, несмотря на то, что пассажир заплатил наличными.</span><span></span></summary>
+    <div class="a">Это требует изучения возможных вариантов действий через службу поддержки Uber и понимания того, как сообщать о таких несоответствиях.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>В приложении 99 taxi в Бразилии категория «Taxi» относится к официальным желтым такси.</span><span></span></summary>
+    <div class="a">Обычно они дороже, чем категория «Pop», в которой работают частные водители. Желтые такси могут иметь доступ к специальным полосам движения или зонам, закрытым для частных автомобилей.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Сравните услуги бразильских приложений для заказа поездок 99 и Uber, учитывая цены, доступность и требования к регистрации (номер телефона, способы оплаты).</span><span></span></summary>
+    <div class="a">Примечание: 99 может быть дешевле Uber и иногда может использоваться с российским номером телефона и картой.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Пользователь приложения 99 taxi в Бразилии успешно пользовался сервисом с оплатой наличными.</span><span></span></summary>
+    <div class="a">Однако теперь приложение требует привязку карты для создания новых заказов, несмотря на предыдущие поездки за наличные. Пользователь хочет понять причину этого ограничения.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Чтобы избежать потенциального мошенничества со стороны таксистов при поездке из аэропорта в отель в Рио-де-Жанейро, рекомендуется использовать приложения для заказа поездок, такие как Uber или 99. Эти приложения можно скачать и начать использовать по прибытии.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Сервисы райдшеринга, в частности Uber, являются удобным и экономичным способом передвижения по Бразилии.</span><span></span></summary>
+    <div class="a">Рекомендуется оплачивать поездки заранее, чтобы зафиксировать стоимость и избежать возможных проблем. Стоимость использования этих сервисов в целом низкая.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Стоимость такси из района Республика до аэропорта Гуарульюс (GRU) в Сан-Паулу может составлять около 250 бразильских реалов.</span><span></span></summary>
+    <div class="a">У одной службы, Guarocoop, есть фиксированные тарифы по районам, при этом поездка до Вила-Нова-Консейсан стоит 200 бразильских реалов.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Использование Uber в Бразилии не требует местного налогового номера (CPF).</span><span></span></summary>
+    <div class="a">Путешественникам необходимо убедиться, что они установили глобальное приложение 'Uber', так как региональные альтернативы (например, Uber Россия) в этой стране работать не будут.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Стоимость поездки на Uber из центра Сан-Паулу в Гуаружу динамическая.</span><span></span></summary>
+    <div class="a">Цены обычно варьируются от 95 до 350 бразильских реалов в зависимости от спроса и наличия машин. Пользователям следует чаще проверять приложение, чтобы поймать более низкий тариф.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>В Бразилии Uber обычно в 2-3 раза дешевле, чем традиционные городские такси, вызываемые через отели.</span><span></span></summary>
+    <div class="a">Приложение 99 также является популярным вариантом, иногда предлагая более низкие тарифы, чем Uber, но цены стоит сравнивать в момент бронирования.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Стоимость такси из аэропорта Сан-Паулу Гуарульюс (GRU) до района Вила-Мариана в ночное время может составлять примерно 90 бразильских реалов.</span><span></span></summary>
+    <div class="a">Эта информация служит ориентиром стоимости для ночных трансферов из аэропорта в пределах города.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Основные сервисы такси в Бразилии — это Uber и 99. Приложение «Maxim» также работает в стране, хотя оно менее распространено.</span><span></span></summary>
+    <div class="a">В случае проблем с аутентификацией в Uber, пользователям стоит рассмотреть 99 в качестве надежной альтернативы.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>В Бразилии приложения такси Uber и 99 не требуют CPF для стандартного использования.</span><span></span></summary>
+    <div class="a">При оплате через терминалы иностранные дебетовые карты часто проходят успешно, только если пользователь выбирает опцию «crédito» на устройстве.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Не используйте приложение «Uber Russia» в Бразилии, так как оно там не работает.</span><span></span></summary>
+    <div class="a">Посетители должны использовать глобальное приложение Uber, которое отлично работает, даже если оно зарегистрировано на российский номер телефона.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Для путешественников с тяжелым багажом (например, 5 чемоданов + коляска) в Сан-Паулу заказ двух отдельных автомобилей Uber является наиболее эффективным и экономичным решением по сравнению с поиском одного частного трансфера.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Частный трансфер из Сан-Паулу в Рио-де-Жанейро может стоить около $450. Использование сервисов такси, таких как Uber, для поездки в один конец между этими городами может быть значительно дешевле, с оценками около $225.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Варианты поездки из Рио-де-Жанейро в Арраял-ду-Кабу включают автобусные перевозки и BlaBlaCar.</span><span></span></summary>
+    <div class="a">Для групп наем такси или частный трансфер часто более выгоден и эффективен, чем покупка индивидуальных автобусных билетов.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Рекомендации по безопасному и удобному перемещению из аэропорта Манауса в центр города при ночном прибытии.</span><span></span></summary>
+    <div class="a">Советы по доступным службам такси (например, Uber, 99, официальные такси) и общие соображения безопасности.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Популярные приложения в Бразилии для вызова такси и доставки еды, аналогичные Grab, включают Uber и 99 для такси, а также iFood для доставки еды.</span><span></span></summary>
+    <div class="a">Также доступны мототакси с возможностью привязки банковских карт.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Чтобы оценить стоимость такси в Бразилии, скачайте местные приложения для поездок, такие как 99 или Uber, и введите желаемый маршрут (например, из Копакабаны), чтобы проверить цены в режиме реального времени.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Сервисы Uber Comfort/Black до аэропорта Рио-де-Жанейро надежны.</span><span></span></summary>
+    <div class="a">По прибытии на полу есть четкая разметка, указывающая направление к зоне посадки Uber, что позволяет легко пройти мимо зазывал такси.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>Узнайте, требуется ли CPF для использования приложения iDrive в Бразилии, или существуют ли альтернативные методы или генераторы, которые могут предоставить действительный CPF для регистрации.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>Рекомендуемые приложения для заказа поездок в Сан-Паулу — это Uber и 99. Оплата наличными принимается.</span><span></span></summary>
+    <div class="a">Всегда убеждайтесь, что водитель завершил поездку в приложении, чтобы избежать переплаты.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Пользователь сообщил о стоимости трансфера на Uber в 120 бразильских реалов из аэропорта Рио-де-Жанейро.</span><span></span></summary>
+    <div class="a">Это дает дополнительный ориентир по ожидаемым ценам, указывая на изменчивость тарифов.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Сообщается, что премиальные сервисы такси (например, Uber Black или 99 Black) имеют быстрое время прибытия в определенных бразильских районах, таких как Барра или Витория.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Казахстанские банковские карты, такие как Kaspi и Freedom, могут работать как кредитные карты и принимаются сервисами заказа такси, такими как Uber в Бразилии.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+
+  <h2>Смежные темы</h2>
+  <div class="chips">
+    <a class="chip" href="/ru/br/s/transport/mezhdugorodniy-i-gorodskoy-transport/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Междугородний и городской транспорт</span></a>
+    <a class="chip" href="/ru/br/s/transport/aviasoobschenie-i-perelety/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Авиасообщение и перелеты</span></a>
+    <a class="chip" href="/ru/br/s/transport/dostoprimechatelnosti-i-ekskursii/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🗺 Достопримечательности и экскурсии</span></a>
+    <a class="chip" href="/ru/br/s/transport/aeroporty-i-transfery/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Аэропорты и трансферы</span></a>
+    <a class="chip" href="/ru/br/s/transport/bytovye-voprosy-i-servisy/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Бытовые вопросы и сервисы</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Тебе нужен ответ под себя, а не лекция для всех?</h2>
+    <p>Спроси Luky — попробует понять твою ситуацию и ответить точнее.</p>
+    <p>А ещё Luky — голосовой переводчик живого разговора: поболтай в лобби с туристами из других стран.</p>
+    <p class="ps">PS: в голосовом игровом чате поймёшь тиммейтов из полмира</p>
+    <a class="btn" href="https://multyspeak.ru" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Открыть Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — живой опыт из чатов сообществ, без воды</div>
+    <nav class="f-links">
+      <a href="/ru/about/">О проекте</a>
+      <a href="/ru/br/">Все темы</a>
+      <a href="/ru/">Страны</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Ответы собраны из открытых чатов сообществ — это живой опыт людей, а не официальная консультация. Перед важными решениями проверяйте актуальность.</p>
+    <div class="f-copy">© 2026 Luky · обновлено 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0439 \u0434\u043b\u044f \u0441\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u044b\u0445 \u043f\u043e\u0435\u0437\u0434\u043e\u043a, \u0442\u0430\u043a\u0438\u0445 \u043a\u0430\u043a Uber \u0438 99 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438, \u0431\u0435\u0437 CPF \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c \u0441\u043b\u043e\u0436\u043d\u043e\u0439 \u0437\u0430\u0434\u0430\u0447\u0435\u0439, \u043d\u043e \u044d\u0442\u043e \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e: Uber: \u0423\u0441\u0442\u0430\u043d\u043e\u0432\u043a\u0430 \u0437\u0430 \u043f\u0440\u0435\u0434\u0435\u043b\u0430\u043c\u0438 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438: \u0423\u0441\u0442\u0430\u043d\u043e\u0432\u0438\u0442\u0435 \u0438 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u0443\u0439\u0442\u0435 Uber \u0432 \u0434\u0440\u0443\u0433\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0435 (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0432 \u0422\u0443\u0440\u0446\u0438\u0438) \u0441 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435\u043c \u043d\u0435\u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u043e\u0433\u043e \u043d\u043e\u043c\u0435\u0440\u0430 \u0442\u0435\u043b\u0435\u0444\u043e\u043d\u0430 \u0438 \u0438\u043d\u043e\u0441\u0442\u0440\u0430\u043d\u043d\u043e\u0439 \u0431\u0430\u043d\u043a\u043e\u0432\u0441\u043a\u043e\u0439 \u043a\u0430\u0440\u0442\u044b."},
+{"@type":"ListItem","position":2,"name":"\u0412 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u043d\u0435\u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0432\u043e\u0434\u0438\u0442\u0435\u043b\u0438 Uber \u043c\u043e\u0433\u0443\u0442 \u043b\u043e\u0436\u043d\u043e \u0441\u043e\u043e\u0431\u0449\u0430\u0442\u044c \u043e \u043d\u0435\u043e\u043f\u043b\u0430\u0442\u0435 \u043f\u043e\u0441\u043b\u0435 \u043f\u043e\u0435\u0437\u0434\u043e\u043a \u0437\u0430 \u043d\u0430\u043b\u0438\u0447\u043d\u044b\u0435, \u0438\u0437-\u0437\u0430 \u0447\u0435\u0433\u043e \u0432 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0438 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043f\u043e\u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u00ab\u0434\u043e\u043b\u0433\u00bb, \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u043c\u043e\u0436\u043d\u043e \u043f\u043e\u0433\u0430\u0441\u0438\u0442\u044c \u0442\u043e\u043b\u044c\u043a\u043e \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u044b\u043c \u043f\u043b\u0430\u0442\u0435\u0436\u043e\u043c."},
+{"@type":"ListItem","position":3,"name":"\u0420\u043e\u0441\u0441\u0438\u0439\u0441\u043a\u0438\u0435 \u0431\u0430\u043d\u043a\u043e\u0432\u0441\u043a\u0438\u0435 \u043a\u0430\u0440\u0442\u044b (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u041c\u0418\u0420) \u0432 \u043e\u0441\u043d\u043e\u0432\u043d\u043e\u043c \u043d\u0435 \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u044e\u0442\u0441\u044f \u0434\u043b\u044f \u043e\u043f\u043b\u0430\u0442\u044b Uber \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438."},
+{"@type":"ListItem","position":4,"name":"\u0412 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0448\u0438\u0440\u043e\u043a\u043e \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u0442\u0441\u044f Uber, \u043d\u043e \u0442\u0430\u043a\u0436\u0435 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b \u0430\u043b\u044c\u0442\u0435\u0440\u043d\u0430\u0442\u0438\u0432\u044b, \u0442\u0430\u043a\u0438\u0435 \u043a\u0430\u043a 99, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0437\u0430\u0447\u0430\u0441\u0442\u0443\u044e \u0434\u0435\u0448\u0435\u0432\u043b\u0435."},
+{"@type":"ListItem","position":5,"name":"\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u043c\u043e\u0442\u043e\u0442\u0430\u043a\u0441\u0438 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u043f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u0435\u0442 \u0431\u043e\u043b\u0435\u0435 \u0431\u044b\u0441\u0442\u0440\u044b\u0439 \u0432\u0430\u0440\u0438\u0430\u043d\u0442 \u043f\u0435\u0440\u0435\u0434\u0432\u0438\u0436\u0435\u043d\u0438\u044f \u043f\u043e \u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044e \u0441 \u0430\u0432\u0442\u043e\u043c\u043e\u0431\u0438\u043b\u044f\u043c\u0438, \u043e\u0441\u043e\u0431\u0435\u043d\u043d\u043e \u0432 \u0443\u0441\u043b\u043e\u0432\u0438\u044f\u0445 \u0434\u043e\u0440\u043e\u0436\u043d\u043e\u0433\u043e \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u044f."},
+{"@type":"ListItem","position":6,"name":"\u0421\u0442\u043e\u0438\u043c\u043e\u0441\u0442\u044c \u0442\u0430\u043a\u0441\u0438 \u0438\u0437 \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0430 \u0413\u0443\u0430\u0440\u0443\u043b\u044c\u044e\u0441 (GRU) \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0434\u043e \u0446\u0435\u043d\u0442\u0440\u0430 \u0433\u043e\u0440\u043e\u0434\u0430 \u043c\u043e\u0436\u0435\u0442 \u0437\u043d\u0430\u0447\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u0432\u0430\u0440\u044c\u0438\u0440\u043e\u0432\u0430\u0442\u044c\u0441\u044f."},
+{"@type":"ListItem","position":7,"name":"\u041a\u043b\u044e\u0447\u0435\u0432\u044b\u0435 \u043f\u0440\u0430\u043a\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0441\u043e\u0432\u0435\u0442\u044b \u0434\u043b\u044f \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0438\u0439 \u043f\u043e \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0432\u043a\u043b\u044e\u0447\u0430\u044e\u0442: 1. \u0422\u0440\u0430\u043d\u0441\u043f\u043e\u0440\u0442: \u0414\u043b\u044f \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f 99 \u0442\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f CPF (\u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u043d\u0430\u043b\u043e\u0433\u043e\u043f\u043b\u0430\u0442\u0435\u043b\u044c\u0449\u0438\u043a\u0430); Uber \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442 \u0431\u0435\u0437 \u043d\u0435\u0433\u043e."},
+{"@type":"ListItem","position":8,"name":"\u041e\u0431\u043c\u0435\u043d \u043e\u043f\u044b\u0442\u043e\u043c \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0438\u0439 \u0438 \u043b\u043e\u0433\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0441\u043e\u0432\u0435\u0442\u044b \u043f\u043e \u043f\u0435\u0440\u0435\u0434\u0432\u0438\u0436\u0435\u043d\u0438\u044e \u043f\u043e \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438, \u043e\u0441\u043e\u0431\u0435\u043d\u043d\u043e \u0432 \u043e\u0442\u043d\u043e\u0448\u0435\u043d\u0438\u0438 \u0430\u0432\u0438\u0430\u0440\u0435\u0439\u0441\u043e\u0432 \u0438 \u043c\u0435\u0441\u0442\u043d\u043e\u0433\u043e \u0442\u0440\u0430\u043d\u0441\u043f\u043e\u0440\u0442\u0430."},
+{"@type":"ListItem","position":9,"name":"\u0412 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0432\u043e\u0434\u0438\u0442\u0435\u043b\u0438 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0439 \u0434\u043b\u044f \u0437\u0430\u043a\u0430\u0437\u0430 \u043f\u043e\u0435\u0437\u0434\u043e\u043a (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, 99 app) \u043c\u043e\u0433\u0443\u0442 \u043b\u043e\u0436\u043d\u043e \u0437\u0430\u044f\u0432\u043b\u044f\u0442\u044c \u043e \u043d\u0435\u043e\u043f\u043b\u0430\u0442\u0435, \u0435\u0441\u043b\u0438 \u043f\u0430\u0441\u0441\u0430\u0436\u0438\u0440\u044b \u043f\u043b\u0430\u0442\u044f\u0442 \u043d\u0430\u043b\u0438\u0447\u043d\u044b\u043c\u0438 \u0438\u043b\u0438 \u0447\u0435\u0440\u0435\u0437 Pix."},
+{"@type":"ListItem","position":10,"name":"\u0427\u0442\u043e\u0431\u044b \u0437\u0430\u043a\u0430\u0437\u0430\u0442\u044c \u0442\u0430\u043a\u0441\u0438 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0431\u0435\u0437 CPF (\u043d\u0430\u043b\u043e\u0433\u043e\u0432\u043e\u0433\u043e \u043d\u043e\u043c\u0435\u0440\u0430): 1) \u0418\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435 \u0443\u0436\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u0439 \u0441\u0442\u0430\u0440\u044b\u0439 \u0430\u043a\u043a\u0430\u0443\u043d\u0442 Uber, \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 \u043d\u0430 \u0438\u043d\u043e\u0441\u0442\u0440\u0430\u043d\u043d\u044b\u0439 \u043d\u043e\u043c\u0435\u0440 \u0442\u0435\u043b\u0435\u0444\u043e\u043d\u0430, \u0442\u0430\u043a \u043a\u0430\u043a \u0442\u043e\u043b\u044c\u043a\u043e \u043d\u043e\u0432\u044b\u0435 \u0430\u043a\u043a\u0430\u0443\u043d\u0442\u044b \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0442\u0440\u0435\u0431\u0443\u044e\u0442 \u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0439 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 CPF."},
+{"@type":"ListItem","position":11,"name":"\u0412\u0430\u0440\u0438\u0430\u043d\u0442\u044b \u0442\u0440\u0430\u043d\u0441\u043f\u043e\u0440\u0442\u0430 \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u0432\u043a\u043b\u044e\u0447\u0430\u044e\u0442 \u0442\u0430\u043a\u0441\u0438 (Uber), \u043c\u0435\u0436\u0434\u0443\u0433\u043e\u0440\u043e\u0434\u043d\u0438\u0435 \u0430\u0432\u0442\u043e\u0431\u0443\u0441\u044b, \u043e\u0431\u0449\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0435 \u0430\u0432\u0442\u043e\u0431\u0443\u0441\u044b \u0438 \u043c\u0435\u0442\u0440\u043e."},
+{"@type":"ListItem","position":12,"name":"\u041f\u0440\u0438 \u043f\u043e\u0435\u0437\u0434\u043a\u0430\u0445 \u043c\u0435\u0436\u0434\u0443 \u0433\u043e\u0440\u043e\u0434\u0430\u043c\u0438 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0438\u0437 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0432 \u0421\u0430\u043d\u0442\u043e\u0441) \u0441 \u0442\u044f\u0436\u0435\u043b\u044b\u043c \u0431\u0430\u0433\u0430\u0436\u043e\u043c (3+ \u0447\u0435\u043c\u043e\u0434\u0430\u043d\u0430, \u043a\u043e\u043b\u044f\u0441\u043a\u0430, \u0430\u0432\u0442\u043e\u043a\u0440\u0435\u0441\u043b\u043e) \u0438 \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u0438\u043c\u0438 \u043f\u0430\u0441\u0441\u0430\u0436\u0438\u0440\u0430\u043c\u0438, \u0437\u0430\u043a\u0430\u0437 Uber Comfort \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u0438\u0435\u043c\u043b\u0435\u043c\u044b\u043c \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u043e\u043c."},
+{"@type":"ListItem","position":13,"name":"\u0414\u043b\u044f \u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u044b\u0445 \u043f\u043e\u0435\u0437\u0434\u043e\u043a \u043d\u0430 \u0442\u0430\u043a\u0441\u0438 \u0438\u0437 \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0430 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 GRU (\u043e\u0441\u043e\u0431\u0435\u043d\u043d\u043e \u043d\u043e\u0447\u044c\u044e) \u0434\u043e \u043e\u0442\u0435\u043b\u0435\u0439 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f \u0434\u043b\u044f \u0441\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u044b\u0445 \u043f\u043e\u0435\u0437\u0434\u043e\u043a, \u0442\u0430\u043a\u0438\u0435 \u043a\u0430\u043a Uber \u0438\u043b\u0438 99, \u043b\u0438\u0431\u043e \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0435 \u0442\u0430\u043a\u0441\u0438 \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0430."},
+{"@type":"ListItem","position":14,"name":"\u0422\u0430\u043a\u0441\u0438 \u0438 \u0441\u0435\u0440\u0432\u0438\u0441\u044b \u0441\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u044b\u0445 \u043f\u043e\u0435\u0437\u0434\u043e\u043a, \u0442\u0430\u043a\u0438\u0435 \u043a\u0430\u043a Uber, \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0432 \u0446\u0435\u043b\u043e\u043c \u0432\u043e\u0441\u043f\u0440\u0438\u043d\u0438\u043c\u0430\u044e\u0442\u0441\u044f \u043a\u0430\u043a \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b\u0435: \u043a\u043e\u0440\u043e\u0442\u043a\u0438\u0435 \u043f\u043e\u0435\u0437\u0434\u043a\u0438 \u0441\u0442\u043e\u044f\u0442 \u043e\u043a\u043e\u043b\u043e 20 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0445 \u0440\u0435\u0430\u043b\u043e\u0432, \u0430 \u0441\u043a\u0438\u0434\u043a\u0438 \u0438\u043d\u043e\u0433\u0434\u0430 \u0437\u043d\u0430\u0447\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u0441\u043d\u0438\u0436\u0430\u044e\u0442 \u044d\u0442\u0443 \u0441\u0442\u043e\u0438\u043c\u043e\u0441\u0442\u044c."},
+{"@type":"ListItem","position":15,"name":"\u0412 \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0443 GRU (\u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443) Uber \u0437\u043d\u0430\u0447\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u0434\u0435\u0448\u0435\u0432\u043b\u0435, \u0447\u0435\u043c \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0435 \u0442\u0430\u043a\u0441\u0438 \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0430 (Guarucoop)."},
+{"@type":"ListItem","position":16,"name":"\u0422\u0430\u043a\u0441\u0438-\u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f (99, Uber, InDrive) \u043d\u0435\u043b\u044c\u0437\u044f \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0438\u043b\u0438 \u043e\u0442\u043a\u0440\u044b\u0442\u044c, \u043d\u0430\u0445\u043e\u0434\u044f\u0441\u044c \u0437\u0430 \u043f\u0440\u0435\u0434\u0435\u043b\u0430\u043c\u0438 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438."},
+{"@type":"ListItem","position":17,"name":"\u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u2014 \u043d\u0435 \u043f\u0440\u0438\u0431\u0440\u0435\u0436\u043d\u044b\u0439 \u0433\u043e\u0440\u043e\u0434; \u0431\u043b\u0438\u0436\u0430\u0439\u0448\u0438\u0435 \u043f\u043b\u044f\u0436\u0438 (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0421\u0430\u043d\u0442\u0443\u0441, \u0413\u0443\u0430\u0440\u0443\u0436\u0430) \u043d\u0430\u0445\u043e\u0434\u044f\u0442\u0441\u044f \u0432 2+ \u0447\u0430\u0441\u0430\u0445 \u0435\u0437\u0434\u044b \u043f\u043e \u0434\u043e\u0440\u043e\u0433\u0435, \u043d\u0430 \u043a\u043e\u0442\u043e\u0440\u0443\u044e \u0441\u0438\u043b\u044c\u043d\u043e \u0432\u043b\u0438\u044f\u0435\u0442 \u0442\u0440\u0430\u0444\u0438\u043a."},
+{"@type":"ListItem","position":18,"name":"\u0427\u0442\u043e\u0431\u044b \u0434\u043e\u0431\u0440\u0430\u0442\u044c\u0441\u044f \u043d\u0430 \u0442\u0430\u043a\u0441\u0438 \u0438\u0437 \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0430 GRU \u0434\u043e \u0446\u0435\u043d\u0442\u0440\u0430 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443, \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f \u0434\u043b\u044f \u0437\u0430\u043a\u0430\u0437\u0430 \u043f\u043e\u0435\u0437\u0434\u043e\u043a, \u0442\u0430\u043a\u0438\u0435 \u043a\u0430\u043a Uber (\u0441\u043a\u0430\u0447\u0430\u0439\u0442\u0435 \u0437\u0430\u0440\u0430\u043d\u0435\u0435, \u0447\u0442\u043e\u0431\u044b \u0438\u0437\u0431\u0435\u0436\u0430\u0442\u044c \u043f\u0440\u043e\u0431\u043b\u0435\u043c \u0441 \u043a\u0430\u043f\u0447\u0435\u0439)."},
+{"@type":"ListItem","position":19,"name":"\u041f\u0440\u043e\u0431\u043b\u0435\u043c\u0430 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u0440\u043e\u0441\u0441\u0438\u0439\u0441\u043a\u0438\u0445 \u0431\u0430\u043d\u043a\u043e\u0432\u0441\u043a\u0438\u0445 \u043a\u0430\u0440\u0442, \u0432 \u0447\u0430\u0441\u0442\u043d\u043e\u0441\u0442\u0438 UnionPay \u043e\u0442 \u0420\u0421\u0425\u0411, \u0432 \u0441\u0435\u0440\u0432\u0438\u0441\u0430\u0445 \u0442\u0430\u043a\u0441\u0438 \u0432\u0440\u043e\u0434\u0435 Uber \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438."},
+{"@type":"ListItem","position":20,"name":"\u0425\u043e\u0442\u044f \u043d\u0435\u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0430\u044e\u0442, \u0447\u0442\u043e \u043d\u0435 \u0441\u0442\u0430\u043b\u043a\u0438\u0432\u0430\u043b\u0438\u0441\u044c \u0441 \u043c\u043e\u0448\u0435\u043d\u043d\u0438\u0447\u0435\u0441\u0442\u0432\u043e\u043c \u043f\u0440\u0438 \u043e\u043f\u043b\u0430\u0442\u0435 \u043d\u0430\u043b\u0438\u0447\u043d\u044b\u043c\u0438 \u0432 Uber \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438, \u043f\u043e\u0434\u043e\u0431\u043d\u044b\u0435 \u0438\u043d\u0446\u0438\u0434\u0435\u043d\u0442\u044b \u0447\u0430\u0441\u0442\u043e \u043e\u043f\u0438\u0441\u044b\u0432\u0430\u044e\u0442\u0441\u044f \u0432 \u0427\u0438\u043b\u0438 \u0438 \u041f\u0435\u0440\u0443, \u0433\u0434\u0435 \u0432\u043e\u0434\u0438\u0442\u0435\u043b\u0438 \u043d\u0435\u0440\u0435\u0434\u043a\u043e \u0437\u0430\u0431\u044b\u0432\u0430\u044e\u0442 \u043e\u0442\u043c\u0435\u0442\u0438\u0442\u044c \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u0435 \u043d\u0430\u043b\u0438\u0447\u043d\u044b\u0445, \u0435\u0441\u043b\u0438 \u0438\u0445 \u043e\u0431 \u044d\u0442\u043e\u043c \u043f\u0440\u044f\u043c\u043e \u043d\u0435 \u043f\u043e\u043f\u0440\u043e\u0441\u0438\u0442\u044c."},
+{"@type":"ListItem","position":21,"name":"\u041f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u0438, \u043f\u0440\u0438\u0431\u044b\u0432\u0430\u044e\u0449\u0438\u0435 \u0432 \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442 \u0413\u0443\u0430\u0440\u0443\u043b\u044c\u044e\u0441 (GRU) \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443, \u043c\u043e\u0433\u0443\u0442 \u0441\u0442\u043e\u043b\u043a\u043d\u0443\u0442\u044c\u0441\u044f \u0441 \u0442\u0440\u0443\u0434\u043d\u043e\u0441\u0442\u044f\u043c\u0438 \u043f\u0440\u0438 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0438 \u043c\u0435\u0441\u0442\u043d\u044b\u0445 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0439 \u0442\u0430\u043a\u0441\u0438, \u0442\u0430\u043a\u0438\u0445 \u043a\u0430\u043a Uber \u0438 Indrive, \u0438\u0437-\u0437\u0430 \u0442\u0440\u0435\u0431\u043e\u0432\u0430\u043d\u0438\u0439 \u043a \u043d\u0430\u043b\u0438\u0447\u0438\u044e CPF (\u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u043e\u0433\u043e \u043d\u0430\u043b\u043e\u0433\u043e\u0432\u043e\u0433\u043e \u043d\u043e\u043c\u0435\u0440\u0430)."},
+{"@type":"ListItem","position":22,"name":"\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0434\u0435\u043b\u0438\u0442\u0441\u044f \u043f\u043e\u043b\u043e\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u043c \u043e\u043f\u044b\u0442\u043e\u043c \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f Uber \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443, \u043e\u0442\u043c\u0435\u0442\u0438\u0432, \u0447\u0442\u043e \u044d\u0442\u043e \u0431\u044b\u0441\u0442\u0440\u0435\u0435 \u0438 \u0432 \u0434\u0432\u0430 \u0440\u0430\u0437\u0430 \u0434\u0435\u0448\u0435\u0432\u043b\u0435 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0445 \u0442\u0430\u043a\u0441\u0438."},
+{"@type":"ListItem","position":23,"name":"\u041f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u0438 \u043c\u043e\u0433\u0443\u0442 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c eSIM \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0434\u043b\u044f \u0434\u043e\u0441\u0442\u0443\u043f\u0430 \u043a \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f\u043c \u0442\u0430\u043a\u0441\u0438, \u0442\u0430\u043a\u0438\u043c \u043a\u0430\u043a Uber \u0438 99. \u041c\u0435\u0441\u0442\u043d\u044b\u0439 \u043d\u043e\u043c\u0435\u0440 \u0442\u0435\u043b\u0435\u0444\u043e\u043d\u0430, \u043a\u0430\u043a \u043f\u0440\u0430\u0432\u0438\u043b\u043e, \u043d\u0435 \u0442\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f \u0434\u043b\u044f \u0440\u0430\u0431\u043e\u0442\u044b \u044d\u0442\u0438\u0445 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0439, \u0435\u0441\u043b\u0438 \u0430\u043a\u043a\u0430\u0443\u043d\u0442 Uber \u0432\u0435\u0440\u0438\u0444\u0438\u0446\u0438\u0440\u043e\u0432\u0430\u043d (\u0444\u043e\u0442\u043e \u043f\u0430\u0441\u043f\u043e\u0440\u0442\u0430 \u0438 \u0441\u0435\u043b\u0444\u0438)."},
+{"@type":"ListItem","position":24,"name":"Uber, \u043a\u0430\u043a \u043f\u0440\u0430\u0432\u0438\u043b\u043e, \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043d\u0430\u0434\u0435\u0436\u043d\u044b\u043c \u0438 \u0443\u0434\u043e\u0431\u043d\u044b\u043c \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u043e\u043c \u0442\u0440\u0430\u043d\u0441\u043f\u043e\u0440\u0442\u0430 \u043f\u043e \u0432\u0441\u0435\u0439 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438, \u0432\u043a\u043b\u044e\u0447\u0430\u044f \u043a\u0440\u0443\u043f\u043d\u044b\u0435 \u0433\u043e\u0440\u043e\u0434\u0430, \u0442\u0430\u043a\u0438\u0435 \u043a\u0430\u043a \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u0438 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443, \u0430 \u0442\u0430\u043a\u0436\u0435 \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u044b\u0435 \u0442\u0443\u0440\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f."},
+{"@type":"ListItem","position":25,"name":"\u041e\u043f\u0438\u0448\u0438\u0442\u0435 \u0441\u043f\u043e\u0441\u043e\u0431\u044b \u043e\u043f\u043b\u0430\u0442\u044b \u0438 \u043f\u043e\u0442\u0435\u043d\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0435 \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u044b \u0441 \u0441\u0435\u0440\u0432\u0438\u0441\u0430\u043c\u0438 \u0441\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u044b\u0445 \u043f\u043e\u0435\u0437\u0434\u043e\u043a, \u0442\u0430\u043a\u0438\u043c\u0438 \u043a\u0430\u043a Uber, \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438."},
+{"@type":"ListItem","position":26,"name":"\u0414\u043b\u044f \u043f\u0435\u0440\u0435\u0434\u0432\u0438\u0436\u0435\u043d\u0438\u044f \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e Uber \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0448\u0438\u0440\u043e\u043a\u043e \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b\u043c \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u043e\u043c, \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u0447\u0430\u0441\u0442\u043e \u0445\u043e\u0440\u043e\u0448\u043e \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442 \u0441 \u043e\u043f\u043b\u0430\u0442\u043e\u0439 \u043d\u0430\u043b\u0438\u0447\u043d\u044b\u043c\u0438 \u0438 \u043c\u0435\u0441\u0442\u043d\u044b\u043c\u0438 \u043d\u043e\u043c\u0435\u0440\u0430\u043c\u0438 \u0442\u0435\u043b\u0435\u0444\u043e\u043d\u043e\u0432."},
+{"@type":"ListItem","position":27,"name":"\u041f\u043e\u0435\u0437\u0434\u043a\u0438 \u043d\u0430 Uber \u0438\u0437 \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0430 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e (\u0413\u0430\u043b\u0435\u0430\u043d) \u0434\u043e \u041a\u043e\u043f\u0430\u043a\u0430\u0431\u0430\u043d\u044b \u0441\u0442\u043e\u044f\u0442 \u043f\u0440\u0438\u043c\u0435\u0440\u043d\u043e 72-86 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0445 \u0440\u0435\u0430\u043b\u043e\u0432."},
+{"@type":"ListItem","position":28,"name":"\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u0441\u0442\u043e\u043b\u043a\u043d\u0443\u043b\u0441\u044f \u0441 \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u0430\u043c\u0438 \u0432 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0438 \u0442\u0430\u043a\u0441\u0438 99: \u0435\u0433\u043e \u043b\u043e\u0436\u043d\u043e \u043e\u0431\u0432\u0438\u043d\u0438\u043b\u0438 \u0432 \u043d\u0435\u0443\u043f\u043b\u0430\u0442\u0435 \u0437\u0430 \u043f\u0440\u043e\u0448\u043b\u0443\u044e \u043f\u043e\u0435\u0437\u0434\u043a\u0443, \u0438\u0437-\u0437\u0430 \u0447\u0435\u0433\u043e \u0437\u0430\u0431\u043b\u043e\u043a\u0438\u0440\u043e\u0432\u0430\u043b\u0438 \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e\u0441\u0442\u044c \u0437\u0430\u043a\u0430\u0437\u044b\u0432\u0430\u0442\u044c \u043d\u043e\u0432\u044b\u0435."},
+{"@type":"ListItem","position":29,"name":"\u041f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f Uber, \u0441\u043a\u0430\u0447\u0430\u043d\u043d\u044b\u0435 \u0432 \u0420\u043e\u0441\u0441\u0438\u0438, \u0440\u0430\u0431\u043e\u0442\u0430\u044e\u0442 \u043f\u043e \u0432\u0441\u0435\u043c\u0443 \u043c\u0438\u0440\u0443 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438."},
+{"@type":"ListItem","position":30,"name":"\u0411\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u0441\u0442\u044c \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0438\u0439 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438: \u0438\u0437\u0431\u0435\u0433\u0430\u0439\u0442\u0435 \u0434\u0435\u043c\u043e\u043d\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u0431\u043e\u0433\u0430\u0442\u0441\u0442\u0432\u0430, \u0445\u0440\u0430\u043d\u0438\u0442\u0435 \u0446\u0435\u043d\u043d\u044b\u0435 \u0432\u0435\u0449\u0438 \u0432 \u0432\u043e\u0434\u043e\u043d\u0435\u043f\u0440\u043e\u043d\u0438\u0446\u0430\u0435\u043c\u044b\u0445 \u0447\u0435\u0445\u043b\u0430\u0445 \u043d\u0430 \u043f\u043b\u044f\u0436\u0435 \u0438 \u043e\u0441\u0442\u0430\u0432\u0430\u0439\u0442\u0435\u0441\u044c \u0432 \u0431\u043b\u0430\u0433\u043e\u043f\u043e\u043b\u0443\u0447\u043d\u044b\u0445 \u0440\u0430\u0439\u043e\u043d\u0430\u0445."},
+{"@type":"ListItem","position":31,"name":"\u0413\u0440\u0430\u0436\u0434\u0430\u043d\u0435 \u0420\u043e\u0441\u0441\u0438\u0438 \u043c\u043e\u0433\u0443\u0442 \u0432\u043e\u0434\u0438\u0442\u044c \u043c\u0430\u0448\u0438\u043d\u0443 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u043f\u043e \u0441\u0432\u043e\u0438\u043c \u043d\u0430\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u043c \u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044c\u0441\u043a\u0438\u043c \u043f\u0440\u0430\u0432\u0430\u043c \u0434\u043e 6 \u043c\u0435\u0441\u044f\u0446\u0435\u0432, \u0442\u0430\u043a \u043a\u0430\u043a \u043e\u0431\u0435 \u0441\u0442\u0440\u0430\u043d\u044b \u043f\u043e\u0434\u043f\u0438\u0441\u0430\u043b\u0438 \u0412\u0435\u043d\u0441\u043a\u0443\u044e \u043a\u043e\u043d\u0432\u0435\u043d\u0446\u0438\u044e \u043e \u0434\u043e\u0440\u043e\u0436\u043d\u043e\u043c \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0438."},
+{"@type":"ListItem","position":32,"name":"\u0414\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0441\u0442\u044c Uber \u043c\u043e\u0436\u0435\u0442 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e \u0440\u0430\u0437\u043b\u0438\u0447\u0430\u0442\u044c\u0441\u044f \u043c\u0435\u0436\u0434\u0443 \u0441\u043e\u0441\u0435\u0434\u043d\u0438\u043c\u0438 \u044e\u0436\u043d\u043e\u0430\u043c\u0435\u0440\u0438\u043a\u0430\u043d\u0441\u043a\u0438\u043c\u0438 \u0433\u043e\u0440\u043e\u0434\u0430\u043c\u0438."},
+{"@type":"ListItem","position":33,"name":"\u041a\u043e\u043c\u043f\u0430\u043d\u0438\u0438 \u043f\u043e \u0430\u0440\u0435\u043d\u0434\u0435 \u0430\u0432\u0442\u043e\u043c\u043e\u0431\u0438\u043b\u0435\u0439 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 (Localiza, Foco, Movida) \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u044c\u043d\u043e \u0442\u0440\u0435\u0431\u0443\u044e\u0442 \u043a\u0440\u0435\u0434\u0438\u0442\u043d\u044b\u0435 \u043a\u0430\u0440\u0442\u044b, \u043d\u043e \u043c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u044b\u0435 \u0434\u0435\u0431\u0435\u0442\u043e\u0432\u044b\u0435 \u043a\u0430\u0440\u0442\u044b \u0447\u0430\u0441\u0442\u043e \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u044e\u0442\u0441\u044f, \u0435\u0441\u043b\u0438 \u043e\u043d\u0438 \u043f\u0440\u043e\u0445\u043e\u0434\u044f\u0442 \u043a\u0430\u043a \u00ab\u043a\u0440\u0435\u0434\u0438\u0442\u043d\u044b\u0435\u00bb."},
+{"@type":"ListItem","position":34,"name":"Uber \u043d\u0430\u0434\u0435\u0436\u043d\u043e \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442 \u0432 \u0424\u043e\u0441-\u0434\u0443-\u0418\u0433\u0443\u0430\u0441\u0443 (\u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f), \u043d\u043e \u043f\u0440\u0430\u043a\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u043d\u0435\u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d \u0438\u043b\u0438 \u043d\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442 \u0432 \u041f\u0443\u044d\u0440\u0442\u043e-\u0418\u0433\u0443\u0430\u0441\u0443 (\u0410\u0440\u0433\u0435\u043d\u0442\u0438\u043d\u0430)."},
+{"@type":"ListItem","position":35,"name":"\u041f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u0434\u043b\u044f \u0441\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u044b\u0445 \u043f\u043e\u0435\u0437\u0434\u043e\u043a 99 (\u0430\u043d\u0430\u043b\u043e\u0433 Uber) \u043c\u043e\u0436\u0435\u0442 \u0432\u044b\u0437\u044b\u0432\u0430\u0442\u044c \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u044b \u0441 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043a\u043e\u0439 \u0438\u043b\u0438 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0435\u0439 \u043f\u0440\u0438 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0438 \u0440\u043e\u0441\u0441\u0438\u0439\u0441\u043a\u043e\u0433\u043e \u043d\u043e\u043c\u0435\u0440\u0430 \u0442\u0435\u043b\u0435\u0444\u043e\u043d\u0430 \u0437\u0430 \u043f\u0440\u0435\u0434\u0435\u043b\u0430\u043c\u0438 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438."},
+{"@type":"ListItem","position":36,"name":"\u0412 \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0443 \u0420\u0438\u043e-\u0413\u0430\u043b\u0435\u0430\u043d (GIG) \u0433\u043b\u0430\u0432\u043d\u0430\u044f \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u0430 \u043f\u0440\u0438 \u043f\u043e\u043f\u044b\u0442\u043a\u0435 \u0437\u0430\u043a\u0430\u0437\u0430\u0442\u044c Uber \u0438\u043b\u0438 \u043d\u0430\u0439\u0442\u0438 \u0442\u0430\u043a\u0441\u0438 \u0437\u0430\u043a\u043b\u044e\u0447\u0430\u0435\u0442\u0441\u044f \u0432 \u0442\u043e\u043c, \u0447\u0442\u043e \u0441\u0438\u0433\u043d\u0430\u043b Wi-Fi \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c \u0441\u043b\u0430\u0431\u044b\u043c \u0438\u043b\u0438 \u043d\u0435\u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b\u043c \u0432 \u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0445 \u0437\u043e\u043d\u0430\u0445 \u043f\u043e\u0441\u0430\u0434\u043a\u0438."},
+{"@type":"ListItem","position":37,"name":"\u0412 \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0443 \u0413\u0430\u043b\u0435\u0430\u043d (GIG) \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u0443 \u0442\u0430\u043a\u0441\u0438 iNdriver \u043e\u0431\u044b\u0447\u043d\u043e \u0435\u0441\u0442\u044c \u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0435 \u0437\u043e\u043d\u044b \u043f\u043e\u0441\u0430\u0434\u043a\u0438."},
+{"@type":"ListItem","position":38,"name":"\u0420\u043e\u0441\u0441\u0438\u0439\u0441\u043a\u0430\u044f \u0432\u0435\u0440\u0441\u0438\u044f \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f Uber (\u043a\u043e\u0442\u043e\u0440\u0430\u044f \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0437\u0430\u0433\u043b\u0443\u0448\u043a\u043e\u0439 \u0441\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u043e\u0433\u043e \u043f\u0440\u0435\u0434\u043f\u0440\u0438\u044f\u0442\u0438\u044f \u0441 \u042f\u043d\u0434\u0435\u043a\u0441\u043e\u043c) \u043d\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438."},
+{"@type":"ListItem","position":39,"name":"\u0412\u044b\u043f\u0443\u0449\u0435\u043d\u043d\u044b\u0435 \u0432 \u0420\u043e\u0441\u0441\u0438\u0438 \u043a\u0430\u0440\u0442\u044b UnionPay \u0440\u0430\u0431\u043e\u0442\u0430\u044e\u0442 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438, \u0432 \u0447\u0430\u0441\u0442\u043d\u043e\u0441\u0442\u0438 \u0432 \u0431\u0430\u043d\u043a\u043e\u043c\u0430\u0442\u0430\u0445 Banco24Horas (\u043a\u0440\u0430\u0441\u043d\u044b\u0435)."},
+{"@type":"ListItem","position":40,"name":"\u041f\u043e\u0435\u0437\u0434\u043a\u0430 \u043d\u0430 Uber \u043d\u043e\u0447\u044c\u044e \u043c\u0435\u0436\u0434\u0443 \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0430\u043c\u0438 \u0413\u0443\u0430\u0440\u0443\u043b\u044c\u044e\u0441 (GRU) \u0438 \u0412\u0438\u0440\u0430\u043a\u043e\u043f\u0443\u0441 (VCP) \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0432 \u0446\u0435\u043b\u043e\u043c \u0441\u0447\u0438\u0442\u0430\u0435\u0442\u0441\u044f \u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u0439."},
+{"@type":"ListItem","position":41,"name":"\u0420\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u043c\u044b\u0435 \u0437\u0430\u043d\u044f\u0442\u0438\u044f \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0432\u043a\u043b\u044e\u0447\u0430\u044e\u0442 10-\u043c\u0438\u043d\u0443\u0442\u043d\u044b\u0439 \u043f\u043e\u043b\u0435\u0442 \u043d\u0430 \u0432\u0435\u0440\u0442\u043e\u043b\u0435\u0442\u0435 \u043d\u0430\u0434 \u0432\u043e\u0434\u043e\u043f\u0430\u0434\u0430\u043c\u0438 \u0437\u0430 685 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0445 \u0440\u0435\u0430\u043b\u043e\u0432, \u043f\u043e\u0435\u0437\u0434\u043a\u0438 \u043d\u0430 \u0442\u0430\u043a\u0441\u0438 \u0432 \u0433\u043e\u0440\u043e\u0434\u0430\u0445 (\u0446\u0435\u043d\u0430 \u043e\u0431\u0441\u0443\u0436\u0434\u0430\u0435\u0442\u0441\u044f \u043e\u0442 350 \u0434\u043e 200 \u0440\u0435\u0430\u043b\u043e\u0432), \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 Uber \u0438 \u0433\u0440\u0443\u043f\u043f\u043e\u0432\u044b\u0435 \u044d\u043a\u0441\u043a\u0443\u0440\u0441\u0438\u0438 \u0432 \u0444\u0430\u0432\u0435\u043b\u044b \u0432 \u0420\u0438\u043e \u0441 \u0440\u0443\u0441\u0441\u043a\u043e\u0433\u043e\u0432\u043e\u0440\u044f\u0449\u0438\u043c \u0433\u0438\u0434\u043e\u043c \u0434\u043b\u044f \u044d\u043a\u043e\u043d\u043e\u043c\u0438\u0438."},
+{"@type":"ListItem","position":42,"name":"\u0420\u043e\u0441\u0441\u0438\u044f \u043f\u043e\u0434\u043f\u0438\u0441\u0430\u043b\u0430 \u0412\u0435\u043d\u0441\u043a\u0443\u044e \u043a\u043e\u043d\u0432\u0435\u043d\u0446\u0438\u044e \u043e \u0434\u043e\u0440\u043e\u0436\u043d\u043e\u043c \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0438, \u0438 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0435 \u0432\u043b\u0430\u0441\u0442\u0438, \u043a\u0430\u043a \u043f\u0440\u0430\u0432\u0438\u043b\u043e, \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u044e\u0442 \u0441\u0442\u0430\u043d\u0434\u0430\u0440\u0442\u043d\u044b\u0435 \u0440\u043e\u0441\u0441\u0438\u0439\u0441\u043a\u0438\u0435 \u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044c\u0441\u043a\u0438\u0435 \u0443\u0434\u043e\u0441\u0442\u043e\u0432\u0435\u0440\u0435\u043d\u0438\u044f \u0431\u0435\u0437 \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e\u0441\u0442\u0438 \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u044f \u043c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u043e\u0433\u043e \u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044c\u0441\u043a\u043e\u0433\u043e \u0443\u0434\u043e\u0441\u0442\u043e\u0432\u0435\u0440\u0435\u043d\u0438\u044f (\u041c\u0412\u0423) \u0438\u043b\u0438 \u0437\u0430\u0432\u0435\u0440\u0435\u043d\u043d\u044b\u0445 \u043f\u0435\u0440\u0435\u0432\u043e\u0434\u043e\u0432, \u043f\u043e\u0441\u043a\u043e\u043b\u044c\u043a\u0443 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u0432 \u043d\u0438\u0445 \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u0430 \u043b\u0430\u0442\u0438\u043d\u0441\u043a\u0438\u043c\u0438 \u0441\u0438\u043c\u0432\u043e\u043b\u0430\u043c\u0438."},
+{"@type":"ListItem","position":43,"name":"\u0427\u0442\u043e\u0431\u044b \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c \u043e\u043f\u043b\u0430\u0442\u0443 \u043d\u0430\u043b\u0438\u0447\u043d\u044b\u043c\u0438 \u0432 Uber \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438, \u0443\u0431\u0435\u0434\u0438\u0442\u0435\u0441\u044c, \u0447\u0442\u043e \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u043e."},
+{"@type":"ListItem","position":44,"name":"\u0421\u0430\u043c\u044b\u0435 \u043f\u0440\u043e\u0441\u0442\u044b\u0435 \u0438 \u0432\u044b\u0433\u043e\u0434\u043d\u044b\u0435 \u0441\u043f\u043e\u0441\u043e\u0431\u044b \u0434\u043e\u0431\u0440\u0430\u0442\u044c\u0441\u044f \u0438\u0437 \u041a\u043e\u043f\u0430\u043a\u0430\u0431\u0430\u043d\u044b \u0434\u043e \u0432\u0435\u0440\u0442\u043e\u043b\u0435\u0442\u043d\u043e\u0439 \u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0438 rio2fly \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e."},
+{"@type":"ListItem","position":45,"name":"\u0427\u0442\u043e\u0431\u044b \u0434\u043e\u0431\u0440\u0430\u0442\u044c\u0441\u044f \u0434\u043e \u043f\u043e\u0440\u0442\u0430 \u0421\u0430\u043d\u0442\u043e\u0441 \u0438\u0437 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0434\u043b\u044f \u043a\u0440\u0443\u0438\u0437\u043d\u043e\u0433\u043e \u043b\u0430\u0439\u043d\u0435\u0440\u0430, \u0443 \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u043e\u0432 \u0435\u0441\u0442\u044c \u0434\u0432\u0430 \u043e\u0441\u043d\u043e\u0432\u043d\u044b\u0445 \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u0430: 1. \u0421\u0435\u0441\u0442\u044c \u043d\u0430 \u0430\u0432\u0442\u043e\u0431\u0443\u0441 \u0438\u0437 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0434\u043e \u0421\u0430\u043d\u0442\u043e\u0441\u0430, \u0437\u0430\u0442\u0435\u043c \u0432\u043e\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c\u0441\u044f Uber \u0434\u043e \u043f\u043e\u0440\u0442\u0430."},
+{"@type":"ListItem","position":46,"name":"\u0418\u043d\u043e\u0441\u0442\u0440\u0430\u043d\u043d\u044b\u0435 \u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044c\u0441\u043a\u0438\u0435 \u043f\u0440\u0430\u0432\u0430 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043b\u044c\u043d\u044b \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0434\u043b\u044f \u0442\u0443\u0440\u0438\u0441\u0442\u043e\u0432 \u043d\u0430 \u0441\u0440\u043e\u043a \u0434\u043e 6 \u043c\u0435\u0441\u044f\u0446\u0435\u0432."},
+{"@type":"ListItem","position":47,"name":"\u0412\u044b\u043f\u0443\u0449\u0435\u043d\u043d\u044b\u0435 \u0432 \u041a\u044b\u0440\u0433\u044b\u0437\u0441\u0442\u0430\u043d\u0435 \u043a\u0430\u0440\u0442\u044b Visa (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, Aiyl Bank) \u0448\u0438\u0440\u043e\u043a\u043e \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u044e\u0442\u0441\u044f \u0433\u0440\u0430\u0436\u0434\u0430\u043d\u0430\u043c\u0438 \u0420\u043e\u0441\u0441\u0438\u0438 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0434\u043b\u044f \u0435\u0436\u0435\u0434\u043d\u0435\u0432\u043d\u044b\u0445 \u0442\u0440\u0430\u043d\u0437\u0430\u043a\u0446\u0438\u0439 (\u0440\u043e\u0437\u043d\u0438\u0447\u043d\u0430\u044f \u0442\u043e\u0440\u0433\u043e\u0432\u043b\u044f, \u0442\u0440\u0430\u043d\u0441\u043f\u043e\u0440\u0442)."},
+{"@type":"ListItem","position":48,"name":"\u0415\u0441\u043b\u0438 \u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044c Uber \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u043d\u0435 \u0437\u0430\u0432\u0435\u0440\u0448\u0438\u043b \u043f\u043e\u0435\u0437\u0434\u043a\u0443 \u0441 \u043e\u043f\u043b\u0430\u0442\u043e\u0439 \u043d\u0430\u043b\u0438\u0447\u043d\u044b\u043c\u0438, \u0447\u0442\u043e \u043f\u0440\u0438\u0432\u0435\u043b\u043e \u043a \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u044e \u0437\u0430\u0434\u043e\u043b\u0436\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u0432 \u0430\u043a\u043a\u0430\u0443\u043d\u0442\u0435 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f, \u043e\u0431\u0440\u0430\u0449\u0435\u043d\u0438\u0435 \u0432 \u0441\u043b\u0443\u0436\u0431\u0443 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0438 Uber \u043c\u043e\u0436\u0435\u0442 \u0440\u0435\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u0443."},
+{"@type":"ListItem","position":49,"name":"\u0422\u0430\u043a\u0441\u0438 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 99) \u0447\u0430\u0441\u0442\u043e \u043d\u0435\u043e\u0445\u043e\u0442\u043d\u043e \u043f\u0435\u0440\u0435\u0441\u0435\u043a\u0430\u044e\u0442 \u0433\u0440\u0430\u043d\u0438\u0446\u0443 \u0441 \u0430\u0440\u0433\u0435\u043d\u0442\u0438\u043d\u0441\u043a\u043e\u0439 \u0441\u0442\u043e\u0440\u043e\u043d\u043e\u0439 \u0418\u0433\u0443\u0430\u0441\u0443."},
+{"@type":"ListItem","position":50,"name":"\u0423\u0437\u043d\u0430\u0439\u0442\u0435 \u043e \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u043e\u043c \u0442\u0430\u043a\u0441\u0438\u0441\u0442\u0435 \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e, \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442 \u043d\u0430 \u0436\u0435\u043b\u0442\u043e\u0439 \u043c\u0430\u0448\u0438\u043d\u0435 \u0438 \u0431\u0435\u0440\u0435\u0442 \u043e\u043a\u043e\u043b\u043e 120 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0445 \u0440\u0435\u0430\u043b\u043e\u0432 \u0437\u0430 \u043f\u043e\u0435\u0437\u0434\u043a\u0443 \u0438\u0437 \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0430 \u0434\u043e \u041a\u043e\u043f\u0430\u043a\u0430\u0431\u0430\u043d\u044b."},
+{"@type":"ListItem","position":51,"name":"\u0417\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0435 \u043f\u043e\u0435\u0437\u0434\u043a\u0438 Uber \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0440\u0430\u0431\u043e\u0442\u0430\u044e\u0442 \u043f\u0443\u0442\u0435\u043c \u0440\u0430\u0441\u0441\u044b\u043b\u043a\u0438 \u0437\u0430\u043f\u0440\u043e\u0441\u0430 \u043d\u0430 \u043f\u043e\u0435\u0437\u0434\u043a\u0443 \u0431\u043b\u0438\u0437\u043b\u0435\u0436\u0430\u0449\u0438\u043c \u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044f\u043c \u0437\u0430\u0440\u0430\u043d\u0435\u0435."},
+{"@type":"ListItem","position":52,"name":"\u0422\u0430\u043a\u0441\u0438 \u0432 \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0443 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e (GIG) \u043c\u043e\u0433\u0443\u0442 \u0431\u044b\u0442\u044c \u0437\u043d\u0430\u0447\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u0434\u043e\u0440\u043e\u0436\u0435 (\u0434\u043e 3 \u0440\u0430\u0437), \u0447\u0435\u043c \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f \u0434\u043b\u044f \u0437\u0430\u043a\u0430\u0437\u0430 \u043f\u043e\u0435\u0437\u0434\u043e\u043a, \u0442\u0430\u043a\u0438\u0435 \u043a\u0430\u043a InDrive."},
+{"@type":"ListItem","position":53,"name":"\u0423\u0437\u043d\u0430\u0439\u0442\u0435 \u043e \u0441\u0438\u0442\u0443\u0430\u0446\u0438\u044f\u0445, \u043a\u043e\u0433\u0434\u0430 \u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044c Uber \u0437\u0430\u044f\u0432\u043b\u044f\u0435\u0442, \u0447\u0442\u043e \u043e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430\u043b\u0438\u0447\u043d\u044b\u043c\u0438 \u043d\u0435 \u0431\u044b\u043b\u0430 \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0430, \u043d\u0435\u0441\u043c\u043e\u0442\u0440\u044f \u043d\u0430 \u0442\u043e, \u0447\u0442\u043e \u043f\u0430\u0441\u0441\u0430\u0436\u0438\u0440 \u0437\u0430\u043f\u043b\u0430\u0442\u0438\u043b \u043d\u0430\u043b\u0438\u0447\u043d\u044b\u043c\u0438."},
+{"@type":"ListItem","position":54,"name":"\u0412 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0438 99 taxi \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f \u00abTaxi\u00bb \u043e\u0442\u043d\u043e\u0441\u0438\u0442\u0441\u044f \u043a \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u043c \u0436\u0435\u043b\u0442\u044b\u043c \u0442\u0430\u043a\u0441\u0438."},
+{"@type":"ListItem","position":55,"name":"\u0421\u0440\u0430\u0432\u043d\u0438\u0442\u0435 \u0443\u0441\u043b\u0443\u0433\u0438 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0445 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0439 \u0434\u043b\u044f \u0437\u0430\u043a\u0430\u0437\u0430 \u043f\u043e\u0435\u0437\u0434\u043e\u043a 99 \u0438 Uber, \u0443\u0447\u0438\u0442\u044b\u0432\u0430\u044f \u0446\u0435\u043d\u044b, \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0441\u0442\u044c \u0438 \u0442\u0440\u0435\u0431\u043e\u0432\u0430\u043d\u0438\u044f \u043a \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438 (\u043d\u043e\u043c\u0435\u0440 \u0442\u0435\u043b\u0435\u0444\u043e\u043d\u0430, \u0441\u043f\u043e\u0441\u043e\u0431\u044b \u043e\u043f\u043b\u0430\u0442\u044b)."},
+{"@type":"ListItem","position":56,"name":"\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f 99 taxi \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0443\u0441\u043f\u0435\u0448\u043d\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043b\u0441\u044f \u0441\u0435\u0440\u0432\u0438\u0441\u043e\u043c \u0441 \u043e\u043f\u043b\u0430\u0442\u043e\u0439 \u043d\u0430\u043b\u0438\u0447\u043d\u044b\u043c\u0438."},
+{"@type":"ListItem","position":57,"name":"\u0427\u0442\u043e\u0431\u044b \u0438\u0437\u0431\u0435\u0436\u0430\u0442\u044c \u043f\u043e\u0442\u0435\u043d\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0433\u043e \u043c\u043e\u0448\u0435\u043d\u043d\u0438\u0447\u0435\u0441\u0442\u0432\u0430 \u0441\u043e \u0441\u0442\u043e\u0440\u043e\u043d\u044b \u0442\u0430\u043a\u0441\u0438\u0441\u0442\u043e\u0432 \u043f\u0440\u0438 \u043f\u043e\u0435\u0437\u0434\u043a\u0435 \u0438\u0437 \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0430 \u0432 \u043e\u0442\u0435\u043b\u044c \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e, \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f \u0434\u043b\u044f \u0437\u0430\u043a\u0430\u0437\u0430 \u043f\u043e\u0435\u0437\u0434\u043e\u043a, \u0442\u0430\u043a\u0438\u0435 \u043a\u0430\u043a Uber \u0438\u043b\u0438 99. \u042d\u0442\u0438 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f \u043c\u043e\u0436\u043d\u043e \u0441\u043a\u0430\u0447\u0430\u0442\u044c \u0438 \u043d\u0430\u0447\u0430\u0442\u044c \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c \u043f\u043e \u043f\u0440\u0438\u0431\u044b\u0442\u0438\u0438."},
+{"@type":"ListItem","position":58,"name":"\u0421\u0435\u0440\u0432\u0438\u0441\u044b \u0440\u0430\u0439\u0434\u0448\u0435\u0440\u0438\u043d\u0433\u0430, \u0432 \u0447\u0430\u0441\u0442\u043d\u043e\u0441\u0442\u0438 Uber, \u044f\u0432\u043b\u044f\u044e\u0442\u0441\u044f \u0443\u0434\u043e\u0431\u043d\u044b\u043c \u0438 \u044d\u043a\u043e\u043d\u043e\u043c\u0438\u0447\u043d\u044b\u043c \u0441\u043f\u043e\u0441\u043e\u0431\u043e\u043c \u043f\u0435\u0440\u0435\u0434\u0432\u0438\u0436\u0435\u043d\u0438\u044f \u043f\u043e \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438."},
+{"@type":"ListItem","position":59,"name":"\u0421\u0442\u043e\u0438\u043c\u043e\u0441\u0442\u044c \u0442\u0430\u043a\u0441\u0438 \u0438\u0437 \u0440\u0430\u0439\u043e\u043d\u0430 \u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430 \u0434\u043e \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0430 \u0413\u0443\u0430\u0440\u0443\u043b\u044c\u044e\u0441 (GRU) \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u043c\u043e\u0436\u0435\u0442 \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u044f\u0442\u044c \u043e\u043a\u043e\u043b\u043e 250 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0445 \u0440\u0435\u0430\u043b\u043e\u0432."},
+{"@type":"ListItem","position":60,"name":"\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 Uber \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u043d\u0435 \u0442\u0440\u0435\u0431\u0443\u0435\u0442 \u043c\u0435\u0441\u0442\u043d\u043e\u0433\u043e \u043d\u0430\u043b\u043e\u0433\u043e\u0432\u043e\u0433\u043e \u043d\u043e\u043c\u0435\u0440\u0430 (CPF)."},
+{"@type":"ListItem","position":61,"name":"\u0421\u0442\u043e\u0438\u043c\u043e\u0441\u0442\u044c \u043f\u043e\u0435\u0437\u0434\u043a\u0438 \u043d\u0430 Uber \u0438\u0437 \u0446\u0435\u043d\u0442\u0440\u0430 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0432 \u0413\u0443\u0430\u0440\u0443\u0436\u0443 \u0434\u0438\u043d\u0430\u043c\u0438\u0447\u0435\u0441\u043a\u0430\u044f."},
+{"@type":"ListItem","position":62,"name":"\u0412 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 Uber \u043e\u0431\u044b\u0447\u043d\u043e \u0432 2-3 \u0440\u0430\u0437\u0430 \u0434\u0435\u0448\u0435\u0432\u043b\u0435, \u0447\u0435\u043c \u0442\u0440\u0430\u0434\u0438\u0446\u0438\u043e\u043d\u043d\u044b\u0435 \u0433\u043e\u0440\u043e\u0434\u0441\u043a\u0438\u0435 \u0442\u0430\u043a\u0441\u0438, \u0432\u044b\u0437\u044b\u0432\u0430\u0435\u043c\u044b\u0435 \u0447\u0435\u0440\u0435\u0437 \u043e\u0442\u0435\u043b\u0438."},
+{"@type":"ListItem","position":63,"name":"\u0421\u0442\u043e\u0438\u043c\u043e\u0441\u0442\u044c \u0442\u0430\u043a\u0441\u0438 \u0438\u0437 \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0430 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0413\u0443\u0430\u0440\u0443\u043b\u044c\u044e\u0441 (GRU) \u0434\u043e \u0440\u0430\u0439\u043e\u043d\u0430 \u0412\u0438\u043b\u0430-\u041c\u0430\u0440\u0438\u0430\u043d\u0430 \u0432 \u043d\u043e\u0447\u043d\u043e\u0435 \u0432\u0440\u0435\u043c\u044f \u043c\u043e\u0436\u0435\u0442 \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u044f\u0442\u044c \u043f\u0440\u0438\u043c\u0435\u0440\u043d\u043e 90 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0445 \u0440\u0435\u0430\u043b\u043e\u0432."},
+{"@type":"ListItem","position":64,"name":"\u041e\u0441\u043d\u043e\u0432\u043d\u044b\u0435 \u0441\u0435\u0440\u0432\u0438\u0441\u044b \u0442\u0430\u043a\u0441\u0438 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u2014 \u044d\u0442\u043e Uber \u0438 99. \u041f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u00abMaxim\u00bb \u0442\u0430\u043a\u0436\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442 \u0432 \u0441\u0442\u0440\u0430\u043d\u0435, \u0445\u043e\u0442\u044f \u043e\u043d\u043e \u043c\u0435\u043d\u0435\u0435 \u0440\u0430\u0441\u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0435\u043d\u043e."},
+{"@type":"ListItem","position":65,"name":"\u0412 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f \u0442\u0430\u043a\u0441\u0438 Uber \u0438 99 \u043d\u0435 \u0442\u0440\u0435\u0431\u0443\u044e\u0442 CPF \u0434\u043b\u044f \u0441\u0442\u0430\u043d\u0434\u0430\u0440\u0442\u043d\u043e\u0433\u043e \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f."},
+{"@type":"ListItem","position":66,"name":"\u041d\u0435 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u00abUber Russia\u00bb \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438, \u0442\u0430\u043a \u043a\u0430\u043a \u043e\u043d\u043e \u0442\u0430\u043c \u043d\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442."},
+{"@type":"ListItem","position":67,"name":"\u0414\u043b\u044f \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u043e\u0432 \u0441 \u0442\u044f\u0436\u0435\u043b\u044b\u043c \u0431\u0430\u0433\u0430\u0436\u043e\u043c (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, 5 \u0447\u0435\u043c\u043e\u0434\u0430\u043d\u043e\u0432 + \u043a\u043e\u043b\u044f\u0441\u043a\u0430) \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0437\u0430\u043a\u0430\u0437 \u0434\u0432\u0443\u0445 \u043e\u0442\u0434\u0435\u043b\u044c\u043d\u044b\u0445 \u0430\u0432\u0442\u043e\u043c\u043e\u0431\u0438\u043b\u0435\u0439 Uber \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043d\u0430\u0438\u0431\u043e\u043b\u0435\u0435 \u044d\u0444\u0444\u0435\u043a\u0442\u0438\u0432\u043d\u044b\u043c \u0438 \u044d\u043a\u043e\u043d\u043e\u043c\u0438\u0447\u043d\u044b\u043c \u0440\u0435\u0448\u0435\u043d\u0438\u0435\u043c \u043f\u043e \u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044e \u0441 \u043f\u043e\u0438\u0441\u043a\u043e\u043c \u043e\u0434\u043d\u043e\u0433\u043e \u0447\u0430\u0441\u0442\u043d\u043e\u0433\u043e \u0442\u0440\u0430\u043d\u0441\u0444\u0435\u0440\u0430."},
+{"@type":"ListItem","position":68,"name":"\u0427\u0430\u0441\u0442\u043d\u044b\u0439 \u0442\u0440\u0430\u043d\u0441\u0444\u0435\u0440 \u0438\u0437 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u043c\u043e\u0436\u0435\u0442 \u0441\u0442\u043e\u0438\u0442\u044c \u043e\u043a\u043e\u043b\u043e $450. \u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u0441\u0435\u0440\u0432\u0438\u0441\u043e\u0432 \u0442\u0430\u043a\u0441\u0438, \u0442\u0430\u043a\u0438\u0445 \u043a\u0430\u043a Uber, \u0434\u043b\u044f \u043f\u043e\u0435\u0437\u0434\u043a\u0438 \u0432 \u043e\u0434\u0438\u043d \u043a\u043e\u043d\u0435\u0446 \u043c\u0435\u0436\u0434\u0443 \u044d\u0442\u0438\u043c\u0438 \u0433\u043e\u0440\u043e\u0434\u0430\u043c\u0438 \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c \u0437\u043d\u0430\u0447\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u0434\u0435\u0448\u0435\u0432\u043b\u0435, \u0441 \u043e\u0446\u0435\u043d\u043a\u0430\u043c\u0438 \u043e\u043a\u043e\u043b\u043e $225."},
+{"@type":"ListItem","position":69,"name":"\u0412\u0430\u0440\u0438\u0430\u043d\u0442\u044b \u043f\u043e\u0435\u0437\u0434\u043a\u0438 \u0438\u0437 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u0432 \u0410\u0440\u0440\u0430\u044f\u043b-\u0434\u0443-\u041a\u0430\u0431\u0443 \u0432\u043a\u043b\u044e\u0447\u0430\u044e\u0442 \u0430\u0432\u0442\u043e\u0431\u0443\u0441\u043d\u044b\u0435 \u043f\u0435\u0440\u0435\u0432\u043e\u0437\u043a\u0438 \u0438 BlaBlaCar."},
+{"@type":"ListItem","position":70,"name":"\u0420\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u0438 \u043f\u043e \u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u043c\u0443 \u0438 \u0443\u0434\u043e\u0431\u043d\u043e\u043c\u0443 \u043f\u0435\u0440\u0435\u043c\u0435\u0449\u0435\u043d\u0438\u044e \u0438\u0437 \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0430 \u041c\u0430\u043d\u0430\u0443\u0441\u0430 \u0432 \u0446\u0435\u043d\u0442\u0440 \u0433\u043e\u0440\u043e\u0434\u0430 \u043f\u0440\u0438 \u043d\u043e\u0447\u043d\u043e\u043c \u043f\u0440\u0438\u0431\u044b\u0442\u0438\u0438."},
+{"@type":"ListItem","position":71,"name":"\u041f\u043e\u043f\u0443\u043b\u044f\u0440\u043d\u044b\u0435 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0434\u043b\u044f \u0432\u044b\u0437\u043e\u0432\u0430 \u0442\u0430\u043a\u0441\u0438 \u0438 \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0438 \u0435\u0434\u044b, \u0430\u043d\u0430\u043b\u043e\u0433\u0438\u0447\u043d\u044b\u0435 Grab, \u0432\u043a\u043b\u044e\u0447\u0430\u044e\u0442 Uber \u0438 99 \u0434\u043b\u044f \u0442\u0430\u043a\u0441\u0438, \u0430 \u0442\u0430\u043a\u0436\u0435 iFood \u0434\u043b\u044f \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0438 \u0435\u0434\u044b."},
+{"@type":"ListItem","position":72,"name":"\u0427\u0442\u043e\u0431\u044b \u043e\u0446\u0435\u043d\u0438\u0442\u044c \u0441\u0442\u043e\u0438\u043c\u043e\u0441\u0442\u044c \u0442\u0430\u043a\u0441\u0438 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438, \u0441\u043a\u0430\u0447\u0430\u0439\u0442\u0435 \u043c\u0435\u0441\u0442\u043d\u044b\u0435 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f \u0434\u043b\u044f \u043f\u043e\u0435\u0437\u0434\u043e\u043a, \u0442\u0430\u043a\u0438\u0435 \u043a\u0430\u043a 99 \u0438\u043b\u0438 Uber, \u0438 \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0436\u0435\u043b\u0430\u0435\u043c\u044b\u0439 \u043c\u0430\u0440\u0448\u0440\u0443\u0442 (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0438\u0437 \u041a\u043e\u043f\u0430\u043a\u0430\u0431\u0430\u043d\u044b), \u0447\u0442\u043e\u0431\u044b \u043f\u0440\u043e\u0432\u0435\u0440\u0438\u0442\u044c \u0446\u0435\u043d\u044b \u0432 \u0440\u0435\u0436\u0438\u043c\u0435 \u0440\u0435\u0430\u043b\u044c\u043d\u043e\u0433\u043e \u0432\u0440\u0435\u043c\u0435\u043d\u0438."},
+{"@type":"ListItem","position":73,"name":"\u0421\u0435\u0440\u0432\u0438\u0441\u044b Uber Comfort/Black \u0434\u043e \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0430 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u043d\u0430\u0434\u0435\u0436\u043d\u044b."},
+{"@type":"ListItem","position":74,"name":"\u0423\u0437\u043d\u0430\u0439\u0442\u0435, \u0442\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f \u043b\u0438 CPF \u0434\u043b\u044f \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f iDrive \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438, \u0438\u043b\u0438 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u044e\u0442 \u043b\u0438 \u0430\u043b\u044c\u0442\u0435\u0440\u043d\u0430\u0442\u0438\u0432\u043d\u044b\u0435 \u043c\u0435\u0442\u043e\u0434\u044b \u0438\u043b\u0438 \u0433\u0435\u043d\u0435\u0440\u0430\u0442\u043e\u0440\u044b, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u043c\u043e\u0433\u0443\u0442 \u043f\u0440\u0435\u0434\u043e\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0439 CPF \u0434\u043b\u044f \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438."},
+{"@type":"ListItem","position":75,"name":"\u0420\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u043c\u044b\u0435 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f \u0434\u043b\u044f \u0437\u0430\u043a\u0430\u0437\u0430 \u043f\u043e\u0435\u0437\u0434\u043e\u043a \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u2014 \u044d\u0442\u043e Uber \u0438 99. \u041e\u043f\u043b\u0430\u0442\u0430 \u043d\u0430\u043b\u0438\u0447\u043d\u044b\u043c\u0438 \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u0435\u0442\u0441\u044f."},
+{"@type":"ListItem","position":76,"name":"\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0441\u043e\u043e\u0431\u0449\u0438\u043b \u043e \u0441\u0442\u043e\u0438\u043c\u043e\u0441\u0442\u0438 \u0442\u0440\u0430\u043d\u0441\u0444\u0435\u0440\u0430 \u043d\u0430 Uber \u0432 120 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0445 \u0440\u0435\u0430\u043b\u043e\u0432 \u0438\u0437 \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0430 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e."},
+{"@type":"ListItem","position":77,"name":"\u0421\u043e\u043e\u0431\u0449\u0430\u0435\u0442\u0441\u044f, \u0447\u0442\u043e \u043f\u0440\u0435\u043c\u0438\u0430\u043b\u044c\u043d\u044b\u0435 \u0441\u0435\u0440\u0432\u0438\u0441\u044b \u0442\u0430\u043a\u0441\u0438 (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, Uber Black \u0438\u043b\u0438 99 Black) \u0438\u043c\u0435\u044e\u0442 \u0431\u044b\u0441\u0442\u0440\u043e\u0435 \u0432\u0440\u0435\u043c\u044f \u043f\u0440\u0438\u0431\u044b\u0442\u0438\u044f \u0432 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u043d\u044b\u0445 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0445 \u0440\u0430\u0439\u043e\u043d\u0430\u0445, \u0442\u0430\u043a\u0438\u0445 \u043a\u0430\u043a \u0411\u0430\u0440\u0440\u0430 \u0438\u043b\u0438 \u0412\u0438\u0442\u043e\u0440\u0438\u044f."},
+{"@type":"ListItem","position":78,"name":"\u041a\u0430\u0437\u0430\u0445\u0441\u0442\u0430\u043d\u0441\u043a\u0438\u0435 \u0431\u0430\u043d\u043a\u043e\u0432\u0441\u043a\u0438\u0435 \u043a\u0430\u0440\u0442\u044b, \u0442\u0430\u043a\u0438\u0435 \u043a\u0430\u043a Kaspi \u0438 Freedom, \u043c\u043e\u0433\u0443\u0442 \u0440\u0430\u0431\u043e\u0442\u0430\u0442\u044c \u043a\u0430\u043a \u043a\u0440\u0435\u0434\u0438\u0442\u043d\u044b\u0435 \u043a\u0430\u0440\u0442\u044b \u0438 \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u044e\u0442\u0441\u044f \u0441\u0435\u0440\u0432\u0438\u0441\u0430\u043c\u0438 \u0437\u0430\u043a\u0430\u0437\u0430 \u0442\u0430\u043a\u0441\u0438, \u0442\u0430\u043a\u0438\u043c\u0438 \u043a\u0430\u043a Uber \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438."}
+]}
+</script>
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 \u041d\u043e\u0447\u044c", DAY="\u2600 \u0414\u0435\u043d\u044c";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

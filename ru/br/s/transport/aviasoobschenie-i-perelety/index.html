@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Бразилия: авиасообщение и перелеты — живой опыт из чатов · Luky</title>
+<meta name="description" content="Живой опыт по теме «авиасообщение и перелеты» в Бразилии: реальные советы, случаи и правила из чатов. Под твой случай — у Luky.">
+<link rel="canonical" href="https://info.multyspeak.ru/ru/br/s/transport/aviasoobschenie-i-perelety/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.ru/ru/br/s/transport/aviasoobschenie-i-perelety/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.ru/en/br/s/transport/aviasoobschenie-i-perelety/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.ru/es/br/s/transport/aviasoobschenie-i-perelety/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.ru/pt/br/s/transport/aviasoobschenie-i-perelety/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.ru/ru/br/s/transport/aviasoobschenie-i-perelety/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+/* тег типа абзаца (хвост-антологии: lifehack/reglament/howto/risk/case/service) */
+.tag{display:inline-block;font-family:var(--font-mono);font-weight:400;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);
+  border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:2px;white-space:nowrap}
+.tag.risk{color:var(--red);border-color:var(--red)}
+.tag.reglament{color:var(--accent);border-color:var(--accent)}
+.tag.lifehack{color:var(--green);border-color:var(--green)}
+.tag.service{color:var(--yellow);border-color:var(--yellow)}
+.tag.howto{color:var(--hud);border-color:var(--hud)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">инфопортал · в любой стране · без воды</span>
+    </div>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="on" href="/ru/br/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/en/br/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/br/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/pt/br/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Ночь</span></button>
+    </div>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/ru/">Главная</a> /
+    <a href="/ru/br/">Бразилия</a> /
+    <b>Авиасообщение и перелеты</b>
+  </nav>
+
+
+  
+  <h1>Авиасообщение и перелеты: как это в Бразилии — из первых рук</h1>
+
+  <h2>Из живого опыта</h2>
+  <details open><summary><span class="sumq"><span class="tag case">кейс</span>Сравнение бразильских авиакомпаний Latam и GOL.</span><span></span></summary>
+    <div class="a">Latam отмечают за отзывчивый наземный персонал, который помогает с багажными бирками и может ускорить посадку для тех, у кого короткая пересадка. GOL часто сравнивают с лоукостером вроде российской «Победы», подразумевая компромисс между комфортом и ценой. Хотя некоторые описывают GOL как авиакомпанию с минимальными удобствами (например, только начос и вода на рейсе), другие утверждают, что GOL — это крупная авиакомпания с опциями премиум-эконома, что противоречит сравнению с лоукостером. Консенсус предполагает, что Latam предлагает более комфортный опыт, в то время как GOL может быть более бюджетным вариантом.
+    <div class="src">✓ 2 сообщения из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Если рейс задержан или отменен, что привело к пропуску стыковки, а маршрут оформлен единым бронированием у одной авиакомпании, пассажиры должны иметь право на бесплатное перебронирование на следующий рейс при наличии свободных мест.</span><span></span></summary>
+    <div class="a">Эта политика обычно применяется, когда весь путь оформлен одним билетом.
+    <div class="src">✓ 2 сообщения из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>При путешествии из Москвы в Бразилию прямые рейсы могут быть ограничены, что приводит к необходимости полагаться на авиакомпании, такие как Qatar Airways, Emirates, Etihad или Royal Air Maroc, а также на китайских перевозчиков (например, China Eastern, Sichuan Airlines).</span><span></span></summary>
+    <div class="a">Стоимость билетов туда и обратно из Москвы может составлять около 99 000 рублей. Впечатления пассажиров сильно различаются даже в рамках одной авиакомпании из-за типа самолета (Airbus A350, как правило, предпочтительнее старых моделей Boeing с точки зрения комфорта, места для ног и развлечений на борту). Некоторые рейсы Qatar Airways предлагают интернет Starlink. Royal Air Maroc может предоставлять такие удобства, как тапочки. Китайские авиакомпании, такие как China Eastern или Sichuan Airlines, могут предлагать конкурентоспособные цены (например, 578 против 1000 на дальнемагистральных рейсах) и неожиданный комфорт при длительных перелетах через азиатские хабы (например, Чэнду, Шанхай).
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>При бронировании перелетов из нескольких сегментов, особенно отдельными билетами или с коротким временем пересадки, помните о возможных задержках.</span><span></span></summary>
+    <div class="a">У авиакомпаний обычно есть правила перебронирования пассажиров на следующий доступный рейс, если предыдущий (в рамках одного билета) задерживается, но это может повлечь длительное ожидание, особенно на малопопулярных маршрутах. Старайтесь выбирать рейсы с достаточным временем на пересадку или отдавайте предпочтение авиакомпаниям с более гибкими правилами перебронирования. Всегда проверяйте конкретные условия вашего билета и политику авиакомпании в отношении задержек и пропущенных стыковок. Если билет единый, авиакомпания, как правило, несет ответственность за то, чтобы вы добрались до конечного пункта. Однако сроки такого перебронирования могут разниться, и если из-за задержки вы пропустите следующий рейс, оформленный другим билетом, оплата нового билета может лечь на вас.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Для внутренних авиаперелетов по Бразилии основными авиакомпаниями являются LATAM, GOL и Azul.</span><span></span></summary>
+    <div class="a">Надежность: GOL и Azul часто называют более пунктуальными и надежными в отношении соблюдения расписания по сравнению с LATAM, у которой может быть больше переносов рейсов или задержек. Воздушные суда и обслуживание: все три авиакомпании обычно эксплуатируют современные самолеты и предоставляют хорошо организованный сервис. Пассажиры отмечают хороший опыт даже с самыми дешевыми билетами, зачастую разрешая провоз ручной клади без строгих проверок калибраторами, как это встречается в некоторых других регионах. Рекомендация: если строгое соблюдение расписания критично, GOL или Azul могут быть предпочтительнее. Однако все они считаются подходящими вариантами.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Путешественники в Бразилии могут столкнуться с языковым барьером в общественном транспорте и аэропортах.</span><span></span></summary>
+    <div class="a">Билетные автоматы и системы регистрации авиакомпаний, таких как Latam и GOL, часто не имеют опций на английском (или других иностранных) языках. Хотя в некоторых туристических зонах могут встречаться многоязычные меню (например, на русском в Копакабане), это не является стандартом. Салвадор отмечается как направление, где поддержка английского языка особенно ограничена из-за небольшого количества туристов. Latam воспринимается как более отзывчивая компания, предоставляющая услуги вроде печати багажных бирок, в то время как GOL сравнивают с бюджетной авиакомпанией типа российской «Победы», предлагающей меньший комфорт за меньшую цену.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>Гражданам России, путешествующим из Бразилии в страны Европейского союза или следующими через них транзитом, как правило, требуется действующая виза.</span><span></span></summary>
+    <div class="a">Авиакомпании обязаны проверять визовые требования перед посадкой и отказывают пассажирам без необходимых документов, что приводит к потере стоимости билета. Попытки обойти визовые требования через «прикидывание дурачком» или обращение к турагентствам вряд ли увенчаются успехом. Некоторые страны, такие как Испания, прямо запретили безвизовый транзит для владельцев российских паспортов. Хотя некоторые отзывы упоминают отдельные авиакомпании (например, ITA, KLM) как потенциально «менее строгие» для транзита, это ненадежно и противоречит официальным правилам.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Внутренние рейсы в Бразилии, например между Сан-Паулу и Рио-де-Жанейро, могут иметь значительные различия в цене.</span><span></span></summary>
+    <div class="a">Эти колебания зависят от таких факторов, как время вылета, наличие пересадок и конкретная авиакомпания. Иногда рейсы с пересадкой в другом городе могут быть дешевле прямых. Кроме того, учитывайте аэропорт вылета; Виракопос (VCP) часто используется для Сан-Паулу, но находится на некотором расстоянии от центра города. Авиакомпании Azul, Gol и Latam являются распространенными перевозчиками. Рекомендуется сравнивать цены на нескольких платформах бронирования и агрегаторах. Будьте осторожны с некоторыми туристическими сайтами, так как их информация не всегда может быть точной или актуальной.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>При бронировании международных авиаперелетов, особенно с несколькими пересадками, часто возникают расхождения в наличии билетов и ценах на разных платформах (например, Aviasales, Superkassa.travel) из-за различий в инвентаре, партнерских отношениях и системах бронирования.</span><span></span></summary>
+    <div class="a">Для въезда в Бразилию авиакомпании по закону обязаны проверять наличие у иностранных туристов обратного билета или билета в третью страну. Хотя российские пограничники обычно не проверяют обратные билеты при въезде в Россию, авиакомпания несет ответственность за соблюдение правил въезда страны назначения. Рекомендуется убедиться, что все необходимые проездные документы и обратные билеты соответствуют правилам страны назначения.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Цены на внутренние авиарейсы в Бразилии подвержены значительной сезонности; например, рейсы из Рио в Фос-ду-Игуасу в октябре/ноябре могут быть в 3 раза дороже, чем в июне, при этом количество прямых рейсов меньше (например, только LATAM, в то время как GOL появляется на более дешевые даты).</span><span></span></summary>
+    <div class="a">Потенциальная стратегия экономии — «скиплэггинг» (skiplagging): покупка билета до более дальнего пункта назначения с пересадкой в нужном городе и выход там. Однако эта практика несет риски: потенциальное попадание в черный список авиакомпании и сложности с зарегистрированным багажом (подходит только при наличии ручной клади).
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>Для поездки из Москвы в Бразилию без шенгенской визы избегайте маршрутов с пересадками в еврозоне.</span><span></span></summary>
+    <div class="a">Рекомендуемые транзитные узлы: Катар, Стамбул (Turkish Airlines), Дубай (Emirates) и Марокко (Royal Air Maroc). Полеты через Эфиопию также возможны, но выполняются реже. Пример маршрута и стоимости: Москва-Стамбул (Аэрофлот, 28 тыс. руб.), Стамбул-Сан-Паулу (Turkish Airlines, 94 тыс. руб. с багажом), Рио-Дубай (75 тыс. руб.), Дубай-Москва (31 тыс. руб.), итого 228 тыс. руб. Будьте готовы к возможным вопросам от сотрудников авиакомпаний по поводу обратных билетов или дальнейшего следования.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Проясните процедуры трансфера багажа для международных рейсов, вылетающих из Бразилии.</span><span></span></summary>
+    <div class="a">В частности, если у пассажира есть внутренний рейс (например, Витория — Сан-Паулу авиакомпанией Latam) и последующий международный рейс (например, Сан-Паулу — Стамбул), и билеты были куплены в рамках одного бронирования, нужно ли забирать и повторно регистрировать багаж в Сан-Паулу? Обратите внимание, что процедуры могут отличаться, если вылетающий из Бразилии рейс не является последним международным сегментом (например, полет Бразилия — Стамбул — Россия против Бразилия — Россия).
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Бронирование рейсов в Бразилию через Trip.com может быть дешевле, чем напрямую, особенно у Royal Air Maroc (у них короткий 8-9 часовой трансатлантический перелет).</span><span></span></summary>
+    <div class="a">Однако послепродажное обслуживание ведут филиппинские агенты поддержки, из-за чего вносить изменения сложно. Особые запросы, например, бронирование люльки для младенца через Trip.com, часто не проходят (хотя персонал авиакомпании может решить это на борту). Также учтите, что внутренние бразильские билеты, купленные через сторонние агрегаторы вроде Kupibilet, могут оформляться до 48 часов.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>При перелете в Бразилию рассмотрите авиакомпании Ethiopian Airlines или Royal Air Maroc.</span><span></span></summary>
+    <div class="a">Ethiopian Airlines предлагает питание и напитки, включая алкоголь, и в целом хорошо обращается с багажом, хотя возможны задержки. У Royal Air Maroc могут быть более длительные пересадки, иногда с предоставлением отеля и питания. Всегда проверяйте на сайте авиакомпании актуальные требования к въезду для вашего гражданства, так как они могут меняться. У Turkish Airlines в последнее время смешанные отзывы, некоторые путешественники сообщают о проблемах.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>На рейсах Royal Air Maroc из Москвы в Сан-Паулу через Касабланку некоторые места (например, 7-й ряд) относятся к премиум-эконому с увеличенным пространством, тогда как другие (например, 20-й ряд) — стандартные, с меньшим комфортом.</span><span></span></summary>
+    <div class="a">Можно запросить смену места на стойке регистрации или в представительстве RAM во время транзита (например, на 2-м этаже аэропорта Касабланки). Успех не гарантирован; некоторые отмечают, что сменить места легко, другие сталкивались с проблемами при смене мест для стыковочных рейсов в пункте отправления.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Для людей, переезжающих в Бразилию, которым нужно перевезти большой объем личных вещей (например, более 10 сумок/коробок с личными предметами и электроникой, не считая мебели), распространенным методом, который использовали другие, является оплата сверхнормативного багажа на рейсах.</span><span></span></summary>
+    <div class="a">Также было отмечено, что подготовка «письма о переезде» помогает упростить этот процесс. Прямых контактов или конкретной информации по морским грузоперевозкам или сборным грузам для личных вещей в этом обсуждении предоставлено не было.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Авиакомпания GOL в Бразилии получает неоднозначные отзывы путешественников: некоторые сообщают о сбоях на сайте, проблемах с оплатой и возвратом средств, в то время как другие хвалят операционную эффективность.</span><span></span></summary>
+    <div class="a">Доступ к их сайту или управление бронированиями из-за пределов Бразилии часто требует VPN с бразильским IP-адресом или использования мобильного приложения. Хотя существуют правила провоза багажа, строгое соблюдение норм при незначительных отклонениях в размере или весе пассажирами отмечается не всегда.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Авиакомпания GOL является крупным бразильским авиаперевозчиком, и, как и другие авиакомпании, она сталкивается с периодическими отменами и задержками рейсов.</span><span></span></summary>
+    <div class="a">Хотя некоторые путешественники сообщают о негативном опыте, у других полеты проходят без проблем. GOL не выделяется особой ненадежностью по сравнению с другими крупными авиакомпаниями. Что касается поддержки, онлайн-чат GOL, как сообщается, очень отзывчив, а прямые телефонные линии могут быть менее доступными или иметь более низкий приоритет.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Авиабилеты из Москвы в Бразилию (GRU/GIG) варьируются от 110 000 до 350 000+ рублей на человека.</span><span></span></summary>
+    <div class="a">Основные перевозчики часто включают Ethiopian Airlines и Royal Air Maroc. Маршрут через Сан-Паулу (GRU) зачастую более бюджетный, чем прямой перелет в Рио-де-Жанейро. Путешественникам рекомендуется избегать пересадок в Шенгенской зоне при отсутствии визы, чтобы предотвратить проблемы с транзитом. Заложите минимум 40 000 рублей на внутренние перелеты или автобусные трансферы между Сан-Паулу и Рио.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Рейсы Ethiopian Airlines в Бразилию могут не отображаться на всех агрегаторах при поиске на неправильные даты, так как они летают не ежедневно.</span><span></span></summary>
+    <div class="a">При бронировании напрямую на сайте авиакомпании пользователи могут завершить оформление и получить отдельную ссылку на оплату по электронной почте, которая может принимать международные карты или карты стран СНГ (обратите внимание, что может взиматься небольшая комиссия за обработку). Альтернативно, используйте Trip.com для проверки и бронирования.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Доступ к сайтам бразильских авиакомпаний, таких как Azul (AD) и GOL (G3), из России может потребовать использования VPN из-за возможных географических ограничений или мер по предотвращению кибератак.</span><span></span></summary>
+    <div class="a">Хотя Latam (LA) также является крупным авиаперевозчиком, рекомендуется проверять прямое бронирование или использовать агрегаторы, если прямой доступ затруднен. Все три авиакомпании в целом считаются надежными для внутренних перелетов по Бразилии. VoePass (V3) — еще один вариант.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Сравнение Ethiopian Airlines и Moroccan Airlines.</span><span></span></summary>
+    <div class="a">Moroccan Airlines через Касабланку предпочтительнее по уровню комфорта и длительности перелета. Еда на рейсах Moroccan Airlines в целом не нравится, за исключением творога, в то время как еда на Ethiopian Airlines считается приемлемой, особенно мясные блюда. Самолеты Ethiopian Airlines крупнее, что позволяет больше двигаться, но на маршрутах в Сан-Паулу лайнеры сопоставимы. Главное преимущество Ethiopian Airlines — цена.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Прямые рейсы из Бразилии в Казахстан обычно недоступны.</span><span></span></summary>
+    <div class="a">Путешественникам, как правило, нужно лететь с одной или несколькими пересадками. Популярные авиакомпании, предлагающие маршруты между этими странами, включают Turkish Airlines и Qatar Airways, часто с остановками в Стамбуле или Дохе соответственно. Длительность и стоимость перелета могут быть сопоставимы, поэтому выбор может зависеть от конкретного расписания, предпочтений по пересадкам и норм провоза багажа.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Цены на внутренние авиарейсы в Бразилии имеют тенденцию значительно расти по мере приближения даты поездки.</span><span></span></summary>
+    <div class="a">Эксперты рекомендуют бронировать билеты как минимум за 3 месяца. Инструменты сравнения, такие как Skyscanner или Trip.com, часто предлагают цены, конкурирующие с официальными сайтами авиакомпаний, а иногда и более низкие тарифы. Обратите внимание, что бразильские авиакомпании, такие как GOL, могут требовать наличие CPF для бронирования на официальных сайтах.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>LATAM Airlines и другие бразильские внутренние авиаперевозчики строго соблюдают лимит в 23 кг на одно место багажа.</span><span></span></summary>
+    <div class="a">При бронировании рейсов по отдельным билетам (без интерлайна) пассажиры должны забрать багаж, пройти таможню и снова сдать его. Плата за перевес часто взимается у выхода на посадку. Рекомендуется переупаковать вещи для соответствия весовым нормам или заранее приобрести дополнительное багажное место онлайн, так как сборы в аэропорту значительно выше.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>При покупке билетов на внутренние рейсы в Бразилии в качестве резидента с RNM (Registro Nacional Migratório), используйте данные вашего документа RNM.</span><span></span></summary>
+    <div class="a">В поле гражданства укажите страну вашего гражданства (например, Россия). Если система авиакомпании не принимает RNM или требует паспорт, используйте данные вашего заграничного паспорта РФ и выберите «Россия» в качестве гражданства. Убедитесь, что все данные введены точно, включая пробелы в номерах паспортов.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>При путешествии по единому билету из Лимы (Перу) в Москву с 3-часовой пересадкой в Сан-Паулу (Бразилия) при смене авиакомпании (например, с LATAM на Qatar Airways), повторная регистрация багажа, как правило, не требуется.</span><span></span></summary>
+    <div class="a">Зарегистрированный багаж пассажиров обычно передается напрямую до конечного пункта назначения. Путешественникам следует уточнить это у своей авиакомпании, чтобы избежать путаницы, особенно если их предупредили о возможных новых правилах.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Бюджетный вариант путешествия в Бразилию из Стамбула через Касабланку авиакомпанией Royal Morocco Airlines.</span><span></span></summary>
+    <div class="a">Общая стоимость составила около 556 единиц валюты плюс 140 за кота в салоне. Маршрут включал 19-часовую пересадку в Касабланке с бесплатным проживанием в отеле, завтраком и трансфером до аэропорта. Также был доступен интернет на борту. Хотя качество обслуживания может отличаться от премиальных авиакомпаний, ценность за эту цену подчеркивается.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>В аэропорту Сан-Паулу (GRU), терминал 2, лаунж «Business Gol» предлагает базовые закуски и, как правило, не переполнен поздно ночью.</span><span></span></summary>
+    <div class="a">Однако в нем нет кресел с откидной спинкой для полноценного отдыха. При длительной пересадке, требующей сна, рассмотрите вариант с отелем в аэропорту, вместо того чтобы рассчитывать на лаунж для длительного комфорта. Существуют и другие лаунжи, например «The West», но подробная информация об их удобстве отсутствует.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Опыт перелета авиакомпанией Moroccan Airlines из Сан-Паулу в Санкт-Петербург.</span><span></span></summary>
+    <div class="a">Багаж был вскрыт и досмотрен по прибытии, хотя о пропаже вещей не сообщалось. Пассажиры в целом находят рейсы через Касабланку более комфортными, чем Ethiopian Airlines, в основном из-за более короткого времени в пути. Еда описывается как не всем подходящая, с положительным упоминанием творога. В аэропорту Касабланки принимают евро для тех, у кого нет местной валюты.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Цены на авиабилеты в Бразилии имеют более выраженную тенденцию к росту ближе к дате вылета по сравнению со многими другими странами.</span><span></span></summary>
+    <div class="a">Бронирование авиабилетов за год до вылета несет в себе риски изменения расписания или отмены, что затрудняет строгое соблюдение маршрута. Тем не менее, стратегическое бронирование групповых перелетов или добавление «дополнительного сегмента» иногда может значительно снизить общую стоимость билета.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Цены на авиабилеты между Сан-Паулу и Рио-де-Жанейро могут составлять от 4500 BRL (примерно 50 долларов США) при бронировании за месяц до вылета с багажом авиакомпанией Azul через Trip.com, или 9-11 тысяч BRL (примерно 100-120 долларов США) при бронировании за день до вылета.</span><span></span></summary>
+    <div class="a">Бронирование за год до вылета может дать очень низкие цены, но несет риски изменения или отмены рейсов. Цены значительно возрастают в день вылета.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Отзыв о рейсе Ethiopian Airlines (Москва — Аддис-Абеба — Сан-Паулу): норма регистрируемого багажа составляет 2 места по 23 кг, багаж регистрируется напрямую до Бразилии.</span><span></span></summary>
+    <div class="a">Транзитный аэропорт в Аддис-Абебе современный, чистый, с питьевыми фонтанчиками, где пассажиры могут наполнить пустые бутылки. Несмотря на рекомендации, сертификаты о вакцинации против желтой лихорадки не проверяли ни при посадке, ни по прибытии.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>При перелете в Бразилию с домашними животными, авиакомпании имеют значительно различающиеся правила перевозки грузов и животных.</span><span></span></summary>
+    <div class="a">У Turkish Airlines очень строгие требования к размеру переноски по сравнению с Royal Air Maroc. Крайне важно позвонить в службу поддержки клиентов авиакомпании, чтобы подтвердить наличие места для питомца перед покупкой билетов, особенно для дальнемагистральных международных рейсов.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>Путешественникам, планирующим поездку между Бразилией и Аргентиной, включая рейсы из Санкт-Петербурга в Буэнос-Айрес, Игуасу (с обеих сторон), Рио-де-Жанейро и Сан-Паулу, перед вылетом в Москву, следует поинтересоваться о вероятности бойкотов рейсов или других сбоев.</span><span></span></summary>
+    <div class="a">Им советуют бронировать более ранние рейсы в качестве меры предосторожности для завершающего этапа путешествия, особенно для рейса в Москву.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Варианты путешествия из России в Бразилию (Сан-Паулу): 1. Royal Air Maroc (через Касабланку) — считается надежным вариантом.</span><span></span></summary>
+    <div class="a">2. Emirates (через Дубай) — быстро, всего 15 часов. 3. Turkish Airlines (через Стамбул) — часто быстрее/дешевле, но высокий риск отказа в посадке на рейс из-за политики авиакомпании в отношении транзита в страны Америки. Всегда проверяйте требования к визам и транзитным документам.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Международный транзит в аэропорту Сан-Паулу (GRU) часто требует прохождения паспортного контроля, даже если вы остаетесь в транзитной зоне.</span><span></span></summary>
+    <div class="a">При использовании отдельных билетов или разных авиакомпаний уточните, возможен ли транзит между терминалами 2 и 3 в транзитной зоне для вашего конкретного рейса. Пассажирам рекомендуется иметь при себе распечатанный посадочный талон или мобильный посадочный талон.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>При перелете в Бразилию авиакомпанией Ethiopian Airlines пассажиры обязаны предъявить при регистрации действительный обратный билет или билет в третью страну.</span><span></span></summary>
+    <div class="a">Простая бронь может быть отклонена. Пассажирам без такого билета рекомендуется купить полностью возвратный билет в соседнюю страну (например, в Аргентину) непосредственно перед регистрацией и отменить его позже для получения возврата средств.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Авиакомпания Cabo Verde Airlines, по сообщениям, возобновляет полеты, ходят слухи о значительном снижении цен на билеты в Европу (в полцены).</span><span></span></summary>
+    <div class="a">Прошлый опыт путешествия этой авиакомпанией был описан как непростой, но стоящий того из-за экономии средств. В настоящее время авиакомпания выполняет рейсы из Ресифи два раза в неделю. Это может быть экономически выгодным вариантом для путешествия в Европу.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>Пересадка между аэропортами GRU и CGH в Сан-Паулу с интервалом в 3 часа сопряжена с высоким риском из-за прохождения таможни, получения багажа и интенсивного дорожного движения.</span><span></span></summary>
+    <div class="a">Если авиакомпания меняет расписание рейсов, создавая такие сжатые стыковки, пассажир имеет право на поддержку и предоставление альтернативных вариантов. Немедленно обратитесь к наземному персоналу авиакомпании по прибытии.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Пересадка в Сан-Паулу (GRU) возможна в течение 2 часов, если путешествие оформлено единым билетом.</span><span></span></summary>
+    <div class="a">Планировка аэропорта обычно позволяет эффективно обслуживать транзитных пассажиров, часто предоставляя помощь тем, у кого короткая стыковка. Однако при раздельных билетах рекомендуется закладывать 6+ часов с учетом возможных задержек входящих рейсов или необходимости повторной регистрации багажа.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Путешественникам, летящим в Бразилию (Сан-Паулу) авиакомпанией Turkish Airlines через Стамбул, следует покупать билет в обе стороны в рамках одного бронирования, чтобы минимизировать риск отказа в посадке.</span><span></span></summary>
+    <div class="a">Во время транзита в Стамбуле пассажиры не проходят таможню, но должны пройти ручной досмотр у выхода на посадку, где от них требуется предъявить подтвержденный обратный билет и бронь отеля.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Сравнение авиакомпаний Qatar Airways и Ethiopian Airlines для перелета в Бразилию.</span><span></span></summary>
+    <div class="a">Пользователя беспокоит длительное время в пути с Qatar Airways и возможный дискомфорт (холод в аэропорту Аддис-Абебы ночью) с Ethiopian Airlines. Запрашиваются личные отзывы, особенно касающиеся длительности полета, комфорта и качества питания на рейсах Ethiopian Airlines, с конкретным сравнением с Emirates.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Альтернативный маршрут полета из Рио-де-Жанейро в Москву пролегает через Марокко авиакомпанией Royal Air Maroc.</span><span></span></summary>
+    <div class="a">Поиск доступных по цене вариантов без шенгенской визы для транзита может быть сложной задачей. Что касается Royal Air Maroc, некоторые путешественники сообщали, что вес ручной клади (например, превышение стандартной нормы на 5 кг) во время их рейсов строго не проверялся.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Опыт использования бразильских авиакомпаний LATAM и Gol.</span><span></span></summary>
+    <div class="a">Один пользователь сообщил о серьезном овербукинге и задержках у LATAM, что затронуло группу из 16 человек на нескольких рейсах (Сан-Паулу — Бразилиа, Бразилиа — Каскавел, Каскавел — Рио). Другой пользователь рассказал о положительном опыте с LATAM и Gol в октябре, отметив лишь незначительные задержки около 20 минут.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Если мобильные приложения авиакомпаний в Бразилии не могут обработать платежи, пользователям следует попробовать совершить транзакции через официальный веб-сайт для настольных компьютеров или связаться со службой поддержки клиентов.</span><span></span></summary>
+    <div class="a">Службы поддержки часто могут отправить платежную ссылку по электронной почте, чтобы обойти технические проблемы, специфичные для приложения.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>При перелете в Бразилию с целью родильного туризма авиакомпании часто требуют обратный билет.</span><span></span></summary>
+    <div class="a">Советуем пассажирам бронировать возвратный обратный билет в соседнюю страну, чтобы избежать проблем при регистрации, так как многие авиакомпании отказывают в посадке на международные рейсы в одну сторону, особенно при отсутствии долгосрочной визы или подтверждения резидентства.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Для перелетов в Бразилию, минуя транзит через Европу или Россию, Каир является возможной точкой отправления для поиска доступных билетов.</span><span></span></summary>
+    <div class="a">Ранее Qatar Airways и Royal Air Maroc предлагали маршруты из Каира. В настоящее время маршруты Qatar Airways, как сообщается, «закрыты», что делает Royal Air Maroc основным вариантом для таких специфических требований к поездке.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>Бронирование отдельных авиабилетов для полета в Бразилию (например, через Китай) может привести к необходимости транзитной визы, от которой вы были бы освобождены при едином PNR (сквозном бронировании).</span><span></span></summary>
+    <div class="a">Риск опоздания на стыковочные рейсы значительно выше, так как отдельные билеты не гарантируют защиту последующих сегментов в случае задержки первого рейса.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>Наведите справки о текущих рекомендациях для путешественников и правилах авиакомпаний относительно потенциальной отмены или изменения маршрутов из-за геополитических событий.</span><span></span></summary>
+    <div class="a">В частности, изучите возможность и потенциальные риски бронирования рейсов авиакомпании Turkish Airlines по маршруту Ереван-Сан-Паулу, учитывая возможные сбои в пересадках в Дохе.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>Расследуйте сообщения о том, что пассажирам отказывают в посадке на рейсы Turkish Airlines, особенно в отношении потенциальных иммиграционных рисков (например, предыдущие отказы в визе).</span><span></span></summary>
+    <div class="a">Соберите пользовательский опыт и официальную информацию о правилах посадки. Также рассмотрите проблемы с ошибками в именах в билетах и их влияние на посадку.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Авиабилеты из Москвы в Бразилию могут быть дешевле при использовании транзитных узлов, таких как Стамбул, Лиссабон или Мадрид.</span><span></span></summary>
+    <div class="a">Популярные авиакомпании включают Qatar Airways, Royal Air Maroc и Ethiopian Airlines. Цены могут значительно варьироваться в зависимости от дат, часто опускаясь ниже 130 000 рублей за перелет туда и обратно.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>GOL — крупнейшая внутренняя авиакомпания в Бразилии.</span><span></span></summary>
+    <div class="a">Основные особенности: посадка по группам, питание на внутренних рейсах отсутствует (вместо него предоставляются легкие закуски и напитки), персонал слабо владеет английским языком. Правила провоза багажа: ограничение 10 кг для ручной клади, хотя строгость контроля варьируется.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>По вопросам перевозки домашних животных на внутренних рейсах бразильских авиакомпаний (таких как LATAM, GOL или Azul) обращайтесь в службу поддержки клиентов по электронной почте на английском языке, а не по телефону.</span><span></span></summary>
+    <div class="a">Служба поддержки LATAM обычно отвечает на запросы по электронной почте на английском языке в течение 12 часов.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Рейсы Royal Air Maroc обычно оформляют зарегистрированный багаж до конечного пункта назначения по транзитным билетам.</span><span></span></summary>
+    <div class="a">Ввозные требования Бразилии к домашним животным не устанавливают строгих правил в отношении конкретных брендов вакцин из России при условии предоставления действительной международной ветеринарной документации.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Рейсы из Санкт-Петербурга в Бразилию могут включать пересадку в Касабланке.</span><span></span></summary>
+    <div class="a">Один пользователь отметил, что прямые рейсы из Санкт-Петербурга в Бразилию часто выполняются авиакомпанией Turkish Airlines, но также рассматриваются альтернативные маршруты с двумя перелетами. Касабланка упоминается как транзитный пункт в Марокко.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Путешественник забронировал рейс LATAM с пересадкой в Сан-Паулу через Trip.com, где было указано, что повторная регистрация багажа не требуется.</span><span></span></summary>
+    <div class="a">Однако в приложении LATAM и на Aviasales это подтверждение отсутствует. Путешественник ищет точную информацию о том, нужно ли заново регистрировать багаж во время этой пересадки.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq">Исследуйте внезапное и значительное повышение цен на внутренние авиарейсы в Бразилии.</span><span></span></summary>
+    <div class="a">В частности, стоимость перелета из Рио-де-Жанейро в Фос-ду-Игуасу показала скачок с 21 000 до 64 000 реалов за двоих человек на разные даты в течение короткого промежутка времени, чтобы затем снова вернуться к 21 000 реалов.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Для стыковочных рейсов внутри Бразилии, если оба сегмента полета оформлены одним бронированием, зарегистрированный багаж обычно следует до конечного пункта назначения без необходимости его повторного получения, особенно при пересадке через такой город, как Сан-Паулу, и без въезда в страну в пункте пересадки.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>При возникновении ошибки «Payment is not complete» на сайте Air Maroc при использовании карт стран СНГ/Центральной Азии, попробуйте отключить 3D Secure или воспользоваться сторонними агрегаторами бронирования, такими как OneTwoTrip, которые предоставляют альтернативные платежные шлюзы и выбор класса тарифа.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq">Вопрос о требовании сертификата о прививке от желтой лихорадки для рейсов авиакомпании Emirates из Рио-де-Жанейро (Бразилия) в Дубай.</span><span></span></summary>
+    <div class="a">Пользователь упоминает противоречивую информацию от предыдущих путешественников относительно его необходимости. Запрос на информацию из реального опыта недавних пассажиров.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Путешественники из Африки в Бразилию могут рассмотреть авиакомпанию Royal Air Maroc с маршрутом, например, из Нуакшота (Мавритания) в Касабланку (Марокко), а затем далее в Сан-Паулу (Бразилия).</span><span></span></summary>
+    <div class="a">Это предлагает альтернативу прямым рейсам из России для тех, кто путешествует с африканского континента.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>Авиабилеты из Бразилии в Россию через Каир были доступны примерно за 50 000 рублей (туда и обратно).</span><span></span></summary>
+    <div class="a">Учтите, что транзит через Каир может быть рискованным из-за длительного времени пересадки: 30 минут от самолета до терминала и до 1 часа на прохождение пограничного контроля.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>При перелете из Санкт-Петербурга через Касабланку авиакомпанией Air Maroc габариты ручной клади могут проверяться не строго.</span><span></span></summary>
+    <div class="a">В одном случае чемодан, превышающий ограничение по размеру на 2 см, не подвергался проверке. Другие предметы ручной клади также не измерялись.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Рейсы Royal Air Maroc из России в Бразилию через Касабланку, как правило, прибывают с багажом в целости и сохранности, несмотря на негативные отзывы в интернете об устаревших салонах на коротких рейсах и среднем качестве обслуживания на дальнемагистральных участках.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq">Сравните варианты перелетов из Москвы в Сан-Паулу авиакомпанией Ethiopian Airlines, учитывая пересадки в Аддис-Абебе.</span><span></span></summary>
+    <div class="a">Укажите цены по сравнению с Royal Air Maroc и Turkish Airlines. Опишите впечатления от полета, включая комфорт самолета, питание и время пересадки.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Рейсы Ethiopian Airlines из России в Бразилию вылетают из московского аэропорта Домодедово (DME) с пересадкой в Аддис-Абебе.</span><span></span></summary>
+    <div class="a">Частота рейсов обычно составляет 2-3 раза в неделю; расписание следует проверять непосредственно на официальном сайте авиакомпании.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Распространенные маршруты перелетов из Москвы в Сан-Паулу включают пересадки через Касабланку (авиакомпания Royal Air Maroc).</span><span></span></summary>
+    <div class="a">Цены могут значительно колебаться; исторические данные указывают на стоимость около 108 000–118 000 рублей за билеты в оба конца.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Royal Air Maroc считается приемлемым бюджетным вариантом для перелетов в Россию из Бразилии.</span><span></span></summary>
+    <div class="a">Авиакомпания обычно предоставляет размещение в отеле при длительных пересадках. Отзывы пассажиров указывают на стандартное качество обслуживания.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Трансфер между аэропортами GRU и Виракопус (VCP): доступен автобусный сервис через приложение ClickBus (примерно 65–70 бразильских реалов).</span><span></span></summary>
+    <div class="a">Такси/Uber стоят от 350 бразильских реалов. Доступность автобусов в ночное время ограничена.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Для бронирования внутренних авиабилетов в Бразилии, в частности из Сан-Паулу в Фос-ду-Игуасу, рекомендуется рассмотреть авиакомпании Gol и Latam.</span><span></span></summary>
+    <div class="a">Выбирайте между аэропортами GRU и CGH. Отслеживайте динамику цен и будьте готовы к их снижению ближе к дате вылета, используя стратегии мониторинга.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>При пересадке на рейсы в Бразилии проверяйте багажную бирку на наличие кода конечного пункта назначения.</span><span></span></summary>
+    <div class="a">Если авиакомпании разные или нет интерлайн-соглашения, пассажиры должны забрать багаж в промежуточном аэропорту, пройти таможенный контроль и заново сдать его на следующий рейс.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>При поиске авиабилетов из Сан-Паулу в Фос-ду-Игуасу в ноябре-декабре рекомендуется проверять цены на Trip.com.</span><span></span></summary>
+    <div class="a">Советуется бронировать заранее, так как цены имеют тенденцию расти ближе к дате поездки. Курсы валют, особенно динамика рубля, также могут повлиять на итоговую стоимость.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Что касается ручной клади, ноутбуки обычно не включаются в лимит веса и их можно проносить отдельно в руках или в чехле.</span><span></span></summary>
+    <div class="a">Большинство авиакомпаний, за исключением лоукостеров, лояльно относятся к весу багажа. Обычная практика — брать рюкзак весом 15-20 кг в качестве ручной клади.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Правила провоза багажа в Бразилии: пассажиры, прибывающие в Сан-Паулу и совершающие пересадку на внутренний рейс другой авиакомпании, должны получить свой багаж и заново сдать его на внутренний сегмент, даже если международный сегмент был оформлен одним бронированием.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Бронирование рейсов авиакомпании GOL или управление багажом иностранцами часто требует CPF (бразильский налоговый номер).</span><span></span></summary>
+    <div class="a">Если сайт или приложение не работают, используйте VPN с бразильским IP-адресом (например, Psiphon) для доступа к интерфейсу бронирования и оплаты.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>Устранение неполадок при оплате билетов на рейсы авиакомпании Gol в Бразилии.</span><span></span></summary>
+    <div class="a">Решение возможных проблем с приемом иностранных кредитных карт, вопросами конвертации валюты (BRL против USD), а также эффективностью использования VPN или альтернативных способов оплаты.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Рекомендации по стратегиям бронирования внутренних авиабилетов в Бразилии для получения лучших цен.</span><span></span></summary>
+    <div class="a">Обсуждение времени покупки (заранее или в последний момент), ожидаемых ценовых диапазонов на перелеты с учетом багажа и факторов, влияющих на колебания цен.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Вы можете купить авиабилеты на внутренние рейсы по Бразилии (например, из Сан-Паулу в Рио-де-Жанейро) без наличия CPF.</span><span></span></summary>
+    <div class="a">Авиакомпании при покупке билетов для иностранных граждан используют номер загранпаспорта вместо бразильского налогового номера CPF.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Перевозка больших мониторов в зарегистрированном багаже возможна.</span><span></span></summary>
+    <div class="a">Используйте мягкую одежду в качестве амортизации вокруг экрана. Убедитесь, что рядом с монитором не упакованы другие твердые предметы, чтобы предотвратить повреждение от давления.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>Цены на внутренние авиаперелеты в Бразилии значительно колеблются во время праздников (например, Карнавала).</span><span></span></summary>
+    <div class="a">Критически важно бронировать заранее, чтобы избежать пиковых цен, которые могут достигать 250 000 рублей в периоды высокого спроса.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Правила внутренних перелетов в Бразилии: для авиакомпаний, таких как Azul, регистрация на внутренние рейсы часто закрывается за 1 час до вылета.</span><span></span></summary>
+    <div class="a">Путешественникам следует убедиться, что они прибудут заранее, чтобы не опоздать на рейс.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+
+  <h2>Смежные темы</h2>
+  <div class="chips">
+    <a class="chip" href="/ru/br/s/transport/mezhdugorodniy-i-gorodskoy-transport/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Междугородний и городской транспорт</span></a>
+    <a class="chip" href="/ru/br/s/transport/taksi-prilozheniya-i-arenda-avto/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🏠 Такси, приложения и аренда авто</span></a>
+    <a class="chip" href="/ru/br/s/transport/dostoprimechatelnosti-i-ekskursii/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🗺 Достопримечательности и экскурсии</span></a>
+    <a class="chip" href="/ru/br/s/transport/aeroporty-i-transfery/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Аэропорты и трансферы</span></a>
+    <a class="chip" href="/ru/br/s/transport/bytovye-voprosy-i-servisy/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Бытовые вопросы и сервисы</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Нужно под твою ситуацию, а не вообще?</h2>
+    <p>Спроси Luky — даст то, что нужно именно тебе: живой опыт тех, кто реально через это прошёл.</p>
+    <p>А ещё Luky — голосовой переводчик живого разговора: поговори с врачом и пойми, что тебе сказали.</p>
+    <p class="ps">PS: а захочешь — Luky поможет и познакомиться без языкового барьера 😉</p>
+    <a class="btn" href="https://multyspeak.ru" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Открыть Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — живой опыт из чатов сообществ, без воды</div>
+    <nav class="f-links">
+      <a href="/ru/about/">О проекте</a>
+      <a href="/ru/br/">Все темы</a>
+      <a href="/ru/">Страны</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Ответы собраны из открытых чатов сообществ — это живой опыт людей, а не официальная консультация. Перед важными решениями проверяйте актуальность.</p>
+    <div class="f-copy">© 2026 Luky · обновлено 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"\u0421\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0435 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0445 \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0439 Latam \u0438 GOL."},
+{"@type":"ListItem","position":2,"name":"\u0415\u0441\u043b\u0438 \u0440\u0435\u0439\u0441 \u0437\u0430\u0434\u0435\u0440\u0436\u0430\u043d \u0438\u043b\u0438 \u043e\u0442\u043c\u0435\u043d\u0435\u043d, \u0447\u0442\u043e \u043f\u0440\u0438\u0432\u0435\u043b\u043e \u043a \u043f\u0440\u043e\u043f\u0443\u0441\u043a\u0443 \u0441\u0442\u044b\u043a\u043e\u0432\u043a\u0438, \u0430 \u043c\u0430\u0440\u0448\u0440\u0443\u0442 \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d \u0435\u0434\u0438\u043d\u044b\u043c \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435\u043c \u0443 \u043e\u0434\u043d\u043e\u0439 \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0438, \u043f\u0430\u0441\u0441\u0430\u0436\u0438\u0440\u044b \u0434\u043e\u043b\u0436\u043d\u044b \u0438\u043c\u0435\u0442\u044c \u043f\u0440\u0430\u0432\u043e \u043d\u0430 \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u043e\u0435 \u043f\u0435\u0440\u0435\u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u043d\u0430 \u0441\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0439 \u0440\u0435\u0439\u0441 \u043f\u0440\u0438 \u043d\u0430\u043b\u0438\u0447\u0438\u0438 \u0441\u0432\u043e\u0431\u043e\u0434\u043d\u044b\u0445 \u043c\u0435\u0441\u0442."},
+{"@type":"ListItem","position":3,"name":"\u041f\u0440\u0438 \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0438\u0438 \u0438\u0437 \u041c\u043e\u0441\u043a\u0432\u044b \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044e \u043f\u0440\u044f\u043c\u044b\u0435 \u0440\u0435\u0439\u0441\u044b \u043c\u043e\u0433\u0443\u0442 \u0431\u044b\u0442\u044c \u043e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d\u044b, \u0447\u0442\u043e \u043f\u0440\u0438\u0432\u043e\u0434\u0438\u0442 \u043a \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e\u0441\u0442\u0438 \u043f\u043e\u043b\u0430\u0433\u0430\u0442\u044c\u0441\u044f \u043d\u0430 \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0438, \u0442\u0430\u043a\u0438\u0435 \u043a\u0430\u043a Qatar Airways, Emirates, Etihad \u0438\u043b\u0438 Royal Air Maroc, \u0430 \u0442\u0430\u043a\u0436\u0435 \u043d\u0430 \u043a\u0438\u0442\u0430\u0439\u0441\u043a\u0438\u0445 \u043f\u0435\u0440\u0435\u0432\u043e\u0437\u0447\u0438\u043a\u043e\u0432 (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, China Eastern, Sichuan Airlines)."},
+{"@type":"ListItem","position":4,"name":"\u041f\u0440\u0438 \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0438 \u043f\u0435\u0440\u0435\u043b\u0435\u0442\u043e\u0432 \u0438\u0437 \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u0438\u0445 \u0441\u0435\u0433\u043c\u0435\u043d\u0442\u043e\u0432, \u043e\u0441\u043e\u0431\u0435\u043d\u043d\u043e \u043e\u0442\u0434\u0435\u043b\u044c\u043d\u044b\u043c\u0438 \u0431\u0438\u043b\u0435\u0442\u0430\u043c\u0438 \u0438\u043b\u0438 \u0441 \u043a\u043e\u0440\u043e\u0442\u043a\u0438\u043c \u0432\u0440\u0435\u043c\u0435\u043d\u0435\u043c \u043f\u0435\u0440\u0435\u0441\u0430\u0434\u043a\u0438, \u043f\u043e\u043c\u043d\u0438\u0442\u0435 \u043e \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u044b\u0445 \u0437\u0430\u0434\u0435\u0440\u0436\u043a\u0430\u0445."},
+{"@type":"ListItem","position":5,"name":"\u0414\u043b\u044f \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0438\u0445 \u0430\u0432\u0438\u0430\u043f\u0435\u0440\u0435\u043b\u0435\u0442\u043e\u0432 \u043f\u043e \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u043e\u0441\u043d\u043e\u0432\u043d\u044b\u043c\u0438 \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u044f\u043c\u0438 \u044f\u0432\u043b\u044f\u044e\u0442\u0441\u044f LATAM, GOL \u0438 Azul."},
+{"@type":"ListItem","position":6,"name":"\u041f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u0438 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u043c\u043e\u0433\u0443\u0442 \u0441\u0442\u043e\u043b\u043a\u043d\u0443\u0442\u044c\u0441\u044f \u0441 \u044f\u0437\u044b\u043a\u043e\u0432\u044b\u043c \u0431\u0430\u0440\u044c\u0435\u0440\u043e\u043c \u0432 \u043e\u0431\u0449\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u043c \u0442\u0440\u0430\u043d\u0441\u043f\u043e\u0440\u0442\u0435 \u0438 \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0430\u0445."},
+{"@type":"ListItem","position":7,"name":"\u0413\u0440\u0430\u0436\u0434\u0430\u043d\u0430\u043c \u0420\u043e\u0441\u0441\u0438\u0438, \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u043c \u0438\u0437 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0432 \u0441\u0442\u0440\u0430\u043d\u044b \u0415\u0432\u0440\u043e\u043f\u0435\u0439\u0441\u043a\u043e\u0433\u043e \u0441\u043e\u044e\u0437\u0430 \u0438\u043b\u0438 \u0441\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u043c\u0438 \u0447\u0435\u0440\u0435\u0437 \u043d\u0438\u0445 \u0442\u0440\u0430\u043d\u0437\u0438\u0442\u043e\u043c, \u043a\u0430\u043a \u043f\u0440\u0430\u0432\u0438\u043b\u043e, \u0442\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f \u0434\u0435\u0439\u0441\u0442\u0432\u0443\u044e\u0449\u0430\u044f \u0432\u0438\u0437\u0430."},
+{"@type":"ListItem","position":8,"name":"\u0412\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0438\u0435 \u0440\u0435\u0439\u0441\u044b \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438, \u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440 \u043c\u0435\u0436\u0434\u0443 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0438 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e, \u043c\u043e\u0433\u0443\u0442 \u0438\u043c\u0435\u0442\u044c \u0437\u043d\u0430\u0447\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0435 \u0440\u0430\u0437\u043b\u0438\u0447\u0438\u044f \u0432 \u0446\u0435\u043d\u0435."},
+{"@type":"ListItem","position":9,"name":"\u041f\u0440\u0438 \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0438 \u043c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u044b\u0445 \u0430\u0432\u0438\u0430\u043f\u0435\u0440\u0435\u043b\u0435\u0442\u043e\u0432, \u043e\u0441\u043e\u0431\u0435\u043d\u043d\u043e \u0441 \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u0438\u043c\u0438 \u043f\u0435\u0440\u0435\u0441\u0430\u0434\u043a\u0430\u043c\u0438, \u0447\u0430\u0441\u0442\u043e \u0432\u043e\u0437\u043d\u0438\u043a\u0430\u044e\u0442 \u0440\u0430\u0441\u0445\u043e\u0436\u0434\u0435\u043d\u0438\u044f \u0432 \u043d\u0430\u043b\u0438\u0447\u0438\u0438 \u0431\u0438\u043b\u0435\u0442\u043e\u0432 \u0438 \u0446\u0435\u043d\u0430\u0445 \u043d\u0430 \u0440\u0430\u0437\u043d\u044b\u0445 \u043f\u043b\u0430\u0442\u0444\u043e\u0440\u043c\u0430\u0445 (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, Aviasales, Superkassa.travel) \u0438\u0437-\u0437\u0430 \u0440\u0430\u0437\u043b\u0438\u0447\u0438\u0439 \u0432 \u0438\u043d\u0432\u0435\u043d\u0442\u0430\u0440\u0435, \u043f\u0430\u0440\u0442\u043d\u0435\u0440\u0441\u043a\u0438\u0445 \u043e\u0442\u043d\u043e\u0448\u0435\u043d\u0438\u044f\u0445 \u0438 \u0441\u0438\u0441\u0442\u0435\u043c\u0430\u0445 \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f."},
+{"@type":"ListItem","position":10,"name":"\u0426\u0435\u043d\u044b \u043d\u0430 \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0438\u0435 \u0430\u0432\u0438\u0430\u0440\u0435\u0439\u0441\u044b \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u043f\u043e\u0434\u0432\u0435\u0440\u0436\u0435\u043d\u044b \u0437\u043d\u0430\u0447\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0439 \u0441\u0435\u0437\u043e\u043d\u043d\u043e\u0441\u0442\u0438; \u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0440\u0435\u0439\u0441\u044b \u0438\u0437 \u0420\u0438\u043e \u0432 \u0424\u043e\u0441-\u0434\u0443-\u0418\u0433\u0443\u0430\u0441\u0443 \u0432 \u043e\u043a\u0442\u044f\u0431\u0440\u0435/\u043d\u043e\u044f\u0431\u0440\u0435 \u043c\u043e\u0433\u0443\u0442 \u0431\u044b\u0442\u044c \u0432 3 \u0440\u0430\u0437\u0430 \u0434\u043e\u0440\u043e\u0436\u0435, \u0447\u0435\u043c \u0432 \u0438\u044e\u043d\u0435, \u043f\u0440\u0438 \u044d\u0442\u043e\u043c \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043f\u0440\u044f\u043c\u044b\u0445 \u0440\u0435\u0439\u0441\u043e\u0432 \u043c\u0435\u043d\u044c\u0448\u0435 (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0442\u043e\u043b\u044c\u043a\u043e LATAM, \u0432 \u0442\u043e \u0432\u0440\u0435\u043c\u044f \u043a\u0430\u043a GOL \u043f\u043e\u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043d\u0430 \u0431\u043e\u043b\u0435\u0435 \u0434\u0435\u0448\u0435\u0432\u044b\u0435 \u0434\u0430\u0442\u044b)."},
+{"@type":"ListItem","position":11,"name":"\u0414\u043b\u044f \u043f\u043e\u0435\u0437\u0434\u043a\u0438 \u0438\u0437 \u041c\u043e\u0441\u043a\u0432\u044b \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044e \u0431\u0435\u0437 \u0448\u0435\u043d\u0433\u0435\u043d\u0441\u043a\u043e\u0439 \u0432\u0438\u0437\u044b \u0438\u0437\u0431\u0435\u0433\u0430\u0439\u0442\u0435 \u043c\u0430\u0440\u0448\u0440\u0443\u0442\u043e\u0432 \u0441 \u043f\u0435\u0440\u0435\u0441\u0430\u0434\u043a\u0430\u043c\u0438 \u0432 \u0435\u0432\u0440\u043e\u0437\u043e\u043d\u0435."},
+{"@type":"ListItem","position":12,"name":"\u041f\u0440\u043e\u044f\u0441\u043d\u0438\u0442\u0435 \u043f\u0440\u043e\u0446\u0435\u0434\u0443\u0440\u044b \u0442\u0440\u0430\u043d\u0441\u0444\u0435\u0440\u0430 \u0431\u0430\u0433\u0430\u0436\u0430 \u0434\u043b\u044f \u043c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u044b\u0445 \u0440\u0435\u0439\u0441\u043e\u0432, \u0432\u044b\u043b\u0435\u0442\u0430\u044e\u0449\u0438\u0445 \u0438\u0437 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438."},
+{"@type":"ListItem","position":13,"name":"\u0411\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u0440\u0435\u0439\u0441\u043e\u0432 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044e \u0447\u0435\u0440\u0435\u0437 Trip.com \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c \u0434\u0435\u0448\u0435\u0432\u043b\u0435, \u0447\u0435\u043c \u043d\u0430\u043f\u0440\u044f\u043c\u0443\u044e, \u043e\u0441\u043e\u0431\u0435\u043d\u043d\u043e \u0443 Royal Air Maroc (\u0443 \u043d\u0438\u0445 \u043a\u043e\u0440\u043e\u0442\u043a\u0438\u0439 8-9 \u0447\u0430\u0441\u043e\u0432\u043e\u0439 \u0442\u0440\u0430\u043d\u0441\u0430\u0442\u043b\u0430\u043d\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u043f\u0435\u0440\u0435\u043b\u0435\u0442)."},
+{"@type":"ListItem","position":14,"name":"\u041f\u0440\u0438 \u043f\u0435\u0440\u0435\u043b\u0435\u0442\u0435 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044e \u0440\u0430\u0441\u0441\u043c\u043e\u0442\u0440\u0438\u0442\u0435 \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0438 Ethiopian Airlines \u0438\u043b\u0438 Royal Air Maroc."},
+{"@type":"ListItem","position":15,"name":"\u041d\u0430 \u0440\u0435\u0439\u0441\u0430\u0445 Royal Air Maroc \u0438\u0437 \u041c\u043e\u0441\u043a\u0432\u044b \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0447\u0435\u0440\u0435\u0437 \u041a\u0430\u0441\u0430\u0431\u043b\u0430\u043d\u043a\u0443 \u043d\u0435\u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u043c\u0435\u0441\u0442\u0430 (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, 7-\u0439 \u0440\u044f\u0434) \u043e\u0442\u043d\u043e\u0441\u044f\u0442\u0441\u044f \u043a \u043f\u0440\u0435\u043c\u0438\u0443\u043c-\u044d\u043a\u043e\u043d\u043e\u043c\u0443 \u0441 \u0443\u0432\u0435\u043b\u0438\u0447\u0435\u043d\u043d\u044b\u043c \u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u043e\u043c, \u0442\u043e\u0433\u0434\u0430 \u043a\u0430\u043a \u0434\u0440\u0443\u0433\u0438\u0435 (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, 20-\u0439 \u0440\u044f\u0434) \u2014 \u0441\u0442\u0430\u043d\u0434\u0430\u0440\u0442\u043d\u044b\u0435, \u0441 \u043c\u0435\u043d\u044c\u0448\u0438\u043c \u043a\u043e\u043c\u0444\u043e\u0440\u0442\u043e\u043c."},
+{"@type":"ListItem","position":16,"name":"\u0414\u043b\u044f \u043b\u044e\u0434\u0435\u0439, \u043f\u0435\u0440\u0435\u0435\u0437\u0436\u0430\u044e\u0449\u0438\u0445 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044e, \u043a\u043e\u0442\u043e\u0440\u044b\u043c \u043d\u0443\u0436\u043d\u043e \u043f\u0435\u0440\u0435\u0432\u0435\u0437\u0442\u0438 \u0431\u043e\u043b\u044c\u0448\u043e\u0439 \u043e\u0431\u044a\u0435\u043c \u043b\u0438\u0447\u043d\u044b\u0445 \u0432\u0435\u0449\u0435\u0439 (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0431\u043e\u043b\u0435\u0435 10 \u0441\u0443\u043c\u043e\u043a/\u043a\u043e\u0440\u043e\u0431\u043e\u043a \u0441 \u043b\u0438\u0447\u043d\u044b\u043c\u0438 \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u0430\u043c\u0438 \u0438 \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u0438\u043a\u043e\u0439, \u043d\u0435 \u0441\u0447\u0438\u0442\u0430\u044f \u043c\u0435\u0431\u0435\u043b\u0438), \u0440\u0430\u0441\u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0435\u043d\u043d\u044b\u043c \u043c\u0435\u0442\u043e\u0434\u043e\u043c, \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043b\u0438 \u0434\u0440\u0443\u0433\u0438\u0435, \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043e\u043f\u043b\u0430\u0442\u0430 \u0441\u0432\u0435\u0440\u0445\u043d\u043e\u0440\u043c\u0430\u0442\u0438\u0432\u043d\u043e\u0433\u043e \u0431\u0430\u0433\u0430\u0436\u0430 \u043d\u0430 \u0440\u0435\u0439\u0441\u0430\u0445."},
+{"@type":"ListItem","position":17,"name":"\u0410\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u044f GOL \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u043f\u043e\u043b\u0443\u0447\u0430\u0435\u0442 \u043d\u0435\u043e\u0434\u043d\u043e\u0437\u043d\u0430\u0447\u043d\u044b\u0435 \u043e\u0442\u0437\u044b\u0432\u044b \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u043e\u0432: \u043d\u0435\u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0441\u043e\u043e\u0431\u0449\u0430\u044e\u0442 \u043e \u0441\u0431\u043e\u044f\u0445 \u043d\u0430 \u0441\u0430\u0439\u0442\u0435, \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u0430\u0445 \u0441 \u043e\u043f\u043b\u0430\u0442\u043e\u0439 \u0438 \u0432\u043e\u0437\u0432\u0440\u0430\u0442\u043e\u043c \u0441\u0440\u0435\u0434\u0441\u0442\u0432, \u0432 \u0442\u043e \u0432\u0440\u0435\u043c\u044f \u043a\u0430\u043a \u0434\u0440\u0443\u0433\u0438\u0435 \u0445\u0432\u0430\u043b\u044f\u0442 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u043e\u043d\u043d\u0443\u044e \u044d\u0444\u0444\u0435\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c."},
+{"@type":"ListItem","position":18,"name":"\u0410\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u044f GOL \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043a\u0440\u0443\u043f\u043d\u044b\u043c \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u043c \u0430\u0432\u0438\u0430\u043f\u0435\u0440\u0435\u0432\u043e\u0437\u0447\u0438\u043a\u043e\u043c, \u0438, \u043a\u0430\u043a \u0438 \u0434\u0440\u0443\u0433\u0438\u0435 \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0438, \u043e\u043d\u0430 \u0441\u0442\u0430\u043b\u043a\u0438\u0432\u0430\u0435\u0442\u0441\u044f \u0441 \u043f\u0435\u0440\u0438\u043e\u0434\u0438\u0447\u0435\u0441\u043a\u0438\u043c\u0438 \u043e\u0442\u043c\u0435\u043d\u0430\u043c\u0438 \u0438 \u0437\u0430\u0434\u0435\u0440\u0436\u043a\u0430\u043c\u0438 \u0440\u0435\u0439\u0441\u043e\u0432."},
+{"@type":"ListItem","position":19,"name":"\u0410\u0432\u0438\u0430\u0431\u0438\u043b\u0435\u0442\u044b \u0438\u0437 \u041c\u043e\u0441\u043a\u0432\u044b \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044e (GRU/GIG) \u0432\u0430\u0440\u044c\u0438\u0440\u0443\u044e\u0442\u0441\u044f \u043e\u0442 110 000 \u0434\u043e 350 000+ \u0440\u0443\u0431\u043b\u0435\u0439 \u043d\u0430 \u0447\u0435\u043b\u043e\u0432\u0435\u043a\u0430."},
+{"@type":"ListItem","position":20,"name":"\u0420\u0435\u0439\u0441\u044b Ethiopian Airlines \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044e \u043c\u043e\u0433\u0443\u0442 \u043d\u0435 \u043e\u0442\u043e\u0431\u0440\u0430\u0436\u0430\u0442\u044c\u0441\u044f \u043d\u0430 \u0432\u0441\u0435\u0445 \u0430\u0433\u0440\u0435\u0433\u0430\u0442\u043e\u0440\u0430\u0445 \u043f\u0440\u0438 \u043f\u043e\u0438\u0441\u043a\u0435 \u043d\u0430 \u043d\u0435\u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u044b\u0435 \u0434\u0430\u0442\u044b, \u0442\u0430\u043a \u043a\u0430\u043a \u043e\u043d\u0438 \u043b\u0435\u0442\u0430\u044e\u0442 \u043d\u0435 \u0435\u0436\u0435\u0434\u043d\u0435\u0432\u043d\u043e."},
+{"@type":"ListItem","position":21,"name":"\u0414\u043e\u0441\u0442\u0443\u043f \u043a \u0441\u0430\u0439\u0442\u0430\u043c \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0445 \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0439, \u0442\u0430\u043a\u0438\u0445 \u043a\u0430\u043a Azul (AD) \u0438 GOL (G3), \u0438\u0437 \u0420\u043e\u0441\u0441\u0438\u0438 \u043c\u043e\u0436\u0435\u0442 \u043f\u043e\u0442\u0440\u0435\u0431\u043e\u0432\u0430\u0442\u044c \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f VPN \u0438\u0437-\u0437\u0430 \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u044b\u0445 \u0433\u0435\u043e\u0433\u0440\u0430\u0444\u0438\u0447\u0435\u0441\u043a\u0438\u0445 \u043e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d\u0438\u0439 \u0438\u043b\u0438 \u043c\u0435\u0440 \u043f\u043e \u043f\u0440\u0435\u0434\u043e\u0442\u0432\u0440\u0430\u0449\u0435\u043d\u0438\u044e \u043a\u0438\u0431\u0435\u0440\u0430\u0442\u0430\u043a."},
+{"@type":"ListItem","position":22,"name":"\u0421\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0435 Ethiopian Airlines \u0438 Moroccan Airlines."},
+{"@type":"ListItem","position":23,"name":"\u041f\u0440\u044f\u043c\u044b\u0435 \u0440\u0435\u0439\u0441\u044b \u0438\u0437 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0432 \u041a\u0430\u0437\u0430\u0445\u0441\u0442\u0430\u043d \u043e\u0431\u044b\u0447\u043d\u043e \u043d\u0435\u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b."},
+{"@type":"ListItem","position":24,"name":"\u0426\u0435\u043d\u044b \u043d\u0430 \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0438\u0435 \u0430\u0432\u0438\u0430\u0440\u0435\u0439\u0441\u044b \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0438\u043c\u0435\u044e\u0442 \u0442\u0435\u043d\u0434\u0435\u043d\u0446\u0438\u044e \u0437\u043d\u0430\u0447\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u0440\u0430\u0441\u0442\u0438 \u043f\u043e \u043c\u0435\u0440\u0435 \u043f\u0440\u0438\u0431\u043b\u0438\u0436\u0435\u043d\u0438\u044f \u0434\u0430\u0442\u044b \u043f\u043e\u0435\u0437\u0434\u043a\u0438."},
+{"@type":"ListItem","position":25,"name":"LATAM Airlines \u0438 \u0434\u0440\u0443\u0433\u0438\u0435 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0435 \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0438\u0435 \u0430\u0432\u0438\u0430\u043f\u0435\u0440\u0435\u0432\u043e\u0437\u0447\u0438\u043a\u0438 \u0441\u0442\u0440\u043e\u0433\u043e \u0441\u043e\u0431\u043b\u044e\u0434\u0430\u044e\u0442 \u043b\u0438\u043c\u0438\u0442 \u0432 23 \u043a\u0433 \u043d\u0430 \u043e\u0434\u043d\u043e \u043c\u0435\u0441\u0442\u043e \u0431\u0430\u0433\u0430\u0436\u0430."},
+{"@type":"ListItem","position":26,"name":"\u041f\u0440\u0438 \u043f\u043e\u043a\u0443\u043f\u043a\u0435 \u0431\u0438\u043b\u0435\u0442\u043e\u0432 \u043d\u0430 \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0438\u0435 \u0440\u0435\u0439\u0441\u044b \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0432 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435 \u0440\u0435\u0437\u0438\u0434\u0435\u043d\u0442\u0430 \u0441 RNM (Registro Nacional Migrat\u00f3rio), \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435 \u0434\u0430\u043d\u043d\u044b\u0435 \u0432\u0430\u0448\u0435\u0433\u043e \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0430 RNM."},
+{"@type":"ListItem","position":27,"name":"\u041f\u0440\u0438 \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0438\u0438 \u043f\u043e \u0435\u0434\u0438\u043d\u043e\u043c\u0443 \u0431\u0438\u043b\u0435\u0442\u0443 \u0438\u0437 \u041b\u0438\u043c\u044b (\u041f\u0435\u0440\u0443) \u0432 \u041c\u043e\u0441\u043a\u0432\u0443 \u0441 3-\u0447\u0430\u0441\u043e\u0432\u043e\u0439 \u043f\u0435\u0440\u0435\u0441\u0430\u0434\u043a\u043e\u0439 \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 (\u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f) \u043f\u0440\u0438 \u0441\u043c\u0435\u043d\u0435 \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0438 (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0441 LATAM \u043d\u0430 Qatar Airways), \u043f\u043e\u0432\u0442\u043e\u0440\u043d\u0430\u044f \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f \u0431\u0430\u0433\u0430\u0436\u0430, \u043a\u0430\u043a \u043f\u0440\u0430\u0432\u0438\u043b\u043e, \u043d\u0435 \u0442\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f."},
+{"@type":"ListItem","position":28,"name":"\u0411\u044e\u0434\u0436\u0435\u0442\u043d\u044b\u0439 \u0432\u0430\u0440\u0438\u0430\u043d\u0442 \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0438\u044f \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044e \u0438\u0437 \u0421\u0442\u0430\u043c\u0431\u0443\u043b\u0430 \u0447\u0435\u0440\u0435\u0437 \u041a\u0430\u0441\u0430\u0431\u043b\u0430\u043d\u043a\u0443 \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0435\u0439 Royal Morocco Airlines."},
+{"@type":"ListItem","position":29,"name":"\u0412 \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0443 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 (GRU), \u0442\u0435\u0440\u043c\u0438\u043d\u0430\u043b 2, \u043b\u0430\u0443\u043d\u0436 \u00abBusiness Gol\u00bb \u043f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u0435\u0442 \u0431\u0430\u0437\u043e\u0432\u044b\u0435 \u0437\u0430\u043a\u0443\u0441\u043a\u0438 \u0438, \u043a\u0430\u043a \u043f\u0440\u0430\u0432\u0438\u043b\u043e, \u043d\u0435 \u043f\u0435\u0440\u0435\u043f\u043e\u043b\u043d\u0435\u043d \u043f\u043e\u0437\u0434\u043d\u043e \u043d\u043e\u0447\u044c\u044e."},
+{"@type":"ListItem","position":30,"name":"\u041e\u043f\u044b\u0442 \u043f\u0435\u0440\u0435\u043b\u0435\u0442\u0430 \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0435\u0439 Moroccan Airlines \u0438\u0437 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0432 \u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433."},
+{"@type":"ListItem","position":31,"name":"\u0426\u0435\u043d\u044b \u043d\u0430 \u0430\u0432\u0438\u0430\u0431\u0438\u043b\u0435\u0442\u044b \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0438\u043c\u0435\u044e\u0442 \u0431\u043e\u043b\u0435\u0435 \u0432\u044b\u0440\u0430\u0436\u0435\u043d\u043d\u0443\u044e \u0442\u0435\u043d\u0434\u0435\u043d\u0446\u0438\u044e \u043a \u0440\u043e\u0441\u0442\u0443 \u0431\u043b\u0438\u0436\u0435 \u043a \u0434\u0430\u0442\u0435 \u0432\u044b\u043b\u0435\u0442\u0430 \u043f\u043e \u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044e \u0441\u043e \u043c\u043d\u043e\u0433\u0438\u043c\u0438 \u0434\u0440\u0443\u0433\u0438\u043c\u0438 \u0441\u0442\u0440\u0430\u043d\u0430\u043c\u0438."},
+{"@type":"ListItem","position":32,"name":"\u0426\u0435\u043d\u044b \u043d\u0430 \u0430\u0432\u0438\u0430\u0431\u0438\u043b\u0435\u0442\u044b \u043c\u0435\u0436\u0434\u0443 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0438 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u043c\u043e\u0433\u0443\u0442 \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u044f\u0442\u044c \u043e\u0442 4500 BRL (\u043f\u0440\u0438\u043c\u0435\u0440\u043d\u043e 50 \u0434\u043e\u043b\u043b\u0430\u0440\u043e\u0432 \u0421\u0428\u0410) \u043f\u0440\u0438 \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0438 \u0437\u0430 \u043c\u0435\u0441\u044f\u0446 \u0434\u043e \u0432\u044b\u043b\u0435\u0442\u0430 \u0441 \u0431\u0430\u0433\u0430\u0436\u043e\u043c \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0435\u0439 Azul \u0447\u0435\u0440\u0435\u0437 Trip.com, \u0438\u043b\u0438 9-11 \u0442\u044b\u0441\u044f\u0447 BRL (\u043f\u0440\u0438\u043c\u0435\u0440\u043d\u043e 100-120 \u0434\u043e\u043b\u043b\u0430\u0440\u043e\u0432 \u0421\u0428\u0410) \u043f\u0440\u0438 \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0438 \u0437\u0430 \u0434\u0435\u043d\u044c \u0434\u043e \u0432\u044b\u043b\u0435\u0442\u0430."},
+{"@type":"ListItem","position":33,"name":"\u041e\u0442\u0437\u044b\u0432 \u043e \u0440\u0435\u0439\u0441\u0435 Ethiopian Airlines (\u041c\u043e\u0441\u043a\u0432\u0430 \u2014 \u0410\u0434\u0434\u0438\u0441-\u0410\u0431\u0435\u0431\u0430 \u2014 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443): \u043d\u043e\u0440\u043c\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u0443\u0435\u043c\u043e\u0433\u043e \u0431\u0430\u0433\u0430\u0436\u0430 \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u0442 2 \u043c\u0435\u0441\u0442\u0430 \u043f\u043e 23 \u043a\u0433, \u0431\u0430\u0433\u0430\u0436 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u043d\u0430\u043f\u0440\u044f\u043c\u0443\u044e \u0434\u043e \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438."},
+{"@type":"ListItem","position":34,"name":"\u041f\u0440\u0438 \u043f\u0435\u0440\u0435\u043b\u0435\u0442\u0435 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044e \u0441 \u0434\u043e\u043c\u0430\u0448\u043d\u0438\u043c\u0438 \u0436\u0438\u0432\u043e\u0442\u043d\u044b\u043c\u0438, \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0438 \u0438\u043c\u0435\u044e\u0442 \u0437\u043d\u0430\u0447\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u0440\u0430\u0437\u043b\u0438\u0447\u0430\u044e\u0449\u0438\u0435\u0441\u044f \u043f\u0440\u0430\u0432\u0438\u043b\u0430 \u043f\u0435\u0440\u0435\u0432\u043e\u0437\u043a\u0438 \u0433\u0440\u0443\u0437\u043e\u0432 \u0438 \u0436\u0438\u0432\u043e\u0442\u043d\u044b\u0445."},
+{"@type":"ListItem","position":35,"name":"\u041f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u0430\u043c, \u043f\u043b\u0430\u043d\u0438\u0440\u0443\u044e\u0449\u0438\u043c \u043f\u043e\u0435\u0437\u0434\u043a\u0443 \u043c\u0435\u0436\u0434\u0443 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0435\u0439 \u0438 \u0410\u0440\u0433\u0435\u043d\u0442\u0438\u043d\u043e\u0439, \u0432\u043a\u043b\u044e\u0447\u0430\u044f \u0440\u0435\u0439\u0441\u044b \u0438\u0437 \u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433\u0430 \u0432 \u0411\u0443\u044d\u043d\u043e\u0441-\u0410\u0439\u0440\u0435\u0441, \u0418\u0433\u0443\u0430\u0441\u0443 (\u0441 \u043e\u0431\u0435\u0438\u0445 \u0441\u0442\u043e\u0440\u043e\u043d), \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u0438 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443, \u043f\u0435\u0440\u0435\u0434 \u0432\u044b\u043b\u0435\u0442\u043e\u043c \u0432 \u041c\u043e\u0441\u043a\u0432\u0443, \u0441\u043b\u0435\u0434\u0443\u0435\u0442 \u043f\u043e\u0438\u043d\u0442\u0435\u0440\u0435\u0441\u043e\u0432\u0430\u0442\u044c\u0441\u044f \u043e \u0432\u0435\u0440\u043e\u044f\u0442\u043d\u043e\u0441\u0442\u0438 \u0431\u043e\u0439\u043a\u043e\u0442\u043e\u0432 \u0440\u0435\u0439\u0441\u043e\u0432 \u0438\u043b\u0438 \u0434\u0440\u0443\u0433\u0438\u0445 \u0441\u0431\u043e\u0435\u0432."},
+{"@type":"ListItem","position":36,"name":"\u0412\u0430\u0440\u0438\u0430\u043d\u0442\u044b \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0438\u044f \u0438\u0437 \u0420\u043e\u0441\u0441\u0438\u0438 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044e (\u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443): 1. Royal Air Maroc (\u0447\u0435\u0440\u0435\u0437 \u041a\u0430\u0441\u0430\u0431\u043b\u0430\u043d\u043a\u0443) \u2014 \u0441\u0447\u0438\u0442\u0430\u0435\u0442\u0441\u044f \u043d\u0430\u0434\u0435\u0436\u043d\u044b\u043c \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u043e\u043c."},
+{"@type":"ListItem","position":37,"name":"\u041c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u044b\u0439 \u0442\u0440\u0430\u043d\u0437\u0438\u0442 \u0432 \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0443 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 (GRU) \u0447\u0430\u0441\u0442\u043e \u0442\u0440\u0435\u0431\u0443\u0435\u0442 \u043f\u0440\u043e\u0445\u043e\u0436\u0434\u0435\u043d\u0438\u044f \u043f\u0430\u0441\u043f\u043e\u0440\u0442\u043d\u043e\u0433\u043e \u043a\u043e\u043d\u0442\u0440\u043e\u043b\u044f, \u0434\u0430\u0436\u0435 \u0435\u0441\u043b\u0438 \u0432\u044b \u043e\u0441\u0442\u0430\u0435\u0442\u0435\u0441\u044c \u0432 \u0442\u0440\u0430\u043d\u0437\u0438\u0442\u043d\u043e\u0439 \u0437\u043e\u043d\u0435."},
+{"@type":"ListItem","position":38,"name":"\u041f\u0440\u0438 \u043f\u0435\u0440\u0435\u043b\u0435\u0442\u0435 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044e \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0435\u0439 Ethiopian Airlines \u043f\u0430\u0441\u0441\u0430\u0436\u0438\u0440\u044b \u043e\u0431\u044f\u0437\u0430\u043d\u044b \u043f\u0440\u0435\u0434\u044a\u044f\u0432\u0438\u0442\u044c \u043f\u0440\u0438 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0439 \u043e\u0431\u0440\u0430\u0442\u043d\u044b\u0439 \u0431\u0438\u043b\u0435\u0442 \u0438\u043b\u0438 \u0431\u0438\u043b\u0435\u0442 \u0432 \u0442\u0440\u0435\u0442\u044c\u044e \u0441\u0442\u0440\u0430\u043d\u0443."},
+{"@type":"ListItem","position":39,"name":"\u0410\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u044f Cabo Verde Airlines, \u043f\u043e \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u044f\u043c, \u0432\u043e\u0437\u043e\u0431\u043d\u043e\u0432\u043b\u044f\u0435\u0442 \u043f\u043e\u043b\u0435\u0442\u044b, \u0445\u043e\u0434\u044f\u0442 \u0441\u043b\u0443\u0445\u0438 \u043e \u0437\u043d\u0430\u0447\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u043c \u0441\u043d\u0438\u0436\u0435\u043d\u0438\u0438 \u0446\u0435\u043d \u043d\u0430 \u0431\u0438\u043b\u0435\u0442\u044b \u0432 \u0415\u0432\u0440\u043e\u043f\u0443 (\u0432 \u043f\u043e\u043b\u0446\u0435\u043d\u044b)."},
+{"@type":"ListItem","position":40,"name":"\u041f\u0435\u0440\u0435\u0441\u0430\u0434\u043a\u0430 \u043c\u0435\u0436\u0434\u0443 \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0430\u043c\u0438 GRU \u0438 CGH \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0441 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u043e\u043c \u0432 3 \u0447\u0430\u0441\u0430 \u0441\u043e\u043f\u0440\u044f\u0436\u0435\u043d\u0430 \u0441 \u0432\u044b\u0441\u043e\u043a\u0438\u043c \u0440\u0438\u0441\u043a\u043e\u043c \u0438\u0437-\u0437\u0430 \u043f\u0440\u043e\u0445\u043e\u0436\u0434\u0435\u043d\u0438\u044f \u0442\u0430\u043c\u043e\u0436\u043d\u0438, \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0431\u0430\u0433\u0430\u0436\u0430 \u0438 \u0438\u043d\u0442\u0435\u043d\u0441\u0438\u0432\u043d\u043e\u0433\u043e \u0434\u043e\u0440\u043e\u0436\u043d\u043e\u0433\u043e \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u044f."},
+{"@type":"ListItem","position":41,"name":"\u041f\u0435\u0440\u0435\u0441\u0430\u0434\u043a\u0430 \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 (GRU) \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u0430 \u0432 \u0442\u0435\u0447\u0435\u043d\u0438\u0435 2 \u0447\u0430\u0441\u043e\u0432, \u0435\u0441\u043b\u0438 \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0438\u0435 \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u043e \u0435\u0434\u0438\u043d\u044b\u043c \u0431\u0438\u043b\u0435\u0442\u043e\u043c."},
+{"@type":"ListItem","position":42,"name":"\u041f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u0430\u043c, \u043b\u0435\u0442\u044f\u0449\u0438\u043c \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044e (\u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443) \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0435\u0439 Turkish Airlines \u0447\u0435\u0440\u0435\u0437 \u0421\u0442\u0430\u043c\u0431\u0443\u043b, \u0441\u043b\u0435\u0434\u0443\u0435\u0442 \u043f\u043e\u043a\u0443\u043f\u0430\u0442\u044c \u0431\u0438\u043b\u0435\u0442 \u0432 \u043e\u0431\u0435 \u0441\u0442\u043e\u0440\u043e\u043d\u044b \u0432 \u0440\u0430\u043c\u043a\u0430\u0445 \u043e\u0434\u043d\u043e\u0433\u043e \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f, \u0447\u0442\u043e\u0431\u044b \u043c\u0438\u043d\u0438\u043c\u0438\u0437\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0440\u0438\u0441\u043a \u043e\u0442\u043a\u0430\u0437\u0430 \u0432 \u043f\u043e\u0441\u0430\u0434\u043a\u0435."},
+{"@type":"ListItem","position":43,"name":"\u0421\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0435 \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0439 Qatar Airways \u0438 Ethiopian Airlines \u0434\u043b\u044f \u043f\u0435\u0440\u0435\u043b\u0435\u0442\u0430 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044e."},
+{"@type":"ListItem","position":44,"name":"\u0410\u043b\u044c\u0442\u0435\u0440\u043d\u0430\u0442\u0438\u0432\u043d\u044b\u0439 \u043c\u0430\u0440\u0448\u0440\u0443\u0442 \u043f\u043e\u043b\u0435\u0442\u0430 \u0438\u0437 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u0432 \u041c\u043e\u0441\u043a\u0432\u0443 \u043f\u0440\u043e\u043b\u0435\u0433\u0430\u0435\u0442 \u0447\u0435\u0440\u0435\u0437 \u041c\u0430\u0440\u043e\u043a\u043a\u043e \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0435\u0439 Royal Air Maroc."},
+{"@type":"ListItem","position":45,"name":"\u041e\u043f\u044b\u0442 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0445 \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0439 LATAM \u0438 Gol."},
+{"@type":"ListItem","position":46,"name":"\u0415\u0441\u043b\u0438 \u043c\u043e\u0431\u0438\u043b\u044c\u043d\u044b\u0435 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0439 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u043d\u0435 \u043c\u043e\u0433\u0443\u0442 \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u0430\u0442\u044c \u043f\u043b\u0430\u0442\u0435\u0436\u0438, \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f\u043c \u0441\u043b\u0435\u0434\u0443\u0435\u0442 \u043f\u043e\u043f\u0440\u043e\u0431\u043e\u0432\u0430\u0442\u044c \u0441\u043e\u0432\u0435\u0440\u0448\u0438\u0442\u044c \u0442\u0440\u0430\u043d\u0437\u0430\u043a\u0446\u0438\u0438 \u0447\u0435\u0440\u0435\u0437 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0439 \u0432\u0435\u0431-\u0441\u0430\u0439\u0442 \u0434\u043b\u044f \u043d\u0430\u0441\u0442\u043e\u043b\u044c\u043d\u044b\u0445 \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043e\u0432 \u0438\u043b\u0438 \u0441\u0432\u044f\u0437\u0430\u0442\u044c\u0441\u044f \u0441\u043e \u0441\u043b\u0443\u0436\u0431\u043e\u0439 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0438 \u043a\u043b\u0438\u0435\u043d\u0442\u043e\u0432."},
+{"@type":"ListItem","position":47,"name":"\u041f\u0440\u0438 \u043f\u0435\u0440\u0435\u043b\u0435\u0442\u0435 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044e \u0441 \u0446\u0435\u043b\u044c\u044e \u0440\u043e\u0434\u0438\u043b\u044c\u043d\u043e\u0433\u043e \u0442\u0443\u0440\u0438\u0437\u043c\u0430 \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0438 \u0447\u0430\u0441\u0442\u043e \u0442\u0440\u0435\u0431\u0443\u044e\u0442 \u043e\u0431\u0440\u0430\u0442\u043d\u044b\u0439 \u0431\u0438\u043b\u0435\u0442."},
+{"@type":"ListItem","position":48,"name":"\u0414\u043b\u044f \u043f\u0435\u0440\u0435\u043b\u0435\u0442\u043e\u0432 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044e, \u043c\u0438\u043d\u0443\u044f \u0442\u0440\u0430\u043d\u0437\u0438\u0442 \u0447\u0435\u0440\u0435\u0437 \u0415\u0432\u0440\u043e\u043f\u0443 \u0438\u043b\u0438 \u0420\u043e\u0441\u0441\u0438\u044e, \u041a\u0430\u0438\u0440 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e\u0439 \u0442\u043e\u0447\u043a\u043e\u0439 \u043e\u0442\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b\u0445 \u0431\u0438\u043b\u0435\u0442\u043e\u0432."},
+{"@type":"ListItem","position":49,"name":"\u0411\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u043e\u0442\u0434\u0435\u043b\u044c\u043d\u044b\u0445 \u0430\u0432\u0438\u0430\u0431\u0438\u043b\u0435\u0442\u043e\u0432 \u0434\u043b\u044f \u043f\u043e\u043b\u0435\u0442\u0430 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044e (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0447\u0435\u0440\u0435\u0437 \u041a\u0438\u0442\u0430\u0439) \u043c\u043e\u0436\u0435\u0442 \u043f\u0440\u0438\u0432\u0435\u0441\u0442\u0438 \u043a \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e\u0441\u0442\u0438 \u0442\u0440\u0430\u043d\u0437\u0438\u0442\u043d\u043e\u0439 \u0432\u0438\u0437\u044b, \u043e\u0442 \u043a\u043e\u0442\u043e\u0440\u043e\u0439 \u0432\u044b \u0431\u044b\u043b\u0438 \u0431\u044b \u043e\u0441\u0432\u043e\u0431\u043e\u0436\u0434\u0435\u043d\u044b \u043f\u0440\u0438 \u0435\u0434\u0438\u043d\u043e\u043c PNR (\u0441\u043a\u0432\u043e\u0437\u043d\u043e\u043c \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0438)."},
+{"@type":"ListItem","position":50,"name":"\u041d\u0430\u0432\u0435\u0434\u0438\u0442\u0435 \u0441\u043f\u0440\u0430\u0432\u043a\u0438 \u043e \u0442\u0435\u043a\u0443\u0449\u0438\u0445 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u044f\u0445 \u0434\u043b\u044f \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u043e\u0432 \u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u0430\u0445 \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0439 \u043e\u0442\u043d\u043e\u0441\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u043f\u043e\u0442\u0435\u043d\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0439 \u043e\u0442\u043c\u0435\u043d\u044b \u0438\u043b\u0438 \u0438\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u044f \u043c\u0430\u0440\u0448\u0440\u0443\u0442\u043e\u0432 \u0438\u0437-\u0437\u0430 \u0433\u0435\u043e\u043f\u043e\u043b\u0438\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0445 \u0441\u043e\u0431\u044b\u0442\u0438\u0439."},
+{"@type":"ListItem","position":51,"name":"\u0420\u0430\u0441\u0441\u043b\u0435\u0434\u0443\u0439\u0442\u0435 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u044f \u043e \u0442\u043e\u043c, \u0447\u0442\u043e \u043f\u0430\u0441\u0441\u0430\u0436\u0438\u0440\u0430\u043c \u043e\u0442\u043a\u0430\u0437\u044b\u0432\u0430\u044e\u0442 \u0432 \u043f\u043e\u0441\u0430\u0434\u043a\u0435 \u043d\u0430 \u0440\u0435\u0439\u0441\u044b Turkish Airlines, \u043e\u0441\u043e\u0431\u0435\u043d\u043d\u043e \u0432 \u043e\u0442\u043d\u043e\u0448\u0435\u043d\u0438\u0438 \u043f\u043e\u0442\u0435\u043d\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0445 \u0438\u043c\u043c\u0438\u0433\u0440\u0430\u0446\u0438\u043e\u043d\u043d\u044b\u0445 \u0440\u0438\u0441\u043a\u043e\u0432 (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u043f\u0440\u0435\u0434\u044b\u0434\u0443\u0449\u0438\u0435 \u043e\u0442\u043a\u0430\u0437\u044b \u0432 \u0432\u0438\u0437\u0435)."},
+{"@type":"ListItem","position":52,"name":"\u0410\u0432\u0438\u0430\u0431\u0438\u043b\u0435\u0442\u044b \u0438\u0437 \u041c\u043e\u0441\u043a\u0432\u044b \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044e \u043c\u043e\u0433\u0443\u0442 \u0431\u044b\u0442\u044c \u0434\u0435\u0448\u0435\u0432\u043b\u0435 \u043f\u0440\u0438 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0438 \u0442\u0440\u0430\u043d\u0437\u0438\u0442\u043d\u044b\u0445 \u0443\u0437\u043b\u043e\u0432, \u0442\u0430\u043a\u0438\u0445 \u043a\u0430\u043a \u0421\u0442\u0430\u043c\u0431\u0443\u043b, \u041b\u0438\u0441\u0441\u0430\u0431\u043e\u043d \u0438\u043b\u0438 \u041c\u0430\u0434\u0440\u0438\u0434."},
+{"@type":"ListItem","position":53,"name":"GOL \u2014 \u043a\u0440\u0443\u043f\u043d\u0435\u0439\u0448\u0430\u044f \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u044f\u044f \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u044f \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438."},
+{"@type":"ListItem","position":54,"name":"\u041f\u043e \u0432\u043e\u043f\u0440\u043e\u0441\u0430\u043c \u043f\u0435\u0440\u0435\u0432\u043e\u0437\u043a\u0438 \u0434\u043e\u043c\u0430\u0448\u043d\u0438\u0445 \u0436\u0438\u0432\u043e\u0442\u043d\u044b\u0445 \u043d\u0430 \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0438\u0445 \u0440\u0435\u0439\u0441\u0430\u0445 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0445 \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0439 (\u0442\u0430\u043a\u0438\u0445 \u043a\u0430\u043a LATAM, GOL \u0438\u043b\u0438 Azul) \u043e\u0431\u0440\u0430\u0449\u0430\u0439\u0442\u0435\u0441\u044c \u0432 \u0441\u043b\u0443\u0436\u0431\u0443 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0438 \u043a\u043b\u0438\u0435\u043d\u0442\u043e\u0432 \u043f\u043e \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u043e\u0439 \u043f\u043e\u0447\u0442\u0435 \u043d\u0430 \u0430\u043d\u0433\u043b\u0438\u0439\u0441\u043a\u043e\u043c \u044f\u0437\u044b\u043a\u0435, \u0430 \u043d\u0435 \u043f\u043e \u0442\u0435\u043b\u0435\u0444\u043e\u043d\u0443."},
+{"@type":"ListItem","position":55,"name":"\u0420\u0435\u0439\u0441\u044b Royal Air Maroc \u043e\u0431\u044b\u0447\u043d\u043e \u043e\u0444\u043e\u0440\u043c\u043b\u044f\u044e\u0442 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 \u0431\u0430\u0433\u0430\u0436 \u0434\u043e \u043a\u043e\u043d\u0435\u0447\u043d\u043e\u0433\u043e \u043f\u0443\u043d\u043a\u0442\u0430 \u043d\u0430\u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f \u043f\u043e \u0442\u0440\u0430\u043d\u0437\u0438\u0442\u043d\u044b\u043c \u0431\u0438\u043b\u0435\u0442\u0430\u043c."},
+{"@type":"ListItem","position":56,"name":"\u0420\u0435\u0439\u0441\u044b \u0438\u0437 \u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433\u0430 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044e \u043c\u043e\u0433\u0443\u0442 \u0432\u043a\u043b\u044e\u0447\u0430\u0442\u044c \u043f\u0435\u0440\u0435\u0441\u0430\u0434\u043a\u0443 \u0432 \u041a\u0430\u0441\u0430\u0431\u043b\u0430\u043d\u043a\u0435."},
+{"@type":"ListItem","position":57,"name":"\u041f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a \u0437\u0430\u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043b \u0440\u0435\u0439\u0441 LATAM \u0441 \u043f\u0435\u0440\u0435\u0441\u0430\u0434\u043a\u043e\u0439 \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0447\u0435\u0440\u0435\u0437 Trip.com, \u0433\u0434\u0435 \u0431\u044b\u043b\u043e \u0443\u043a\u0430\u0437\u0430\u043d\u043e, \u0447\u0442\u043e \u043f\u043e\u0432\u0442\u043e\u0440\u043d\u0430\u044f \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f \u0431\u0430\u0433\u0430\u0436\u0430 \u043d\u0435 \u0442\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f."},
+{"@type":"ListItem","position":58,"name":"\u0418\u0441\u0441\u043b\u0435\u0434\u0443\u0439\u0442\u0435 \u0432\u043d\u0435\u0437\u0430\u043f\u043d\u043e\u0435 \u0438 \u0437\u043d\u0430\u0447\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0435 \u043f\u043e\u0432\u044b\u0448\u0435\u043d\u0438\u0435 \u0446\u0435\u043d \u043d\u0430 \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0438\u0435 \u0430\u0432\u0438\u0430\u0440\u0435\u0439\u0441\u044b \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438."},
+{"@type":"ListItem","position":59,"name":"\u0414\u043b\u044f \u0441\u0442\u044b\u043a\u043e\u0432\u043e\u0447\u043d\u044b\u0445 \u0440\u0435\u0439\u0441\u043e\u0432 \u0432\u043d\u0443\u0442\u0440\u0438 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438, \u0435\u0441\u043b\u0438 \u043e\u0431\u0430 \u0441\u0435\u0433\u043c\u0435\u043d\u0442\u0430 \u043f\u043e\u043b\u0435\u0442\u0430 \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u044b \u043e\u0434\u043d\u0438\u043c \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435\u043c, \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 \u0431\u0430\u0433\u0430\u0436 \u043e\u0431\u044b\u0447\u043d\u043e \u0441\u043b\u0435\u0434\u0443\u0435\u0442 \u0434\u043e \u043a\u043e\u043d\u0435\u0447\u043d\u043e\u0433\u043e \u043f\u0443\u043d\u043a\u0442\u0430 \u043d\u0430\u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f \u0431\u0435\u0437 \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e\u0441\u0442\u0438 \u0435\u0433\u043e \u043f\u043e\u0432\u0442\u043e\u0440\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f, \u043e\u0441\u043e\u0431\u0435\u043d\u043d\u043e \u043f\u0440\u0438 \u043f\u0435\u0440\u0435\u0441\u0430\u0434\u043a\u0435 \u0447\u0435\u0440\u0435\u0437 \u0442\u0430\u043a\u043e\u0439 \u0433\u043e\u0440\u043e\u0434, \u043a\u0430\u043a \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443, \u0438 \u0431\u0435\u0437 \u0432\u044a\u0435\u0437\u0434\u0430 \u0432 \u0441\u0442\u0440\u0430\u043d\u0443 \u0432 \u043f\u0443\u043d\u043a\u0442\u0435 \u043f\u0435\u0440\u0435\u0441\u0430\u0434\u043a\u0438."},
+{"@type":"ListItem","position":60,"name":"\u041f\u0440\u0438 \u0432\u043e\u0437\u043d\u0438\u043a\u043d\u043e\u0432\u0435\u043d\u0438\u0438 \u043e\u0448\u0438\u0431\u043a\u0438 \u00abPayment is not complete\u00bb \u043d\u0430 \u0441\u0430\u0439\u0442\u0435 Air Maroc \u043f\u0440\u0438 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0438 \u043a\u0430\u0440\u0442 \u0441\u0442\u0440\u0430\u043d \u0421\u041d\u0413/\u0426\u0435\u043d\u0442\u0440\u0430\u043b\u044c\u043d\u043e\u0439 \u0410\u0437\u0438\u0438, \u043f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u043e\u0442\u043a\u043b\u044e\u0447\u0438\u0442\u044c 3D Secure \u0438\u043b\u0438 \u0432\u043e\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c\u0441\u044f \u0441\u0442\u043e\u0440\u043e\u043d\u043d\u0438\u043c\u0438 \u0430\u0433\u0440\u0435\u0433\u0430\u0442\u043e\u0440\u0430\u043c\u0438 \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f, \u0442\u0430\u043a\u0438\u043c\u0438 \u043a\u0430\u043a OneTwoTrip, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u043f\u0440\u0435\u0434\u043e\u0441\u0442\u0430\u0432\u043b\u044f\u044e\u0442 \u0430\u043b\u044c\u0442\u0435\u0440\u043d\u0430\u0442\u0438\u0432\u043d\u044b\u0435 \u043f\u043b\u0430\u0442\u0435\u0436\u043d\u044b\u0435 \u0448\u043b\u044e\u0437\u044b \u0438 \u0432\u044b\u0431\u043e\u0440 \u043a\u043b\u0430\u0441\u0441\u0430 \u0442\u0430\u0440\u0438\u0444\u0430."},
+{"@type":"ListItem","position":61,"name":"\u0412\u043e\u043f\u0440\u043e\u0441 \u043e \u0442\u0440\u0435\u0431\u043e\u0432\u0430\u043d\u0438\u0438 \u0441\u0435\u0440\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u0430 \u043e \u043f\u0440\u0438\u0432\u0438\u0432\u043a\u0435 \u043e\u0442 \u0436\u0435\u043b\u0442\u043e\u0439 \u043b\u0438\u0445\u043e\u0440\u0430\u0434\u043a\u0438 \u0434\u043b\u044f \u0440\u0435\u0439\u0441\u043e\u0432 \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0438 Emirates \u0438\u0437 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e (\u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f) \u0432 \u0414\u0443\u0431\u0430\u0439."},
+{"@type":"ListItem","position":62,"name":"\u041f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u0438 \u0438\u0437 \u0410\u0444\u0440\u0438\u043a\u0438 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044e \u043c\u043e\u0433\u0443\u0442 \u0440\u0430\u0441\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u044e Royal Air Maroc \u0441 \u043c\u0430\u0440\u0448\u0440\u0443\u0442\u043e\u043c, \u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0438\u0437 \u041d\u0443\u0430\u043a\u0448\u043e\u0442\u0430 (\u041c\u0430\u0432\u0440\u0438\u0442\u0430\u043d\u0438\u044f) \u0432 \u041a\u0430\u0441\u0430\u0431\u043b\u0430\u043d\u043a\u0443 (\u041c\u0430\u0440\u043e\u043a\u043a\u043e), \u0430 \u0437\u0430\u0442\u0435\u043c \u0434\u0430\u043b\u0435\u0435 \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 (\u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f)."},
+{"@type":"ListItem","position":63,"name":"\u0410\u0432\u0438\u0430\u0431\u0438\u043b\u0435\u0442\u044b \u0438\u0437 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0432 \u0420\u043e\u0441\u0441\u0438\u044e \u0447\u0435\u0440\u0435\u0437 \u041a\u0430\u0438\u0440 \u0431\u044b\u043b\u0438 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b \u043f\u0440\u0438\u043c\u0435\u0440\u043d\u043e \u0437\u0430 50 000 \u0440\u0443\u0431\u043b\u0435\u0439 (\u0442\u0443\u0434\u0430 \u0438 \u043e\u0431\u0440\u0430\u0442\u043d\u043e)."},
+{"@type":"ListItem","position":64,"name":"\u041f\u0440\u0438 \u043f\u0435\u0440\u0435\u043b\u0435\u0442\u0435 \u0438\u0437 \u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433\u0430 \u0447\u0435\u0440\u0435\u0437 \u041a\u0430\u0441\u0430\u0431\u043b\u0430\u043d\u043a\u0443 \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0435\u0439 Air Maroc \u0433\u0430\u0431\u0430\u0440\u0438\u0442\u044b \u0440\u0443\u0447\u043d\u043e\u0439 \u043a\u043b\u0430\u0434\u0438 \u043c\u043e\u0433\u0443\u0442 \u043f\u0440\u043e\u0432\u0435\u0440\u044f\u0442\u044c\u0441\u044f \u043d\u0435 \u0441\u0442\u0440\u043e\u0433\u043e."},
+{"@type":"ListItem","position":65,"name":"\u0420\u0435\u0439\u0441\u044b Royal Air Maroc \u0438\u0437 \u0420\u043e\u0441\u0441\u0438\u0438 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044e \u0447\u0435\u0440\u0435\u0437 \u041a\u0430\u0441\u0430\u0431\u043b\u0430\u043d\u043a\u0443, \u043a\u0430\u043a \u043f\u0440\u0430\u0432\u0438\u043b\u043e, \u043f\u0440\u0438\u0431\u044b\u0432\u0430\u044e\u0442 \u0441 \u0431\u0430\u0433\u0430\u0436\u043e\u043c \u0432 \u0446\u0435\u043b\u043e\u0441\u0442\u0438 \u0438 \u0441\u043e\u0445\u0440\u0430\u043d\u043d\u043e\u0441\u0442\u0438, \u043d\u0435\u0441\u043c\u043e\u0442\u0440\u044f \u043d\u0430 \u043d\u0435\u0433\u0430\u0442\u0438\u0432\u043d\u044b\u0435 \u043e\u0442\u0437\u044b\u0432\u044b \u0432 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0435 \u043e\u0431 \u0443\u0441\u0442\u0430\u0440\u0435\u0432\u0448\u0438\u0445 \u0441\u0430\u043b\u043e\u043d\u0430\u0445 \u043d\u0430 \u043a\u043e\u0440\u043e\u0442\u043a\u0438\u0445 \u0440\u0435\u0439\u0441\u0430\u0445 \u0438 \u0441\u0440\u0435\u0434\u043d\u0435\u043c \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435 \u043e\u0431\u0441\u043b\u0443\u0436\u0438\u0432\u0430\u043d\u0438\u044f \u043d\u0430 \u0434\u0430\u043b\u044c\u043d\u0435\u043c\u0430\u0433\u0438\u0441\u0442\u0440\u0430\u043b\u044c\u043d\u044b\u0445 \u0443\u0447\u0430\u0441\u0442\u043a\u0430\u0445."},
+{"@type":"ListItem","position":66,"name":"\u0421\u0440\u0430\u0432\u043d\u0438\u0442\u0435 \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u044b \u043f\u0435\u0440\u0435\u043b\u0435\u0442\u043e\u0432 \u0438\u0437 \u041c\u043e\u0441\u043a\u0432\u044b \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0435\u0439 Ethiopian Airlines, \u0443\u0447\u0438\u0442\u044b\u0432\u0430\u044f \u043f\u0435\u0440\u0435\u0441\u0430\u0434\u043a\u0438 \u0432 \u0410\u0434\u0434\u0438\u0441-\u0410\u0431\u0435\u0431\u0435."},
+{"@type":"ListItem","position":67,"name":"\u0420\u0435\u0439\u0441\u044b Ethiopian Airlines \u0438\u0437 \u0420\u043e\u0441\u0441\u0438\u0438 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044e \u0432\u044b\u043b\u0435\u0442\u0430\u044e\u0442 \u0438\u0437 \u043c\u043e\u0441\u043a\u043e\u0432\u0441\u043a\u043e\u0433\u043e \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0430 \u0414\u043e\u043c\u043e\u0434\u0435\u0434\u043e\u0432\u043e (DME) \u0441 \u043f\u0435\u0440\u0435\u0441\u0430\u0434\u043a\u043e\u0439 \u0432 \u0410\u0434\u0434\u0438\u0441-\u0410\u0431\u0435\u0431\u0435."},
+{"@type":"ListItem","position":68,"name":"\u0420\u0430\u0441\u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0435\u043d\u043d\u044b\u0435 \u043c\u0430\u0440\u0448\u0440\u0443\u0442\u044b \u043f\u0435\u0440\u0435\u043b\u0435\u0442\u043e\u0432 \u0438\u0437 \u041c\u043e\u0441\u043a\u0432\u044b \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0432\u043a\u043b\u044e\u0447\u0430\u044e\u0442 \u043f\u0435\u0440\u0435\u0441\u0430\u0434\u043a\u0438 \u0447\u0435\u0440\u0435\u0437 \u041a\u0430\u0441\u0430\u0431\u043b\u0430\u043d\u043a\u0443 (\u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u044f Royal Air Maroc)."},
+{"@type":"ListItem","position":69,"name":"Royal Air Maroc \u0441\u0447\u0438\u0442\u0430\u0435\u0442\u0441\u044f \u043f\u0440\u0438\u0435\u043c\u043b\u0435\u043c\u044b\u043c \u0431\u044e\u0434\u0436\u0435\u0442\u043d\u044b\u043c \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u043e\u043c \u0434\u043b\u044f \u043f\u0435\u0440\u0435\u043b\u0435\u0442\u043e\u0432 \u0432 \u0420\u043e\u0441\u0441\u0438\u044e \u0438\u0437 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438."},
+{"@type":"ListItem","position":70,"name":"\u0422\u0440\u0430\u043d\u0441\u0444\u0435\u0440 \u043c\u0435\u0436\u0434\u0443 \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0430\u043c\u0438 GRU \u0438 \u0412\u0438\u0440\u0430\u043a\u043e\u043f\u0443\u0441 (VCP): \u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d \u0430\u0432\u0442\u043e\u0431\u0443\u0441\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0438\u0441 \u0447\u0435\u0440\u0435\u0437 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 ClickBus (\u043f\u0440\u0438\u043c\u0435\u0440\u043d\u043e 65\u201370 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0445 \u0440\u0435\u0430\u043b\u043e\u0432)."},
+{"@type":"ListItem","position":71,"name":"\u0414\u043b\u044f \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0438\u0445 \u0430\u0432\u0438\u0430\u0431\u0438\u043b\u0435\u0442\u043e\u0432 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438, \u0432 \u0447\u0430\u0441\u0442\u043d\u043e\u0441\u0442\u0438 \u0438\u0437 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0432 \u0424\u043e\u0441-\u0434\u0443-\u0418\u0433\u0443\u0430\u0441\u0443, \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u0442\u0441\u044f \u0440\u0430\u0441\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0438 Gol \u0438 Latam."},
+{"@type":"ListItem","position":72,"name":"\u041f\u0440\u0438 \u043f\u0435\u0440\u0435\u0441\u0430\u0434\u043a\u0435 \u043d\u0430 \u0440\u0435\u0439\u0441\u044b \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u043f\u0440\u043e\u0432\u0435\u0440\u044f\u0439\u0442\u0435 \u0431\u0430\u0433\u0430\u0436\u043d\u0443\u044e \u0431\u0438\u0440\u043a\u0443 \u043d\u0430 \u043d\u0430\u043b\u0438\u0447\u0438\u0435 \u043a\u043e\u0434\u0430 \u043a\u043e\u043d\u0435\u0447\u043d\u043e\u0433\u043e \u043f\u0443\u043d\u043a\u0442\u0430 \u043d\u0430\u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f."},
+{"@type":"ListItem","position":73,"name":"\u041f\u0440\u0438 \u043f\u043e\u0438\u0441\u043a\u0435 \u0430\u0432\u0438\u0430\u0431\u0438\u043b\u0435\u0442\u043e\u0432 \u0438\u0437 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0432 \u0424\u043e\u0441-\u0434\u0443-\u0418\u0433\u0443\u0430\u0441\u0443 \u0432 \u043d\u043e\u044f\u0431\u0440\u0435-\u0434\u0435\u043a\u0430\u0431\u0440\u0435 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0432\u0435\u0440\u044f\u0442\u044c \u0446\u0435\u043d\u044b \u043d\u0430 Trip.com."},
+{"@type":"ListItem","position":74,"name":"\u0427\u0442\u043e \u043a\u0430\u0441\u0430\u0435\u0442\u0441\u044f \u0440\u0443\u0447\u043d\u043e\u0439 \u043a\u043b\u0430\u0434\u0438, \u043d\u043e\u0443\u0442\u0431\u0443\u043a\u0438 \u043e\u0431\u044b\u0447\u043d\u043e \u043d\u0435 \u0432\u043a\u043b\u044e\u0447\u0430\u044e\u0442\u0441\u044f \u0432 \u043b\u0438\u043c\u0438\u0442 \u0432\u0435\u0441\u0430 \u0438 \u0438\u0445 \u043c\u043e\u0436\u043d\u043e \u043f\u0440\u043e\u043d\u043e\u0441\u0438\u0442\u044c \u043e\u0442\u0434\u0435\u043b\u044c\u043d\u043e \u0432 \u0440\u0443\u043a\u0430\u0445 \u0438\u043b\u0438 \u0432 \u0447\u0435\u0445\u043b\u0435."},
+{"@type":"ListItem","position":75,"name":"\u041f\u0440\u0430\u0432\u0438\u043b\u0430 \u043f\u0440\u043e\u0432\u043e\u0437\u0430 \u0431\u0430\u0433\u0430\u0436\u0430 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438: \u043f\u0430\u0441\u0441\u0430\u0436\u0438\u0440\u044b, \u043f\u0440\u0438\u0431\u044b\u0432\u0430\u044e\u0449\u0438\u0435 \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0438 \u0441\u043e\u0432\u0435\u0440\u0448\u0430\u044e\u0449\u0438\u0435 \u043f\u0435\u0440\u0435\u0441\u0430\u0434\u043a\u0443 \u043d\u0430 \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0438\u0439 \u0440\u0435\u0439\u0441 \u0434\u0440\u0443\u0433\u043e\u0439 \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0438, \u0434\u043e\u043b\u0436\u043d\u044b \u043f\u043e\u043b\u0443\u0447\u0438\u0442\u044c \u0441\u0432\u043e\u0439 \u0431\u0430\u0433\u0430\u0436 \u0438 \u0437\u0430\u043d\u043e\u0432\u043e \u0441\u0434\u0430\u0442\u044c \u0435\u0433\u043e \u043d\u0430 \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0438\u0439 \u0441\u0435\u0433\u043c\u0435\u043d\u0442, \u0434\u0430\u0436\u0435 \u0435\u0441\u043b\u0438 \u043c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u044b\u0439 \u0441\u0435\u0433\u043c\u0435\u043d\u0442 \u0431\u044b\u043b \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d \u043e\u0434\u043d\u0438\u043c \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435\u043c."},
+{"@type":"ListItem","position":76,"name":"\u0411\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u0440\u0435\u0439\u0441\u043e\u0432 \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0438 GOL \u0438\u043b\u0438 \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u0431\u0430\u0433\u0430\u0436\u043e\u043c \u0438\u043d\u043e\u0441\u0442\u0440\u0430\u043d\u0446\u0430\u043c\u0438 \u0447\u0430\u0441\u0442\u043e \u0442\u0440\u0435\u0431\u0443\u0435\u0442 CPF (\u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0439 \u043d\u0430\u043b\u043e\u0433\u043e\u0432\u044b\u0439 \u043d\u043e\u043c\u0435\u0440)."},
+{"@type":"ListItem","position":77,"name":"\u0423\u0441\u0442\u0440\u0430\u043d\u0435\u043d\u0438\u0435 \u043d\u0435\u043f\u043e\u043b\u0430\u0434\u043e\u043a \u043f\u0440\u0438 \u043e\u043f\u043b\u0430\u0442\u0435 \u0431\u0438\u043b\u0435\u0442\u043e\u0432 \u043d\u0430 \u0440\u0435\u0439\u0441\u044b \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0438 Gol \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438."},
+{"@type":"ListItem","position":78,"name":"\u0420\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u0438 \u043f\u043e \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u044f\u043c \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0438\u0445 \u0430\u0432\u0438\u0430\u0431\u0438\u043b\u0435\u0442\u043e\u0432 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u043b\u0443\u0447\u0448\u0438\u0445 \u0446\u0435\u043d."},
+{"@type":"ListItem","position":79,"name":"\u0412\u044b \u043c\u043e\u0436\u0435\u0442\u0435 \u043a\u0443\u043f\u0438\u0442\u044c \u0430\u0432\u0438\u0430\u0431\u0438\u043b\u0435\u0442\u044b \u043d\u0430 \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0438\u0435 \u0440\u0435\u0439\u0441\u044b \u043f\u043e \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0438\u0437 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e) \u0431\u0435\u0437 \u043d\u0430\u043b\u0438\u0447\u0438\u044f CPF."},
+{"@type":"ListItem","position":80,"name":"\u041f\u0435\u0440\u0435\u0432\u043e\u0437\u043a\u0430 \u0431\u043e\u043b\u044c\u0448\u0438\u0445 \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u043e\u0432 \u0432 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u043e\u043c \u0431\u0430\u0433\u0430\u0436\u0435 \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u0430."},
+{"@type":"ListItem","position":81,"name":"\u0426\u0435\u043d\u044b \u043d\u0430 \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0438\u0435 \u0430\u0432\u0438\u0430\u043f\u0435\u0440\u0435\u043b\u0435\u0442\u044b \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0437\u043d\u0430\u0447\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u043a\u043e\u043b\u0435\u0431\u043b\u044e\u0442\u0441\u044f \u0432\u043e \u0432\u0440\u0435\u043c\u044f \u043f\u0440\u0430\u0437\u0434\u043d\u0438\u043a\u043e\u0432 (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u041a\u0430\u0440\u043d\u0430\u0432\u0430\u043b\u0430)."},
+{"@type":"ListItem","position":82,"name":"\u041f\u0440\u0430\u0432\u0438\u043b\u0430 \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0438\u0445 \u043f\u0435\u0440\u0435\u043b\u0435\u0442\u043e\u0432 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438: \u0434\u043b\u044f \u0430\u0432\u0438\u0430\u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0439, \u0442\u0430\u043a\u0438\u0445 \u043a\u0430\u043a Azul, \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f \u043d\u0430 \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0438\u0435 \u0440\u0435\u0439\u0441\u044b \u0447\u0430\u0441\u0442\u043e \u0437\u0430\u043a\u0440\u044b\u0432\u0430\u0435\u0442\u0441\u044f \u0437\u0430 1 \u0447\u0430\u0441 \u0434\u043e \u0432\u044b\u043b\u0435\u0442\u0430."}
+]}
+</script>
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 \u041d\u043e\u0447\u044c", DAY="\u2600 \u0414\u0435\u043d\u044c";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

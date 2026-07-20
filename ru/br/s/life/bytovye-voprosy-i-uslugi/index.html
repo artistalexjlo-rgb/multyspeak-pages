@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Бразилия: бытовые вопросы и услуги — живой опыт из чатов · Luky</title>
+<meta name="description" content="Живой опыт по теме «бытовые вопросы и услуги» в Бразилии: реальные советы, случаи и правила из чатов. Под твой случай — у Luky.">
+<link rel="canonical" href="https://info.multyspeak.ru/ru/br/s/life/bytovye-voprosy-i-uslugi/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.ru/ru/br/s/life/bytovye-voprosy-i-uslugi/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.ru/en/br/s/life/bytovye-voprosy-i-uslugi/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.ru/es/br/s/life/bytovye-voprosy-i-uslugi/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.ru/pt/br/s/life/bytovye-voprosy-i-uslugi/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.ru/ru/br/s/life/bytovye-voprosy-i-uslugi/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+/* тег типа абзаца (хвост-антологии: lifehack/reglament/howto/risk/case/service) */
+.tag{display:inline-block;font-family:var(--font-mono);font-weight:400;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);
+  border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:2px;white-space:nowrap}
+.tag.risk{color:var(--red);border-color:var(--red)}
+.tag.reglament{color:var(--accent);border-color:var(--accent)}
+.tag.lifehack{color:var(--green);border-color:var(--green)}
+.tag.service{color:var(--yellow);border-color:var(--yellow)}
+.tag.howto{color:var(--hud);border-color:var(--hud)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">инфопортал · в любой стране · без воды</span>
+    </div>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="on" href="/ru/br/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/en/br/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/br/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/pt/br/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Ночь</span></button>
+    </div>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/ru/">Главная</a> /
+    <a href="/ru/br/">Бразилия</a> /
+    <b>Бытовые вопросы и услуги</b>
+  </nav>
+
+
+  
+  <h1>Бытовые вопросы и услуги в Бразилии: что реально важно знать</h1>
+
+  <h2>Из живого опыта</h2>
+  <details open><summary><span class="sumq"><span class="tag service">сервис</span>Популярные сервисы доставки еды и продуктов в Бразилии включают iFood и Rappi для заказов из ресторанов и Mercado Livre для доставки из супермаркетов.</span><span></span></summary>
+    <div class="a">Пользователи могут столкнуться с региональными ограничениями при доступе к этим приложениям. Важно скачивать правильную клиентскую версию приложения, а наличие локального бразильского аккаунта в магазинах приложений может улучшить функциональность.
+    <div class="src">✓ 2 сообщения из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Основным приложением для доставки еды в Бразилии (включая Сан-Паулу) является iFood.</span><span></span></summary>
+    <div class="a">Обратите внимание, что большинство служб доставки обычно требуют местный номер телефона для регистрации и отслеживания заказа.
+    <div class="src">✓ 2 сообщения из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>Чтобы найти репетитора по русскому языку в Бразилии для носителя португальского языка: 1. Preply: Ищите репетиторов русского на Preply.</span><span></span></summary>
+    <div class="a">Многие из них являются носителями языка и также говорят по-португальски. 2. Прямые рекомендации: Если у вас на примете есть конкретные люди, которые преподают русский и подходят (например, Луис или другой рекомендованный контакт), предоставьте их данные. 3. Личная рекомендация: Ищите рекомендации репетиторов с опытом преподавания русского как иностранного бразильцам.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Чтобы найти русскоязычных специалистов по маникюру в Рио-де-Жанейро, Бразилия, рекомендуется обратиться к местным сообществам экспатов.</span><span></span></summary>
+    <div class="a">Платформы, такие как группы в Telegram (например, «Русские в Рио»), группы в Facebook для русских в Бразилии или специализированные форумы экспатов, являются эффективными ресурсами для получения прямых рекомендаций и контактной информации. Конкретные салоны красоты, ориентированные на русскоязычное сообщество, также можно найти через эти каналы.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq">Узнайте о наличии игрушек в Хэппи Мил в McDonald&#39;s в Бразилии, в частности с тематикой автомобилей.</span><span></span></summary>
+    <div class="a">Подтвердите, продаются ли они сейчас, когда ожидается начало продаж (упомянув возможную дату или «со дня на день») и доступное количество (например, 92 000 единиц на всю Бразилию). Учтите, что они могут продаваться со специальным бургером за дополнительную плату (например, 64 реала). Подтвердите отсутствие в определенных местах, например, в Сантусе.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Популярные сувениры, которые стоит привезти из Бразилии: 1. Кофе: бразильский кофе всемирно известен; ищите особые сорта из таких регионов, как Минас-Жерайс или Эспириту-Санту.</span><span></span></summary>
+    <div class="a">2. Кашаса: крепкий алкогольный напиток, изготовленный из ферментированного сока сахарного тростника, часто используемый в коктейлях кайпиринья. 3. Другие предметы могут включать местные изделия ручной работы, сладости (например, бригадейро) и уникальные модные вещи.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>Помогите найти магазины, продающие детские купальники для спортивной гимнастики в Рио-де-Жанейро или Сан-Паулу, Бразилия.</span><span></span></summary>
+    <div class="a">Сфокусируйтесь на выявлении ритейлеров, предлагающих как тренировочные, так и декоративные (например, со стразами) соревновательные купальники. Рекомендуется проверить спортивные магазины, такие как Decathlon, и узнать о специализированных магазинах детской спортивной одежды или магазинах танцевальной одежды.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>По субботам в Гуарульюсе (с 10:00 до 14:00) и рядом с мостом Браш в Сан-Паулу (с 14:00 до 18:00) работают большие блошиные рынки.</span><span></span></summary>
+    <div class="a">Такие вещи, как одежда и обувь (например, кожаные кроссовки примерно за 10 реалов, джинсы за 10-20 реалов), продаются прямо с земли. Торг является нормой и ожидается продавцами вне супермаркетов.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>В Бразилии нет официальных магазинов IQOS.</span><span></span></summary>
+    <div class="a">Однако стики HEETS для IQOS можно найти в местных табачных магазинах (tabacarias). Например, магазин Casa de Fumo Poço Fundo, расположенный по адресу Rua Marechal Deodoro, 25, Центр в Трес-Понтас, может иметь их в наличии. Рекомендуется позвонить заранее, чтобы уточнить наличие.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Настоящую русскую сметану сложно найти в бразильских супермаркетах.</span><span></span></summary>
+    <div class="a">Местные часто находят «Nata», которая не является прямым кулинарным заменителем. «Creme azedo» иногда встречается в отдельных региональных сетях, таких как Covabra, но широко доступные продукты «creme azedo» часто ароматизированы для закусок типа начос.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>В Сан-Паулу, Бразилия, нет крупных торговых аутлетов, сопоставимых с большими дисконт-центрами в других странах, например, теми, что находятся под Москвой.</span><span></span></summary>
+    <div class="a">За городом есть несколько «Премиум Аутлетов», но значительные скидки там обычно ограничены определенными категориями товаров, такими как спортивная обувь и очки.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Расходы на питание в агломерации Сан-Паулу и прибрежных городах, таких как Гуаружа, существенно различаются.</span><span></span></summary>
+    <div class="a">Бюджетные местные закусочные (ботеко/ланшонете) обходятся в среднем в ~60 бразильских реалов на двоих, в то время как модные или высококлассные рестораны могут стоить от 120 бразильских реалов на человека.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Для возврата одежды, купленной в Бразилии при оплате картой, как правило, рекомендуется взять с собой паспорт и вещь в первоначальном состоянии.</span><span></span></summary>
+    <div class="a">Срок возврата может варьироваться в зависимости от магазина, но зачастую составляет от 7 до 30 дней. Желательно заранее уточнить политику возврата конкретного магазина.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Большой супермаркет Pão de Açúcar, сопоставимый с Carrefour или Auchan, находится по адресу: Av.</span><span></span></summary>
+    <div class="a">Conselheiro Nébias, 802 - Boqueirão, Сантус. Название 'Pão de Açúcar' (что означает «Сахарная голова» или «Сахарный хлеб») отсылает к знаменитой горе Сахарная голова в Рио-де-Жанейро, известной достопримечательности.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Amazon предоставляет услуги доставки в Бразилию.</span><span></span></summary>
+    <div class="a">На импортные товары, включая как новую, так и подержанную электронику, распространяются таможенные пошлины. Рекомендуется проверять цены и условия доставки на amazon.com.br, локальной платформе Amazon, чтобы понять общую стоимость, включая потенциальные пошлины.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>За качественными кофейными зернами в Сан-Паулу местные энтузиасты рекомендуют Moka Clube в районе Пинейрос.</span><span></span></summary>
+    <div class="a">Хотя супермаркеты предлагают достойное качество по сравнению с масс-маркетом, специализированные магазины в таких районах, как Пинейрос, предпочтительнее для покупки зерен подарочного качества.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Продается: б/у трансформатор напряжения (со 120В на 220В) в Рио.</span><span></span></summary>
+    <div class="a">Необходим для безопасного подключения американской, СНГ или японской техники. Совместим с кухонными приборами, кофеварками, игровыми консолями, аудиосистемами, инструментами и зарядными устройствами. Цена: 70 реалов (торг уместен).
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Такие продукты для экспатов, как кефир, можно купить готовыми в крупных бразильских сетях супермаркетов, таких как «Zona Sul» и «Pão de Açúcar», примерно по 10 реалов за 500 мл.</span><span></span></summary>
+    <div class="a">Немецкий темный ржаной хлеб («Pão de alemão») является ближайшим местным аналогом восточноевропейского ржаного хлеба.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>При покупке популярных брендов кофе в бразильских супермаркетах для личного использования или в качестве сувенира, доступны варианты: Café Pilão, Café do Ponto, Brazil Santos Coffee (отличается более мягким, промытым стилем) и Café Melitta (известен очень крепким и темным профилем обжарки).</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Скульптурную глину обычно можно купить в Сан-Паулу в магазинах товаров для искусства (lojas de artigos para arte), магазинах для рукоделия (lojas de artesanato) или крупных магазинах канцтоваров (papelarias).</span><span></span></summary>
+    <div class="a">Онлайн-площадки, такие как Mercado Livre, также могут предлагать широкий выбор.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>В Сан-Паулу сувениры (брелоки, картины, кепки, футболки) можно найти вдоль проспекта Паулиста, зачастую в киосках.</span><span></span></summary>
+    <div class="a">Сувенирные магазины обычно расположены рядом с главными туристическими достопримечательностями. На рынках не всегда может быть широкий выбор туристических сувениров.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Готовые к употреблению блюда доступны в супермаркетах Carrefour в Сан-Паулу и Рио-де-Жанейро, а также в других магазинах по всей Бразилии.</span><span></span></summary>
+    <div class="a">Цены варьируются, но ежедневные скидки часто делают эти блюда значительно дешевле. Это удобный и бюджетный вариант для быстрого перекуса.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Фарофа — это традиционное бразильское блюдо, приготовленное из поджаренной маниоковой муки.</span><span></span></summary>
+    <div class="a">Ее часто подают в качестве гарнира, особенно к мясу, и она является основным продуктом во многих бразильских рационах, особенно в северных регионах. У нее характерная текстура и вкус.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>В Бразилии гречка и укроп доступны в супермаркетах.</span><span></span></summary>
+    <div class="a">Манку можно найти под названием 'semolina'. Альтернативы манке в выпечке включают овсяные хлопья мелкого помола, различные виды кукурузной муки или крахмал. Подслащенные рисовые хлопья могут служить заменой детской каше.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Хотя международные бренды, такие как Sephora, представлены в Бразилии, они, как правило, стоят дорого.</span><span></span></summary>
+    <div class="a">Существуют более доступные косметические варианты, в основном продающие китайские и местные бразильские бренды, хотя их магазины могут быть широко не рекламироваться.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>Чтобы найти персонального шоппера или форвардера в Бразилии для отправки товаров в Россию, пользователям следует рекомендовать связаться с администратором чата для получения проверенных рекомендаций.</span><span></span></summary>
+    <div class="a">Подчеркните необходимость осторожности из-за риска мошенничества.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Найти туристические открытки в Сан-Паулу может быть непросто.</span><span></span></summary>
+    <div class="a">Они могут продаваться в небольших киосках, музеях (таких как Пинакотека) или старых магазинах канцелярских товаров. Путешественники сообщали о лучшем, хотя все еще ограниченном, выборе в Рио-де-Жанейро.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Рекомендую местные бразильские бренды по уходу за кожей, подходящие для жирной и склонной к акне кожи.</span><span></span></summary>
+    <div class="a">Выделите конкретные бренды или продукты, проводя сравнения с международными брендами, где это применимо (например, Principia как местный аналог The Ordinary).
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Для покупки профессионального осветительного оборудования для камер во Флорианополисе, Бразилия, пользователи интересуются крупными магазинами, специализирующимися на фото- и видеотехнике для операторов и блогеров.</span><span></span></summary>
+    <div class="a">Требуются конкретные рекомендации магазинов.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Ключевые сервисы доставки еды и продуктов в Бразилии включают Ifood, 99 и Rappi.</span><span></span></summary>
+    <div class="a">Приложение '99' примечательно частыми купонами и скидками. Международная оплата из России может быть затруднительной, зачастую требуя местной помощи для обработки платежей.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Цены на электронику в Бразилии примерно в 2,5 раза выше, чем в России.</span><span></span></summary>
+    <div class="a">Местные жители часто ездят в Парагвай, чтобы приобрести устройства Apple и другую электронику по значительно более низким ценам, чтобы избежать местных импортных пошлин и наценок.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Рекомендуемые сувениры из Бразилии: 1. Granado (косметика/мыло).</span><span></span></summary>
+    <div class="a">2. Dengo (премиальный шоколад). 3. Farm (модная одежда). 4. Havaianas (вьетнамки). 5. Cachaça (местный алкогольный напиток из сахарного тростника). 6. Официальная футбольная атрибутика.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Чтобы найти оригинальные желтые футболки сборной по футболу в Рио-де-Жанейро, проверьте официальные магазины Nike или авторизованные розничные сети спортивной одежды, такие как Centauro, которые продают лицензированный товар.</span><span></span></summary>
+    <div class="a">Избегайте подделок.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>В Бразилии, а именно в Санта-Лузии, доступны различные виды икры (черная, красная, минтая, щуки).</span><span></span></summary>
+    <div class="a">Также есть магазин рыбных деликатесов, предлагающий доставку в черте города. Конкретные данные магазина пользователь может предоставить по запросу.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Для покупки или продажи б/у товаров в Бразилии основными платформами являются Facebook Marketplace и OLX (olx.com.br).</span><span></span></summary>
+    <div class="a">Для более локальных вариантов рекомендуется искать группы в Telegram или WhatsApp, специфичные для конкретного города.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>При выборе кофе в бразильских супермаркетах обратите внимание на бренд «3 Corações».</span><span></span></summary>
+    <div class="a">Хотя местные предпочтения могут варьироваться, а качество некоторого кофе может казаться низким, этот бренд предлагается как возможный вариант.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>Чтобы начать продавать на Mercado Livre в Бразилии, пользователю нужно зарегистрировать аккаунт в качестве «vendedor».</span><span></span></summary>
+    <div class="a">Процесс включает заполнение профиля/анкеты, размещение товара, добавление карточки товара и установку цены.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Магазины здорового питания (&#39;Lojas de Produtos naturais&#39;), которые предлагают зерновые и специи на развес, являются хорошими местами для поиска разнообразных специфических или менее распространенных продуктов в Бразилии.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Чтобы купить переходник для розетки в Рио-де-Жанейро, рассмотрите возможность поиска магазинов электроники на улице Руа-Барата-Рибейру.</span><span></span></summary>
+    <div class="a">В этих магазинах, скорее всего, предложат разнообразие вариантов по разумным ценам.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Переходники и базовая электроника в Рио-де-Жанейро продаются в уличных киосках, местных супермаркетах (таких как Zona Sul) и на рынках.</span><span></span></summary>
+    <div class="a">Покупки в крупных торговых центрах, как правило, обходятся дороже за те же товары.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Для покупки кофейных зерен в Сан-Паулу крупные супермаркеты предлагают хороший выбор.</span><span></span></summary>
+    <div class="a">Это удобный и надежный вариант. Для получения более конкретных рекомендаций изучите соответствующие местные публикации или гиды.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Свежие устрицы продаются на рыбном рынке в самом дальнем правом конце пляжа Копакабана, возле входа в музей.</span><span></span></summary>
+    <div class="a">Уровень цен: примерно 7 бразильских реалов за устрицу, чистка от раковины обычно включена по запросу.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Для быстрой и надежной доставки цветов в крупных бразильских городах, таких как Ресифи, используйте мобильное приложение iFood.</span><span></span></summary>
+    <div class="a">В нем есть партнеры-местные флористы и предлагается быстрая курьерская доставка.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>Чтобы купить телевизор в Белу-Оризонти, Бразилия, без CPF, необходимо изучить альтернативные методы идентификации или найти магазины, которые допускают такие покупки без налогового номера, либо получить CPF.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Для покупки специфических или менее распространенных продуктов в Бразилии проверяйте супермаркеты не бюджетного сегмента, такие как Carrefour или Pão de Açúcar, вместо бюджетных магазинов, таких как Assai.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Специфические бакалейные товары, такие как перловая крупа, гречка, натуральный кефир и манная крупа, можно найти в магазинах &#39;Armazém Vital&#39;, которые специализируются на натуральных продуктах в Бразилии.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Несмотря на то, что лонган, как сообщается, растет в Бразилии, этот фрукт редко встречается в продаже в обычных супермаркетах.</span><span></span></summary>
+    <div class="a">Его изредка замечали в специализированных магазинах, таких как Coopersica.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>В Бразилии доступен «Геркулес» (овсяные хлопья).</span><span></span></summary>
+    <div class="a">Зеленая гречка встречается часто. Обычная (жареная) гречка — редкость, и может стоить около 50 реалов за килограмм. Перловая крупа встречается нечасто.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Узнайте о наличии и распространенных продавцах электронных сигарет, подобных IQOS, в Сан-Паулу, Бразилия.</span><span></span></summary>
+    <div class="a">Информация о правовом статусе и точках розничной продажи будет полезна для путешественников.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Основные сайты объявлений и маркетплейсы для продажи из рук в руки в Бразилии — это OLX (общий маркетплейс для всех типов товаров) и Enjoei (специализируется на моде, одежде и товарах для жизни).</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Ticketmaster Brazil требует номер CPF для покупок.</span><span></span></summary>
+    <div class="a">Платежные карты, выпущенные за пределами Бразилии, могут быть отклонены. Регистрация в приложении Quentro обязательна для доставки билетов.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Для похода в супермаркет в Рио-де-Жанейро, похожий на российскую «Ленту» по широкому ассортименту и приемлемым ценам, часто рекомендуют «Mundial».</span><span></span></summary>
+    <div class="a">Это известная сеть супермаркетов в регионе.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Перловую крупу и гречку сложно найти в обычных супермаркетах в Бразилии (например, в Assai и еще 5 магазинах в месте под названием «Бруклин»).</span><span></span></summary>
+    <div class="a">Заказ онлайн может быть единственным вариантом.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Получите совет, где купить 50 кг чистого крахмала и большое количество перекиси водорода в Бразилии.</span><span></span></summary>
+    <div class="a">Определите местных поставщиков или варианты розничной торговли для этих оптовых товаров.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Возможно, заказать доставку из HM во Флорианополис (Флорипу) без идентификационного номера налогоплательщика (CPF) нельзя.</span><span></span></summary>
+    <div class="a">Рекомендуется дополнительно уточнить информацию у продавца.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Neutrogena предлагает эксклюзивные линии продуктов по уходу за кожей специально для латиноамериканского рынка.</span><span></span></summary>
+    <div class="a">Эти продукты могут быть доступны в Бразилии и других странах региона.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Футболки футбольных фанатов можно найти на сувенирных рынках и вдоль пляжной набережной в Сан-Паулу.</span><span></span></summary>
+    <div class="a">Они также продаются в киосках рядом с музеем MASP на проспекте Паулиста.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>«Alo Bebe» — известная сеть магазинов детских товаров в Бразилии, где путешественники могут приобрести детские автокресла и другие товары для путешествий с детьми.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Лаваш (тонкий бездрожжевой хлеб, также известный как «pão folha lavash») доступен в Сан-Паулу, Бразилия.</span><span></span></summary>
+    <div class="a">Его можно найти в супермаркетах и интернет-магазинах.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq">Пользователи интересуются местами для покупки качественных бразильских джинсов в Рио-де-Жанейро, проявляя интерес к местной моде и покупке конкретной одежды.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Покупка нового iPhone в Бразилии значительно дороже, чем в России: цена на последние модели часто в 1,5–2 раза выше.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+
+  <h2>Смежные темы</h2>
+  <div class="chips">
+    <a class="chip" href="/ru/br/s/life/adaptatsiya-i-bezopasnost/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛡 Адаптация и безопасность</span></a>
+    <a class="chip" href="/ru/br/s/life/turizm-i-dosug/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🗺 Туризм и досуг</span></a>
+    <a class="chip" href="/ru/br/s/life/rabota-i-obrazovanie/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💼 Работа и образование</span></a>
+    <a class="chip" href="/ru/br/s/life/zhile-i-nedvizhimost/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🏠 Жилье и недвижимость</span></a>
+    <a class="chip" href="/ru/br/s/life/zdorove-i-meditsina/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🩺 Здоровье и медицина</span></a>
+    <a class="chip" href="/ru/br/s/life/transport-i-logistika/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Транспорт и логистика</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Ответы вокруг да около, а по делу — нет?</h2>
+    <p>Спроси Luky — не общие статьи, а конкретика под твою ситуацию.</p>
+    <p>А ещё Luky — голосовой переводчик живого разговора: торгуйся на рынке как свой.</p>
+    <p class="ps">PS: поболтать с кем-то на фестивале за границей — легко</p>
+    <a class="btn" href="https://multyspeak.ru" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Открыть Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — живой опыт из чатов сообществ, без воды</div>
+    <nav class="f-links">
+      <a href="/ru/about/">О проекте</a>
+      <a href="/ru/br/">Все темы</a>
+      <a href="/ru/">Страны</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Ответы собраны из открытых чатов сообществ — это живой опыт людей, а не официальная консультация. Перед важными решениями проверяйте актуальность.</p>
+    <div class="f-copy">© 2026 Luky · обновлено 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"\u041f\u043e\u043f\u0443\u043b\u044f\u0440\u043d\u044b\u0435 \u0441\u0435\u0440\u0432\u0438\u0441\u044b \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0438 \u0435\u0434\u044b \u0438 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u043e\u0432 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0432\u043a\u043b\u044e\u0447\u0430\u044e\u0442 iFood \u0438 Rappi \u0434\u043b\u044f \u0437\u0430\u043a\u0430\u0437\u043e\u0432 \u0438\u0437 \u0440\u0435\u0441\u0442\u043e\u0440\u0430\u043d\u043e\u0432 \u0438 Mercado Livre \u0434\u043b\u044f \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0438 \u0438\u0437 \u0441\u0443\u043f\u0435\u0440\u043c\u0430\u0440\u043a\u0435\u0442\u043e\u0432."},
+{"@type":"ListItem","position":2,"name":"\u041e\u0441\u043d\u043e\u0432\u043d\u044b\u043c \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435\u043c \u0434\u043b\u044f \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0438 \u0435\u0434\u044b \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 (\u0432\u043a\u043b\u044e\u0447\u0430\u044f \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443) \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f iFood."},
+{"@type":"ListItem","position":3,"name":"\u0427\u0442\u043e\u0431\u044b \u043d\u0430\u0439\u0442\u0438 \u0440\u0435\u043f\u0435\u0442\u0438\u0442\u043e\u0440\u0430 \u043f\u043e \u0440\u0443\u0441\u0441\u043a\u043e\u043c\u0443 \u044f\u0437\u044b\u043a\u0443 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0434\u043b\u044f \u043d\u043e\u0441\u0438\u0442\u0435\u043b\u044f \u043f\u043e\u0440\u0442\u0443\u0433\u0430\u043b\u044c\u0441\u043a\u043e\u0433\u043e \u044f\u0437\u044b\u043a\u0430: 1. Preply: \u0418\u0449\u0438\u0442\u0435 \u0440\u0435\u043f\u0435\u0442\u0438\u0442\u043e\u0440\u043e\u0432 \u0440\u0443\u0441\u0441\u043a\u043e\u0433\u043e \u043d\u0430 Preply."},
+{"@type":"ListItem","position":4,"name":"\u0427\u0442\u043e\u0431\u044b \u043d\u0430\u0439\u0442\u0438 \u0440\u0443\u0441\u0441\u043a\u043e\u044f\u0437\u044b\u0447\u043d\u044b\u0445 \u0441\u043f\u0435\u0446\u0438\u0430\u043b\u0438\u0441\u0442\u043e\u0432 \u043f\u043e \u043c\u0430\u043d\u0438\u043a\u044e\u0440\u0443 \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e, \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f, \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u0442\u0441\u044f \u043e\u0431\u0440\u0430\u0442\u0438\u0442\u044c\u0441\u044f \u043a \u043c\u0435\u0441\u0442\u043d\u044b\u043c \u0441\u043e\u043e\u0431\u0449\u0435\u0441\u0442\u0432\u0430\u043c \u044d\u043a\u0441\u043f\u0430\u0442\u043e\u0432."},
+{"@type":"ListItem","position":5,"name":"\u0423\u0437\u043d\u0430\u0439\u0442\u0435 \u043e \u043d\u0430\u043b\u0438\u0447\u0438\u0438 \u0438\u0433\u0440\u0443\u0448\u0435\u043a \u0432 \u0425\u044d\u043f\u043f\u0438 \u041c\u0438\u043b \u0432 McDonald\u0027s \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438, \u0432 \u0447\u0430\u0441\u0442\u043d\u043e\u0441\u0442\u0438 \u0441 \u0442\u0435\u043c\u0430\u0442\u0438\u043a\u043e\u0439 \u0430\u0432\u0442\u043e\u043c\u043e\u0431\u0438\u043b\u0435\u0439."},
+{"@type":"ListItem","position":6,"name":"\u041f\u043e\u043f\u0443\u043b\u044f\u0440\u043d\u044b\u0435 \u0441\u0443\u0432\u0435\u043d\u0438\u0440\u044b, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0441\u0442\u043e\u0438\u0442 \u043f\u0440\u0438\u0432\u0435\u0437\u0442\u0438 \u0438\u0437 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438: 1. \u041a\u043e\u0444\u0435: \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0439 \u043a\u043e\u0444\u0435 \u0432\u0441\u0435\u043c\u0438\u0440\u043d\u043e \u0438\u0437\u0432\u0435\u0441\u0442\u0435\u043d; \u0438\u0449\u0438\u0442\u0435 \u043e\u0441\u043e\u0431\u044b\u0435 \u0441\u043e\u0440\u0442\u0430 \u0438\u0437 \u0442\u0430\u043a\u0438\u0445 \u0440\u0435\u0433\u0438\u043e\u043d\u043e\u0432, \u043a\u0430\u043a \u041c\u0438\u043d\u0430\u0441-\u0416\u0435\u0440\u0430\u0439\u0441 \u0438\u043b\u0438 \u042d\u0441\u043f\u0438\u0440\u0438\u0442\u0443-\u0421\u0430\u043d\u0442\u0443."},
+{"@type":"ListItem","position":7,"name":"\u041f\u043e\u043c\u043e\u0433\u0438\u0442\u0435 \u043d\u0430\u0439\u0442\u0438 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u044b, \u043f\u0440\u043e\u0434\u0430\u044e\u0449\u0438\u0435 \u0434\u0435\u0442\u0441\u043a\u0438\u0435 \u043a\u0443\u043f\u0430\u043b\u044c\u043d\u0438\u043a\u0438 \u0434\u043b\u044f \u0441\u043f\u043e\u0440\u0442\u0438\u0432\u043d\u043e\u0439 \u0433\u0438\u043c\u043d\u0430\u0441\u0442\u0438\u043a\u0438 \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u0438\u043b\u0438 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443, \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f."},
+{"@type":"ListItem","position":8,"name":"\u041f\u043e \u0441\u0443\u0431\u0431\u043e\u0442\u0430\u043c \u0432 \u0413\u0443\u0430\u0440\u0443\u043b\u044c\u044e\u0441\u0435 (\u0441 10:00 \u0434\u043e 14:00) \u0438 \u0440\u044f\u0434\u043e\u043c \u0441 \u043c\u043e\u0441\u0442\u043e\u043c \u0411\u0440\u0430\u0448 \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 (\u0441 14:00 \u0434\u043e 18:00) \u0440\u0430\u0431\u043e\u0442\u0430\u044e\u0442 \u0431\u043e\u043b\u044c\u0448\u0438\u0435 \u0431\u043b\u043e\u0448\u0438\u043d\u044b\u0435 \u0440\u044b\u043d\u043a\u0438."},
+{"@type":"ListItem","position":9,"name":"\u0412 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u043d\u0435\u0442 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0445 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u043e\u0432 IQOS."},
+{"@type":"ListItem","position":10,"name":"\u041d\u0430\u0441\u0442\u043e\u044f\u0449\u0443\u044e \u0440\u0443\u0441\u0441\u043a\u0443\u044e \u0441\u043c\u0435\u0442\u0430\u043d\u0443 \u0441\u043b\u043e\u0436\u043d\u043e \u043d\u0430\u0439\u0442\u0438 \u0432 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0445 \u0441\u0443\u043f\u0435\u0440\u043c\u0430\u0440\u043a\u0435\u0442\u0430\u0445."},
+{"@type":"ListItem","position":11,"name":"\u0412 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443, \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f, \u043d\u0435\u0442 \u043a\u0440\u0443\u043f\u043d\u044b\u0445 \u0442\u043e\u0440\u0433\u043e\u0432\u044b\u0445 \u0430\u0443\u0442\u043b\u0435\u0442\u043e\u0432, \u0441\u043e\u043f\u043e\u0441\u0442\u0430\u0432\u0438\u043c\u044b\u0445 \u0441 \u0431\u043e\u043b\u044c\u0448\u0438\u043c\u0438 \u0434\u0438\u0441\u043a\u043e\u043d\u0442-\u0446\u0435\u043d\u0442\u0440\u0430\u043c\u0438 \u0432 \u0434\u0440\u0443\u0433\u0438\u0445 \u0441\u0442\u0440\u0430\u043d\u0430\u0445, \u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0442\u0435\u043c\u0438, \u0447\u0442\u043e \u043d\u0430\u0445\u043e\u0434\u044f\u0442\u0441\u044f \u043f\u043e\u0434 \u041c\u043e\u0441\u043a\u0432\u043e\u0439."},
+{"@type":"ListItem","position":12,"name":"\u0420\u0430\u0441\u0445\u043e\u0434\u044b \u043d\u0430 \u043f\u0438\u0442\u0430\u043d\u0438\u0435 \u0432 \u0430\u0433\u043b\u043e\u043c\u0435\u0440\u0430\u0446\u0438\u0438 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0438 \u043f\u0440\u0438\u0431\u0440\u0435\u0436\u043d\u044b\u0445 \u0433\u043e\u0440\u043e\u0434\u0430\u0445, \u0442\u0430\u043a\u0438\u0445 \u043a\u0430\u043a \u0413\u0443\u0430\u0440\u0443\u0436\u0430, \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e \u0440\u0430\u0437\u043b\u0438\u0447\u0430\u044e\u0442\u0441\u044f."},
+{"@type":"ListItem","position":13,"name":"\u0414\u043b\u044f \u0432\u043e\u0437\u0432\u0440\u0430\u0442\u0430 \u043e\u0434\u0435\u0436\u0434\u044b, \u043a\u0443\u043f\u043b\u0435\u043d\u043d\u043e\u0439 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u043f\u0440\u0438 \u043e\u043f\u043b\u0430\u0442\u0435 \u043a\u0430\u0440\u0442\u043e\u0439, \u043a\u0430\u043a \u043f\u0440\u0430\u0432\u0438\u043b\u043e, \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u0442\u0441\u044f \u0432\u0437\u044f\u0442\u044c \u0441 \u0441\u043e\u0431\u043e\u0439 \u043f\u0430\u0441\u043f\u043e\u0440\u0442 \u0438 \u0432\u0435\u0449\u044c \u0432 \u043f\u0435\u0440\u0432\u043e\u043d\u0430\u0447\u0430\u043b\u044c\u043d\u043e\u043c \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0438."},
+{"@type":"ListItem","position":14,"name":"\u0411\u043e\u043b\u044c\u0448\u043e\u0439 \u0441\u0443\u043f\u0435\u0440\u043c\u0430\u0440\u043a\u0435\u0442 P\u00e3o de A\u00e7\u00facar, \u0441\u043e\u043f\u043e\u0441\u0442\u0430\u0432\u0438\u043c\u044b\u0439 \u0441 Carrefour \u0438\u043b\u0438 Auchan, \u043d\u0430\u0445\u043e\u0434\u0438\u0442\u0441\u044f \u043f\u043e \u0430\u0434\u0440\u0435\u0441\u0443: Av."},
+{"@type":"ListItem","position":15,"name":"Amazon \u043f\u0440\u0435\u0434\u043e\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u0442 \u0443\u0441\u043b\u0443\u0433\u0438 \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0438 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044e."},
+{"@type":"ListItem","position":16,"name":"\u0417\u0430 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u043c\u0438 \u043a\u043e\u0444\u0435\u0439\u043d\u044b\u043c\u0438 \u0437\u0435\u0440\u043d\u0430\u043c\u0438 \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u043c\u0435\u0441\u0442\u043d\u044b\u0435 \u044d\u043d\u0442\u0443\u0437\u0438\u0430\u0441\u0442\u044b \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u044e\u0442 Moka Clube \u0432 \u0440\u0430\u0439\u043e\u043d\u0435 \u041f\u0438\u043d\u0435\u0439\u0440\u043e\u0441."},
+{"@type":"ListItem","position":17,"name":"\u041f\u0440\u043e\u0434\u0430\u0435\u0442\u0441\u044f: \u0431/\u0443 \u0442\u0440\u0430\u043d\u0441\u0444\u043e\u0440\u043c\u0430\u0442\u043e\u0440 \u043d\u0430\u043f\u0440\u044f\u0436\u0435\u043d\u0438\u044f (\u0441\u043e 120\u0412 \u043d\u0430 220\u0412) \u0432 \u0420\u0438\u043e."},
+{"@type":"ListItem","position":18,"name":"\u0422\u0430\u043a\u0438\u0435 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b \u0434\u043b\u044f \u044d\u043a\u0441\u043f\u0430\u0442\u043e\u0432, \u043a\u0430\u043a \u043a\u0435\u0444\u0438\u0440, \u043c\u043e\u0436\u043d\u043e \u043a\u0443\u043f\u0438\u0442\u044c \u0433\u043e\u0442\u043e\u0432\u044b\u043c\u0438 \u0432 \u043a\u0440\u0443\u043f\u043d\u044b\u0445 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0445 \u0441\u0435\u0442\u044f\u0445 \u0441\u0443\u043f\u0435\u0440\u043c\u0430\u0440\u043a\u0435\u0442\u043e\u0432, \u0442\u0430\u043a\u0438\u0445 \u043a\u0430\u043a \u00abZona Sul\u00bb \u0438 \u00abP\u00e3o de A\u00e7\u00facar\u00bb, \u043f\u0440\u0438\u043c\u0435\u0440\u043d\u043e \u043f\u043e 10 \u0440\u0435\u0430\u043b\u043e\u0432 \u0437\u0430 500 \u043c\u043b."},
+{"@type":"ListItem","position":19,"name":"\u041f\u0440\u0438 \u043f\u043e\u043a\u0443\u043f\u043a\u0435 \u043f\u043e\u043f\u0443\u043b\u044f\u0440\u043d\u044b\u0445 \u0431\u0440\u0435\u043d\u0434\u043e\u0432 \u043a\u043e\u0444\u0435 \u0432 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0445 \u0441\u0443\u043f\u0435\u0440\u043c\u0430\u0440\u043a\u0435\u0442\u0430\u0445 \u0434\u043b\u044f \u043b\u0438\u0447\u043d\u043e\u0433\u043e \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u0438\u043b\u0438 \u0432 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435 \u0441\u0443\u0432\u0435\u043d\u0438\u0440\u0430, \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u044b: Caf\u00e9 Pil\u00e3o, Caf\u00e9 do Ponto, Brazil Santos Coffee (\u043e\u0442\u043b\u0438\u0447\u0430\u0435\u0442\u0441\u044f \u0431\u043e\u043b\u0435\u0435 \u043c\u044f\u0433\u043a\u0438\u043c, \u043f\u0440\u043e\u043c\u044b\u0442\u044b\u043c \u0441\u0442\u0438\u043b\u0435\u043c) \u0438 Caf\u00e9 Melitta (\u0438\u0437\u0432\u0435\u0441\u0442\u0435\u043d \u043e\u0447\u0435\u043d\u044c \u043a\u0440\u0435\u043f\u043a\u0438\u043c \u0438 \u0442\u0435\u043c\u043d\u044b\u043c \u043f\u0440\u043e\u0444\u0438\u043b\u0435\u043c \u043e\u0431\u0436\u0430\u0440\u043a\u0438)."},
+{"@type":"ListItem","position":20,"name":"\u0421\u043a\u0443\u043b\u044c\u043f\u0442\u0443\u0440\u043d\u0443\u044e \u0433\u043b\u0438\u043d\u0443 \u043e\u0431\u044b\u0447\u043d\u043e \u043c\u043e\u0436\u043d\u043e \u043a\u0443\u043f\u0438\u0442\u044c \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0432 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u0445 \u0442\u043e\u0432\u0430\u0440\u043e\u0432 \u0434\u043b\u044f \u0438\u0441\u043a\u0443\u0441\u0441\u0442\u0432\u0430 (lojas de artigos para arte), \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u0445 \u0434\u043b\u044f \u0440\u0443\u043a\u043e\u0434\u0435\u043b\u0438\u044f (lojas de artesanato) \u0438\u043b\u0438 \u043a\u0440\u0443\u043f\u043d\u044b\u0445 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u0445 \u043a\u0430\u043d\u0446\u0442\u043e\u0432\u0430\u0440\u043e\u0432 (papelarias)."},
+{"@type":"ListItem","position":21,"name":"\u0412 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0441\u0443\u0432\u0435\u043d\u0438\u0440\u044b (\u0431\u0440\u0435\u043b\u043e\u043a\u0438, \u043a\u0430\u0440\u0442\u0438\u043d\u044b, \u043a\u0435\u043f\u043a\u0438, \u0444\u0443\u0442\u0431\u043e\u043b\u043a\u0438) \u043c\u043e\u0436\u043d\u043e \u043d\u0430\u0439\u0442\u0438 \u0432\u0434\u043e\u043b\u044c \u043f\u0440\u043e\u0441\u043f\u0435\u043a\u0442\u0430 \u041f\u0430\u0443\u043b\u0438\u0441\u0442\u0430, \u0437\u0430\u0447\u0430\u0441\u0442\u0443\u044e \u0432 \u043a\u0438\u043e\u0441\u043a\u0430\u0445."},
+{"@type":"ListItem","position":22,"name":"\u0413\u043e\u0442\u043e\u0432\u044b\u0435 \u043a \u0443\u043f\u043e\u0442\u0440\u0435\u0431\u043b\u0435\u043d\u0438\u044e \u0431\u043b\u044e\u0434\u0430 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b \u0432 \u0441\u0443\u043f\u0435\u0440\u043c\u0430\u0440\u043a\u0435\u0442\u0430\u0445 Carrefour \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0438 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e, \u0430 \u0442\u0430\u043a\u0436\u0435 \u0432 \u0434\u0440\u0443\u0433\u0438\u0445 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u0445 \u043f\u043e \u0432\u0441\u0435\u0439 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438."},
+{"@type":"ListItem","position":23,"name":"\u0424\u0430\u0440\u043e\u0444\u0430 \u2014 \u044d\u0442\u043e \u0442\u0440\u0430\u0434\u0438\u0446\u0438\u043e\u043d\u043d\u043e\u0435 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u043e\u0435 \u0431\u043b\u044e\u0434\u043e, \u043f\u0440\u0438\u0433\u043e\u0442\u043e\u0432\u043b\u0435\u043d\u043d\u043e\u0435 \u0438\u0437 \u043f\u043e\u0434\u0436\u0430\u0440\u0435\u043d\u043d\u043e\u0439 \u043c\u0430\u043d\u0438\u043e\u043a\u043e\u0432\u043e\u0439 \u043c\u0443\u043a\u0438."},
+{"@type":"ListItem","position":24,"name":"\u0412 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0433\u0440\u0435\u0447\u043a\u0430 \u0438 \u0443\u043a\u0440\u043e\u043f \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b \u0432 \u0441\u0443\u043f\u0435\u0440\u043c\u0430\u0440\u043a\u0435\u0442\u0430\u0445."},
+{"@type":"ListItem","position":25,"name":"\u0425\u043e\u0442\u044f \u043c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u044b\u0435 \u0431\u0440\u0435\u043d\u0434\u044b, \u0442\u0430\u043a\u0438\u0435 \u043a\u0430\u043a Sephora, \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u044b \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438, \u043e\u043d\u0438, \u043a\u0430\u043a \u043f\u0440\u0430\u0432\u0438\u043b\u043e, \u0441\u0442\u043e\u044f\u0442 \u0434\u043e\u0440\u043e\u0433\u043e."},
+{"@type":"ListItem","position":26,"name":"\u0427\u0442\u043e\u0431\u044b \u043d\u0430\u0439\u0442\u0438 \u043f\u0435\u0440\u0441\u043e\u043d\u0430\u043b\u044c\u043d\u043e\u0433\u043e \u0448\u043e\u043f\u043f\u0435\u0440\u0430 \u0438\u043b\u0438 \u0444\u043e\u0440\u0432\u0430\u0440\u0434\u0435\u0440\u0430 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0434\u043b\u044f \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u0438 \u0442\u043e\u0432\u0430\u0440\u043e\u0432 \u0432 \u0420\u043e\u0441\u0441\u0438\u044e, \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f\u043c \u0441\u043b\u0435\u0434\u0443\u0435\u0442 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u043e\u0432\u0430\u0442\u044c \u0441\u0432\u044f\u0437\u0430\u0442\u044c\u0441\u044f \u0441 \u0430\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0430\u0442\u043e\u0440\u043e\u043c \u0447\u0430\u0442\u0430 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u043f\u0440\u043e\u0432\u0435\u0440\u0435\u043d\u043d\u044b\u0445 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u0439."},
+{"@type":"ListItem","position":27,"name":"\u041d\u0430\u0439\u0442\u0438 \u0442\u0443\u0440\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043e\u0442\u043a\u0440\u044b\u0442\u043a\u0438 \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c \u043d\u0435\u043f\u0440\u043e\u0441\u0442\u043e."},
+{"@type":"ListItem","position":28,"name":"\u0420\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u044e \u043c\u0435\u0441\u0442\u043d\u044b\u0435 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0435 \u0431\u0440\u0435\u043d\u0434\u044b \u043f\u043e \u0443\u0445\u043e\u0434\u0443 \u0437\u0430 \u043a\u043e\u0436\u0435\u0439, \u043f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0435 \u0434\u043b\u044f \u0436\u0438\u0440\u043d\u043e\u0439 \u0438 \u0441\u043a\u043b\u043e\u043d\u043d\u043e\u0439 \u043a \u0430\u043a\u043d\u0435 \u043a\u043e\u0436\u0438."},
+{"@type":"ListItem","position":29,"name":"\u0414\u043b\u044f \u043f\u043e\u043a\u0443\u043f\u043a\u0438 \u043f\u0440\u043e\u0444\u0435\u0441\u0441\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u043e\u0433\u043e \u043e\u0441\u0432\u0435\u0442\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0433\u043e \u043e\u0431\u043e\u0440\u0443\u0434\u043e\u0432\u0430\u043d\u0438\u044f \u0434\u043b\u044f \u043a\u0430\u043c\u0435\u0440 \u0432\u043e \u0424\u043b\u043e\u0440\u0438\u0430\u043d\u043e\u043f\u043e\u043b\u0438\u0441\u0435, \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f, \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0438 \u0438\u043d\u0442\u0435\u0440\u0435\u0441\u0443\u044e\u0442\u0441\u044f \u043a\u0440\u0443\u043f\u043d\u044b\u043c\u0438 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u043c\u0438, \u0441\u043f\u0435\u0446\u0438\u0430\u043b\u0438\u0437\u0438\u0440\u0443\u044e\u0449\u0438\u043c\u0438\u0441\u044f \u043d\u0430 \u0444\u043e\u0442\u043e- \u0438 \u0432\u0438\u0434\u0435\u043e\u0442\u0435\u0445\u043d\u0438\u043a\u0435 \u0434\u043b\u044f \u043e\u043f\u0435\u0440\u0430\u0442\u043e\u0440\u043e\u0432 \u0438 \u0431\u043b\u043e\u0433\u0435\u0440\u043e\u0432."},
+{"@type":"ListItem","position":30,"name":"\u041a\u043b\u044e\u0447\u0435\u0432\u044b\u0435 \u0441\u0435\u0440\u0432\u0438\u0441\u044b \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0438 \u0435\u0434\u044b \u0438 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u043e\u0432 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0432\u043a\u043b\u044e\u0447\u0430\u044e\u0442 Ifood, 99 \u0438 Rappi."},
+{"@type":"ListItem","position":31,"name":"\u0426\u0435\u043d\u044b \u043d\u0430 \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u0438\u043a\u0443 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u043f\u0440\u0438\u043c\u0435\u0440\u043d\u043e \u0432 2,5 \u0440\u0430\u0437\u0430 \u0432\u044b\u0448\u0435, \u0447\u0435\u043c \u0432 \u0420\u043e\u0441\u0441\u0438\u0438."},
+{"@type":"ListItem","position":32,"name":"\u0420\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u043c\u044b\u0435 \u0441\u0443\u0432\u0435\u043d\u0438\u0440\u044b \u0438\u0437 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438: 1. Granado (\u043a\u043e\u0441\u043c\u0435\u0442\u0438\u043a\u0430/\u043c\u044b\u043b\u043e)."},
+{"@type":"ListItem","position":33,"name":"\u0427\u0442\u043e\u0431\u044b \u043d\u0430\u0439\u0442\u0438 \u043e\u0440\u0438\u0433\u0438\u043d\u0430\u043b\u044c\u043d\u044b\u0435 \u0436\u0435\u043b\u0442\u044b\u0435 \u0444\u0443\u0442\u0431\u043e\u043b\u043a\u0438 \u0441\u0431\u043e\u0440\u043d\u043e\u0439 \u043f\u043e \u0444\u0443\u0442\u0431\u043e\u043b\u0443 \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e, \u043f\u0440\u043e\u0432\u0435\u0440\u044c\u0442\u0435 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0435 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u044b Nike \u0438\u043b\u0438 \u0430\u0432\u0442\u043e\u0440\u0438\u0437\u043e\u0432\u0430\u043d\u043d\u044b\u0435 \u0440\u043e\u0437\u043d\u0438\u0447\u043d\u044b\u0435 \u0441\u0435\u0442\u0438 \u0441\u043f\u043e\u0440\u0442\u0438\u0432\u043d\u043e\u0439 \u043e\u0434\u0435\u0436\u0434\u044b, \u0442\u0430\u043a\u0438\u0435 \u043a\u0430\u043a Centauro, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u043f\u0440\u043e\u0434\u0430\u044e\u0442 \u043b\u0438\u0446\u0435\u043d\u0437\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 \u0442\u043e\u0432\u0430\u0440."},
+{"@type":"ListItem","position":34,"name":"\u0412 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438, \u0430 \u0438\u043c\u0435\u043d\u043d\u043e \u0432 \u0421\u0430\u043d\u0442\u0430-\u041b\u0443\u0437\u0438\u0438, \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u044b\u0435 \u0432\u0438\u0434\u044b \u0438\u043a\u0440\u044b (\u0447\u0435\u0440\u043d\u0430\u044f, \u043a\u0440\u0430\u0441\u043d\u0430\u044f, \u043c\u0438\u043d\u0442\u0430\u044f, \u0449\u0443\u043a\u0438)."},
+{"@type":"ListItem","position":35,"name":"\u0414\u043b\u044f \u043f\u043e\u043a\u0443\u043f\u043a\u0438 \u0438\u043b\u0438 \u043f\u0440\u043e\u0434\u0430\u0436\u0438 \u0431/\u0443 \u0442\u043e\u0432\u0430\u0440\u043e\u0432 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u043e\u0441\u043d\u043e\u0432\u043d\u044b\u043c\u0438 \u043f\u043b\u0430\u0442\u0444\u043e\u0440\u043c\u0430\u043c\u0438 \u044f\u0432\u043b\u044f\u044e\u0442\u0441\u044f Facebook Marketplace \u0438 OLX (olx.com.br)."},
+{"@type":"ListItem","position":36,"name":"\u041f\u0440\u0438 \u0432\u044b\u0431\u043e\u0440\u0435 \u043a\u043e\u0444\u0435 \u0432 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0445 \u0441\u0443\u043f\u0435\u0440\u043c\u0430\u0440\u043a\u0435\u0442\u0430\u0445 \u043e\u0431\u0440\u0430\u0442\u0438\u0442\u0435 \u0432\u043d\u0438\u043c\u0430\u043d\u0438\u0435 \u043d\u0430 \u0431\u0440\u0435\u043d\u0434 \u00ab3 Cora\u00e7\u00f5es\u00bb."},
+{"@type":"ListItem","position":37,"name":"\u0427\u0442\u043e\u0431\u044b \u043d\u0430\u0447\u0430\u0442\u044c \u043f\u0440\u043e\u0434\u0430\u0432\u0430\u0442\u044c \u043d\u0430 Mercado Livre \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438, \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044e \u043d\u0443\u0436\u043d\u043e \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0430\u043a\u043a\u0430\u0443\u043d\u0442 \u0432 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435 \u00abvendedor\u00bb."},
+{"@type":"ListItem","position":38,"name":"\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u044b \u0437\u0434\u043e\u0440\u043e\u0432\u043e\u0433\u043e \u043f\u0438\u0442\u0430\u043d\u0438\u044f (\u0027Lojas de Produtos naturais\u0027), \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u043f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u044e\u0442 \u0437\u0435\u0440\u043d\u043e\u0432\u044b\u0435 \u0438 \u0441\u043f\u0435\u0446\u0438\u0438 \u043d\u0430 \u0440\u0430\u0437\u0432\u0435\u0441, \u044f\u0432\u043b\u044f\u044e\u0442\u0441\u044f \u0445\u043e\u0440\u043e\u0448\u0438\u043c\u0438 \u043c\u0435\u0441\u0442\u0430\u043c\u0438 \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430 \u0440\u0430\u0437\u043d\u043e\u043e\u0431\u0440\u0430\u0437\u043d\u044b\u0445 \u0441\u043f\u0435\u0446\u0438\u0444\u0438\u0447\u0435\u0441\u043a\u0438\u0445 \u0438\u043b\u0438 \u043c\u0435\u043d\u0435\u0435 \u0440\u0430\u0441\u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0435\u043d\u043d\u044b\u0445 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u043e\u0432 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438."},
+{"@type":"ListItem","position":39,"name":"\u0427\u0442\u043e\u0431\u044b \u043a\u0443\u043f\u0438\u0442\u044c \u043f\u0435\u0440\u0435\u0445\u043e\u0434\u043d\u0438\u043a \u0434\u043b\u044f \u0440\u043e\u0437\u0435\u0442\u043a\u0438 \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e, \u0440\u0430\u0441\u0441\u043c\u043e\u0442\u0440\u0438\u0442\u0435 \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e\u0441\u0442\u044c \u043f\u043e\u0438\u0441\u043a\u0430 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u043e\u0432 \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u0438\u043a\u0438 \u043d\u0430 \u0443\u043b\u0438\u0446\u0435 \u0420\u0443\u0430-\u0411\u0430\u0440\u0430\u0442\u0430-\u0420\u0438\u0431\u0435\u0439\u0440\u0443."},
+{"@type":"ListItem","position":40,"name":"\u041f\u0435\u0440\u0435\u0445\u043e\u0434\u043d\u0438\u043a\u0438 \u0438 \u0431\u0430\u0437\u043e\u0432\u0430\u044f \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u0438\u043a\u0430 \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u043f\u0440\u043e\u0434\u0430\u044e\u0442\u0441\u044f \u0432 \u0443\u043b\u0438\u0447\u043d\u044b\u0445 \u043a\u0438\u043e\u0441\u043a\u0430\u0445, \u043c\u0435\u0441\u0442\u043d\u044b\u0445 \u0441\u0443\u043f\u0435\u0440\u043c\u0430\u0440\u043a\u0435\u0442\u0430\u0445 (\u0442\u0430\u043a\u0438\u0445 \u043a\u0430\u043a Zona Sul) \u0438 \u043d\u0430 \u0440\u044b\u043d\u043a\u0430\u0445."},
+{"@type":"ListItem","position":41,"name":"\u0414\u043b\u044f \u043f\u043e\u043a\u0443\u043f\u043a\u0438 \u043a\u043e\u0444\u0435\u0439\u043d\u044b\u0445 \u0437\u0435\u0440\u0435\u043d \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u043a\u0440\u0443\u043f\u043d\u044b\u0435 \u0441\u0443\u043f\u0435\u0440\u043c\u0430\u0440\u043a\u0435\u0442\u044b \u043f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u044e\u0442 \u0445\u043e\u0440\u043e\u0448\u0438\u0439 \u0432\u044b\u0431\u043e\u0440."},
+{"@type":"ListItem","position":42,"name":"\u0421\u0432\u0435\u0436\u0438\u0435 \u0443\u0441\u0442\u0440\u0438\u0446\u044b \u043f\u0440\u043e\u0434\u0430\u044e\u0442\u0441\u044f \u043d\u0430 \u0440\u044b\u0431\u043d\u043e\u043c \u0440\u044b\u043d\u043a\u0435 \u0432 \u0441\u0430\u043c\u043e\u043c \u0434\u0430\u043b\u044c\u043d\u0435\u043c \u043f\u0440\u0430\u0432\u043e\u043c \u043a\u043e\u043d\u0446\u0435 \u043f\u043b\u044f\u0436\u0430 \u041a\u043e\u043f\u0430\u043a\u0430\u0431\u0430\u043d\u0430, \u0432\u043e\u0437\u043b\u0435 \u0432\u0445\u043e\u0434\u0430 \u0432 \u043c\u0443\u0437\u0435\u0439."},
+{"@type":"ListItem","position":43,"name":"\u0414\u043b\u044f \u0431\u044b\u0441\u0442\u0440\u043e\u0439 \u0438 \u043d\u0430\u0434\u0435\u0436\u043d\u043e\u0439 \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0438 \u0446\u0432\u0435\u0442\u043e\u0432 \u0432 \u043a\u0440\u0443\u043f\u043d\u044b\u0445 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0445 \u0433\u043e\u0440\u043e\u0434\u0430\u0445, \u0442\u0430\u043a\u0438\u0445 \u043a\u0430\u043a \u0420\u0435\u0441\u0438\u0444\u0438, \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435 \u043c\u043e\u0431\u0438\u043b\u044c\u043d\u043e\u0435 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 iFood."},
+{"@type":"ListItem","position":44,"name":"\u0427\u0442\u043e\u0431\u044b \u043a\u0443\u043f\u0438\u0442\u044c \u0442\u0435\u043b\u0435\u0432\u0438\u0437\u043e\u0440 \u0432 \u0411\u0435\u043b\u0443-\u041e\u0440\u0438\u0437\u043e\u043d\u0442\u0438, \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f, \u0431\u0435\u0437 CPF, \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e \u0438\u0437\u0443\u0447\u0438\u0442\u044c \u0430\u043b\u044c\u0442\u0435\u0440\u043d\u0430\u0442\u0438\u0432\u043d\u044b\u0435 \u043c\u0435\u0442\u043e\u0434\u044b \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u0438 \u0438\u043b\u0438 \u043d\u0430\u0439\u0442\u0438 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u044b, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0434\u043e\u043f\u0443\u0441\u043a\u0430\u044e\u0442 \u0442\u0430\u043a\u0438\u0435 \u043f\u043e\u043a\u0443\u043f\u043a\u0438 \u0431\u0435\u0437 \u043d\u0430\u043b\u043e\u0433\u043e\u0432\u043e\u0433\u043e \u043d\u043e\u043c\u0435\u0440\u0430, \u043b\u0438\u0431\u043e \u043f\u043e\u043b\u0443\u0447\u0438\u0442\u044c CPF."},
+{"@type":"ListItem","position":45,"name":"\u0414\u043b\u044f \u043f\u043e\u043a\u0443\u043f\u043a\u0438 \u0441\u043f\u0435\u0446\u0438\u0444\u0438\u0447\u0435\u0441\u043a\u0438\u0445 \u0438\u043b\u0438 \u043c\u0435\u043d\u0435\u0435 \u0440\u0430\u0441\u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0435\u043d\u043d\u044b\u0445 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u043e\u0432 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u043f\u0440\u043e\u0432\u0435\u0440\u044f\u0439\u0442\u0435 \u0441\u0443\u043f\u0435\u0440\u043c\u0430\u0440\u043a\u0435\u0442\u044b \u043d\u0435 \u0431\u044e\u0434\u0436\u0435\u0442\u043d\u043e\u0433\u043e \u0441\u0435\u0433\u043c\u0435\u043d\u0442\u0430, \u0442\u0430\u043a\u0438\u0435 \u043a\u0430\u043a Carrefour \u0438\u043b\u0438 P\u00e3o de A\u00e7\u00facar, \u0432\u043c\u0435\u0441\u0442\u043e \u0431\u044e\u0434\u0436\u0435\u0442\u043d\u044b\u0445 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u043e\u0432, \u0442\u0430\u043a\u0438\u0445 \u043a\u0430\u043a Assai."},
+{"@type":"ListItem","position":46,"name":"\u0421\u043f\u0435\u0446\u0438\u0444\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0431\u0430\u043a\u0430\u043b\u0435\u0439\u043d\u044b\u0435 \u0442\u043e\u0432\u0430\u0440\u044b, \u0442\u0430\u043a\u0438\u0435 \u043a\u0430\u043a \u043f\u0435\u0440\u043b\u043e\u0432\u0430\u044f \u043a\u0440\u0443\u043f\u0430, \u0433\u0440\u0435\u0447\u043a\u0430, \u043d\u0430\u0442\u0443\u0440\u0430\u043b\u044c\u043d\u044b\u0439 \u043a\u0435\u0444\u0438\u0440 \u0438 \u043c\u0430\u043d\u043d\u0430\u044f \u043a\u0440\u0443\u043f\u0430, \u043c\u043e\u0436\u043d\u043e \u043d\u0430\u0439\u0442\u0438 \u0432 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u0445 \u0027Armaz\u00e9m Vital\u0027, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0441\u043f\u0435\u0446\u0438\u0430\u043b\u0438\u0437\u0438\u0440\u0443\u044e\u0442\u0441\u044f \u043d\u0430 \u043d\u0430\u0442\u0443\u0440\u0430\u043b\u044c\u043d\u044b\u0445 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u0430\u0445 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438."},
+{"@type":"ListItem","position":47,"name":"\u041d\u0435\u0441\u043c\u043e\u0442\u0440\u044f \u043d\u0430 \u0442\u043e, \u0447\u0442\u043e \u043b\u043e\u043d\u0433\u0430\u043d, \u043a\u0430\u043a \u0441\u043e\u043e\u0431\u0449\u0430\u0435\u0442\u0441\u044f, \u0440\u0430\u0441\u0442\u0435\u0442 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438, \u044d\u0442\u043e\u0442 \u0444\u0440\u0443\u043a\u0442 \u0440\u0435\u0434\u043a\u043e \u0432\u0441\u0442\u0440\u0435\u0447\u0430\u0435\u0442\u0441\u044f \u0432 \u043f\u0440\u043e\u0434\u0430\u0436\u0435 \u0432 \u043e\u0431\u044b\u0447\u043d\u044b\u0445 \u0441\u0443\u043f\u0435\u0440\u043c\u0430\u0440\u043a\u0435\u0442\u0430\u0445."},
+{"@type":"ListItem","position":48,"name":"\u0412 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d \u00ab\u0413\u0435\u0440\u043a\u0443\u043b\u0435\u0441\u00bb (\u043e\u0432\u0441\u044f\u043d\u044b\u0435 \u0445\u043b\u043e\u043f\u044c\u044f)."},
+{"@type":"ListItem","position":49,"name":"\u0423\u0437\u043d\u0430\u0439\u0442\u0435 \u043e \u043d\u0430\u043b\u0438\u0447\u0438\u0438 \u0438 \u0440\u0430\u0441\u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0435\u043d\u043d\u044b\u0445 \u043f\u0440\u043e\u0434\u0430\u0432\u0446\u0430\u0445 \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u044b\u0445 \u0441\u0438\u0433\u0430\u0440\u0435\u0442, \u043f\u043e\u0434\u043e\u0431\u043d\u044b\u0445 IQOS, \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443, \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f."},
+{"@type":"ListItem","position":50,"name":"\u041e\u0441\u043d\u043e\u0432\u043d\u044b\u0435 \u0441\u0430\u0439\u0442\u044b \u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u0438\u0439 \u0438 \u043c\u0430\u0440\u043a\u0435\u0442\u043f\u043b\u0435\u0439\u0441\u044b \u0434\u043b\u044f \u043f\u0440\u043e\u0434\u0430\u0436\u0438 \u0438\u0437 \u0440\u0443\u043a \u0432 \u0440\u0443\u043a\u0438 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u2014 \u044d\u0442\u043e OLX (\u043e\u0431\u0449\u0438\u0439 \u043c\u0430\u0440\u043a\u0435\u0442\u043f\u043b\u0435\u0439\u0441 \u0434\u043b\u044f \u0432\u0441\u0435\u0445 \u0442\u0438\u043f\u043e\u0432 \u0442\u043e\u0432\u0430\u0440\u043e\u0432) \u0438 Enjoei (\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u0438\u0437\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u043d\u0430 \u043c\u043e\u0434\u0435, \u043e\u0434\u0435\u0436\u0434\u0435 \u0438 \u0442\u043e\u0432\u0430\u0440\u0430\u0445 \u0434\u043b\u044f \u0436\u0438\u0437\u043d\u0438)."},
+{"@type":"ListItem","position":51,"name":"Ticketmaster Brazil \u0442\u0440\u0435\u0431\u0443\u0435\u0442 \u043d\u043e\u043c\u0435\u0440 CPF \u0434\u043b\u044f \u043f\u043e\u043a\u0443\u043f\u043e\u043a."},
+{"@type":"ListItem","position":52,"name":"\u0414\u043b\u044f \u043f\u043e\u0445\u043e\u0434\u0430 \u0432 \u0441\u0443\u043f\u0435\u0440\u043c\u0430\u0440\u043a\u0435\u0442 \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e, \u043f\u043e\u0445\u043e\u0436\u0438\u0439 \u043d\u0430 \u0440\u043e\u0441\u0441\u0438\u0439\u0441\u043a\u0443\u044e \u00ab\u041b\u0435\u043d\u0442\u0443\u00bb \u043f\u043e \u0448\u0438\u0440\u043e\u043a\u043e\u043c\u0443 \u0430\u0441\u0441\u043e\u0440\u0442\u0438\u043c\u0435\u043d\u0442\u0443 \u0438 \u043f\u0440\u0438\u0435\u043c\u043b\u0435\u043c\u044b\u043c \u0446\u0435\u043d\u0430\u043c, \u0447\u0430\u0441\u0442\u043e \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u044e\u0442 \u00abMundial\u00bb."},
+{"@type":"ListItem","position":53,"name":"\u041f\u0435\u0440\u043b\u043e\u0432\u0443\u044e \u043a\u0440\u0443\u043f\u0443 \u0438 \u0433\u0440\u0435\u0447\u043a\u0443 \u0441\u043b\u043e\u0436\u043d\u043e \u043d\u0430\u0439\u0442\u0438 \u0432 \u043e\u0431\u044b\u0447\u043d\u044b\u0445 \u0441\u0443\u043f\u0435\u0440\u043c\u0430\u0440\u043a\u0435\u0442\u0430\u0445 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0432 Assai \u0438 \u0435\u0449\u0435 5 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u0445 \u0432 \u043c\u0435\u0441\u0442\u0435 \u043f\u043e\u0434 \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u0435\u043c \u00ab\u0411\u0440\u0443\u043a\u043b\u0438\u043d\u00bb)."},
+{"@type":"ListItem","position":54,"name":"\u041f\u043e\u043b\u0443\u0447\u0438\u0442\u0435 \u0441\u043e\u0432\u0435\u0442, \u0433\u0434\u0435 \u043a\u0443\u043f\u0438\u0442\u044c 50 \u043a\u0433 \u0447\u0438\u0441\u0442\u043e\u0433\u043e \u043a\u0440\u0430\u0445\u043c\u0430\u043b\u0430 \u0438 \u0431\u043e\u043b\u044c\u0448\u043e\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043f\u0435\u0440\u0435\u043a\u0438\u0441\u0438 \u0432\u043e\u0434\u043e\u0440\u043e\u0434\u0430 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438."},
+{"@type":"ListItem","position":55,"name":"\u0412\u043e\u0437\u043c\u043e\u0436\u043d\u043e, \u0437\u0430\u043a\u0430\u0437\u0430\u0442\u044c \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0443 \u0438\u0437 HM \u0432\u043e \u0424\u043b\u043e\u0440\u0438\u0430\u043d\u043e\u043f\u043e\u043b\u0438\u0441 (\u0424\u043b\u043e\u0440\u0438\u043f\u0443) \u0431\u0435\u0437 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u043e\u043d\u043d\u043e\u0433\u043e \u043d\u043e\u043c\u0435\u0440\u0430 \u043d\u0430\u043b\u043e\u0433\u043e\u043f\u043b\u0430\u0442\u0435\u043b\u044c\u0449\u0438\u043a\u0430 (CPF) \u043d\u0435\u043b\u044c\u0437\u044f."},
+{"@type":"ListItem","position":56,"name":"Neutrogena \u043f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u0435\u0442 \u044d\u043a\u0441\u043a\u043b\u044e\u0437\u0438\u0432\u043d\u044b\u0435 \u043b\u0438\u043d\u0438\u0438 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u043e\u0432 \u043f\u043e \u0443\u0445\u043e\u0434\u0443 \u0437\u0430 \u043a\u043e\u0436\u0435\u0439 \u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e \u0434\u043b\u044f \u043b\u0430\u0442\u0438\u043d\u043e\u0430\u043c\u0435\u0440\u0438\u043a\u0430\u043d\u0441\u043a\u043e\u0433\u043e \u0440\u044b\u043d\u043a\u0430."},
+{"@type":"ListItem","position":57,"name":"\u0424\u0443\u0442\u0431\u043e\u043b\u043a\u0438 \u0444\u0443\u0442\u0431\u043e\u043b\u044c\u043d\u044b\u0445 \u0444\u0430\u043d\u0430\u0442\u043e\u0432 \u043c\u043e\u0436\u043d\u043e \u043d\u0430\u0439\u0442\u0438 \u043d\u0430 \u0441\u0443\u0432\u0435\u043d\u0438\u0440\u043d\u044b\u0445 \u0440\u044b\u043d\u043a\u0430\u0445 \u0438 \u0432\u0434\u043e\u043b\u044c \u043f\u043b\u044f\u0436\u043d\u043e\u0439 \u043d\u0430\u0431\u0435\u0440\u0435\u0436\u043d\u043e\u0439 \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443."},
+{"@type":"ListItem","position":58,"name":"\u00abAlo Bebe\u00bb \u2014 \u0438\u0437\u0432\u0435\u0441\u0442\u043d\u0430\u044f \u0441\u0435\u0442\u044c \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u043e\u0432 \u0434\u0435\u0442\u0441\u043a\u0438\u0445 \u0442\u043e\u0432\u0430\u0440\u043e\u0432 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438, \u0433\u0434\u0435 \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u0438 \u043c\u043e\u0433\u0443\u0442 \u043f\u0440\u0438\u043e\u0431\u0440\u0435\u0441\u0442\u0438 \u0434\u0435\u0442\u0441\u043a\u0438\u0435 \u0430\u0432\u0442\u043e\u043a\u0440\u0435\u0441\u043b\u0430 \u0438 \u0434\u0440\u0443\u0433\u0438\u0435 \u0442\u043e\u0432\u0430\u0440\u044b \u0434\u043b\u044f \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0438\u0439 \u0441 \u0434\u0435\u0442\u044c\u043c\u0438."},
+{"@type":"ListItem","position":59,"name":"\u041b\u0430\u0432\u0430\u0448 (\u0442\u043e\u043d\u043a\u0438\u0439 \u0431\u0435\u0437\u0434\u0440\u043e\u0436\u0436\u0435\u0432\u043e\u0439 \u0445\u043b\u0435\u0431, \u0442\u0430\u043a\u0436\u0435 \u0438\u0437\u0432\u0435\u0441\u0442\u043d\u044b\u0439 \u043a\u0430\u043a \u00abp\u00e3o folha lavash\u00bb) \u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443, \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f."},
+{"@type":"ListItem","position":60,"name":"\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0438 \u0438\u043d\u0442\u0435\u0440\u0435\u0441\u0443\u044e\u0442\u0441\u044f \u043c\u0435\u0441\u0442\u0430\u043c\u0438 \u0434\u043b\u044f \u043f\u043e\u043a\u0443\u043f\u043a\u0438 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0445 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0445 \u0434\u0436\u0438\u043d\u0441\u043e\u0432 \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e, \u043f\u0440\u043e\u044f\u0432\u043b\u044f\u044f \u0438\u043d\u0442\u0435\u0440\u0435\u0441 \u043a \u043c\u0435\u0441\u0442\u043d\u043e\u0439 \u043c\u043e\u0434\u0435 \u0438 \u043f\u043e\u043a\u0443\u043f\u043a\u0435 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u043e\u0439 \u043e\u0434\u0435\u0436\u0434\u044b."},
+{"@type":"ListItem","position":61,"name":"\u041f\u043e\u043a\u0443\u043f\u043a\u0430 \u043d\u043e\u0432\u043e\u0433\u043e iPhone \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0437\u043d\u0430\u0447\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u0434\u043e\u0440\u043e\u0436\u0435, \u0447\u0435\u043c \u0432 \u0420\u043e\u0441\u0441\u0438\u0438: \u0446\u0435\u043d\u0430 \u043d\u0430 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0435 \u043c\u043e\u0434\u0435\u043b\u0438 \u0447\u0430\u0441\u0442\u043e \u0432 1,5\u20132 \u0440\u0430\u0437\u0430 \u0432\u044b\u0448\u0435."}
+]}
+</script>
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 \u041d\u043e\u0447\u044c", DAY="\u2600 \u0414\u0435\u043d\u044c";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Бразилия: туризм и досуг — живой опыт из чатов · Luky</title>
+<meta name="description" content="Живой опыт по теме «туризм и досуг» в Бразилии: реальные советы, случаи и правила из чатов. Под твой случай — у Luky.">
+<link rel="canonical" href="https://info.multyspeak.ru/ru/br/s/life/turizm-i-dosug/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.ru/ru/br/s/life/turizm-i-dosug/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.ru/en/br/s/life/turizm-i-dosug/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.ru/es/br/s/life/turizm-i-dosug/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.ru/pt/br/s/life/turizm-i-dosug/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.ru/ru/br/s/life/turizm-i-dosug/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+/* тег типа абзаца (хвост-антологии: lifehack/reglament/howto/risk/case/service) */
+.tag{display:inline-block;font-family:var(--font-mono);font-weight:400;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);
+  border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:2px;white-space:nowrap}
+.tag.risk{color:var(--red);border-color:var(--red)}
+.tag.reglament{color:var(--accent);border-color:var(--accent)}
+.tag.lifehack{color:var(--green);border-color:var(--green)}
+.tag.service{color:var(--yellow);border-color:var(--yellow)}
+.tag.howto{color:var(--hud);border-color:var(--hud)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">инфопортал · в любой стране · без воды</span>
+    </div>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="on" href="/ru/br/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/en/br/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/br/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/pt/br/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Ночь</span></button>
+    </div>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/ru/">Главная</a> /
+    <a href="/ru/br/">Бразилия</a> /
+    <b>Туризм и досуг</b>
+  </nav>
+
+
+  
+  <h1>Туризм и досуг: как это в Бразилии — из первых рук</h1>
+
+  <h2>Из живого опыта</h2>
+  <details open><summary><span class="sumq"><span class="tag service">сервис</span>Вертолетные экскурсии над Рио-де-Жанейро доступны от таких компаний, как Rio2fly и Vertical Rio.</span><span></span></summary>
+    <div class="a">Полеты обычно длятся около 40 минут, включая облет статуи Христа-Искупителя, и отправляются из таких районов, как Барра. Цены варьируются: сообщается о стоимости 860 BRL, а специальные предложения от Rio2fly составляют 1000 BRL за «закрытое» место и 1400 BRL за «открытое» место с человека. Вертолеты обычно трехместные, требуется минимум два пассажира, что позволяет соло-путешественникам легко присоединяться к группам. Предоплата, как правило, не требуется.
+    <div class="src">✓ 2 сообщения из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>Не посещайте Ленсойс-Мараньенсис в январе.</span><span></span></summary>
+    <div class="a">В этот период сезон дождей еще не наполнил лагуны, оставляя только сухие дюны или маленькие лужи. Лучшее время для визита — с мая по октябрь, когда лагуны полностью наполнены водой.
+    <div class="src">✓ 2 сообщения из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Чтобы добраться до Порту-де-Галиньяс из аэропорта Ресифи (REC), пользуйтесь сервисами совместных поездок, такими как Uber или 99 (Ресифи — крупный город, где они работают).</span><span></span></summary>
+    <div class="a">Предварительно заказанный трансфер через сервисы вроде Trip.com может стоить около 3700 рублей, тогда как местное такси до аэропорта может обойтись в 220 бразильских реалов. Проживание: апартаменты с кухонными удобствами (плита, микроволновка, чайник, кофемашина, холодильник) — распространенный вариант. Питание: на пляже можно заказать еду, чтобы пользоваться зонтиками и шезлонгами (например, 130-180 реалов за блюдо на двоих). Разные пляжные торговцы могут делить общую кухню. Качество пляжа и толпы: Порту-де-Галиньяс — популярное туристическое направление, там может быть очень людно, особенно в центре и по выходным. Хотя главный пляж для купания находится слева от центра, если пройти 300-500 метров, можно найти места, где людей меньше. Ожидания: не ждите пустынных пляжей, похожих на Юго-Восточную Азию. В феврале в Рио обычно самое теплое море, вопреки некоторым представлениям. Если ищете меньше толп и более теплую воду, рассмотрите другие варианты, например Флорианополис (Флорипа), так как ожидания от «хорошего пляжного отдыха» различаются, и Бразилия не всегда соответствует представлениям о тихих, нетронутых пляжах.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Однодневный тур по основным достопримечательностям Рио-де-Жанейро (статуя Христа-Искупителя, гора Сахарная голова, лестница Селарона, кафедральный собор, стадион, обед) за 10 000 рублей с человека в целом не рекомендуется из-за нехватки времени и возможного «обесценивания» впечатлений.</span><span></span></summary>
+    <div class="a">Лучше распределить посещения на несколько дней. Конкретные рекомендации: посетите гору Сахарная голова за 1,5 часа до заката, чтобы увидеть дневные, закатные и ночные виды. Там есть удобства, такие как прогулочные дорожки, рестораны и живая музыка. Уделите больше времени Ботаническому саду. Статуя Христа-Искупителя обязательна к посещению, но не требует много времени наверху. Стадионы (Маракана или Самбодром) можно пропустить, если вы не преданный фанат, так как они представляют мало архитектурного интереса. Кафедральный собор стоит посетить. Ощутите «вайб» Рио, отдыхая на пляже Ипанема, особенно на закате, наслаждаясь видами с закусками и напитками. Если время крайне ограничено, экскурсия с гидом лучше с точки зрения транспорта, но это будет спешный опыт.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>При выборе жилья в Рио-де-Жанейро учитывайте компромиссы между разными районами для 6-дневной поездки, сфокусированной на осмотре достопримечательностей (Сахарная голова, Христос-Искупитель) и пляжном отдыхе.</span><span></span></summary>
+    <div class="a">Барра-да-Тижука, несмотря на хорошие, менее многолюдные пляжи (например, Рекрею), географически удалена от основных туристических мест, что требует примерно 1 часа езды на такси в каждую сторону. Для посещения центральных достопримечательностей лучше подходят Копакабана или Ипанема. Из Копакабаны и Ипанемы Ипанему часто рекомендуют из-за чистоты, комфорта и видов. Прая-Вермелья известна спокойными водами, но могут быть проблемы с чистотой, и там нет естественной тени (нужны зонтики). Бассейны в отелях Рио могут быть холодными, если температура воздуха ниже 30°C. Если пляжный отдых — приоритет, и вы готовы к ежедневным долгим поездкам к достопримечательностям, Барра может быть вариантом; в противном случае остановиться ближе к центру (Ипанема) и совершать редкие поездки на пляжи Барры может быть практичнее.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Для покупки футбольных билетов в Бразилии рекомендуется заранее зарегистрироваться на официальном сайте нужной команды, так как сайты могут работать со сбоями.</span><span></span></summary>
+    <div class="a">Билеты можно купить онлайн или в билетных кассах стадиона. Для входа требуется удостоверение личности с фотографией, поэтому все посетители должны быть зарегистрированы. Цены сильно различаются в зависимости от сектора, соперника и способа покупки. Примеры: билет в угловой сектор на матч «Сантоса» на стадионе «Вила Белмиро» стоил 296 реалов; билет на матч «Фламенго» на «Маракане», купленный через GetYourGuide, стоил 580 реалов (включает организационные сборы). Цены могут быть выше на матчи с принципиальными соперниками или в гостевые сектора. Альтернативный вариант — купить пакет через местную туристическую фирму в Рио, который может включать трансферы и гида примерно за 250 реалов за матч на «Маракане».
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Планирование поездки в Бразилию для посещения Карнавала требует тщательного управления маршрутом.</span><span></span></summary>
+    <div class="a">Празднование Карнавала, особенно в Сальвадоре, может выходить за рамки «Жирного вторника». Посетителям, стремящимся увидеть ключевые города, такие как Рио-де-Жанейро, Сальвадор и Сан-Паулу, следует стратегически выстраивать последовательность визитов. Например, провести 16–17 февраля в Рио-де-Жанейро. Любителям морепродуктов может понравиться ресторан Shirley рядом с Копакабаной. Рекомендуется изучить «блокос» (уличные карнавальные группы) в каждом городе для полного погружения. В Сан-Паулу Муниципальный рынок предлагает большое разнообразие экзотических фруктов, а парк птиц в Фос-ду-Игуасу обязателен к посещению. Также настоятельно рекомендуется посетить аргентинскую сторону водопадов Игуасу, хотя важно помнить о расписании последнего поезда к «Глотке дьявола».
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Бонито, расположенный в штате Мату-Гросу-ду-Сул (MS), Бразилия, очень рекомендуется для экотуризма, особенно для снорклинга в Рио-Сукури, известном своими исключительно прозрачными водами.</span><span></span></summary>
+    <div class="a">Регион предлагает множество достопримечательностей помимо реки, включая несколько пещер (некоторые с внутренними озерами) и водопадов, что делает его подходящим для многодневной поездки. Однако расходы относительно высоки; например, транспорт может стоить 350 реалов, с дополнительными 100 реалами в праздничные дни. Этот регион не идеален для знакомства с густыми джунглями или наблюдения за ягуарами; для джунглей предлагается Манаус, а для наблюдения за дикими животными, такими как ягуары, рекомендуется Пантанал (регион Мату-Гросу). Основной город для доступа к этим достопримечательностям — Бонито, MS.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Парк штата Терра-Ронка, расположенный в штате Гояс, Бразилия, является одной из крупнейших пещерных систем Южной Америки, где находятся обширные гроты, подземные реки и уникальное биоразнообразие, адаптированное к биому Серрадо.</span><span></span></summary>
+    <div class="a">Парк предлагает возможности для спелеотуризма, пеших походов и наблюдения за природой. Лучшее время для посещения — сухой сезон (с мая по сентябрь) для более безопасного доступа к тропам и пещерам. Доступ осуществляется преимущественно через Сан-Домингус (Гояс), примерно в 400 км (6 часов езды) от Бразилиа, включая финальный участок по грунтовой дороге. Для входа требуется аккредитованный местный гид; фиксированная плата за вход в парк отсутствует, но услуги гида оплачиваются в зависимости от маршрута. На сайте парка представлена официальная информация.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Отель Belmond Hotel das Cataratas (водопады Игуасу, Бразилия) предлагает отличное расположение прямо рядом с водопадами, позволяя насладиться уникальными видами на рассвете и закате.</span><span></span></summary>
+    <div class="a">Хотя не из всех номеров открывается прямой вид на водопад, в некоторых (например, на 2-м этаже, в центре, слева от главного входа) он есть, а центральная башня предлагает лучшие точки обзора. Из-за близости может быть слышен шум водопадов. Территория отеля богата дикой природой: здесь можно встретить крупных бабочек, туканов, различных птиц, варанов, коати, обезьян и капибар. Такси на аргентинскую сторону парка водопадов Игуасу стоит примерно 100 долларов США за поездку туда и обратно с ожиданием, что удобно для четырех человек. Парк птиц (Parque das Aves) удобно расположен рядом с входом в отель.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Для междугородних поездок в Бразилии рассмотрите автобусы между Сан-Паулу и Рио-де-Жанейро, билеты доступны на автовокзале Тиете.</span><span></span></summary>
+    <div class="a">Выбирайте места «лейто» для комфорта и возможности откинуть спинку. В Рио для бюджетного проживания в центре рассмотрите районы Република, Вила-Буарке или Санта-Сесилия рядом с туристическими местами, хотя будьте осторожны, особенно ночью. В Сан-Паулу район Бом-Ретиро в целом безопасен днем, но после заката рекомендуется использовать такси (Uber или 99). Для трансфера из аэропорта до отеля скачайте Uber или 99 заранее. В аэропорту есть бесплатный Wi-Fi, что исключает острую необходимость в местной SIM-карте. Для международной связи Kaspersky eSIM Store предлагает варианты со скидкой по промокоду TRAVELASK.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Путешественники в Бразилию сообщают о преимущественно позитивном опыте, несмотря на первоначальные опасения по поводу безопасности.</span><span></span></summary>
+    <div class="a">Ключевые достопримечательности включают Сан-Паулу, Рио-де-Жанейро (Копакабана, лес Тижука, Маленькая Африка, ночная Лапа, туры по фавелам) и водопады Игуасу. Для более глубокого погружения исследуйте менее известные регионы южной Бразилии, особенно Риу-Гранди-ду-Сул и горные районы Санта-Катарины. В этих местах есть итальянские и немецкие поселения, обширные виноградники, винодельни, пивоварни и живописные пейзажи (например, вокруг Грамаду, Канелы, Урубиси, особенно в сезон цветения гортензий). Также рекомендуются поездки на ретро-поездах под итальянскую музыку.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>В Рио-де-Жанейро лишь немногие 5-звездочные отели по-настоящему соответствуют международным 5-звездочным стандартам, причем Copacabana Palace часто называют исключением.</span><span></span></summary>
+    <div class="a">Hilton Copacabana получает смешанные отзывы относительно своего 5-звездочного рейтинга. Sheraton вызывает споры: некоторые критикуют его устаревшее состояние, близость к фавелам и бассейн в «советском стиле», предлагая Laghetto Lifestyle в качестве альтернативы. Другие хвалят бассейн, завтрак, удобства лаунджа и удобные кровати в Sheraton. Также рекомендуется Fairmont. Общий совет: умерьте свои ожидания и сосредоточьтесь на наслаждении атмосферой города, а не на строгих гостиничных стандартах.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Для пляжного отдыха в Бразилии в июне лучше всего подходит Северо-Восточный регион.</span><span></span></summary>
+    <div class="a">В Ресифи есть пляжи, такие как Боа-Виажем, которые в целом безопасны для купания в зонах, защищенных рифами, однако вне этих зон рекомендуется проявлять осторожность из-за акул. Порту-де-Галиньяс славится своими спокойными водами и подходящей глубиной. Форталеза предлагает возможности для купания в океане, но там могут быть более сильные волны. Пляжи Сальвадора считаются менее подходящими для купания. Важно отметить, что бразильские «хорошие пляжи» часто характеризуются мелководьем («по пояс») и социальной атмосферой, а не условиями для плавания на длинные дистанции.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Регион Серра-Гауша в штате Риу-Гранди-ду-Сул, Бразилия, предлагает уникальный опыт с европейским влиянием.</span><span></span></summary>
+    <div class="a">Ключевые города включают Грамаду, Канелу, Гарибалди и Нова-Петрополис. Регион известен итальянскими поселениями, множеством виноделен (более 150), пивоварнями и живописными видами. Достопримечательности включают небольшой водопад (вход 20 бразильских реалов, позволяет посетителям пройти за него) и поездку на ретро-поезде, ведущую в итальянскую деревню. Отель 'França' в Грамаду был упомянут как дорогой во время Нового года, но в другое время стоит около 20 000 рублей. Дорога от Флорианополиса занимает примерно 6 часов на машине.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Национальный парк Ленсойс-Мараньенсис в Бразилии славится своими потрясающими пейзажами из белых песчаных дюн и пресноводных лагун.</span><span></span></summary>
+    <div class="a">Посетители обычно проводят здесь целый день, часто посещая лагуну Азул для купания и лагуну Бонита для встречи заката. Путешествие из Сан-Луиса включает трансфер до Баррейриньяса, за которым следует поездка по ухабистой дороге на модифицированных пикапах до парка. Несмотря на то, что природная красота очень рекомендуется, некоторые путешественники отмечают, что поездка может быть дорогой, особенно в части транспорта и организации.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Форталеза, в частности пляж Ирасема, рекомендуется как пляжное направление в Бразилии.</span><span></span></summary>
+    <div class="a">Преимущества: пользователи отмечают более мягкую воду, более чистые и широкие пляжи, а также меньшее количество людей по сравнению с Рио-де-Жанейро. Набережная описывается как ухоженная и приятная для вечерних прогулок. Целевая аудитория: идеально подходит для путешественников, ищущих более спокойный пляжный отдых без городской суеты. Сравнение: некоторыми пользователями предпочтительнее пляжей Рио-де-Жанейро из-за более высокого качества пляжей и менее людной обстановки.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Сравнение вертолетных и лодочных экскурсий на водопадах Игуасу, Бразилия.</span><span></span></summary>
+    <div class="a">Один пользователь счел вертолетную экскурсию разочаровывающей, заявив, что это место не стоит осмотра сверху, а лодочная экскурсия была «нормальной», но без «эффекта вау». Он рекомендовал выбрать лодочную экскурсию вместо вертолетной на Игуасу, но предложил вертолетную экскурсию в Рио (например, с горы Сахарная голова) как лучший вариант. Другой пользователь категорически не согласился, посчитав вертолетную экскурсию отличной и решив, что водопады лучше всего смотрятся сверху.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Для 3-недельного маршрута по Бразилии сфокусируйтесь на Сан-Паулу, Рио-де-Жанейро и водопадах Игуасу.</span><span></span></summary>
+    <div class="a">Сравнивая Сантос и Гуаружу, выбирайте Гуаружу для лучших пляжей. Оптимальное время для поездки — ноябрь: погода подходит как для осмотра достопримечательностей, так и для пляжного отдыха. Не тратьте слишком много времени на пляжи Сан-Паулу, если Рио предлагает лучшие варианты; рассмотрите места к северу от Рио для более теплого моря. Если планируете однодневную поездку в Сантос, посетите Музей Пеле или Музей кофе.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Делятся опытом путешествий и направлениями в Бразилии.</span><span></span></summary>
+    <div class="a">Обсуждения включают: автомобильные поездки (например, из Блуменау в Ресифи), рекомендации по лучшему времени для путешествий (предпочтителен несезон) и уникальные турпакеты, такие как 'Expedition Terra', включающие посещение племен коренных народов и ловлю пираний. Также упоминается опыт адаптации к высоте в таких городах, как Ла-Пас. Особо отмечены конкретные локации: Порту-Сегуру, северо-восточное побережье, Сальвадор, Флорианополис и каньоны Виана в Пиауи.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Для бюджетного и удобного размещения в Фос-ду-Игуасу для посещения водопадов Игуасу рассмотрите «Hotel Coroados Foz Express».</span><span></span></summary>
+    <div class="a">Он находится примерно в 20–30 минутах езды на такси от Парка птиц (рядом с Национальным парком Игуасу), а поблизости есть места, где можно поесть, и продуктовый магазин. В отеле чистые, просторные номера и приличные завтраки. «Manacá Hotel» — еще один вариант, который бронировал один из пользователей. Оба считаются выгодными по цене для двухдневной поездки.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Путешествия между Бразилией, Аргентиной и Чили ради пляжного отдыха в июне сопряжены с трудностями.</span><span></span></summary>
+    <div class="a">Из-за зимы в Аргентине и Чили условия для купания в целом неблагоприятны. В то время как Рио-де-Жанейро предлагает некоторые возможности для коротких заплывов, пляжи на северо-востоке Бразилии, такие как Форталеза или Ресифи, больше подходят для купания в этот период. Курорты вроде Мар-дель-Плата (Аргентина) или Ла-Серена (Чили) не являются идеальными для купания в июне.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Для туров в Амазонию с отправлением из Манауса, Бразилия, Gero Tours предлагает стандартный пакет «все включено» на 3 дня и 2 ночи примерно за 1500 бразильских реалов на человека, включая трансфер из аэропорта.</span><span></span></summary>
+    <div class="a">Несмотря на комфорт, обратите внимание, что в некоторых каютах может быть шумный кондиционер. Опытные путешественники полагают, что джунгли вокруг Икитоса (Перу) предлагают превосходное разнообразие флоры и фауны по сравнению с районом Манауса.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Дневной бюджет для туриста в Рио-де-Жанейро сильно варьируется в зависимости от предпочтений.</span><span></span></summary>
+    <div class="a">Для стандартных туристических активностей, таких как посещение горы Сахарная голова и статуи Христа-Искупителя, питания в обычных ресторанах и осмотра достопримечательностей, часто бывает достаточно бюджета около 150-200 долларов США в день. Однако расходы могут значительно возрасти при выборе более дорогих развлечений, шопинга или высокой кухни.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Тем, кто планирует посетить Бониту (Бразилия) в июле, рекомендуется бронировать активности заранее.</span><span></span></summary>
+    <div class="a">Хотя точные сроки бронирования могут зависеть от конкретного занятия и оператора, предварительное бронирование в целом рекомендуется для того, чтобы гарантировать желаемые места, особенно в пиковые туристические сезоны. Советуем уточнять у местных туроператоров или на платформах бронирования рекомендуемые ими сроки для записи.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Оптимальное время для посещения Галапагосских островов зависит от приоритетов.</span><span></span></summary>
+    <div class="a">Для наблюдения за дикой природой период с конца июня по ноябрь предлагает комфортную погоду. Для наиболее комфортного климата в целом идеально подходит декабрь. Несмотря на значительные вложения, острова предлагают уникальный опыт для любителей природы и дикой природы. Важно соотнести ожидания с конкретными характеристиками направления.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>При бронировании жилья в Рио-де-Жанейро, особенно для длительного проживания или в высокий сезон (например, на Карнавал), рассмотрите платформы помимо Booking.com и Trip.com.</span><span></span></summary>
+    <div class="a">One Two Trip и Agoda — предлагаемые альтернативы. Бронирование значительно заранее или изучение вариантов, таких как Couchsurfing для коротких поездок, может быть полезным. Пользовательские объявления также могут предложить подходящие варианты. Бюджетные варианты в последний момент в высокий сезон найти сложно, но это не совсем невозможно.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>Будьте осторожны с подозрительно дешевой арендой квартир на Карнавал в Рио-де-Жанейро, особенно в центральных районах, таких как Руа Сенадор Дантас.</span><span></span></summary>
+    <div class="a">Очень низкие цены (например, 7000 реалов за 4 ночи во время Карнавала, когда другие стоят в 3-4 раза дороже) могут указывать на мошенничество. Мошенники могут присылать прямые ссылки на оплату вне платформ бронирования. Также проверьте окружающую местность на наличие потенциальных проблем, таких как близость к бездомным или источники шума.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>Возникли опасения по поводу легитимности покупки билетов на Карнавал в Рио через такие платформы, как GetYourGuide и аналогичные сайты, особенно когда официальные гиды заявляют, что билеты недоступны.</span><span></span></summary>
+    <div class="a">Путешественники, которые без проблем пользовались этими сервисами для других направлений, ищут подтверждения для билетов на Карнавал. Важно остерегаться потенциального мошенничества, так как некоторые пользователи сообщали об участившихся попытках обмана после запросов о билетах.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Билеты на статую Христа-Искупителя (Cristo Redentor) можно купить заранее или на месте.</span><span></span></summary>
+    <div class="a">Хотя предварительное бронирование рекомендуется, особенно на конкретные временные слоты, покупка на месте часто возможна. Билет на поезд Corcovado включает проезд к статуе. Стоимость билета на поезд (туда-обратно) составляет 139 бразильских реалов на человека. Посещение на месте рано утром может позволить купить билет и сразу сесть на поезд, даже если в билете указано более позднее время.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>При поиске бюджетного жилья в Копакабане, Рио-де-Жанейро, путешественники могут легко найти пункты обмена валюты («casas de câmbio», так как они широко распространены в этом районе.</span><span></span></summary>
+    <div class="a">Отель Ibis Copacabana Posto 2 упоминается некоторыми путешественниками как удовлетворительный вариант при поиске бюджетного проживания рядом с метро. Хотя качество сети Ibis может варьироваться (например, в некоторых номерах могут отсутствовать окна), это может быть надежным бюджетным выбором.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Карнавал в Рио проходит на Самбадроме в центре Рио, обычно с 21:00 до утра, в определенные даты (например, 13–17 февраля), с финальным парадом.</span><span></span></summary>
+    <div class="a">Билеты следует покупать заранее, желательно начиная с августа, чтобы получить приемлемые цены. Билеты в последний момент стоят дорого или уже распроданы. Веб-сайт: carnivalbookers.com. Ожидайте большого скопления людей, долгих ожиданий между выступлениями школ самбы (20–30 минут) и трудностей с поиском мест в кафе и ресторанах.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Во время карнавала в Рио по всему городу проходят уличные вечеринки, известные как «блокос».</span><span></span></summary>
+    <div class="a">Информацию об их местоположении, описания и стоимость входа (если применимо) можно найти с помощью приложения «blocos da rua». Опыт бывает разным: в Копакабане ночью может быть комфортно, в то время как в таких районах, как Лапа, может быть хаотично, грязно и людно из-за большого количества нетрезвых людей. Выбирайте блокос внимательно, основываясь на желаемой атмосфере.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Для празднования Нового года в Рио-де-Жанейро: супермаркеты открыты до вечера 31 декабря.</span><span></span></summary>
+    <div class="a">Многие заведения закрываются 1 января, но большинство возобновляет работу ко 2 января. Дороги вокруг Копакабаны и Арпоадора частично перекрыты 31 декабря из-за мероприятия. Поймать такси от Копакабаны в 2 часа ночи 1 января возможно, если дойти пешком до главных дорог (например, в сторону Ботафого), но ожидайте трудностей и пробок в преддверии полуночи 31 декабря.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Посещение репетиций школы самбы в Рио-де-Жанейро — рекомендуемый местный опыт.</span><span></span></summary>
+    <div class="a">Указанное место: Acadêmicos do Salgueiro (ул. Силва Телес, 104, Андараи). Время проведения: лучше приехать к 23:00, чтобы застать пик веселья в полночь. Типичная стоимость входа — около 70 бразильских реалов. Совет по безопасности: некоторые локации находятся в менее безопасных районах, поэтому посетителям рекомендуется пользоваться услугами местных гидов.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>Официальные билеты на Христа-Искупителя можно купить на официальном сайте или в &#39;Centro de visitantes paineiras&#39; примерно за 85 BRL.</span><span></span></summary>
+    <div class="a">Мошенники часто нацеливаются на туристов, заявляя, что билеты распроданы, предлагая поддельные «сервисные команды» и используя терминалы для карт, чтобы списать деньги дважды. Всегда пользуйтесь приложениями для заказа поездок, такими как Uber, вместо уличных такси для безопасных поездок по счетчику.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Моряк, навигатор, ищет рекомендации по жилью в Рио-де-Жанейро на 10-дневный период перед возвращением домой.</span><span></span></summary>
+    <div class="a">Он запросил «отказ от ответственности» для исследования города. Первые впечатления от Google Maps предполагают, что популярные районы, такие как Копакабана и Ипанема, могут быть не очень привлекательными. Предложения для менее «грустных» районов включают Тижуку/Вила Изабель или центр города, который предлагает рынки и кафе.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Плотина Итайпу рядом с Фос-ду-Игуасу, Бразилия, является объектом с ограниченным доступом.</span><span></span></summary>
+    <div class="a">Для посещения необходимо участие в организованных турах с гидом. Экскурсии отправляются часто, обычно каждые 30 минут, и базовый обзорный тур длится около часа. Рекомендуется для посетителей, интересующихся инженерией или архитектурой.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Продажа билетов на Самбадром на карнавал в Рио обычно начинается в июле.</span><span></span></summary>
+    <div class="a">Наличие мест зависит от сектора и даты. Бронирование через официальные каналы из России может столкнуться с проблемами платежных шлюзов; авторитетные местные гиды являются распространенной альтернативой для покупки билетов, особенно на Парад чемпионов.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Во время визита в Рио-де-Жанейро исследуйте район Лапа.</span><span></span></summary>
+    <div class="a">Поблизости находятся такие достопримечательности, как парк с капибарами, впечатляющая библиотека, церковь Святого Себастьяна и исторический трамвай. Рекомендуются пешеходные экскурсии по Лапе и портовому району. Жилье рядом со станцией Синеландия — подходящий вариант.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Для лучших панорамных фотографий статуи Христа-Искупителя в Рио-де-Жанейро рассмотрите такие смотровые площадки, как гора Сахарная голова (Pão de Açúcar) и смотровая площадка Виста-Кинеза.</span><span></span></summary>
+    <div class="a">Эти локации предлагают возвышенные ракурсы, которые позволяют запечатлеть статую, окружающий городской пейзаж и природную красоту.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>Для полетов на параплане в Бразилии поступали запросы о местах и доступности.</span><span></span></summary>
+    <div class="a">Конкретные локации, такие как Сан-Конраду, известный своей пляжной посадочной площадкой, упоминались как места для организации полетов напрямую с пилотами. Могут потребоваться дополнительные детали о бронировании и специфических требованиях.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Во время Карнавала в Рио-де-Жанейро найти парковку в районе Центр бывает трудно.</span><span></span></summary>
+    <div class="a">Многие парковки закрываются к 19:00. Вероятно, это временное ограничение из-за Карнавала; вне Карнавала парковка может быть менее ограничена. Общественный транспорт (метро) — рекомендуемая альтернатива для доступа в Центр в этот период.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Рекомендуемые занятия в Бразилии включают 10-минутный полет на вертолете над водопадами за 685 бразильских реалов, поездки на такси в городах (цена обсуждается от 350 до 200 реалов), использование Uber и групповые экскурсии в фавелы в Рио с русскоговорящим гидом для экономии.</span><span></span></summary>
+    <div class="a">Также доступны уникальные местные туры.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Для выбора более чистых пляжей рядом с Ботафого, Рио-де-Жанейро, рассмотрите район бухты возле горы Сахарная голова (Пау-ди-Асукар).</span><span></span></summary>
+    <div class="a">Эта локация, как сообщается, предлагает более спокойные и чистые воды по сравнению с непосредственной береговой линией Ботафого, на которую могут влиять движение лодок и загрязнение.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Отель Belmont расположен в отличном месте рядом с водопадом Игуасу с бразильской стороны.</span><span></span></summary>
+    <div class="a">Он описывается как сверхроскошный пятизвездочный отель с видом на водопад и возможностью посещать парк без других туристов утром и вечером. Однако он известен тем, что очень дорогой и имеет высокий уровень заполняемости.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Марика — прибрежный муниципалитет в штате Рио-де-Жанейро, расположенный примерно в 50 км от центра Рио (50–60 минут езды).</span><span></span></summary>
+    <div class="a">Основные районы: Итайпуасу, Иноа, Марика (центр), Понта-Негра. Известен более низкой стоимостью жизни и 46 км береговой линии. Понта-Негра отмечен как самый безопасный пляж для купания.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>Чтобы купить билеты на матч Фламенго на стадионе Маракана, посетите официальный сайт Фламенго.</span><span></span></summary>
+    <div class="a">Билеты обычно поступают в продажу примерно за 5 дней до игры в разделе 'compre ingresso'. Пользователи должны пройти предварительную регистрацию и процесс подтверждения аккаунта на портале, чтобы купить билеты.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Парати, Бразилия, переживает сухой сезон в период, соответствующий июню-июлю, когда уровень осадков обычно составляет менее 100 мм.</span><span></span></summary>
+    <div class="a">Это делает данное время отличным для посещения и занятий морскими видами активности, а также изучения таких достопримечательностей, как Каирусу-дас-Педрас и Илья-дус-Кокус.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Покупка билетов на бразильские футбольные матчи (например, «Фламенго») часто требует местной бразильской кредитной или дебетовой карты.</span><span></span></summary>
+    <div class="a">Иностранные туристы часто обращаются за помощью к местным жителям для покупки билетов, предлагая оплату в своей национальной валюте через перевод на российскую карту.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Однодневная поездка в Фос-ду-Игуасу из Рио осуществима для посещения бразильской стороны и Парка птиц.</span><span></span></summary>
+    <div class="a">Однако посещение аргентинской стороны, лодочные туры или полеты на вертолете, как правило, не рекомендуются для однодневного маршрута. Ожидайте ограниченное время для осмотра достопримечательностей.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Туристы часто путают местную фауну на площади Республики (Кампо-де-Сантана) в Рио-де-Жанейро.</span><span></span></summary>
+    <div class="a">Агути и носух посетители в этом месте часто ошибочно принимают за капибар. Хотя капибары действительно встречаются в различных городских парках Бразилии, их наличие именно на этом участке не гарантируется.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>В Рио-де-Жанейро, в районе Ботафого, в торговом центре Botafogo Praia Shopping на одном из верхних этажей (по сообщениям, на 9-м этаже) есть ресторан на крыше.</span><span></span></summary>
+    <div class="a">Этот ресторан предлагает захватывающий вид на залив и известен доступными ценами, что делает его хорошим вариантом для обеда с видом.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Для двухдневного визита в Сан-Паулу рассмотрите следующие достопримечательности: Музей футбола, парк Ибирапуэра, Кафедральный собор Се, проспект Авенида Паулиста и Художественный музей.</span><span></span></summary>
+    <div class="a">Эти предложения предлагают сочетание культурных, рекреационных и архитектурных впечатлений внутри города.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Для проживания в Рио-де-Жанейро пользователь рекомендует отель Windsor Martinique на пляже Копакабана.</span><span></span></summary>
+    <div class="a">Он описывается как добротный 3-звездочный отель с отличным расположением: 3 минуты пешком до пляжа Копакабана, 10 минут пешком до пляжа Ипанема. Поблизости есть множество кафе и магазинов.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Рекомендуемое время на водопады Игуасу: всего 2-3 дня.</span><span></span></summary>
+    <div class="a">Один полный день необходим для бразильской стороны и как минимум один полный день для аргентинской стороны (которая больше). Однодневный визит возможен, но это значительно в спешке и ограничивает впечатления только панорамными видами.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>На пляжах Рио-де-Жанейро (например, Копакабана, Ипанема) есть поливаемые дорожки («темные полосы»), чтобы предотвратить ожоги от горячего песка, ведущие к барракам (пляжным киоскам).</span><span></span></summary>
+    <div class="a">Зонты у каждой барраки имеют цветовую маркировку, помогающую различать гостей отеля и других посетителей.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>Новогодняя ночь в Бразилии (особенно в Рио-де-Жанейро) вызывает экстремальный рост цен на жилье и большое скопление людей.</span><span></span></summary>
+    <div class="a">Бронируйте жилье (желательно в Ипанеме или поблизости) за несколько месяцев. Местный «мини-карнавал» с уличными вечеринками проходит в центре Рио примерно 5 января.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Пляжи Рио-де-Жанейро состоят из 12 «постов».</span><span></span></summary>
+    <div class="a">Леблон обычно рекомендуют за более чистую и приятную атмосферу по сравнению с Копакабаной. Уличные вечеринки, связанные с карнавалом («блокос»), проходят в январе; расписание обычно можно найти на местных сайтах, таких как blocosrj.oficial.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Получите удовольствие от карнавала в Рио-де-Жанейро без билетов на Самбодром.</span><span></span></summary>
+    <div class="a">Узнайте о 'блокос' (уличных вечеринках), с акцентом на те, что известны яркой музыкой, костюмами и танцами. Воспользуйтесь руководством по поиску расписания и выбору лучших 'блокос' для посещения.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Для 3-дневной поездки в Белу-Оризонти рассмотрите однодневные выезды в Ору-Прету (колониальный город, объект всемирного наследия ЮНЕСКО) и Иньотим (музей современного искусства под открытым небом и ботанический сад).</span><span></span></summary>
+    <div class="a">Это популярные дополнения к маршруту по Белу-Оризонти.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Операторы лодочных туров на водопады Игуасу предоставляют платные услуги камер хранения рядом с зоной отправления.</span><span></span></summary>
+    <div class="a">Посетители могут безопасно оставить рюкзаки, лишнюю одежду и снаряжение на время лодочной прогулки, так как пассажиры гарантированно промокнут насквозь.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Пользователи спрашивают о безопасности пешеходных маршрутов в Рио-де-Жанейро, конкретно от станции метро Ботафого до торгового центра Рио Сул.</span><span></span></summary>
+    <div class="a">Это подчеркивает общие опасения туристов и резидентов относительно пешеходной навигации в определенных городских районах.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Бюджет на месяц в Рио-де-Жанейро для одиночного путешественника, покрывающий базовое проживание и питание, может быть оценен на основе опыта пользователей.</span><span></span></summary>
+    <div class="a">Хотя конкретные цифры варьируются, пользователей призывают делиться своим опытом для уточнения оценок.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Для индивидуальных туров в Фос-ду-Игуасу и Сан-Паулу, Бразилия, рассмотрите сервисы, которые связывают путешественников с местными гидами для получения уникального опыта.</span><span></span></summary>
+    <div class="a">Информацию об индивидуальных и групповых турах можно найти по предоставленным ссылкам.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Trip.com предлагает скидки на отели до 25%, которые суммируются с другими акциями, для пользователей, купивших авиабилеты через их платформу.</span><span></span></summary>
+    <div class="a">Это может привести к значительной экономии по сравнению с другими сайтами бронирования, такими как Booking.com.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Для проведения экскурсий в Бразилии рекомендуется местный гид Антон (Бразильский легионер).</span><span></span></summary>
+    <div class="a">Пользователи оставили положительные отзывы о его услугах, особо отметив экскурсии по центру города и фавелам. Его отмечают за эффективную и надежную работу.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Основные туристические достопримечательности Сан-Паулу: Музей португальского языка, станция Луз, Пинакотека, парк Ибирапуэра, проспект Паулиста (известен смотровыми площадками) и Либердаде (японский район, где находится Музей японской иммиграции).</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Для премиального мясного ужина (в стиле чурраскария) с живописным видом в Рио-де-Жанейро рекомендую «Assador Rio» (расположен в Атерро-ду-Фламенго).</span><span></span></summary>
+    <div class="a">Он высоко ценится за качество мясных нарезок, обслуживание и панорамный вид на залив Гуанабара.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Ресторан «Sal e Brasa» в Натале очень рекомендуется.</span><span></span></summary>
+    <div class="a">Это шураскария с форматом «ешь сколько хочешь» за 74.90 бразильских реалов (89.90 по выходным). Напитки и десерты оплачиваются отдельно. Шведский стол также включает большой салат-бар и суши.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>При посещении Самбодрома на карнавале в Рио посетителям разрешено проносить любые предметы в пластиковой упаковке.</span><span></span></summary>
+    <div class="a">Стеклянные бутылки, как правило, запрещены. Еда, алкогольные напитки, вода и соки доступны для покупки на территории площадки.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Ищется информация об участии в забеге по трассе Формулы-1 в Интерлагосе, Сан-Паулу, запланированном на 1 мая.</span><span></span></summary>
+    <div class="a">Официальные продажи закрыты, и люди ищут альтернативные способы получения места или интересуются наличием мест в последнюю минуту.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>В Рио-де-Жанейро многие заведения, включая супермаркеты, были закрыты на Рождество.</span><span></span></summary>
+    <div class="a">Похожая ситуация ожидается 1 января, хотя некоторые предприятия могут остаться открытыми. Местные обычаи и праздничные традиции влияют на доступность услуг.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Сравните Форталезу с Жерикоакоарой и Пипой в Бразилии для путешественников, ищущих более спокойного отдыха.</span><span></span></summary>
+    <div class="a">Обсудите безопасность в Форталезе. Отметьте мелководье в Жерикоакоаре, которое может ограничить возможности для купания.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>В Рио-де-Жанейро можно найти шаурму (или «шаверму»).</span><span></span></summary>
+    <div class="a">Несколько мест упомянуты в районах Копакабана и Ипанема. Турецкий ресторан под названием «Stambul» на Арпоадоре также предлагается как место, где могут подавать похожую еду.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Можно дойти до статуи Христа-Искупителя (гора Корковаду) пешком через джунгли без гида.</span><span></span></summary>
+    <div class="a">Сообщается, что путь безопасен и там много туристов. Подъем обычно занимает около 4 часов. Рекомендуется начинать поход около 10:00 утра.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Для рекомендаций по музеям и культурным достопримечательностям в Бразилии: в Сан-Паулу рассмотрите посещение Beco do Batman ради его стрит-арта (музей под открытым небом).</span><span></span></summary>
+    <div class="a">Также рекомендуется исследовать геологические музеи.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">риск</span>Цены на билеты на аргентинскую сторону водопадов Игуасу указаны в аргентинских песо (ARS).</span><span></span></summary>
+    <div class="a">Иностранным посетителям следует обратить внимание на то, что цены исчисляются тысячами (например, 45 000 ARS), а не несколькими песо.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Билеты на гору Сахарная голова (Pão de Açúcar) можно купить на месте.</span><span></span></summary>
+    <div class="a">Прибытие около 17:00 достаточно, чтобы застать закат без длинных очередей. Просмотр заката популярен, поэтому ожидайте толпу во время спуска около 19:30.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>В Рио-де-Жанейро сентябрь и октябрь — в целом хорошие месяцы для купания.</span><span></span></summary>
+    <div class="a">Сезон дождей обычно стихает к этому периоду, а пик туристического сезона (декабрь-март) еще не наступил. Температура воды обычно приятна для купания.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Продвижение интерактивной туристической карты Бразилии, доступной для MAPS.ME.</span><span></span></summary>
+    <div class="a">Карта включает 115 точек интереса (достопримечательности, аттракции, места для фото) и предлагает офлайн-навигацию. Цена составляет 599 рублей.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Рекламное сообщение для интерактивной офлайн-карты Бразилии для MAPS.ME.</span><span></span></summary>
+    <div class="a">Карточка включает 115 точек интереса (достопримечательности, места питания, фотоспоты) и предлагает пошаговую навигацию. Цена 599 бразильских реалов.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Пляжи Сантоса в Бразилии предлагают лучшие удобства (туалеты, краны для ног, души) и усиленное присутствие полиции летом.</span><span></span></summary>
+    <div class="a">Для зимней поездки на один день рекомендуется Параниапиакаба, город-музей в 60-80 км от Сан-Паулу.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>Найдите местных гидов для экскурсий по фавелам Рио-де-Жанейро.</span><span></span></summary>
+    <div class="a">Обратите внимание, что англоговорящие гиды могут быть значительно дешевле русскоязычных. Соберите контактную информацию или ссылки на проверенных гидов.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Для наилучших впечатлений от вертолетного тура над Рио-де-Жанейро во время заката рекомендуется бронировать полет на 17:00-17:30. Это время обычно совпадает с оптимальным периодом для наблюдения за закатом.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Рио-де-Жанейро как город для пеших прогулок, бега и езды на велосипеде.</span><span></span></summary>
+    <div class="a">Сравнение удобства для пешеходов с другими городами с акцентом на городской дизайн и рекомендации приятных пешеходных маршрутов.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Рекомендуемая оптимальная продолжительность для посещения Рио-де-Жанейро, помимо культовой статуи Христа-Искупителя.</span><span></span></summary>
+    <div class="a">Предложите основные достопримечательности и занятия, чтобы заполнить это время.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Информацию о карнавальных уличных вечеринках (блокос) в Рио можно найти в расписании профиля &#39;blocosjr.oficial&#39; в Instagram.</span><span></span></summary>
+    <div class="a">В прошлом году расписание вечеринок на начало января было доступно.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>Соберите информацию и отзывы пользователей о турах по реке Амазонка в Бразилии.</span><span></span></summary>
+    <div class="a">Сосредоточьтесь на надежных туроператорах, важных советах для путешественников и деталях о ночевках в джунглях.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Помощь в поиске конкретного мурала в районе Порто-Маравилья в Рио-де-Жанейро.</span><span></span></summary>
+    <div class="a">У пользователя есть общая информация о близости к порту, и ему требуются более точные данные о местоположении.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Национальный парк Тижука в Рио-де-Жанейро предлагает многочисленные пешеходные тропы и водопады.</span><span></span></summary>
+    <div class="a">Он находится в черте города и открыт ежедневно с раннего утра примерно до 18:00-19:00.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>Погода в Рио-де-Жанейро зимой (июль): дневная температура составляет от 22°C до 28°C.</span><span></span></summary>
+    <div class="a">Ночью около 18°C. Купание в океане разрешено и распространено. Закат происходит около 17:00.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">сервис</span>Для вертолетных экскурсий с открытыми дверями в Рио-де-Жанейро компания «Rio2fly» настоятельно рекомендуется опытными путешественниками для фотосъемки и живописных полетов.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Предложите быстрые занятия или достопримечательности рядом с Авенида Паулиста в Сан-Паулу для туриста, у которого осталось всего 1,5 часа до вылета, помимо парка Трианон.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>MASP (Сан-Паулу) предлагает бесплатный вход по пятницам после 18:00. Пинакотека (Сан-Паулу) предлагает бесплатный вход по субботам.</span><span></span></summary>
+    <div class="a">Рекомендуется онлайн-бронирование.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Определенно стоит съездить на день из Сан-Паулу к океану для купания и пляжного отдыха.</span><span></span></summary>
+    <div class="a">Рекомендуемые пляжи с хорошим качеством — Гуаружа, Бертиога и Ильябела.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">лайфхак</span>Вход в музей MASP в Бразилии часто можно оформить на месте.</span><span></span></summary>
+    <div class="a">Один билет может давать доступ в оба здания. Покупка билетов онлайн не всегда обязательна.
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">кейс</span>Посетители проводили время у статуи Христа-Искупителя, гуляя по периметру, отдыхая в кафе, рассматривая сувениры и посещая часовню внутри статуи.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">инструкция</span>Для покупки билетов на матчи «Фламенго» необходимо зарегистрироваться на официальном сайте «Фламенго» и пройти процесс верификации личности.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">регламент</span>В феврале на Фернанду-ди-Норонья обычно стоит теплая погода с умеренными осадками и ветром, что может привести к более высоким волнам.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 сообщение из чатов</div></div>
+  </details>
+
+  <h2>Смежные темы</h2>
+  <div class="chips">
+    <a class="chip" href="/ru/br/s/life/adaptatsiya-i-bezopasnost/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛡 Адаптация и безопасность</span></a>
+    <a class="chip" href="/ru/br/s/life/bytovye-voprosy-i-uslugi/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Бытовые вопросы и услуги</span></a>
+    <a class="chip" href="/ru/br/s/life/rabota-i-obrazovanie/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>💼 Работа и образование</span></a>
+    <a class="chip" href="/ru/br/s/life/zhile-i-nedvizhimost/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🏠 Жилье и недвижимость</span></a>
+    <a class="chip" href="/ru/br/s/life/zdorove-i-meditsina/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🩺 Здоровье и медицина</span></a>
+    <a class="chip" href="/ru/br/s/life/transport-i-logistika/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Транспорт и логистика</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Общие статьи есть — а решение для тебя?</h2>
+    <p>Спроси Luky — свежие отзывы, а не статья пятилетней давности.</p>
+    <p>А ещё Luky — голосовой переводчик живого разговора: поболтай в лобби с туристами из других стран.</p>
+    <p class="ps">PS: созвониться голосом с тем самым человеком из другой страны — тоже он</p>
+    <a class="btn" href="https://multyspeak.ru" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Открыть Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — живой опыт из чатов сообществ, без воды</div>
+    <nav class="f-links">
+      <a href="/ru/about/">О проекте</a>
+      <a href="/ru/br/">Все темы</a>
+      <a href="/ru/">Страны</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Ответы собраны из открытых чатов сообществ — это живой опыт людей, а не официальная консультация. Перед важными решениями проверяйте актуальность.</p>
+    <div class="f-copy">© 2026 Luky · обновлено 07.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"\u0412\u0435\u0440\u0442\u043e\u043b\u0435\u0442\u043d\u044b\u0435 \u044d\u043a\u0441\u043a\u0443\u0440\u0441\u0438\u0438 \u043d\u0430\u0434 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b \u043e\u0442 \u0442\u0430\u043a\u0438\u0445 \u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0439, \u043a\u0430\u043a Rio2fly \u0438 Vertical Rio."},
+{"@type":"ListItem","position":2,"name":"\u041d\u0435 \u043f\u043e\u0441\u0435\u0449\u0430\u0439\u0442\u0435 \u041b\u0435\u043d\u0441\u043e\u0439\u0441-\u041c\u0430\u0440\u0430\u043d\u044c\u0435\u043d\u0441\u0438\u0441 \u0432 \u044f\u043d\u0432\u0430\u0440\u0435."},
+{"@type":"ListItem","position":3,"name":"\u0427\u0442\u043e\u0431\u044b \u0434\u043e\u0431\u0440\u0430\u0442\u044c\u0441\u044f \u0434\u043e \u041f\u043e\u0440\u0442\u0443-\u0434\u0435-\u0413\u0430\u043b\u0438\u043d\u044c\u044f\u0441 \u0438\u0437 \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0430 \u0420\u0435\u0441\u0438\u0444\u0438 (REC), \u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435\u0441\u044c \u0441\u0435\u0440\u0432\u0438\u0441\u0430\u043c\u0438 \u0441\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u044b\u0445 \u043f\u043e\u0435\u0437\u0434\u043e\u043a, \u0442\u0430\u043a\u0438\u043c\u0438 \u043a\u0430\u043a Uber \u0438\u043b\u0438 99 (\u0420\u0435\u0441\u0438\u0444\u0438 \u2014 \u043a\u0440\u0443\u043f\u043d\u044b\u0439 \u0433\u043e\u0440\u043e\u0434, \u0433\u0434\u0435 \u043e\u043d\u0438 \u0440\u0430\u0431\u043e\u0442\u0430\u044e\u0442)."},
+{"@type":"ListItem","position":4,"name":"\u041e\u0434\u043d\u043e\u0434\u043d\u0435\u0432\u043d\u044b\u0439 \u0442\u0443\u0440 \u043f\u043e \u043e\u0441\u043d\u043e\u0432\u043d\u044b\u043c \u0434\u043e\u0441\u0442\u043e\u043f\u0440\u0438\u043c\u0435\u0447\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044f\u043c \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e (\u0441\u0442\u0430\u0442\u0443\u044f \u0425\u0440\u0438\u0441\u0442\u0430-\u0418\u0441\u043a\u0443\u043f\u0438\u0442\u0435\u043b\u044f, \u0433\u043e\u0440\u0430 \u0421\u0430\u0445\u0430\u0440\u043d\u0430\u044f \u0433\u043e\u043b\u043e\u0432\u0430, \u043b\u0435\u0441\u0442\u043d\u0438\u0446\u0430 \u0421\u0435\u043b\u0430\u0440\u043e\u043d\u0430, \u043a\u0430\u0444\u0435\u0434\u0440\u0430\u043b\u044c\u043d\u044b\u0439 \u0441\u043e\u0431\u043e\u0440, \u0441\u0442\u0430\u0434\u0438\u043e\u043d, \u043e\u0431\u0435\u0434) \u0437\u0430 10 000 \u0440\u0443\u0431\u043b\u0435\u0439 \u0441 \u0447\u0435\u043b\u043e\u0432\u0435\u043a\u0430 \u0432 \u0446\u0435\u043b\u043e\u043c \u043d\u0435 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u0442\u0441\u044f \u0438\u0437-\u0437\u0430 \u043d\u0435\u0445\u0432\u0430\u0442\u043a\u0438 \u0432\u0440\u0435\u043c\u0435\u043d\u0438 \u0438 \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e\u0433\u043e \u00ab\u043e\u0431\u0435\u0441\u0446\u0435\u043d\u0438\u0432\u0430\u043d\u0438\u044f\u00bb \u0432\u043f\u0435\u0447\u0430\u0442\u043b\u0435\u043d\u0438\u0439."},
+{"@type":"ListItem","position":5,"name":"\u041f\u0440\u0438 \u0432\u044b\u0431\u043e\u0440\u0435 \u0436\u0438\u043b\u044c\u044f \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u0443\u0447\u0438\u0442\u044b\u0432\u0430\u0439\u0442\u0435 \u043a\u043e\u043c\u043f\u0440\u043e\u043c\u0438\u0441\u0441\u044b \u043c\u0435\u0436\u0434\u0443 \u0440\u0430\u0437\u043d\u044b\u043c\u0438 \u0440\u0430\u0439\u043e\u043d\u0430\u043c\u0438 \u0434\u043b\u044f 6-\u0434\u043d\u0435\u0432\u043d\u043e\u0439 \u043f\u043e\u0435\u0437\u0434\u043a\u0438, \u0441\u0444\u043e\u043a\u0443\u0441\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u043e\u0439 \u043d\u0430 \u043e\u0441\u043c\u043e\u0442\u0440\u0435 \u0434\u043e\u0441\u0442\u043e\u043f\u0440\u0438\u043c\u0435\u0447\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u0435\u0439 (\u0421\u0430\u0445\u0430\u0440\u043d\u0430\u044f \u0433\u043e\u043b\u043e\u0432\u0430, \u0425\u0440\u0438\u0441\u0442\u043e\u0441-\u0418\u0441\u043a\u0443\u043f\u0438\u0442\u0435\u043b\u044c) \u0438 \u043f\u043b\u044f\u0436\u043d\u043e\u043c \u043e\u0442\u0434\u044b\u0445\u0435."},
+{"@type":"ListItem","position":6,"name":"\u0414\u043b\u044f \u043f\u043e\u043a\u0443\u043f\u043a\u0438 \u0444\u0443\u0442\u0431\u043e\u043b\u044c\u043d\u044b\u0445 \u0431\u0438\u043b\u0435\u0442\u043e\u0432 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u0442\u0441\u044f \u0437\u0430\u0440\u0430\u043d\u0435\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u0442\u044c\u0441\u044f \u043d\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u043c \u0441\u0430\u0439\u0442\u0435 \u043d\u0443\u0436\u043d\u043e\u0439 \u043a\u043e\u043c\u0430\u043d\u0434\u044b, \u0442\u0430\u043a \u043a\u0430\u043a \u0441\u0430\u0439\u0442\u044b \u043c\u043e\u0433\u0443\u0442 \u0440\u0430\u0431\u043e\u0442\u0430\u0442\u044c \u0441\u043e \u0441\u0431\u043e\u044f\u043c\u0438."},
+{"@type":"ListItem","position":7,"name":"\u041f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u043f\u043e\u0435\u0437\u0434\u043a\u0438 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044e \u0434\u043b\u044f \u043f\u043e\u0441\u0435\u0449\u0435\u043d\u0438\u044f \u041a\u0430\u0440\u043d\u0430\u0432\u0430\u043b\u0430 \u0442\u0440\u0435\u0431\u0443\u0435\u0442 \u0442\u0449\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0433\u043e \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f \u043c\u0430\u0440\u0448\u0440\u0443\u0442\u043e\u043c."},
+{"@type":"ListItem","position":8,"name":"\u0411\u043e\u043d\u0438\u0442\u043e, \u0440\u0430\u0441\u043f\u043e\u043b\u043e\u0436\u0435\u043d\u043d\u044b\u0439 \u0432 \u0448\u0442\u0430\u0442\u0435 \u041c\u0430\u0442\u0443-\u0413\u0440\u043e\u0441\u0443-\u0434\u0443-\u0421\u0443\u043b (MS), \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f, \u043e\u0447\u0435\u043d\u044c \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u0442\u0441\u044f \u0434\u043b\u044f \u044d\u043a\u043e\u0442\u0443\u0440\u0438\u0437\u043c\u0430, \u043e\u0441\u043e\u0431\u0435\u043d\u043d\u043e \u0434\u043b\u044f \u0441\u043d\u043e\u0440\u043a\u043b\u0438\u043d\u0433\u0430 \u0432 \u0420\u0438\u043e-\u0421\u0443\u043a\u0443\u0440\u0438, \u0438\u0437\u0432\u0435\u0441\u0442\u043d\u043e\u043c \u0441\u0432\u043e\u0438\u043c\u0438 \u0438\u0441\u043a\u043b\u044e\u0447\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u043f\u0440\u043e\u0437\u0440\u0430\u0447\u043d\u044b\u043c\u0438 \u0432\u043e\u0434\u0430\u043c\u0438."},
+{"@type":"ListItem","position":9,"name":"\u041f\u0430\u0440\u043a \u0448\u0442\u0430\u0442\u0430 \u0422\u0435\u0440\u0440\u0430-\u0420\u043e\u043d\u043a\u0430, \u0440\u0430\u0441\u043f\u043e\u043b\u043e\u0436\u0435\u043d\u043d\u044b\u0439 \u0432 \u0448\u0442\u0430\u0442\u0435 \u0413\u043e\u044f\u0441, \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f, \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043e\u0434\u043d\u043e\u0439 \u0438\u0437 \u043a\u0440\u0443\u043f\u043d\u0435\u0439\u0448\u0438\u0445 \u043f\u0435\u0449\u0435\u0440\u043d\u044b\u0445 \u0441\u0438\u0441\u0442\u0435\u043c \u042e\u0436\u043d\u043e\u0439 \u0410\u043c\u0435\u0440\u0438\u043a\u0438, \u0433\u0434\u0435 \u043d\u0430\u0445\u043e\u0434\u044f\u0442\u0441\u044f \u043e\u0431\u0448\u0438\u0440\u043d\u044b\u0435 \u0433\u0440\u043e\u0442\u044b, \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u044b\u0435 \u0440\u0435\u043a\u0438 \u0438 \u0443\u043d\u0438\u043a\u0430\u043b\u044c\u043d\u043e\u0435 \u0431\u0438\u043e\u0440\u0430\u0437\u043d\u043e\u043e\u0431\u0440\u0430\u0437\u0438\u0435, \u0430\u0434\u0430\u043f\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u043e\u0435 \u043a \u0431\u0438\u043e\u043c\u0443 \u0421\u0435\u0440\u0440\u0430\u0434\u043e."},
+{"@type":"ListItem","position":10,"name":"\u041e\u0442\u0435\u043b\u044c Belmond Hotel das Cataratas (\u0432\u043e\u0434\u043e\u043f\u0430\u0434\u044b \u0418\u0433\u0443\u0430\u0441\u0443, \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f) \u043f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u0435\u0442 \u043e\u0442\u043b\u0438\u0447\u043d\u043e\u0435 \u0440\u0430\u0441\u043f\u043e\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u043f\u0440\u044f\u043c\u043e \u0440\u044f\u0434\u043e\u043c \u0441 \u0432\u043e\u0434\u043e\u043f\u0430\u0434\u0430\u043c\u0438, \u043f\u043e\u0437\u0432\u043e\u043b\u044f\u044f \u043d\u0430\u0441\u043b\u0430\u0434\u0438\u0442\u044c\u0441\u044f \u0443\u043d\u0438\u043a\u0430\u043b\u044c\u043d\u044b\u043c\u0438 \u0432\u0438\u0434\u0430\u043c\u0438 \u043d\u0430 \u0440\u0430\u0441\u0441\u0432\u0435\u0442\u0435 \u0438 \u0437\u0430\u043a\u0430\u0442\u0435."},
+{"@type":"ListItem","position":11,"name":"\u0414\u043b\u044f \u043c\u0435\u0436\u0434\u0443\u0433\u043e\u0440\u043e\u0434\u043d\u0438\u0445 \u043f\u043e\u0435\u0437\u0434\u043e\u043a \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0440\u0430\u0441\u0441\u043c\u043e\u0442\u0440\u0438\u0442\u0435 \u0430\u0432\u0442\u043e\u0431\u0443\u0441\u044b \u043c\u0435\u0436\u0434\u0443 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0438 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e, \u0431\u0438\u043b\u0435\u0442\u044b \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b \u043d\u0430 \u0430\u0432\u0442\u043e\u0432\u043e\u043a\u0437\u0430\u043b\u0435 \u0422\u0438\u0435\u0442\u0435."},
+{"@type":"ListItem","position":12,"name":"\u041f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u0438 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044e \u0441\u043e\u043e\u0431\u0449\u0430\u044e\u0442 \u043e \u043f\u0440\u0435\u0438\u043c\u0443\u0449\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e \u043f\u043e\u0437\u0438\u0442\u0438\u0432\u043d\u043e\u043c \u043e\u043f\u044b\u0442\u0435, \u043d\u0435\u0441\u043c\u043e\u0442\u0440\u044f \u043d\u0430 \u043f\u0435\u0440\u0432\u043e\u043d\u0430\u0447\u0430\u043b\u044c\u043d\u044b\u0435 \u043e\u043f\u0430\u0441\u0435\u043d\u0438\u044f \u043f\u043e \u043f\u043e\u0432\u043e\u0434\u0443 \u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u0441\u0442\u0438."},
+{"@type":"ListItem","position":13,"name":"\u0412 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u043b\u0438\u0448\u044c \u043d\u0435\u043c\u043d\u043e\u0433\u0438\u0435 5-\u0437\u0432\u0435\u0437\u0434\u043e\u0447\u043d\u044b\u0435 \u043e\u0442\u0435\u043b\u0438 \u043f\u043e-\u043d\u0430\u0441\u0442\u043e\u044f\u0449\u0435\u043c\u0443 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044e\u0442 \u043c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u044b\u043c 5-\u0437\u0432\u0435\u0437\u0434\u043e\u0447\u043d\u044b\u043c \u0441\u0442\u0430\u043d\u0434\u0430\u0440\u0442\u0430\u043c, \u043f\u0440\u0438\u0447\u0435\u043c Copacabana Palace \u0447\u0430\u0441\u0442\u043e \u043d\u0430\u0437\u044b\u0432\u0430\u044e\u0442 \u0438\u0441\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435\u043c."},
+{"@type":"ListItem","position":14,"name":"\u0414\u043b\u044f \u043f\u043b\u044f\u0436\u043d\u043e\u0433\u043e \u043e\u0442\u0434\u044b\u0445\u0430 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0432 \u0438\u044e\u043d\u0435 \u043b\u0443\u0447\u0448\u0435 \u0432\u0441\u0435\u0433\u043e \u043f\u043e\u0434\u0445\u043e\u0434\u0438\u0442 \u0421\u0435\u0432\u0435\u0440\u043e-\u0412\u043e\u0441\u0442\u043e\u0447\u043d\u044b\u0439 \u0440\u0435\u0433\u0438\u043e\u043d."},
+{"@type":"ListItem","position":15,"name":"\u0420\u0435\u0433\u0438\u043e\u043d \u0421\u0435\u0440\u0440\u0430-\u0413\u0430\u0443\u0448\u0430 \u0432 \u0448\u0442\u0430\u0442\u0435 \u0420\u0438\u0443-\u0413\u0440\u0430\u043d\u0434\u0438-\u0434\u0443-\u0421\u0443\u043b, \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f, \u043f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u0435\u0442 \u0443\u043d\u0438\u043a\u0430\u043b\u044c\u043d\u044b\u0439 \u043e\u043f\u044b\u0442 \u0441 \u0435\u0432\u0440\u043e\u043f\u0435\u0439\u0441\u043a\u0438\u043c \u0432\u043b\u0438\u044f\u043d\u0438\u0435\u043c."},
+{"@type":"ListItem","position":16,"name":"\u041d\u0430\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u043f\u0430\u0440\u043a \u041b\u0435\u043d\u0441\u043e\u0439\u0441-\u041c\u0430\u0440\u0430\u043d\u044c\u0435\u043d\u0441\u0438\u0441 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0441\u043b\u0430\u0432\u0438\u0442\u0441\u044f \u0441\u0432\u043e\u0438\u043c\u0438 \u043f\u043e\u0442\u0440\u044f\u0441\u0430\u044e\u0449\u0438\u043c\u0438 \u043f\u0435\u0439\u0437\u0430\u0436\u0430\u043c\u0438 \u0438\u0437 \u0431\u0435\u043b\u044b\u0445 \u043f\u0435\u0441\u0447\u0430\u043d\u044b\u0445 \u0434\u044e\u043d \u0438 \u043f\u0440\u0435\u0441\u043d\u043e\u0432\u043e\u0434\u043d\u044b\u0445 \u043b\u0430\u0433\u0443\u043d."},
+{"@type":"ListItem","position":17,"name":"\u0424\u043e\u0440\u0442\u0430\u043b\u0435\u0437\u0430, \u0432 \u0447\u0430\u0441\u0442\u043d\u043e\u0441\u0442\u0438 \u043f\u043b\u044f\u0436 \u0418\u0440\u0430\u0441\u0435\u043c\u0430, \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u0442\u0441\u044f \u043a\u0430\u043a \u043f\u043b\u044f\u0436\u043d\u043e\u0435 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438."},
+{"@type":"ListItem","position":18,"name":"\u0421\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0435 \u0432\u0435\u0440\u0442\u043e\u043b\u0435\u0442\u043d\u044b\u0445 \u0438 \u043b\u043e\u0434\u043e\u0447\u043d\u044b\u0445 \u044d\u043a\u0441\u043a\u0443\u0440\u0441\u0438\u0439 \u043d\u0430 \u0432\u043e\u0434\u043e\u043f\u0430\u0434\u0430\u0445 \u0418\u0433\u0443\u0430\u0441\u0443, \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f."},
+{"@type":"ListItem","position":19,"name":"\u0414\u043b\u044f 3-\u043d\u0435\u0434\u0435\u043b\u044c\u043d\u043e\u0433\u043e \u043c\u0430\u0440\u0448\u0440\u0443\u0442\u0430 \u043f\u043e \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0441\u0444\u043e\u043a\u0443\u0441\u0438\u0440\u0443\u0439\u0442\u0435\u0441\u044c \u043d\u0430 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443, \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u0438 \u0432\u043e\u0434\u043e\u043f\u0430\u0434\u0430\u0445 \u0418\u0433\u0443\u0430\u0441\u0443."},
+{"@type":"ListItem","position":20,"name":"\u0414\u0435\u043b\u044f\u0442\u0441\u044f \u043e\u043f\u044b\u0442\u043e\u043c \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0438\u0439 \u0438 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f\u043c\u0438 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438."},
+{"@type":"ListItem","position":21,"name":"\u0414\u043b\u044f \u0431\u044e\u0434\u0436\u0435\u0442\u043d\u043e\u0433\u043e \u0438 \u0443\u0434\u043e\u0431\u043d\u043e\u0433\u043e \u0440\u0430\u0437\u043c\u0435\u0449\u0435\u043d\u0438\u044f \u0432 \u0424\u043e\u0441-\u0434\u0443-\u0418\u0433\u0443\u0430\u0441\u0443 \u0434\u043b\u044f \u043f\u043e\u0441\u0435\u0449\u0435\u043d\u0438\u044f \u0432\u043e\u0434\u043e\u043f\u0430\u0434\u043e\u0432 \u0418\u0433\u0443\u0430\u0441\u0443 \u0440\u0430\u0441\u0441\u043c\u043e\u0442\u0440\u0438\u0442\u0435 \u00abHotel Coroados Foz Express\u00bb."},
+{"@type":"ListItem","position":22,"name":"\u041f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0438\u044f \u043c\u0435\u0436\u0434\u0443 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0435\u0439, \u0410\u0440\u0433\u0435\u043d\u0442\u0438\u043d\u043e\u0439 \u0438 \u0427\u0438\u043b\u0438 \u0440\u0430\u0434\u0438 \u043f\u043b\u044f\u0436\u043d\u043e\u0433\u043e \u043e\u0442\u0434\u044b\u0445\u0430 \u0432 \u0438\u044e\u043d\u0435 \u0441\u043e\u043f\u0440\u044f\u0436\u0435\u043d\u044b \u0441 \u0442\u0440\u0443\u0434\u043d\u043e\u0441\u0442\u044f\u043c\u0438."},
+{"@type":"ListItem","position":23,"name":"\u0414\u043b\u044f \u0442\u0443\u0440\u043e\u0432 \u0432 \u0410\u043c\u0430\u0437\u043e\u043d\u0438\u044e \u0441 \u043e\u0442\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435\u043c \u0438\u0437 \u041c\u0430\u043d\u0430\u0443\u0441\u0430, \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f, Gero Tours \u043f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u0435\u0442 \u0441\u0442\u0430\u043d\u0434\u0430\u0440\u0442\u043d\u044b\u0439 \u043f\u0430\u043a\u0435\u0442 \u00ab\u0432\u0441\u0435 \u0432\u043a\u043b\u044e\u0447\u0435\u043d\u043e\u00bb \u043d\u0430 3 \u0434\u043d\u044f \u0438 2 \u043d\u043e\u0447\u0438 \u043f\u0440\u0438\u043c\u0435\u0440\u043d\u043e \u0437\u0430 1500 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0445 \u0440\u0435\u0430\u043b\u043e\u0432 \u043d\u0430 \u0447\u0435\u043b\u043e\u0432\u0435\u043a\u0430, \u0432\u043a\u043b\u044e\u0447\u0430\u044f \u0442\u0440\u0430\u043d\u0441\u0444\u0435\u0440 \u0438\u0437 \u0430\u044d\u0440\u043e\u043f\u043e\u0440\u0442\u0430."},
+{"@type":"ListItem","position":24,"name":"\u0414\u043d\u0435\u0432\u043d\u043e\u0439 \u0431\u044e\u0434\u0436\u0435\u0442 \u0434\u043b\u044f \u0442\u0443\u0440\u0438\u0441\u0442\u0430 \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u0441\u0438\u043b\u044c\u043d\u043e \u0432\u0430\u0440\u044c\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0432 \u0437\u0430\u0432\u0438\u0441\u0438\u043c\u043e\u0441\u0442\u0438 \u043e\u0442 \u043f\u0440\u0435\u0434\u043f\u043e\u0447\u0442\u0435\u043d\u0438\u0439."},
+{"@type":"ListItem","position":25,"name":"\u0422\u0435\u043c, \u043a\u0442\u043e \u043f\u043b\u0430\u043d\u0438\u0440\u0443\u0435\u0442 \u043f\u043e\u0441\u0435\u0442\u0438\u0442\u044c \u0411\u043e\u043d\u0438\u0442\u0443 (\u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f) \u0432 \u0438\u044e\u043b\u0435, \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u0442\u0441\u044f \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u0438 \u0437\u0430\u0440\u0430\u043d\u0435\u0435."},
+{"@type":"ListItem","position":26,"name":"\u041e\u043f\u0442\u0438\u043c\u0430\u043b\u044c\u043d\u043e\u0435 \u0432\u0440\u0435\u043c\u044f \u0434\u043b\u044f \u043f\u043e\u0441\u0435\u0449\u0435\u043d\u0438\u044f \u0413\u0430\u043b\u0430\u043f\u0430\u0433\u043e\u0441\u0441\u043a\u0438\u0445 \u043e\u0441\u0442\u0440\u043e\u0432\u043e\u0432 \u0437\u0430\u0432\u0438\u0441\u0438\u0442 \u043e\u0442 \u043f\u0440\u0438\u043e\u0440\u0438\u0442\u0435\u0442\u043e\u0432."},
+{"@type":"ListItem","position":27,"name":"\u041f\u0440\u0438 \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0438 \u0436\u0438\u043b\u044c\u044f \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e, \u043e\u0441\u043e\u0431\u0435\u043d\u043d\u043e \u0434\u043b\u044f \u0434\u043b\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0433\u043e \u043f\u0440\u043e\u0436\u0438\u0432\u0430\u043d\u0438\u044f \u0438\u043b\u0438 \u0432 \u0432\u044b\u0441\u043e\u043a\u0438\u0439 \u0441\u0435\u0437\u043e\u043d (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u043d\u0430 \u041a\u0430\u0440\u043d\u0430\u0432\u0430\u043b), \u0440\u0430\u0441\u0441\u043c\u043e\u0442\u0440\u0438\u0442\u0435 \u043f\u043b\u0430\u0442\u0444\u043e\u0440\u043c\u044b \u043f\u043e\u043c\u0438\u043c\u043e Booking.com \u0438 Trip.com."},
+{"@type":"ListItem","position":28,"name":"\u0411\u0443\u0434\u044c\u0442\u0435 \u043e\u0441\u0442\u043e\u0440\u043e\u0436\u043d\u044b \u0441 \u043f\u043e\u0434\u043e\u0437\u0440\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u0434\u0435\u0448\u0435\u0432\u043e\u0439 \u0430\u0440\u0435\u043d\u0434\u043e\u0439 \u043a\u0432\u0430\u0440\u0442\u0438\u0440 \u043d\u0430 \u041a\u0430\u0440\u043d\u0430\u0432\u0430\u043b \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e, \u043e\u0441\u043e\u0431\u0435\u043d\u043d\u043e \u0432 \u0446\u0435\u043d\u0442\u0440\u0430\u043b\u044c\u043d\u044b\u0445 \u0440\u0430\u0439\u043e\u043d\u0430\u0445, \u0442\u0430\u043a\u0438\u0445 \u043a\u0430\u043a \u0420\u0443\u0430 \u0421\u0435\u043d\u0430\u0434\u043e\u0440 \u0414\u0430\u043d\u0442\u0430\u0441."},
+{"@type":"ListItem","position":29,"name":"\u0412\u043e\u0437\u043d\u0438\u043a\u043b\u0438 \u043e\u043f\u0430\u0441\u0435\u043d\u0438\u044f \u043f\u043e \u043f\u043e\u0432\u043e\u0434\u0443 \u043b\u0435\u0433\u0438\u0442\u0438\u043c\u043d\u043e\u0441\u0442\u0438 \u043f\u043e\u043a\u0443\u043f\u043a\u0438 \u0431\u0438\u043b\u0435\u0442\u043e\u0432 \u043d\u0430 \u041a\u0430\u0440\u043d\u0430\u0432\u0430\u043b \u0432 \u0420\u0438\u043e \u0447\u0435\u0440\u0435\u0437 \u0442\u0430\u043a\u0438\u0435 \u043f\u043b\u0430\u0442\u0444\u043e\u0440\u043c\u044b, \u043a\u0430\u043a GetYourGuide \u0438 \u0430\u043d\u0430\u043b\u043e\u0433\u0438\u0447\u043d\u044b\u0435 \u0441\u0430\u0439\u0442\u044b, \u043e\u0441\u043e\u0431\u0435\u043d\u043d\u043e \u043a\u043e\u0433\u0434\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0435 \u0433\u0438\u0434\u044b \u0437\u0430\u044f\u0432\u043b\u044f\u044e\u0442, \u0447\u0442\u043e \u0431\u0438\u043b\u0435\u0442\u044b \u043d\u0435\u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b."},
+{"@type":"ListItem","position":30,"name":"\u0411\u0438\u043b\u0435\u0442\u044b \u043d\u0430 \u0441\u0442\u0430\u0442\u0443\u044e \u0425\u0440\u0438\u0441\u0442\u0430-\u0418\u0441\u043a\u0443\u043f\u0438\u0442\u0435\u043b\u044f (Cristo Redentor) \u043c\u043e\u0436\u043d\u043e \u043a\u0443\u043f\u0438\u0442\u044c \u0437\u0430\u0440\u0430\u043d\u0435\u0435 \u0438\u043b\u0438 \u043d\u0430 \u043c\u0435\u0441\u0442\u0435."},
+{"@type":"ListItem","position":31,"name":"\u041f\u0440\u0438 \u043f\u043e\u0438\u0441\u043a\u0435 \u0431\u044e\u0434\u0436\u0435\u0442\u043d\u043e\u0433\u043e \u0436\u0438\u043b\u044c\u044f \u0432 \u041a\u043e\u043f\u0430\u043a\u0430\u0431\u0430\u043d\u0435, \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e, \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u0438 \u043c\u043e\u0433\u0443\u0442 \u043b\u0435\u0433\u043a\u043e \u043d\u0430\u0439\u0442\u0438 \u043f\u0443\u043d\u043a\u0442\u044b \u043e\u0431\u043c\u0435\u043d\u0430 \u0432\u0430\u043b\u044e\u0442\u044b (\u00abcasas de c\u00e2mbio\u00bb, \u0442\u0430\u043a \u043a\u0430\u043a \u043e\u043d\u0438 \u0448\u0438\u0440\u043e\u043a\u043e \u0440\u0430\u0441\u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0435\u043d\u044b \u0432 \u044d\u0442\u043e\u043c \u0440\u0430\u0439\u043e\u043d\u0435."},
+{"@type":"ListItem","position":32,"name":"\u041a\u0430\u0440\u043d\u0430\u0432\u0430\u043b \u0432 \u0420\u0438\u043e \u043f\u0440\u043e\u0445\u043e\u0434\u0438\u0442 \u043d\u0430 \u0421\u0430\u043c\u0431\u0430\u0434\u0440\u043e\u043c\u0435 \u0432 \u0446\u0435\u043d\u0442\u0440\u0435 \u0420\u0438\u043e, \u043e\u0431\u044b\u0447\u043d\u043e \u0441 21:00 \u0434\u043e \u0443\u0442\u0440\u0430, \u0432 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u043d\u044b\u0435 \u0434\u0430\u0442\u044b (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, 13\u201317 \u0444\u0435\u0432\u0440\u0430\u043b\u044f), \u0441 \u0444\u0438\u043d\u0430\u043b\u044c\u043d\u044b\u043c \u043f\u0430\u0440\u0430\u0434\u043e\u043c."},
+{"@type":"ListItem","position":33,"name":"\u0412\u043e \u0432\u0440\u0435\u043c\u044f \u043a\u0430\u0440\u043d\u0430\u0432\u0430\u043b\u0430 \u0432 \u0420\u0438\u043e \u043f\u043e \u0432\u0441\u0435\u043c\u0443 \u0433\u043e\u0440\u043e\u0434\u0443 \u043f\u0440\u043e\u0445\u043e\u0434\u044f\u0442 \u0443\u043b\u0438\u0447\u043d\u044b\u0435 \u0432\u0435\u0447\u0435\u0440\u0438\u043d\u043a\u0438, \u0438\u0437\u0432\u0435\u0441\u0442\u043d\u044b\u0435 \u043a\u0430\u043a \u00ab\u0431\u043b\u043e\u043a\u043e\u0441\u00bb."},
+{"@type":"ListItem","position":34,"name":"\u0414\u043b\u044f \u043f\u0440\u0430\u0437\u0434\u043d\u043e\u0432\u0430\u043d\u0438\u044f \u041d\u043e\u0432\u043e\u0433\u043e \u0433\u043e\u0434\u0430 \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e: \u0441\u0443\u043f\u0435\u0440\u043c\u0430\u0440\u043a\u0435\u0442\u044b \u043e\u0442\u043a\u0440\u044b\u0442\u044b \u0434\u043e \u0432\u0435\u0447\u0435\u0440\u0430 31 \u0434\u0435\u043a\u0430\u0431\u0440\u044f."},
+{"@type":"ListItem","position":35,"name":"\u041f\u043e\u0441\u0435\u0449\u0435\u043d\u0438\u0435 \u0440\u0435\u043f\u0435\u0442\u0438\u0446\u0438\u0439 \u0448\u043a\u043e\u043b\u044b \u0441\u0430\u043c\u0431\u044b \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u2014 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u043c\u044b\u0439 \u043c\u0435\u0441\u0442\u043d\u044b\u0439 \u043e\u043f\u044b\u0442."},
+{"@type":"ListItem","position":36,"name":"\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0435 \u0431\u0438\u043b\u0435\u0442\u044b \u043d\u0430 \u0425\u0440\u0438\u0441\u0442\u0430-\u0418\u0441\u043a\u0443\u043f\u0438\u0442\u0435\u043b\u044f \u043c\u043e\u0436\u043d\u043e \u043a\u0443\u043f\u0438\u0442\u044c \u043d\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u043c \u0441\u0430\u0439\u0442\u0435 \u0438\u043b\u0438 \u0432 \u0027Centro de visitantes paineiras\u0027 \u043f\u0440\u0438\u043c\u0435\u0440\u043d\u043e \u0437\u0430 85 BRL."},
+{"@type":"ListItem","position":37,"name":"\u041c\u043e\u0440\u044f\u043a, \u043d\u0430\u0432\u0438\u0433\u0430\u0442\u043e\u0440, \u0438\u0449\u0435\u0442 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u0438 \u043f\u043e \u0436\u0438\u043b\u044c\u044e \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u043d\u0430 10-\u0434\u043d\u0435\u0432\u043d\u044b\u0439 \u043f\u0435\u0440\u0438\u043e\u0434 \u043f\u0435\u0440\u0435\u0434 \u0432\u043e\u0437\u0432\u0440\u0430\u0449\u0435\u043d\u0438\u0435\u043c \u0434\u043e\u043c\u043e\u0439."},
+{"@type":"ListItem","position":38,"name":"\u041f\u043b\u043e\u0442\u0438\u043d\u0430 \u0418\u0442\u0430\u0439\u043f\u0443 \u0440\u044f\u0434\u043e\u043c \u0441 \u0424\u043e\u0441-\u0434\u0443-\u0418\u0433\u0443\u0430\u0441\u0443, \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f, \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043e\u0431\u044a\u0435\u043a\u0442\u043e\u043c \u0441 \u043e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d\u043d\u044b\u043c \u0434\u043e\u0441\u0442\u0443\u043f\u043e\u043c."},
+{"@type":"ListItem","position":39,"name":"\u041f\u0440\u043e\u0434\u0430\u0436\u0430 \u0431\u0438\u043b\u0435\u0442\u043e\u0432 \u043d\u0430 \u0421\u0430\u043c\u0431\u0430\u0434\u0440\u043e\u043c \u043d\u0430 \u043a\u0430\u0440\u043d\u0430\u0432\u0430\u043b \u0432 \u0420\u0438\u043e \u043e\u0431\u044b\u0447\u043d\u043e \u043d\u0430\u0447\u0438\u043d\u0430\u0435\u0442\u0441\u044f \u0432 \u0438\u044e\u043b\u0435."},
+{"@type":"ListItem","position":40,"name":"\u0412\u043e \u0432\u0440\u0435\u043c\u044f \u0432\u0438\u0437\u0438\u0442\u0430 \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u0438\u0441\u0441\u043b\u0435\u0434\u0443\u0439\u0442\u0435 \u0440\u0430\u0439\u043e\u043d \u041b\u0430\u043f\u0430."},
+{"@type":"ListItem","position":41,"name":"\u0414\u043b\u044f \u043b\u0443\u0447\u0448\u0438\u0445 \u043f\u0430\u043d\u043e\u0440\u0430\u043c\u043d\u044b\u0445 \u0444\u043e\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0439 \u0441\u0442\u0430\u0442\u0443\u0438 \u0425\u0440\u0438\u0441\u0442\u0430-\u0418\u0441\u043a\u0443\u043f\u0438\u0442\u0435\u043b\u044f \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u0440\u0430\u0441\u0441\u043c\u043e\u0442\u0440\u0438\u0442\u0435 \u0442\u0430\u043a\u0438\u0435 \u0441\u043c\u043e\u0442\u0440\u043e\u0432\u044b\u0435 \u043f\u043b\u043e\u0449\u0430\u0434\u043a\u0438, \u043a\u0430\u043a \u0433\u043e\u0440\u0430 \u0421\u0430\u0445\u0430\u0440\u043d\u0430\u044f \u0433\u043e\u043b\u043e\u0432\u0430 (P\u00e3o de A\u00e7\u00facar) \u0438 \u0441\u043c\u043e\u0442\u0440\u043e\u0432\u0430\u044f \u043f\u043b\u043e\u0449\u0430\u0434\u043a\u0430 \u0412\u0438\u0441\u0442\u0430-\u041a\u0438\u043d\u0435\u0437\u0430."},
+{"@type":"ListItem","position":42,"name":"\u0414\u043b\u044f \u043f\u043e\u043b\u0435\u0442\u043e\u0432 \u043d\u0430 \u043f\u0430\u0440\u0430\u043f\u043b\u0430\u043d\u0435 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u043f\u043e\u0441\u0442\u0443\u043f\u0430\u043b\u0438 \u0437\u0430\u043f\u0440\u043e\u0441\u044b \u043e \u043c\u0435\u0441\u0442\u0430\u0445 \u0438 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0441\u0442\u0438."},
+{"@type":"ListItem","position":43,"name":"\u0412\u043e \u0432\u0440\u0435\u043c\u044f \u041a\u0430\u0440\u043d\u0430\u0432\u0430\u043b\u0430 \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u043d\u0430\u0439\u0442\u0438 \u043f\u0430\u0440\u043a\u043e\u0432\u043a\u0443 \u0432 \u0440\u0430\u0439\u043e\u043d\u0435 \u0426\u0435\u043d\u0442\u0440 \u0431\u044b\u0432\u0430\u0435\u0442 \u0442\u0440\u0443\u0434\u043d\u043e."},
+{"@type":"ListItem","position":44,"name":"\u0420\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u043c\u044b\u0435 \u0437\u0430\u043d\u044f\u0442\u0438\u044f \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0432\u043a\u043b\u044e\u0447\u0430\u044e\u0442 10-\u043c\u0438\u043d\u0443\u0442\u043d\u044b\u0439 \u043f\u043e\u043b\u0435\u0442 \u043d\u0430 \u0432\u0435\u0440\u0442\u043e\u043b\u0435\u0442\u0435 \u043d\u0430\u0434 \u0432\u043e\u0434\u043e\u043f\u0430\u0434\u0430\u043c\u0438 \u0437\u0430 685 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0445 \u0440\u0435\u0430\u043b\u043e\u0432, \u043f\u043e\u0435\u0437\u0434\u043a\u0438 \u043d\u0430 \u0442\u0430\u043a\u0441\u0438 \u0432 \u0433\u043e\u0440\u043e\u0434\u0430\u0445 (\u0446\u0435\u043d\u0430 \u043e\u0431\u0441\u0443\u0436\u0434\u0430\u0435\u0442\u0441\u044f \u043e\u0442 350 \u0434\u043e 200 \u0440\u0435\u0430\u043b\u043e\u0432), \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 Uber \u0438 \u0433\u0440\u0443\u043f\u043f\u043e\u0432\u044b\u0435 \u044d\u043a\u0441\u043a\u0443\u0440\u0441\u0438\u0438 \u0432 \u0444\u0430\u0432\u0435\u043b\u044b \u0432 \u0420\u0438\u043e \u0441 \u0440\u0443\u0441\u0441\u043a\u043e\u0433\u043e\u0432\u043e\u0440\u044f\u0449\u0438\u043c \u0433\u0438\u0434\u043e\u043c \u0434\u043b\u044f \u044d\u043a\u043e\u043d\u043e\u043c\u0438\u0438."},
+{"@type":"ListItem","position":45,"name":"\u0414\u043b\u044f \u0432\u044b\u0431\u043e\u0440\u0430 \u0431\u043e\u043b\u0435\u0435 \u0447\u0438\u0441\u0442\u044b\u0445 \u043f\u043b\u044f\u0436\u0435\u0439 \u0440\u044f\u0434\u043e\u043c \u0441 \u0411\u043e\u0442\u0430\u0444\u043e\u0433\u043e, \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e, \u0440\u0430\u0441\u0441\u043c\u043e\u0442\u0440\u0438\u0442\u0435 \u0440\u0430\u0439\u043e\u043d \u0431\u0443\u0445\u0442\u044b \u0432\u043e\u0437\u043b\u0435 \u0433\u043e\u0440\u044b \u0421\u0430\u0445\u0430\u0440\u043d\u0430\u044f \u0433\u043e\u043b\u043e\u0432\u0430 (\u041f\u0430\u0443-\u0434\u0438-\u0410\u0441\u0443\u043a\u0430\u0440)."},
+{"@type":"ListItem","position":46,"name":"\u041e\u0442\u0435\u043b\u044c Belmont \u0440\u0430\u0441\u043f\u043e\u043b\u043e\u0436\u0435\u043d \u0432 \u043e\u0442\u043b\u0438\u0447\u043d\u043e\u043c \u043c\u0435\u0441\u0442\u0435 \u0440\u044f\u0434\u043e\u043c \u0441 \u0432\u043e\u0434\u043e\u043f\u0430\u0434\u043e\u043c \u0418\u0433\u0443\u0430\u0441\u0443 \u0441 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u043e\u0439 \u0441\u0442\u043e\u0440\u043e\u043d\u044b."},
+{"@type":"ListItem","position":47,"name":"\u041c\u0430\u0440\u0438\u043a\u0430 \u2014 \u043f\u0440\u0438\u0431\u0440\u0435\u0436\u043d\u044b\u0439 \u043c\u0443\u043d\u0438\u0446\u0438\u043f\u0430\u043b\u0438\u0442\u0435\u0442 \u0432 \u0448\u0442\u0430\u0442\u0435 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e, \u0440\u0430\u0441\u043f\u043e\u043b\u043e\u0436\u0435\u043d\u043d\u044b\u0439 \u043f\u0440\u0438\u043c\u0435\u0440\u043d\u043e \u0432 50 \u043a\u043c \u043e\u0442 \u0446\u0435\u043d\u0442\u0440\u0430 \u0420\u0438\u043e (50\u201360 \u043c\u0438\u043d\u0443\u0442 \u0435\u0437\u0434\u044b)."},
+{"@type":"ListItem","position":48,"name":"\u0427\u0442\u043e\u0431\u044b \u043a\u0443\u043f\u0438\u0442\u044c \u0431\u0438\u043b\u0435\u0442\u044b \u043d\u0430 \u043c\u0430\u0442\u0447 \u0424\u043b\u0430\u043c\u0435\u043d\u0433\u043e \u043d\u0430 \u0441\u0442\u0430\u0434\u0438\u043e\u043d\u0435 \u041c\u0430\u0440\u0430\u043a\u0430\u043d\u0430, \u043f\u043e\u0441\u0435\u0442\u0438\u0442\u0435 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0439 \u0441\u0430\u0439\u0442 \u0424\u043b\u0430\u043c\u0435\u043d\u0433\u043e."},
+{"@type":"ListItem","position":49,"name":"\u041f\u0430\u0440\u0430\u0442\u0438, \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f, \u043f\u0435\u0440\u0435\u0436\u0438\u0432\u0430\u0435\u0442 \u0441\u0443\u0445\u043e\u0439 \u0441\u0435\u0437\u043e\u043d \u0432 \u043f\u0435\u0440\u0438\u043e\u0434, \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u0439 \u0438\u044e\u043d\u044e-\u0438\u044e\u043b\u044e, \u043a\u043e\u0433\u0434\u0430 \u0443\u0440\u043e\u0432\u0435\u043d\u044c \u043e\u0441\u0430\u0434\u043a\u043e\u0432 \u043e\u0431\u044b\u0447\u043d\u043e \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u0442 \u043c\u0435\u043d\u0435\u0435 100 \u043c\u043c."},
+{"@type":"ListItem","position":50,"name":"\u041f\u043e\u043a\u0443\u043f\u043a\u0430 \u0431\u0438\u043b\u0435\u0442\u043e\u0432 \u043d\u0430 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0435 \u0444\u0443\u0442\u0431\u043e\u043b\u044c\u043d\u044b\u0435 \u043c\u0430\u0442\u0447\u0438 (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u00ab\u0424\u043b\u0430\u043c\u0435\u043d\u0433\u043e\u00bb) \u0447\u0430\u0441\u0442\u043e \u0442\u0440\u0435\u0431\u0443\u0435\u0442 \u043c\u0435\u0441\u0442\u043d\u043e\u0439 \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u043e\u0439 \u043a\u0440\u0435\u0434\u0438\u0442\u043d\u043e\u0439 \u0438\u043b\u0438 \u0434\u0435\u0431\u0435\u0442\u043e\u0432\u043e\u0439 \u043a\u0430\u0440\u0442\u044b."},
+{"@type":"ListItem","position":51,"name":"\u041e\u0434\u043d\u043e\u0434\u043d\u0435\u0432\u043d\u0430\u044f \u043f\u043e\u0435\u0437\u0434\u043a\u0430 \u0432 \u0424\u043e\u0441-\u0434\u0443-\u0418\u0433\u0443\u0430\u0441\u0443 \u0438\u0437 \u0420\u0438\u043e \u043e\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0438\u043c\u0430 \u0434\u043b\u044f \u043f\u043e\u0441\u0435\u0449\u0435\u043d\u0438\u044f \u0431\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u043e\u0439 \u0441\u0442\u043e\u0440\u043e\u043d\u044b \u0438 \u041f\u0430\u0440\u043a\u0430 \u043f\u0442\u0438\u0446."},
+{"@type":"ListItem","position":52,"name":"\u0422\u0443\u0440\u0438\u0441\u0442\u044b \u0447\u0430\u0441\u0442\u043e \u043f\u0443\u0442\u0430\u044e\u0442 \u043c\u0435\u0441\u0442\u043d\u0443\u044e \u0444\u0430\u0443\u043d\u0443 \u043d\u0430 \u043f\u043b\u043e\u0449\u0430\u0434\u0438 \u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0438 (\u041a\u0430\u043c\u043f\u043e-\u0434\u0435-\u0421\u0430\u043d\u0442\u0430\u043d\u0430) \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e."},
+{"@type":"ListItem","position":53,"name":"\u0412 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e, \u0432 \u0440\u0430\u0439\u043e\u043d\u0435 \u0411\u043e\u0442\u0430\u0444\u043e\u0433\u043e, \u0432 \u0442\u043e\u0440\u0433\u043e\u0432\u043e\u043c \u0446\u0435\u043d\u0442\u0440\u0435 Botafogo Praia Shopping \u043d\u0430 \u043e\u0434\u043d\u043e\u043c \u0438\u0437 \u0432\u0435\u0440\u0445\u043d\u0438\u0445 \u044d\u0442\u0430\u0436\u0435\u0439 (\u043f\u043e \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u044f\u043c, \u043d\u0430 9-\u043c \u044d\u0442\u0430\u0436\u0435) \u0435\u0441\u0442\u044c \u0440\u0435\u0441\u0442\u043e\u0440\u0430\u043d \u043d\u0430 \u043a\u0440\u044b\u0448\u0435."},
+{"@type":"ListItem","position":54,"name":"\u0414\u043b\u044f \u0434\u0432\u0443\u0445\u0434\u043d\u0435\u0432\u043d\u043e\u0433\u043e \u0432\u0438\u0437\u0438\u0442\u0430 \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0440\u0430\u0441\u0441\u043c\u043e\u0442\u0440\u0438\u0442\u0435 \u0441\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0435 \u0434\u043e\u0441\u0442\u043e\u043f\u0440\u0438\u043c\u0435\u0447\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u0438: \u041c\u0443\u0437\u0435\u0439 \u0444\u0443\u0442\u0431\u043e\u043b\u0430, \u043f\u0430\u0440\u043a \u0418\u0431\u0438\u0440\u0430\u043f\u0443\u044d\u0440\u0430, \u041a\u0430\u0444\u0435\u0434\u0440\u0430\u043b\u044c\u043d\u044b\u0439 \u0441\u043e\u0431\u043e\u0440 \u0421\u0435, \u043f\u0440\u043e\u0441\u043f\u0435\u043a\u0442 \u0410\u0432\u0435\u043d\u0438\u0434\u0430 \u041f\u0430\u0443\u043b\u0438\u0441\u0442\u0430 \u0438 \u0425\u0443\u0434\u043e\u0436\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439 \u043c\u0443\u0437\u0435\u0439."},
+{"@type":"ListItem","position":55,"name":"\u0414\u043b\u044f \u043f\u0440\u043e\u0436\u0438\u0432\u0430\u043d\u0438\u044f \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u0442 \u043e\u0442\u0435\u043b\u044c Windsor Martinique \u043d\u0430 \u043f\u043b\u044f\u0436\u0435 \u041a\u043e\u043f\u0430\u043a\u0430\u0431\u0430\u043d\u0430."},
+{"@type":"ListItem","position":56,"name":"\u0420\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u043c\u043e\u0435 \u0432\u0440\u0435\u043c\u044f \u043d\u0430 \u0432\u043e\u0434\u043e\u043f\u0430\u0434\u044b \u0418\u0433\u0443\u0430\u0441\u0443: \u0432\u0441\u0435\u0433\u043e 2-3 \u0434\u043d\u044f."},
+{"@type":"ListItem","position":57,"name":"\u041d\u0430 \u043f\u043b\u044f\u0436\u0430\u0445 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u041a\u043e\u043f\u0430\u043a\u0430\u0431\u0430\u043d\u0430, \u0418\u043f\u0430\u043d\u0435\u043c\u0430) \u0435\u0441\u0442\u044c \u043f\u043e\u043b\u0438\u0432\u0430\u0435\u043c\u044b\u0435 \u0434\u043e\u0440\u043e\u0436\u043a\u0438 (\u00ab\u0442\u0435\u043c\u043d\u044b\u0435 \u043f\u043e\u043b\u043e\u0441\u044b\u00bb), \u0447\u0442\u043e\u0431\u044b \u043f\u0440\u0435\u0434\u043e\u0442\u0432\u0440\u0430\u0442\u0438\u0442\u044c \u043e\u0436\u043e\u0433\u0438 \u043e\u0442 \u0433\u043e\u0440\u044f\u0447\u0435\u0433\u043e \u043f\u0435\u0441\u043a\u0430, \u0432\u0435\u0434\u0443\u0449\u0438\u0435 \u043a \u0431\u0430\u0440\u0440\u0430\u043a\u0430\u043c (\u043f\u043b\u044f\u0436\u043d\u044b\u043c \u043a\u0438\u043e\u0441\u043a\u0430\u043c)."},
+{"@type":"ListItem","position":58,"name":"\u041d\u043e\u0432\u043e\u0433\u043e\u0434\u043d\u044f\u044f \u043d\u043e\u0447\u044c \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 (\u043e\u0441\u043e\u0431\u0435\u043d\u043d\u043e \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e) \u0432\u044b\u0437\u044b\u0432\u0430\u0435\u0442 \u044d\u043a\u0441\u0442\u0440\u0435\u043c\u0430\u043b\u044c\u043d\u044b\u0439 \u0440\u043e\u0441\u0442 \u0446\u0435\u043d \u043d\u0430 \u0436\u0438\u043b\u044c\u0435 \u0438 \u0431\u043e\u043b\u044c\u0448\u043e\u0435 \u0441\u043a\u043e\u043f\u043b\u0435\u043d\u0438\u0435 \u043b\u044e\u0434\u0435\u0439."},
+{"@type":"ListItem","position":59,"name":"\u041f\u043b\u044f\u0436\u0438 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u0441\u043e\u0441\u0442\u043e\u044f\u0442 \u0438\u0437 12 \u00ab\u043f\u043e\u0441\u0442\u043e\u0432\u00bb."},
+{"@type":"ListItem","position":60,"name":"\u041f\u043e\u043b\u0443\u0447\u0438\u0442\u0435 \u0443\u0434\u043e\u0432\u043e\u043b\u044c\u0441\u0442\u0432\u0438\u0435 \u043e\u0442 \u043a\u0430\u0440\u043d\u0430\u0432\u0430\u043b\u0430 \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u0431\u0435\u0437 \u0431\u0438\u043b\u0435\u0442\u043e\u0432 \u043d\u0430 \u0421\u0430\u043c\u0431\u043e\u0434\u0440\u043e\u043c."},
+{"@type":"ListItem","position":61,"name":"\u0414\u043b\u044f 3-\u0434\u043d\u0435\u0432\u043d\u043e\u0439 \u043f\u043e\u0435\u0437\u0434\u043a\u0438 \u0432 \u0411\u0435\u043b\u0443-\u041e\u0440\u0438\u0437\u043e\u043d\u0442\u0438 \u0440\u0430\u0441\u0441\u043c\u043e\u0442\u0440\u0438\u0442\u0435 \u043e\u0434\u043d\u043e\u0434\u043d\u0435\u0432\u043d\u044b\u0435 \u0432\u044b\u0435\u0437\u0434\u044b \u0432 \u041e\u0440\u0443-\u041f\u0440\u0435\u0442\u0443 (\u043a\u043e\u043b\u043e\u043d\u0438\u0430\u043b\u044c\u043d\u044b\u0439 \u0433\u043e\u0440\u043e\u0434, \u043e\u0431\u044a\u0435\u043a\u0442 \u0432\u0441\u0435\u043c\u0438\u0440\u043d\u043e\u0433\u043e \u043d\u0430\u0441\u043b\u0435\u0434\u0438\u044f \u042e\u041d\u0415\u0421\u041a\u041e) \u0438 \u0418\u043d\u044c\u043e\u0442\u0438\u043c (\u043c\u0443\u0437\u0435\u0439 \u0441\u043e\u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e\u0433\u043e \u0438\u0441\u043a\u0443\u0441\u0441\u0442\u0432\u0430 \u043f\u043e\u0434 \u043e\u0442\u043a\u0440\u044b\u0442\u044b\u043c \u043d\u0435\u0431\u043e\u043c \u0438 \u0431\u043e\u0442\u0430\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0441\u0430\u0434)."},
+{"@type":"ListItem","position":62,"name":"\u041e\u043f\u0435\u0440\u0430\u0442\u043e\u0440\u044b \u043b\u043e\u0434\u043e\u0447\u043d\u044b\u0445 \u0442\u0443\u0440\u043e\u0432 \u043d\u0430 \u0432\u043e\u0434\u043e\u043f\u0430\u0434\u044b \u0418\u0433\u0443\u0430\u0441\u0443 \u043f\u0440\u0435\u0434\u043e\u0441\u0442\u0430\u0432\u043b\u044f\u044e\u0442 \u043f\u043b\u0430\u0442\u043d\u044b\u0435 \u0443\u0441\u043b\u0443\u0433\u0438 \u043a\u0430\u043c\u0435\u0440 \u0445\u0440\u0430\u043d\u0435\u043d\u0438\u044f \u0440\u044f\u0434\u043e\u043c \u0441 \u0437\u043e\u043d\u043e\u0439 \u043e\u0442\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f."},
+{"@type":"ListItem","position":63,"name":"\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0438 \u0441\u043f\u0440\u0430\u0448\u0438\u0432\u0430\u044e\u0442 \u043e \u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u0441\u0442\u0438 \u043f\u0435\u0448\u0435\u0445\u043e\u0434\u043d\u044b\u0445 \u043c\u0430\u0440\u0448\u0440\u0443\u0442\u043e\u0432 \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e, \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u043e \u043e\u0442 \u0441\u0442\u0430\u043d\u0446\u0438\u0438 \u043c\u0435\u0442\u0440\u043e \u0411\u043e\u0442\u0430\u0444\u043e\u0433\u043e \u0434\u043e \u0442\u043e\u0440\u0433\u043e\u0432\u043e\u0433\u043e \u0446\u0435\u043d\u0442\u0440\u0430 \u0420\u0438\u043e \u0421\u0443\u043b."},
+{"@type":"ListItem","position":64,"name":"\u0411\u044e\u0434\u0436\u0435\u0442 \u043d\u0430 \u043c\u0435\u0441\u044f\u0446 \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u0434\u043b\u044f \u043e\u0434\u0438\u043d\u043e\u0447\u043d\u043e\u0433\u043e \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u0430, \u043f\u043e\u043a\u0440\u044b\u0432\u0430\u044e\u0449\u0438\u0439 \u0431\u0430\u0437\u043e\u0432\u043e\u0435 \u043f\u0440\u043e\u0436\u0438\u0432\u0430\u043d\u0438\u0435 \u0438 \u043f\u0438\u0442\u0430\u043d\u0438\u0435, \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c \u043e\u0446\u0435\u043d\u0435\u043d \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0435 \u043e\u043f\u044b\u0442\u0430 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u0439."},
+{"@type":"ListItem","position":65,"name":"\u0414\u043b\u044f \u0438\u043d\u0434\u0438\u0432\u0438\u0434\u0443\u0430\u043b\u044c\u043d\u044b\u0445 \u0442\u0443\u0440\u043e\u0432 \u0432 \u0424\u043e\u0441-\u0434\u0443-\u0418\u0433\u0443\u0430\u0441\u0443 \u0438 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443, \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f, \u0440\u0430\u0441\u0441\u043c\u043e\u0442\u0440\u0438\u0442\u0435 \u0441\u0435\u0440\u0432\u0438\u0441\u044b, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0441\u0432\u044f\u0437\u044b\u0432\u0430\u044e\u0442 \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u043e\u0432 \u0441 \u043c\u0435\u0441\u0442\u043d\u044b\u043c\u0438 \u0433\u0438\u0434\u0430\u043c\u0438 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0443\u043d\u0438\u043a\u0430\u043b\u044c\u043d\u043e\u0433\u043e \u043e\u043f\u044b\u0442\u0430."},
+{"@type":"ListItem","position":66,"name":"Trip.com \u043f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u0435\u0442 \u0441\u043a\u0438\u0434\u043a\u0438 \u043d\u0430 \u043e\u0442\u0435\u043b\u0438 \u0434\u043e 25%, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0441\u0443\u043c\u043c\u0438\u0440\u0443\u044e\u0442\u0441\u044f \u0441 \u0434\u0440\u0443\u0433\u0438\u043c\u0438 \u0430\u043a\u0446\u0438\u044f\u043c\u0438, \u0434\u043b\u044f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u0439, \u043a\u0443\u043f\u0438\u0432\u0448\u0438\u0445 \u0430\u0432\u0438\u0430\u0431\u0438\u043b\u0435\u0442\u044b \u0447\u0435\u0440\u0435\u0437 \u0438\u0445 \u043f\u043b\u0430\u0442\u0444\u043e\u0440\u043c\u0443."},
+{"@type":"ListItem","position":67,"name":"\u0414\u043b\u044f \u043f\u0440\u043e\u0432\u0435\u0434\u0435\u043d\u0438\u044f \u044d\u043a\u0441\u043a\u0443\u0440\u0441\u0438\u0439 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u0442\u0441\u044f \u043c\u0435\u0441\u0442\u043d\u044b\u0439 \u0433\u0438\u0434 \u0410\u043d\u0442\u043e\u043d (\u0411\u0440\u0430\u0437\u0438\u043b\u044c\u0441\u043a\u0438\u0439 \u043b\u0435\u0433\u0438\u043e\u043d\u0435\u0440)."},
+{"@type":"ListItem","position":68,"name":"\u041e\u0441\u043d\u043e\u0432\u043d\u044b\u0435 \u0442\u0443\u0440\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0434\u043e\u0441\u0442\u043e\u043f\u0440\u0438\u043c\u0435\u0447\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u0438 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443: \u041c\u0443\u0437\u0435\u0439 \u043f\u043e\u0440\u0442\u0443\u0433\u0430\u043b\u044c\u0441\u043a\u043e\u0433\u043e \u044f\u0437\u044b\u043a\u0430, \u0441\u0442\u0430\u043d\u0446\u0438\u044f \u041b\u0443\u0437, \u041f\u0438\u043d\u0430\u043a\u043e\u0442\u0435\u043a\u0430, \u043f\u0430\u0440\u043a \u0418\u0431\u0438\u0440\u0430\u043f\u0443\u044d\u0440\u0430, \u043f\u0440\u043e\u0441\u043f\u0435\u043a\u0442 \u041f\u0430\u0443\u043b\u0438\u0441\u0442\u0430 (\u0438\u0437\u0432\u0435\u0441\u0442\u0435\u043d \u0441\u043c\u043e\u0442\u0440\u043e\u0432\u044b\u043c\u0438 \u043f\u043b\u043e\u0449\u0430\u0434\u043a\u0430\u043c\u0438) \u0438 \u041b\u0438\u0431\u0435\u0440\u0434\u0430\u0434\u0435 (\u044f\u043f\u043e\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d, \u0433\u0434\u0435 \u043d\u0430\u0445\u043e\u0434\u0438\u0442\u0441\u044f \u041c\u0443\u0437\u0435\u0439 \u044f\u043f\u043e\u043d\u0441\u043a\u043e\u0439 \u0438\u043c\u043c\u0438\u0433\u0440\u0430\u0446\u0438\u0438)."},
+{"@type":"ListItem","position":69,"name":"\u0414\u043b\u044f \u043f\u0440\u0435\u043c\u0438\u0430\u043b\u044c\u043d\u043e\u0433\u043e \u043c\u044f\u0441\u043d\u043e\u0433\u043e \u0443\u0436\u0438\u043d\u0430 (\u0432 \u0441\u0442\u0438\u043b\u0435 \u0447\u0443\u0440\u0440\u0430\u0441\u043a\u0430\u0440\u0438\u044f) \u0441 \u0436\u0438\u0432\u043e\u043f\u0438\u0441\u043d\u044b\u043c \u0432\u0438\u0434\u043e\u043c \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u044e \u00abAssador Rio\u00bb (\u0440\u0430\u0441\u043f\u043e\u043b\u043e\u0436\u0435\u043d \u0432 \u0410\u0442\u0435\u0440\u0440\u043e-\u0434\u0443-\u0424\u043b\u0430\u043c\u0435\u043d\u0433\u043e)."},
+{"@type":"ListItem","position":70,"name":"\u0420\u0435\u0441\u0442\u043e\u0440\u0430\u043d \u00abSal e Brasa\u00bb \u0432 \u041d\u0430\u0442\u0430\u043b\u0435 \u043e\u0447\u0435\u043d\u044c \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u0442\u0441\u044f."},
+{"@type":"ListItem","position":71,"name":"\u041f\u0440\u0438 \u043f\u043e\u0441\u0435\u0449\u0435\u043d\u0438\u0438 \u0421\u0430\u043c\u0431\u043e\u0434\u0440\u043e\u043c\u0430 \u043d\u0430 \u043a\u0430\u0440\u043d\u0430\u0432\u0430\u043b\u0435 \u0432 \u0420\u0438\u043e \u043f\u043e\u0441\u0435\u0442\u0438\u0442\u0435\u043b\u044f\u043c \u0440\u0430\u0437\u0440\u0435\u0448\u0435\u043d\u043e \u043f\u0440\u043e\u043d\u043e\u0441\u0438\u0442\u044c \u043b\u044e\u0431\u044b\u0435 \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u044b \u0432 \u043f\u043b\u0430\u0441\u0442\u0438\u043a\u043e\u0432\u043e\u0439 \u0443\u043f\u0430\u043a\u043e\u0432\u043a\u0435."},
+{"@type":"ListItem","position":72,"name":"\u0418\u0449\u0435\u0442\u0441\u044f \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u043e\u0431 \u0443\u0447\u0430\u0441\u0442\u0438\u0438 \u0432 \u0437\u0430\u0431\u0435\u0433\u0435 \u043f\u043e \u0442\u0440\u0430\u0441\u0441\u0435 \u0424\u043e\u0440\u043c\u0443\u043b\u044b-1 \u0432 \u0418\u043d\u0442\u0435\u0440\u043b\u0430\u0433\u043e\u0441\u0435, \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443, \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u043e\u043c \u043d\u0430 1 \u043c\u0430\u044f."},
+{"@type":"ListItem","position":73,"name":"\u0412 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u043c\u043d\u043e\u0433\u0438\u0435 \u0437\u0430\u0432\u0435\u0434\u0435\u043d\u0438\u044f, \u0432\u043a\u043b\u044e\u0447\u0430\u044f \u0441\u0443\u043f\u0435\u0440\u043c\u0430\u0440\u043a\u0435\u0442\u044b, \u0431\u044b\u043b\u0438 \u0437\u0430\u043a\u0440\u044b\u0442\u044b \u043d\u0430 \u0420\u043e\u0436\u0434\u0435\u0441\u0442\u0432\u043e."},
+{"@type":"ListItem","position":74,"name":"\u0421\u0440\u0430\u0432\u043d\u0438\u0442\u0435 \u0424\u043e\u0440\u0442\u0430\u043b\u0435\u0437\u0443 \u0441 \u0416\u0435\u0440\u0438\u043a\u043e\u0430\u043a\u043e\u0430\u0440\u043e\u0439 \u0438 \u041f\u0438\u043f\u043e\u0439 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0434\u043b\u044f \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u043e\u0432, \u0438\u0449\u0443\u0449\u0438\u0445 \u0431\u043e\u043b\u0435\u0435 \u0441\u043f\u043e\u043a\u043e\u0439\u043d\u043e\u0433\u043e \u043e\u0442\u0434\u044b\u0445\u0430."},
+{"@type":"ListItem","position":75,"name":"\u0412 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u043c\u043e\u0436\u043d\u043e \u043d\u0430\u0439\u0442\u0438 \u0448\u0430\u0443\u0440\u043c\u0443 (\u0438\u043b\u0438 \u00ab\u0448\u0430\u0432\u0435\u0440\u043c\u0443\u00bb)."},
+{"@type":"ListItem","position":76,"name":"\u041c\u043e\u0436\u043d\u043e \u0434\u043e\u0439\u0442\u0438 \u0434\u043e \u0441\u0442\u0430\u0442\u0443\u0438 \u0425\u0440\u0438\u0441\u0442\u0430-\u0418\u0441\u043a\u0443\u043f\u0438\u0442\u0435\u043b\u044f (\u0433\u043e\u0440\u0430 \u041a\u043e\u0440\u043a\u043e\u0432\u0430\u0434\u0443) \u043f\u0435\u0448\u043a\u043e\u043c \u0447\u0435\u0440\u0435\u0437 \u0434\u0436\u0443\u043d\u0433\u043b\u0438 \u0431\u0435\u0437 \u0433\u0438\u0434\u0430."},
+{"@type":"ListItem","position":77,"name":"\u0414\u043b\u044f \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u0439 \u043f\u043e \u043c\u0443\u0437\u0435\u044f\u043c \u0438 \u043a\u0443\u043b\u044c\u0442\u0443\u0440\u043d\u044b\u043c \u0434\u043e\u0441\u0442\u043e\u043f\u0440\u0438\u043c\u0435\u0447\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044f\u043c \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438: \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0440\u0430\u0441\u0441\u043c\u043e\u0442\u0440\u0438\u0442\u0435 \u043f\u043e\u0441\u0435\u0449\u0435\u043d\u0438\u0435 Beco do Batman \u0440\u0430\u0434\u0438 \u0435\u0433\u043e \u0441\u0442\u0440\u0438\u0442-\u0430\u0440\u0442\u0430 (\u043c\u0443\u0437\u0435\u0439 \u043f\u043e\u0434 \u043e\u0442\u043a\u0440\u044b\u0442\u044b\u043c \u043d\u0435\u0431\u043e\u043c)."},
+{"@type":"ListItem","position":78,"name":"\u0426\u0435\u043d\u044b \u043d\u0430 \u0431\u0438\u043b\u0435\u0442\u044b \u043d\u0430 \u0430\u0440\u0433\u0435\u043d\u0442\u0438\u043d\u0441\u043a\u0443\u044e \u0441\u0442\u043e\u0440\u043e\u043d\u0443 \u0432\u043e\u0434\u043e\u043f\u0430\u0434\u043e\u0432 \u0418\u0433\u0443\u0430\u0441\u0443 \u0443\u043a\u0430\u0437\u0430\u043d\u044b \u0432 \u0430\u0440\u0433\u0435\u043d\u0442\u0438\u043d\u0441\u043a\u0438\u0445 \u043f\u0435\u0441\u043e (ARS)."},
+{"@type":"ListItem","position":79,"name":"\u0411\u0438\u043b\u0435\u0442\u044b \u043d\u0430 \u0433\u043e\u0440\u0443 \u0421\u0430\u0445\u0430\u0440\u043d\u0430\u044f \u0433\u043e\u043b\u043e\u0432\u0430 (P\u00e3o de A\u00e7\u00facar) \u043c\u043e\u0436\u043d\u043e \u043a\u0443\u043f\u0438\u0442\u044c \u043d\u0430 \u043c\u0435\u0441\u0442\u0435."},
+{"@type":"ListItem","position":80,"name":"\u0412 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u0441\u0435\u043d\u0442\u044f\u0431\u0440\u044c \u0438 \u043e\u043a\u0442\u044f\u0431\u0440\u044c \u2014 \u0432 \u0446\u0435\u043b\u043e\u043c \u0445\u043e\u0440\u043e\u0448\u0438\u0435 \u043c\u0435\u0441\u044f\u0446\u044b \u0434\u043b\u044f \u043a\u0443\u043f\u0430\u043d\u0438\u044f."},
+{"@type":"ListItem","position":81,"name":"\u041f\u0440\u043e\u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0435 \u0438\u043d\u0442\u0435\u0440\u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0439 \u0442\u0443\u0440\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u043e\u0439 \u043a\u0430\u0440\u0442\u044b \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438, \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0439 \u0434\u043b\u044f MAPS.ME."},
+{"@type":"ListItem","position":82,"name":"\u0420\u0435\u043a\u043b\u0430\u043c\u043d\u043e\u0435 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435 \u0434\u043b\u044f \u0438\u043d\u0442\u0435\u0440\u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0439 \u043e\u0444\u043b\u0430\u0439\u043d-\u043a\u0430\u0440\u0442\u044b \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0434\u043b\u044f MAPS.ME."},
+{"@type":"ListItem","position":83,"name":"\u041f\u043b\u044f\u0436\u0438 \u0421\u0430\u043d\u0442\u043e\u0441\u0430 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u043f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u044e\u0442 \u043b\u0443\u0447\u0448\u0438\u0435 \u0443\u0434\u043e\u0431\u0441\u0442\u0432\u0430 (\u0442\u0443\u0430\u043b\u0435\u0442\u044b, \u043a\u0440\u0430\u043d\u044b \u0434\u043b\u044f \u043d\u043e\u0433, \u0434\u0443\u0448\u0438) \u0438 \u0443\u0441\u0438\u043b\u0435\u043d\u043d\u043e\u0435 \u043f\u0440\u0438\u0441\u0443\u0442\u0441\u0442\u0432\u0438\u0435 \u043f\u043e\u043b\u0438\u0446\u0438\u0438 \u043b\u0435\u0442\u043e\u043c."},
+{"@type":"ListItem","position":84,"name":"\u041d\u0430\u0439\u0434\u0438\u0442\u0435 \u043c\u0435\u0441\u0442\u043d\u044b\u0445 \u0433\u0438\u0434\u043e\u0432 \u0434\u043b\u044f \u044d\u043a\u0441\u043a\u0443\u0440\u0441\u0438\u0439 \u043f\u043e \u0444\u0430\u0432\u0435\u043b\u0430\u043c \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e."},
+{"@type":"ListItem","position":85,"name":"\u0414\u043b\u044f \u043d\u0430\u0438\u043b\u0443\u0447\u0448\u0438\u0445 \u0432\u043f\u0435\u0447\u0430\u0442\u043b\u0435\u043d\u0438\u0439 \u043e\u0442 \u0432\u0435\u0440\u0442\u043e\u043b\u0435\u0442\u043d\u043e\u0433\u043e \u0442\u0443\u0440\u0430 \u043d\u0430\u0434 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u0432\u043e \u0432\u0440\u0435\u043c\u044f \u0437\u0430\u043a\u0430\u0442\u0430 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u0442\u0441\u044f \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u043f\u043e\u043b\u0435\u0442 \u043d\u0430 17:00-17:30. \u042d\u0442\u043e \u0432\u0440\u0435\u043c\u044f \u043e\u0431\u044b\u0447\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0430\u0435\u0442 \u0441 \u043e\u043f\u0442\u0438\u043c\u0430\u043b\u044c\u043d\u044b\u043c \u043f\u0435\u0440\u0438\u043e\u0434\u043e\u043c \u0434\u043b\u044f \u043d\u0430\u0431\u043b\u044e\u0434\u0435\u043d\u0438\u044f \u0437\u0430 \u0437\u0430\u043a\u0430\u0442\u043e\u043c."},
+{"@type":"ListItem","position":86,"name":"\u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u043a\u0430\u043a \u0433\u043e\u0440\u043e\u0434 \u0434\u043b\u044f \u043f\u0435\u0448\u0438\u0445 \u043f\u0440\u043e\u0433\u0443\u043b\u043e\u043a, \u0431\u0435\u0433\u0430 \u0438 \u0435\u0437\u0434\u044b \u043d\u0430 \u0432\u0435\u043b\u043e\u0441\u0438\u043f\u0435\u0434\u0435."},
+{"@type":"ListItem","position":87,"name":"\u0420\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u043c\u0430\u044f \u043e\u043f\u0442\u0438\u043c\u0430\u043b\u044c\u043d\u0430\u044f \u043f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0441\u0435\u0449\u0435\u043d\u0438\u044f \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e, \u043f\u043e\u043c\u0438\u043c\u043e \u043a\u0443\u043b\u044c\u0442\u043e\u0432\u043e\u0439 \u0441\u0442\u0430\u0442\u0443\u0438 \u0425\u0440\u0438\u0441\u0442\u0430-\u0418\u0441\u043a\u0443\u043f\u0438\u0442\u0435\u043b\u044f."},
+{"@type":"ListItem","position":88,"name":"\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044e \u043e \u043a\u0430\u0440\u043d\u0430\u0432\u0430\u043b\u044c\u043d\u044b\u0445 \u0443\u043b\u0438\u0447\u043d\u044b\u0445 \u0432\u0435\u0447\u0435\u0440\u0438\u043d\u043a\u0430\u0445 (\u0431\u043b\u043e\u043a\u043e\u0441) \u0432 \u0420\u0438\u043e \u043c\u043e\u0436\u043d\u043e \u043d\u0430\u0439\u0442\u0438 \u0432 \u0440\u0430\u0441\u043f\u0438\u0441\u0430\u043d\u0438\u0438 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0027blocosjr.oficial\u0027 \u0432 Instagram."},
+{"@type":"ListItem","position":89,"name":"\u0421\u043e\u0431\u0435\u0440\u0438\u0442\u0435 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044e \u0438 \u043e\u0442\u0437\u044b\u0432\u044b \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u0439 \u043e \u0442\u0443\u0440\u0430\u0445 \u043f\u043e \u0440\u0435\u043a\u0435 \u0410\u043c\u0430\u0437\u043e\u043d\u043a\u0430 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438."},
+{"@type":"ListItem","position":90,"name":"\u041f\u043e\u043c\u043e\u0449\u044c \u0432 \u043f\u043e\u0438\u0441\u043a\u0435 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u043e\u0433\u043e \u043c\u0443\u0440\u0430\u043b\u0430 \u0432 \u0440\u0430\u0439\u043e\u043d\u0435 \u041f\u043e\u0440\u0442\u043e-\u041c\u0430\u0440\u0430\u0432\u0438\u043b\u044c\u044f \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e."},
+{"@type":"ListItem","position":91,"name":"\u041d\u0430\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u043f\u0430\u0440\u043a \u0422\u0438\u0436\u0443\u043a\u0430 \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u043f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u0435\u0442 \u043c\u043d\u043e\u0433\u043e\u0447\u0438\u0441\u043b\u0435\u043d\u043d\u044b\u0435 \u043f\u0435\u0448\u0435\u0445\u043e\u0434\u043d\u044b\u0435 \u0442\u0440\u043e\u043f\u044b \u0438 \u0432\u043e\u0434\u043e\u043f\u0430\u0434\u044b."},
+{"@type":"ListItem","position":92,"name":"\u041f\u043e\u0433\u043e\u0434\u0430 \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u0437\u0438\u043c\u043e\u0439 (\u0438\u044e\u043b\u044c): \u0434\u043d\u0435\u0432\u043d\u0430\u044f \u0442\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430 \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u0442 \u043e\u0442 22\u00b0C \u0434\u043e 28\u00b0C."},
+{"@type":"ListItem","position":93,"name":"\u0414\u043b\u044f \u0432\u0435\u0440\u0442\u043e\u043b\u0435\u0442\u043d\u044b\u0445 \u044d\u043a\u0441\u043a\u0443\u0440\u0441\u0438\u0439 \u0441 \u043e\u0442\u043a\u0440\u044b\u0442\u044b\u043c\u0438 \u0434\u0432\u0435\u0440\u044f\u043c\u0438 \u0432 \u0420\u0438\u043e-\u0434\u0435-\u0416\u0430\u043d\u0435\u0439\u0440\u043e \u043a\u043e\u043c\u043f\u0430\u043d\u0438\u044f \u00abRio2fly\u00bb \u043d\u0430\u0441\u0442\u043e\u044f\u0442\u0435\u043b\u044c\u043d\u043e \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u0442\u0441\u044f \u043e\u043f\u044b\u0442\u043d\u044b\u043c\u0438 \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u0430\u043c\u0438 \u0434\u043b\u044f \u0444\u043e\u0442\u043e\u0441\u044a\u0435\u043c\u043a\u0438 \u0438 \u0436\u0438\u0432\u043e\u043f\u0438\u0441\u043d\u044b\u0445 \u043f\u043e\u043b\u0435\u0442\u043e\u0432."},
+{"@type":"ListItem","position":94,"name":"\u041f\u0440\u0435\u0434\u043b\u043e\u0436\u0438\u0442\u0435 \u0431\u044b\u0441\u0442\u0440\u044b\u0435 \u0437\u0430\u043d\u044f\u0442\u0438\u044f \u0438\u043b\u0438 \u0434\u043e\u0441\u0442\u043e\u043f\u0440\u0438\u043c\u0435\u0447\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u0438 \u0440\u044f\u0434\u043e\u043c \u0441 \u0410\u0432\u0435\u043d\u0438\u0434\u0430 \u041f\u0430\u0443\u043b\u0438\u0441\u0442\u0430 \u0432 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u0434\u043b\u044f \u0442\u0443\u0440\u0438\u0441\u0442\u0430, \u0443 \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u043e\u0441\u0442\u0430\u043b\u043e\u0441\u044c \u0432\u0441\u0435\u0433\u043e 1,5 \u0447\u0430\u0441\u0430 \u0434\u043e \u0432\u044b\u043b\u0435\u0442\u0430, \u043f\u043e\u043c\u0438\u043c\u043e \u043f\u0430\u0440\u043a\u0430 \u0422\u0440\u0438\u0430\u043d\u043e\u043d."},
+{"@type":"ListItem","position":95,"name":"MASP (\u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443) \u043f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u0435\u0442 \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u044b\u0439 \u0432\u0445\u043e\u0434 \u043f\u043e \u043f\u044f\u0442\u043d\u0438\u0446\u0430\u043c \u043f\u043e\u0441\u043b\u0435 18:00. \u041f\u0438\u043d\u0430\u043a\u043e\u0442\u0435\u043a\u0430 (\u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443) \u043f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u0435\u0442 \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u044b\u0439 \u0432\u0445\u043e\u0434 \u043f\u043e \u0441\u0443\u0431\u0431\u043e\u0442\u0430\u043c."},
+{"@type":"ListItem","position":96,"name":"\u041e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u043d\u043e \u0441\u0442\u043e\u0438\u0442 \u0441\u044a\u0435\u0437\u0434\u0438\u0442\u044c \u043d\u0430 \u0434\u0435\u043d\u044c \u0438\u0437 \u0421\u0430\u043d-\u041f\u0430\u0443\u043b\u0443 \u043a \u043e\u043a\u0435\u0430\u043d\u0443 \u0434\u043b\u044f \u043a\u0443\u043f\u0430\u043d\u0438\u044f \u0438 \u043f\u043b\u044f\u0436\u043d\u043e\u0433\u043e \u043e\u0442\u0434\u044b\u0445\u0430."},
+{"@type":"ListItem","position":97,"name":"\u0412\u0445\u043e\u0434 \u0432 \u043c\u0443\u0437\u0435\u0439 MASP \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438 \u0447\u0430\u0441\u0442\u043e \u043c\u043e\u0436\u043d\u043e \u043e\u0444\u043e\u0440\u043c\u0438\u0442\u044c \u043d\u0430 \u043c\u0435\u0441\u0442\u0435."},
+{"@type":"ListItem","position":98,"name":"\u041f\u043e\u0441\u0435\u0442\u0438\u0442\u0435\u043b\u0438 \u043f\u0440\u043e\u0432\u043e\u0434\u0438\u043b\u0438 \u0432\u0440\u0435\u043c\u044f \u0443 \u0441\u0442\u0430\u0442\u0443\u0438 \u0425\u0440\u0438\u0441\u0442\u0430-\u0418\u0441\u043a\u0443\u043f\u0438\u0442\u0435\u043b\u044f, \u0433\u0443\u043b\u044f\u044f \u043f\u043e \u043f\u0435\u0440\u0438\u043c\u0435\u0442\u0440\u0443, \u043e\u0442\u0434\u044b\u0445\u0430\u044f \u0432 \u043a\u0430\u0444\u0435, \u0440\u0430\u0441\u0441\u043c\u0430\u0442\u0440\u0438\u0432\u0430\u044f \u0441\u0443\u0432\u0435\u043d\u0438\u0440\u044b \u0438 \u043f\u043e\u0441\u0435\u0449\u0430\u044f \u0447\u0430\u0441\u043e\u0432\u043d\u044e \u0432\u043d\u0443\u0442\u0440\u0438 \u0441\u0442\u0430\u0442\u0443\u0438."},
+{"@type":"ListItem","position":99,"name":"\u0414\u043b\u044f \u043f\u043e\u043a\u0443\u043f\u043a\u0438 \u0431\u0438\u043b\u0435\u0442\u043e\u0432 \u043d\u0430 \u043c\u0430\u0442\u0447\u0438 \u00ab\u0424\u043b\u0430\u043c\u0435\u043d\u0433\u043e\u00bb \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u0442\u044c\u0441\u044f \u043d\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u043c \u0441\u0430\u0439\u0442\u0435 \u00ab\u0424\u043b\u0430\u043c\u0435\u043d\u0433\u043e\u00bb \u0438 \u043f\u0440\u043e\u0439\u0442\u0438 \u043f\u0440\u043e\u0446\u0435\u0441\u0441 \u0432\u0435\u0440\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u0438 \u043b\u0438\u0447\u043d\u043e\u0441\u0442\u0438."},
+{"@type":"ListItem","position":100,"name":"\u0412 \u0444\u0435\u0432\u0440\u0430\u043b\u0435 \u043d\u0430 \u0424\u0435\u0440\u043d\u0430\u043d\u0434\u0443-\u0434\u0438-\u041d\u043e\u0440\u043e\u043d\u044c\u044f \u043e\u0431\u044b\u0447\u043d\u043e \u0441\u0442\u043e\u0438\u0442 \u0442\u0435\u043f\u043b\u0430\u044f \u043f\u043e\u0433\u043e\u0434\u0430 \u0441 \u0443\u043c\u0435\u0440\u0435\u043d\u043d\u044b\u043c\u0438 \u043e\u0441\u0430\u0434\u043a\u0430\u043c\u0438 \u0438 \u0432\u0435\u0442\u0440\u043e\u043c, \u0447\u0442\u043e \u043c\u043e\u0436\u0435\u0442 \u043f\u0440\u0438\u0432\u0435\u0441\u0442\u0438 \u043a \u0431\u043e\u043b\u0435\u0435 \u0432\u044b\u0441\u043e\u043a\u0438\u043c \u0432\u043e\u043b\u043d\u0430\u043c."}
+]}
+</script>
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 \u041d\u043e\u0447\u044c", DAY="\u2600 \u0414\u0435\u043d\u044c";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>
