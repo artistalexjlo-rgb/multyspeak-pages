@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>any: Voos e Conexões — experiência real dos chats · Luky</title>
+<meta name="description" content="Experiência real sobre «Voos e Conexões» em any: dicas, casos e regras dos chats. Para o seu caso — pergunte ao Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/pt/any/s/transport/flights-and-connections/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="ar" href="https://info.multyspeak.online/ar/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="de" href="https://info.multyspeak.online/de/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="fr" href="https://info.multyspeak.online/fr/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="hi" href="https://info.multyspeak.online/hi/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="it" href="https://info.multyspeak.online/it/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="ja" href="https://info.multyspeak.online/ja/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="ko" href="https://info.multyspeak.online/ko/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="th" href="https://info.multyspeak.online/th/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="tr" href="https://info.multyspeak.online/tr/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="zh" href="https://info.multyspeak.online/zh/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/any/s/transport/flights-and-connections/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+/* тег типа абзаца (хвост-антологии: lifehack/reglament/howto/risk/case/service) */
+.tag{display:inline-block;font-family:var(--font-mono);font-weight:400;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);
+  border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:2px;white-space:nowrap}
+.tag.risk{color:var(--red);border-color:var(--red)}
+.tag.reglament{color:var(--accent);border-color:var(--accent)}
+.tag.lifehack{color:var(--green);border-color:var(--green)}
+.tag.service{color:var(--yellow);border-color:var(--yellow)}
+.tag.howto{color:var(--hud);border-color:var(--hud)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portal de info · qualquer país · sem enrolação</span>
+    </div>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="" href="/ru/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/ar/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>AR</a>
+        <a class="" href="/de/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>DE</a>
+        <a class="" href="/en/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/fr/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>FR</a>
+        <a class="" href="/hi/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>HI</a>
+        <a class="" href="/it/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>IT</a>
+        <a class="" href="/ja/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>JA</a>
+        <a class="" href="/ko/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>KO</a>
+        <a class="on" href="/pt/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+        <a class="" href="/th/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TH</a>
+        <a class="" href="/tr/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TR</a>
+        <a class="" href="/zh/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ZH</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Noite</span></button>
+    </div>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/pt/">Início</a> /
+    <a href="/pt/any/">any</a> /
+    <b>Voos e Conexões</b>
+  </nav>
+
+
+  
+  <h1>Voos e Conexões: como é em any — em primeira mão</h1>
+
+  <h2>Da experiência real</h2>
+  <details open><summary><span class="sumq"><span class="tag service">serviço</span>Passageiros da Qatar Airways com escalas longas (geralmente de 8 a 12 horas ou mais, dependendo das regras da tarifa e disponibilidade) podem se qualificar para um hotel de trânsito gratuito, incluindo traslados de aeroporto.</span><span></span></summary>
+    <div class="a">Os passageiros devem se informar no balcão de transferências da companhia aérea em Doha caso não tenha sido pré-reservado.
+    <div class="src">✓ 2 relatos dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">dica</span>Ao transitar pelo Aeroporto Internacional de Hamad (DOH) em Doha, uma escala de 1 hora e 20 minutos para um voo de conexão em um único bilhete sem bagagem despachada é geralmente considerada viável, desde que o primeiro voo esteja no horário.</span><span></span></summary>
+    <div class="a">O tempo mínimo de conexão (MCT) no DOH é de 45 minutos. Os passageiros são aconselhados a desembarcar primeiro e seguir rapidamente para o próximo portão. Funcionários do aeroporto estão disponíveis para ajudar. A bagagem geralmente não é recolhida durante essas conexões, apenas a triagem da bagagem de mão é necessária. Observe que o transporte terrestre para o terminal às vezes pode levar de 20 a 25 minutos. Para uma experiência mais relaxada com tempo para explorar as comodidades do aeroporto (duty-free, jardins, trem), recomenda-se uma escala de 2 a 3 horas.
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">dica</span>Ao reservar voos com escalas curtas (por exemplo, 1h 25m) através de Guangzhou (CAN) com a China Southern Airlines em uma única passagem: 1. Confirme se o tempo de escala é suficiente, considerando possíveis atrasos, tempo de trânsito, verificações de segurança e mudanças de portão.</span><span></span></summary>
+    <div class="a">Embora as companhias aéreas frequentemente reacomodem os passageiros no próximo voo disponível se a conexão inicial for perdida devido a uma passagem única, escalas curtas acarretam um alto risco de perder a conexão. 2. A bagagem geralmente é transferida automaticamente em passagens únicas, mas é sensato confirmar isso. 3. Se a companhia aérea oferece uma conexão tão curta, significa que é tecnicamente viável, mas o sucesso real depende de muitos fatores, incluindo a eficiência operacional da companhia aérea, os procedimentos aeroportuários e o movimento oportuno do passageiro. Alguns viajantes relatam assistência acelerada no aeroporto base da companhia aérea (como Guangzhou para a CSA) em caso de conexões perdidas. Recomenda-se verificar as políticas da companhia aérea e considerar escalas mais longas para uma experiência de viagem menos estressante, especialmente com transferências internacionais e potenciais requisitos de visto/entrada se a escala exceder os limites de imigração.
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">guia</span>Conexões curtas (menos de 1,5 horas) acarretam alto risco.</span><span></span></summary>
+    <div class="a">Dicas importantes: 1. Sempre imprima cartões de embarque físicos para evitar problemas técnicos ou de formato. 2. Se estiver atrasado, não espere na fila; identifique funcionários do aeroporto, mostre o cartão de embarque e peça assistência. 3. Informe a tripulação de cabine durante o voo se a conexão estiver apertada; eles podem solicitar suporte em solo. 4. Use cartões de embarque eletrônicos no celular para triagem rápida caso os físicos não estejam disponíveis, mas recomenda-se backup físico.
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">dica</span>Para acessar a sala VIP da Moroccan Airlines durante o trânsito: siga em direção aos portões de conexão/trânsito (siga as placas de &#39;connection fly&#39;).</span><span></span></summary>
+    <div class="a">Após os controles de passaporte e segurança, localize o balcão de informações da companhia aérea. Diga 'free lounge' várias vezes ao apresentar seu cartão de embarque. Embora possam oferecer uma opção 'VIP' paga, insista na 'sala gratuita'. Você deve receber um voucher para um restaurante que oferece uma refeição (por exemplo, shawarma, iogurte, Sprite) e chá/café ilimitado. A sala oferece assentos confortáveis e é uma opção melhor do que esperar nos portões comuns.
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">dica</span>Escalas estendidas (por exemplo, 7-10 dias) em voos internacionais são possíveis, mas muitas vezes aumentam o preço do bilhete.</span><span></span></summary>
+    <div class="a">Escalas simples são normalmente limitadas a cerca de 1,5 dias sem aumentos significativos de custo. Algumas companhias aéreas podem oferecer estadias gratuitas em hotéis e vistos para escalas longas (mais de 12 horas), mas isso não garante o acesso à cidade. Considerar rotas alternativas através de hubs como Cairo ou Istambul pode ser econômico, mas esteja ciente de possíveis verificações de segurança, especialmente em Istambul.
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">dica</span>Para conexões longas, existem várias opções.</span><span></span></summary>
+    <div class="a">Companhias aéreas como a Turkish Airlines podem oferecer hotéis de trânsito de cortesia para passageiros com conexões longas; informe-se com a companhia aérea com antecedência. Alternativamente, reserve um hotel próximo ao aeroporto ou dentro da cidade. Certifique-se de ter acesso ao Wi-Fi do aeroporto para permanecer conectado. Se uma criança estiver viajando sozinha, discuta possíveis cenários e medidas de preparação para minimizar o estresse.
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">caso</span>O acesso a salas VIP de negócios geralmente inclui limites de tempo, normalmente 2-4 horas antes de um voo, especialmente para longas conexões ou passageiros que não estão em trânsito.</span><span></span></summary>
+    <div class="a">As regras variam por aeroporto/sala VIP. Exemplos incluem monitoramento rigoroso (Omã, onde um quarto estilo hotel foi fornecido para 3 passes) e extensões flexíveis (Shenzhen, onde uma entrada paga permitiu uma estadia de 7 horas com comodidades devido a problemas no aplicativo). Sheremetyevo (Moscou) é notado pela flexibilidade, mas pode ficar muito lotado.
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">dica</span>Ao fazer conexões de voo em Istambul (IST) com um único bilhete, a companhia aérea providenciará um novo voo caso você perca sua conexão devido a um atraso.</span><span></span></summary>
+    <div class="a">Esteja preparado para um traslado que pode ser em ritmo acelerado. Informe os comissários de bordo sobre o seu curto tempo de conexão. Utilize os serviços de transporte do aeroporto (carrinhos elétricos), que são gratuitos para crianças e idosos. O Aeroporto de Istambul (IST) é o aeroporto principal e maior para a maioria das conexões internacionais.
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">caso</span>Ao voar dos aeroportos de Moscou, esteja preparado para possíveis atrasos significativos de voo (por exemplo, 14-15 horas) e a possibilidade de nenhuma acomodação ser fornecida pelas companhias aéreas durante tais atrasos.</span><span></span></summary>
+    <div class="a">Uma estratégia alternativa para viajar para o Egito é voar via um terceiro país, como a Armênia. Isso pode potencialmente reduzir os custos da viagem em 20-30% e encurtar a duração do voo para o Egito (por exemplo, 3 horas da Armênia). Alguns viajantes relatam acreditar que companhias aéreas não russas ou voos não fretados podem sofrer menos interrupções durante certas restrições do espaço aéreo.
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">regra</span>Ao reservar passagens separadas com companhias aéreas diferentes para voos de conexão, é crucial entender as políticas de transferência de bagagem e remarcação.</span><span></span></summary>
+    <div class="a">Se a reserva inicial foi feita como um itinerário único (mesmo com codeshares), as companhias aéreas são geralmente responsáveis por garantir que os passageiros e suas bagagens cheguem ao destino final. No entanto, atrasos ou interrupções significativas podem complicar isso. É aconselhável confirmar os procedimentos de transferência de bagagem e direitos de remarcação com o agente de emissão ou as companhias aéreas envolvidas, especialmente ao lidar com diferentes transportadoras como a Emirates e a Air Mauritius em uma única viagem.
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">dica</span>Para uma escala curta (por exemplo, 35 minutos) em Dubai para um voo para Maurício, se as passagens forem parte de uma reserva única pela mesma companhia aérea ou um parceiro de code-share (por exemplo, Emirates e Mauritian Airlines), a companhia aérea é responsável por garantir a conexão.</span><span></span></summary>
+    <div class="a">Os passageiros podem ser auxiliados por representantes da companhia aérea, ou podem ser remarcados no próximo voo disponível. É aconselhável informar a tripulação de cabine sobre a conexão curta e estar ciente de possíveis verificações de segurança intermediárias. Experiências anteriores com escalas curtas semelhantes (15-20 minutos) em outros aeroportos foram bem-sucedidas.
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">caso</span>O trânsito eficiente pelo Aeroporto Sheremetyevo é possível com bagagem mínima e documentos de viagem pré-existentes.</span><span></span></summary>
+    <div class="a">O processo, incluindo controle automático de passaporte e verificações de segurança, pode levar apenas 15-20 minutos, deixando tempo suficiente para uma conexão curta. Esta é uma melhoria significativa em relação a experiências anteriores, onde verificações mais longas e conferência de documentos eram comuns, especialmente em casos de ausências prolongadas.
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">dica</span>Uma escala de 1 hora e 45 minutos no Aeroporto Internacional de Xangai Pudong (PVG) é considerada arriscada devido ao tamanho grande do aeroporto e potencial para filas.</span><span></span></summary>
+    <div class="a">No entanto, pode ser viável se os voos estiverem no horário. Passageiros com conexões apertadas devem informar proativamente os funcionários do aeroporto mostrando seu cartão de embarque, pois a passagem rápida ou assistência pode ser fornecida. Esteja ciente das opções de transporte entre terminais, como o metrô.
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">caso</span>Ao transitar pelo Aeroporto de Istambul (IST) para voos internacionais, as verificações de segurança e de documentos são frequentemente mínimas para passageiros em conexão.</span><span></span></summary>
+    <div class="a">Os passageiros normalmente só precisam apresentar seu cartão de embarque durante o processo de embarque para o voo seguinte, sem necessidade de nova triagem extensa ou verificações detalhadas de passaporte para fins de trânsito. Esta experiência é comum para voos para destinos como os Países Baixos.
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">dica</span>Ao reservar voos com passagens separadas para conexões, reserve bastante tempo para transferências.</span><span></span></summary>
+    <div class="a">Isso envolve passar pela imigração, retirar bagagem e fazer um novo check-in para o próximo voo. Para voos originários de aeroportos do sul da Rússia, considere uma escala de 24 horas. Recomenda-se um mínimo de 5-6 horas para conexões, mesmo sem atrasos significativos, para levar em conta os tempos de processamento. Escalas noturnas são aconselháveis, se possível, para mitigar os riscos associados a atrasos de voo.
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">regra</span>Sob uma única passagem (único código de reserva), a companhia aérea operadora é legalmente responsável pelo redirecionamento, alimentação e acomodação em caso de perda de conexões devido a atrasos de voo ou eventos de força maior.</span><span></span></summary>
+    <div class="a">Os passageiros devem entrar em contato diretamente com o balcão de trânsito da companhia aérea no hub.
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">caso</span>A aeronave Boeing 787-900 na rota Casablanca-São Paulo é considerada confortável.</span><span></span></summary>
+    <div class="a">Embora informações específicas sobre o espaço para as pernas em saídas de emergência ou similares não sejam detalhadas, passageiros com 180 cm de altura acharam o assento padrão 'tolerável' para um voo de 6,5 horas. O check-in online gratuito está disponível 48 horas antes da partida.
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">dica</span>Uma escala de 4 horas é geralmente suficiente para voos de conexão, especialmente se todos os trechos forem com a mesma companhia aérea e a bagagem for despachada até o destino final.</span><span></span></summary>
+    <div class="a">Nesses casos, reservar de 1,5 a 2 horas para a transferência é geralmente adequado.
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">risco</span>Se um bilhete único for comprado e o viajante perder seu voo de conexão devido a um atraso, ele será reacomodado no próximo voo disponível pela mesma companhia aérea.</span><span></span></summary>
+    <div class="a">Uma escala de 1 hora é criticamente curta e de alto risco.
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">dica</span>As companhias aéreas, especialmente durante transferências de longa distância via grandes hubs como Istambul, podem praticar overbooking.</span><span></span></summary>
+    <div class="a">Os passageiros devem sempre ter a prova de continuação de viagem pronta, pois a equipe da companhia aérea pode exigi-la no portão de embarque para garantir que o viajante não fique 'preso' no país. Usar passagens reembolsáveis que podem ser compradas ou canceladas de última hora é um truque de viagem comum para essas situações.
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">dica</span>Ao viajar com uma passagem única via Baku, monitore os painéis de partida/chegada online na área de espera.</span><span></span></summary>
+    <div class="a">Essas telas exibem atualizações em tempo real sobre os horários dos voos, incluindo quaisquer atrasos.
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">regra</span>Ao voar com um único código de reserva (PNR) na mesma companhia aérea, a transportadora é responsável por reacomodar os passageiros no próximo voo disponível em caso de perda de conexão devido a atrasos da própria companhia.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">regra</span>Se uma conexão de voo for perdida devido a um atraso da companhia aérea em uma passagem única (PNR), a companhia aérea é responsável pela reacomodação.</span><span></span></summary>
+    <div class="a">Para grandes operadoras como a Qatar Airways ou Turkish Airlines, os passageiros devem visitar o balcão de transferência na área de trânsito. Se a espera exceder 8 horas, as companhias aéreas são normalmente obrigadas a fornecer acomodação em hotel e vouchers de refeição. Sempre verifique se o bilhete é 'PNR único' para garantir essas proteções.
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">dica</span>Viajantes das regiões asiáticas da Rússia em busca de voos para Istambul podem achar hubs como Tashkent, Almaty e Bishkek convenientes.</span><span></span></summary>
+    <div class="a">Relata-se que essas rotas às vezes têm melhor confiabilidade (menos cancelamentos ou atrasos). Alguns viajantes também observam que a Uzbekistan Airways oferece uma experiência mais confortável que a Aeroflot. Os custos dos voos para Moscou, incluindo bagagem, podem ser comparáveis aos voos desses hubs da Ásia Central diretamente para Istambul.
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">serviço</span>Para voos da Europa para o Rio de Janeiro ou São Paulo, Portugal é frequentemente recomendado devido aos voos diretos.</span><span></span></summary>
+    <div class="a">Por exemplo, voos diretos de Lisboa para São Paulo normalmente duram cerca de 10 horas.
+    <div class="src">✓ 1 relato dos chats</div></div>
+  </details>
+
+  <h2>Temas relacionados</h2>
+  <div class="chips">
+    <a class="chip" href="/pt/any/s/transport/flights-and-airlines/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Passagens Aéreas e Companhias</span></a>
+    <a class="chip" href="/pt/any/s/transport/bookings-and-documentation/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Reservas e Documentação</span></a>
+    <a class="chip" href="/pt/any/s/transport/transport-and-logistics/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transporte e logística</span></a>
+    <a class="chip" href="/pt/any/s/transport/baggage-and-logistics/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Bagagem e Logística</span></a>
+    <a class="chip" href="/pt/any/s/transport/handling-special-situations/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Situações Especiais</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>As respostas dão voltas e nunca chegam ao ponto?</h2>
+    <p>Pergunte ao Luky — responde para o seu caso, com base em relatos recentes, não em artigos genéricos.</p>
+    <p>E o Luky é um tradutor de voz para conversas reais: e o garçom não vai confundir o seu pedido.</p>
+    <p class="ps">PS: coloque o Luky numa caixa de som portátil numa festa e fale com todos de uma vez</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Abrir o Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — experiência real dos chats de comunidades, sem enrolação</div>
+    <nav class="f-links">
+      <a href="/pt/about/">Sobre</a>
+      <a href="/pt/any/">Todos os temas</a>
+      <a href="/pt/">Países</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">As respostas são reunidas de chats abertos de comunidades — é a experiência real das pessoas, não aconselhamento oficial. Verifique antes de decisões importantes.</p>
+    <div class="f-copy">© 2026 Luky · atualizado 08.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Passageiros da Qatar Airways com escalas longas (geralmente de 8 a 12 horas ou mais, dependendo das regras da tarifa e disponibilidade) podem se qualificar para um hotel de tr\u00e2nsito gratuito, incluindo traslados de aeroporto."},
+{"@type":"ListItem","position":2,"name":"Ao transitar pelo Aeroporto Internacional de Hamad (DOH) em Doha, uma escala de 1 hora e 20 minutos para um voo de conex\u00e3o em um \u00fanico bilhete sem bagagem despachada \u00e9 geralmente considerada vi\u00e1vel, desde que o primeiro voo esteja no hor\u00e1rio."},
+{"@type":"ListItem","position":3,"name":"Ao reservar voos com escalas curtas (por exemplo, 1h 25m) atrav\u00e9s de Guangzhou (CAN) com a China Southern Airlines em uma \u00fanica passagem: 1. Confirme se o tempo de escala \u00e9 suficiente, considerando poss\u00edveis atrasos, tempo de tr\u00e2nsito, verifica\u00e7\u00f5es de seguran\u00e7a e mudan\u00e7as de port\u00e3o."},
+{"@type":"ListItem","position":4,"name":"Conex\u00f5es curtas (menos de 1,5 horas) acarretam alto risco."},
+{"@type":"ListItem","position":5,"name":"Para acessar a sala VIP da Moroccan Airlines durante o tr\u00e2nsito: siga em dire\u00e7\u00e3o aos port\u00f5es de conex\u00e3o/tr\u00e2nsito (siga as placas de \u0027connection fly\u0027)."},
+{"@type":"ListItem","position":6,"name":"Escalas estendidas (por exemplo, 7-10 dias) em voos internacionais s\u00e3o poss\u00edveis, mas muitas vezes aumentam o pre\u00e7o do bilhete."},
+{"@type":"ListItem","position":7,"name":"Para conex\u00f5es longas, existem v\u00e1rias op\u00e7\u00f5es."},
+{"@type":"ListItem","position":8,"name":"O acesso a salas VIP de neg\u00f3cios geralmente inclui limites de tempo, normalmente 2-4 horas antes de um voo, especialmente para longas conex\u00f5es ou passageiros que n\u00e3o est\u00e3o em tr\u00e2nsito."},
+{"@type":"ListItem","position":9,"name":"Ao fazer conex\u00f5es de voo em Istambul (IST) com um \u00fanico bilhete, a companhia a\u00e9rea providenciar\u00e1 um novo voo caso voc\u00ea perca sua conex\u00e3o devido a um atraso."},
+{"@type":"ListItem","position":10,"name":"Ao voar dos aeroportos de Moscou, esteja preparado para poss\u00edveis atrasos significativos de voo (por exemplo, 14-15 horas) e a possibilidade de nenhuma acomoda\u00e7\u00e3o ser fornecida pelas companhias a\u00e9reas durante tais atrasos."},
+{"@type":"ListItem","position":11,"name":"Ao reservar passagens separadas com companhias a\u00e9reas diferentes para voos de conex\u00e3o, \u00e9 crucial entender as pol\u00edticas de transfer\u00eancia de bagagem e remarca\u00e7\u00e3o."},
+{"@type":"ListItem","position":12,"name":"Para uma escala curta (por exemplo, 35 minutos) em Dubai para um voo para Maur\u00edcio, se as passagens forem parte de uma reserva \u00fanica pela mesma companhia a\u00e9rea ou um parceiro de code-share (por exemplo, Emirates e Mauritian Airlines), a companhia a\u00e9rea \u00e9 respons\u00e1vel por garantir a conex\u00e3o."},
+{"@type":"ListItem","position":13,"name":"O tr\u00e2nsito eficiente pelo Aeroporto Sheremetyevo \u00e9 poss\u00edvel com bagagem m\u00ednima e documentos de viagem pr\u00e9-existentes."},
+{"@type":"ListItem","position":14,"name":"Uma escala de 1 hora e 45 minutos no Aeroporto Internacional de Xangai Pudong (PVG) \u00e9 considerada arriscada devido ao tamanho grande do aeroporto e potencial para filas."},
+{"@type":"ListItem","position":15,"name":"Ao transitar pelo Aeroporto de Istambul (IST) para voos internacionais, as verifica\u00e7\u00f5es de seguran\u00e7a e de documentos s\u00e3o frequentemente m\u00ednimas para passageiros em conex\u00e3o."},
+{"@type":"ListItem","position":16,"name":"Ao reservar voos com passagens separadas para conex\u00f5es, reserve bastante tempo para transfer\u00eancias."},
+{"@type":"ListItem","position":17,"name":"Sob uma \u00fanica passagem (\u00fanico c\u00f3digo de reserva), a companhia a\u00e9rea operadora \u00e9 legalmente respons\u00e1vel pelo redirecionamento, alimenta\u00e7\u00e3o e acomoda\u00e7\u00e3o em caso de perda de conex\u00f5es devido a atrasos de voo ou eventos de for\u00e7a maior."},
+{"@type":"ListItem","position":18,"name":"A aeronave Boeing 787-900 na rota Casablanca-S\u00e3o Paulo \u00e9 considerada confort\u00e1vel."},
+{"@type":"ListItem","position":19,"name":"Uma escala de 4 horas \u00e9 geralmente suficiente para voos de conex\u00e3o, especialmente se todos os trechos forem com a mesma companhia a\u00e9rea e a bagagem for despachada at\u00e9 o destino final."},
+{"@type":"ListItem","position":20,"name":"Se um bilhete \u00fanico for comprado e o viajante perder seu voo de conex\u00e3o devido a um atraso, ele ser\u00e1 reacomodado no pr\u00f3ximo voo dispon\u00edvel pela mesma companhia a\u00e9rea."},
+{"@type":"ListItem","position":21,"name":"As companhias a\u00e9reas, especialmente durante transfer\u00eancias de longa dist\u00e2ncia via grandes hubs como Istambul, podem praticar overbooking."},
+{"@type":"ListItem","position":22,"name":"Ao viajar com uma passagem \u00fanica via Baku, monitore os pain\u00e9is de partida/chegada online na \u00e1rea de espera."},
+{"@type":"ListItem","position":23,"name":"Ao voar com um \u00fanico c\u00f3digo de reserva (PNR) na mesma companhia a\u00e9rea, a transportadora \u00e9 respons\u00e1vel por reacomodar os passageiros no pr\u00f3ximo voo dispon\u00edvel em caso de perda de conex\u00e3o devido a atrasos da pr\u00f3pria companhia."},
+{"@type":"ListItem","position":24,"name":"Se uma conex\u00e3o de voo for perdida devido a um atraso da companhia a\u00e9rea em uma passagem \u00fanica (PNR), a companhia a\u00e9rea \u00e9 respons\u00e1vel pela reacomoda\u00e7\u00e3o."},
+{"@type":"ListItem","position":25,"name":"Viajantes das regi\u00f5es asi\u00e1ticas da R\u00fassia em busca de voos para Istambul podem achar hubs como Tashkent, Almaty e Bishkek convenientes."},
+{"@type":"ListItem","position":26,"name":"Para voos da Europa para o Rio de Janeiro ou S\u00e3o Paulo, Portugal \u00e9 frequentemente recomendado devido aos voos diretos."}
+]}
+</script>
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Noite", DAY="\u2600 Dia";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

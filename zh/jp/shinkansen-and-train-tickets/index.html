@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>日本：新干线与火车票务 — 真实经验 · Luky</title>
+<meta name="description" content="来自聊天群的关于日本「新干线与火车票务」的真实经验：原样呈现，第一手。你的具体情况 — 问 Luky。">
+<link rel="canonical" href="https://info.multyspeak.online/zh/jp/shinkansen-and-train-tickets/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/jp/shinkansen-and-train-tickets/">
+<link rel="alternate" hreflang="ar" href="https://info.multyspeak.online/ar/jp/shinkansen-and-train-tickets/">
+<link rel="alternate" hreflang="de" href="https://info.multyspeak.online/de/jp/shinkansen-and-train-tickets/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/jp/shinkansen-and-train-tickets/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/jp/shinkansen-and-train-tickets/">
+<link rel="alternate" hreflang="fr" href="https://info.multyspeak.online/fr/jp/shinkansen-and-train-tickets/">
+<link rel="alternate" hreflang="hi" href="https://info.multyspeak.online/hi/jp/shinkansen-and-train-tickets/">
+<link rel="alternate" hreflang="it" href="https://info.multyspeak.online/it/jp/shinkansen-and-train-tickets/">
+<link rel="alternate" hreflang="ja" href="https://info.multyspeak.online/ja/jp/shinkansen-and-train-tickets/">
+<link rel="alternate" hreflang="ko" href="https://info.multyspeak.online/ko/jp/shinkansen-and-train-tickets/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/jp/shinkansen-and-train-tickets/">
+<link rel="alternate" hreflang="th" href="https://info.multyspeak.online/th/jp/shinkansen-and-train-tickets/">
+<link rel="alternate" hreflang="tr" href="https://info.multyspeak.online/tr/jp/shinkansen-and-train-tickets/">
+<link rel="alternate" hreflang="zh" href="https://info.multyspeak.online/zh/jp/shinkansen-and-train-tickets/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/jp/shinkansen-and-train-tickets/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+/* тег типа абзаца (хвост-антологии: lifehack/reglament/howto/risk/case/service) */
+.tag{display:inline-block;font-family:var(--font-mono);font-weight:400;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);
+  border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:2px;white-space:nowrap}
+.tag.risk{color:var(--red);border-color:var(--red)}
+.tag.reglament{color:var(--accent);border-color:var(--accent)}
+.tag.lifehack{color:var(--green);border-color:var(--green)}
+.tag.service{color:var(--yellow);border-color:var(--yellow)}
+.tag.howto{color:var(--hud);border-color:var(--hud)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">信息门户 · 任何国家 · 不掺水</span>
+    </div>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="" href="/ru/jp/shinkansen-and-train-tickets/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/ar/jp/shinkansen-and-train-tickets/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>AR</a>
+        <a class="" href="/de/jp/shinkansen-and-train-tickets/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>DE</a>
+        <a class="" href="/en/jp/shinkansen-and-train-tickets/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/jp/shinkansen-and-train-tickets/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/fr/jp/shinkansen-and-train-tickets/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>FR</a>
+        <a class="" href="/hi/jp/shinkansen-and-train-tickets/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>HI</a>
+        <a class="" href="/it/jp/shinkansen-and-train-tickets/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>IT</a>
+        <a class="" href="/ja/jp/shinkansen-and-train-tickets/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>JA</a>
+        <a class="" href="/ko/jp/shinkansen-and-train-tickets/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>KO</a>
+        <a class="" href="/pt/jp/shinkansen-and-train-tickets/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+        <a class="" href="/th/jp/shinkansen-and-train-tickets/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TH</a>
+        <a class="" href="/tr/jp/shinkansen-and-train-tickets/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TR</a>
+        <a class="" href="/zh/jp/shinkansen-and-train-tickets/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ZH</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ 夜间</span></button>
+    </div>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/zh-Hans/">首页</a> /
+    <a href="/zh-Hans/jp/">日本</a> /
+    <b>新干线与火车票务</b>
+  </nav>
+
+
+  
+  <h1>日本的新干线与火车票务：真正需要知道的事</h1>
+  <span class="section-label">简短回答</span>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">新干线车票可在车站柜台或自动售票机购买，繁忙时期建议提前预订指定席以保证有座。长距离旅行可选购JR Pass以节省开支，自由席票则不限特定班次但需承担站立风险。</div></div>
+
+  <h2>来自真实经验</h2>
+  <details open><summary><span class="sumq">新干线车票可以在网上或售票柜台购买。“自由席”车票允许乘坐任意班次，但不保证有座。自由席车厢数量有限，高峰期可能需要站立。指定席则保证特定列车的特定座位。行李可存放在车厢顶部的架子上、车厢尽头或座位前方。建议预订指定席以获得更舒适的旅程，尤其是在繁忙时期。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">通过 Trip.com 等平台在线购买区域性 JR Pass 时，请务必仔细阅读凭证兑换选项。有些通行证可能需要针对凭证领取地点或方式进行特定选择。如果不确定，请咨询 Japan-guide 网站或联系客服，以核实电子凭证的适用性和兑换流程。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">日本旅游规划：请提前购买新干线和巴士票（例如前往河口湖的车票），特别是在旅游旺季。虽然有些车票可以现场购买，但建议提前预订。对于长距离旅行，日本铁路周游券 (Japan Rail Pass) 可能更划算。在上海转机时，请提前确认航站楼信息并填好入境卡。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">新干线车票没有 40% 的大幅早鸟折扣。像“希望号”（Nozomi）这样的高速列车实行标准定价。在日本的“金券行”（票务转售店）可以找到小额优惠（约 10%）。为了方便起见，建议购买 JR 通票或标准车票。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">在没有预留座位的情况下购买的新干线车票通常适用于指定路线和日期上的任何列车，仅限非指定席车厢。您不局限于特定的出发时间。但是，如果车票包含预留座位，则仅对该特定列车和时间有效。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">购买火车票时，如果柜台显示余票不足或时间不便，游客也应检查自动售票机。在某次行程中，柜台只提供较晚的出发时间，但通过自动售票机却买到了更早的车票。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">新干线车票可在大型 JR 车站购买。虽然在难波站可能买到票，但更可靠的方式是在新大阪站（新干线专用车站）购买。对于京都至东京路线，建议在京都站或新大阪站购买。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">新干线正在转向基于二维码的票务系统。虽然目前部分车站仍通过扫描二维码出票，但整个流程正日益趋向于全面数字化。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">在日本旅游淡季，通常不需要提前预订新干线车票。车票通常可以在旅行当天在车站购买。标准票价约为 11,550 日元。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+
+  <h2>相关主题</h2>
+  <div class="chips">
+    <a class="chip" href="/zh/jp/where-to-exchange-currency-airports-vs-c/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 日本机场与市区货币兑换比较</span></a>
+    <a class="chip" href="/zh/jp/applying-for-a-japanese-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 日本签证申请材料准备</span></a>
+    <a class="chip" href="/zh/jp/using-ic-cards-suica-pasmo-icoca/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• IC 卡使用指南</span></a>
+    <a class="chip" href="/zh/jp/using-cash-and-currency-exchange/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 现金使用与货币兑换</span></a>
+    <a class="chip" href="/zh/jp/exchanging-old-us-dollar-notes/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 旧版美元兑换</span></a>
+    <a class="chip" href="/zh/jp/currency-exchange-in-osaka-and-kyoto/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 大阪与京都的货币兑换点</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>你要的是自己的情况，不是泛泛而谈？</h2>
+    <p>问 Luky — 像刚从那儿回来的人一样讲 — 不掺水.</p>
+    <p>而 Luky 还是真实对话的实时语音翻译： 在大厅和别国的旅人聊上几句.</p>
+    <p class="ps">PS：派对上把 Luky 接到音箱，一次跟所有人聊</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>打开 Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — 来自社区聊天群的真实经验，不掺水</div>
+    <nav class="f-links">
+      <a href="/zh-Hans/about/">关于</a>
+      <a href="/zh-Hans/jp/">所有主题</a>
+      <a href="/zh-Hans/">国家</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">答案取自公开的社区聊天群 — 这是人们的真实经验，不是官方建议。做重要决定前请自行核实。</p>
+    <div class="f-copy">© 2026 Luky · 更新于 08.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"\u65b0\u5e72\u7ebf\u8f66\u7968\u53ef\u4ee5\u5728\u7f51\u4e0a\u6216\u552e\u7968\u67dc\u53f0\u8d2d\u4e70\u3002\u201c\u81ea\u7531\u5e2d\u201d\u8f66\u7968\u5141\u8bb8\u4e58\u5750\u4efb\u610f\u73ed\u6b21\uff0c\u4f46\u4e0d\u4fdd\u8bc1\u6709\u5ea7\u3002\u81ea\u7531\u5e2d\u8f66\u53a2\u6570\u91cf\u6709\u9650\uff0c\u9ad8\u5cf0\u671f\u53ef\u80fd\u9700\u8981\u7ad9\u7acb\u3002\u6307\u5b9a\u5e2d\u5219\u4fdd\u8bc1\u7279\u5b9a\u5217\u8f66\u7684\u7279\u5b9a\u5ea7\u4f4d\u3002\u884c\u674e\u53ef\u5b58\u653e\u5728\u8f66\u53a2\u9876\u90e8\u7684\u67b6\u5b50\u4e0a\u3001\u8f66\u53a2\u5c3d\u5934\u6216\u5ea7\u4f4d\u524d\u65b9\u3002\u5efa\u8bae\u9884\u8ba2\u6307\u5b9a\u5e2d\u4ee5\u83b7\u5f97\u66f4\u8212\u9002\u7684\u65c5\u7a0b\uff0c\u5c24\u5176\u662f\u5728\u7e41\u5fd9\u65f6\u671f\u3002"},
+{"@type":"ListItem","position":2,"name":"\u901a\u8fc7 Trip.com \u7b49\u5e73\u53f0\u5728\u7ebf\u8d2d\u4e70\u533a\u57df\u6027 JR Pass \u65f6\uff0c\u8bf7\u52a1\u5fc5\u4ed4\u7ec6\u9605\u8bfb\u51ed\u8bc1\u5151\u6362\u9009\u9879\u3002\u6709\u4e9b\u901a\u884c\u8bc1\u53ef\u80fd\u9700\u8981\u9488\u5bf9\u51ed\u8bc1\u9886\u53d6\u5730\u70b9\u6216\u65b9\u5f0f\u8fdb\u884c\u7279\u5b9a\u9009\u62e9\u3002\u5982\u679c\u4e0d\u786e\u5b9a\uff0c\u8bf7\u54a8\u8be2 Japan-guide \u7f51\u7ad9\u6216\u8054\u7cfb\u5ba2\u670d\uff0c\u4ee5\u6838\u5b9e\u7535\u5b50\u51ed\u8bc1\u7684\u9002\u7528\u6027\u548c\u5151\u6362\u6d41\u7a0b\u3002"},
+{"@type":"ListItem","position":3,"name":"\u65e5\u672c\u65c5\u6e38\u89c4\u5212\uff1a\u8bf7\u63d0\u524d\u8d2d\u4e70\u65b0\u5e72\u7ebf\u548c\u5df4\u58eb\u7968\uff08\u4f8b\u5982\u524d\u5f80\u6cb3\u53e3\u6e56\u7684\u8f66\u7968\uff09\uff0c\u7279\u522b\u662f\u5728\u65c5\u6e38\u65fa\u5b63\u3002\u867d\u7136\u6709\u4e9b\u8f66\u7968\u53ef\u4ee5\u73b0\u573a\u8d2d\u4e70\uff0c\u4f46\u5efa\u8bae\u63d0\u524d\u9884\u8ba2\u3002\u5bf9\u4e8e\u957f\u8ddd\u79bb\u65c5\u884c\uff0c\u65e5\u672c\u94c1\u8def\u5468\u6e38\u5238 (Japan Rail Pass) \u53ef\u80fd\u66f4\u5212\u7b97\u3002\u5728\u4e0a\u6d77\u8f6c\u673a\u65f6\uff0c\u8bf7\u63d0\u524d\u786e\u8ba4\u822a\u7ad9\u697c\u4fe1\u606f\u5e76\u586b\u597d\u5165\u5883\u5361\u3002"},
+{"@type":"ListItem","position":4,"name":"\u65b0\u5e72\u7ebf\u8f66\u7968\u6ca1\u6709 40% \u7684\u5927\u5e45\u65e9\u9e1f\u6298\u6263\u3002\u50cf\u201c\u5e0c\u671b\u53f7\u201d\uff08Nozomi\uff09\u8fd9\u6837\u7684\u9ad8\u901f\u5217\u8f66\u5b9e\u884c\u6807\u51c6\u5b9a\u4ef7\u3002\u5728\u65e5\u672c\u7684\u201c\u91d1\u5238\u884c\u201d\uff08\u7968\u52a1\u8f6c\u552e\u5e97\uff09\u53ef\u4ee5\u627e\u5230\u5c0f\u989d\u4f18\u60e0\uff08\u7ea6 10%\uff09\u3002\u4e3a\u4e86\u65b9\u4fbf\u8d77\u89c1\uff0c\u5efa\u8bae\u8d2d\u4e70 JR \u901a\u7968\u6216\u6807\u51c6\u8f66\u7968\u3002"},
+{"@type":"ListItem","position":5,"name":"\u5728\u6ca1\u6709\u9884\u7559\u5ea7\u4f4d\u7684\u60c5\u51b5\u4e0b\u8d2d\u4e70\u7684\u65b0\u5e72\u7ebf\u8f66\u7968\u901a\u5e38\u9002\u7528\u4e8e\u6307\u5b9a\u8def\u7ebf\u548c\u65e5\u671f\u4e0a\u7684\u4efb\u4f55\u5217\u8f66\uff0c\u4ec5\u9650\u975e\u6307\u5b9a\u5e2d\u8f66\u53a2\u3002\u60a8\u4e0d\u5c40\u9650\u4e8e\u7279\u5b9a\u7684\u51fa\u53d1\u65f6\u95f4\u3002\u4f46\u662f\uff0c\u5982\u679c\u8f66\u7968\u5305\u542b\u9884\u7559\u5ea7\u4f4d\uff0c\u5219\u4ec5\u5bf9\u8be5\u7279\u5b9a\u5217\u8f66\u548c\u65f6\u95f4\u6709\u6548\u3002"},
+{"@type":"ListItem","position":6,"name":"\u8d2d\u4e70\u706b\u8f66\u7968\u65f6\uff0c\u5982\u679c\u67dc\u53f0\u663e\u793a\u4f59\u7968\u4e0d\u8db3\u6216\u65f6\u95f4\u4e0d\u4fbf\uff0c\u6e38\u5ba2\u4e5f\u5e94\u68c0\u67e5\u81ea\u52a8\u552e\u7968\u673a\u3002\u5728\u67d0\u6b21\u884c\u7a0b\u4e2d\uff0c\u67dc\u53f0\u53ea\u63d0\u4f9b\u8f83\u665a\u7684\u51fa\u53d1\u65f6\u95f4\uff0c\u4f46\u901a\u8fc7\u81ea\u52a8\u552e\u7968\u673a\u5374\u4e70\u5230\u4e86\u66f4\u65e9\u7684\u8f66\u7968\u3002"},
+{"@type":"ListItem","position":7,"name":"\u65b0\u5e72\u7ebf\u8f66\u7968\u53ef\u5728\u5927\u578b JR \u8f66\u7ad9\u8d2d\u4e70\u3002\u867d\u7136\u5728\u96be\u6ce2\u7ad9\u53ef\u80fd\u4e70\u5230\u7968\uff0c\u4f46\u66f4\u53ef\u9760\u7684\u65b9\u5f0f\u662f\u5728\u65b0\u5927\u962a\u7ad9\uff08\u65b0\u5e72\u7ebf\u4e13\u7528\u8f66\u7ad9\uff09\u8d2d\u4e70\u3002\u5bf9\u4e8e\u4eac\u90fd\u81f3\u4e1c\u4eac\u8def\u7ebf\uff0c\u5efa\u8bae\u5728\u4eac\u90fd\u7ad9\u6216\u65b0\u5927\u962a\u7ad9\u8d2d\u4e70\u3002"},
+{"@type":"ListItem","position":8,"name":"\u65b0\u5e72\u7ebf\u6b63\u5728\u8f6c\u5411\u57fa\u4e8e\u4e8c\u7ef4\u7801\u7684\u7968\u52a1\u7cfb\u7edf\u3002\u867d\u7136\u76ee\u524d\u90e8\u5206\u8f66\u7ad9\u4ecd\u901a\u8fc7\u626b\u63cf\u4e8c\u7ef4\u7801\u51fa\u7968\uff0c\u4f46\u6574\u4e2a\u6d41\u7a0b\u6b63\u65e5\u76ca\u8d8b\u5411\u4e8e\u5168\u9762\u6570\u5b57\u5316\u3002"},
+{"@type":"ListItem","position":9,"name":"\u5728\u65e5\u672c\u65c5\u6e38\u6de1\u5b63\uff0c\u901a\u5e38\u4e0d\u9700\u8981\u63d0\u524d\u9884\u8ba2\u65b0\u5e72\u7ebf\u8f66\u7968\u3002\u8f66\u7968\u901a\u5e38\u53ef\u4ee5\u5728\u65c5\u884c\u5f53\u5929\u5728\u8f66\u7ad9\u8d2d\u4e70\u3002\u6807\u51c6\u7968\u4ef7\u7ea6\u4e3a 11,550 \u65e5\u5143\u3002"}
+]}
+</script>
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 \u591c\u95f4", DAY="\u2600 \u65e5\u95f4";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>any: Flights and Connections — real experience from chats · Luky</title>
+<meta name="description" content="Real experience on «Flights and Connections» in any: hands-on tips, cases and rules from chats. For your case — ask Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/en/any/s/transport/flights-and-connections/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="ar" href="https://info.multyspeak.online/ar/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="de" href="https://info.multyspeak.online/de/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="fr" href="https://info.multyspeak.online/fr/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="hi" href="https://info.multyspeak.online/hi/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="it" href="https://info.multyspeak.online/it/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="ja" href="https://info.multyspeak.online/ja/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="ko" href="https://info.multyspeak.online/ko/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="th" href="https://info.multyspeak.online/th/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="tr" href="https://info.multyspeak.online/tr/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="zh" href="https://info.multyspeak.online/zh/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/any/s/transport/flights-and-connections/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+/* тег типа абзаца (хвост-антологии: lifehack/reglament/howto/risk/case/service) */
+.tag{display:inline-block;font-family:var(--font-mono);font-weight:400;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);
+  border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:2px;white-space:nowrap}
+.tag.risk{color:var(--red);border-color:var(--red)}
+.tag.reglament{color:var(--accent);border-color:var(--accent)}
+.tag.lifehack{color:var(--green);border-color:var(--green)}
+.tag.service{color:var(--yellow);border-color:var(--yellow)}
+.tag.howto{color:var(--hud);border-color:var(--hud)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">info portal · any country · no fluff</span>
+    </div>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="" href="/ru/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/ar/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>AR</a>
+        <a class="" href="/de/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>DE</a>
+        <a class="on" href="/en/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/fr/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>FR</a>
+        <a class="" href="/hi/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>HI</a>
+        <a class="" href="/it/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>IT</a>
+        <a class="" href="/ja/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>JA</a>
+        <a class="" href="/ko/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>KO</a>
+        <a class="" href="/pt/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+        <a class="" href="/th/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TH</a>
+        <a class="" href="/tr/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TR</a>
+        <a class="" href="/zh/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ZH</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Night</span></button>
+    </div>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/en/">Home</a> /
+    <a href="/en/any/">any</a> /
+    <b>Flights and Connections</b>
+  </nav>
+
+
+  
+  <h1>Flights and Connections in any: real experience from chats</h1>
+
+  <h2>From real experience</h2>
+  <details open><summary><span class="sumq"><span class="tag service">service</span>Qatar Airways passengers with long layovers (typically 8-12 hours or more, depending on fare rules and availability) may qualify for a complimentary transit hotel, including airport transfers.</span><span></span></summary>
+    <div class="a">Passengers should inquire at the airline's transfer desk in Doha if it was not pre-booked.
+    <div class="src">✓ 2 reports from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">tip</span>When transiting through Hamad International Airport (DOH) in Doha, a layover of 1 hour 20 minutes for a connecting flight on a single ticket without checked luggage is generally considered feasible, provided the first flight is on time.</span><span></span></summary>
+    <div class="a">The minimum connecting time (MCT) at DOH is 45 minutes. Passengers are advised to disembark first and proceed quickly to their next gate. Airport staff are available to assist. Baggage is typically not collected during such transits, only hand luggage screening is required. Note that ground transport to the terminal can sometimes take 20-25 minutes. For a more relaxed experience with time to explore the airport's amenities (duty-free, gardens, train), a 2-3 hour layover is recommended.
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">tip</span>When booking flights with short layovers (e.g., 1h 25m) through Guangzhou (CAN) with China Southern Airlines on a single ticket: 1. Confirm if the layover time is sufficient, considering potential delays, transit time, security checks, and gate changes.</span><span></span></summary>
+    <div class="a">While airlines often rebook passengers on the next available flight if the initial connection is missed due to a single ticket, short layovers carry a high risk of missing the connection. 2. Baggage is typically transferred automatically on single tickets, but it's wise to confirm this. 3. If the airline offers such a short connection, it implies it's technically feasible, but actual success depends on many factors including airline operational efficiency, airport procedures, and timely passenger movement. Some travelers report expedited assistance at the airline's home base airport (like Guangzhou for CSA) in case of missed connections. It is recommended to check airline policies and consider longer layovers for a less stressful travel experience, especially with international transfers and potential visa/entry requirements if the layover exceeds immigration thresholds.
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">how-to</span>Short transit times (under 1.5 hours) carry high risk.</span><span></span></summary>
+    <div class="a">Pro-tips: 1. Always print physical boarding passes to avoid tech/format issues. 2. If late, don't wait in line; identify airport staff, show the boarding pass, and request assistance. 3. Notify cabin crew in-flight if the connection is tight; they may request ground support. 4. Use electronic boarding passes on phones for expedited screening if physical ones are unavailable, but physical backup is recommended.
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">tip</span>To access the Moroccan Airlines business lounge during transit: proceed towards connection/transit gates (follow &#39;connection fly&#39; signs).</span><span></span></summary>
+    <div class="a">After passport and security checks, locate the airline's information desk. State 'free lounge' multiple times when presenting your boarding pass. While they may offer a paid 'VIP' option, insist on the 'free lounge'. You should receive a voucher for a restaurant offering a meal (e.g., shawarma, yogurt, Sprite) and unlimited free tea/coffee. The lounge provides comfortable seating and is a better option than waiting at regular gates.
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">tip</span>Extended stopovers (e.g., 7-10 days) on international flights are possible but often increase the ticket price.</span><span></span></summary>
+    <div class="a">Simple stopovers are typically limited to around 1.5 days without significant cost increases. Some airlines might offer free hotel stays and visas for long layovers (over 12 hours), but this doesn't guarantee city access. Considering alternative routes through hubs like Cairo or Istanbul might be cost-effective, but be aware of potential security checks, especially in Istanbul.
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">tip</span>For extended layovers, several options exist.</span><span></span></summary>
+    <div class="a">Airlines like Turkish Airlines may offer complimentary transit hotels for passengers with long layovers; inquire with the airline in advance. Alternatively, book a hotel near the airport or within the city. Ensure you have access to airport Wi-Fi to stay connected. If a child is traveling alone, discuss potential scenarios and preparedness measures to minimize stress.
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">case</span>Business lounge access often includes time limits, typically 2-4 hours before a flight, especially for long layovers or non-transit passengers.</span><span></span></summary>
+    <div class="a">Rules vary by airport/lounge. Examples include strict monitoring (Oman, where a hotel-like room was provided for 3 passes) and flexible extensions (Shenzhen, where a paid entry allowed a 7-hour stay with amenities due to app issues). Sheremetyevo (Moscow) is noted for leniency but can be very crowded.
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">tip</span>When connecting flights in Istanbul (IST) with a single ticket, the airline will arrange a new flight if you miss your connection due to a delay.</span><span></span></summary>
+    <div class="a">Be prepared for a potentially fast-paced transfer. Inform flight attendants about your short connection time. Utilize airport shuttle services (electric carts), which are free for children and seniors. Istanbul Airport (IST) is the primary and larger airport for most international connections.
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">case</span>When flying from Moscow airports, be prepared for potential significant flight delays (e.g., 14-15 hours) and the possibility of no accommodation being provided by airlines during such delays.</span><span></span></summary>
+    <div class="a">An alternative strategy for travel to Egypt is to fly via a third country, such as Armenia. This can potentially reduce tour costs by 20-30% and shorten flight duration to Egypt (e.g., 3 hours from Armenia). Some travelers report believing non-Russian airlines or non-charter flights may experience fewer disruptions during certain airspace restrictions.
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">rule</span>When booking separate tickets with different airlines for connecting flights, it&#39;s crucial to understand baggage transfer and rebooking policies.</span><span></span></summary>
+    <div class="a">If the initial booking was made as a single itinerary (even with codeshares), airlines are generally responsible for ensuring passengers and their luggage reach the final destination. However, significant delays or disruptions can complicate this. It's advisable to confirm baggage transfer procedures and rebooking rights with the ticketing agent or airlines involved, especially when dealing with different carriers like Emirates and Air Mauritius on a single journey.
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">tip</span>For a short layover (e.g., 35 minutes) in Dubai for a flight to Mauritius, if the tickets are part of a single booking by the same airline or a code-share partner (e.g., Emirates and Mauritian Airlines), the airline is responsible for ensuring the connection.</span><span></span></summary>
+    <div class="a">Passengers may be assisted by airline representatives, or they may be rebooked on the next available flight. It's advisable to inform cabin crew about the short connection and be aware of potential intermediate security checks. Past experiences with similar short layovers (15-20 minutes) in other airports have been successful.
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">case</span>Efficient transit through Sheremetyevo Airport is possible with minimal luggage and pre-existing travel documents.</span><span></span></summary>
+    <div class="a">The process, including automated passport control and security checks, can take as little as 15-20 minutes, allowing ample time for a short layover. This is a significant improvement from previous experiences where longer checks and document verification were common, especially for extended absences.
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">tip</span>A 1 hour and 45 minute layover at Shanghai Pudong International Airport (PVG) is considered risky due to the airport&#39;s large size and potential for queues.</span><span></span></summary>
+    <div class="a">However, it may be feasible if flights are on time. Passengers with tight connections should proactively inform airport staff by showing their boarding pass, as expedited passage or assistance may be provided. Be aware of inter-terminal transport options, such as the metro.
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">case</span>When transiting through Istanbul Airport (IST) for international flights, security and document checks are often minimal for connecting passengers.</span><span></span></summary>
+    <div class="a">Passengers typically only need to present their boarding pass during the boarding process for the onward flight, without extensive re-screening or detailed passport checks for transit purposes. This experience is common for flights to destinations like the Netherlands.
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">tip</span>When booking flights with separate tickets for connections, allow ample time for transfers.</span><span></span></summary>
+    <div class="a">This involves clearing immigration, collecting baggage, and re-checking in for the next flight. For flights originating from southern Russian airports, consider a 24-hour layover. A minimum of 5-6 hours is recommended for connections, even without significant delays, to account for processing times. Overnight layovers are advisable if possible to mitigate risks associated with flight delays.
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">rule</span>Under a single ticket (single booking reference), the operating airline is legally responsible for re-routing, meals, and accommodation in case of missed connections due to flight delays or force majeure events.</span><span></span></summary>
+    <div class="a">Passengers should contact the airline's transit desk directly at the hub.
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">case</span>The Boeing 787-900 aircraft on the Casablanca-São Paulo route is considered comfortable.</span><span></span></summary>
+    <div class="a">While specific seat legroom information for exit rows or similar is not detailed, passengers with a height of 180 cm found the standard seating to be 'tolerable' for a 6.5-hour flight. Free online check-in is available 48 hours prior to departure.
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">tip</span>A 4-hour layover is generally sufficient for connecting flights, especially if all segments are with the same airline and luggage is checked through to the final destination.</span><span></span></summary>
+    <div class="a">For such cases, allocating 1.5-2 hours for the transfer is usually adequate.
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">risk</span>If a single ticket is purchased and the traveler misses their connecting flight due to a delay, they will be rebooked on the next available flight by the same airline.</span><span></span></summary>
+    <div class="a">A 1-hour layover is critically short and high-risk.
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">tip</span>Airlines, especially during long-haul transfers via major hubs like Istanbul, may engage in overbooking.</span><span></span></summary>
+    <div class="a">Passengers should always have proof of onward travel ready, as airline staff may demand it at the gate to ensure the traveler is not 'stuck' in the country. Using refundable tickets that can be purchased or cancelled last minute is a common travel hack for these situations.
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">tip</span>When traveling with a single ticket via Baku, monitor the online departure/arrival boards in the waiting area.</span><span></span></summary>
+    <div class="a">These screens display real-time updates on flight schedules, including any delays.
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">rule</span>When flying on a single booking reference (PNR) with the same airline, the carrier is responsible for rebooking passengers on the next available flight in case of a missed connection due to their own delays.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">rule</span>If a flight connection is missed due to an airline delay on a single ticket (PNR), the airline is responsible for rebooking.</span><span></span></summary>
+    <div class="a">For major carriers like Qatar Airways or Turkish Airlines, passengers should visit the transfer desk in the transit area. If the wait exceeds 8 hours, airlines are typically required to provide hotel accommodation and meal vouchers. Always verify if the ticket is 'single PNR' to ensure these protections.
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">tip</span>Travelers from the Asian regions of Russia seeking flights to Istanbul may find hubs like Tashkent, Almaty, and Bishkek convenient.</span><span></span></summary>
+    <div class="a">These routes are sometimes reported to have better reliability (fewer cancellations or delays). Some travelers also note that Uzbekistan Airways offers a more comfortable experience than Aeroflot. Costs for flights to Moscow including luggage might be comparable to flights from these Central Asian hubs directly to Istanbul.
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">service</span>For flights from Europe to Rio de Janeiro or Sao Paulo, Portugal is frequently recommended due to direct flights.</span><span></span></summary>
+    <div class="a">For example, direct flights from Lisbon to Sao Paulo typically take around 10 hours.
+    <div class="src">✓ 1 report from chats</div></div>
+  </details>
+
+  <h2>Related topics</h2>
+  <div class="chips">
+    <a class="chip" href="/en/any/s/transport/flights-and-airlines/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Flights and Airlines</span></a>
+    <a class="chip" href="/en/any/s/transport/bookings-and-documentation/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Booking and Documentation</span></a>
+    <a class="chip" href="/en/any/s/transport/transport-and-logistics/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transport and Logistics</span></a>
+    <a class="chip" href="/en/any/s/transport/baggage-and-logistics/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Baggage and Logistics</span></a>
+    <a class="chip" href="/en/any/s/transport/handling-special-situations/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Emergency and Special Situations</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Need it for your situation, not in general?</h2>
+    <p>Ask Luky — gives what you actually need: real experience of people who went through it.</p>
+    <p>And Luky is a live voice translator for real conversations: chat in the lobby with travellers from other countries.</p>
+    <p class="ps">PS: meet someone at a bar who speaks another language</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Open Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — real experience from community chats, no fluff</div>
+    <nav class="f-links">
+      <a href="/en/about/">About</a>
+      <a href="/en/any/">All topics</a>
+      <a href="/en/">Countries</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Answers are gathered from open community chats — this is people&#39;s real experience, not official advice. Verify before important decisions.</p>
+    <div class="f-copy">© 2026 Luky · updated 08.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Qatar Airways passengers with long layovers (typically 8-12 hours or more, depending on fare rules and availability) may qualify for a complimentary transit hotel, including airport transfers."},
+{"@type":"ListItem","position":2,"name":"When transiting through Hamad International Airport (DOH) in Doha, a layover of 1 hour 20 minutes for a connecting flight on a single ticket without checked luggage is generally considered feasible, provided the first flight is on time."},
+{"@type":"ListItem","position":3,"name":"When booking flights with short layovers (e.g., 1h 25m) through Guangzhou (CAN) with China Southern Airlines on a single ticket: 1. Confirm if the layover time is sufficient, considering potential delays, transit time, security checks, and gate changes."},
+{"@type":"ListItem","position":4,"name":"Short transit times (under 1.5 hours) carry high risk."},
+{"@type":"ListItem","position":5,"name":"To access the Moroccan Airlines business lounge during transit: proceed towards connection/transit gates (follow \u0027connection fly\u0027 signs)."},
+{"@type":"ListItem","position":6,"name":"Extended stopovers (e.g., 7-10 days) on international flights are possible but often increase the ticket price."},
+{"@type":"ListItem","position":7,"name":"For extended layovers, several options exist."},
+{"@type":"ListItem","position":8,"name":"Business lounge access often includes time limits, typically 2-4 hours before a flight, especially for long layovers or non-transit passengers."},
+{"@type":"ListItem","position":9,"name":"When connecting flights in Istanbul (IST) with a single ticket, the airline will arrange a new flight if you miss your connection due to a delay."},
+{"@type":"ListItem","position":10,"name":"When flying from Moscow airports, be prepared for potential significant flight delays (e.g., 14-15 hours) and the possibility of no accommodation being provided by airlines during such delays."},
+{"@type":"ListItem","position":11,"name":"When booking separate tickets with different airlines for connecting flights, it\u0027s crucial to understand baggage transfer and rebooking policies."},
+{"@type":"ListItem","position":12,"name":"For a short layover (e.g., 35 minutes) in Dubai for a flight to Mauritius, if the tickets are part of a single booking by the same airline or a code-share partner (e.g., Emirates and Mauritian Airlines), the airline is responsible for ensuring the connection."},
+{"@type":"ListItem","position":13,"name":"Efficient transit through Sheremetyevo Airport is possible with minimal luggage and pre-existing travel documents."},
+{"@type":"ListItem","position":14,"name":"A 1 hour and 45 minute layover at Shanghai Pudong International Airport (PVG) is considered risky due to the airport\u0027s large size and potential for queues."},
+{"@type":"ListItem","position":15,"name":"When transiting through Istanbul Airport (IST) for international flights, security and document checks are often minimal for connecting passengers."},
+{"@type":"ListItem","position":16,"name":"When booking flights with separate tickets for connections, allow ample time for transfers."},
+{"@type":"ListItem","position":17,"name":"Under a single ticket (single booking reference), the operating airline is legally responsible for re-routing, meals, and accommodation in case of missed connections due to flight delays or force majeure events."},
+{"@type":"ListItem","position":18,"name":"The Boeing 787-900 aircraft on the Casablanca-S\u00e3o Paulo route is considered comfortable."},
+{"@type":"ListItem","position":19,"name":"A 4-hour layover is generally sufficient for connecting flights, especially if all segments are with the same airline and luggage is checked through to the final destination."},
+{"@type":"ListItem","position":20,"name":"If a single ticket is purchased and the traveler misses their connecting flight due to a delay, they will be rebooked on the next available flight by the same airline."},
+{"@type":"ListItem","position":21,"name":"Airlines, especially during long-haul transfers via major hubs like Istanbul, may engage in overbooking."},
+{"@type":"ListItem","position":22,"name":"When traveling with a single ticket via Baku, monitor the online departure/arrival boards in the waiting area."},
+{"@type":"ListItem","position":23,"name":"When flying on a single booking reference (PNR) with the same airline, the carrier is responsible for rebooking passengers on the next available flight in case of a missed connection due to their own delays."},
+{"@type":"ListItem","position":24,"name":"If a flight connection is missed due to an airline delay on a single ticket (PNR), the airline is responsible for rebooking."},
+{"@type":"ListItem","position":25,"name":"Travelers from the Asian regions of Russia seeking flights to Istanbul may find hubs like Tashkent, Almaty, and Bishkek convenient."},
+{"@type":"ListItem","position":26,"name":"For flights from Europe to Rio de Janeiro or Sao Paulo, Portugal is frequently recommended due to direct flights."}
+]}
+</script>
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Night", DAY="\u2600 Day";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

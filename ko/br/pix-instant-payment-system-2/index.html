@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>브라질: 실시간 결제 시스템 Pix — 실제 경험 · Luky</title>
+<meta name="description" content="브라질의 「실시간 결제 시스템 Pix」에 대한 채팅방의 실제 경험: 있는 그대로, 직접 들은 이야기. 당신의 상황은 — Luky에게 물어보세요.">
+<link rel="canonical" href="https://info.multyspeak.online/ko/br/pix-instant-payment-system-2/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/br/pix-instant-payment-system-2/">
+<link rel="alternate" hreflang="ar" href="https://info.multyspeak.online/ar/br/pix-instant-payment-system-2/">
+<link rel="alternate" hreflang="de" href="https://info.multyspeak.online/de/br/pix-instant-payment-system-2/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/br/pix-instant-payment-system-2/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/br/pix-instant-payment-system-2/">
+<link rel="alternate" hreflang="fr" href="https://info.multyspeak.online/fr/br/pix-instant-payment-system-2/">
+<link rel="alternate" hreflang="hi" href="https://info.multyspeak.online/hi/br/pix-instant-payment-system-2/">
+<link rel="alternate" hreflang="it" href="https://info.multyspeak.online/it/br/pix-instant-payment-system-2/">
+<link rel="alternate" hreflang="ja" href="https://info.multyspeak.online/ja/br/pix-instant-payment-system-2/">
+<link rel="alternate" hreflang="ko" href="https://info.multyspeak.online/ko/br/pix-instant-payment-system-2/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/br/pix-instant-payment-system-2/">
+<link rel="alternate" hreflang="th" href="https://info.multyspeak.online/th/br/pix-instant-payment-system-2/">
+<link rel="alternate" hreflang="tr" href="https://info.multyspeak.online/tr/br/pix-instant-payment-system-2/">
+<link rel="alternate" hreflang="zh" href="https://info.multyspeak.online/zh/br/pix-instant-payment-system-2/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/br/pix-instant-payment-system-2/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+/* тег типа абзаца (хвост-антологии: lifehack/reglament/howto/risk/case/service) */
+.tag{display:inline-block;font-family:var(--font-mono);font-weight:400;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);
+  border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:2px;white-space:nowrap}
+.tag.risk{color:var(--red);border-color:var(--red)}
+.tag.reglament{color:var(--accent);border-color:var(--accent)}
+.tag.lifehack{color:var(--green);border-color:var(--green)}
+.tag.service{color:var(--yellow);border-color:var(--yellow)}
+.tag.howto{color:var(--hud);border-color:var(--hud)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">정보 포털 · 어느 나라든 · 군더더기 없이</span>
+    </div>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="" href="/ru/br/pix-instant-payment-system-2/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/ar/br/pix-instant-payment-system-2/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>AR</a>
+        <a class="" href="/de/br/pix-instant-payment-system-2/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>DE</a>
+        <a class="" href="/en/br/pix-instant-payment-system-2/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/br/pix-instant-payment-system-2/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/fr/br/pix-instant-payment-system-2/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>FR</a>
+        <a class="" href="/hi/br/pix-instant-payment-system-2/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>HI</a>
+        <a class="" href="/it/br/pix-instant-payment-system-2/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>IT</a>
+        <a class="" href="/ja/br/pix-instant-payment-system-2/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>JA</a>
+        <a class="on" href="/ko/br/pix-instant-payment-system-2/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>KO</a>
+        <a class="" href="/pt/br/pix-instant-payment-system-2/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+        <a class="" href="/th/br/pix-instant-payment-system-2/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TH</a>
+        <a class="" href="/tr/br/pix-instant-payment-system-2/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TR</a>
+        <a class="" href="/zh/br/pix-instant-payment-system-2/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ZH</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ 야간</span></button>
+    </div>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/ko/">홈</a> /
+    <a href="/ko/br/">브라질</a> /
+    <b>실시간 결제 시스템 Pix</b>
+  </nav>
+
+
+  
+  <h1>브라질 실시간 결제 시스템 Pix: 정말 알아야 할 것들</h1>
+  <span class="section-label">짧은 답</span>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">브라질에서는 QR 코드 기반의 즉시 결제 시스템인 PIX가 가장 효율적이며, 러시아 스베르방크 앱이나 Bybit 같은 가상화폐 플랫폼을 통해 직접 결제할 수 있습니다. 리우데자네이루 대중교통 이용 시에는 전용 충전식 카드(Riocard 또는 Giro)가 필요하며, 장거리 이동에는 도시 간 야간 버스를 활용하는 것이 실용적입니다.</div></div>
+
+  <h2>실제 경험에서</h2>
+  <details open><summary><span class="sumq">브라질 여행을 계획할 때, 특정 항공사(예: &#39;Turks&#39;) 관련 잠재적 문제를 주의하고 공항에서 사기 피해를 방지하기 위해 SIM 카드를 구매하지 마십시오.</span><span></span></summary>
+    <div class="a">여행지로서는 포르탈레자가 따뜻한 바다 온도와 적은 인파로 휴식하기에 최적입니다. 리우데자네이루는 짧은 일정으로 관광하기에 더 적합합니다. 멕시코의 경우 칸쿤보다 덜 붐비고 깨끗한 해변을 원한다면 오아하카의 크루세시타를 고려하세요. 여행자 보험과 현지 SIM 카드 구입을 권장합니다. 브라질 내 교통편으로는 도시 간 버스가 특히 상파울루와 리우데자네이루 같은 주요 도시 간 야간 노선에서 편리하고 실용적인 옵션입니다. 브라질의 일반적인 결제 방법은 PIX와 신용카드이므로, 해외 결제 수수료나 현금 결제 제한 가능성에 대비하십시오.
+    <div class="src">✓ 1 건의 후기 채팅방에서</div></div>
+  </details>
+  <details><summary><span class="sumq">러시아 스베르방크 사용자는 QR 코드 결제나 브라질 누뱅크 계좌로 송금할 수 있습니다.</span><span></span></summary>
+    <div class="a">이를 위해서는 누뱅크 앱에서 PIX QR 코드를 생성('받기' 또는 '청구' 버튼을 눌러 PIX QR 생성 옵션 선택)한 뒤 스베르방크 앱의 카메라로 스캔하십시오. 송금은 신속하지만 약 5%의 수수료가 부과됩니다(예: 보고된 환율은 10 BRL당 15.8 RUB, 공식 환율이 1.5-1.6 RUB/BRL 정도임을 고려하면 약 5% 수수료에 해당). 이 방법은 소액 결제나 브라질 은행 계좌 충전에 사용할 수 있습니다. 이 기능은 모든 스베르방크 사용자에게 제공되지 않을 수 있습니다.
+    <div class="src">✓ 1 건의 후기 채팅방에서</div></div>
+  </details>
+  <details><summary><span class="sumq">브라질에서 현지 온라인 서비스(예: 꽃 배달)를 위해 미르(Mir) 카드나 암호화폐 같은 국제 결제 수단을 사용하는 것은 어렵습니다.</span><span></span></summary>
+    <div class="a">Flowwow는 미르 카드를 수락할 수도 있습니다. 대부분의 서비스는 주로 Pix 또는 브라질 은행 카드와 같은 현지 결제 시스템을 사용합니다. 해외 신용/체크 카드는 온라인 결제 시 자주 실패하지만, 실제 결제 단말기에서는 작동할 수 있습니다.
+    <div class="src">✓ 1 건의 후기 채팅방에서</div></div>
+  </details>
+  <details><summary><span class="sumq">리우데자네이루의 대중교통은 특정 충전식 카드(Riocard 또는 Giro)가 필요합니다.</span><span></span></summary>
+    <div class="a">이 카드는 지하철역과 환승 센터에 있는 전용 키오스크 및 ATM에서 현금이나 Pix로 구매 및 충전할 수 있습니다. 카드 구매나 충전 시 CPF 번호가 필요하지 않아 관광객도 쉽게 이용할 수 있습니다.
+    <div class="src">✓ 1 건의 후기 채팅방에서</div></div>
+  </details>
+  <details><summary><span class="sumq">브라질의 결제 수단으로는 즉시 이체를 위한 PIX와 온라인 거래를 위한 가상 카드(예: Bybit)가 있습니다.</span><span></span></summary>
+    <div class="a">할부 결제(parcelamento)를 위해서는 메르카도 파고(Mercado Pago) 신용카드가 언급됩니다. 특정 금융 서비스나 계좌의 가상 카드 기능 및 PIX 통합 지원 여부는 직접 확인해야 합니다.
+    <div class="src">✓ 1 건의 후기 채팅방에서</div></div>
+  </details>
+  <details><summary><span class="sumq">브라질의 주황색 시내버스는 픽스(Pix)나 현금으로 차장에게 직접 결제할 수 있습니다.</span><span></span></summary>
+    <div class="a">요금은 5.30 BRL입니다. 아동 요금(예: 7세)의 경우 차장에게 문의하는 것이 좋습니다.
+    <div class="src">✓ 1 건의 후기 채팅방에서</div></div>
+  </details>
+  <details><summary><span class="sumq">러시아 여행객은 스베르방크(Sberbank) 모바일 앱을 사용하여 브라질의 오프라인 상점과 슈퍼마켓에서 Pix 직접 결제를 할 수 있습니다.</span><span></span></summary>
+    <div class="a">그러나 이 결제 방식은 일반적으로 온라인 서비스나 우버와 같은 앱 충전에는 작동하지 않습니다.
+    <div class="src">✓ 1 건의 후기 채팅방에서</div></div>
+  </details>
+  <details><summary><span class="sumq">러시아 스베르방크(Sberbank) 애플리케이션을 통해 사용자가 브라질 즉시 결제 시스템인 Pix를 직접 결제할 수 있다고 보고되었습니다.</span><span></span></summary>
+    <div class="a">러시아 은행 송금을 사용하여 Pix 결제를 할 때는 환율과 호환성을 확인하십시오.
+    <div class="src">✓ 1 건의 후기 채팅방에서</div></div>
+  </details>
+  <details><summary><span class="sumq">브라질에서 상품과 서비스를 결제하는 가장 효율적인 방법은 Pix 시스템을 사용하는 것입니다.</span><span></span></summary>
+    <div class="a">관광객들은 종종 P2P 가상화폐 거래소(예: Bybit)를 사용하여 USDT를 BRL로 환전한 다음, Pix를 통해 현지 계좌로 송금하거나 QR 코드 결제에 직접 사용합니다.
+    <div class="src">✓ 1 건의 후기 채팅방에서</div></div>
+  </details>
+  <details><summary><span class="sumq">PIX는 브라질의 주요 즉시 결제 시스템으로 QR 코드를 통해 작동합니다.</span><span></span></summary>
+    <div class="a">Bybit Pay와 같은 많은 디지털 지갑 및 암호화폐 플랫폼이 직접적인 PIX 결제를 지원하며, 모든 유형의 업체에서 널리 허용됩니다.
+    <div class="src">✓ 1 건의 후기 채팅방에서</div></div>
+  </details>
+  <details><summary><span class="sumq">Sberbank 앱을 사용하면 브라질 Pix QR 코드를 직접 결제할 수 있습니다.</span><span></span></summary>
+    <div class="a">환전 수수료는 약 5%입니다. 참고: 이 방법은 100% 신뢰할 수 없으며 간혹 실패할 수도 있습니다.
+    <div class="src">✓ 1 건의 후기 채팅방에서</div></div>
+  </details>
+
+  <h2>관련 주제</h2>
+  <div class="chips">
+    <a class="chip" href="/ko/br/using-a-cpf/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• CPF 발급 및 사용법</span></a>
+    <a class="chip" href="/ko/br/opening-bank-accounts-for-non-residents/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 관광객 및 비거주자 계좌 개설</span></a>
+    <a class="chip" href="/ko/br/extending-tourist-stays-90-90-days/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 관광 무비자 체류 연장(90+90일)</span></a>
+    <a class="chip" href="/ko/br/tax-id-cpf-registration/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• CPF 납세자 번호 발급</span></a>
+    <a class="chip" href="/ko/br/entry-documents-tickets-bookings-finance/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 입국 필수 서류(항공권, 예약, 재정)</span></a>
+    <a class="chip" href="/ko/br/verifying-return-or-onward-tickets/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 왕복 또는 제3국행 항공권 증명</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>어디나 똑같은 말인데, 당신 상황만 특별한가요?</h2>
+    <p>Luky에게 물어보세요 — 검색이 보여주지 않고 모든 블로거가 말해주지도 않는 것.</p>
+    <p>그리고 Luky는 실제 대화를 위한 실시간 음성 번역기입니다: 종업원이 주문을 헷갈리지 않게.</p>
+    <p class="ps">PS: 외국어로 데이트에서 플러팅? 문제없어요 😏</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Luky 열기</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — 커뮤니티 채팅방에서 나온 실제 경험, 군더더기 없이</div>
+    <nav class="f-links">
+      <a href="/ko/about/">소개</a>
+      <a href="/ko/br/">모든 주제</a>
+      <a href="/ko/">나라</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">답변은 공개된 커뮤니티 채팅방에서 모은 것입니다 — 사람들의 실제 경험이며 공식 조언이 아닙니다. 중요한 결정 전에는 직접 확인하세요.</p>
+    <div class="f-copy">© 2026 Luky · 업데이트 08.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"\ube0c\ub77c\uc9c8 \uc5ec\ud589\uc744 \uacc4\ud68d\ud560 \ub54c, \ud2b9\uc815 \ud56d\uacf5\uc0ac(\uc608: \u0027Turks\u0027) \uad00\ub828 \uc7a0\uc7ac\uc801 \ubb38\uc81c\ub97c \uc8fc\uc758\ud558\uace0 \uacf5\ud56d\uc5d0\uc11c \uc0ac\uae30 \ud53c\ud574\ub97c \ubc29\uc9c0\ud558\uae30 \uc704\ud574 SIM \uce74\ub4dc\ub97c \uad6c\ub9e4\ud558\uc9c0 \ub9c8\uc2ed\uc2dc\uc624."},
+{"@type":"ListItem","position":2,"name":"\ub7ec\uc2dc\uc544 \uc2a4\ubca0\ub974\ubc29\ud06c \uc0ac\uc6a9\uc790\ub294 QR \ucf54\ub4dc \uacb0\uc81c\ub098 \ube0c\ub77c\uc9c8 \ub204\ubc45\ud06c \uacc4\uc88c\ub85c \uc1a1\uae08\ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4."},
+{"@type":"ListItem","position":3,"name":"\ube0c\ub77c\uc9c8\uc5d0\uc11c \ud604\uc9c0 \uc628\ub77c\uc778 \uc11c\ube44\uc2a4(\uc608: \uaf43 \ubc30\ub2ec)\ub97c \uc704\ud574 \ubbf8\ub974(Mir) \uce74\ub4dc\ub098 \uc554\ud638\ud654\ud3d0 \uac19\uc740 \uad6d\uc81c \uacb0\uc81c \uc218\ub2e8\uc744 \uc0ac\uc6a9\ud558\ub294 \uac83\uc740 \uc5b4\ub835\uc2b5\ub2c8\ub2e4."},
+{"@type":"ListItem","position":4,"name":"\ub9ac\uc6b0\ub370\uc790\ub124\uc774\ub8e8\uc758 \ub300\uc911\uad50\ud1b5\uc740 \ud2b9\uc815 \ucda9\uc804\uc2dd \uce74\ub4dc(Riocard \ub610\ub294 Giro)\uac00 \ud544\uc694\ud569\ub2c8\ub2e4."},
+{"@type":"ListItem","position":5,"name":"\ube0c\ub77c\uc9c8\uc758 \uacb0\uc81c \uc218\ub2e8\uc73c\ub85c\ub294 \uc989\uc2dc \uc774\uccb4\ub97c \uc704\ud55c PIX\uc640 \uc628\ub77c\uc778 \uac70\ub798\ub97c \uc704\ud55c \uac00\uc0c1 \uce74\ub4dc(\uc608: Bybit)\uac00 \uc788\uc2b5\ub2c8\ub2e4."},
+{"@type":"ListItem","position":6,"name":"\ube0c\ub77c\uc9c8\uc758 \uc8fc\ud669\uc0c9 \uc2dc\ub0b4\ubc84\uc2a4\ub294 \ud53d\uc2a4(Pix)\ub098 \ud604\uae08\uc73c\ub85c \ucc28\uc7a5\uc5d0\uac8c \uc9c1\uc811 \uacb0\uc81c\ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4."},
+{"@type":"ListItem","position":7,"name":"\ub7ec\uc2dc\uc544 \uc5ec\ud589\uac1d\uc740 \uc2a4\ubca0\ub974\ubc29\ud06c(Sberbank) \ubaa8\ubc14\uc77c \uc571\uc744 \uc0ac\uc6a9\ud558\uc5ec \ube0c\ub77c\uc9c8\uc758 \uc624\ud504\ub77c\uc778 \uc0c1\uc810\uacfc \uc288\ud37c\ub9c8\ucf13\uc5d0\uc11c Pix \uc9c1\uc811 \uacb0\uc81c\ub97c \ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4."},
+{"@type":"ListItem","position":8,"name":"\ub7ec\uc2dc\uc544 \uc2a4\ubca0\ub974\ubc29\ud06c(Sberbank) \uc560\ud50c\ub9ac\ucf00\uc774\uc158\uc744 \ud1b5\ud574 \uc0ac\uc6a9\uc790\uac00 \ube0c\ub77c\uc9c8 \uc989\uc2dc \uacb0\uc81c \uc2dc\uc2a4\ud15c\uc778 Pix\ub97c \uc9c1\uc811 \uacb0\uc81c\ud560 \uc218 \uc788\ub2e4\uace0 \ubcf4\uace0\ub418\uc5c8\uc2b5\ub2c8\ub2e4."},
+{"@type":"ListItem","position":9,"name":"\ube0c\ub77c\uc9c8\uc5d0\uc11c \uc0c1\ud488\uacfc \uc11c\ube44\uc2a4\ub97c \uacb0\uc81c\ud558\ub294 \uac00\uc7a5 \ud6a8\uc728\uc801\uc778 \ubc29\ubc95\uc740 Pix \uc2dc\uc2a4\ud15c\uc744 \uc0ac\uc6a9\ud558\ub294 \uac83\uc785\ub2c8\ub2e4."},
+{"@type":"ListItem","position":10,"name":"PIX\ub294 \ube0c\ub77c\uc9c8\uc758 \uc8fc\uc694 \uc989\uc2dc \uacb0\uc81c \uc2dc\uc2a4\ud15c\uc73c\ub85c QR \ucf54\ub4dc\ub97c \ud1b5\ud574 \uc791\ub3d9\ud569\ub2c8\ub2e4."},
+{"@type":"ListItem","position":11,"name":"Sberbank \uc571\uc744 \uc0ac\uc6a9\ud558\uba74 \ube0c\ub77c\uc9c8 Pix QR \ucf54\ub4dc\ub97c \uc9c1\uc811 \uacb0\uc81c\ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4."}
+]}
+</script>
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 \uc57c\uac04", DAY="\u2600 \uc8fc\uac04";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

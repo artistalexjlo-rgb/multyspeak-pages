@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>保加利亚：VFS Global递签与预约流程 — 真实经验 · Luky</title>
+<meta name="description" content="来自聊天群的关于保加利亚「VFS Global递签与预约流程」的真实经验：原样呈现，第一手。你的具体情况 — 问 Luky。">
+<link rel="canonical" href="https://info.multyspeak.online/zh/bg/document-submission-and-vfs-booking/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/bg/document-submission-and-vfs-booking/">
+<link rel="alternate" hreflang="ar" href="https://info.multyspeak.online/ar/bg/document-submission-and-vfs-booking/">
+<link rel="alternate" hreflang="de" href="https://info.multyspeak.online/de/bg/document-submission-and-vfs-booking/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/bg/document-submission-and-vfs-booking/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/bg/document-submission-and-vfs-booking/">
+<link rel="alternate" hreflang="fr" href="https://info.multyspeak.online/fr/bg/document-submission-and-vfs-booking/">
+<link rel="alternate" hreflang="hi" href="https://info.multyspeak.online/hi/bg/document-submission-and-vfs-booking/">
+<link rel="alternate" hreflang="it" href="https://info.multyspeak.online/it/bg/document-submission-and-vfs-booking/">
+<link rel="alternate" hreflang="ja" href="https://info.multyspeak.online/ja/bg/document-submission-and-vfs-booking/">
+<link rel="alternate" hreflang="ko" href="https://info.multyspeak.online/ko/bg/document-submission-and-vfs-booking/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/bg/document-submission-and-vfs-booking/">
+<link rel="alternate" hreflang="th" href="https://info.multyspeak.online/th/bg/document-submission-and-vfs-booking/">
+<link rel="alternate" hreflang="tr" href="https://info.multyspeak.online/tr/bg/document-submission-and-vfs-booking/">
+<link rel="alternate" hreflang="zh" href="https://info.multyspeak.online/zh/bg/document-submission-and-vfs-booking/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/bg/document-submission-and-vfs-booking/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+/* тег типа абзаца (хвост-антологии: lifehack/reglament/howto/risk/case/service) */
+.tag{display:inline-block;font-family:var(--font-mono);font-weight:400;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);
+  border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:2px;white-space:nowrap}
+.tag.risk{color:var(--red);border-color:var(--red)}
+.tag.reglament{color:var(--accent);border-color:var(--accent)}
+.tag.lifehack{color:var(--green);border-color:var(--green)}
+.tag.service{color:var(--yellow);border-color:var(--yellow)}
+.tag.howto{color:var(--hud);border-color:var(--hud)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">信息门户 · 任何国家 · 不掺水</span>
+    </div>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="" href="/ru/bg/document-submission-and-vfs-booking/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/ar/bg/document-submission-and-vfs-booking/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>AR</a>
+        <a class="" href="/de/bg/document-submission-and-vfs-booking/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>DE</a>
+        <a class="" href="/en/bg/document-submission-and-vfs-booking/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/bg/document-submission-and-vfs-booking/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/fr/bg/document-submission-and-vfs-booking/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>FR</a>
+        <a class="" href="/hi/bg/document-submission-and-vfs-booking/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>HI</a>
+        <a class="" href="/it/bg/document-submission-and-vfs-booking/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>IT</a>
+        <a class="" href="/ja/bg/document-submission-and-vfs-booking/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>JA</a>
+        <a class="" href="/ko/bg/document-submission-and-vfs-booking/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>KO</a>
+        <a class="" href="/pt/bg/document-submission-and-vfs-booking/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+        <a class="" href="/th/bg/document-submission-and-vfs-booking/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TH</a>
+        <a class="" href="/tr/bg/document-submission-and-vfs-booking/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TR</a>
+        <a class="" href="/zh/bg/document-submission-and-vfs-booking/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ZH</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ 夜间</span></button>
+    </div>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/zh-Hans/">首页</a> /
+    <a href="/zh-Hans/bg/">保加利亚</a> /
+    <b>VFS Global递签与预约流程</b>
+  </nav>
+
+
+  
+  <h1>VFS Global递签与预约流程：在保加利亚实际是怎么运作的 — 第一手</h1>
+  <span class="section-label">简短回答</span>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">在俄罗斯申请保加利亚C类签证通常需通过VFS Global办理，目前审理时长约40至50个工作日。建议申请人通过官方邮箱反复联系签证中心以获取预约，并在线持续检查处理状态，因为短信通知常不可靠且存在延迟。</div></div>
+
+  <h2>来自真实经验</h2>
+  <details open><summary><span class="sumq">一名用户及其配偶于 4 月 24 日通过莫斯科 VIP 服务提交了签证申请。签证中心网站于 6 月 9 日更新了文件就绪状态，实际向领事馆提交日期为 4 月 27 日。他们最终获得了有效期为 30 天的单次入境签证，符合其机票和计划 15 天的停留时间。未收到付费短信通知。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 2 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">在俄罗斯申请保加利亚C类签证的人员常面临在莫斯科和圣彼得堡的VFS Global中心预约困难的问题。审批时间可延长至45天，若遇国定假日则会进一步延长。申请者发现的一种变通方法是给保加利亚驻莫斯科领事馆发邮件（例如 consular.moscow.bg）申请VFS Global中心贵宾厅的预约。这种邮件往来有时会获得一份“邀请函”，充当预约号，不过有时会收取额外的优先处理费。所需文件可能包括电子版劳动手册记录，即使是企业主或成年家属也需要。直接向领事馆递交申请主要针对D类签证；C类签证申请需通过VFS Global中心办理。发邮件预约时，请写明护照上的全名。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">在莫斯科的保加利亚签证申请流程处理时间差异显著。4 月 27 日提交的申请到 6 月 10 日已准备好，而 4 月 22 日提交的申请仍在处理中。申请人应在线检查状态，因为短信通知并不总是准时发送。一些人报告即使预约了“VIP”名额也需要长时间等待。填写申请表时，建议注明国家为“Russia”，而不是仅仅写“MVD”。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">保加利亚申根签证目前审理时间为45-50个工作日。VFS Global 网站上的状态查询容易出错；用户报告称通过切换浏览器、设备或刷新页面直到系统响应可以成功查询。短信通知政策因地区而异（例如圣彼得堡和莫斯科中心），并不总是可靠的。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">如果你的签证预约被取消，你可能会通过电子邮件收到取消通知。在没有收到取消邮件但被告知预约无效的情况下，建议定期查看邮件以获取更新。通过电话或电子邮件联系签证中心可能会提供进一步说明，尽管信息可能有限。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">莫斯科签证申请中心 (VFX) 的护照领取时间通常为 15:00 或 18:00，具体取决于服务等级。标准处理速度并不比代理服务更快。如有签证 D 类咨询，请使用大使馆网站上的官方邮箱，而非咨询总台。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">俄罗斯的保加利亚签证预约竞争非常激烈。建议策略：通过电子邮件（infomosbul.com 或 infospbbul.com）反复且持续地联系签证中心。取消预约是获得空位的主要来源。目前预计处理时间为 40-50 天。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">有报道称，圣彼得堡6月15日至6月30日的所有签证申请预约均已被取消。现有的预约正在重新安排。尚不确定在此期间是否会继续签发护照/签证。建议旅客通过电子邮件与签证中心联系以获取最新信息。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">保加利亚签证申请人必须在选择申请渠道时保持谨慎。非官方机构可能冒充官方的“保加利亚大使馆”或“签证中心”，提供诸如“现场预约”或“30 分钟处理时间”等误导性信息。保加利亚官方大使馆和签证中心（由大使馆授权，如 VFS Global）通常需要预约。俄罗斯 VIP 预约的联系邮箱包括 infospbbul.com（圣彼得堡）和 infomosbul.com（莫斯科）。请务必与官方政府来源交叉核对联系方式，以避免欺诈性服务或不必要的中间费用。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">签证申请服务费为 29.89 欧元（按当前汇率折合卢布支付）。护照递送费用为 720 卢布，或者您可以亲自领取。一位用户在 7 月 3 日提交的申请共支付了 19610 卢布。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">一位用户在晚上 8 点后收到预约确认邮件，这表明可能存在服务器问题，后来已解决。这说明预约确认可能会有延迟。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+
+  <h2>相关主题</h2>
+  <div class="chips">
+    <a class="chip" href="/zh/bg/type-c-processing-times/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• C类旅游签证审批时长</span></a>
+    <a class="chip" href="/zh/bg/type-c-visa-docs-and-requirements/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 保加利亚C类签证：材料与要求</span></a>
+    <a class="chip" href="/zh/bg/short-stay-tourist-type-c-visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• C类旅游签证办理</span></a>
+    <a class="chip" href="/zh/bg/type-d-visa-and-residency-permits/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• D类签证与居留许可申请</span></a>
+    <a class="chip" href="/zh/bg/purchasing-bus-tickets/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 保加利亚往返巴士票购买</span></a>
+    <a class="chip" href="/zh/bg/ist-airport-to-bulgarian-resorts-bus/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 伊斯坦布尔机场至保加利亚度假区巴士</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>答案总在绕圈，始终不落到点上？</h2>
+    <p>问 Luky — 不是泛泛的文章，而是针对你情况的具体信息.</p>
+    <p>而 Luky 还是真实对话的实时语音翻译： 和医生交流，听懂他说了什么.</p>
+    <p class="ps">PS：想的话，Luky 还能帮你毫无语言障碍地认识新朋友 😉</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>打开 Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — 来自社区聊天群的真实经验，不掺水</div>
+    <nav class="f-links">
+      <a href="/zh-Hans/about/">关于</a>
+      <a href="/zh-Hans/bg/">所有主题</a>
+      <a href="/zh-Hans/">国家</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">答案取自公开的社区聊天群 — 这是人们的真实经验，不是官方建议。做重要决定前请自行核实。</p>
+    <div class="f-copy">© 2026 Luky · 更新于 08.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"\u4e00\u540d\u7528\u6237\u53ca\u5176\u914d\u5076\u4e8e 4 \u6708 24 \u65e5\u901a\u8fc7\u83ab\u65af\u79d1 VIP \u670d\u52a1\u63d0\u4ea4\u4e86\u7b7e\u8bc1\u7533\u8bf7\u3002\u7b7e\u8bc1\u4e2d\u5fc3\u7f51\u7ad9\u4e8e 6 \u6708 9 \u65e5\u66f4\u65b0\u4e86\u6587\u4ef6\u5c31\u7eea\u72b6\u6001\uff0c\u5b9e\u9645\u5411\u9886\u4e8b\u9986\u63d0\u4ea4\u65e5\u671f\u4e3a 4 \u6708 27 \u65e5\u3002\u4ed6\u4eec\u6700\u7ec8\u83b7\u5f97\u4e86\u6709\u6548\u671f\u4e3a 30 \u5929\u7684\u5355\u6b21\u5165\u5883\u7b7e\u8bc1\uff0c\u7b26\u5408\u5176\u673a\u7968\u548c\u8ba1\u5212 15 \u5929\u7684\u505c\u7559\u65f6\u95f4\u3002\u672a\u6536\u5230\u4ed8\u8d39\u77ed\u4fe1\u901a\u77e5\u3002"},
+{"@type":"ListItem","position":2,"name":"\u5728\u4fc4\u7f57\u65af\u7533\u8bf7\u4fdd\u52a0\u5229\u4e9aC\u7c7b\u7b7e\u8bc1\u7684\u4eba\u5458\u5e38\u9762\u4e34\u5728\u83ab\u65af\u79d1\u548c\u5723\u5f7c\u5f97\u5821\u7684VFS Global\u4e2d\u5fc3\u9884\u7ea6\u56f0\u96be\u7684\u95ee\u9898\u3002\u5ba1\u6279\u65f6\u95f4\u53ef\u5ef6\u957f\u81f345\u5929\uff0c\u82e5\u9047\u56fd\u5b9a\u5047\u65e5\u5219\u4f1a\u8fdb\u4e00\u6b65\u5ef6\u957f\u3002\u7533\u8bf7\u8005\u53d1\u73b0\u7684\u4e00\u79cd\u53d8\u901a\u65b9\u6cd5\u662f\u7ed9\u4fdd\u52a0\u5229\u4e9a\u9a7b\u83ab\u65af\u79d1\u9886\u4e8b\u9986\u53d1\u90ae\u4ef6\uff08\u4f8b\u5982 consular.moscow.bg\uff09\u7533\u8bf7VFS Global\u4e2d\u5fc3\u8d35\u5bbe\u5385\u7684\u9884\u7ea6\u3002\u8fd9\u79cd\u90ae\u4ef6\u5f80\u6765\u6709\u65f6\u4f1a\u83b7\u5f97\u4e00\u4efd\u201c\u9080\u8bf7\u51fd\u201d\uff0c\u5145\u5f53\u9884\u7ea6\u53f7\uff0c\u4e0d\u8fc7\u6709\u65f6\u4f1a\u6536\u53d6\u989d\u5916\u7684\u4f18\u5148\u5904\u7406\u8d39\u3002\u6240\u9700\u6587\u4ef6\u53ef\u80fd\u5305\u62ec\u7535\u5b50\u7248\u52b3\u52a8\u624b\u518c\u8bb0\u5f55\uff0c\u5373\u4f7f\u662f\u4f01\u4e1a\u4e3b\u6216\u6210\u5e74\u5bb6\u5c5e\u4e5f\u9700\u8981\u3002\u76f4\u63a5\u5411\u9886\u4e8b\u9986\u9012\u4ea4\u7533\u8bf7\u4e3b\u8981\u9488\u5bf9D\u7c7b\u7b7e\u8bc1\uff1bC\u7c7b\u7b7e\u8bc1\u7533\u8bf7\u9700\u901a\u8fc7VFS Global\u4e2d\u5fc3\u529e\u7406\u3002\u53d1\u90ae\u4ef6\u9884\u7ea6\u65f6\uff0c\u8bf7\u5199\u660e\u62a4\u7167\u4e0a\u7684\u5168\u540d\u3002"},
+{"@type":"ListItem","position":3,"name":"\u5728\u83ab\u65af\u79d1\u7684\u4fdd\u52a0\u5229\u4e9a\u7b7e\u8bc1\u7533\u8bf7\u6d41\u7a0b\u5904\u7406\u65f6\u95f4\u5dee\u5f02\u663e\u8457\u30024 \u6708 27 \u65e5\u63d0\u4ea4\u7684\u7533\u8bf7\u5230 6 \u6708 10 \u65e5\u5df2\u51c6\u5907\u597d\uff0c\u800c 4 \u6708 22 \u65e5\u63d0\u4ea4\u7684\u7533\u8bf7\u4ecd\u5728\u5904\u7406\u4e2d\u3002\u7533\u8bf7\u4eba\u5e94\u5728\u7ebf\u68c0\u67e5\u72b6\u6001\uff0c\u56e0\u4e3a\u77ed\u4fe1\u901a\u77e5\u5e76\u4e0d\u603b\u662f\u51c6\u65f6\u53d1\u9001\u3002\u4e00\u4e9b\u4eba\u62a5\u544a\u5373\u4f7f\u9884\u7ea6\u4e86\u201cVIP\u201d\u540d\u989d\u4e5f\u9700\u8981\u957f\u65f6\u95f4\u7b49\u5f85\u3002\u586b\u5199\u7533\u8bf7\u8868\u65f6\uff0c\u5efa\u8bae\u6ce8\u660e\u56fd\u5bb6\u4e3a\u201cRussia\u201d\uff0c\u800c\u4e0d\u662f\u4ec5\u4ec5\u5199\u201cMVD\u201d\u3002"},
+{"@type":"ListItem","position":4,"name":"\u4fdd\u52a0\u5229\u4e9a\u7533\u6839\u7b7e\u8bc1\u76ee\u524d\u5ba1\u7406\u65f6\u95f4\u4e3a45-50\u4e2a\u5de5\u4f5c\u65e5\u3002VFS Global \u7f51\u7ad9\u4e0a\u7684\u72b6\u6001\u67e5\u8be2\u5bb9\u6613\u51fa\u9519\uff1b\u7528\u6237\u62a5\u544a\u79f0\u901a\u8fc7\u5207\u6362\u6d4f\u89c8\u5668\u3001\u8bbe\u5907\u6216\u5237\u65b0\u9875\u9762\u76f4\u5230\u7cfb\u7edf\u54cd\u5e94\u53ef\u4ee5\u6210\u529f\u67e5\u8be2\u3002\u77ed\u4fe1\u901a\u77e5\u653f\u7b56\u56e0\u5730\u533a\u800c\u5f02\uff08\u4f8b\u5982\u5723\u5f7c\u5f97\u5821\u548c\u83ab\u65af\u79d1\u4e2d\u5fc3\uff09\uff0c\u5e76\u4e0d\u603b\u662f\u53ef\u9760\u7684\u3002"},
+{"@type":"ListItem","position":5,"name":"\u5982\u679c\u4f60\u7684\u7b7e\u8bc1\u9884\u7ea6\u88ab\u53d6\u6d88\uff0c\u4f60\u53ef\u80fd\u4f1a\u901a\u8fc7\u7535\u5b50\u90ae\u4ef6\u6536\u5230\u53d6\u6d88\u901a\u77e5\u3002\u5728\u6ca1\u6709\u6536\u5230\u53d6\u6d88\u90ae\u4ef6\u4f46\u88ab\u544a\u77e5\u9884\u7ea6\u65e0\u6548\u7684\u60c5\u51b5\u4e0b\uff0c\u5efa\u8bae\u5b9a\u671f\u67e5\u770b\u90ae\u4ef6\u4ee5\u83b7\u53d6\u66f4\u65b0\u3002\u901a\u8fc7\u7535\u8bdd\u6216\u7535\u5b50\u90ae\u4ef6\u8054\u7cfb\u7b7e\u8bc1\u4e2d\u5fc3\u53ef\u80fd\u4f1a\u63d0\u4f9b\u8fdb\u4e00\u6b65\u8bf4\u660e\uff0c\u5c3d\u7ba1\u4fe1\u606f\u53ef\u80fd\u6709\u9650\u3002"},
+{"@type":"ListItem","position":6,"name":"\u83ab\u65af\u79d1\u7b7e\u8bc1\u7533\u8bf7\u4e2d\u5fc3 (VFX) \u7684\u62a4\u7167\u9886\u53d6\u65f6\u95f4\u901a\u5e38\u4e3a 15:00 \u6216 18:00\uff0c\u5177\u4f53\u53d6\u51b3\u4e8e\u670d\u52a1\u7b49\u7ea7\u3002\u6807\u51c6\u5904\u7406\u901f\u5ea6\u5e76\u4e0d\u6bd4\u4ee3\u7406\u670d\u52a1\u66f4\u5feb\u3002\u5982\u6709\u7b7e\u8bc1 D \u7c7b\u54a8\u8be2\uff0c\u8bf7\u4f7f\u7528\u5927\u4f7f\u9986\u7f51\u7ad9\u4e0a\u7684\u5b98\u65b9\u90ae\u7bb1\uff0c\u800c\u975e\u54a8\u8be2\u603b\u53f0\u3002"},
+{"@type":"ListItem","position":7,"name":"\u4fc4\u7f57\u65af\u7684\u4fdd\u52a0\u5229\u4e9a\u7b7e\u8bc1\u9884\u7ea6\u7ade\u4e89\u975e\u5e38\u6fc0\u70c8\u3002\u5efa\u8bae\u7b56\u7565\uff1a\u901a\u8fc7\u7535\u5b50\u90ae\u4ef6\uff08infomosbul.com \u6216 infospbbul.com\uff09\u53cd\u590d\u4e14\u6301\u7eed\u5730\u8054\u7cfb\u7b7e\u8bc1\u4e2d\u5fc3\u3002\u53d6\u6d88\u9884\u7ea6\u662f\u83b7\u5f97\u7a7a\u4f4d\u7684\u4e3b\u8981\u6765\u6e90\u3002\u76ee\u524d\u9884\u8ba1\u5904\u7406\u65f6\u95f4\u4e3a 40-50 \u5929\u3002"},
+{"@type":"ListItem","position":8,"name":"\u6709\u62a5\u9053\u79f0\uff0c\u5723\u5f7c\u5f97\u58216\u670815\u65e5\u81f36\u670830\u65e5\u7684\u6240\u6709\u7b7e\u8bc1\u7533\u8bf7\u9884\u7ea6\u5747\u5df2\u88ab\u53d6\u6d88\u3002\u73b0\u6709\u7684\u9884\u7ea6\u6b63\u5728\u91cd\u65b0\u5b89\u6392\u3002\u5c1a\u4e0d\u786e\u5b9a\u5728\u6b64\u671f\u95f4\u662f\u5426\u4f1a\u7ee7\u7eed\u7b7e\u53d1\u62a4\u7167/\u7b7e\u8bc1\u3002\u5efa\u8bae\u65c5\u5ba2\u901a\u8fc7\u7535\u5b50\u90ae\u4ef6\u4e0e\u7b7e\u8bc1\u4e2d\u5fc3\u8054\u7cfb\u4ee5\u83b7\u53d6\u6700\u65b0\u4fe1\u606f\u3002"},
+{"@type":"ListItem","position":9,"name":"\u4fdd\u52a0\u5229\u4e9a\u7b7e\u8bc1\u7533\u8bf7\u4eba\u5fc5\u987b\u5728\u9009\u62e9\u7533\u8bf7\u6e20\u9053\u65f6\u4fdd\u6301\u8c28\u614e\u3002\u975e\u5b98\u65b9\u673a\u6784\u53ef\u80fd\u5192\u5145\u5b98\u65b9\u7684\u201c\u4fdd\u52a0\u5229\u4e9a\u5927\u4f7f\u9986\u201d\u6216\u201c\u7b7e\u8bc1\u4e2d\u5fc3\u201d\uff0c\u63d0\u4f9b\u8bf8\u5982\u201c\u73b0\u573a\u9884\u7ea6\u201d\u6216\u201c30 \u5206\u949f\u5904\u7406\u65f6\u95f4\u201d\u7b49\u8bef\u5bfc\u6027\u4fe1\u606f\u3002\u4fdd\u52a0\u5229\u4e9a\u5b98\u65b9\u5927\u4f7f\u9986\u548c\u7b7e\u8bc1\u4e2d\u5fc3\uff08\u7531\u5927\u4f7f\u9986\u6388\u6743\uff0c\u5982 VFS Global\uff09\u901a\u5e38\u9700\u8981\u9884\u7ea6\u3002\u4fc4\u7f57\u65af VIP \u9884\u7ea6\u7684\u8054\u7cfb\u90ae\u7bb1\u5305\u62ec infospbbul.com\uff08\u5723\u5f7c\u5f97\u5821\uff09\u548c infomosbul.com\uff08\u83ab\u65af\u79d1\uff09\u3002\u8bf7\u52a1\u5fc5\u4e0e\u5b98\u65b9\u653f\u5e9c\u6765\u6e90\u4ea4\u53c9\u6838\u5bf9\u8054\u7cfb\u65b9\u5f0f\uff0c\u4ee5\u907f\u514d\u6b3a\u8bc8\u6027\u670d\u52a1\u6216\u4e0d\u5fc5\u8981\u7684\u4e2d\u95f4\u8d39\u7528\u3002"},
+{"@type":"ListItem","position":10,"name":"\u7b7e\u8bc1\u7533\u8bf7\u670d\u52a1\u8d39\u4e3a 29.89 \u6b27\u5143\uff08\u6309\u5f53\u524d\u6c47\u7387\u6298\u5408\u5362\u5e03\u652f\u4ed8\uff09\u3002\u62a4\u7167\u9012\u9001\u8d39\u7528\u4e3a 720 \u5362\u5e03\uff0c\u6216\u8005\u60a8\u53ef\u4ee5\u4eb2\u81ea\u9886\u53d6\u3002\u4e00\u4f4d\u7528\u6237\u5728 7 \u6708 3 \u65e5\u63d0\u4ea4\u7684\u7533\u8bf7\u5171\u652f\u4ed8\u4e86 19610 \u5362\u5e03\u3002"},
+{"@type":"ListItem","position":11,"name":"\u4e00\u4f4d\u7528\u6237\u5728\u665a\u4e0a 8 \u70b9\u540e\u6536\u5230\u9884\u7ea6\u786e\u8ba4\u90ae\u4ef6\uff0c\u8fd9\u8868\u660e\u53ef\u80fd\u5b58\u5728\u670d\u52a1\u5668\u95ee\u9898\uff0c\u540e\u6765\u5df2\u89e3\u51b3\u3002\u8fd9\u8bf4\u660e\u9884\u7ea6\u786e\u8ba4\u53ef\u80fd\u4f1a\u6709\u5ef6\u8fdf\u3002"}
+]}
+</script>
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 \u591c\u95f4", DAY="\u2600 \u65e5\u95f4";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

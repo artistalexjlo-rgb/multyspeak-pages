@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>巴西：手机卡实名登记 — 真实经验 · Luky</title>
+<meta name="description" content="来自聊天群的关于巴西「手机卡实名登记」的真实经验：原样呈现，第一手。你的具体情况 — 问 Luky。">
+<link rel="canonical" href="https://info.multyspeak.online/zh/br/registering-sim-cards/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/br/registering-sim-cards/">
+<link rel="alternate" hreflang="ar" href="https://info.multyspeak.online/ar/br/registering-sim-cards/">
+<link rel="alternate" hreflang="de" href="https://info.multyspeak.online/de/br/registering-sim-cards/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/br/registering-sim-cards/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/br/registering-sim-cards/">
+<link rel="alternate" hreflang="fr" href="https://info.multyspeak.online/fr/br/registering-sim-cards/">
+<link rel="alternate" hreflang="hi" href="https://info.multyspeak.online/hi/br/registering-sim-cards/">
+<link rel="alternate" hreflang="it" href="https://info.multyspeak.online/it/br/registering-sim-cards/">
+<link rel="alternate" hreflang="ja" href="https://info.multyspeak.online/ja/br/registering-sim-cards/">
+<link rel="alternate" hreflang="ko" href="https://info.multyspeak.online/ko/br/registering-sim-cards/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/br/registering-sim-cards/">
+<link rel="alternate" hreflang="th" href="https://info.multyspeak.online/th/br/registering-sim-cards/">
+<link rel="alternate" hreflang="tr" href="https://info.multyspeak.online/tr/br/registering-sim-cards/">
+<link rel="alternate" hreflang="zh" href="https://info.multyspeak.online/zh/br/registering-sim-cards/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/br/registering-sim-cards/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+/* тег типа абзаца (хвост-антологии: lifehack/reglament/howto/risk/case/service) */
+.tag{display:inline-block;font-family:var(--font-mono);font-weight:400;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);
+  border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:2px;white-space:nowrap}
+.tag.risk{color:var(--red);border-color:var(--red)}
+.tag.reglament{color:var(--accent);border-color:var(--accent)}
+.tag.lifehack{color:var(--green);border-color:var(--green)}
+.tag.service{color:var(--yellow);border-color:var(--yellow)}
+.tag.howto{color:var(--hud);border-color:var(--hud)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">信息门户 · 任何国家 · 不掺水</span>
+    </div>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="" href="/ru/br/registering-sim-cards/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/ar/br/registering-sim-cards/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>AR</a>
+        <a class="" href="/de/br/registering-sim-cards/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>DE</a>
+        <a class="" href="/en/br/registering-sim-cards/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/br/registering-sim-cards/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/fr/br/registering-sim-cards/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>FR</a>
+        <a class="" href="/hi/br/registering-sim-cards/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>HI</a>
+        <a class="" href="/it/br/registering-sim-cards/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>IT</a>
+        <a class="" href="/ja/br/registering-sim-cards/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>JA</a>
+        <a class="" href="/ko/br/registering-sim-cards/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>KO</a>
+        <a class="" href="/pt/br/registering-sim-cards/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+        <a class="" href="/th/br/registering-sim-cards/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TH</a>
+        <a class="" href="/tr/br/registering-sim-cards/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TR</a>
+        <a class="" href="/zh/br/registering-sim-cards/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ZH</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ 夜间</span></button>
+    </div>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/zh-Hans/">首页</a> /
+    <a href="/zh-Hans/br/">巴西</a> /
+    <b>手机卡实名登记</b>
+  </nav>
+
+
+  
+  <h1>手机卡实名登记：在巴西实际是怎么运作的 — 第一手</h1>
+  <span class="section-label">简短回答</span>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">在巴西购买本地SIM卡时，建议优先前往大型购物中心的官方运营商门店并携带护照尝试注册。若无法使用CPF，选择eSIM或在特定零售点通过护照信息激活是更便捷的方案。</div></div>
+
+  <h2>来自真实经验</h2>
+  <details open><summary><span class="sumq">巴西的SIM卡：1) 在没有CPF的情况下获得实体SIM卡是可能的，但不够稳定。2) 建议策略：前往大型购物中心或多运营商零售摊位，而不是去小型服务网点。3) Claro提供预付费套餐（例如：约40雷亚尔可获得12GB流量/30天），有时可以使用外国护照注册。4) eSIM通常更容易在没有CPF的情况下注册。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 3 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">在没有巴西实体身份证件的情况下，外国人在巴西获取本地 SIM 卡会面临困难。可选方案包括：
+1. 请当地居民以其名义注册 SIM 卡。这已被成功执行，有时甚至免费。
+2. 对于长期居留者，获取 CPF（个人税号）并独立注册 SIM 卡。
+3. 一位用户分享的变通方法是在正规 CPF 被拒后，在线生成一个虚假的 CPF，并成功激活了 SIM 卡。
+4. 使用 eSIM 也是一种便捷的替代方案。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 2 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">1. 巴西电信运营商（TIM、Vivo）不允许在巴西境外漫游时激活eSIM；设备必须先连接到巴西本地网络。2. PicPay等数字钱包和金融科技App严格要求拥有巴西居留许可（VNJ/CRNM），如果仅凭国外的CPF注册将会被拒绝。3. 虽然一些平台（如持有临时“protocolo”的InfinityPay或Banco Rendimento）此前允许在没有完整VNJ的情况下注册，但这些方案不可靠且政策变动频繁。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">作为游客在巴西购买手机SIM卡，请前往购物中心内官方运营商（Vivo、Claro）的门店，而不是街头报刊亭。如果无法提供CPF（个人纳税登记号），官方门店可以使用外国护照注册账户。如果工作人员无法提供帮助，在药店连锁店（如Pague Menos）购买SIM卡并通过移动应用程序自行注册也是可行的选择。服务质量在不同地点之间差异很大。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">在里约热内卢的 RioSul 购物中心内的报刊亭可以购买到无需 CPF 的实体游客 SIM 卡。流程是通过电话向会说英语的接线员提供护照信息来激活卡片。据报道费用为 70 雷亚尔。获得 SIM 卡后，如果 Uber 应用最初要求提供 CPF 或信用卡，仍可能需要进行身份验证（护照照片和自拍）。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">在巴西购买本地SIM卡（Vivo、TIM）通常需要护照，并且通常需要CPF。在机场柜台激活可能很耗时；在官方门店可能需要进行电话语音核实。预付（prepago）数据套餐非常普遍，但可能缺少当地应用程序注册所需的电话号码。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">使用 Vivo 移动服务需要拥有一个巴西注册的应用商店账号（Apple ID 或 Google Play）才能下载该应用。注册通常需要 CPF（个人纳税人登记号）。Vivo Easy 套餐不支持在俄罗斯漫游时接收短信。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">要在巴西注册PIX，在莫斯科获得CPF的个人可以在报刊亭购买PIX。大约花费20美元左右。与摊主讨价还价也可能顺便获得一张激活的SIM卡。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+
+  <h2>相关主题</h2>
+  <div class="chips">
+    <a class="chip" href="/zh/br/using-a-cpf/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• CPF税号的申请与使用</span></a>
+    <a class="chip" href="/zh/br/opening-bank-accounts-for-non-residents/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 游客与非居民开户指南</span></a>
+    <a class="chip" href="/zh/br/extending-tourist-stays-90-90-days/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 延长免签停留期（90+90天）</span></a>
+    <a class="chip" href="/zh/br/tax-id-cpf-registration/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 申请CPF税号</span></a>
+    <a class="chip" href="/zh/br/entry-documents-tickets-bookings-finance/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 入境所需文件</span></a>
+    <a class="chip" href="/zh/br/verifying-return-or-onward-tickets/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 返程或第三国机票证明</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>没找到你的情况？</h2>
+    <p>问 Luky — 像刚从那儿回来的人一样讲 — 不掺水.</p>
+    <p>而 Luky 还是真实对话的实时语音翻译： 轻松搞定前台.</p>
+    <p class="ps">PS：连一句你的语言都不会的伴侣家人也行 😄</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>打开 Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — 来自社区聊天群的真实经验，不掺水</div>
+    <nav class="f-links">
+      <a href="/zh-Hans/about/">关于</a>
+      <a href="/zh-Hans/br/">所有主题</a>
+      <a href="/zh-Hans/">国家</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">答案取自公开的社区聊天群 — 这是人们的真实经验，不是官方建议。做重要决定前请自行核实。</p>
+    <div class="f-copy">© 2026 Luky · 更新于 08.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"\u5df4\u897f\u7684SIM\u5361\uff1a1) \u5728\u6ca1\u6709CPF\u7684\u60c5\u51b5\u4e0b\u83b7\u5f97\u5b9e\u4f53SIM\u5361\u662f\u53ef\u80fd\u7684\uff0c\u4f46\u4e0d\u591f\u7a33\u5b9a\u30022) \u5efa\u8bae\u7b56\u7565\uff1a\u524d\u5f80\u5927\u578b\u8d2d\u7269\u4e2d\u5fc3\u6216\u591a\u8fd0\u8425\u5546\u96f6\u552e\u644a\u4f4d\uff0c\u800c\u4e0d\u662f\u53bb\u5c0f\u578b\u670d\u52a1\u7f51\u70b9\u30023) Claro\u63d0\u4f9b\u9884\u4ed8\u8d39\u5957\u9910\uff08\u4f8b\u5982\uff1a\u7ea640\u96f7\u4e9a\u5c14\u53ef\u83b7\u5f9712GB\u6d41\u91cf/30\u5929\uff09\uff0c\u6709\u65f6\u53ef\u4ee5\u4f7f\u7528\u5916\u56fd\u62a4\u7167\u6ce8\u518c\u30024) eSIM\u901a\u5e38\u66f4\u5bb9\u6613\u5728\u6ca1\u6709CPF\u7684\u60c5\u51b5\u4e0b\u6ce8\u518c\u3002"},
+{"@type":"ListItem","position":2,"name":"\u5728\u6ca1\u6709\u5df4\u897f\u5b9e\u4f53\u8eab\u4efd\u8bc1\u4ef6\u7684\u60c5\u51b5\u4e0b\uff0c\u5916\u56fd\u4eba\u5728\u5df4\u897f\u83b7\u53d6\u672c\u5730 SIM \u5361\u4f1a\u9762\u4e34\u56f0\u96be\u3002\u53ef\u9009\u65b9\u6848\u5305\u62ec\uff1a\n1. \u8bf7\u5f53\u5730\u5c45\u6c11\u4ee5\u5176\u540d\u4e49\u6ce8\u518c SIM \u5361\u3002\u8fd9\u5df2\u88ab\u6210\u529f\u6267\u884c\uff0c\u6709\u65f6\u751a\u81f3\u514d\u8d39\u3002\n2. \u5bf9\u4e8e\u957f\u671f\u5c45\u7559\u8005\uff0c\u83b7\u53d6 CPF\uff08\u4e2a\u4eba\u7a0e\u53f7\uff09\u5e76\u72ec\u7acb\u6ce8\u518c SIM \u5361\u3002\n3. \u4e00\u4f4d\u7528\u6237\u5206\u4eab\u7684\u53d8\u901a\u65b9\u6cd5\u662f\u5728\u6b63\u89c4 CPF \u88ab\u62d2\u540e\uff0c\u5728\u7ebf\u751f\u6210\u4e00\u4e2a\u865a\u5047\u7684 CPF\uff0c\u5e76\u6210\u529f\u6fc0\u6d3b\u4e86 SIM \u5361\u3002\n4. \u4f7f\u7528 eSIM \u4e5f\u662f\u4e00\u79cd\u4fbf\u6377\u7684\u66ff\u4ee3\u65b9\u6848\u3002"},
+{"@type":"ListItem","position":3,"name":"1. \u5df4\u897f\u7535\u4fe1\u8fd0\u8425\u5546\uff08TIM\u3001Vivo\uff09\u4e0d\u5141\u8bb8\u5728\u5df4\u897f\u5883\u5916\u6f2b\u6e38\u65f6\u6fc0\u6d3beSIM\uff1b\u8bbe\u5907\u5fc5\u987b\u5148\u8fde\u63a5\u5230\u5df4\u897f\u672c\u5730\u7f51\u7edc\u30022. PicPay\u7b49\u6570\u5b57\u94b1\u5305\u548c\u91d1\u878d\u79d1\u6280App\u4e25\u683c\u8981\u6c42\u62e5\u6709\u5df4\u897f\u5c45\u7559\u8bb8\u53ef\uff08VNJ/CRNM\uff09\uff0c\u5982\u679c\u4ec5\u51ed\u56fd\u5916\u7684CPF\u6ce8\u518c\u5c06\u4f1a\u88ab\u62d2\u7edd\u30023. \u867d\u7136\u4e00\u4e9b\u5e73\u53f0\uff08\u5982\u6301\u6709\u4e34\u65f6\u201cprotocolo\u201d\u7684InfinityPay\u6216Banco Rendimento\uff09\u6b64\u524d\u5141\u8bb8\u5728\u6ca1\u6709\u5b8c\u6574VNJ\u7684\u60c5\u51b5\u4e0b\u6ce8\u518c\uff0c\u4f46\u8fd9\u4e9b\u65b9\u6848\u4e0d\u53ef\u9760\u4e14\u653f\u7b56\u53d8\u52a8\u9891\u7e41\u3002"},
+{"@type":"ListItem","position":4,"name":"\u4f5c\u4e3a\u6e38\u5ba2\u5728\u5df4\u897f\u8d2d\u4e70\u624b\u673aSIM\u5361\uff0c\u8bf7\u524d\u5f80\u8d2d\u7269\u4e2d\u5fc3\u5185\u5b98\u65b9\u8fd0\u8425\u5546\uff08Vivo\u3001Claro\uff09\u7684\u95e8\u5e97\uff0c\u800c\u4e0d\u662f\u8857\u5934\u62a5\u520a\u4ead\u3002\u5982\u679c\u65e0\u6cd5\u63d0\u4f9bCPF\uff08\u4e2a\u4eba\u7eb3\u7a0e\u767b\u8bb0\u53f7\uff09\uff0c\u5b98\u65b9\u95e8\u5e97\u53ef\u4ee5\u4f7f\u7528\u5916\u56fd\u62a4\u7167\u6ce8\u518c\u8d26\u6237\u3002\u5982\u679c\u5de5\u4f5c\u4eba\u5458\u65e0\u6cd5\u63d0\u4f9b\u5e2e\u52a9\uff0c\u5728\u836f\u5e97\u8fde\u9501\u5e97\uff08\u5982Pague Menos\uff09\u8d2d\u4e70SIM\u5361\u5e76\u901a\u8fc7\u79fb\u52a8\u5e94\u7528\u7a0b\u5e8f\u81ea\u884c\u6ce8\u518c\u4e5f\u662f\u53ef\u884c\u7684\u9009\u62e9\u3002\u670d\u52a1\u8d28\u91cf\u5728\u4e0d\u540c\u5730\u70b9\u4e4b\u95f4\u5dee\u5f02\u5f88\u5927\u3002"},
+{"@type":"ListItem","position":5,"name":"\u5728\u91cc\u7ea6\u70ed\u5185\u5362\u7684 RioSul \u8d2d\u7269\u4e2d\u5fc3\u5185\u7684\u62a5\u520a\u4ead\u53ef\u4ee5\u8d2d\u4e70\u5230\u65e0\u9700 CPF \u7684\u5b9e\u4f53\u6e38\u5ba2 SIM \u5361\u3002\u6d41\u7a0b\u662f\u901a\u8fc7\u7535\u8bdd\u5411\u4f1a\u8bf4\u82f1\u8bed\u7684\u63a5\u7ebf\u5458\u63d0\u4f9b\u62a4\u7167\u4fe1\u606f\u6765\u6fc0\u6d3b\u5361\u7247\u3002\u636e\u62a5\u9053\u8d39\u7528\u4e3a 70 \u96f7\u4e9a\u5c14\u3002\u83b7\u5f97 SIM \u5361\u540e\uff0c\u5982\u679c Uber \u5e94\u7528\u6700\u521d\u8981\u6c42\u63d0\u4f9b CPF \u6216\u4fe1\u7528\u5361\uff0c\u4ecd\u53ef\u80fd\u9700\u8981\u8fdb\u884c\u8eab\u4efd\u9a8c\u8bc1\uff08\u62a4\u7167\u7167\u7247\u548c\u81ea\u62cd\uff09\u3002"},
+{"@type":"ListItem","position":6,"name":"\u5728\u5df4\u897f\u8d2d\u4e70\u672c\u5730SIM\u5361\uff08Vivo\u3001TIM\uff09\u901a\u5e38\u9700\u8981\u62a4\u7167\uff0c\u5e76\u4e14\u901a\u5e38\u9700\u8981CPF\u3002\u5728\u673a\u573a\u67dc\u53f0\u6fc0\u6d3b\u53ef\u80fd\u5f88\u8017\u65f6\uff1b\u5728\u5b98\u65b9\u95e8\u5e97\u53ef\u80fd\u9700\u8981\u8fdb\u884c\u7535\u8bdd\u8bed\u97f3\u6838\u5b9e\u3002\u9884\u4ed8\uff08prepago\uff09\u6570\u636e\u5957\u9910\u975e\u5e38\u666e\u904d\uff0c\u4f46\u53ef\u80fd\u7f3a\u5c11\u5f53\u5730\u5e94\u7528\u7a0b\u5e8f\u6ce8\u518c\u6240\u9700\u7684\u7535\u8bdd\u53f7\u7801\u3002"},
+{"@type":"ListItem","position":7,"name":"\u4f7f\u7528 Vivo \u79fb\u52a8\u670d\u52a1\u9700\u8981\u62e5\u6709\u4e00\u4e2a\u5df4\u897f\u6ce8\u518c\u7684\u5e94\u7528\u5546\u5e97\u8d26\u53f7\uff08Apple ID \u6216 Google Play\uff09\u624d\u80fd\u4e0b\u8f7d\u8be5\u5e94\u7528\u3002\u6ce8\u518c\u901a\u5e38\u9700\u8981 CPF\uff08\u4e2a\u4eba\u7eb3\u7a0e\u4eba\u767b\u8bb0\u53f7\uff09\u3002Vivo Easy \u5957\u9910\u4e0d\u652f\u6301\u5728\u4fc4\u7f57\u65af\u6f2b\u6e38\u65f6\u63a5\u6536\u77ed\u4fe1\u3002"},
+{"@type":"ListItem","position":8,"name":"\u8981\u5728\u5df4\u897f\u6ce8\u518cPIX\uff0c\u5728\u83ab\u65af\u79d1\u83b7\u5f97CPF\u7684\u4e2a\u4eba\u53ef\u4ee5\u5728\u62a5\u520a\u4ead\u8d2d\u4e70PIX\u3002\u5927\u7ea6\u82b1\u8d3920\u7f8e\u5143\u5de6\u53f3\u3002\u4e0e\u644a\u4e3b\u8ba8\u4ef7\u8fd8\u4ef7\u4e5f\u53ef\u80fd\u987a\u4fbf\u83b7\u5f97\u4e00\u5f20\u6fc0\u6d3b\u7684SIM\u5361\u3002"}
+]}
+</script>
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 \u591c\u95f4", DAY="\u2600 \u65e5\u95f4";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

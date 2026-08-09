@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monténégro : Contrôles aux frontières — expérience réelle des chats · Luky</title>
+<meta name="description" content="L&#39;expérience réelle sur « Contrôles aux frontières » en Monténégro : conseils pratiques, cas et règles issus des chats. Pour ton cas — demande à Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/fr/me/s/border/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/me/s/border/">
+<link rel="alternate" hreflang="ar" href="https://info.multyspeak.online/ar/me/s/border/">
+<link rel="alternate" hreflang="de" href="https://info.multyspeak.online/de/me/s/border/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/me/s/border/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/me/s/border/">
+<link rel="alternate" hreflang="fr" href="https://info.multyspeak.online/fr/me/s/border/">
+<link rel="alternate" hreflang="hi" href="https://info.multyspeak.online/hi/me/s/border/">
+<link rel="alternate" hreflang="it" href="https://info.multyspeak.online/it/me/s/border/">
+<link rel="alternate" hreflang="ja" href="https://info.multyspeak.online/ja/me/s/border/">
+<link rel="alternate" hreflang="ko" href="https://info.multyspeak.online/ko/me/s/border/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/me/s/border/">
+<link rel="alternate" hreflang="th" href="https://info.multyspeak.online/th/me/s/border/">
+<link rel="alternate" hreflang="tr" href="https://info.multyspeak.online/tr/me/s/border/">
+<link rel="alternate" hreflang="zh" href="https://info.multyspeak.online/zh/me/s/border/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/me/s/border/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+/* тег типа абзаца (хвост-антологии: lifehack/reglament/howto/risk/case/service) */
+.tag{display:inline-block;font-family:var(--font-mono);font-weight:400;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);
+  border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:2px;white-space:nowrap}
+.tag.risk{color:var(--red);border-color:var(--red)}
+.tag.reglament{color:var(--accent);border-color:var(--accent)}
+.tag.lifehack{color:var(--green);border-color:var(--green)}
+.tag.service{color:var(--yellow);border-color:var(--yellow)}
+.tag.howto{color:var(--hud);border-color:var(--hud)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portail d'info · tous pays · sans blabla</span>
+    </div>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="" href="/ru/me/s/border/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/ar/me/s/border/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>AR</a>
+        <a class="" href="/de/me/s/border/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>DE</a>
+        <a class="" href="/en/me/s/border/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/me/s/border/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="on" href="/fr/me/s/border/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>FR</a>
+        <a class="" href="/hi/me/s/border/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>HI</a>
+        <a class="" href="/it/me/s/border/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>IT</a>
+        <a class="" href="/ja/me/s/border/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>JA</a>
+        <a class="" href="/ko/me/s/border/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>KO</a>
+        <a class="" href="/pt/me/s/border/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+        <a class="" href="/th/me/s/border/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TH</a>
+        <a class="" href="/tr/me/s/border/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TR</a>
+        <a class="" href="/zh/me/s/border/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ZH</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Nuit</span></button>
+    </div>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/fr/">Accueil</a> /
+    <a href="/fr/me/">Monténégro</a> /
+    <b>Contrôles aux frontières</b>
+  </nav>
+
+
+  
+  <h1>Contrôles aux frontières : comment ça marche vraiment en Monténégro — de première main</h1>
+
+  <h2>D&#39;après l&#39;expérience réelle</h2>
+  <details open><summary><span class="sumq"><span class="tag reglament">règle</span>Pour un enfant ayant la citoyenneté biélorusse voyageant de Pologne au Monténégro avec un seul parent (la mère), un formulaire de consentement notarié (procuration) du père est généralement requis pour les passages frontaliers.</span><span></span></summary>
+    <div class="a">Il s'agit d'une procédure standard pour les voyages internationaux avec des mineurs lorsqu'un parent n'accompagne pas l'enfant. Il est conseillé de vérifier les exigences spécifiques auprès des autorités consulaires ou des agences de contrôle des frontières concernées avant de voyager.
+    <div class="src">✓ 2 retours des chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">règle</span>Il n&#39;y a actuellement aucune confirmation officielle du gouvernement concernant l&#39;introduction de visas pour les citoyens russes au Monténégro.</span><span></span></summary>
+    <div class="a">La résiliation officielle des accords bilatéraux de voyage sans visa existants nécessite un processus de notification formel de 90 jours par notes diplomatiques entre les ministères des Affaires étrangères. Les rumeurs concernant des changements immédiats doivent être ignorées tant que des annonces gouvernementales officielles ne sont pas faites.
+    <div class="src">✓ 2 retours des chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">risque</span>Lorsque vous voyagez avec un mineur en Bosnie-Herzégovine, soyez conscient des exigences potentielles concernant le consentement parental.</span><span></span></summary>
+    <div class="a">Bien que la loi n'exige pas strictement un consentement notarié en cas de voyage avec un seul parent, les gardes-frontières sont chargés de prêter une attention particulière aux mineurs pour prévenir le trafic. Les missions diplomatiques « recommandent » souvent d'avoir un consentement notarié, surtout si l'enfant porte un nom de famille différent. Il est conseillé de se munir de documents, et potentiellement d'un formulaire de consentement notarié, pour éviter tout problème.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">cas</span>Conduire une voiture avec des plaques d&#39;immatriculation ukrainiennes en Albanie depuis le Monténégro n&#39;est généralement pas un problème.</span><span></span></summary>
+    <div class="a">Il est peu probable que les services frontaliers monténégrins remettent en question le statut d'immatriculation de la voiture tant que la documentation appropriée (passeport technique, permis de conduire, assurance internationale comme la Carte Verte) est en règle. Certains utilisateurs rapportent que le contrôle frontalier albanais peut effectuer des vérifications approfondies des documents du véhicule mais autorise généralement l'entrée sans problème. Les responsables frontaliers albanais peuvent ne pas tamponner les passeports à l'entrée ou à la sortie.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">risque</span>Avertissez les voyageurs des retards importants aux postes frontières entre la Croatie et le Monténégro, surtout pendant la haute saison estivale.</span><span></span></summary>
+    <div class="a">Conseillez d'utiliser des points de passage alternatifs comme Vitaljina ou Herceg Novi pour éviter potentiellement les longues files d'attente. Mentionnez que des problèmes techniques avec le système EES et le nombre limité de voies opérationnelles peuvent causer ces retards. Recommandez de vérifier les mises à jour sur l'état des passages frontaliers si possible.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">règle</span>Lorsque vous conduisez un véhicule avec des plaques d&#39;immatriculation ukrainiennes à travers le Monténégro, surtout si le conducteur n&#39;est pas le propriétaire, une procuration est généralement recommandée.</span><span></span></summary>
+    <div class="a">Bien que les contrôles aux frontières puissent varier, avoir ce document peut éviter des problèmes, surtout si le propriétaire n'est pas présent dans le véhicule. La traduction en anglais n'est pas strictement nécessaire mais peut être utile. Confirmez les exigences actuelles auprès des autorités frontalières.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">risque</span>L&#39;entrée de véhicules immatriculés en Russie au Monténégro via les frontières de l&#39;UE/Balkans (Bulgarie, pays baltes, Turquie) est actuellement très restreinte ou impossible.</span><span></span></summary>
+    <div class="a">Les autorités refusent souvent l'entrée ou le transit aux véhicules avec des plaques d'immatriculation russes, indépendamment de la citoyenneté du conducteur. Il est recommandé de vendre ces véhicules en Russie et d'acheter une voiture localement au Monténégro.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">règle</span>Pour un enfant voyageant au Monténégro avec un grand-parent, le consentement d&#39;un parent est généralement requis.</span><span></span></summary>
+    <div class="a">Cependant, les réglementations peuvent varier, et il est conseillé de vérifier les exigences spécifiques auprès de l'ambassade ou du consulat du Monténégro. Il est également sage d'avoir des documents traduits et notariés si nécessaire.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">risque</span>Les allers-retours à la frontière (visa runs) sont techniquement possibles mais risqués s&#39;ils sont effectués immédiatement.</span><span></span></summary>
+    <div class="a">Les gardes-frontières signalent souvent les voyageurs qui reviennent dans un délai de 1 à 2 heures. Pour minimiser les problèmes : revenez plus tard dans la journée, utilisez un autre poste frontière ou faites une pause significative avant de rentrer à nouveau.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">astuce</span>Le passage frontalier entre le Monténégro et l&#39;Albanie près de Podgorica est généralement moins encombré que les principaux passages côtiers.</span><span></span></summary>
+    <div class="a">Cependant, des files d'attente peuvent toujours se former, surtout pendant les périodes de pointe. Il est recommandé de vérifier les temps d'attente aux frontières en temps réel si possible.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">astuce</span>Pour les rendez-vous liés aux visas ou à la résidence qui pourraient impliquer de longues attentes à Podgorica, envisagez de réserver des services similaires à Sarajevo ou à Belgrade comme lieux alternatifs.</span><span></span></summary>
+    <div class="a">Cette stratégie peut aider à accélérer le processus.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">règle</span>Une clarification est demandée concernant les « papiers roses » réclamés par un garde-frontière monténégrin au poste de contrôle de Klobuk.</span><span></span></summary>
+    <div class="a">L'utilisateur soupçonne qu'il s'agit de la « carte rose » (confirmation d'enregistrement) et demande confirmation.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">cas</span>Il existe une poussée perçue du tourisme vers le Monténégro, motivée par l&#39;anticipation de potentielles exigences de visa pour les citoyens russes.</span><span></span></summary>
+    <div class="a">Les personnes ayant prévu des visites futures auraient accéléré leurs projets de voyage pour profiter du régime actuel sans visa.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">règle</span>Les citoyens ukrainiens peuvent séjourner au Monténégro selon la règle du 90/180, similaire aux réglementations des visas Schengen.</span><span></span></summary>
+    <div class="a">Les « visa runs » (entrer et sortir du pays) sont une pratique courante pour prolonger les séjours.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+
+  <h2>Thèmes liés</h2>
+  <div class="chips">
+    <a class="chip" href="/fr/me/s/transport/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🚕 Transport et logistique</span></a>
+    <a class="chip" href="/fr/me/s/life/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Vie quotidienne, travail et études</span></a>
+    <a class="chip" href="/fr/me/s/docs/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Formalités administratives</span></a>
+    <a class="chip" href="/fr/me/s/finance/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Services bancaires</span></a>
+    <a class="chip" href="/fr/me/s/visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>🛂 Procédures de visa</span></a>
+    <a class="chip" href="/fr/me/s/safety/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Sécurité régionale</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Tu as fouillé la recherche et tu doutes encore ?</h2>
+    <p>Demande à Luky — des retours frais, pas un article vieux de cinq ans.</p>
+    <p>Et Luky est un traducteur vocal en direct pour de vraies conversations : règle ça avec le chauffeur de taxi, sans gestes.</p>
+    <p class="ps">PS : flirter à un rendez-vous dans une langue étrangère ? Aucun souci 😏</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Ouvrir Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — l&#39;expérience réelle des chats communautaires, sans blabla</div>
+    <nav class="f-links">
+      <a href="/fr/about/">À propos</a>
+      <a href="/fr/me/">Tous les thèmes</a>
+      <a href="/fr/">Pays</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Les réponses proviennent de chats communautaires ouverts — c&#39;est l&#39;expérience réelle des gens, pas un conseil officiel. Vérifie avant toute décision importante.</p>
+    <div class="f-copy">© 2026 Luky · mis à jour 08.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Pour un enfant ayant la citoyennet\u00e9 bi\u00e9lorusse voyageant de Pologne au Mont\u00e9n\u00e9gro avec un seul parent (la m\u00e8re), un formulaire de consentement notari\u00e9 (procuration) du p\u00e8re est g\u00e9n\u00e9ralement requis pour les passages frontaliers."},
+{"@type":"ListItem","position":2,"name":"Il n\u0027y a actuellement aucune confirmation officielle du gouvernement concernant l\u0027introduction de visas pour les citoyens russes au Mont\u00e9n\u00e9gro."},
+{"@type":"ListItem","position":3,"name":"Lorsque vous voyagez avec un mineur en Bosnie-Herz\u00e9govine, soyez conscient des exigences potentielles concernant le consentement parental."},
+{"@type":"ListItem","position":4,"name":"Conduire une voiture avec des plaques d\u0027immatriculation ukrainiennes en Albanie depuis le Mont\u00e9n\u00e9gro n\u0027est g\u00e9n\u00e9ralement pas un probl\u00e8me."},
+{"@type":"ListItem","position":5,"name":"Avertissez les voyageurs des retards importants aux postes fronti\u00e8res entre la Croatie et le Mont\u00e9n\u00e9gro, surtout pendant la haute saison estivale."},
+{"@type":"ListItem","position":6,"name":"Lorsque vous conduisez un v\u00e9hicule avec des plaques d\u0027immatriculation ukrainiennes \u00e0 travers le Mont\u00e9n\u00e9gro, surtout si le conducteur n\u0027est pas le propri\u00e9taire, une procuration est g\u00e9n\u00e9ralement recommand\u00e9e."},
+{"@type":"ListItem","position":7,"name":"L\u0027entr\u00e9e de v\u00e9hicules immatricul\u00e9s en Russie au Mont\u00e9n\u00e9gro via les fronti\u00e8res de l\u0027UE/Balkans (Bulgarie, pays baltes, Turquie) est actuellement tr\u00e8s restreinte ou impossible."},
+{"@type":"ListItem","position":8,"name":"Pour un enfant voyageant au Mont\u00e9n\u00e9gro avec un grand-parent, le consentement d\u0027un parent est g\u00e9n\u00e9ralement requis."},
+{"@type":"ListItem","position":9,"name":"Les allers-retours \u00e0 la fronti\u00e8re (visa runs) sont techniquement possibles mais risqu\u00e9s s\u0027ils sont effectu\u00e9s imm\u00e9diatement."},
+{"@type":"ListItem","position":10,"name":"Le passage frontalier entre le Mont\u00e9n\u00e9gro et l\u0027Albanie pr\u00e8s de Podgorica est g\u00e9n\u00e9ralement moins encombr\u00e9 que les principaux passages c\u00f4tiers."},
+{"@type":"ListItem","position":11,"name":"Pour les rendez-vous li\u00e9s aux visas ou \u00e0 la r\u00e9sidence qui pourraient impliquer de longues attentes \u00e0 Podgorica, envisagez de r\u00e9server des services similaires \u00e0 Sarajevo ou \u00e0 Belgrade comme lieux alternatifs."},
+{"@type":"ListItem","position":12,"name":"Une clarification est demand\u00e9e concernant les \u00ab papiers roses \u00bb r\u00e9clam\u00e9s par un garde-fronti\u00e8re mont\u00e9n\u00e9grin au poste de contr\u00f4le de Klobuk."},
+{"@type":"ListItem","position":13,"name":"Il existe une pouss\u00e9e per\u00e7ue du tourisme vers le Mont\u00e9n\u00e9gro, motiv\u00e9e par l\u0027anticipation de potentielles exigences de visa pour les citoyens russes."},
+{"@type":"ListItem","position":14,"name":"Les citoyens ukrainiens peuvent s\u00e9journer au Mont\u00e9n\u00e9gro selon la r\u00e8gle du 90/180, similaire aux r\u00e9glementations des visas Schengen."}
+]}
+</script>
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Nuit", DAY="\u2600 Jour";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>any：必要書類の準備と構成 — 実際の経験 · Luky</title>
+<meta name="description" content="anyの「必要書類の準備と構成」についてチャットからの実際の経験：ありのまま、一次情報で。あなたのケースは — Luky に聞いて。">
+<link rel="canonical" href="https://info.multyspeak.online/ja/any/document-preparation/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/any/document-preparation/">
+<link rel="alternate" hreflang="ar" href="https://info.multyspeak.online/ar/any/document-preparation/">
+<link rel="alternate" hreflang="de" href="https://info.multyspeak.online/de/any/document-preparation/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/any/document-preparation/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/any/document-preparation/">
+<link rel="alternate" hreflang="fr" href="https://info.multyspeak.online/fr/any/document-preparation/">
+<link rel="alternate" hreflang="hi" href="https://info.multyspeak.online/hi/any/document-preparation/">
+<link rel="alternate" hreflang="it" href="https://info.multyspeak.online/it/any/document-preparation/">
+<link rel="alternate" hreflang="ja" href="https://info.multyspeak.online/ja/any/document-preparation/">
+<link rel="alternate" hreflang="ko" href="https://info.multyspeak.online/ko/any/document-preparation/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/any/document-preparation/">
+<link rel="alternate" hreflang="th" href="https://info.multyspeak.online/th/any/document-preparation/">
+<link rel="alternate" hreflang="tr" href="https://info.multyspeak.online/tr/any/document-preparation/">
+<link rel="alternate" hreflang="zh" href="https://info.multyspeak.online/zh/any/document-preparation/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/any/document-preparation/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+/* тег типа абзаца (хвост-антологии: lifehack/reglament/howto/risk/case/service) */
+.tag{display:inline-block;font-family:var(--font-mono);font-weight:400;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);
+  border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:2px;white-space:nowrap}
+.tag.risk{color:var(--red);border-color:var(--red)}
+.tag.reglament{color:var(--accent);border-color:var(--accent)}
+.tag.lifehack{color:var(--green);border-color:var(--green)}
+.tag.service{color:var(--yellow);border-color:var(--yellow)}
+.tag.howto{color:var(--hud);border-color:var(--hud)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">情報ポータル · どの国でも · 水増しなし</span>
+    </div>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="" href="/ru/any/document-preparation/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/ar/any/document-preparation/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>AR</a>
+        <a class="" href="/de/any/document-preparation/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>DE</a>
+        <a class="" href="/en/any/document-preparation/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/any/document-preparation/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/fr/any/document-preparation/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>FR</a>
+        <a class="" href="/hi/any/document-preparation/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>HI</a>
+        <a class="" href="/it/any/document-preparation/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>IT</a>
+        <a class="on" href="/ja/any/document-preparation/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>JA</a>
+        <a class="" href="/ko/any/document-preparation/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>KO</a>
+        <a class="" href="/pt/any/document-preparation/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+        <a class="" href="/th/any/document-preparation/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TH</a>
+        <a class="" href="/tr/any/document-preparation/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TR</a>
+        <a class="" href="/zh/any/document-preparation/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ZH</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ 夜</span></button>
+    </div>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/ja/">ホーム</a> /
+    <a href="/ja/any/">any</a> /
+    <b>必要書類の準備と構成</b>
+  </nav>
+
+
+  
+  <h1>anyの必要書類の準備と構成：チャットからの実際の経験</h1>
+  <span class="section-label">短い答え</span>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">ビザ申請書類は明瞭にスキャンし、ラベルを付けて整理し、提出時はホッチキスを使わずペーパークリップで留めるのが無難です。翻訳が必要な書類には認定文を添え、不動産等の公的書類は最新のものを提出してください。予約枠を先に確保してから申請書を完成させ、記入済みの書類を窓口へ持参してください。</div></div>
+
+  <h2>実際の経験から</h2>
+  <details open><summary><span class="sumq">ビザ申請用の添付書類をアップロードする際、配置にはある程度の柔軟性があります。不動産所有権に関する情報は、他の財務書類と一緒に添付するのが合理的です。旅行計画や行程の詳細を記したカバーレターは、「計画中の活動」セクションにアップロードできます。そうでなければ、一般的な「その他の書類」や「補足情報」のカテゴリで問題ありません。重要なのは、すべての関連書類に明確なラベルを付け、適切に提出することです。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">ビザ申請書類の提出順序は混乱を招きやすいポイントです。ビザセンターのスタッフが取り出しやすいように論理的に整理することを勧める人もいれば、現地の要件が異なる可能性があるため、公式領事館サイトで指定された順序に厳密に従うべきだという人もいます。最終的には、必要な書類をすぐに見つけられることが最優先です。ホッチキスは避け、仮止めにはペーパークリップを使用してください。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">ビザ申請センターでは、書類の綴じ方について特定のルールがある場合があります。ホッチキス留めやしっかり綴じることは避け、別々の束にして提示することが推奨されます。申請書自体にホッチキスを打つことは推奨されませんが、個人の整理のために使うのは許容される場合もあり、その場合は外されることがあります。確信が持てない場合は、ホッチキスは使わないのが無難です。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">ビザ申請において、英語以外のすべての補助書類には翻訳が必要です。翻訳の末尾には、その正確性と翻訳者の資格を証明する認定文を添えなければなりません。元の書類にある「～の写し」といった定型句や、「X部作成」といった特定の数量は、書類の性質や文脈を理解する上で重要でない限り、翻訳の必要はありません。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">市民である家族を訪問するためにビザを申請する場合、出生証明書を求められることがあります。常に必須とは限りませんが、家族関係の主張を補強するために（翻訳は不要な場合もありますが）スキャンしたコピーを添付することをお勧めします。市民の近親者に対する要件は緩やかな場合がありますが、すべての文書要件に従うことが推奨されます。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">ビザ申請時は、まず予約枠を確保することを優先し、その後に申請フォームに記入してください。申請フォームは後からダウンロードして記入することも可能です。記入済みのフォームは必ずビザセンターに持参してください。ビザ申請には外国用のパスポートを使用してください。ロシアの国内パスポートは国際渡航には無効であり、海外の領事館では受け付けられない場合があります。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">公的書類を申請する際は、最新の書類を提出するようにしてください。書類の鮮度、特に不動産の売却や登記に関連するものは重要です。問題発生を避けるため、申請日に近い日付で最新版を取得することを推奨します。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">ビザ申請プロセスを効率化するために、まず予約枠を確保してから都合の良いときに申請書を完成させることをお勧めします。完全に記入済みの申請書をビザ申請センターに持参してください。申請書には正しいパスポート情報を使用していることを確認してください。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">ビザ申請にあたっては、必要な書類を鮮明にスキャンしてください。必要であればパスポート全体をスキャンし、単一のファイルとして提出しても問題ありません。スキャンの完璧さよりも、情報の明瞭さが優先されます。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">ビザ申請の動機書（カバーレター）は簡潔にまとめ、A4用紙1枚以内に収め、自由形式で書くのが理想的です。明確かつ関連性の高い情報に焦点を当ててください。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">ビザ申請時には、主な住居だけでなく、所有しているすべての不動産を申告することをお勧めします。これにより、ビザ発給の可能性が高まる可能性があります。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">カップルで旅行する場合、ビザ申請において、出生証明書が求められないケースであれば、出生証明書の代わりに結婚証明書が受け入れられることがあります。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+
+  <h2>関連テーマ</h2>
+  <div class="chips">
+    <a class="chip" href="/ja/any/chat-safety-and-fraud-prevention/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• チャットの安全性と詐欺防止</span></a>
+    <a class="chip" href="/ja/any/document-procurement-background-checks-v/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 各種証明書の取得（無犯罪証明書・戸籍等）</span></a>
+    <a class="chip" href="/ja/any/document-apostille-and-legalization-rf-c/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 文書のアポスティーユと領事認証（ロシア・CIS）</span></a>
+    <a class="chip" href="/ja/any/translation-and-notarization/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 翻訳と公証認証</span></a>
+    <a class="chip" href="/ja/any/consular-legalization-for-uae-and-qatar/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• UAE・カタール向けの領事認証</span></a>
+    <a class="chip" href="/ja/any/hotel-and-accommodation-booking/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• ホテル・宿泊予約</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>検索を掘り尽くしても、まだ確信が持てない？</h2>
+    <p>Luky に聞いて — 一般的な記事ではなく、最近の報告から自分のケースへの答え.</p>
+    <p>そして Luky は本当の会話のためのリアルタイム音声翻訳： フロントの手続きをストレスなく済ませる.</p>
+    <p class="ps">PS：外国語でデート中に口説く？問題なし 😏</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Luky を開く</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — コミュニティのチャットからの実際の経験、水増しなし</div>
+    <nav class="f-links">
+      <a href="/ja/about/">概要</a>
+      <a href="/ja/any/">すべてのテーマ</a>
+      <a href="/ja/">国</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">答えは公開されたコミュニティのチャットから集めたものです — 人々の実際の経験であり、公式な助言ではありません。大事な判断の前に確認してください。</p>
+    <div class="f-copy">© 2026 Luky · 更新 08.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"\u30d3\u30b6\u7533\u8acb\u7528\u306e\u6dfb\u4ed8\u66f8\u985e\u3092\u30a2\u30c3\u30d7\u30ed\u30fc\u30c9\u3059\u308b\u969b\u3001\u914d\u7f6e\u306b\u306f\u3042\u308b\u7a0b\u5ea6\u306e\u67d4\u8edf\u6027\u304c\u3042\u308a\u307e\u3059\u3002\u4e0d\u52d5\u7523\u6240\u6709\u6a29\u306b\u95a2\u3059\u308b\u60c5\u5831\u306f\u3001\u4ed6\u306e\u8ca1\u52d9\u66f8\u985e\u3068\u4e00\u7dd2\u306b\u6dfb\u4ed8\u3059\u308b\u306e\u304c\u5408\u7406\u7684\u3067\u3059\u3002\u65c5\u884c\u8a08\u753b\u3084\u884c\u7a0b\u306e\u8a73\u7d30\u3092\u8a18\u3057\u305f\u30ab\u30d0\u30fc\u30ec\u30bf\u30fc\u306f\u3001\u300c\u8a08\u753b\u4e2d\u306e\u6d3b\u52d5\u300d\u30bb\u30af\u30b7\u30e7\u30f3\u306b\u30a2\u30c3\u30d7\u30ed\u30fc\u30c9\u3067\u304d\u307e\u3059\u3002\u305d\u3046\u3067\u306a\u3051\u308c\u3070\u3001\u4e00\u822c\u7684\u306a\u300c\u305d\u306e\u4ed6\u306e\u66f8\u985e\u300d\u3084\u300c\u88dc\u8db3\u60c5\u5831\u300d\u306e\u30ab\u30c6\u30b4\u30ea\u3067\u554f\u984c\u3042\u308a\u307e\u305b\u3093\u3002\u91cd\u8981\u306a\u306e\u306f\u3001\u3059\u3079\u3066\u306e\u95a2\u9023\u66f8\u985e\u306b\u660e\u78ba\u306a\u30e9\u30d9\u30eb\u3092\u4ed8\u3051\u3001\u9069\u5207\u306b\u63d0\u51fa\u3059\u308b\u3053\u3068\u3067\u3059\u3002"},
+{"@type":"ListItem","position":2,"name":"\u30d3\u30b6\u7533\u8acb\u66f8\u985e\u306e\u63d0\u51fa\u9806\u5e8f\u306f\u6df7\u4e71\u3092\u62db\u304d\u3084\u3059\u3044\u30dd\u30a4\u30f3\u30c8\u3067\u3059\u3002\u30d3\u30b6\u30bb\u30f3\u30bf\u30fc\u306e\u30b9\u30bf\u30c3\u30d5\u304c\u53d6\u308a\u51fa\u3057\u3084\u3059\u3044\u3088\u3046\u306b\u8ad6\u7406\u7684\u306b\u6574\u7406\u3059\u308b\u3053\u3068\u3092\u52e7\u3081\u308b\u4eba\u3082\u3044\u308c\u3070\u3001\u73fe\u5730\u306e\u8981\u4ef6\u304c\u7570\u306a\u308b\u53ef\u80fd\u6027\u304c\u3042\u308b\u305f\u3081\u3001\u516c\u5f0f\u9818\u4e8b\u9928\u30b5\u30a4\u30c8\u3067\u6307\u5b9a\u3055\u308c\u305f\u9806\u5e8f\u306b\u53b3\u5bc6\u306b\u5f93\u3046\u3079\u304d\u3060\u3068\u3044\u3046\u4eba\u3082\u3044\u307e\u3059\u3002\u6700\u7d42\u7684\u306b\u306f\u3001\u5fc5\u8981\u306a\u66f8\u985e\u3092\u3059\u3050\u306b\u898b\u3064\u3051\u3089\u308c\u308b\u3053\u3068\u304c\u6700\u512a\u5148\u3067\u3059\u3002\u30db\u30c3\u30c1\u30ad\u30b9\u306f\u907f\u3051\u3001\u4eee\u6b62\u3081\u306b\u306f\u30da\u30fc\u30d1\u30fc\u30af\u30ea\u30c3\u30d7\u3092\u4f7f\u7528\u3057\u3066\u304f\u3060\u3055\u3044\u3002"},
+{"@type":"ListItem","position":3,"name":"\u30d3\u30b6\u7533\u8acb\u30bb\u30f3\u30bf\u30fc\u3067\u306f\u3001\u66f8\u985e\u306e\u7db4\u3058\u65b9\u306b\u3064\u3044\u3066\u7279\u5b9a\u306e\u30eb\u30fc\u30eb\u304c\u3042\u308b\u5834\u5408\u304c\u3042\u308a\u307e\u3059\u3002\u30db\u30c3\u30c1\u30ad\u30b9\u7559\u3081\u3084\u3057\u3063\u304b\u308a\u7db4\u3058\u308b\u3053\u3068\u306f\u907f\u3051\u3001\u5225\u3005\u306e\u675f\u306b\u3057\u3066\u63d0\u793a\u3059\u308b\u3053\u3068\u304c\u63a8\u5968\u3055\u308c\u307e\u3059\u3002\u7533\u8acb\u66f8\u81ea\u4f53\u306b\u30db\u30c3\u30c1\u30ad\u30b9\u3092\u6253\u3064\u3053\u3068\u306f\u63a8\u5968\u3055\u308c\u307e\u305b\u3093\u304c\u3001\u500b\u4eba\u306e\u6574\u7406\u306e\u305f\u3081\u306b\u4f7f\u3046\u306e\u306f\u8a31\u5bb9\u3055\u308c\u308b\u5834\u5408\u3082\u3042\u308a\u3001\u305d\u306e\u5834\u5408\u306f\u5916\u3055\u308c\u308b\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002\u78ba\u4fe1\u304c\u6301\u3066\u306a\u3044\u5834\u5408\u306f\u3001\u30db\u30c3\u30c1\u30ad\u30b9\u306f\u4f7f\u308f\u306a\u3044\u306e\u304c\u7121\u96e3\u3067\u3059\u3002"},
+{"@type":"ListItem","position":4,"name":"\u30d3\u30b6\u7533\u8acb\u306b\u304a\u3044\u3066\u3001\u82f1\u8a9e\u4ee5\u5916\u306e\u3059\u3079\u3066\u306e\u88dc\u52a9\u66f8\u985e\u306b\u306f\u7ffb\u8a33\u304c\u5fc5\u8981\u3067\u3059\u3002\u7ffb\u8a33\u306e\u672b\u5c3e\u306b\u306f\u3001\u305d\u306e\u6b63\u78ba\u6027\u3068\u7ffb\u8a33\u8005\u306e\u8cc7\u683c\u3092\u8a3c\u660e\u3059\u308b\u8a8d\u5b9a\u6587\u3092\u6dfb\u3048\u306a\u3051\u308c\u3070\u306a\u308a\u307e\u305b\u3093\u3002\u5143\u306e\u66f8\u985e\u306b\u3042\u308b\u300c\uff5e\u306e\u5199\u3057\u300d\u3068\u3044\u3063\u305f\u5b9a\u578b\u53e5\u3084\u3001\u300cX\u90e8\u4f5c\u6210\u300d\u3068\u3044\u3063\u305f\u7279\u5b9a\u306e\u6570\u91cf\u306f\u3001\u66f8\u985e\u306e\u6027\u8cea\u3084\u6587\u8108\u3092\u7406\u89e3\u3059\u308b\u4e0a\u3067\u91cd\u8981\u3067\u306a\u3044\u9650\u308a\u3001\u7ffb\u8a33\u306e\u5fc5\u8981\u306f\u3042\u308a\u307e\u305b\u3093\u3002"},
+{"@type":"ListItem","position":5,"name":"\u5e02\u6c11\u3067\u3042\u308b\u5bb6\u65cf\u3092\u8a2a\u554f\u3059\u308b\u305f\u3081\u306b\u30d3\u30b6\u3092\u7533\u8acb\u3059\u308b\u5834\u5408\u3001\u51fa\u751f\u8a3c\u660e\u66f8\u3092\u6c42\u3081\u3089\u308c\u308b\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002\u5e38\u306b\u5fc5\u9808\u3068\u306f\u9650\u308a\u307e\u305b\u3093\u304c\u3001\u5bb6\u65cf\u95a2\u4fc2\u306e\u4e3b\u5f35\u3092\u88dc\u5f37\u3059\u308b\u305f\u3081\u306b\uff08\u7ffb\u8a33\u306f\u4e0d\u8981\u306a\u5834\u5408\u3082\u3042\u308a\u307e\u3059\u304c\uff09\u30b9\u30ad\u30e3\u30f3\u3057\u305f\u30b3\u30d4\u30fc\u3092\u6dfb\u4ed8\u3059\u308b\u3053\u3068\u3092\u304a\u52e7\u3081\u3057\u307e\u3059\u3002\u5e02\u6c11\u306e\u8fd1\u89aa\u8005\u306b\u5bfe\u3059\u308b\u8981\u4ef6\u306f\u7de9\u3084\u304b\u306a\u5834\u5408\u304c\u3042\u308a\u307e\u3059\u304c\u3001\u3059\u3079\u3066\u306e\u6587\u66f8\u8981\u4ef6\u306b\u5f93\u3046\u3053\u3068\u304c\u63a8\u5968\u3055\u308c\u307e\u3059\u3002"},
+{"@type":"ListItem","position":6,"name":"\u30d3\u30b6\u7533\u8acb\u6642\u306f\u3001\u307e\u305a\u4e88\u7d04\u67a0\u3092\u78ba\u4fdd\u3059\u308b\u3053\u3068\u3092\u512a\u5148\u3057\u3001\u305d\u306e\u5f8c\u306b\u7533\u8acb\u30d5\u30a9\u30fc\u30e0\u306b\u8a18\u5165\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u7533\u8acb\u30d5\u30a9\u30fc\u30e0\u306f\u5f8c\u304b\u3089\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\u3057\u3066\u8a18\u5165\u3059\u308b\u3053\u3068\u3082\u53ef\u80fd\u3067\u3059\u3002\u8a18\u5165\u6e08\u307f\u306e\u30d5\u30a9\u30fc\u30e0\u306f\u5fc5\u305a\u30d3\u30b6\u30bb\u30f3\u30bf\u30fc\u306b\u6301\u53c2\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u30d3\u30b6\u7533\u8acb\u306b\u306f\u5916\u56fd\u7528\u306e\u30d1\u30b9\u30dd\u30fc\u30c8\u3092\u4f7f\u7528\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u30ed\u30b7\u30a2\u306e\u56fd\u5185\u30d1\u30b9\u30dd\u30fc\u30c8\u306f\u56fd\u969b\u6e21\u822a\u306b\u306f\u7121\u52b9\u3067\u3042\u308a\u3001\u6d77\u5916\u306e\u9818\u4e8b\u9928\u3067\u306f\u53d7\u3051\u4ed8\u3051\u3089\u308c\u306a\u3044\u5834\u5408\u304c\u3042\u308a\u307e\u3059\u3002"},
+{"@type":"ListItem","position":7,"name":"\u516c\u7684\u66f8\u985e\u3092\u7533\u8acb\u3059\u308b\u969b\u306f\u3001\u6700\u65b0\u306e\u66f8\u985e\u3092\u63d0\u51fa\u3059\u308b\u3088\u3046\u306b\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u66f8\u985e\u306e\u9bae\u5ea6\u3001\u7279\u306b\u4e0d\u52d5\u7523\u306e\u58f2\u5374\u3084\u767b\u8a18\u306b\u95a2\u9023\u3059\u308b\u3082\u306e\u306f\u91cd\u8981\u3067\u3059\u3002\u554f\u984c\u767a\u751f\u3092\u907f\u3051\u308b\u305f\u3081\u3001\u7533\u8acb\u65e5\u306b\u8fd1\u3044\u65e5\u4ed8\u3067\u6700\u65b0\u7248\u3092\u53d6\u5f97\u3059\u308b\u3053\u3068\u3092\u63a8\u5968\u3057\u307e\u3059\u3002"},
+{"@type":"ListItem","position":8,"name":"\u30d3\u30b6\u7533\u8acb\u30d7\u30ed\u30bb\u30b9\u3092\u52b9\u7387\u5316\u3059\u308b\u305f\u3081\u306b\u3001\u307e\u305a\u4e88\u7d04\u67a0\u3092\u78ba\u4fdd\u3057\u3066\u304b\u3089\u90fd\u5408\u306e\u826f\u3044\u3068\u304d\u306b\u7533\u8acb\u66f8\u3092\u5b8c\u6210\u3055\u305b\u308b\u3053\u3068\u3092\u304a\u52e7\u3081\u3057\u307e\u3059\u3002\u5b8c\u5168\u306b\u8a18\u5165\u6e08\u307f\u306e\u7533\u8acb\u66f8\u3092\u30d3\u30b6\u7533\u8acb\u30bb\u30f3\u30bf\u30fc\u306b\u6301\u53c2\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u7533\u8acb\u66f8\u306b\u306f\u6b63\u3057\u3044\u30d1\u30b9\u30dd\u30fc\u30c8\u60c5\u5831\u3092\u4f7f\u7528\u3057\u3066\u3044\u308b\u3053\u3068\u3092\u78ba\u8a8d\u3057\u3066\u304f\u3060\u3055\u3044\u3002"},
+{"@type":"ListItem","position":9,"name":"\u30d3\u30b6\u7533\u8acb\u306b\u3042\u305f\u3063\u3066\u306f\u3001\u5fc5\u8981\u306a\u66f8\u985e\u3092\u9bae\u660e\u306b\u30b9\u30ad\u30e3\u30f3\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u5fc5\u8981\u3067\u3042\u308c\u3070\u30d1\u30b9\u30dd\u30fc\u30c8\u5168\u4f53\u3092\u30b9\u30ad\u30e3\u30f3\u3057\u3001\u5358\u4e00\u306e\u30d5\u30a1\u30a4\u30eb\u3068\u3057\u3066\u63d0\u51fa\u3057\u3066\u3082\u554f\u984c\u3042\u308a\u307e\u305b\u3093\u3002\u30b9\u30ad\u30e3\u30f3\u306e\u5b8c\u74a7\u3055\u3088\u308a\u3082\u3001\u60c5\u5831\u306e\u660e\u77ad\u3055\u304c\u512a\u5148\u3055\u308c\u307e\u3059\u3002"},
+{"@type":"ListItem","position":10,"name":"\u30d3\u30b6\u7533\u8acb\u306e\u52d5\u6a5f\u66f8\uff08\u30ab\u30d0\u30fc\u30ec\u30bf\u30fc\uff09\u306f\u7c21\u6f54\u306b\u307e\u3068\u3081\u3001A4\u7528\u7d191\u679a\u4ee5\u5185\u306b\u53ce\u3081\u3001\u81ea\u7531\u5f62\u5f0f\u3067\u66f8\u304f\u306e\u304c\u7406\u60f3\u7684\u3067\u3059\u3002\u660e\u78ba\u304b\u3064\u95a2\u9023\u6027\u306e\u9ad8\u3044\u60c5\u5831\u306b\u7126\u70b9\u3092\u5f53\u3066\u3066\u304f\u3060\u3055\u3044\u3002"},
+{"@type":"ListItem","position":11,"name":"\u30d3\u30b6\u7533\u8acb\u6642\u306b\u306f\u3001\u4e3b\u306a\u4f4f\u5c45\u3060\u3051\u3067\u306a\u304f\u3001\u6240\u6709\u3057\u3066\u3044\u308b\u3059\u3079\u3066\u306e\u4e0d\u52d5\u7523\u3092\u7533\u544a\u3059\u308b\u3053\u3068\u3092\u304a\u52e7\u3081\u3057\u307e\u3059\u3002\u3053\u308c\u306b\u3088\u308a\u3001\u30d3\u30b6\u767a\u7d66\u306e\u53ef\u80fd\u6027\u304c\u9ad8\u307e\u308b\u53ef\u80fd\u6027\u304c\u3042\u308a\u307e\u3059\u3002"},
+{"@type":"ListItem","position":12,"name":"\u30ab\u30c3\u30d7\u30eb\u3067\u65c5\u884c\u3059\u308b\u5834\u5408\u3001\u30d3\u30b6\u7533\u8acb\u306b\u304a\u3044\u3066\u3001\u51fa\u751f\u8a3c\u660e\u66f8\u304c\u6c42\u3081\u3089\u308c\u306a\u3044\u30b1\u30fc\u30b9\u3067\u3042\u308c\u3070\u3001\u51fa\u751f\u8a3c\u660e\u66f8\u306e\u4ee3\u308f\u308a\u306b\u7d50\u5a5a\u8a3c\u660e\u66f8\u304c\u53d7\u3051\u5165\u308c\u3089\u308c\u308b\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002"}
+]}
+</script>
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 \u591c", DAY="\u2600 \u663c";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

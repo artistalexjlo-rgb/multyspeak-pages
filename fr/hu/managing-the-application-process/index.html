@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hongrie : Organisation de la demande (rendez-vous, zones, VFS) — expérience réelle · Luky</title>
+<meta name="description" content="L&#39;expérience réelle des chats sur Organisation de la demande (rendez-vous, zones, VFS) en Hongrie : telle quelle, de première main. Pour ton cas — demande à Luky.">
+<link rel="canonical" href="https://info.multyspeak.online/fr/hu/managing-the-application-process/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.online/ru/hu/managing-the-application-process/">
+<link rel="alternate" hreflang="ar" href="https://info.multyspeak.online/ar/hu/managing-the-application-process/">
+<link rel="alternate" hreflang="de" href="https://info.multyspeak.online/de/hu/managing-the-application-process/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.online/en/hu/managing-the-application-process/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.online/es/hu/managing-the-application-process/">
+<link rel="alternate" hreflang="fr" href="https://info.multyspeak.online/fr/hu/managing-the-application-process/">
+<link rel="alternate" hreflang="hi" href="https://info.multyspeak.online/hi/hu/managing-the-application-process/">
+<link rel="alternate" hreflang="it" href="https://info.multyspeak.online/it/hu/managing-the-application-process/">
+<link rel="alternate" hreflang="ja" href="https://info.multyspeak.online/ja/hu/managing-the-application-process/">
+<link rel="alternate" hreflang="ko" href="https://info.multyspeak.online/ko/hu/managing-the-application-process/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.online/pt/hu/managing-the-application-process/">
+<link rel="alternate" hreflang="th" href="https://info.multyspeak.online/th/hu/managing-the-application-process/">
+<link rel="alternate" hreflang="tr" href="https://info.multyspeak.online/tr/hu/managing-the-application-process/">
+<link rel="alternate" hreflang="zh" href="https://info.multyspeak.online/zh/hu/managing-the-application-process/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.online/ru/hu/managing-the-application-process/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+/* тег типа абзаца (хвост-антологии: lifehack/reglament/howto/risk/case/service) */
+.tag{display:inline-block;font-family:var(--font-mono);font-weight:400;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);
+  border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:2px;white-space:nowrap}
+.tag.risk{color:var(--red);border-color:var(--red)}
+.tag.reglament{color:var(--accent);border-color:var(--accent)}
+.tag.lifehack{color:var(--green);border-color:var(--green)}
+.tag.service{color:var(--yellow);border-color:var(--yellow)}
+.tag.howto{color:var(--hud);border-color:var(--hud)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">portail d'info · tous pays · sans blabla</span>
+    </div>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="" href="/ru/hu/managing-the-application-process/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/ar/hu/managing-the-application-process/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>AR</a>
+        <a class="" href="/de/hu/managing-the-application-process/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>DE</a>
+        <a class="" href="/en/hu/managing-the-application-process/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/hu/managing-the-application-process/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="on" href="/fr/hu/managing-the-application-process/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>FR</a>
+        <a class="" href="/hi/hu/managing-the-application-process/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>HI</a>
+        <a class="" href="/it/hu/managing-the-application-process/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>IT</a>
+        <a class="" href="/ja/hu/managing-the-application-process/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>JA</a>
+        <a class="" href="/ko/hu/managing-the-application-process/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>KO</a>
+        <a class="" href="/pt/hu/managing-the-application-process/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+        <a class="" href="/th/hu/managing-the-application-process/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TH</a>
+        <a class="" href="/tr/hu/managing-the-application-process/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TR</a>
+        <a class="" href="/zh/hu/managing-the-application-process/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ZH</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Nuit</span></button>
+    </div>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/fr/">Accueil</a> /
+    <a href="/fr/hu/">Hongrie</a> /
+    <b>Organisation de la demande (rendez-vous, zones, VFS)</b>
+  </nav>
+
+
+  
+  <h1>Organisation de la demande (rendez-vous, zones, VFS) : comment ça marche vraiment en Hongrie — de première main</h1>
+  <span class="section-label">Réponse courte</span>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">La juridiction consulaire pour un visa hongrois peut varier, il est donc essentiel de vérifier les règles de résidence auprès de votre centre VFS ou du consulat avant de réserver. Pour les visas de type D ou des demandes spécifiques, contacter directement le consulat peut faciliter le processus et l'obtention de rendez-vous.</div></div>
+
+  <h2>D&#39;après l&#39;expérience réelle</h2>
+  <details open><summary><span class="sumq">Le dépôt de la demande de visa peut être soumis à des règles de compétence basées sur la résidence et les districts consulaires.</span><span></span></summary>
+    <div class="a">Les candidats ayant une résidence principale dans une ville (par exemple, Moscou) peuvent rencontrer des difficultés à déposer leur demande dans une autre ville (par exemple, Arkhangelsk) si celle-ci relève d'une juridiction consulaire différente (par exemple, Saint-Pétersbourg). Bien que certains consulats Schengen, comme celui de la Hongrie, puissent avoir des exigences de résidence plus flexibles, il est essentiel de vérifier les procédures spécifiques auprès du centre de demande de visa ou du consulat concerné, car les politiques peuvent varier.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+  <details><summary><span class="sumq">L&#39;utilisation du salon VFS Premium est principalement recommandée s&#39;il n&#39;y a pas de créneaux de rendez-vous standard disponibles et que la date du voyage approche.</span><span></span></summary>
+    <div class="a">Le service (coûtant environ 8 000 RUB plus des frais supplémentaires pour SMS/courrier) comprend des services de photographie, de photocopie et une assistance pour remplir le formulaire de demande de visa. Les erreurs de demande standard qui ne violent pas l'intégrité du document peuvent souvent être corrigées au centre VFS pour une somme modique (environ 600 RUB).
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+  <details><summary><span class="sumq">Pour les demandes de visa hongrois, consultez les exigences spécifiques du consulat, car le site officiel peut ne pas toujours lister tous les documents nécessaires.</span><span></span></summary>
+    <div class="a">Par exemple, le consulat à Iekaterinbourg pourrait exiger un extrait EGRIP, une déclaration et son reçu d'acceptation, même si cela n'est pas explicitement indiqué en ligne. Préparez un ensemble complet de documents pour éviter les problèmes de dernière minute. Un ensemble partiel peut être accepté avec une note sur les éléments manquants.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+  <details><summary><span class="sumq">Pour les demandes de visa hongrois, les exigences concernant des documents spécifiques comme un certificat du Fonds de retraite pour les personnes sans emploi peuvent varier.</span><span></span></summary>
+    <div class="a">Bien que certains candidats aient réussi à obtenir des visas sans cela, il est généralement conseillé d'inclure tous les documents potentiellement requis pour assurer une demande complète et éviter les problèmes potentiels basés sur la discrétion de l'agent consulaire. Certains centres de visa peuvent proposer des services d'impression de documents moyennant des frais.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+  <details><summary><span class="sumq">Les demandes de visa pour la Hongrie doivent être soumises dans la juridiction consulaire spécifique correspondant à l&#39;enregistrement permanent officiel (propiska) du demandeur.</span><span></span></summary>
+    <div class="a">Postuler dans une région différente (par exemple, Moscou contre Kazan ou Voronej) nécessite généralement une preuve de résidence temporaire locale ou d'emploi. Vérifiez toujours les règles de juridiction spécifiques sur le site officiel de VFS Global ou du consulat avant de réserver un rendez-vous.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+  <details><summary><span class="sumq">Contrairement à certains autres pays Schengen (par exemple, l&#39;Italie), la Hongrie n&#39;applique pas strictement les règles de circonscription consulaire pour les demandes de visa en Russie.</span><span></span></summary>
+    <div class="a">Les demandeurs venant de régions sans centre VFS local ou consulat (par exemple, Koursk) peuvent être en mesure de soumettre leurs documents dans n'importe quel centre VFS en Russie (par exemple, Voronej). Cependant, il est conseillé de confirmer auprès du centre VFS spécifique avant la demande.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+  <details><summary><span class="sumq">Pour les demandes de visa hongrois en Russie, les principaux points de demande sont généralement les centres de visa, avec des consulats spécifiques traitant certaines régions.</span><span></span></summary>
+    <div class="a">En Russie, par exemple, les demandes peuvent être traitées via des centres à Moscou et à Kazan, avec des options de soumission directe limitées dans les consulats. Il est essentiel de vérifier le lieu de demande correct en fonction de votre région de résidence.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+  <details><summary><span class="sumq">Pour les demandes de visa Schengen hongrois à Kazan, un contact direct avec le consulat est possible et souvent plus pratique que via VFS.</span><span></span></summary>
+    <div class="a">Les demandeurs peuvent appeler directement pour s'informer de la disponibilité des rendez-vous, certains signalant des rendez-vous le jour même ou le lendemain. Cette méthode a été utilisée avec succès pour divers types de visas, y compris les visas nationaux D et les visas Schengen.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+  <details><summary><span class="sumq">Pour les demandes de visa de groupe ou de famille, utilisez la fonctionnalité &#39;ajouter un demandeur&#39; dans le système de rendez-vous pour obtenir un seul créneau pour tous les membres.</span><span></span></summary>
+    <div class="a">Cela simplifie le processus de documentation. Si des créneaux séparés sont obligatoires, apporter des documents de confirmation de réservation partagés (réservations d'hôtel/vol communes) au rendez-vous est la pratique standard pour une considération de groupe.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+  <details><summary><span class="sumq">Les demandes de visa peuvent parfois être soumises dans des centres de visa indépendamment de la région de résidence du candidat, surtout si ces centres relèvent de la juridiction d&#39;un district consulaire plus large (par exemple, le consulat de Moscou pour la Hongrie, couvrant toutes les régions de la Fédération de Russie).</span><span></span></summary>
+    <div class="a">Il est crucial de vérifier les règles spécifiques du district consulaire ou du centre de demande de visa concerné.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+  <details><summary><span class="sumq">La disponibilité des créneaux pour les demandes de visa est souvent limitée et compétitive.</span><span></span></summary>
+    <div class="a">Les créneaux peuvent être publiés périodiquement, souvent sur une base mensuelle, et sont rapidement pris. Il n'existe pas de calendrier précis pour la libération des créneaux, ce qui rend essentiel de surveiller les canaux pertinents pour les annonces et d'être prêt à réserver un créneau dès qu'il devient disponible.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+  <details><summary><span class="sumq">Faire une demande de &#39;Visa D&#39; hongrois directement au consulat peut être plus simple qu&#39;en passant par un centre de demande de visa (VFS).</span><span></span></summary>
+    <div class="a">Le personnel consulaire participe au processus de décision et peut fournir des conseils plus précis sur l'exhaustivité des documents, ce qui est crucial car ces documents sont transmis en Hongrie pour la décision finale.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+  <details><summary><span class="sumq">À Moscou, les salons premium pour les demandes de visa proposent souvent des services de photographie et de photocopie.</span><span></span></summary>
+    <div class="a">Il est conseillé de clarifier si ces services sont inclus dans le prix ou s'ils entraînent des frais supplémentaires. Les demandeurs peuvent généralement apporter leurs documents originaux et faire des copies au centre, ou les faire réaliser sur place.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+  <details><summary><span class="sumq">Pour les demandes de visa hongrois, vous pouvez réserver un créneau de rendez-vous en premier, puis procéder au remplissage du formulaire de demande et au rassemblement de tous les documents nécessaires.</span><span></span></summary>
+    <div class="a">Si vous postulez en couple, assurez-vous de réserver un créneau pour deux personnes. Le délai de traitement habituel pour un visa hongrois est d'environ 2 à 3 semaines.
+    <div class="src">✓ 1 retour des chats</div></div>
+  </details>
+
+  <h2>Thèmes liés</h2>
+  <div class="chips">
+    <a class="chip" href="/fr/hu/booking-and-payment-requirements/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Exigences de réservation et de paiement</span></a>
+    <a class="chip" href="/fr/hu/financial-documents-and-proof-of-funds/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Preuves de ressources</span></a>
+    <a class="chip" href="/fr/hu/financial-documents-and-proof-of-income/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Justificatifs de revenus</span></a>
+    <a class="chip" href="/fr/hu/accommodation-booking-requirements/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Exigences pour l&#39;hébergement</span></a>
+    <a class="chip" href="/fr/hu/itinerary-requirements-stay-in-hungary/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Exigences sur l&#39;itinéraire (séjour en Hongrie)</span></a>
+    <a class="chip" href="/fr/hu/procedures-for-itinerary-updates/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Notification de modification d&#39;itinéraire</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Tu n&#39;as pas trouvé ton cas ?</h2>
+    <p>Demande à Luky — à partir de l&#39;expérience récente des gens, pas des manuels.</p>
+    <p>Et Luky est un traducteur vocal en direct pour de vraies conversations : demande ton chemin et comprends vraiment la réponse.</p>
+    <p class="ps">PS : discuter avec quelqu&#39;un à un festival à l&#39;étranger — facile</p>
+    <a class="btn" href="https://multyspeak.online" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Ouvrir Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — l&#39;expérience réelle des chats communautaires, sans blabla</div>
+    <nav class="f-links">
+      <a href="/fr/about/">À propos</a>
+      <a href="/fr/hu/">Tous les thèmes</a>
+      <a href="/fr/">Pays</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Les réponses proviennent de chats communautaires ouverts — c&#39;est l&#39;expérience réelle des gens, pas un conseil officiel. Vérifie avant toute décision importante.</p>
+    <div class="f-copy">© 2026 Luky · mis à jour 08.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Le d\u00e9p\u00f4t de la demande de visa peut \u00eatre soumis \u00e0 des r\u00e8gles de comp\u00e9tence bas\u00e9es sur la r\u00e9sidence et les districts consulaires."},
+{"@type":"ListItem","position":2,"name":"L\u0027utilisation du salon VFS Premium est principalement recommand\u00e9e s\u0027il n\u0027y a pas de cr\u00e9neaux de rendez-vous standard disponibles et que la date du voyage approche."},
+{"@type":"ListItem","position":3,"name":"Pour les demandes de visa hongrois, consultez les exigences sp\u00e9cifiques du consulat, car le site officiel peut ne pas toujours lister tous les documents n\u00e9cessaires."},
+{"@type":"ListItem","position":4,"name":"Pour les demandes de visa hongrois, les exigences concernant des documents sp\u00e9cifiques comme un certificat du Fonds de retraite pour les personnes sans emploi peuvent varier."},
+{"@type":"ListItem","position":5,"name":"Les demandes de visa pour la Hongrie doivent \u00eatre soumises dans la juridiction consulaire sp\u00e9cifique correspondant \u00e0 l\u0027enregistrement permanent officiel (propiska) du demandeur."},
+{"@type":"ListItem","position":6,"name":"Contrairement \u00e0 certains autres pays Schengen (par exemple, l\u0027Italie), la Hongrie n\u0027applique pas strictement les r\u00e8gles de circonscription consulaire pour les demandes de visa en Russie."},
+{"@type":"ListItem","position":7,"name":"Pour les demandes de visa hongrois en Russie, les principaux points de demande sont g\u00e9n\u00e9ralement les centres de visa, avec des consulats sp\u00e9cifiques traitant certaines r\u00e9gions."},
+{"@type":"ListItem","position":8,"name":"Pour les demandes de visa Schengen hongrois \u00e0 Kazan, un contact direct avec le consulat est possible et souvent plus pratique que via VFS."},
+{"@type":"ListItem","position":9,"name":"Pour les demandes de visa de groupe ou de famille, utilisez la fonctionnalit\u00e9 \u0027ajouter un demandeur\u0027 dans le syst\u00e8me de rendez-vous pour obtenir un seul cr\u00e9neau pour tous les membres."},
+{"@type":"ListItem","position":10,"name":"Les demandes de visa peuvent parfois \u00eatre soumises dans des centres de visa ind\u00e9pendamment de la r\u00e9gion de r\u00e9sidence du candidat, surtout si ces centres rel\u00e8vent de la juridiction d\u0027un district consulaire plus large (par exemple, le consulat de Moscou pour la Hongrie, couvrant toutes les r\u00e9gions de la F\u00e9d\u00e9ration de Russie)."},
+{"@type":"ListItem","position":11,"name":"La disponibilit\u00e9 des cr\u00e9neaux pour les demandes de visa est souvent limit\u00e9e et comp\u00e9titive."},
+{"@type":"ListItem","position":12,"name":"Faire une demande de \u0027Visa D\u0027 hongrois directement au consulat peut \u00eatre plus simple qu\u0027en passant par un centre de demande de visa (VFS)."},
+{"@type":"ListItem","position":13,"name":"\u00c0 Moscou, les salons premium pour les demandes de visa proposent souvent des services de photographie et de photocopie."},
+{"@type":"ListItem","position":14,"name":"Pour les demandes de visa hongrois, vous pouvez r\u00e9server un cr\u00e9neau de rendez-vous en premier, puis proc\u00e9der au remplissage du formulaire de demande et au rassemblement de tous les documents n\u00e9cessaires."}
+]}
+</script>
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Nuit", DAY="\u2600 Jour";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>
