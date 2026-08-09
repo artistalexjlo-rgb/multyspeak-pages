@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>any: Topluluk, Güvenlik ve İletişim — sohbetlerden gerçek deneyim · Luky</title>
+<meta name="description" content="any için «Topluluk, Güvenlik ve İletişim» konusunda gerçek deneyim: sohbetlerden pratik ipuçları, vakalar ve kurallar. Kendi durumun için — Luky&#39;ye sor.">
+<link rel="canonical" href="https://info.multyspeak.ru/tr/any/s/life/community-and-safety/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.ru/ru/any/s/life/community-and-safety/">
+<link rel="alternate" hreflang="ar" href="https://info.multyspeak.ru/ar/any/s/life/community-and-safety/">
+<link rel="alternate" hreflang="de" href="https://info.multyspeak.ru/de/any/s/life/community-and-safety/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.ru/en/any/s/life/community-and-safety/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.ru/es/any/s/life/community-and-safety/">
+<link rel="alternate" hreflang="fr" href="https://info.multyspeak.ru/fr/any/s/life/community-and-safety/">
+<link rel="alternate" hreflang="hi" href="https://info.multyspeak.ru/hi/any/s/life/community-and-safety/">
+<link rel="alternate" hreflang="it" href="https://info.multyspeak.ru/it/any/s/life/community-and-safety/">
+<link rel="alternate" hreflang="ja" href="https://info.multyspeak.ru/ja/any/s/life/community-and-safety/">
+<link rel="alternate" hreflang="ko" href="https://info.multyspeak.ru/ko/any/s/life/community-and-safety/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.ru/pt/any/s/life/community-and-safety/">
+<link rel="alternate" hreflang="th" href="https://info.multyspeak.ru/th/any/s/life/community-and-safety/">
+<link rel="alternate" hreflang="tr" href="https://info.multyspeak.ru/tr/any/s/life/community-and-safety/">
+<link rel="alternate" hreflang="zh" href="https://info.multyspeak.ru/zh/any/s/life/community-and-safety/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.ru/ru/any/s/life/community-and-safety/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+/* тег типа абзаца (хвост-антологии: lifehack/reglament/howto/risk/case/service) */
+.tag{display:inline-block;font-family:var(--font-mono);font-weight:400;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);
+  border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:2px;white-space:nowrap}
+.tag.risk{color:var(--red);border-color:var(--red)}
+.tag.reglament{color:var(--accent);border-color:var(--accent)}
+.tag.lifehack{color:var(--green);border-color:var(--green)}
+.tag.service{color:var(--yellow);border-color:var(--yellow)}
+.tag.howto{color:var(--hud);border-color:var(--hud)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">bilgi portalı · her ülke · laf kalabalığı yok</span>
+    </div>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="" href="/ru/any/s/life/community-and-safety/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/ar/any/s/life/community-and-safety/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>AR</a>
+        <a class="" href="/de/any/s/life/community-and-safety/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>DE</a>
+        <a class="" href="/en/any/s/life/community-and-safety/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/any/s/life/community-and-safety/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/fr/any/s/life/community-and-safety/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>FR</a>
+        <a class="" href="/hi/any/s/life/community-and-safety/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>HI</a>
+        <a class="" href="/it/any/s/life/community-and-safety/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>IT</a>
+        <a class="" href="/ja/any/s/life/community-and-safety/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>JA</a>
+        <a class="" href="/ko/any/s/life/community-and-safety/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>KO</a>
+        <a class="" href="/pt/any/s/life/community-and-safety/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+        <a class="" href="/th/any/s/life/community-and-safety/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TH</a>
+        <a class="on" href="/tr/any/s/life/community-and-safety/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TR</a>
+        <a class="" href="/zh/any/s/life/community-and-safety/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ZH</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ Gece</span></button>
+    </div>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/tr/">Ana sayfa</a> /
+    <a href="/tr/any/">any</a> /
+    <b>Topluluk, Güvenlik ve İletişim</b>
+  </nav>
+
+
+  
+  <h1>any için Topluluk, Güvenlik ve İletişim: sohbetlerden gerçek deneyim</h1>
+
+  <h2>Gerçek deneyimden</h2>
+  <details open><summary><span class="sumq"><span class="tag service">servis</span>Göçmenler için bir uyum kaynağı olarak nostalji üzerine bir araştırma yürütülmektedir.</span><span></span></summary>
+    <div class="a">Katılımcılar 20 ile 35 yaş arasında olmalı ve başka bir ülkeye yerleşmiş olmalıdır. Çalışma, bir anketin (35 dakikaya kadar) doldurulmasını ve isteğe bağlı olarak geri bildirim için çevrimiçi bir görüşmeyi içermektedir. Görüşme için iletişim bilgileri sağlanabilir. Çalışmaya dair bir bağlantı mevcuttur. Daha fazla katılımcı toplamak için araştırmanın paylaşılması teşvik edilmektedir.
+    <div class="src">✓ 2 bildirim sohbetlerden</div></div>
+  </details>
+  <details><summary><span class="sumq">Tartışma, geleneksel Rus erkeklik anlayışı ve duygusal ifade, özellikle yardım arayan erkekler üzerine dönüyor.</span><span></span></summary>
+    <div class="a">Bazıları Sovyet dönemi gelenekleri nedeniyle erkeklerin stoacı ve kendine yeten olması gerektiğini savunurken, diğerleri öfke veya şiddet gibi olumsuz sonuçları önlemek için aileden, arkadaşlardan veya ruh sağlığı profesyonellerinden destek almayı savunuyor. Tartışma; kültürel değişimlere, kuşak farklarına ve 'Batılı gündemler' veya 'devlet propagandası'nın bu toplumsal görüşler üzerindeki etkisine değiniyor. Stoacılık ile ruh sağlığı ihtiyaçlarının kabulü arasındaki gerilimi vurguluyor.
+    <div class="src">✓ 1 bildirim sohbetlerden</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">risk</span>Kullanıcılar, özellikle TravelAsk&#39;tan &#39;Daria&#39;dan bahseden klonlanmış yönetici profilleri kullanan dolandırıcılık girişimlerini bildirmektedir.</span><span></span></summary>
+    <div class="a">Aktarılması gereken temel noktalar: 1. Gerçek yöneticiler asla iletişimi başlatmaz. 2. Ücretli hizmetler sunmazlar. 3. Özel mesajlardaki istenmeyen tavsiyelere karşı dikkatli olun. 4. Yönetim veya uzmanlarla tüm iletişim, kimliğe bürünme ve finansal dolandırıcılığı önlemek için yalnızca resmi sohbetin sabitlenmiş mesajları üzerinden yapılmalıdır.
+    <div class="src">✓ 1 bildirim sohbetlerden</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">risk</span>Tartışma, göçle ilgili konularda AI araçlarının (ChatGPT, Perplexity) güvenilirliği ile doğrudan deneyime sahip kişilerin tavsiyeleri üzerine yoğunlaşmaktadır.</span><span></span></summary>
+    <div class="a">AI, ilk araştırma, bağlantı bulma ve bilgileri doğrulama için yararlı bir araç olarak kabul edilir. Ancak, kritik kararlar ve güncel yasal değişiklikler için, AI'nın yanlışlıkları veya güncelliğini yitirmiş bilgiler içerebilme potansiyeli nedeniyle süreci yaşamış kişilere danışılması önerilir.
+    <div class="src">✓ 1 bildirim sohbetlerden</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">vaka</span>Sınır ötesi ilişkilerde, kadınların partnerlerini görmek için seyahati başlattığı, erkeklerin ise daha az proaktif çaba gösterdiği bir dengesizlik gözlemlenmektedir.</span><span></span></summary>
+    <div class="a">Bu dinamik, finansal ve lojistik sorumluluklarla ilgili kültürel beklentiler ve algılanan çabayla bağlantılıdır. Örneğin Meksikalı erkekler, yeni deneyimler için risk almaya daha istekli ve maceracı olabilen Rus kadınlarına kıyasla uluslararası seyahat ve belge karmaşasıyla uğraşmaya daha az eğilimli olabilir. Bazı erkeklerdeki 'maço' imajı yüzeysel olabilir, zorluklarla karşılaşıldığında dirençten yoksun kalabilirler. Bağlılığın kilit bir göstergesi, erkeğin yükü kadına yüklemek yerine, buluşma düzenlemeleri için inisiyatif alma ve sorumluluk üstlenme istekliliğidir.
+    <div class="src">✓ 1 bildirim sohbetlerden</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">servis</span>Film ve dizileri orijinal dillerinde ve Rusça altyazılı izlemek için birkaç platform genellikle belirtilir.</span><span></span></summary>
+    <div class="a">Bunlar arasında LordFilm ve Zetflix gibi resmi olmayan yayın siteleri bulunur. Altyazılı yabancı dizi ve filmler dahil olmak üzere içerik indirmek için popüler olan bir diğer kaynak Rutracker'dır. Bu platformları kullanırken telif hakkı yasalarının ve potansiyel güvenlik risklerinin farkında olmak ve dosya indirirken dikkatli olmak önemlidir.
+    <div class="src">✓ 1 bildirim sohbetlerden</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">vaka</span>Latin Amerika&#39;da sosyal entegrasyon büyük ölçüde davranışlara bağlıdır.</span><span></span></summary>
+    <div class="a">Kültürel alçakgönüllülük sergileyen, dili öğrenen ve yerel halkla etkileşimde bulunan gurbetçiler genellikle iyi karşılanır. 'Göçmenler ülkesi' olduğuna dair güçlü bir tarihsel anlatı vardır; bu da yerel toplulukların, ülkenin geleneklerine samimi bir saygı gösteren yabancılara karşı açık olmasını sağlar.
+    <div class="src">✓ 1 bildirim sohbetlerden</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">rehber</span>Bir kullanıcı büyük bir Telegram sohbetinde kısıtlı erişim veya mesaj gönderememe sorunu yaşıyorsa, bu muhtemelen sohbet kurallarının (genellikle sabitlenmiş mesajlarda bulunur) ihlalinden kaynaklanmaktadır.</span><span></span></summary>
+    <div class="a">Bunu çözmek için kullanıcı doğrudan sohbet yöneticisiyle iletişime geçmelidir, çünkü erişim sorunları genellikle bu kanal aracılığıyla olumlu bir şekilde çözülmektedir.
+    <div class="src">✓ 1 bildirim sohbetlerden</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">servis</span>Dünyanın çeşitli şehirlerinde yerel sakinlerle ücretsiz yürüyüş turları sunan Greeters projesini keşfedin.</span><span></span></summary>
+    <div class="a">Deneyim; ruhani, bilgilendirici ve ücretsiz olarak tanımlanır. Katılımcılar, greeter'a bağlı olarak İngilizce ve potansiyel olarak Rusça dahil olmak üzere farklı dillerde iletişim kurabilirler. Bu, bir şehri yerel bir perspektiften keşfetmek için harika bir yoldur.
+    <div class="src">✓ 1 bildirim sohbetlerden</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">ipucu</span>Rus askeri şubesi (&#39;voenkomat&#39;) ile ilgili konularda hukuki yardım arıyorsanız, bu alanda uzmanlaşmış avukatlar arayın.</span><span></span></summary>
+    <div class="a">Gerekli sertifikalar veya belgeler için talebinizi güçlendirmek amacıyla benzer durumlarla karşı karşıya kalan bireylerin ilgili belgelerini ve emsal vakalarını hazırlayın.
+    <div class="src">✓ 1 bildirim sohbetlerden</div></div>
+  </details>
+  <details><summary><span class="sumq">Göçmenler için Rusça konuşan toplulukların değeri tartışmalıdır.</span><span></span></summary>
+    <div class="a">Argümanlar arasında, topluluk varlığının az olmasıyla daha hızlı dil edinimi ile topluluğun sağladığı konfor, kolay entegrasyon, iş arama desteği ve sosyal yardım gibi faktörler yer alır. Bu tür toplulukların 'yardımcı' rolü de belirtilmektedir. Dil engellerini aşmanın ve 'dil izolasyonunu' azaltmanın önemi vurgulanmaktadır.
+    <div class="src">✓ 1 bildirim sohbetlerden</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">servis</span>16 Kasım Pazar günü saat 21:00&#39;de, hava koşulları uygun olursa, Moskova&#39;da Portekizce altyazılı &#39;Courier&#39; (Mosfilm) filminin açık hava gösterimi yapılacaktır.</span><span></span></summary>
+    <div class="a">Mekan, 'Red October' alanına benzer ancak daha küçük, sömürge tarzı bir çatı katı estetiğine sahip bir yer olarak tanımlanıyor. Giriş ücretsizdir.
+    <div class="src">✓ 1 bildirim sohbetlerden</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">risk</span>Topluluk gruplarında yaygın bir dolandırıcılık yöntemi: yönetici profillerini kopyalayan taklitçiler.</span><span></span></summary>
+    <div class="a">Hatırlatmalar: 1. Gerçek yöneticiler özel mesaj başlatmaz. 2. Ücretli hizmetler sunmazlar. 3. Resmi destek için her zaman 'sabitlenmiş' (pinned) kişileri kullanın.
+    <div class="src">✓ 1 bildirim sohbetlerden</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">risk</span>British Council, Rusya Federasyonu&#39;nda istenmeyen kuruluş olarak tanımlanmıştır.</span><span></span></summary>
+    <div class="a">IELTS sınavına giren Rus vatandaşlarına, sınav yöneticisi olarak IDP'yi (International Development Program) kullanmaları tavsiye edilir. Olası yasal riskleri en aza indirmek için Rus banka hesaplarından doğrudan ödeme yapmaktan kaçınılması önerilir.
+    <div class="src">✓ 1 bildirim sohbetlerden</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">vaka</span>Kullanıcıların daha önce beğendiği bir meyve birası markası olan Fenix&#39;in artık mevcut olmadığı bildirilmektedir.</span><span></span></summary>
+    <div class="a">Bir kullanıcı, Plzeňský Prazdroj'un (Çek bira fabrikası) üretimini durdurduğundan şüphelenmektedir.
+    <div class="src">✓ 1 bildirim sohbetlerden</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">risk</span>Uçuş dışı (iptal veya gecikme) durumlarını kapsayan seyahat sigortası karmaşıktır ve her duruma uymayabilecek sayısız koşula sahiptir.</span><span></span></summary>
+    <div class="a">Uçuş iptallerini veya gecikmelerini öngörmek imkansızdır. Japonya'daki tayfunlar veya yerel sorunlar gibi faktörler uçuşları etkileyebilir. Olası aksaklıkları karşılamak için seyahat programınızda bir tampon gün bulundurmanız tavsiye edilir.
+    <div class="src">✓ 1 bildirim sohbetlerden</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">kural</span>Kullanıcılara, Travel Ask sohbet grupları içinde tur rehberleri, şoförler veya diğer hizmet sağlayıcıları için iletişim bilgileri veya tavsiye paylaşmanın yasak olduğunu hatırlatın.</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 bildirim sohbetlerden</div></div>
+  </details>
+
+  <h2>İlgili konular</h2>
+  <div class="chips">
+    <a class="chip" href="/tr/any/s/life/gear-services-and-daily-tips/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Ekipman, Hizmetler ve Günlük İpuçları</span></a>
+    <a class="chip" href="/tr/any/s/life/relocation-employment-and-finance/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Relokasyon, İş ve Finans</span></a>
+    <a class="chip" href="/tr/any/s/life/visas-documents-and-legalization/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Vize, Belge ve Yasallaştırma</span></a>
+    <a class="chip" href="/tr/any/s/life/accommodation-and-transport-tips/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Konaklama ve Ulaşım Önerileri</span></a>
+    <a class="chip" href="/tr/any/s/life/country-and-destination-guides/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Ülke ve Rota Rehberleri</span></a>
+    <a class="chip" href="/tr/any/s/life/education-and-self-development/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• Eğitim ve Kişisel Gelişim</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>Arama herkese yanıt veriyor — sana?</h2>
+    <p>Luky&#39;ye sor — durumunu anlamaya çalışır ve daha isabetli yanıtlar.</p>
+    <p>Ve Luky, gerçek konuşmalar için canlı sesli çevirmen: lobide başka ülkelerden gezginlerle sohbet et.</p>
+    <p class="ps">PS: dilinden tek kelime bilmeyen bir yol arkadaşıyla sohbete başla</p>
+    <a class="btn" href="https://multyspeak.ru" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Luky&#39;yi aç</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — topluluk sohbetlerinden gerçek deneyim, laf kalabalığı yok</div>
+    <nav class="f-links">
+      <a href="/tr/about/">Hakkında</a>
+      <a href="/tr/any/">Tüm konular</a>
+      <a href="/tr/">Ülkeler</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">Yanıtlar açık topluluk sohbetlerinden derlenmiştir — bu insanların gerçek deneyimidir, resmî tavsiye değildir. Önemli kararlardan önce doğrula.</p>
+    <div class="f-copy">© 2026 Luky · güncellendi 08.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"G\u00f6\u00e7menler i\u00e7in bir uyum kayna\u011f\u0131 olarak nostalji \u00fczerine bir ara\u015ft\u0131rma y\u00fcr\u00fct\u00fclmektedir."},
+{"@type":"ListItem","position":2,"name":"Tart\u0131\u015fma, geleneksel Rus erkeklik anlay\u0131\u015f\u0131 ve duygusal ifade, \u00f6zellikle yard\u0131m arayan erkekler \u00fczerine d\u00f6n\u00fcyor."},
+{"@type":"ListItem","position":3,"name":"Kullan\u0131c\u0131lar, \u00f6zellikle TravelAsk\u0027tan \u0027Daria\u0027dan bahseden klonlanm\u0131\u015f y\u00f6netici profilleri kullanan doland\u0131r\u0131c\u0131l\u0131k giri\u015fimlerini bildirmektedir."},
+{"@type":"ListItem","position":4,"name":"Tart\u0131\u015fma, g\u00f6\u00e7le ilgili konularda AI ara\u00e7lar\u0131n\u0131n (ChatGPT, Perplexity) g\u00fcvenilirli\u011fi ile do\u011frudan deneyime sahip ki\u015filerin tavsiyeleri \u00fczerine yo\u011funla\u015fmaktad\u0131r."},
+{"@type":"ListItem","position":5,"name":"S\u0131n\u0131r \u00f6tesi ili\u015fkilerde, kad\u0131nlar\u0131n partnerlerini g\u00f6rmek i\u00e7in seyahati ba\u015flatt\u0131\u011f\u0131, erkeklerin ise daha az proaktif \u00e7aba g\u00f6sterdi\u011fi bir dengesizlik g\u00f6zlemlenmektedir."},
+{"@type":"ListItem","position":6,"name":"Film ve dizileri orijinal dillerinde ve Rus\u00e7a altyaz\u0131l\u0131 izlemek i\u00e7in birka\u00e7 platform genellikle belirtilir."},
+{"@type":"ListItem","position":7,"name":"Latin Amerika\u0027da sosyal entegrasyon b\u00fcy\u00fck \u00f6l\u00e7\u00fcde davran\u0131\u015flara ba\u011fl\u0131d\u0131r."},
+{"@type":"ListItem","position":8,"name":"Bir kullan\u0131c\u0131 b\u00fcy\u00fck bir Telegram sohbetinde k\u0131s\u0131tl\u0131 eri\u015fim veya mesaj g\u00f6nderememe sorunu ya\u015f\u0131yorsa, bu muhtemelen sohbet kurallar\u0131n\u0131n (genellikle sabitlenmi\u015f mesajlarda bulunur) ihlalinden kaynaklanmaktad\u0131r."},
+{"@type":"ListItem","position":9,"name":"D\u00fcnyan\u0131n \u00e7e\u015fitli \u015fehirlerinde yerel sakinlerle \u00fccretsiz y\u00fcr\u00fcy\u00fc\u015f turlar\u0131 sunan Greeters projesini ke\u015ffedin."},
+{"@type":"ListItem","position":10,"name":"Rus askeri \u015fubesi (\u0027voenkomat\u0027) ile ilgili konularda hukuki yard\u0131m ar\u0131yorsan\u0131z, bu alanda uzmanla\u015fm\u0131\u015f avukatlar aray\u0131n."},
+{"@type":"ListItem","position":11,"name":"G\u00f6\u00e7menler i\u00e7in Rus\u00e7a konu\u015fan topluluklar\u0131n de\u011feri tart\u0131\u015fmal\u0131d\u0131r."},
+{"@type":"ListItem","position":12,"name":"16 Kas\u0131m Pazar g\u00fcn\u00fc saat 21:00\u0027de, hava ko\u015fullar\u0131 uygun olursa, Moskova\u0027da Portekizce altyaz\u0131l\u0131 \u0027Courier\u0027 (Mosfilm) filminin a\u00e7\u0131k hava g\u00f6sterimi yap\u0131lacakt\u0131r."},
+{"@type":"ListItem","position":13,"name":"Topluluk gruplar\u0131nda yayg\u0131n bir doland\u0131r\u0131c\u0131l\u0131k y\u00f6ntemi: y\u00f6netici profillerini kopyalayan taklit\u00e7iler."},
+{"@type":"ListItem","position":14,"name":"British Council, Rusya Federasyonu\u0027nda istenmeyen kurulu\u015f olarak tan\u0131mlanm\u0131\u015ft\u0131r."},
+{"@type":"ListItem","position":15,"name":"Kullan\u0131c\u0131lar\u0131n daha \u00f6nce be\u011fendi\u011fi bir meyve biras\u0131 markas\u0131 olan Fenix\u0027in art\u0131k mevcut olmad\u0131\u011f\u0131 bildirilmektedir."},
+{"@type":"ListItem","position":16,"name":"U\u00e7u\u015f d\u0131\u015f\u0131 (iptal veya gecikme) durumlar\u0131n\u0131 kapsayan seyahat sigortas\u0131 karma\u015f\u0131kt\u0131r ve her duruma uymayabilecek say\u0131s\u0131z ko\u015fula sahiptir."},
+{"@type":"ListItem","position":17,"name":"Kullan\u0131c\u0131lara, Travel Ask sohbet gruplar\u0131 i\u00e7inde tur rehberleri, \u015fof\u00f6rler veya di\u011fer hizmet sa\u011flay\u0131c\u0131lar\u0131 i\u00e7in ileti\u015fim bilgileri veya tavsiye payla\u015fman\u0131n yasak oldu\u011funu hat\u0131rlat\u0131n."}
+]}
+</script>
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 Gece", DAY="\u2600 G\u00fcnd\u00fcz";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

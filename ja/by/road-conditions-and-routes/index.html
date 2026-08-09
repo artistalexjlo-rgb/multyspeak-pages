@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ベラルーシ：露白の道路状況とルート — 実際の経験 · Luky</title>
+<meta name="description" content="ベラルーシの「露白の道路状況とルート」についてチャットからの実際の経験：ありのまま、一次情報で。あなたのケースは — Luky に聞いて。">
+<link rel="canonical" href="https://info.multyspeak.ru/ja/by/road-conditions-and-routes/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.ru/ru/by/road-conditions-and-routes/">
+<link rel="alternate" hreflang="ar" href="https://info.multyspeak.ru/ar/by/road-conditions-and-routes/">
+<link rel="alternate" hreflang="de" href="https://info.multyspeak.ru/de/by/road-conditions-and-routes/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.ru/en/by/road-conditions-and-routes/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.ru/es/by/road-conditions-and-routes/">
+<link rel="alternate" hreflang="fr" href="https://info.multyspeak.ru/fr/by/road-conditions-and-routes/">
+<link rel="alternate" hreflang="hi" href="https://info.multyspeak.ru/hi/by/road-conditions-and-routes/">
+<link rel="alternate" hreflang="it" href="https://info.multyspeak.ru/it/by/road-conditions-and-routes/">
+<link rel="alternate" hreflang="ja" href="https://info.multyspeak.ru/ja/by/road-conditions-and-routes/">
+<link rel="alternate" hreflang="ko" href="https://info.multyspeak.ru/ko/by/road-conditions-and-routes/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.ru/pt/by/road-conditions-and-routes/">
+<link rel="alternate" hreflang="th" href="https://info.multyspeak.ru/th/by/road-conditions-and-routes/">
+<link rel="alternate" hreflang="tr" href="https://info.multyspeak.ru/tr/by/road-conditions-and-routes/">
+<link rel="alternate" hreflang="zh" href="https://info.multyspeak.ru/zh/by/road-conditions-and-routes/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.ru/ru/by/road-conditions-and-routes/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+/* тег типа абзаца (хвост-антологии: lifehack/reglament/howto/risk/case/service) */
+.tag{display:inline-block;font-family:var(--font-mono);font-weight:400;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);
+  border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:2px;white-space:nowrap}
+.tag.risk{color:var(--red);border-color:var(--red)}
+.tag.reglament{color:var(--accent);border-color:var(--accent)}
+.tag.lifehack{color:var(--green);border-color:var(--green)}
+.tag.service{color:var(--yellow);border-color:var(--yellow)}
+.tag.howto{color:var(--hud);border-color:var(--hud)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">情報ポータル · どの国でも · 水増しなし</span>
+    </div>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="" href="/ru/by/road-conditions-and-routes/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/ar/by/road-conditions-and-routes/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>AR</a>
+        <a class="" href="/de/by/road-conditions-and-routes/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>DE</a>
+        <a class="" href="/en/by/road-conditions-and-routes/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/by/road-conditions-and-routes/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/fr/by/road-conditions-and-routes/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>FR</a>
+        <a class="" href="/hi/by/road-conditions-and-routes/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>HI</a>
+        <a class="" href="/it/by/road-conditions-and-routes/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>IT</a>
+        <a class="on" href="/ja/by/road-conditions-and-routes/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>JA</a>
+        <a class="" href="/ko/by/road-conditions-and-routes/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>KO</a>
+        <a class="" href="/pt/by/road-conditions-and-routes/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+        <a class="" href="/th/by/road-conditions-and-routes/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TH</a>
+        <a class="" href="/tr/by/road-conditions-and-routes/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TR</a>
+        <a class="" href="/zh/by/road-conditions-and-routes/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ZH</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ 夜</span></button>
+    </div>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/ja/">ホーム</a> /
+    <a href="/ja/by/">ベラルーシ</a> /
+    <b>露白の道路状況とルート</b>
+  </nav>
+
+
+  
+  <h1>露白の道路状況とルート：ベラルーシでは実際どう動いているか — 一次情報</h1>
+  <span class="section-label">短い答え</span>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">ホメリ・ブレスト間やホメリ・ブリャンスク間の道路は概ね良好で、大きな障害はありません。ポロツクからオポチカへ向かう道路も整備が進み通行が改善されていますが、ロシア側の国境付近では通行料が発生し、移動時は燃料の確保に留意してください。</div></div>
+
+  <h2>実際の経験から</h2>
+  <details open><summary><span class="sumq">ゴメリとブレスト間の道路状況は一部の小規模な補修工事を除けば正常です。ルートは景観が良く、ピンスクなどの町で立ち寄りながらでも約8時間で移動可能です。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 2 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">ポロツク（ベラルーシ）からドロッシー国境検問所を経由し、オポチカ（ロシア）へ向かう道路は大幅に改善されたと報告されています。かつては質の悪さと大規模な修理工事で有名でしたが、2024年後半には道路が大幅に整備されました。旅行者は新しいアスファルトの区間と、古くても穴のない路面を交互に走行することになります。ベラルーシ側では通行料はかかりませんが、ロシアに入国してオポチカへ向かうとすぐに通行料がかかります。現在の状況は「許容範囲から良好」と評されています。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">ブリャンスク（ロシア）からホメリ（ベラルーシ）の地域を車で移動する旅行者は、メインルートに影響を与える砲撃や頻繁なドローン活動の直接的な証拠はなく、比較的安全であると報告しています。一般的な安全情勢は認識されていますが、この特定の道路リンクに対する直接的な脅威についての具体的な報告はほとんどありません。ほとんどの利用者は、道路は機能しており、ガソリンスタンドなどのサービスも通常通り営業していると述べています。ただし、より広範な地政学的背景については注意を払うことをお勧めします。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">ロシア・ベラルーシ間の最新の最短国境検問所（KPP）やルートについては、関連する旅行フォーラムや国境警備隊の公式発表を確認してください。検問所が廃止・変更されることもあるため、古い情報には注意が必要です。サンクトペテルブルクからミンスクへ行く場合は、Baidachovo（渋滞がない可能性のある未舗装路）、Dolosetsy、Lobokといったルートを検討してください。Kruglovkaはサンクトペテルブルクからの接続ルートとしては適していません。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">ホメリからブリャンスクを経由してヴォロネジへ向かう道路は概ね良好です。ブリャンスクのバイパスに短い工事区間がありますが、それ以外は安全で手入れが行き届いています。現在の地政学的状況を考慮し、燃料の確保を常に確認し、予備の燃料を携行することをお勧めします。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">ホメリからブレストへの直行ルートは、ミンスク経由よりも推奨されます。後者は大幅な遠回りになるためです。直行ルートの道路状況は問題ないと報告されています。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+
+  <h2>関連テーマ</h2>
+  <div class="chips">
+    <a class="chip" href="/ja/by/obtaining-a-residence-permit/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 居住許可（VNZ/RVP）の取得</span></a>
+    <a class="chip" href="/ja/by/border-control-risks-and-methods/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 国境管理：混雑・方法・リスク</span></a>
+    <a class="chip" href="/ja/by/border-crossing-rules-for-adults/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 大人の国境通過ルール</span></a>
+    <a class="chip" href="/ja/by/atm-withdrawals-in-belarus/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• ベラルーシでのATM利用（手数料・限度額）</span></a>
+    <a class="chip" href="/ja/by/vehicle-documents-and-insurance/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 車両書類と保険</span></a>
+    <a class="chip" href="/ja/by/fuel-availability-on-routes/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 露白間の給油事情</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>一般的な記事はある — でも自分に合う答えは？</h2>
+    <p>Luky に聞いて — いま何が使えるのかを伝えます — 最近の報告から.</p>
+    <p>そして Luky は本当の会話のためのリアルタイム音声翻訳： ロビーで他の国の旅行者とおしゃべりする.</p>
+    <p class="ps">PS：別の国のあの人との音声通話 — それも Luky</p>
+    <a class="btn" href="https://multyspeak.ru" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Luky を開く</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — コミュニティのチャットからの実際の経験、水増しなし</div>
+    <nav class="f-links">
+      <a href="/ja/about/">概要</a>
+      <a href="/ja/by/">すべてのテーマ</a>
+      <a href="/ja/">国</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">答えは公開されたコミュニティのチャットから集めたものです — 人々の実際の経験であり、公式な助言ではありません。大事な判断の前に確認してください。</p>
+    <div class="f-copy">© 2026 Luky · 更新 08.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"\u30b4\u30e1\u30ea\u3068\u30d6\u30ec\u30b9\u30c8\u9593\u306e\u9053\u8def\u72b6\u6cc1\u306f\u4e00\u90e8\u306e\u5c0f\u898f\u6a21\u306a\u88dc\u4fee\u5de5\u4e8b\u3092\u9664\u3051\u3070\u6b63\u5e38\u3067\u3059\u3002\u30eb\u30fc\u30c8\u306f\u666f\u89b3\u304c\u826f\u304f\u3001\u30d4\u30f3\u30b9\u30af\u306a\u3069\u306e\u753a\u3067\u7acb\u3061\u5bc4\u308a\u306a\u304c\u3089\u3067\u3082\u7d048\u6642\u9593\u3067\u79fb\u52d5\u53ef\u80fd\u3067\u3059\u3002"},
+{"@type":"ListItem","position":2,"name":"\u30dd\u30ed\u30c4\u30af\uff08\u30d9\u30e9\u30eb\u30fc\u30b7\uff09\u304b\u3089\u30c9\u30ed\u30c3\u30b7\u30fc\u56fd\u5883\u691c\u554f\u6240\u3092\u7d4c\u7531\u3057\u3001\u30aa\u30dd\u30c1\u30ab\uff08\u30ed\u30b7\u30a2\uff09\u3078\u5411\u304b\u3046\u9053\u8def\u306f\u5927\u5e45\u306b\u6539\u5584\u3055\u308c\u305f\u3068\u5831\u544a\u3055\u308c\u3066\u3044\u307e\u3059\u3002\u304b\u3064\u3066\u306f\u8cea\u306e\u60aa\u3055\u3068\u5927\u898f\u6a21\u306a\u4fee\u7406\u5de5\u4e8b\u3067\u6709\u540d\u3067\u3057\u305f\u304c\u30012024\u5e74\u5f8c\u534a\u306b\u306f\u9053\u8def\u304c\u5927\u5e45\u306b\u6574\u5099\u3055\u308c\u307e\u3057\u305f\u3002\u65c5\u884c\u8005\u306f\u65b0\u3057\u3044\u30a2\u30b9\u30d5\u30a1\u30eb\u30c8\u306e\u533a\u9593\u3068\u3001\u53e4\u304f\u3066\u3082\u7a74\u306e\u306a\u3044\u8def\u9762\u3092\u4ea4\u4e92\u306b\u8d70\u884c\u3059\u308b\u3053\u3068\u306b\u306a\u308a\u307e\u3059\u3002\u30d9\u30e9\u30eb\u30fc\u30b7\u5074\u3067\u306f\u901a\u884c\u6599\u306f\u304b\u304b\u308a\u307e\u305b\u3093\u304c\u3001\u30ed\u30b7\u30a2\u306b\u5165\u56fd\u3057\u3066\u30aa\u30dd\u30c1\u30ab\u3078\u5411\u304b\u3046\u3068\u3059\u3050\u306b\u901a\u884c\u6599\u304c\u304b\u304b\u308a\u307e\u3059\u3002\u73fe\u5728\u306e\u72b6\u6cc1\u306f\u300c\u8a31\u5bb9\u7bc4\u56f2\u304b\u3089\u826f\u597d\u300d\u3068\u8a55\u3055\u308c\u3066\u3044\u307e\u3059\u3002"},
+{"@type":"ListItem","position":3,"name":"\u30d6\u30ea\u30e3\u30f3\u30b9\u30af\uff08\u30ed\u30b7\u30a2\uff09\u304b\u3089\u30db\u30e1\u30ea\uff08\u30d9\u30e9\u30eb\u30fc\u30b7\uff09\u306e\u5730\u57df\u3092\u8eca\u3067\u79fb\u52d5\u3059\u308b\u65c5\u884c\u8005\u306f\u3001\u30e1\u30a4\u30f3\u30eb\u30fc\u30c8\u306b\u5f71\u97ff\u3092\u4e0e\u3048\u308b\u7832\u6483\u3084\u983b\u7e41\u306a\u30c9\u30ed\u30fc\u30f3\u6d3b\u52d5\u306e\u76f4\u63a5\u7684\u306a\u8a3c\u62e0\u306f\u306a\u304f\u3001\u6bd4\u8f03\u7684\u5b89\u5168\u3067\u3042\u308b\u3068\u5831\u544a\u3057\u3066\u3044\u307e\u3059\u3002\u4e00\u822c\u7684\u306a\u5b89\u5168\u60c5\u52e2\u306f\u8a8d\u8b58\u3055\u308c\u3066\u3044\u307e\u3059\u304c\u3001\u3053\u306e\u7279\u5b9a\u306e\u9053\u8def\u30ea\u30f3\u30af\u306b\u5bfe\u3059\u308b\u76f4\u63a5\u7684\u306a\u8105\u5a01\u306b\u3064\u3044\u3066\u306e\u5177\u4f53\u7684\u306a\u5831\u544a\u306f\u307b\u3068\u3093\u3069\u3042\u308a\u307e\u305b\u3093\u3002\u307b\u3068\u3093\u3069\u306e\u5229\u7528\u8005\u306f\u3001\u9053\u8def\u306f\u6a5f\u80fd\u3057\u3066\u304a\u308a\u3001\u30ac\u30bd\u30ea\u30f3\u30b9\u30bf\u30f3\u30c9\u306a\u3069\u306e\u30b5\u30fc\u30d3\u30b9\u3082\u901a\u5e38\u901a\u308a\u55b6\u696d\u3057\u3066\u3044\u308b\u3068\u8ff0\u3079\u3066\u3044\u307e\u3059\u3002\u305f\u3060\u3057\u3001\u3088\u308a\u5e83\u7bc4\u306a\u5730\u653f\u5b66\u7684\u80cc\u666f\u306b\u3064\u3044\u3066\u306f\u6ce8\u610f\u3092\u6255\u3046\u3053\u3068\u3092\u304a\u52e7\u3081\u3057\u307e\u3059\u3002"},
+{"@type":"ListItem","position":4,"name":"\u30ed\u30b7\u30a2\u30fb\u30d9\u30e9\u30eb\u30fc\u30b7\u9593\u306e\u6700\u65b0\u306e\u6700\u77ed\u56fd\u5883\u691c\u554f\u6240\uff08KPP\uff09\u3084\u30eb\u30fc\u30c8\u306b\u3064\u3044\u3066\u306f\u3001\u95a2\u9023\u3059\u308b\u65c5\u884c\u30d5\u30a9\u30fc\u30e9\u30e0\u3084\u56fd\u5883\u8b66\u5099\u968a\u306e\u516c\u5f0f\u767a\u8868\u3092\u78ba\u8a8d\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u691c\u554f\u6240\u304c\u5ec3\u6b62\u30fb\u5909\u66f4\u3055\u308c\u308b\u3053\u3068\u3082\u3042\u308b\u305f\u3081\u3001\u53e4\u3044\u60c5\u5831\u306b\u306f\u6ce8\u610f\u304c\u5fc5\u8981\u3067\u3059\u3002\u30b5\u30f3\u30af\u30c8\u30da\u30c6\u30eb\u30d6\u30eb\u30af\u304b\u3089\u30df\u30f3\u30b9\u30af\u3078\u884c\u304f\u5834\u5408\u306f\u3001Baidachovo\uff08\u6e0b\u6ede\u304c\u306a\u3044\u53ef\u80fd\u6027\u306e\u3042\u308b\u672a\u8217\u88c5\u8def\uff09\u3001Dolosetsy\u3001Lobok\u3068\u3044\u3063\u305f\u30eb\u30fc\u30c8\u3092\u691c\u8a0e\u3057\u3066\u304f\u3060\u3055\u3044\u3002Kruglovka\u306f\u30b5\u30f3\u30af\u30c8\u30da\u30c6\u30eb\u30d6\u30eb\u30af\u304b\u3089\u306e\u63a5\u7d9a\u30eb\u30fc\u30c8\u3068\u3057\u3066\u306f\u9069\u3057\u3066\u3044\u307e\u305b\u3093\u3002"},
+{"@type":"ListItem","position":5,"name":"\u30db\u30e1\u30ea\u304b\u3089\u30d6\u30ea\u30e3\u30f3\u30b9\u30af\u3092\u7d4c\u7531\u3057\u3066\u30f4\u30a9\u30ed\u30cd\u30b8\u3078\u5411\u304b\u3046\u9053\u8def\u306f\u6982\u306d\u826f\u597d\u3067\u3059\u3002\u30d6\u30ea\u30e3\u30f3\u30b9\u30af\u306e\u30d0\u30a4\u30d1\u30b9\u306b\u77ed\u3044\u5de5\u4e8b\u533a\u9593\u304c\u3042\u308a\u307e\u3059\u304c\u3001\u305d\u308c\u4ee5\u5916\u306f\u5b89\u5168\u3067\u624b\u5165\u308c\u304c\u884c\u304d\u5c4a\u3044\u3066\u3044\u307e\u3059\u3002\u73fe\u5728\u306e\u5730\u653f\u5b66\u7684\u72b6\u6cc1\u3092\u8003\u616e\u3057\u3001\u71c3\u6599\u306e\u78ba\u4fdd\u3092\u5e38\u306b\u78ba\u8a8d\u3057\u3001\u4e88\u5099\u306e\u71c3\u6599\u3092\u643a\u884c\u3059\u308b\u3053\u3068\u3092\u304a\u52e7\u3081\u3057\u307e\u3059\u3002"},
+{"@type":"ListItem","position":6,"name":"\u30db\u30e1\u30ea\u304b\u3089\u30d6\u30ec\u30b9\u30c8\u3078\u306e\u76f4\u884c\u30eb\u30fc\u30c8\u306f\u3001\u30df\u30f3\u30b9\u30af\u7d4c\u7531\u3088\u308a\u3082\u63a8\u5968\u3055\u308c\u307e\u3059\u3002\u5f8c\u8005\u306f\u5927\u5e45\u306a\u9060\u56de\u308a\u306b\u306a\u308b\u305f\u3081\u3067\u3059\u3002\u76f4\u884c\u30eb\u30fc\u30c8\u306e\u9053\u8def\u72b6\u6cc1\u306f\u554f\u984c\u306a\u3044\u3068\u5831\u544a\u3055\u308c\u3066\u3044\u307e\u3059\u3002"}
+]}
+</script>
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 \u591c", DAY="\u2600 \u663c";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

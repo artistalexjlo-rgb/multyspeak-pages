@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>カザフスタン：現地銀行口座の開設 — 実際の経験 · Luky</title>
+<meta name="description" content="カザフスタンの「現地銀行口座の開設」についてチャットからの実際の経験：ありのまま、一次情報で。あなたのケースは — Luky に聞いて。">
+<link rel="canonical" href="https://info.multyspeak.ru/ja/kz/opening-bank-accounts/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.ru/ru/kz/opening-bank-accounts/">
+<link rel="alternate" hreflang="ar" href="https://info.multyspeak.ru/ar/kz/opening-bank-accounts/">
+<link rel="alternate" hreflang="de" href="https://info.multyspeak.ru/de/kz/opening-bank-accounts/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.ru/en/kz/opening-bank-accounts/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.ru/es/kz/opening-bank-accounts/">
+<link rel="alternate" hreflang="fr" href="https://info.multyspeak.ru/fr/kz/opening-bank-accounts/">
+<link rel="alternate" hreflang="hi" href="https://info.multyspeak.ru/hi/kz/opening-bank-accounts/">
+<link rel="alternate" hreflang="it" href="https://info.multyspeak.ru/it/kz/opening-bank-accounts/">
+<link rel="alternate" hreflang="ja" href="https://info.multyspeak.ru/ja/kz/opening-bank-accounts/">
+<link rel="alternate" hreflang="ko" href="https://info.multyspeak.ru/ko/kz/opening-bank-accounts/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.ru/pt/kz/opening-bank-accounts/">
+<link rel="alternate" hreflang="th" href="https://info.multyspeak.ru/th/kz/opening-bank-accounts/">
+<link rel="alternate" hreflang="tr" href="https://info.multyspeak.ru/tr/kz/opening-bank-accounts/">
+<link rel="alternate" hreflang="zh" href="https://info.multyspeak.ru/zh/kz/opening-bank-accounts/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.ru/ru/kz/opening-bank-accounts/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+/* тег типа абзаца (хвост-антологии: lifehack/reglament/howto/risk/case/service) */
+.tag{display:inline-block;font-family:var(--font-mono);font-weight:400;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);
+  border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:2px;white-space:nowrap}
+.tag.risk{color:var(--red);border-color:var(--red)}
+.tag.reglament{color:var(--accent);border-color:var(--accent)}
+.tag.lifehack{color:var(--green);border-color:var(--green)}
+.tag.service{color:var(--yellow);border-color:var(--yellow)}
+.tag.howto{color:var(--hud);border-color:var(--hud)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">情報ポータル · どの国でも · 水増しなし</span>
+    </div>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="" href="/ru/kz/opening-bank-accounts/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/ar/kz/opening-bank-accounts/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>AR</a>
+        <a class="" href="/de/kz/opening-bank-accounts/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>DE</a>
+        <a class="" href="/en/kz/opening-bank-accounts/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/kz/opening-bank-accounts/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/fr/kz/opening-bank-accounts/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>FR</a>
+        <a class="" href="/hi/kz/opening-bank-accounts/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>HI</a>
+        <a class="" href="/it/kz/opening-bank-accounts/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>IT</a>
+        <a class="on" href="/ja/kz/opening-bank-accounts/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>JA</a>
+        <a class="" href="/ko/kz/opening-bank-accounts/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>KO</a>
+        <a class="" href="/pt/kz/opening-bank-accounts/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+        <a class="" href="/th/kz/opening-bank-accounts/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TH</a>
+        <a class="" href="/tr/kz/opening-bank-accounts/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TR</a>
+        <a class="" href="/zh/kz/opening-bank-accounts/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ZH</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ 夜</span></button>
+    </div>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/ja/">ホーム</a> /
+    <a href="/ja/kz/">カザフスタン</a> /
+    <b>現地銀行口座の開設</b>
+  </nav>
+
+
+  
+  <h1>カザフスタンの現地銀行口座の開設：チャットからの実際の経験</h1>
+  <span class="section-label">短い答え</span>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">カザフスタンで銀行口座を開設するには、有効なIIN、カザフスタンのSIMカード、および正式な滞在登録が必要です。銀行により労働手帳や納税者番号などの追加書類を求められる場合があるため、事前に各行の最新要件を確認してください。</div></div>
+
+  <h2>実際の経験から</h2>
+  <details open><summary><span class="sumq">カザフスタンで銀行口座（特にKaspi Bank）を開設するには、外国人は滞在通知が必要です。ホストがこれを提供できない場合は、移民局を通じて自己登録が可能です。Freedom Bankではこの通知が不要な場合がありますが、カードの発行には約3営業日かかります。Freedom Bankでは、労働手帳の写しやロシアのINN（納税者番号）の提示を求められる場合があります。事前に銀行の要件を個別に確認してください。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 4 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">非居住者でもカザフスタンのSIMカードを取得できますが、所有するスマートフォンのIMEI（端末識別番号）を30日以内に登録する必要があります。頻繁に訪れる場合は、手続きを簡略化するために現地で検証済みの電話機を購入することをお勧めします。ツーリスト用SIM（物理またはeSIM、Trip.com経由など）はローミングとして機能するため、登録要件を回避できます。Kaspiアカウント開設などの重要なサービスには、正式な通信事業者から現地のSIMカードを取得する必要があり、その際に対面での本人確認が求められることが一般的です。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">非居住者がカザフスタンで複数の銀行口座（Freedom Bank、BCC、Halyk、Kaspiなど）を開設するには、通常、有効なカザフスタンのSIMカード、eQonaqへの登録、ロシアの海外旅行用パスポート、およびIINが必要です。銀行によっては、特定の支店での対応を優先したり、追加の要件があったりする場合があります。例えば、BCC銀行は地域によって処理時間が異なることがあります。各銀行の具体的な要件を調べ、すべての必要な書類を揃えて支店を訪問することをお勧めします。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">「eResidency」サービスは避けてください。これらはeGovへのアクセス権がない制限付きのIINや、譲渡不可能な仮想番号を提供することが多いです。カザフスタンの銀行口座を合法的に開設するには、物理的な存在、有効なIIN、正式な居住登録が必要です。リモートでの口座開設サービスはリスクが高く、現地の銀行規制に違反することがよくあります。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">ロシア国民としてカザフスタンで銀行口座を開設する際は、書類要件が厳しくなる可能性があることに備えてください。Freedom Bankなどの一部の銀行では、入国スタンプ付きの外国パスポートとIIN以外に、追加書類（労働手帳「trudovaya knizhka」やロシアの個人納税者番号「INN」のコピーなど）を要求される場合があります。事前に各銀行に正確な要件を確認することをお勧めします。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">クリミアの居住登録があるロシア国民は、国際制裁の影響により、Kaspiなどのカザフスタンの銀行で口座を開設する際に困難に直面することがよくあります。Freedom FinanceやBCCなどの代替手段が推奨されます。審査はパスポートの出生地欄に基づいて行われます。これに関する統一された政策はなく、支店や担当者によって結果が異なる場合があります。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">Freedom Finance Kazakhstanを通じて、リモートでカザフスタンの銀行カードを開設することが可能です。手続きには、WhatsAppのサポートに連絡して詳細なアルゴリズムを受け取る必要があります。記録の1ヶ月前の時点で、カザフスタンのeSIMとIINを含むカード発行費用は、約120ユニットでした。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+
+  <h2>関連テーマ</h2>
+  <div class="chips">
+    <a class="chip" href="/ja/kz/paying-for-toll-roads/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 有料道路の通行料支払い</span></a>
+    <a class="chip" href="/ja/kz/fuel-transport-across-the-border/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 国境を越える燃料の持ち込み制限</span></a>
+    <a class="chip" href="/ja/kz/mobile-device-imei-registration/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• モバイル端末のIMEI登録</span></a>
+    <a class="chip" href="/ja/kz/migration-registration-and-arrival-notif/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 入国後の居住登録</span></a>
+    <a class="chip" href="/ja/kz/mobile-services-and-sim-cards/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>📶 モバイル通信とSIMカード</span></a>
+    <a class="chip" href="/ja/kz/iin-issuance-and-usage/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• IINの取得と利用</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>一般的な記事はある — でも自分に合う答えは？</h2>
+    <p>Luky に聞いて — 5年前の記事ではなく、新しい報告.</p>
+    <p>そして Luky は本当の会話のためのリアルタイム音声翻訳： 店で自分が何を買っているのかをはっきりさせる.</p>
+    <p class="ps">PS：外国語でデート中に口説く？問題なし 😏</p>
+    <a class="btn" href="https://multyspeak.ru" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Luky を開く</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — コミュニティのチャットからの実際の経験、水増しなし</div>
+    <nav class="f-links">
+      <a href="/ja/about/">概要</a>
+      <a href="/ja/kz/">すべてのテーマ</a>
+      <a href="/ja/">国</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">答えは公開されたコミュニティのチャットから集めたものです — 人々の実際の経験であり、公式な助言ではありません。大事な判断の前に確認してください。</p>
+    <div class="f-copy">© 2026 Luky · 更新 08.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"\u30ab\u30b6\u30d5\u30b9\u30bf\u30f3\u3067\u9280\u884c\u53e3\u5ea7\uff08\u7279\u306bKaspi Bank\uff09\u3092\u958b\u8a2d\u3059\u308b\u306b\u306f\u3001\u5916\u56fd\u4eba\u306f\u6ede\u5728\u901a\u77e5\u304c\u5fc5\u8981\u3067\u3059\u3002\u30db\u30b9\u30c8\u304c\u3053\u308c\u3092\u63d0\u4f9b\u3067\u304d\u306a\u3044\u5834\u5408\u306f\u3001\u79fb\u6c11\u5c40\u3092\u901a\u3058\u3066\u81ea\u5df1\u767b\u9332\u304c\u53ef\u80fd\u3067\u3059\u3002Freedom Bank\u3067\u306f\u3053\u306e\u901a\u77e5\u304c\u4e0d\u8981\u306a\u5834\u5408\u304c\u3042\u308a\u307e\u3059\u304c\u3001\u30ab\u30fc\u30c9\u306e\u767a\u884c\u306b\u306f\u7d043\u55b6\u696d\u65e5\u304b\u304b\u308a\u307e\u3059\u3002Freedom Bank\u3067\u306f\u3001\u52b4\u50cd\u624b\u5e33\u306e\u5199\u3057\u3084\u30ed\u30b7\u30a2\u306eINN\uff08\u7d0d\u7a0e\u8005\u756a\u53f7\uff09\u306e\u63d0\u793a\u3092\u6c42\u3081\u3089\u308c\u308b\u5834\u5408\u304c\u3042\u308a\u307e\u3059\u3002\u4e8b\u524d\u306b\u9280\u884c\u306e\u8981\u4ef6\u3092\u500b\u5225\u306b\u78ba\u8a8d\u3057\u3066\u304f\u3060\u3055\u3044\u3002"},
+{"@type":"ListItem","position":2,"name":"\u975e\u5c45\u4f4f\u8005\u3067\u3082\u30ab\u30b6\u30d5\u30b9\u30bf\u30f3\u306eSIM\u30ab\u30fc\u30c9\u3092\u53d6\u5f97\u3067\u304d\u307e\u3059\u304c\u3001\u6240\u6709\u3059\u308b\u30b9\u30de\u30fc\u30c8\u30d5\u30a9\u30f3\u306eIMEI\uff08\u7aef\u672b\u8b58\u5225\u756a\u53f7\uff09\u309230\u65e5\u4ee5\u5185\u306b\u767b\u9332\u3059\u308b\u5fc5\u8981\u304c\u3042\u308a\u307e\u3059\u3002\u983b\u7e41\u306b\u8a2a\u308c\u308b\u5834\u5408\u306f\u3001\u624b\u7d9a\u304d\u3092\u7c21\u7565\u5316\u3059\u308b\u305f\u3081\u306b\u73fe\u5730\u3067\u691c\u8a3c\u6e08\u307f\u306e\u96fb\u8a71\u6a5f\u3092\u8cfc\u5165\u3059\u308b\u3053\u3068\u3092\u304a\u52e7\u3081\u3057\u307e\u3059\u3002\u30c4\u30fc\u30ea\u30b9\u30c8\u7528SIM\uff08\u7269\u7406\u307e\u305f\u306feSIM\u3001Trip.com\u7d4c\u7531\u306a\u3069\uff09\u306f\u30ed\u30fc\u30df\u30f3\u30b0\u3068\u3057\u3066\u6a5f\u80fd\u3059\u308b\u305f\u3081\u3001\u767b\u9332\u8981\u4ef6\u3092\u56de\u907f\u3067\u304d\u307e\u3059\u3002Kaspi\u30a2\u30ab\u30a6\u30f3\u30c8\u958b\u8a2d\u306a\u3069\u306e\u91cd\u8981\u306a\u30b5\u30fc\u30d3\u30b9\u306b\u306f\u3001\u6b63\u5f0f\u306a\u901a\u4fe1\u4e8b\u696d\u8005\u304b\u3089\u73fe\u5730\u306eSIM\u30ab\u30fc\u30c9\u3092\u53d6\u5f97\u3059\u308b\u5fc5\u8981\u304c\u3042\u308a\u3001\u305d\u306e\u969b\u306b\u5bfe\u9762\u3067\u306e\u672c\u4eba\u78ba\u8a8d\u304c\u6c42\u3081\u3089\u308c\u308b\u3053\u3068\u304c\u4e00\u822c\u7684\u3067\u3059\u3002"},
+{"@type":"ListItem","position":3,"name":"\u975e\u5c45\u4f4f\u8005\u304c\u30ab\u30b6\u30d5\u30b9\u30bf\u30f3\u3067\u8907\u6570\u306e\u9280\u884c\u53e3\u5ea7\uff08Freedom Bank\u3001BCC\u3001Halyk\u3001Kaspi\u306a\u3069\uff09\u3092\u958b\u8a2d\u3059\u308b\u306b\u306f\u3001\u901a\u5e38\u3001\u6709\u52b9\u306a\u30ab\u30b6\u30d5\u30b9\u30bf\u30f3\u306eSIM\u30ab\u30fc\u30c9\u3001eQonaq\u3078\u306e\u767b\u9332\u3001\u30ed\u30b7\u30a2\u306e\u6d77\u5916\u65c5\u884c\u7528\u30d1\u30b9\u30dd\u30fc\u30c8\u3001\u304a\u3088\u3073IIN\u304c\u5fc5\u8981\u3067\u3059\u3002\u9280\u884c\u306b\u3088\u3063\u3066\u306f\u3001\u7279\u5b9a\u306e\u652f\u5e97\u3067\u306e\u5bfe\u5fdc\u3092\u512a\u5148\u3057\u305f\u308a\u3001\u8ffd\u52a0\u306e\u8981\u4ef6\u304c\u3042\u3063\u305f\u308a\u3059\u308b\u5834\u5408\u304c\u3042\u308a\u307e\u3059\u3002\u4f8b\u3048\u3070\u3001BCC\u9280\u884c\u306f\u5730\u57df\u306b\u3088\u3063\u3066\u51e6\u7406\u6642\u9593\u304c\u7570\u306a\u308b\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002\u5404\u9280\u884c\u306e\u5177\u4f53\u7684\u306a\u8981\u4ef6\u3092\u8abf\u3079\u3001\u3059\u3079\u3066\u306e\u5fc5\u8981\u306a\u66f8\u985e\u3092\u63c3\u3048\u3066\u652f\u5e97\u3092\u8a2a\u554f\u3059\u308b\u3053\u3068\u3092\u304a\u52e7\u3081\u3057\u307e\u3059\u3002"},
+{"@type":"ListItem","position":4,"name":"\u300ceResidency\u300d\u30b5\u30fc\u30d3\u30b9\u306f\u907f\u3051\u3066\u304f\u3060\u3055\u3044\u3002\u3053\u308c\u3089\u306feGov\u3078\u306e\u30a2\u30af\u30bb\u30b9\u6a29\u304c\u306a\u3044\u5236\u9650\u4ed8\u304d\u306eIIN\u3084\u3001\u8b72\u6e21\u4e0d\u53ef\u80fd\u306a\u4eee\u60f3\u756a\u53f7\u3092\u63d0\u4f9b\u3059\u308b\u3053\u3068\u304c\u591a\u3044\u3067\u3059\u3002\u30ab\u30b6\u30d5\u30b9\u30bf\u30f3\u306e\u9280\u884c\u53e3\u5ea7\u3092\u5408\u6cd5\u7684\u306b\u958b\u8a2d\u3059\u308b\u306b\u306f\u3001\u7269\u7406\u7684\u306a\u5b58\u5728\u3001\u6709\u52b9\u306aIIN\u3001\u6b63\u5f0f\u306a\u5c45\u4f4f\u767b\u9332\u304c\u5fc5\u8981\u3067\u3059\u3002\u30ea\u30e2\u30fc\u30c8\u3067\u306e\u53e3\u5ea7\u958b\u8a2d\u30b5\u30fc\u30d3\u30b9\u306f\u30ea\u30b9\u30af\u304c\u9ad8\u304f\u3001\u73fe\u5730\u306e\u9280\u884c\u898f\u5236\u306b\u9055\u53cd\u3059\u308b\u3053\u3068\u304c\u3088\u304f\u3042\u308a\u307e\u3059\u3002"},
+{"@type":"ListItem","position":5,"name":"\u30ed\u30b7\u30a2\u56fd\u6c11\u3068\u3057\u3066\u30ab\u30b6\u30d5\u30b9\u30bf\u30f3\u3067\u9280\u884c\u53e3\u5ea7\u3092\u958b\u8a2d\u3059\u308b\u969b\u306f\u3001\u66f8\u985e\u8981\u4ef6\u304c\u53b3\u3057\u304f\u306a\u308b\u53ef\u80fd\u6027\u304c\u3042\u308b\u3053\u3068\u306b\u5099\u3048\u3066\u304f\u3060\u3055\u3044\u3002Freedom Bank\u306a\u3069\u306e\u4e00\u90e8\u306e\u9280\u884c\u3067\u306f\u3001\u5165\u56fd\u30b9\u30bf\u30f3\u30d7\u4ed8\u304d\u306e\u5916\u56fd\u30d1\u30b9\u30dd\u30fc\u30c8\u3068IIN\u4ee5\u5916\u306b\u3001\u8ffd\u52a0\u66f8\u985e\uff08\u52b4\u50cd\u624b\u5e33\u300ctrudovaya knizhka\u300d\u3084\u30ed\u30b7\u30a2\u306e\u500b\u4eba\u7d0d\u7a0e\u8005\u756a\u53f7\u300cINN\u300d\u306e\u30b3\u30d4\u30fc\u306a\u3069\uff09\u3092\u8981\u6c42\u3055\u308c\u308b\u5834\u5408\u304c\u3042\u308a\u307e\u3059\u3002\u4e8b\u524d\u306b\u5404\u9280\u884c\u306b\u6b63\u78ba\u306a\u8981\u4ef6\u3092\u78ba\u8a8d\u3059\u308b\u3053\u3068\u3092\u304a\u52e7\u3081\u3057\u307e\u3059\u3002"},
+{"@type":"ListItem","position":6,"name":"\u30af\u30ea\u30df\u30a2\u306e\u5c45\u4f4f\u767b\u9332\u304c\u3042\u308b\u30ed\u30b7\u30a2\u56fd\u6c11\u306f\u3001\u56fd\u969b\u5236\u88c1\u306e\u5f71\u97ff\u306b\u3088\u308a\u3001Kaspi\u306a\u3069\u306e\u30ab\u30b6\u30d5\u30b9\u30bf\u30f3\u306e\u9280\u884c\u3067\u53e3\u5ea7\u3092\u958b\u8a2d\u3059\u308b\u969b\u306b\u56f0\u96e3\u306b\u76f4\u9762\u3059\u308b\u3053\u3068\u304c\u3088\u304f\u3042\u308a\u307e\u3059\u3002Freedom Finance\u3084BCC\u306a\u3069\u306e\u4ee3\u66ff\u624b\u6bb5\u304c\u63a8\u5968\u3055\u308c\u307e\u3059\u3002\u5be9\u67fb\u306f\u30d1\u30b9\u30dd\u30fc\u30c8\u306e\u51fa\u751f\u5730\u6b04\u306b\u57fa\u3065\u3044\u3066\u884c\u308f\u308c\u307e\u3059\u3002\u3053\u308c\u306b\u95a2\u3059\u308b\u7d71\u4e00\u3055\u308c\u305f\u653f\u7b56\u306f\u306a\u304f\u3001\u652f\u5e97\u3084\u62c5\u5f53\u8005\u306b\u3088\u3063\u3066\u7d50\u679c\u304c\u7570\u306a\u308b\u5834\u5408\u304c\u3042\u308a\u307e\u3059\u3002"},
+{"@type":"ListItem","position":7,"name":"Freedom Finance Kazakhstan\u3092\u901a\u3058\u3066\u3001\u30ea\u30e2\u30fc\u30c8\u3067\u30ab\u30b6\u30d5\u30b9\u30bf\u30f3\u306e\u9280\u884c\u30ab\u30fc\u30c9\u3092\u958b\u8a2d\u3059\u308b\u3053\u3068\u304c\u53ef\u80fd\u3067\u3059\u3002\u624b\u7d9a\u304d\u306b\u306f\u3001WhatsApp\u306e\u30b5\u30dd\u30fc\u30c8\u306b\u9023\u7d61\u3057\u3066\u8a73\u7d30\u306a\u30a2\u30eb\u30b4\u30ea\u30ba\u30e0\u3092\u53d7\u3051\u53d6\u308b\u5fc5\u8981\u304c\u3042\u308a\u307e\u3059\u3002\u8a18\u9332\u306e1\u30f6\u6708\u524d\u306e\u6642\u70b9\u3067\u3001\u30ab\u30b6\u30d5\u30b9\u30bf\u30f3\u306eeSIM\u3068IIN\u3092\u542b\u3080\u30ab\u30fc\u30c9\u767a\u884c\u8cbb\u7528\u306f\u3001\u7d04120\u30e6\u30cb\u30c3\u30c8\u3067\u3057\u305f\u3002"}
+]}
+</script>
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 \u591c", DAY="\u2600 \u663c";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

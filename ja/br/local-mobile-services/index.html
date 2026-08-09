@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ブラジル：現地SIMとモバイル通信 — 実際の経験 · Luky</title>
+<meta name="description" content="ブラジルの「現地SIMとモバイル通信」についてチャットからの実際の経験：ありのまま、一次情報で。あなたのケースは — Luky に聞いて。">
+<link rel="canonical" href="https://info.multyspeak.ru/ja/br/local-mobile-services/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.ru/ru/br/local-mobile-services/">
+<link rel="alternate" hreflang="ar" href="https://info.multyspeak.ru/ar/br/local-mobile-services/">
+<link rel="alternate" hreflang="de" href="https://info.multyspeak.ru/de/br/local-mobile-services/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.ru/en/br/local-mobile-services/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.ru/es/br/local-mobile-services/">
+<link rel="alternate" hreflang="fr" href="https://info.multyspeak.ru/fr/br/local-mobile-services/">
+<link rel="alternate" hreflang="hi" href="https://info.multyspeak.ru/hi/br/local-mobile-services/">
+<link rel="alternate" hreflang="it" href="https://info.multyspeak.ru/it/br/local-mobile-services/">
+<link rel="alternate" hreflang="ja" href="https://info.multyspeak.ru/ja/br/local-mobile-services/">
+<link rel="alternate" hreflang="ko" href="https://info.multyspeak.ru/ko/br/local-mobile-services/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.ru/pt/br/local-mobile-services/">
+<link rel="alternate" hreflang="th" href="https://info.multyspeak.ru/th/br/local-mobile-services/">
+<link rel="alternate" hreflang="tr" href="https://info.multyspeak.ru/tr/br/local-mobile-services/">
+<link rel="alternate" hreflang="zh" href="https://info.multyspeak.ru/zh/br/local-mobile-services/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.ru/ru/br/local-mobile-services/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+/* тег типа абзаца (хвост-антологии: lifehack/reglament/howto/risk/case/service) */
+.tag{display:inline-block;font-family:var(--font-mono);font-weight:400;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);
+  border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:2px;white-space:nowrap}
+.tag.risk{color:var(--red);border-color:var(--red)}
+.tag.reglament{color:var(--accent);border-color:var(--accent)}
+.tag.lifehack{color:var(--green);border-color:var(--green)}
+.tag.service{color:var(--yellow);border-color:var(--yellow)}
+.tag.howto{color:var(--hud);border-color:var(--hud)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">情報ポータル · どの国でも · 水増しなし</span>
+    </div>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="" href="/ru/br/local-mobile-services/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/ar/br/local-mobile-services/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>AR</a>
+        <a class="" href="/de/br/local-mobile-services/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>DE</a>
+        <a class="" href="/en/br/local-mobile-services/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/br/local-mobile-services/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/fr/br/local-mobile-services/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>FR</a>
+        <a class="" href="/hi/br/local-mobile-services/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>HI</a>
+        <a class="" href="/it/br/local-mobile-services/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>IT</a>
+        <a class="on" href="/ja/br/local-mobile-services/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>JA</a>
+        <a class="" href="/ko/br/local-mobile-services/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>KO</a>
+        <a class="" href="/pt/br/local-mobile-services/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+        <a class="" href="/th/br/local-mobile-services/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TH</a>
+        <a class="" href="/tr/br/local-mobile-services/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TR</a>
+        <a class="" href="/zh/br/local-mobile-services/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ZH</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ 夜</span></button>
+    </div>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/ja/">ホーム</a> /
+    <a href="/ja/br/">ブラジル</a> /
+    <b>現地SIMとモバイル通信</b>
+  </nav>
+
+
+  
+  <h1>ブラジルの現地SIMとモバイル通信：本当に知っておくべきこと</h1>
+  <span class="section-label">短い答え</span>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">ブラジルで現地SIMを契約するには通常CPF（納税者番号）が必要となるため、旅行者はeSIMを準備するか、各キャリアの公式店舗でパスポートを提示して登録を試みてください。オンラインでのCPF取得や居住者の助けを借りる方法もありますが、空港での購入は避け、主要モールの公式窓口を利用するのが最も確実です。</div></div>
+
+  <h2>実際の経験から</h2>
+  <details open><summary><span class="sumq">ブラジルでプリペイドSIMカードを最大限に活用（国際通話や高度なアカウント管理など）するには、CPF（個人納税者番号）が必要になることがよくあります。個人のCPFなしで（店員のIDで登録されることが多い）SIMを購入した観光客は、制限付きのプランしか利用できず、公式の納税者IDで更新しない限り、ローミングや国際アクセスを設定できないことが頻繁にあります。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 4 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">ブラジルのサンパウロ到着時：
+* **通貨と支払い：** 現金両替は常に必要というわけではありません。Bybitなどの暗号資産プラットフォームをPixと組み合わせてQRコード決済を行うのが一般的です（「vou pagar com pix」）。
+* **空港からの移動：** タクシーは手頃な価格です。Uberは機能しますが、「99」などの現地の配車アプリはブラジルのCPF（納税者番号）を必要とすることが多いです。空港から市内中心部への公共バスは利用可能で、約5レアルであり、購入にCPFは必ずしも必要ではありません。
+* **安全性と地域：** 完全にリスクがないエリアはありません。比較的安全な中心部はヴィラ・オリンピアとブルックリンです。ピニェイロスは昼夜問わず歩ける活気あるエリアですが、貴重品の公然とした提示は避けてください。夜間の移動はタクシーが最善です。長期滞在の場合、USP大学近くのヴィラ・インディアナなどのエリアは安全なレクリエーションスペースを提供していますが、周辺のインフラは限られている場合があります。
+* **携帯通信事業者：** CPFなしで現地のSIMカードを入手するのは困難です。観光客用SIM（Vivoの10-25GBなど）はCPFなしで入手できますが、通話やSMSサービスは24時間後に有効になる場合があります。現地の通常SIMプラン（Claro Flexの無制限プランなど）には一般的にCPFが必要で、それでも有効化には問題が生じやすく、居住してから数ヶ月かかることもあります。当初は観光客用eSIMを使用するか、Wi-Fiに頼る計画を立ててください。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">ブラジルへの旅行を計画する際は、特定の航空会社（トルコ航空など）に関するトラブルに注意し、詐欺を避けるため空港でSIMカードを購入しないようにしてください。目的地として、フォルタレザは海水温が高く混雑が少ないため、リラックスするのに最適です。リオデジャネイロは観光に適していますが、短期間の滞在が向いています。メキシコであれば、カンクンよりも混雑が少なく美しいビーチがあるオアハカのクルセシータを検討してください。旅行保険と現地のSIMカードは推奨します。ブラジル国内の移動には、長距離バスが利用可能で快適であり、特にサンパウロとリオデジャネイロを結ぶ夜行便は選択肢に入ります。ブラジルの一般的な決済手段にはPIXやクレジットカードがありますが、海外での利用手数料や現金払いの制限に備えておいてください。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">ブラジルでは、物理的なブラジルの身分証明書がない外国人が現地のSIMカードを入手するのは困難です。以下の選択肢があります。
+1. 地元の居住者に頼んで、その人の名義でSIMカードを登録してもらう。これは成功例があり、無料で対応してくれることもあります。
+2. 長期滞在の場合は、CPF（個人納税者番号）を取得し、自分でSIMカードを登録する。
+3. あるユーザーから報告された回避策として、正規のCPFが拒否された後にオンラインで偽のCPFを生成し、SIMの有効化に成功した例がある。
+4. eSIMを利用するのも便利な選択肢の一つです。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">ブラジルの現地プリペイドSIM（TIMなど）は非常に手頃（月額約20レアル）で、新聞販売店（banca）や国境付近の薬局（フォス・ド・イグアスなど）で購入できます。ただし、有効化にはCPF（ブラジルの税務番号）が必要です。旅行者には、渡航前にオンラインでCPFを登録しておくか、現地の居住者に有効化を手伝ってもらうようアドバイスしてください。なお、TIMの電波状況は場所によって不安定になることがあります。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">観光客がブラジルでSIMカードを購入する場合、路上のキオスクではなく、ショッピングモール内にある通信キャリアの公式店舗（Vivo、Claro）を利用してください。公式店舗であれば、CPFがなくても外国のパスポートでアカウントを登録できる場合があります。店舗で対応できない場合は、薬局チェーン（Pague Menosなど）でSIMを購入し、モバイルアプリ経由で自己登録するという選択肢もあります。サービス品質は場所によって大きく異なります。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">ブラジルでTIMのSIMカードを購入する場合は、TIMの公式店舗で直接購入することを強く推奨します。一般的なショップやキオスクで購入すると、CPFを持っていてもアクティベーションで問題が発生することがあります。カスタマーサービスに直接連絡して個人情報を提供することでアクティベーションできる可能性はありますが、SMSベースの登録はできない場合があり、公式店舗であっても非正規店で購入したSIMのサポートを拒否されることがあります。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">ブラジルのモバイルデータ料金について：オンライン広告価格（約30レアル）は、現地の「Pix」支払いシステムが必要なことがよくあります。現地の銀行口座やCPFを持たない駐在員は、通常、店舗（TIM、Claro、Vivo）で店頭価格（約60レアル）を支払います。英語を話すスタッフが国際クレジットカード/デビットカードでSIMカードのアクティベーションをサポートしてくれる、実店舗の支店を訪問することを推奨します。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">ブラジルでCPFなしでTIMのSIMカードを有効化するには、*144に電話し、内線33を選択して、英語でパスポートの詳細を伝えてください。SPF（納税者登録）はオンラインで1日以内に取得できる場合がありますが、成功率は約50％です。Vivo Easyは、アプリからオンラインで購入・管理可能な15GBで35ユニットといった競争力のあるデータプランを提供しています。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">約1年半前までは、ブラジルの観光客はCPF（ブラジルの納税者番号）なしでインターネット用の現地SIMカード（「チップ」）を購入できました。これらの観光客向けSIMの有効期限は約2週間で、切れたら新しいものを購入できました。現在の規制は異なる可能性があるため、到着後に現地プロバイダーへ確認することをお勧めします。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">ブラジルの多くのショッピングモールでは、SIMカードを販売するモバイルネットワークオペレーターのキオスクは現金を受け付けず、支払いには現地のデビットカードやクレジットカードが必要なことが多いです。現地のカードを持っていない旅行者は、誰か他の人に支払いを頼むか、可能であればオンラインでのチャージなど別の方法を探す必要があるかもしれません。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">CPF（個人納税者番号）の問題により、ClaroでSIMカードを購入するのが困難です。CPFの発行直後で認識されない可能性があるか、CPFの種類が異なる可能性があります。代替案として、郵便局（Correios）で40レアルでSIMカードを購入するか、短期利用であればeSIMを検討してください。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">ブラジルを訪れる観光客には、現地プロバイダー「Vivo」が推奨されます。SIMカードはパスポートがあればどのショッピングモールでも購入可能です。費用は30レアル程度から。ローミングは、現地のプリペイドプランと比べて費用が高くなるため、一般的には推奨されません。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">TIMのSIMカードはガレオン空港の薬局で購入できます（約120レアル）。有効化にはCPFが必要か、パスポート詳細を伝える登録用電話が必要です。市内のモバイルショップではより安いレート（約85レアル）で提供されていますが、店舗に行く必要があります。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">グアルーリョス国際空港（GRU）で利用できる無料の公衆Wi-Fiは限定的です。国際線ターミナルと国内線ターミナルの間は徒歩で移動可能（約10分）です。SIMカードは第3ターミナルの2階で購入・アクティベートできますが、本人確認のためにパスポートが必要です。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq">ブラジルで公式の納税者番号（CPF）を持たずにプリペイドSIMカードを購入・有効化したい場合、旅行者はオンラインのブラジルCPFジェネレーター（&#39;generator cpf brasil&#39;）を使用して認証ステップを回避することができます。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+
+  <h2>関連テーマ</h2>
+  <div class="chips">
+    <a class="chip" href="/ja/br/using-a-cpf/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• CPFの取得と利用</span></a>
+    <a class="chip" href="/ja/br/opening-bank-accounts-for-non-residents/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 非居住者・観光客の銀行口座開設</span></a>
+    <a class="chip" href="/ja/br/extending-tourist-stays-90-90-days/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 無査証滞在期間の延長（90+90日）</span></a>
+    <a class="chip" href="/ja/br/tax-id-cpf-registration/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• CPF納税者番号の取得</span></a>
+    <a class="chip" href="/ja/br/entry-documents-tickets-bookings-finance/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 入国時に必要な書類（航空券・予約・資金証明）</span></a>
+    <a class="chip" href="/ja/br/verifying-return-or-onward-tickets/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 帰国便または第三国への航空券の提示</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>一般論じゃなく、自分の状況に必要？</h2>
+    <p>Luky に聞いて — 5年前の記事ではなく、新しい報告.</p>
+    <p>そして Luky は本当の会話のためのリアルタイム音声翻訳： 地元の人と直接話す.</p>
+    <p class="ps">PS：海外の友だちと、すぐ隣にいるように音声で話す</p>
+    <a class="btn" href="https://multyspeak.ru" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Luky を開く</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — コミュニティのチャットからの実際の経験、水増しなし</div>
+    <nav class="f-links">
+      <a href="/ja/about/">概要</a>
+      <a href="/ja/br/">すべてのテーマ</a>
+      <a href="/ja/">国</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">答えは公開されたコミュニティのチャットから集めたものです — 人々の実際の経験であり、公式な助言ではありません。大事な判断の前に確認してください。</p>
+    <div class="f-copy">© 2026 Luky · 更新 08.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"\u30d6\u30e9\u30b8\u30eb\u3067\u30d7\u30ea\u30da\u30a4\u30c9SIM\u30ab\u30fc\u30c9\u3092\u6700\u5927\u9650\u306b\u6d3b\u7528\uff08\u56fd\u969b\u901a\u8a71\u3084\u9ad8\u5ea6\u306a\u30a2\u30ab\u30a6\u30f3\u30c8\u7ba1\u7406\u306a\u3069\uff09\u3059\u308b\u306b\u306f\u3001CPF\uff08\u500b\u4eba\u7d0d\u7a0e\u8005\u756a\u53f7\uff09\u304c\u5fc5\u8981\u306b\u306a\u308b\u3053\u3068\u304c\u3088\u304f\u3042\u308a\u307e\u3059\u3002\u500b\u4eba\u306eCPF\u306a\u3057\u3067\uff08\u5e97\u54e1\u306eID\u3067\u767b\u9332\u3055\u308c\u308b\u3053\u3068\u304c\u591a\u3044\uff09SIM\u3092\u8cfc\u5165\u3057\u305f\u89b3\u5149\u5ba2\u306f\u3001\u5236\u9650\u4ed8\u304d\u306e\u30d7\u30e9\u30f3\u3057\u304b\u5229\u7528\u3067\u304d\u305a\u3001\u516c\u5f0f\u306e\u7d0d\u7a0e\u8005ID\u3067\u66f4\u65b0\u3057\u306a\u3044\u9650\u308a\u3001\u30ed\u30fc\u30df\u30f3\u30b0\u3084\u56fd\u969b\u30a2\u30af\u30bb\u30b9\u3092\u8a2d\u5b9a\u3067\u304d\u306a\u3044\u3053\u3068\u304c\u983b\u7e41\u306b\u3042\u308a\u307e\u3059\u3002"},
+{"@type":"ListItem","position":2,"name":"\u30d6\u30e9\u30b8\u30eb\u306e\u30b5\u30f3\u30d1\u30a6\u30ed\u5230\u7740\u6642\uff1a\n* **\u901a\u8ca8\u3068\u652f\u6255\u3044\uff1a** \u73fe\u91d1\u4e21\u66ff\u306f\u5e38\u306b\u5fc5\u8981\u3068\u3044\u3046\u308f\u3051\u3067\u306f\u3042\u308a\u307e\u305b\u3093\u3002Bybit\u306a\u3069\u306e\u6697\u53f7\u8cc7\u7523\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\u3092Pix\u3068\u7d44\u307f\u5408\u308f\u305b\u3066QR\u30b3\u30fc\u30c9\u6c7a\u6e08\u3092\u884c\u3046\u306e\u304c\u4e00\u822c\u7684\u3067\u3059\uff08\u300cvou pagar com pix\u300d\uff09\u3002\n* **\u7a7a\u6e2f\u304b\u3089\u306e\u79fb\u52d5\uff1a** \u30bf\u30af\u30b7\u30fc\u306f\u624b\u9803\u306a\u4fa1\u683c\u3067\u3059\u3002Uber\u306f\u6a5f\u80fd\u3057\u307e\u3059\u304c\u3001\u300c99\u300d\u306a\u3069\u306e\u73fe\u5730\u306e\u914d\u8eca\u30a2\u30d7\u30ea\u306f\u30d6\u30e9\u30b8\u30eb\u306eCPF\uff08\u7d0d\u7a0e\u8005\u756a\u53f7\uff09\u3092\u5fc5\u8981\u3068\u3059\u308b\u3053\u3068\u304c\u591a\u3044\u3067\u3059\u3002\u7a7a\u6e2f\u304b\u3089\u5e02\u5185\u4e2d\u5fc3\u90e8\u3078\u306e\u516c\u5171\u30d0\u30b9\u306f\u5229\u7528\u53ef\u80fd\u3067\u3001\u7d045\u30ec\u30a2\u30eb\u3067\u3042\u308a\u3001\u8cfc\u5165\u306bCPF\u306f\u5fc5\u305a\u3057\u3082\u5fc5\u8981\u3067\u306f\u3042\u308a\u307e\u305b\u3093\u3002\n* **\u5b89\u5168\u6027\u3068\u5730\u57df\uff1a** \u5b8c\u5168\u306b\u30ea\u30b9\u30af\u304c\u306a\u3044\u30a8\u30ea\u30a2\u306f\u3042\u308a\u307e\u305b\u3093\u3002\u6bd4\u8f03\u7684\u5b89\u5168\u306a\u4e2d\u5fc3\u90e8\u306f\u30f4\u30a3\u30e9\u30fb\u30aa\u30ea\u30f3\u30d4\u30a2\u3068\u30d6\u30eb\u30c3\u30af\u30ea\u30f3\u3067\u3059\u3002\u30d4\u30cb\u30a7\u30a4\u30ed\u30b9\u306f\u663c\u591c\u554f\u308f\u305a\u6b69\u3051\u308b\u6d3b\u6c17\u3042\u308b\u30a8\u30ea\u30a2\u3067\u3059\u304c\u3001\u8cb4\u91cd\u54c1\u306e\u516c\u7136\u3068\u3057\u305f\u63d0\u793a\u306f\u907f\u3051\u3066\u304f\u3060\u3055\u3044\u3002\u591c\u9593\u306e\u79fb\u52d5\u306f\u30bf\u30af\u30b7\u30fc\u304c\u6700\u5584\u3067\u3059\u3002\u9577\u671f\u6ede\u5728\u306e\u5834\u5408\u3001USP\u5927\u5b66\u8fd1\u304f\u306e\u30f4\u30a3\u30e9\u30fb\u30a4\u30f3\u30c7\u30a3\u30a2\u30ca\u306a\u3069\u306e\u30a8\u30ea\u30a2\u306f\u5b89\u5168\u306a\u30ec\u30af\u30ea\u30a8\u30fc\u30b7\u30e7\u30f3\u30b9\u30da\u30fc\u30b9\u3092\u63d0\u4f9b\u3057\u3066\u3044\u307e\u3059\u304c\u3001\u5468\u8fba\u306e\u30a4\u30f3\u30d5\u30e9\u306f\u9650\u3089\u308c\u3066\u3044\u308b\u5834\u5408\u304c\u3042\u308a\u307e\u3059\u3002\n* **\u643a\u5e2f\u901a\u4fe1\u4e8b\u696d\u8005\uff1a** CPF\u306a\u3057\u3067\u73fe\u5730\u306eSIM\u30ab\u30fc\u30c9\u3092\u5165\u624b\u3059\u308b\u306e\u306f\u56f0\u96e3\u3067\u3059\u3002\u89b3\u5149\u5ba2\u7528SIM\uff08Vivo\u306e10-25GB\u306a\u3069\uff09\u306fCPF\u306a\u3057\u3067\u5165\u624b\u3067\u304d\u307e\u3059\u304c\u3001\u901a\u8a71\u3084SMS\u30b5\u30fc\u30d3\u30b9\u306f24\u6642\u9593\u5f8c\u306b\u6709\u52b9\u306b\u306a\u308b\u5834\u5408\u304c\u3042\u308a\u307e\u3059\u3002\u73fe\u5730\u306e\u901a\u5e38SIM\u30d7\u30e9\u30f3\uff08Claro Flex\u306e\u7121\u5236\u9650\u30d7\u30e9\u30f3\u306a\u3069\uff09\u306b\u306f\u4e00\u822c\u7684\u306bCPF\u304c\u5fc5\u8981\u3067\u3001\u305d\u308c\u3067\u3082\u6709\u52b9\u5316\u306b\u306f\u554f\u984c\u304c\u751f\u3058\u3084\u3059\u304f\u3001\u5c45\u4f4f\u3057\u3066\u304b\u3089\u6570\u30f6\u6708\u304b\u304b\u308b\u3053\u3068\u3082\u3042\u308a\u307e\u3059\u3002\u5f53\u521d\u306f\u89b3\u5149\u5ba2\u7528eSIM\u3092\u4f7f\u7528\u3059\u308b\u304b\u3001Wi-Fi\u306b\u983c\u308b\u8a08\u753b\u3092\u7acb\u3066\u3066\u304f\u3060\u3055\u3044\u3002"},
+{"@type":"ListItem","position":3,"name":"\u30d6\u30e9\u30b8\u30eb\u3078\u306e\u65c5\u884c\u3092\u8a08\u753b\u3059\u308b\u969b\u306f\u3001\u7279\u5b9a\u306e\u822a\u7a7a\u4f1a\u793e\uff08\u30c8\u30eb\u30b3\u822a\u7a7a\u306a\u3069\uff09\u306b\u95a2\u3059\u308b\u30c8\u30e9\u30d6\u30eb\u306b\u6ce8\u610f\u3057\u3001\u8a50\u6b3a\u3092\u907f\u3051\u308b\u305f\u3081\u7a7a\u6e2f\u3067SIM\u30ab\u30fc\u30c9\u3092\u8cfc\u5165\u3057\u306a\u3044\u3088\u3046\u306b\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u76ee\u7684\u5730\u3068\u3057\u3066\u3001\u30d5\u30a9\u30eb\u30bf\u30ec\u30b6\u306f\u6d77\u6c34\u6e29\u304c\u9ad8\u304f\u6df7\u96d1\u304c\u5c11\u306a\u3044\u305f\u3081\u3001\u30ea\u30e9\u30c3\u30af\u30b9\u3059\u308b\u306e\u306b\u6700\u9069\u3067\u3059\u3002\u30ea\u30aa\u30c7\u30b8\u30e3\u30cd\u30a4\u30ed\u306f\u89b3\u5149\u306b\u9069\u3057\u3066\u3044\u307e\u3059\u304c\u3001\u77ed\u671f\u9593\u306e\u6ede\u5728\u304c\u5411\u3044\u3066\u3044\u307e\u3059\u3002\u30e1\u30ad\u30b7\u30b3\u3067\u3042\u308c\u3070\u3001\u30ab\u30f3\u30af\u30f3\u3088\u308a\u3082\u6df7\u96d1\u304c\u5c11\u306a\u304f\u7f8e\u3057\u3044\u30d3\u30fc\u30c1\u304c\u3042\u308b\u30aa\u30a2\u30cf\u30ab\u306e\u30af\u30eb\u30bb\u30b7\u30fc\u30bf\u3092\u691c\u8a0e\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u65c5\u884c\u4fdd\u967a\u3068\u73fe\u5730\u306eSIM\u30ab\u30fc\u30c9\u306f\u63a8\u5968\u3057\u307e\u3059\u3002\u30d6\u30e9\u30b8\u30eb\u56fd\u5185\u306e\u79fb\u52d5\u306b\u306f\u3001\u9577\u8ddd\u96e2\u30d0\u30b9\u304c\u5229\u7528\u53ef\u80fd\u3067\u5feb\u9069\u3067\u3042\u308a\u3001\u7279\u306b\u30b5\u30f3\u30d1\u30a6\u30ed\u3068\u30ea\u30aa\u30c7\u30b8\u30e3\u30cd\u30a4\u30ed\u3092\u7d50\u3076\u591c\u884c\u4fbf\u306f\u9078\u629e\u80a2\u306b\u5165\u308a\u307e\u3059\u3002\u30d6\u30e9\u30b8\u30eb\u306e\u4e00\u822c\u7684\u306a\u6c7a\u6e08\u624b\u6bb5\u306b\u306fPIX\u3084\u30af\u30ec\u30b8\u30c3\u30c8\u30ab\u30fc\u30c9\u304c\u3042\u308a\u307e\u3059\u304c\u3001\u6d77\u5916\u3067\u306e\u5229\u7528\u624b\u6570\u6599\u3084\u73fe\u91d1\u6255\u3044\u306e\u5236\u9650\u306b\u5099\u3048\u3066\u304a\u3044\u3066\u304f\u3060\u3055\u3044\u3002"},
+{"@type":"ListItem","position":4,"name":"\u30d6\u30e9\u30b8\u30eb\u3067\u306f\u3001\u7269\u7406\u7684\u306a\u30d6\u30e9\u30b8\u30eb\u306e\u8eab\u5206\u8a3c\u660e\u66f8\u304c\u306a\u3044\u5916\u56fd\u4eba\u304c\u73fe\u5730\u306eSIM\u30ab\u30fc\u30c9\u3092\u5165\u624b\u3059\u308b\u306e\u306f\u56f0\u96e3\u3067\u3059\u3002\u4ee5\u4e0b\u306e\u9078\u629e\u80a2\u304c\u3042\u308a\u307e\u3059\u3002\n1. \u5730\u5143\u306e\u5c45\u4f4f\u8005\u306b\u983c\u3093\u3067\u3001\u305d\u306e\u4eba\u306e\u540d\u7fa9\u3067SIM\u30ab\u30fc\u30c9\u3092\u767b\u9332\u3057\u3066\u3082\u3089\u3046\u3002\u3053\u308c\u306f\u6210\u529f\u4f8b\u304c\u3042\u308a\u3001\u7121\u6599\u3067\u5bfe\u5fdc\u3057\u3066\u304f\u308c\u308b\u3053\u3068\u3082\u3042\u308a\u307e\u3059\u3002\n2. \u9577\u671f\u6ede\u5728\u306e\u5834\u5408\u306f\u3001CPF\uff08\u500b\u4eba\u7d0d\u7a0e\u8005\u756a\u53f7\uff09\u3092\u53d6\u5f97\u3057\u3001\u81ea\u5206\u3067SIM\u30ab\u30fc\u30c9\u3092\u767b\u9332\u3059\u308b\u3002\n3. \u3042\u308b\u30e6\u30fc\u30b6\u30fc\u304b\u3089\u5831\u544a\u3055\u308c\u305f\u56de\u907f\u7b56\u3068\u3057\u3066\u3001\u6b63\u898f\u306eCPF\u304c\u62d2\u5426\u3055\u308c\u305f\u5f8c\u306b\u30aa\u30f3\u30e9\u30a4\u30f3\u3067\u507d\u306eCPF\u3092\u751f\u6210\u3057\u3001SIM\u306e\u6709\u52b9\u5316\u306b\u6210\u529f\u3057\u305f\u4f8b\u304c\u3042\u308b\u3002\n4. eSIM\u3092\u5229\u7528\u3059\u308b\u306e\u3082\u4fbf\u5229\u306a\u9078\u629e\u80a2\u306e\u4e00\u3064\u3067\u3059\u3002"},
+{"@type":"ListItem","position":5,"name":"\u30d6\u30e9\u30b8\u30eb\u306e\u73fe\u5730\u30d7\u30ea\u30da\u30a4\u30c9SIM\uff08TIM\u306a\u3069\uff09\u306f\u975e\u5e38\u306b\u624b\u9803\uff08\u6708\u984d\u7d0420\u30ec\u30a2\u30eb\uff09\u3067\u3001\u65b0\u805e\u8ca9\u58f2\u5e97\uff08banca\uff09\u3084\u56fd\u5883\u4ed8\u8fd1\u306e\u85ac\u5c40\uff08\u30d5\u30a9\u30b9\u30fb\u30c9\u30fb\u30a4\u30b0\u30a2\u30b9\u306a\u3069\uff09\u3067\u8cfc\u5165\u3067\u304d\u307e\u3059\u3002\u305f\u3060\u3057\u3001\u6709\u52b9\u5316\u306b\u306fCPF\uff08\u30d6\u30e9\u30b8\u30eb\u306e\u7a0e\u52d9\u756a\u53f7\uff09\u304c\u5fc5\u8981\u3067\u3059\u3002\u65c5\u884c\u8005\u306b\u306f\u3001\u6e21\u822a\u524d\u306b\u30aa\u30f3\u30e9\u30a4\u30f3\u3067CPF\u3092\u767b\u9332\u3057\u3066\u304a\u304f\u304b\u3001\u73fe\u5730\u306e\u5c45\u4f4f\u8005\u306b\u6709\u52b9\u5316\u3092\u624b\u4f1d\u3063\u3066\u3082\u3089\u3046\u3088\u3046\u30a2\u30c9\u30d0\u30a4\u30b9\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u306a\u304a\u3001TIM\u306e\u96fb\u6ce2\u72b6\u6cc1\u306f\u5834\u6240\u306b\u3088\u3063\u3066\u4e0d\u5b89\u5b9a\u306b\u306a\u308b\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002"},
+{"@type":"ListItem","position":6,"name":"\u89b3\u5149\u5ba2\u304c\u30d6\u30e9\u30b8\u30eb\u3067SIM\u30ab\u30fc\u30c9\u3092\u8cfc\u5165\u3059\u308b\u5834\u5408\u3001\u8def\u4e0a\u306e\u30ad\u30aa\u30b9\u30af\u3067\u306f\u306a\u304f\u3001\u30b7\u30e7\u30c3\u30d4\u30f3\u30b0\u30e2\u30fc\u30eb\u5185\u306b\u3042\u308b\u901a\u4fe1\u30ad\u30e3\u30ea\u30a2\u306e\u516c\u5f0f\u5e97\u8217\uff08Vivo\u3001Claro\uff09\u3092\u5229\u7528\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u516c\u5f0f\u5e97\u8217\u3067\u3042\u308c\u3070\u3001CPF\u304c\u306a\u304f\u3066\u3082\u5916\u56fd\u306e\u30d1\u30b9\u30dd\u30fc\u30c8\u3067\u30a2\u30ab\u30a6\u30f3\u30c8\u3092\u767b\u9332\u3067\u304d\u308b\u5834\u5408\u304c\u3042\u308a\u307e\u3059\u3002\u5e97\u8217\u3067\u5bfe\u5fdc\u3067\u304d\u306a\u3044\u5834\u5408\u306f\u3001\u85ac\u5c40\u30c1\u30a7\u30fc\u30f3\uff08Pague Menos\u306a\u3069\uff09\u3067SIM\u3092\u8cfc\u5165\u3057\u3001\u30e2\u30d0\u30a4\u30eb\u30a2\u30d7\u30ea\u7d4c\u7531\u3067\u81ea\u5df1\u767b\u9332\u3059\u308b\u3068\u3044\u3046\u9078\u629e\u80a2\u3082\u3042\u308a\u307e\u3059\u3002\u30b5\u30fc\u30d3\u30b9\u54c1\u8cea\u306f\u5834\u6240\u306b\u3088\u3063\u3066\u5927\u304d\u304f\u7570\u306a\u308a\u307e\u3059\u3002"},
+{"@type":"ListItem","position":7,"name":"\u30d6\u30e9\u30b8\u30eb\u3067TIM\u306eSIM\u30ab\u30fc\u30c9\u3092\u8cfc\u5165\u3059\u308b\u5834\u5408\u306f\u3001TIM\u306e\u516c\u5f0f\u5e97\u8217\u3067\u76f4\u63a5\u8cfc\u5165\u3059\u308b\u3053\u3068\u3092\u5f37\u304f\u63a8\u5968\u3057\u307e\u3059\u3002\u4e00\u822c\u7684\u306a\u30b7\u30e7\u30c3\u30d7\u3084\u30ad\u30aa\u30b9\u30af\u3067\u8cfc\u5165\u3059\u308b\u3068\u3001CPF\u3092\u6301\u3063\u3066\u3044\u3066\u3082\u30a2\u30af\u30c6\u30a3\u30d9\u30fc\u30b7\u30e7\u30f3\u3067\u554f\u984c\u304c\u767a\u751f\u3059\u308b\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002\u30ab\u30b9\u30bf\u30de\u30fc\u30b5\u30fc\u30d3\u30b9\u306b\u76f4\u63a5\u9023\u7d61\u3057\u3066\u500b\u4eba\u60c5\u5831\u3092\u63d0\u4f9b\u3059\u308b\u3053\u3068\u3067\u30a2\u30af\u30c6\u30a3\u30d9\u30fc\u30b7\u30e7\u30f3\u3067\u304d\u308b\u53ef\u80fd\u6027\u306f\u3042\u308a\u307e\u3059\u304c\u3001SMS\u30d9\u30fc\u30b9\u306e\u767b\u9332\u306f\u3067\u304d\u306a\u3044\u5834\u5408\u304c\u3042\u308a\u3001\u516c\u5f0f\u5e97\u8217\u3067\u3042\u3063\u3066\u3082\u975e\u6b63\u898f\u5e97\u3067\u8cfc\u5165\u3057\u305fSIM\u306e\u30b5\u30dd\u30fc\u30c8\u3092\u62d2\u5426\u3055\u308c\u308b\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002"},
+{"@type":"ListItem","position":8,"name":"\u30d6\u30e9\u30b8\u30eb\u306e\u30e2\u30d0\u30a4\u30eb\u30c7\u30fc\u30bf\u6599\u91d1\u306b\u3064\u3044\u3066\uff1a\u30aa\u30f3\u30e9\u30a4\u30f3\u5e83\u544a\u4fa1\u683c\uff08\u7d0430\u30ec\u30a2\u30eb\uff09\u306f\u3001\u73fe\u5730\u306e\u300cPix\u300d\u652f\u6255\u3044\u30b7\u30b9\u30c6\u30e0\u304c\u5fc5\u8981\u306a\u3053\u3068\u304c\u3088\u304f\u3042\u308a\u307e\u3059\u3002\u73fe\u5730\u306e\u9280\u884c\u53e3\u5ea7\u3084CPF\u3092\u6301\u305f\u306a\u3044\u99d0\u5728\u54e1\u306f\u3001\u901a\u5e38\u3001\u5e97\u8217\uff08TIM\u3001Claro\u3001Vivo\uff09\u3067\u5e97\u982d\u4fa1\u683c\uff08\u7d0460\u30ec\u30a2\u30eb\uff09\u3092\u652f\u6255\u3044\u307e\u3059\u3002\u82f1\u8a9e\u3092\u8a71\u3059\u30b9\u30bf\u30c3\u30d5\u304c\u56fd\u969b\u30af\u30ec\u30b8\u30c3\u30c8\u30ab\u30fc\u30c9/\u30c7\u30d3\u30c3\u30c8\u30ab\u30fc\u30c9\u3067SIM\u30ab\u30fc\u30c9\u306e\u30a2\u30af\u30c6\u30a3\u30d9\u30fc\u30b7\u30e7\u30f3\u3092\u30b5\u30dd\u30fc\u30c8\u3057\u3066\u304f\u308c\u308b\u3001\u5b9f\u5e97\u8217\u306e\u652f\u5e97\u3092\u8a2a\u554f\u3059\u308b\u3053\u3068\u3092\u63a8\u5968\u3057\u307e\u3059\u3002"},
+{"@type":"ListItem","position":9,"name":"\u30d6\u30e9\u30b8\u30eb\u3067CPF\u306a\u3057\u3067TIM\u306eSIM\u30ab\u30fc\u30c9\u3092\u6709\u52b9\u5316\u3059\u308b\u306b\u306f\u3001*144\u306b\u96fb\u8a71\u3057\u3001\u5185\u7dda33\u3092\u9078\u629e\u3057\u3066\u3001\u82f1\u8a9e\u3067\u30d1\u30b9\u30dd\u30fc\u30c8\u306e\u8a73\u7d30\u3092\u4f1d\u3048\u3066\u304f\u3060\u3055\u3044\u3002SPF\uff08\u7d0d\u7a0e\u8005\u767b\u9332\uff09\u306f\u30aa\u30f3\u30e9\u30a4\u30f3\u30671\u65e5\u4ee5\u5185\u306b\u53d6\u5f97\u3067\u304d\u308b\u5834\u5408\u304c\u3042\u308a\u307e\u3059\u304c\u3001\u6210\u529f\u7387\u306f\u7d0450\uff05\u3067\u3059\u3002Vivo Easy\u306f\u3001\u30a2\u30d7\u30ea\u304b\u3089\u30aa\u30f3\u30e9\u30a4\u30f3\u3067\u8cfc\u5165\u30fb\u7ba1\u7406\u53ef\u80fd\u306a15GB\u306735\u30e6\u30cb\u30c3\u30c8\u3068\u3044\u3063\u305f\u7af6\u4e89\u529b\u306e\u3042\u308b\u30c7\u30fc\u30bf\u30d7\u30e9\u30f3\u3092\u63d0\u4f9b\u3057\u3066\u3044\u307e\u3059\u3002"},
+{"@type":"ListItem","position":10,"name":"\u7d041\u5e74\u534a\u524d\u307e\u3067\u306f\u3001\u30d6\u30e9\u30b8\u30eb\u306e\u89b3\u5149\u5ba2\u306fCPF\uff08\u30d6\u30e9\u30b8\u30eb\u306e\u7d0d\u7a0e\u8005\u756a\u53f7\uff09\u306a\u3057\u3067\u30a4\u30f3\u30bf\u30fc\u30cd\u30c3\u30c8\u7528\u306e\u73fe\u5730SIM\u30ab\u30fc\u30c9\uff08\u300c\u30c1\u30c3\u30d7\u300d\uff09\u3092\u8cfc\u5165\u3067\u304d\u307e\u3057\u305f\u3002\u3053\u308c\u3089\u306e\u89b3\u5149\u5ba2\u5411\u3051SIM\u306e\u6709\u52b9\u671f\u9650\u306f\u7d042\u9031\u9593\u3067\u3001\u5207\u308c\u305f\u3089\u65b0\u3057\u3044\u3082\u306e\u3092\u8cfc\u5165\u3067\u304d\u307e\u3057\u305f\u3002\u73fe\u5728\u306e\u898f\u5236\u306f\u7570\u306a\u308b\u53ef\u80fd\u6027\u304c\u3042\u308b\u305f\u3081\u3001\u5230\u7740\u5f8c\u306b\u73fe\u5730\u30d7\u30ed\u30d0\u30a4\u30c0\u30fc\u3078\u78ba\u8a8d\u3059\u308b\u3053\u3068\u3092\u304a\u52e7\u3081\u3057\u307e\u3059\u3002"},
+{"@type":"ListItem","position":11,"name":"\u30d6\u30e9\u30b8\u30eb\u306e\u591a\u304f\u306e\u30b7\u30e7\u30c3\u30d4\u30f3\u30b0\u30e2\u30fc\u30eb\u3067\u306f\u3001SIM\u30ab\u30fc\u30c9\u3092\u8ca9\u58f2\u3059\u308b\u30e2\u30d0\u30a4\u30eb\u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u30aa\u30da\u30ec\u30fc\u30bf\u30fc\u306e\u30ad\u30aa\u30b9\u30af\u306f\u73fe\u91d1\u3092\u53d7\u3051\u4ed8\u3051\u305a\u3001\u652f\u6255\u3044\u306b\u306f\u73fe\u5730\u306e\u30c7\u30d3\u30c3\u30c8\u30ab\u30fc\u30c9\u3084\u30af\u30ec\u30b8\u30c3\u30c8\u30ab\u30fc\u30c9\u304c\u5fc5\u8981\u306a\u3053\u3068\u304c\u591a\u3044\u3067\u3059\u3002\u73fe\u5730\u306e\u30ab\u30fc\u30c9\u3092\u6301\u3063\u3066\u3044\u306a\u3044\u65c5\u884c\u8005\u306f\u3001\u8ab0\u304b\u4ed6\u306e\u4eba\u306b\u652f\u6255\u3044\u3092\u983c\u3080\u304b\u3001\u53ef\u80fd\u3067\u3042\u308c\u3070\u30aa\u30f3\u30e9\u30a4\u30f3\u3067\u306e\u30c1\u30e3\u30fc\u30b8\u306a\u3069\u5225\u306e\u65b9\u6cd5\u3092\u63a2\u3059\u5fc5\u8981\u304c\u3042\u308b\u304b\u3082\u3057\u308c\u307e\u305b\u3093\u3002"},
+{"@type":"ListItem","position":12,"name":"CPF\uff08\u500b\u4eba\u7d0d\u7a0e\u8005\u756a\u53f7\uff09\u306e\u554f\u984c\u306b\u3088\u308a\u3001Claro\u3067SIM\u30ab\u30fc\u30c9\u3092\u8cfc\u5165\u3059\u308b\u306e\u304c\u56f0\u96e3\u3067\u3059\u3002CPF\u306e\u767a\u884c\u76f4\u5f8c\u3067\u8a8d\u8b58\u3055\u308c\u306a\u3044\u53ef\u80fd\u6027\u304c\u3042\u308b\u304b\u3001CPF\u306e\u7a2e\u985e\u304c\u7570\u306a\u308b\u53ef\u80fd\u6027\u304c\u3042\u308a\u307e\u3059\u3002\u4ee3\u66ff\u6848\u3068\u3057\u3066\u3001\u90f5\u4fbf\u5c40\uff08Correios\uff09\u306740\u30ec\u30a2\u30eb\u3067SIM\u30ab\u30fc\u30c9\u3092\u8cfc\u5165\u3059\u308b\u304b\u3001\u77ed\u671f\u5229\u7528\u3067\u3042\u308c\u3070eSIM\u3092\u691c\u8a0e\u3057\u3066\u304f\u3060\u3055\u3044\u3002"},
+{"@type":"ListItem","position":13,"name":"\u30d6\u30e9\u30b8\u30eb\u3092\u8a2a\u308c\u308b\u89b3\u5149\u5ba2\u306b\u306f\u3001\u73fe\u5730\u30d7\u30ed\u30d0\u30a4\u30c0\u30fc\u300cVivo\u300d\u304c\u63a8\u5968\u3055\u308c\u307e\u3059\u3002SIM\u30ab\u30fc\u30c9\u306f\u30d1\u30b9\u30dd\u30fc\u30c8\u304c\u3042\u308c\u3070\u3069\u306e\u30b7\u30e7\u30c3\u30d4\u30f3\u30b0\u30e2\u30fc\u30eb\u3067\u3082\u8cfc\u5165\u53ef\u80fd\u3067\u3059\u3002\u8cbb\u7528\u306f30\u30ec\u30a2\u30eb\u7a0b\u5ea6\u304b\u3089\u3002\u30ed\u30fc\u30df\u30f3\u30b0\u306f\u3001\u73fe\u5730\u306e\u30d7\u30ea\u30da\u30a4\u30c9\u30d7\u30e9\u30f3\u3068\u6bd4\u3079\u3066\u8cbb\u7528\u304c\u9ad8\u304f\u306a\u308b\u305f\u3081\u3001\u4e00\u822c\u7684\u306b\u306f\u63a8\u5968\u3055\u308c\u307e\u305b\u3093\u3002"},
+{"@type":"ListItem","position":14,"name":"TIM\u306eSIM\u30ab\u30fc\u30c9\u306f\u30ac\u30ec\u30aa\u30f3\u7a7a\u6e2f\u306e\u85ac\u5c40\u3067\u8cfc\u5165\u3067\u304d\u307e\u3059\uff08\u7d04120\u30ec\u30a2\u30eb\uff09\u3002\u6709\u52b9\u5316\u306b\u306fCPF\u304c\u5fc5\u8981\u304b\u3001\u30d1\u30b9\u30dd\u30fc\u30c8\u8a73\u7d30\u3092\u4f1d\u3048\u308b\u767b\u9332\u7528\u96fb\u8a71\u304c\u5fc5\u8981\u3067\u3059\u3002\u5e02\u5185\u306e\u30e2\u30d0\u30a4\u30eb\u30b7\u30e7\u30c3\u30d7\u3067\u306f\u3088\u308a\u5b89\u3044\u30ec\u30fc\u30c8\uff08\u7d0485\u30ec\u30a2\u30eb\uff09\u3067\u63d0\u4f9b\u3055\u308c\u3066\u3044\u307e\u3059\u304c\u3001\u5e97\u8217\u306b\u884c\u304f\u5fc5\u8981\u304c\u3042\u308a\u307e\u3059\u3002"},
+{"@type":"ListItem","position":15,"name":"\u30b0\u30a2\u30eb\u30fc\u30ea\u30e7\u30b9\u56fd\u969b\u7a7a\u6e2f\uff08GRU\uff09\u3067\u5229\u7528\u3067\u304d\u308b\u7121\u6599\u306e\u516c\u8846Wi-Fi\u306f\u9650\u5b9a\u7684\u3067\u3059\u3002\u56fd\u969b\u7dda\u30bf\u30fc\u30df\u30ca\u30eb\u3068\u56fd\u5185\u7dda\u30bf\u30fc\u30df\u30ca\u30eb\u306e\u9593\u306f\u5f92\u6b69\u3067\u79fb\u52d5\u53ef\u80fd\uff08\u7d0410\u5206\uff09\u3067\u3059\u3002SIM\u30ab\u30fc\u30c9\u306f\u7b2c3\u30bf\u30fc\u30df\u30ca\u30eb\u306e2\u968e\u3067\u8cfc\u5165\u30fb\u30a2\u30af\u30c6\u30a3\u30d9\u30fc\u30c8\u3067\u304d\u307e\u3059\u304c\u3001\u672c\u4eba\u78ba\u8a8d\u306e\u305f\u3081\u306b\u30d1\u30b9\u30dd\u30fc\u30c8\u304c\u5fc5\u8981\u3067\u3059\u3002"},
+{"@type":"ListItem","position":16,"name":"\u30d6\u30e9\u30b8\u30eb\u3067\u516c\u5f0f\u306e\u7d0d\u7a0e\u8005\u756a\u53f7\uff08CPF\uff09\u3092\u6301\u305f\u305a\u306b\u30d7\u30ea\u30da\u30a4\u30c9SIM\u30ab\u30fc\u30c9\u3092\u8cfc\u5165\u30fb\u6709\u52b9\u5316\u3057\u305f\u3044\u5834\u5408\u3001\u65c5\u884c\u8005\u306f\u30aa\u30f3\u30e9\u30a4\u30f3\u306e\u30d6\u30e9\u30b8\u30ebCPF\u30b8\u30a7\u30cd\u30ec\u30fc\u30bf\u30fc\uff08\u0027generator cpf brasil\u0027\uff09\u3092\u4f7f\u7528\u3057\u3066\u8a8d\u8a3c\u30b9\u30c6\u30c3\u30d7\u3092\u56de\u907f\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002"}
+]}
+</script>
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 \u591c", DAY="\u2600 \u663c";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

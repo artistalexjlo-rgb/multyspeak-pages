@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>any：飞行与转机 — 来自聊天群的真实经验 · Luky</title>
+<meta name="description" content="关于any「飞行与转机」的真实经验：来自聊天群的实用技巧、案例和规定。你的具体情况 — 问 Luky。">
+<link rel="canonical" href="https://info.multyspeak.ru/zh/any/s/transport/flights-and-connections/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.ru/ru/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="ar" href="https://info.multyspeak.ru/ar/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="de" href="https://info.multyspeak.ru/de/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.ru/en/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.ru/es/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="fr" href="https://info.multyspeak.ru/fr/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="hi" href="https://info.multyspeak.ru/hi/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="it" href="https://info.multyspeak.ru/it/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="ja" href="https://info.multyspeak.ru/ja/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="ko" href="https://info.multyspeak.ru/ko/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.ru/pt/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="th" href="https://info.multyspeak.ru/th/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="tr" href="https://info.multyspeak.ru/tr/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="zh" href="https://info.multyspeak.ru/zh/any/s/transport/flights-and-connections/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.ru/ru/any/s/transport/flights-and-connections/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+/* тег типа абзаца (хвост-антологии: lifehack/reglament/howto/risk/case/service) */
+.tag{display:inline-block;font-family:var(--font-mono);font-weight:400;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);
+  border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:2px;white-space:nowrap}
+.tag.risk{color:var(--red);border-color:var(--red)}
+.tag.reglament{color:var(--accent);border-color:var(--accent)}
+.tag.lifehack{color:var(--green);border-color:var(--green)}
+.tag.service{color:var(--yellow);border-color:var(--yellow)}
+.tag.howto{color:var(--hud);border-color:var(--hud)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">信息门户 · 任何国家 · 不掺水</span>
+    </div>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="" href="/ru/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/ar/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>AR</a>
+        <a class="" href="/de/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>DE</a>
+        <a class="" href="/en/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/fr/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>FR</a>
+        <a class="" href="/hi/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>HI</a>
+        <a class="" href="/it/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>IT</a>
+        <a class="" href="/ja/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>JA</a>
+        <a class="" href="/ko/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>KO</a>
+        <a class="" href="/pt/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+        <a class="" href="/th/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TH</a>
+        <a class="" href="/tr/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TR</a>
+        <a class="" href="/zh/any/s/transport/flights-and-connections/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ZH</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ 夜间</span></button>
+    </div>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/zh-Hans/">首页</a> /
+    <a href="/zh-Hans/any/">any</a> /
+    <b>飞行与转机</b>
+  </nav>
+
+
+  
+  <h1>any的飞行与转机：真正需要知道的事</h1>
+
+  <h2>来自真实经验</h2>
+  <details open><summary><span class="sumq"><span class="tag service">服务</span>卡塔尔航空的旅客若有长时间转机（通常为8-12小时或以上，具体取决于票价规则和供应情况），可能有资格享受免费的转机酒店，包括机场接送。如果未预先预订，旅客应在多哈的航空公司转机柜台咨询。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 2 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">窍门</span>经由多哈哈马德国际机场（DOH）转机时，在单张机票下（无托运行李）预留1小时20分钟的转机时间，只要首个航班准点，通常被认为是可行的。DOH的最低转机时间（MCT）为45分钟。建议乘客下机后快速前往下一登机口，机场工作人员可提供协助。此类转机通常无需取行李，仅需手提行李安检。注意，前往航站楼的地面交通有时可能需要20-25分钟。如需更从容地体验机场设施（免税店、花园、火车），建议预留2-3小时的转机时间。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">窍门</span>通过中国南方航空在广州 (CAN) 转机且航程较短（如 1 小时 25 分钟）并持有单一机票时：1. 确认转机时间是否充足，考虑潜在的延误、过境时间、安检和登机口变更。虽然在单一机票下，航空公司通常会在错过衔接航班时为乘客改签下一趟航班，但短途转机错过衔接的风险很高。2. 行李通常在单一机票下自动转运，但最好确认一下。3. 如果航空公司提供如此短的转机时间，说明技术上可行，但实际成功与否取决于许多因素，包括航空公司的运营效率、机场流程和乘客的及时行动。一些旅行者反映，在航空公司的大本营机场（如南航的广州），错过转机时会获得快速协助。建议检查航空公司政策，并考虑更长的转机时间，以获得更轻松的旅行体验，特别是在涉及国际转机和潜在的签证/入境要求时。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">步骤</span>短中转时间（低于1.5小时）风险较高。专家建议：1. 务必打印纸质登机牌，以避免技术/格式问题。2. 如果晚点，不要排队；直接寻找机场工作人员，出示登机牌并请求协助。3. 如果中转时间紧迫，在飞行途中通知机组人员；他们可能会请求地勤支持。4. 如果没有纸质版，可使用手机上的电子登机牌进行加急安检，但建议备好纸质版作为备份。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">窍门</span>在过境卡萨布兰卡时进入摩洛哥航空商务贵宾室：朝中转/转机登机口前进（跟随“connection fly”标志）。通过护照和安检后，找到该航空公司的信息台。在出示登机牌时反复说明“free lounge”（免费贵宾室）。尽管他们可能会提供付费的“VIP”选项，请坚持要求“免费贵宾室”。您应获得一份餐券，可用于兑换餐饮（例如沙威玛、酸奶、雪碧）以及无限量供应的免费茶水/咖啡。贵宾室提供舒适的座椅，是比在普通登机口等待更好的选择。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">窍门</span>国际航班中包含长时停留（如7-10天）是可行的，但通常会增加票价。简单的停留（Stopover）通常限制在1.5天左右，不会有显著成本增加。一些航空公司可能为长时间停留（超过12小时）提供免费酒店和签证，但这并不保证能进入市区。考虑经由开罗或伊斯坦布尔等枢纽的替代路线可能具备性价比，但要注意潜在的安全检查，特别是在伊斯坦布尔。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">窍门</span>对于长时间中转，有几种方案可选。土耳其航空等航空公司可能会为长中转乘客提供免费的中转酒店；请提前向航空公司咨询。或者，预订机场附近或市内的酒店。确保您能使用机场Wi-Fi以保持联络。如果儿童独自旅行，请讨论潜在场景并做好准备措施，以尽量减少压力。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">案例</span>贵宾室的使用通常有时间限制，特别是在航班起飞前 2-4 小时，这在长途经停或非转机旅客中尤为常见。具体规则因机场/贵宾室而异。例如：阿曼提供严格监控（提供类似酒店的房间，限 3 张通行证）；深圳机场则允许灵活延时（由于 APP 问题，付费进入后允许停留 7 小时并使用设施）。莫斯科谢列梅捷沃机场以宽松著称，但人流量可能非常大。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">窍门</span>在伊斯坦布尔（IST）转机且持联程机票时，如果因航班延误错过转机，航空公司会为您安排后续航班。转机过程可能节奏较快，请做好准备。请告知空乘人员您的转机时间紧迫。可以使用机场提供的免费摆渡车（电瓶车），儿童和老人免费。伊斯坦布尔机场（IST）是大多数国际转机的主要且更大的枢纽机场。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">案例</span>从莫斯科机场出发时，要做好可能出现严重航班延误（如 14-15 小时）的准备，且航空公司在延误期间可能不提供住宿。前往埃及的替代策略是通过第三国（如亚美尼亚）飞行。这可能使旅游成本降低 20-30%，并缩短前往埃及的航程（例如，从亚美尼亚出发仅需 3 小时）。一些旅行者称，在某些空域限制期间，非俄罗斯航空公司或非包机航班受到的干扰可能较少。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">规定</span>在预订不同航空公司的联程航班（分段票）时，了解行李托运和重新预订政策至关重要。如果初始预订是一个单一行程（即使是代码共享），航空公司通常负责确保乘客及其行李抵达最终目的地。然而，严重的延误或中断会使情况复杂化。在处理涉及阿联酋航空和毛里求斯航空等不同承运人的单一行程时，建议务必与票务代理或航空公司确认行李直挂流程和重新预订权利。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">窍门</span>在迪拜转机前往毛里求斯的短时间（例如35分钟）航班，如果机票是同一航空公司或代码共享合作伙伴（如阿联酋航空和毛里求斯航空）的单一预订，则航空公司有责任确保转机衔接。乘客可能会得到航空公司代表的协助，或者被改签到下一个可用航班。建议告知乘务组短时间衔接的情况，并留意潜在的中间安检。过去在其他机场经历类似的短时间衔接（15-20分钟）也是成功的。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">案例</span>在谢列梅捷沃机场（Sheremetyevo Airport）通过安检和海关的过程非常高效，前提是行李较少且持有预先准备好的旅行证件。包括自动化护照查验和安检在内的整个过程最快仅需 15-20 分钟，为短暂停留提供了充裕的时间。与过去长期离境时常见的复杂检查和文档核实流程相比，这是一项显著的改进。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">窍门</span>上海浦东国际机场（PVG）的1小时45分钟转机时间因机场面积巨大且可能排队而被认为存在风险。然而，如果航班准点，这可能是可行的。行程衔接紧密的乘客应主动向机场工作人员出示登机牌，以寻求优先通过或协助。请注意航站楼间的交通方式，例如地铁。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">案例</span>在伊斯坦布尔机场（IST）进行国际航班中转时，对于转机乘客，安检和文件检查通常很少。乘客通常只需在下一程航班的登机过程中出示登机牌，无需进行繁琐的二次安检或详细的过境护照检查。对于前往荷兰等目的地的航班，这种体验很常见。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">窍门</span>预订分开出票的联程航班时，请留出充足的中转时间。这涉及办理移民入境、提取行李以及为下一班航班重新值机。对于从俄罗斯南部机场出发的航班，建议预留24小时的中转时间。即使没有严重延误，也建议预留至少5-6小时的中转时间，以应对各种流程所需时间。如果可能，过夜中转是缓解航班延误相关风险的可行建议。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">规定</span>在单一机票（单一预订编号）下，如果因航班延误或不可抗力导致错过中转，运营航空公司在法律上有责任负责改签、提供餐食和住宿。乘客应直接联系中转枢纽的航空公司中转柜台。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">案例</span>卡萨布兰卡至圣保罗航线上的波音787-900机型被认为舒适度较高。虽然没有详细说明出口排或其他位置的具体腿部空间信息，但身高180厘米的乘客发现标准座位对于6.5小时的飞行来说是“可以忍受的”。起飞前48小时可进行免费在线值机。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">窍门</span>对于联程航班，4小时的转机时间通常足够，尤其是如果所有航段均由同一航空公司执飞且行李直挂至最终目的地。在这种情况下，预留1.5-2小时的转机时间通常是充足的。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">风险</span>如果购买的是联程机票，且因航班延误错过转机，同一航空公司将为您改签至下一班可用航班。1小时的转机时间非常紧迫且风险极高。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">窍门</span>航空公司，特别是在通过伊斯坦布尔等主要枢纽进行长途转机时，可能会超售。乘客应始终准备好续程旅行的证明，因为航空公司工作人员可能会在登机口要求检查，以确保旅客不会“滞留”在当地。使用可以在最后一刻购买或取消的可退款机票是针对这种情况的一种常见旅行技巧。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">窍门</span>当持单一机票经由巴库中转时，请留意候机区内的在线出发/到达显示屏。这些屏幕会实时更新航班时刻表，包括任何延误信息。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">规定</span>如果是在同一家航空公司的同一预订代码（PNR）下飞行，当因航空公司自身延误导致乘客错过转机时，航空公司有责任为乘客改签至下一个可用的航班。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">规定</span>如果因单一机票（PNR）下的航空公司延误而错过转机，航空公司有责任重新安排。对于卡塔尔航空或土耳其航空等大型航司，乘客应前往转机区域的转机柜台。如果等待时间超过 8 小时，航空公司通常必须提供酒店住宿和餐券。务必核实机票是否为“单一 PNR”，以确保获得这些保护。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">窍门</span>从俄罗斯亚洲地区出发寻求飞往伊斯坦布尔航班的旅客可能会发现塔什干、阿拉木图和比什凯克作为枢纽非常便利。据报道，这些航线有时可靠性更高（取消或延误较少）。一些旅客还指出，乌兹别克斯坦航空公司（Uzbekistan Airways）比俄罗斯航空（Aeroflot）体验更舒适。包含行李费的飞往莫斯科的机票费用可能与从这些中亚枢纽直接飞往伊斯坦布尔的费用相当。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag service">服务</span>对于从欧洲飞往里约热内卢或圣保罗的航班，由于有直飞航班，通常推荐经由葡萄牙转机。例如，从里斯本直飞圣保罗的航班通常耗时约10小时。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+
+  <h2>相关主题</h2>
+  <div class="chips">
+    <a class="chip" href="/zh/any/s/transport/flights-and-airlines/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 机票与航空公司</span></a>
+    <a class="chip" href="/zh/any/s/transport/bookings-and-documentation/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 预订与证件</span></a>
+    <a class="chip" href="/zh/any/s/transport/transport-and-logistics/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 交通与物流信息</span></a>
+    <a class="chip" href="/zh/any/s/transport/baggage-and-logistics/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 行李与物流</span></a>
+    <a class="chip" href="/zh/any/s/transport/handling-special-situations/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 特殊情况处理</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>到处都一样，可你的情况偏偏特殊？</h2>
+    <p>问 Luky — 像刚从那儿回来的人一样讲 — 不掺水.</p>
+    <p>而 Luky 还是真实对话的实时语音翻译： 在大厅和别国的旅人聊上几句.</p>
+    <p class="ps">PS：用外语在约会时调情？没问题 😏</p>
+    <a class="btn" href="https://multyspeak.ru" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>打开 Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — 来自社区聊天群的真实经验，不掺水</div>
+    <nav class="f-links">
+      <a href="/zh-Hans/about/">关于</a>
+      <a href="/zh-Hans/any/">所有主题</a>
+      <a href="/zh-Hans/">国家</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">答案取自公开的社区聊天群 — 这是人们的真实经验，不是官方建议。做重要决定前请自行核实。</p>
+    <div class="f-copy">© 2026 Luky · 更新于 08.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"\u5361\u5854\u5c14\u822a\u7a7a\u7684\u65c5\u5ba2\u82e5\u6709\u957f\u65f6\u95f4\u8f6c\u673a\uff08\u901a\u5e38\u4e3a8-12\u5c0f\u65f6\u6216\u4ee5\u4e0a\uff0c\u5177\u4f53\u53d6\u51b3\u4e8e\u7968\u4ef7\u89c4\u5219\u548c\u4f9b\u5e94\u60c5\u51b5\uff09\uff0c\u53ef\u80fd\u6709\u8d44\u683c\u4eab\u53d7\u514d\u8d39\u7684\u8f6c\u673a\u9152\u5e97\uff0c\u5305\u62ec\u673a\u573a\u63a5\u9001\u3002\u5982\u679c\u672a\u9884\u5148\u9884\u8ba2\uff0c\u65c5\u5ba2\u5e94\u5728\u591a\u54c8\u7684\u822a\u7a7a\u516c\u53f8\u8f6c\u673a\u67dc\u53f0\u54a8\u8be2\u3002"},
+{"@type":"ListItem","position":2,"name":"\u7ecf\u7531\u591a\u54c8\u54c8\u9a6c\u5fb7\u56fd\u9645\u673a\u573a\uff08DOH\uff09\u8f6c\u673a\u65f6\uff0c\u5728\u5355\u5f20\u673a\u7968\u4e0b\uff08\u65e0\u6258\u8fd0\u884c\u674e\uff09\u9884\u75591\u5c0f\u65f620\u5206\u949f\u7684\u8f6c\u673a\u65f6\u95f4\uff0c\u53ea\u8981\u9996\u4e2a\u822a\u73ed\u51c6\u70b9\uff0c\u901a\u5e38\u88ab\u8ba4\u4e3a\u662f\u53ef\u884c\u7684\u3002DOH\u7684\u6700\u4f4e\u8f6c\u673a\u65f6\u95f4\uff08MCT\uff09\u4e3a45\u5206\u949f\u3002\u5efa\u8bae\u4e58\u5ba2\u4e0b\u673a\u540e\u5feb\u901f\u524d\u5f80\u4e0b\u4e00\u767b\u673a\u53e3\uff0c\u673a\u573a\u5de5\u4f5c\u4eba\u5458\u53ef\u63d0\u4f9b\u534f\u52a9\u3002\u6b64\u7c7b\u8f6c\u673a\u901a\u5e38\u65e0\u9700\u53d6\u884c\u674e\uff0c\u4ec5\u9700\u624b\u63d0\u884c\u674e\u5b89\u68c0\u3002\u6ce8\u610f\uff0c\u524d\u5f80\u822a\u7ad9\u697c\u7684\u5730\u9762\u4ea4\u901a\u6709\u65f6\u53ef\u80fd\u9700\u898120-25\u5206\u949f\u3002\u5982\u9700\u66f4\u4ece\u5bb9\u5730\u4f53\u9a8c\u673a\u573a\u8bbe\u65bd\uff08\u514d\u7a0e\u5e97\u3001\u82b1\u56ed\u3001\u706b\u8f66\uff09\uff0c\u5efa\u8bae\u9884\u75592-3\u5c0f\u65f6\u7684\u8f6c\u673a\u65f6\u95f4\u3002"},
+{"@type":"ListItem","position":3,"name":"\u901a\u8fc7\u4e2d\u56fd\u5357\u65b9\u822a\u7a7a\u5728\u5e7f\u5dde (CAN) \u8f6c\u673a\u4e14\u822a\u7a0b\u8f83\u77ed\uff08\u5982 1 \u5c0f\u65f6 25 \u5206\u949f\uff09\u5e76\u6301\u6709\u5355\u4e00\u673a\u7968\u65f6\uff1a1. \u786e\u8ba4\u8f6c\u673a\u65f6\u95f4\u662f\u5426\u5145\u8db3\uff0c\u8003\u8651\u6f5c\u5728\u7684\u5ef6\u8bef\u3001\u8fc7\u5883\u65f6\u95f4\u3001\u5b89\u68c0\u548c\u767b\u673a\u53e3\u53d8\u66f4\u3002\u867d\u7136\u5728\u5355\u4e00\u673a\u7968\u4e0b\uff0c\u822a\u7a7a\u516c\u53f8\u901a\u5e38\u4f1a\u5728\u9519\u8fc7\u8854\u63a5\u822a\u73ed\u65f6\u4e3a\u4e58\u5ba2\u6539\u7b7e\u4e0b\u4e00\u8d9f\u822a\u73ed\uff0c\u4f46\u77ed\u9014\u8f6c\u673a\u9519\u8fc7\u8854\u63a5\u7684\u98ce\u9669\u5f88\u9ad8\u30022. \u884c\u674e\u901a\u5e38\u5728\u5355\u4e00\u673a\u7968\u4e0b\u81ea\u52a8\u8f6c\u8fd0\uff0c\u4f46\u6700\u597d\u786e\u8ba4\u4e00\u4e0b\u30023. \u5982\u679c\u822a\u7a7a\u516c\u53f8\u63d0\u4f9b\u5982\u6b64\u77ed\u7684\u8f6c\u673a\u65f6\u95f4\uff0c\u8bf4\u660e\u6280\u672f\u4e0a\u53ef\u884c\uff0c\u4f46\u5b9e\u9645\u6210\u529f\u4e0e\u5426\u53d6\u51b3\u4e8e\u8bb8\u591a\u56e0\u7d20\uff0c\u5305\u62ec\u822a\u7a7a\u516c\u53f8\u7684\u8fd0\u8425\u6548\u7387\u3001\u673a\u573a\u6d41\u7a0b\u548c\u4e58\u5ba2\u7684\u53ca\u65f6\u884c\u52a8\u3002\u4e00\u4e9b\u65c5\u884c\u8005\u53cd\u6620\uff0c\u5728\u822a\u7a7a\u516c\u53f8\u7684\u5927\u672c\u8425\u673a\u573a\uff08\u5982\u5357\u822a\u7684\u5e7f\u5dde\uff09\uff0c\u9519\u8fc7\u8f6c\u673a\u65f6\u4f1a\u83b7\u5f97\u5feb\u901f\u534f\u52a9\u3002\u5efa\u8bae\u68c0\u67e5\u822a\u7a7a\u516c\u53f8\u653f\u7b56\uff0c\u5e76\u8003\u8651\u66f4\u957f\u7684\u8f6c\u673a\u65f6\u95f4\uff0c\u4ee5\u83b7\u5f97\u66f4\u8f7b\u677e\u7684\u65c5\u884c\u4f53\u9a8c\uff0c\u7279\u522b\u662f\u5728\u6d89\u53ca\u56fd\u9645\u8f6c\u673a\u548c\u6f5c\u5728\u7684\u7b7e\u8bc1/\u5165\u5883\u8981\u6c42\u65f6\u3002"},
+{"@type":"ListItem","position":4,"name":"\u77ed\u4e2d\u8f6c\u65f6\u95f4\uff08\u4f4e\u4e8e1.5\u5c0f\u65f6\uff09\u98ce\u9669\u8f83\u9ad8\u3002\u4e13\u5bb6\u5efa\u8bae\uff1a1. \u52a1\u5fc5\u6253\u5370\u7eb8\u8d28\u767b\u673a\u724c\uff0c\u4ee5\u907f\u514d\u6280\u672f/\u683c\u5f0f\u95ee\u9898\u30022. \u5982\u679c\u665a\u70b9\uff0c\u4e0d\u8981\u6392\u961f\uff1b\u76f4\u63a5\u5bfb\u627e\u673a\u573a\u5de5\u4f5c\u4eba\u5458\uff0c\u51fa\u793a\u767b\u673a\u724c\u5e76\u8bf7\u6c42\u534f\u52a9\u30023. \u5982\u679c\u4e2d\u8f6c\u65f6\u95f4\u7d27\u8feb\uff0c\u5728\u98de\u884c\u9014\u4e2d\u901a\u77e5\u673a\u7ec4\u4eba\u5458\uff1b\u4ed6\u4eec\u53ef\u80fd\u4f1a\u8bf7\u6c42\u5730\u52e4\u652f\u6301\u30024. \u5982\u679c\u6ca1\u6709\u7eb8\u8d28\u7248\uff0c\u53ef\u4f7f\u7528\u624b\u673a\u4e0a\u7684\u7535\u5b50\u767b\u673a\u724c\u8fdb\u884c\u52a0\u6025\u5b89\u68c0\uff0c\u4f46\u5efa\u8bae\u5907\u597d\u7eb8\u8d28\u7248\u4f5c\u4e3a\u5907\u4efd\u3002"},
+{"@type":"ListItem","position":5,"name":"\u5728\u8fc7\u5883\u5361\u8428\u5e03\u5170\u5361\u65f6\u8fdb\u5165\u6469\u6d1b\u54e5\u822a\u7a7a\u5546\u52a1\u8d35\u5bbe\u5ba4\uff1a\u671d\u4e2d\u8f6c/\u8f6c\u673a\u767b\u673a\u53e3\u524d\u8fdb\uff08\u8ddf\u968f\u201cconnection fly\u201d\u6807\u5fd7\uff09\u3002\u901a\u8fc7\u62a4\u7167\u548c\u5b89\u68c0\u540e\uff0c\u627e\u5230\u8be5\u822a\u7a7a\u516c\u53f8\u7684\u4fe1\u606f\u53f0\u3002\u5728\u51fa\u793a\u767b\u673a\u724c\u65f6\u53cd\u590d\u8bf4\u660e\u201cfree lounge\u201d\uff08\u514d\u8d39\u8d35\u5bbe\u5ba4\uff09\u3002\u5c3d\u7ba1\u4ed6\u4eec\u53ef\u80fd\u4f1a\u63d0\u4f9b\u4ed8\u8d39\u7684\u201cVIP\u201d\u9009\u9879\uff0c\u8bf7\u575a\u6301\u8981\u6c42\u201c\u514d\u8d39\u8d35\u5bbe\u5ba4\u201d\u3002\u60a8\u5e94\u83b7\u5f97\u4e00\u4efd\u9910\u5238\uff0c\u53ef\u7528\u4e8e\u5151\u6362\u9910\u996e\uff08\u4f8b\u5982\u6c99\u5a01\u739b\u3001\u9178\u5976\u3001\u96ea\u78a7\uff09\u4ee5\u53ca\u65e0\u9650\u91cf\u4f9b\u5e94\u7684\u514d\u8d39\u8336\u6c34/\u5496\u5561\u3002\u8d35\u5bbe\u5ba4\u63d0\u4f9b\u8212\u9002\u7684\u5ea7\u6905\uff0c\u662f\u6bd4\u5728\u666e\u901a\u767b\u673a\u53e3\u7b49\u5f85\u66f4\u597d\u7684\u9009\u62e9\u3002"},
+{"@type":"ListItem","position":6,"name":"\u56fd\u9645\u822a\u73ed\u4e2d\u5305\u542b\u957f\u65f6\u505c\u7559\uff08\u59827-10\u5929\uff09\u662f\u53ef\u884c\u7684\uff0c\u4f46\u901a\u5e38\u4f1a\u589e\u52a0\u7968\u4ef7\u3002\u7b80\u5355\u7684\u505c\u7559\uff08Stopover\uff09\u901a\u5e38\u9650\u5236\u57281.5\u5929\u5de6\u53f3\uff0c\u4e0d\u4f1a\u6709\u663e\u8457\u6210\u672c\u589e\u52a0\u3002\u4e00\u4e9b\u822a\u7a7a\u516c\u53f8\u53ef\u80fd\u4e3a\u957f\u65f6\u95f4\u505c\u7559\uff08\u8d85\u8fc712\u5c0f\u65f6\uff09\u63d0\u4f9b\u514d\u8d39\u9152\u5e97\u548c\u7b7e\u8bc1\uff0c\u4f46\u8fd9\u5e76\u4e0d\u4fdd\u8bc1\u80fd\u8fdb\u5165\u5e02\u533a\u3002\u8003\u8651\u7ecf\u7531\u5f00\u7f57\u6216\u4f0a\u65af\u5766\u5e03\u5c14\u7b49\u67a2\u7ebd\u7684\u66ff\u4ee3\u8def\u7ebf\u53ef\u80fd\u5177\u5907\u6027\u4ef7\u6bd4\uff0c\u4f46\u8981\u6ce8\u610f\u6f5c\u5728\u7684\u5b89\u5168\u68c0\u67e5\uff0c\u7279\u522b\u662f\u5728\u4f0a\u65af\u5766\u5e03\u5c14\u3002"},
+{"@type":"ListItem","position":7,"name":"\u5bf9\u4e8e\u957f\u65f6\u95f4\u4e2d\u8f6c\uff0c\u6709\u51e0\u79cd\u65b9\u6848\u53ef\u9009\u3002\u571f\u8033\u5176\u822a\u7a7a\u7b49\u822a\u7a7a\u516c\u53f8\u53ef\u80fd\u4f1a\u4e3a\u957f\u4e2d\u8f6c\u4e58\u5ba2\u63d0\u4f9b\u514d\u8d39\u7684\u4e2d\u8f6c\u9152\u5e97\uff1b\u8bf7\u63d0\u524d\u5411\u822a\u7a7a\u516c\u53f8\u54a8\u8be2\u3002\u6216\u8005\uff0c\u9884\u8ba2\u673a\u573a\u9644\u8fd1\u6216\u5e02\u5185\u7684\u9152\u5e97\u3002\u786e\u4fdd\u60a8\u80fd\u4f7f\u7528\u673a\u573aWi-Fi\u4ee5\u4fdd\u6301\u8054\u7edc\u3002\u5982\u679c\u513f\u7ae5\u72ec\u81ea\u65c5\u884c\uff0c\u8bf7\u8ba8\u8bba\u6f5c\u5728\u573a\u666f\u5e76\u505a\u597d\u51c6\u5907\u63aa\u65bd\uff0c\u4ee5\u5c3d\u91cf\u51cf\u5c11\u538b\u529b\u3002"},
+{"@type":"ListItem","position":8,"name":"\u8d35\u5bbe\u5ba4\u7684\u4f7f\u7528\u901a\u5e38\u6709\u65f6\u95f4\u9650\u5236\uff0c\u7279\u522b\u662f\u5728\u822a\u73ed\u8d77\u98de\u524d 2-4 \u5c0f\u65f6\uff0c\u8fd9\u5728\u957f\u9014\u7ecf\u505c\u6216\u975e\u8f6c\u673a\u65c5\u5ba2\u4e2d\u5c24\u4e3a\u5e38\u89c1\u3002\u5177\u4f53\u89c4\u5219\u56e0\u673a\u573a/\u8d35\u5bbe\u5ba4\u800c\u5f02\u3002\u4f8b\u5982\uff1a\u963f\u66fc\u63d0\u4f9b\u4e25\u683c\u76d1\u63a7\uff08\u63d0\u4f9b\u7c7b\u4f3c\u9152\u5e97\u7684\u623f\u95f4\uff0c\u9650 3 \u5f20\u901a\u884c\u8bc1\uff09\uff1b\u6df1\u5733\u673a\u573a\u5219\u5141\u8bb8\u7075\u6d3b\u5ef6\u65f6\uff08\u7531\u4e8e APP \u95ee\u9898\uff0c\u4ed8\u8d39\u8fdb\u5165\u540e\u5141\u8bb8\u505c\u7559 7 \u5c0f\u65f6\u5e76\u4f7f\u7528\u8bbe\u65bd\uff09\u3002\u83ab\u65af\u79d1\u8c22\u5217\u6885\u6377\u6c83\u673a\u573a\u4ee5\u5bbd\u677e\u8457\u79f0\uff0c\u4f46\u4eba\u6d41\u91cf\u53ef\u80fd\u975e\u5e38\u5927\u3002"},
+{"@type":"ListItem","position":9,"name":"\u5728\u4f0a\u65af\u5766\u5e03\u5c14\uff08IST\uff09\u8f6c\u673a\u4e14\u6301\u8054\u7a0b\u673a\u7968\u65f6\uff0c\u5982\u679c\u56e0\u822a\u73ed\u5ef6\u8bef\u9519\u8fc7\u8f6c\u673a\uff0c\u822a\u7a7a\u516c\u53f8\u4f1a\u4e3a\u60a8\u5b89\u6392\u540e\u7eed\u822a\u73ed\u3002\u8f6c\u673a\u8fc7\u7a0b\u53ef\u80fd\u8282\u594f\u8f83\u5feb\uff0c\u8bf7\u505a\u597d\u51c6\u5907\u3002\u8bf7\u544a\u77e5\u7a7a\u4e58\u4eba\u5458\u60a8\u7684\u8f6c\u673a\u65f6\u95f4\u7d27\u8feb\u3002\u53ef\u4ee5\u4f7f\u7528\u673a\u573a\u63d0\u4f9b\u7684\u514d\u8d39\u6446\u6e21\u8f66\uff08\u7535\u74f6\u8f66\uff09\uff0c\u513f\u7ae5\u548c\u8001\u4eba\u514d\u8d39\u3002\u4f0a\u65af\u5766\u5e03\u5c14\u673a\u573a\uff08IST\uff09\u662f\u5927\u591a\u6570\u56fd\u9645\u8f6c\u673a\u7684\u4e3b\u8981\u4e14\u66f4\u5927\u7684\u67a2\u7ebd\u673a\u573a\u3002"},
+{"@type":"ListItem","position":10,"name":"\u4ece\u83ab\u65af\u79d1\u673a\u573a\u51fa\u53d1\u65f6\uff0c\u8981\u505a\u597d\u53ef\u80fd\u51fa\u73b0\u4e25\u91cd\u822a\u73ed\u5ef6\u8bef\uff08\u5982 14-15 \u5c0f\u65f6\uff09\u7684\u51c6\u5907\uff0c\u4e14\u822a\u7a7a\u516c\u53f8\u5728\u5ef6\u8bef\u671f\u95f4\u53ef\u80fd\u4e0d\u63d0\u4f9b\u4f4f\u5bbf\u3002\u524d\u5f80\u57c3\u53ca\u7684\u66ff\u4ee3\u7b56\u7565\u662f\u901a\u8fc7\u7b2c\u4e09\u56fd\uff08\u5982\u4e9a\u7f8e\u5c3c\u4e9a\uff09\u98de\u884c\u3002\u8fd9\u53ef\u80fd\u4f7f\u65c5\u6e38\u6210\u672c\u964d\u4f4e 20-30%\uff0c\u5e76\u7f29\u77ed\u524d\u5f80\u57c3\u53ca\u7684\u822a\u7a0b\uff08\u4f8b\u5982\uff0c\u4ece\u4e9a\u7f8e\u5c3c\u4e9a\u51fa\u53d1\u4ec5\u9700 3 \u5c0f\u65f6\uff09\u3002\u4e00\u4e9b\u65c5\u884c\u8005\u79f0\uff0c\u5728\u67d0\u4e9b\u7a7a\u57df\u9650\u5236\u671f\u95f4\uff0c\u975e\u4fc4\u7f57\u65af\u822a\u7a7a\u516c\u53f8\u6216\u975e\u5305\u673a\u822a\u73ed\u53d7\u5230\u7684\u5e72\u6270\u53ef\u80fd\u8f83\u5c11\u3002"},
+{"@type":"ListItem","position":11,"name":"\u5728\u9884\u8ba2\u4e0d\u540c\u822a\u7a7a\u516c\u53f8\u7684\u8054\u7a0b\u822a\u73ed\uff08\u5206\u6bb5\u7968\uff09\u65f6\uff0c\u4e86\u89e3\u884c\u674e\u6258\u8fd0\u548c\u91cd\u65b0\u9884\u8ba2\u653f\u7b56\u81f3\u5173\u91cd\u8981\u3002\u5982\u679c\u521d\u59cb\u9884\u8ba2\u662f\u4e00\u4e2a\u5355\u4e00\u884c\u7a0b\uff08\u5373\u4f7f\u662f\u4ee3\u7801\u5171\u4eab\uff09\uff0c\u822a\u7a7a\u516c\u53f8\u901a\u5e38\u8d1f\u8d23\u786e\u4fdd\u4e58\u5ba2\u53ca\u5176\u884c\u674e\u62b5\u8fbe\u6700\u7ec8\u76ee\u7684\u5730\u3002\u7136\u800c\uff0c\u4e25\u91cd\u7684\u5ef6\u8bef\u6216\u4e2d\u65ad\u4f1a\u4f7f\u60c5\u51b5\u590d\u6742\u5316\u3002\u5728\u5904\u7406\u6d89\u53ca\u963f\u8054\u914b\u822a\u7a7a\u548c\u6bdb\u91cc\u6c42\u65af\u822a\u7a7a\u7b49\u4e0d\u540c\u627f\u8fd0\u4eba\u7684\u5355\u4e00\u884c\u7a0b\u65f6\uff0c\u5efa\u8bae\u52a1\u5fc5\u4e0e\u7968\u52a1\u4ee3\u7406\u6216\u822a\u7a7a\u516c\u53f8\u786e\u8ba4\u884c\u674e\u76f4\u6302\u6d41\u7a0b\u548c\u91cd\u65b0\u9884\u8ba2\u6743\u5229\u3002"},
+{"@type":"ListItem","position":12,"name":"\u5728\u8fea\u62dc\u8f6c\u673a\u524d\u5f80\u6bdb\u91cc\u6c42\u65af\u7684\u77ed\u65f6\u95f4\uff08\u4f8b\u598235\u5206\u949f\uff09\u822a\u73ed\uff0c\u5982\u679c\u673a\u7968\u662f\u540c\u4e00\u822a\u7a7a\u516c\u53f8\u6216\u4ee3\u7801\u5171\u4eab\u5408\u4f5c\u4f19\u4f34\uff08\u5982\u963f\u8054\u914b\u822a\u7a7a\u548c\u6bdb\u91cc\u6c42\u65af\u822a\u7a7a\uff09\u7684\u5355\u4e00\u9884\u8ba2\uff0c\u5219\u822a\u7a7a\u516c\u53f8\u6709\u8d23\u4efb\u786e\u4fdd\u8f6c\u673a\u8854\u63a5\u3002\u4e58\u5ba2\u53ef\u80fd\u4f1a\u5f97\u5230\u822a\u7a7a\u516c\u53f8\u4ee3\u8868\u7684\u534f\u52a9\uff0c\u6216\u8005\u88ab\u6539\u7b7e\u5230\u4e0b\u4e00\u4e2a\u53ef\u7528\u822a\u73ed\u3002\u5efa\u8bae\u544a\u77e5\u4e58\u52a1\u7ec4\u77ed\u65f6\u95f4\u8854\u63a5\u7684\u60c5\u51b5\uff0c\u5e76\u7559\u610f\u6f5c\u5728\u7684\u4e2d\u95f4\u5b89\u68c0\u3002\u8fc7\u53bb\u5728\u5176\u4ed6\u673a\u573a\u7ecf\u5386\u7c7b\u4f3c\u7684\u77ed\u65f6\u95f4\u8854\u63a5\uff0815-20\u5206\u949f\uff09\u4e5f\u662f\u6210\u529f\u7684\u3002"},
+{"@type":"ListItem","position":13,"name":"\u5728\u8c22\u5217\u6885\u6377\u6c83\u673a\u573a\uff08Sheremetyevo Airport\uff09\u901a\u8fc7\u5b89\u68c0\u548c\u6d77\u5173\u7684\u8fc7\u7a0b\u975e\u5e38\u9ad8\u6548\uff0c\u524d\u63d0\u662f\u884c\u674e\u8f83\u5c11\u4e14\u6301\u6709\u9884\u5148\u51c6\u5907\u597d\u7684\u65c5\u884c\u8bc1\u4ef6\u3002\u5305\u62ec\u81ea\u52a8\u5316\u62a4\u7167\u67e5\u9a8c\u548c\u5b89\u68c0\u5728\u5185\u7684\u6574\u4e2a\u8fc7\u7a0b\u6700\u5feb\u4ec5\u9700 15-20 \u5206\u949f\uff0c\u4e3a\u77ed\u6682\u505c\u7559\u63d0\u4f9b\u4e86\u5145\u88d5\u7684\u65f6\u95f4\u3002\u4e0e\u8fc7\u53bb\u957f\u671f\u79bb\u5883\u65f6\u5e38\u89c1\u7684\u590d\u6742\u68c0\u67e5\u548c\u6587\u6863\u6838\u5b9e\u6d41\u7a0b\u76f8\u6bd4\uff0c\u8fd9\u662f\u4e00\u9879\u663e\u8457\u7684\u6539\u8fdb\u3002"},
+{"@type":"ListItem","position":14,"name":"\u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573a\uff08PVG\uff09\u76841\u5c0f\u65f645\u5206\u949f\u8f6c\u673a\u65f6\u95f4\u56e0\u673a\u573a\u9762\u79ef\u5de8\u5927\u4e14\u53ef\u80fd\u6392\u961f\u800c\u88ab\u8ba4\u4e3a\u5b58\u5728\u98ce\u9669\u3002\u7136\u800c\uff0c\u5982\u679c\u822a\u73ed\u51c6\u70b9\uff0c\u8fd9\u53ef\u80fd\u662f\u53ef\u884c\u7684\u3002\u884c\u7a0b\u8854\u63a5\u7d27\u5bc6\u7684\u4e58\u5ba2\u5e94\u4e3b\u52a8\u5411\u673a\u573a\u5de5\u4f5c\u4eba\u5458\u51fa\u793a\u767b\u673a\u724c\uff0c\u4ee5\u5bfb\u6c42\u4f18\u5148\u901a\u8fc7\u6216\u534f\u52a9\u3002\u8bf7\u6ce8\u610f\u822a\u7ad9\u697c\u95f4\u7684\u4ea4\u901a\u65b9\u5f0f\uff0c\u4f8b\u5982\u5730\u94c1\u3002"},
+{"@type":"ListItem","position":15,"name":"\u5728\u4f0a\u65af\u5766\u5e03\u5c14\u673a\u573a\uff08IST\uff09\u8fdb\u884c\u56fd\u9645\u822a\u73ed\u4e2d\u8f6c\u65f6\uff0c\u5bf9\u4e8e\u8f6c\u673a\u4e58\u5ba2\uff0c\u5b89\u68c0\u548c\u6587\u4ef6\u68c0\u67e5\u901a\u5e38\u5f88\u5c11\u3002\u4e58\u5ba2\u901a\u5e38\u53ea\u9700\u5728\u4e0b\u4e00\u7a0b\u822a\u73ed\u7684\u767b\u673a\u8fc7\u7a0b\u4e2d\u51fa\u793a\u767b\u673a\u724c\uff0c\u65e0\u9700\u8fdb\u884c\u7e41\u7410\u7684\u4e8c\u6b21\u5b89\u68c0\u6216\u8be6\u7ec6\u7684\u8fc7\u5883\u62a4\u7167\u68c0\u67e5\u3002\u5bf9\u4e8e\u524d\u5f80\u8377\u5170\u7b49\u76ee\u7684\u5730\u7684\u822a\u73ed\uff0c\u8fd9\u79cd\u4f53\u9a8c\u5f88\u5e38\u89c1\u3002"},
+{"@type":"ListItem","position":16,"name":"\u9884\u8ba2\u5206\u5f00\u51fa\u7968\u7684\u8054\u7a0b\u822a\u73ed\u65f6\uff0c\u8bf7\u7559\u51fa\u5145\u8db3\u7684\u4e2d\u8f6c\u65f6\u95f4\u3002\u8fd9\u6d89\u53ca\u529e\u7406\u79fb\u6c11\u5165\u5883\u3001\u63d0\u53d6\u884c\u674e\u4ee5\u53ca\u4e3a\u4e0b\u4e00\u73ed\u822a\u73ed\u91cd\u65b0\u503c\u673a\u3002\u5bf9\u4e8e\u4ece\u4fc4\u7f57\u65af\u5357\u90e8\u673a\u573a\u51fa\u53d1\u7684\u822a\u73ed\uff0c\u5efa\u8bae\u9884\u755924\u5c0f\u65f6\u7684\u4e2d\u8f6c\u65f6\u95f4\u3002\u5373\u4f7f\u6ca1\u6709\u4e25\u91cd\u5ef6\u8bef\uff0c\u4e5f\u5efa\u8bae\u9884\u7559\u81f3\u5c115-6\u5c0f\u65f6\u7684\u4e2d\u8f6c\u65f6\u95f4\uff0c\u4ee5\u5e94\u5bf9\u5404\u79cd\u6d41\u7a0b\u6240\u9700\u65f6\u95f4\u3002\u5982\u679c\u53ef\u80fd\uff0c\u8fc7\u591c\u4e2d\u8f6c\u662f\u7f13\u89e3\u822a\u73ed\u5ef6\u8bef\u76f8\u5173\u98ce\u9669\u7684\u53ef\u884c\u5efa\u8bae\u3002"},
+{"@type":"ListItem","position":17,"name":"\u5728\u5355\u4e00\u673a\u7968\uff08\u5355\u4e00\u9884\u8ba2\u7f16\u53f7\uff09\u4e0b\uff0c\u5982\u679c\u56e0\u822a\u73ed\u5ef6\u8bef\u6216\u4e0d\u53ef\u6297\u529b\u5bfc\u81f4\u9519\u8fc7\u4e2d\u8f6c\uff0c\u8fd0\u8425\u822a\u7a7a\u516c\u53f8\u5728\u6cd5\u5f8b\u4e0a\u6709\u8d23\u4efb\u8d1f\u8d23\u6539\u7b7e\u3001\u63d0\u4f9b\u9910\u98df\u548c\u4f4f\u5bbf\u3002\u4e58\u5ba2\u5e94\u76f4\u63a5\u8054\u7cfb\u4e2d\u8f6c\u67a2\u7ebd\u7684\u822a\u7a7a\u516c\u53f8\u4e2d\u8f6c\u67dc\u53f0\u3002"},
+{"@type":"ListItem","position":18,"name":"\u5361\u8428\u5e03\u5170\u5361\u81f3\u5723\u4fdd\u7f57\u822a\u7ebf\u4e0a\u7684\u6ce2\u97f3787-900\u673a\u578b\u88ab\u8ba4\u4e3a\u8212\u9002\u5ea6\u8f83\u9ad8\u3002\u867d\u7136\u6ca1\u6709\u8be6\u7ec6\u8bf4\u660e\u51fa\u53e3\u6392\u6216\u5176\u4ed6\u4f4d\u7f6e\u7684\u5177\u4f53\u817f\u90e8\u7a7a\u95f4\u4fe1\u606f\uff0c\u4f46\u8eab\u9ad8180\u5398\u7c73\u7684\u4e58\u5ba2\u53d1\u73b0\u6807\u51c6\u5ea7\u4f4d\u5bf9\u4e8e6.5\u5c0f\u65f6\u7684\u98de\u884c\u6765\u8bf4\u662f\u201c\u53ef\u4ee5\u5fcd\u53d7\u7684\u201d\u3002\u8d77\u98de\u524d48\u5c0f\u65f6\u53ef\u8fdb\u884c\u514d\u8d39\u5728\u7ebf\u503c\u673a\u3002"},
+{"@type":"ListItem","position":19,"name":"\u5bf9\u4e8e\u8054\u7a0b\u822a\u73ed\uff0c4\u5c0f\u65f6\u7684\u8f6c\u673a\u65f6\u95f4\u901a\u5e38\u8db3\u591f\uff0c\u5c24\u5176\u662f\u5982\u679c\u6240\u6709\u822a\u6bb5\u5747\u7531\u540c\u4e00\u822a\u7a7a\u516c\u53f8\u6267\u98de\u4e14\u884c\u674e\u76f4\u6302\u81f3\u6700\u7ec8\u76ee\u7684\u5730\u3002\u5728\u8fd9\u79cd\u60c5\u51b5\u4e0b\uff0c\u9884\u75591.5-2\u5c0f\u65f6\u7684\u8f6c\u673a\u65f6\u95f4\u901a\u5e38\u662f\u5145\u8db3\u7684\u3002"},
+{"@type":"ListItem","position":20,"name":"\u5982\u679c\u8d2d\u4e70\u7684\u662f\u8054\u7a0b\u673a\u7968\uff0c\u4e14\u56e0\u822a\u73ed\u5ef6\u8bef\u9519\u8fc7\u8f6c\u673a\uff0c\u540c\u4e00\u822a\u7a7a\u516c\u53f8\u5c06\u4e3a\u60a8\u6539\u7b7e\u81f3\u4e0b\u4e00\u73ed\u53ef\u7528\u822a\u73ed\u30021\u5c0f\u65f6\u7684\u8f6c\u673a\u65f6\u95f4\u975e\u5e38\u7d27\u8feb\u4e14\u98ce\u9669\u6781\u9ad8\u3002"},
+{"@type":"ListItem","position":21,"name":"\u822a\u7a7a\u516c\u53f8\uff0c\u7279\u522b\u662f\u5728\u901a\u8fc7\u4f0a\u65af\u5766\u5e03\u5c14\u7b49\u4e3b\u8981\u67a2\u7ebd\u8fdb\u884c\u957f\u9014\u8f6c\u673a\u65f6\uff0c\u53ef\u80fd\u4f1a\u8d85\u552e\u3002\u4e58\u5ba2\u5e94\u59cb\u7ec8\u51c6\u5907\u597d\u7eed\u7a0b\u65c5\u884c\u7684\u8bc1\u660e\uff0c\u56e0\u4e3a\u822a\u7a7a\u516c\u53f8\u5de5\u4f5c\u4eba\u5458\u53ef\u80fd\u4f1a\u5728\u767b\u673a\u53e3\u8981\u6c42\u68c0\u67e5\uff0c\u4ee5\u786e\u4fdd\u65c5\u5ba2\u4e0d\u4f1a\u201c\u6ede\u7559\u201d\u5728\u5f53\u5730\u3002\u4f7f\u7528\u53ef\u4ee5\u5728\u6700\u540e\u4e00\u523b\u8d2d\u4e70\u6216\u53d6\u6d88\u7684\u53ef\u9000\u6b3e\u673a\u7968\u662f\u9488\u5bf9\u8fd9\u79cd\u60c5\u51b5\u7684\u4e00\u79cd\u5e38\u89c1\u65c5\u884c\u6280\u5de7\u3002"},
+{"@type":"ListItem","position":22,"name":"\u5f53\u6301\u5355\u4e00\u673a\u7968\u7ecf\u7531\u5df4\u5e93\u4e2d\u8f6c\u65f6\uff0c\u8bf7\u7559\u610f\u5019\u673a\u533a\u5185\u7684\u5728\u7ebf\u51fa\u53d1/\u5230\u8fbe\u663e\u793a\u5c4f\u3002\u8fd9\u4e9b\u5c4f\u5e55\u4f1a\u5b9e\u65f6\u66f4\u65b0\u822a\u73ed\u65f6\u523b\u8868\uff0c\u5305\u62ec\u4efb\u4f55\u5ef6\u8bef\u4fe1\u606f\u3002"},
+{"@type":"ListItem","position":23,"name":"\u5982\u679c\u662f\u5728\u540c\u4e00\u5bb6\u822a\u7a7a\u516c\u53f8\u7684\u540c\u4e00\u9884\u8ba2\u4ee3\u7801\uff08PNR\uff09\u4e0b\u98de\u884c\uff0c\u5f53\u56e0\u822a\u7a7a\u516c\u53f8\u81ea\u8eab\u5ef6\u8bef\u5bfc\u81f4\u4e58\u5ba2\u9519\u8fc7\u8f6c\u673a\u65f6\uff0c\u822a\u7a7a\u516c\u53f8\u6709\u8d23\u4efb\u4e3a\u4e58\u5ba2\u6539\u7b7e\u81f3\u4e0b\u4e00\u4e2a\u53ef\u7528\u7684\u822a\u73ed\u3002"},
+{"@type":"ListItem","position":24,"name":"\u5982\u679c\u56e0\u5355\u4e00\u673a\u7968\uff08PNR\uff09\u4e0b\u7684\u822a\u7a7a\u516c\u53f8\u5ef6\u8bef\u800c\u9519\u8fc7\u8f6c\u673a\uff0c\u822a\u7a7a\u516c\u53f8\u6709\u8d23\u4efb\u91cd\u65b0\u5b89\u6392\u3002\u5bf9\u4e8e\u5361\u5854\u5c14\u822a\u7a7a\u6216\u571f\u8033\u5176\u822a\u7a7a\u7b49\u5927\u578b\u822a\u53f8\uff0c\u4e58\u5ba2\u5e94\u524d\u5f80\u8f6c\u673a\u533a\u57df\u7684\u8f6c\u673a\u67dc\u53f0\u3002\u5982\u679c\u7b49\u5f85\u65f6\u95f4\u8d85\u8fc7 8 \u5c0f\u65f6\uff0c\u822a\u7a7a\u516c\u53f8\u901a\u5e38\u5fc5\u987b\u63d0\u4f9b\u9152\u5e97\u4f4f\u5bbf\u548c\u9910\u5238\u3002\u52a1\u5fc5\u6838\u5b9e\u673a\u7968\u662f\u5426\u4e3a\u201c\u5355\u4e00 PNR\u201d\uff0c\u4ee5\u786e\u4fdd\u83b7\u5f97\u8fd9\u4e9b\u4fdd\u62a4\u3002"},
+{"@type":"ListItem","position":25,"name":"\u4ece\u4fc4\u7f57\u65af\u4e9a\u6d32\u5730\u533a\u51fa\u53d1\u5bfb\u6c42\u98de\u5f80\u4f0a\u65af\u5766\u5e03\u5c14\u822a\u73ed\u7684\u65c5\u5ba2\u53ef\u80fd\u4f1a\u53d1\u73b0\u5854\u4ec0\u5e72\u3001\u963f\u62c9\u6728\u56fe\u548c\u6bd4\u4ec0\u51ef\u514b\u4f5c\u4e3a\u67a2\u7ebd\u975e\u5e38\u4fbf\u5229\u3002\u636e\u62a5\u9053\uff0c\u8fd9\u4e9b\u822a\u7ebf\u6709\u65f6\u53ef\u9760\u6027\u66f4\u9ad8\uff08\u53d6\u6d88\u6216\u5ef6\u8bef\u8f83\u5c11\uff09\u3002\u4e00\u4e9b\u65c5\u5ba2\u8fd8\u6307\u51fa\uff0c\u4e4c\u5179\u522b\u514b\u65af\u5766\u822a\u7a7a\u516c\u53f8\uff08Uzbekistan Airways\uff09\u6bd4\u4fc4\u7f57\u65af\u822a\u7a7a\uff08Aeroflot\uff09\u4f53\u9a8c\u66f4\u8212\u9002\u3002\u5305\u542b\u884c\u674e\u8d39\u7684\u98de\u5f80\u83ab\u65af\u79d1\u7684\u673a\u7968\u8d39\u7528\u53ef\u80fd\u4e0e\u4ece\u8fd9\u4e9b\u4e2d\u4e9a\u67a2\u7ebd\u76f4\u63a5\u98de\u5f80\u4f0a\u65af\u5766\u5e03\u5c14\u7684\u8d39\u7528\u76f8\u5f53\u3002"},
+{"@type":"ListItem","position":26,"name":"\u5bf9\u4e8e\u4ece\u6b27\u6d32\u98de\u5f80\u91cc\u7ea6\u70ed\u5185\u5362\u6216\u5723\u4fdd\u7f57\u7684\u822a\u73ed\uff0c\u7531\u4e8e\u6709\u76f4\u98de\u822a\u73ed\uff0c\u901a\u5e38\u63a8\u8350\u7ecf\u7531\u8461\u8404\u7259\u8f6c\u673a\u3002\u4f8b\u5982\uff0c\u4ece\u91cc\u65af\u672c\u76f4\u98de\u5723\u4fdd\u7f57\u7684\u822a\u73ed\u901a\u5e38\u8017\u65f6\u7ea610\u5c0f\u65f6\u3002"}
+]}
+</script>
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 \u591c\u95f4", DAY="\u2600 \u65e5\u95f4";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

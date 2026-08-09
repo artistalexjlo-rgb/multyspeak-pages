@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>俄罗斯：设备检查与数字隐私保护 — 真实经验 · Luky</title>
+<meta name="description" content="来自聊天群的关于俄罗斯「设备检查与数字隐私保护」的真实经验：原样呈现，第一手。你的具体情况 — 问 Luky。">
+<link rel="canonical" href="https://info.multyspeak.ru/zh/ru/device-inspection-and-digital-hygiene/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.ru/ru/ru/device-inspection-and-digital-hygiene/">
+<link rel="alternate" hreflang="ar" href="https://info.multyspeak.ru/ar/ru/device-inspection-and-digital-hygiene/">
+<link rel="alternate" hreflang="de" href="https://info.multyspeak.ru/de/ru/device-inspection-and-digital-hygiene/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.ru/en/ru/device-inspection-and-digital-hygiene/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.ru/es/ru/device-inspection-and-digital-hygiene/">
+<link rel="alternate" hreflang="fr" href="https://info.multyspeak.ru/fr/ru/device-inspection-and-digital-hygiene/">
+<link rel="alternate" hreflang="hi" href="https://info.multyspeak.ru/hi/ru/device-inspection-and-digital-hygiene/">
+<link rel="alternate" hreflang="it" href="https://info.multyspeak.ru/it/ru/device-inspection-and-digital-hygiene/">
+<link rel="alternate" hreflang="ja" href="https://info.multyspeak.ru/ja/ru/device-inspection-and-digital-hygiene/">
+<link rel="alternate" hreflang="ko" href="https://info.multyspeak.ru/ko/ru/device-inspection-and-digital-hygiene/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.ru/pt/ru/device-inspection-and-digital-hygiene/">
+<link rel="alternate" hreflang="th" href="https://info.multyspeak.ru/th/ru/device-inspection-and-digital-hygiene/">
+<link rel="alternate" hreflang="tr" href="https://info.multyspeak.ru/tr/ru/device-inspection-and-digital-hygiene/">
+<link rel="alternate" hreflang="zh" href="https://info.multyspeak.ru/zh/ru/device-inspection-and-digital-hygiene/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.ru/ru/ru/device-inspection-and-digital-hygiene/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+/* тег типа абзаца (хвост-антологии: lifehack/reglament/howto/risk/case/service) */
+.tag{display:inline-block;font-family:var(--font-mono);font-weight:400;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);
+  border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:2px;white-space:nowrap}
+.tag.risk{color:var(--red);border-color:var(--red)}
+.tag.reglament{color:var(--accent);border-color:var(--accent)}
+.tag.lifehack{color:var(--green);border-color:var(--green)}
+.tag.service{color:var(--yellow);border-color:var(--yellow)}
+.tag.howto{color:var(--hud);border-color:var(--hud)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">信息门户 · 任何国家 · 不掺水</span>
+    </div>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="" href="/ru/ru/device-inspection-and-digital-hygiene/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/ar/ru/device-inspection-and-digital-hygiene/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>AR</a>
+        <a class="" href="/de/ru/device-inspection-and-digital-hygiene/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>DE</a>
+        <a class="" href="/en/ru/device-inspection-and-digital-hygiene/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/ru/device-inspection-and-digital-hygiene/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/fr/ru/device-inspection-and-digital-hygiene/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>FR</a>
+        <a class="" href="/hi/ru/device-inspection-and-digital-hygiene/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>HI</a>
+        <a class="" href="/it/ru/device-inspection-and-digital-hygiene/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>IT</a>
+        <a class="" href="/ja/ru/device-inspection-and-digital-hygiene/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>JA</a>
+        <a class="" href="/ko/ru/device-inspection-and-digital-hygiene/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>KO</a>
+        <a class="" href="/pt/ru/device-inspection-and-digital-hygiene/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+        <a class="" href="/th/ru/device-inspection-and-digital-hygiene/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TH</a>
+        <a class="" href="/tr/ru/device-inspection-and-digital-hygiene/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TR</a>
+        <a class="" href="/zh/ru/device-inspection-and-digital-hygiene/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ZH</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ 夜间</span></button>
+    </div>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/zh-Hans/">首页</a> /
+    <a href="/zh-Hans/ru/">俄罗斯</a> /
+    <b>设备检查与数字隐私保护</b>
+  </nav>
+
+
+  
+  <h1>俄罗斯的设备检查与数字隐私保护：来自聊天群的真实经验</h1>
+  <span class="section-label">简短回答</span>
+  <div class="plate answer"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">俄罗斯边境可能对特定国籍或背景的旅客进行手机检查，包括查阅社交媒体、私人消息及联系人列表，尤其在陆路边境和特定机场更为频繁。建议旅客提前清理敏感数据并保持数字卫生，以应对潜在的详细盘问和设备审查。</div></div>
+
+  <h2>来自真实经验</h2>
+  <details open><summary><span class="sumq">自2026年4月以来，俄罗斯边检部门在手机检查方面的权力一直是讨论的话题。虽然一些资料指出，根据《俄罗斯联邦宪法》第23条，未经法院命令仅允许进行设备外观检查，但轶事证据表明，非俄罗斯护照持有者（特别是拥有欧盟居留许可或国籍的人士，或与乌克兰有联系的人士）可能会面临漫长的审问（2-4小时）和侵入性的数字设备检查（阅读即时通讯软件、通讯录）。据报道，这种情况在陆路边境更常见。一些持有法国长期居留许可（VNJ）的旅客表示没有遇到问题，而其他人则面临了详细的盘问。目前存在相互矛盾的信息和不同的经历。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">回到俄罗斯后，旅客可能会接受延长边检，包括检查手机。个人设备会受到审查，以查找潜在的敏感内容，例如社交媒体帖子或与国际资金相关的金融交易。这些检查耗时可能很长，审查范围也非常全面，包括 WhatsApp 和 Telegram。这些检查的合法性和范围经常引发争议，一些用户称这是特定法律下的标准程序，而另一些人则认为检查是武断或过度的。建议旅客提高警惕，特别是如果他们曾在网上表达过异见或从事过有争议的活动。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">俄罗斯边境管制部门可能会根据个人的出生地（乌克兰、克里米亚、摩尔多瓦、中亚）进行审查。拥有双重国籍或居留许可可能会导致延误。手机检查和审讯时有发生。出生于俄罗斯的个人通常面临的问题较少。处理时间差异很大。拥有外国国籍有时可以减轻这些检查。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">离开俄罗斯时，需注意边境可能会进行手机检查。虽然大家担心严格的检查，但这对普通旅客来说并不常见。请准备好证明您的设备可以正常工作。部分机场可能在进入航站楼之前要求您开启手机作为安检的一部分。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">在谢列梅捷沃机场，俄罗斯边境检查人员对手机进行检查并不是对所有旅客的常规操作。多次有旅客报告手机未被检查。然而，有人认为，特定国籍人士（例如乌克兰公民）被检查的可能性可能较高。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq">据报道，莫斯科机场（多莫杰多沃、伏努科沃）对入境国际航班实施严格安检，包括详细的手机检查。当局可能会查阅私人消息和联系人列表。建议旅行前保持数字卫生或清理敏感数据。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+
+  <h2>相关主题</h2>
+  <div class="chips">
+    <a class="chip" href="/zh/ru/visa-center-procedures/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 签证中心递签与取签</span></a>
+    <a class="chip" href="/zh/ru/appointment-booking-strategies/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 预约名额监控策略</span></a>
+    <a class="chip" href="/zh/ru/risks-for-individuals-with-ukraine-ties/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 乌克兰相关背景人员的风险提示</span></a>
+    <a class="chip" href="/zh/ru/entry-rules-for-foreign-nationals-and-re/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 外籍、永居及双重国籍入境指南</span></a>
+    <a class="chip" href="/zh/ru/applying-for-an-international-passport/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 护照办理</span></a>
+    <a class="chip" href="/zh/ru/vfs-global-technical-issues/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• VFS Global 网站故障排查</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>泛泛的文章有很多 — 但适合你的解决办法呢？</h2>
+    <p>问 Luky — 来自人们最近的经验，不是手册.</p>
+    <p>而 Luky 还是真实对话的实时语音翻译： 在店里弄清楚你到底在买什么.</p>
+    <p class="ps">PS：在游戏语音里，你能听懂来自半个地球的队友</p>
+    <a class="btn" href="https://multyspeak.ru" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>打开 Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — 来自社区聊天群的真实经验，不掺水</div>
+    <nav class="f-links">
+      <a href="/zh-Hans/about/">关于</a>
+      <a href="/zh-Hans/ru/">所有主题</a>
+      <a href="/zh-Hans/">国家</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">答案取自公开的社区聊天群 — 这是人们的真实经验，不是官方建议。做重要决定前请自行核实。</p>
+    <div class="f-copy">© 2026 Luky · 更新于 08.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"\u81ea2026\u5e744\u6708\u4ee5\u6765\uff0c\u4fc4\u7f57\u65af\u8fb9\u68c0\u90e8\u95e8\u5728\u624b\u673a\u68c0\u67e5\u65b9\u9762\u7684\u6743\u529b\u4e00\u76f4\u662f\u8ba8\u8bba\u7684\u8bdd\u9898\u3002\u867d\u7136\u4e00\u4e9b\u8d44\u6599\u6307\u51fa\uff0c\u6839\u636e\u300a\u4fc4\u7f57\u65af\u8054\u90a6\u5baa\u6cd5\u300b\u7b2c23\u6761\uff0c\u672a\u7ecf\u6cd5\u9662\u547d\u4ee4\u4ec5\u5141\u8bb8\u8fdb\u884c\u8bbe\u5907\u5916\u89c2\u68c0\u67e5\uff0c\u4f46\u8f76\u4e8b\u8bc1\u636e\u8868\u660e\uff0c\u975e\u4fc4\u7f57\u65af\u62a4\u7167\u6301\u6709\u8005\uff08\u7279\u522b\u662f\u62e5\u6709\u6b27\u76df\u5c45\u7559\u8bb8\u53ef\u6216\u56fd\u7c4d\u7684\u4eba\u58eb\uff0c\u6216\u4e0e\u4e4c\u514b\u5170\u6709\u8054\u7cfb\u7684\u4eba\u58eb\uff09\u53ef\u80fd\u4f1a\u9762\u4e34\u6f2b\u957f\u7684\u5ba1\u95ee\uff082-4\u5c0f\u65f6\uff09\u548c\u4fb5\u5165\u6027\u7684\u6570\u5b57\u8bbe\u5907\u68c0\u67e5\uff08\u9605\u8bfb\u5373\u65f6\u901a\u8baf\u8f6f\u4ef6\u3001\u901a\u8baf\u5f55\uff09\u3002\u636e\u62a5\u9053\uff0c\u8fd9\u79cd\u60c5\u51b5\u5728\u9646\u8def\u8fb9\u5883\u66f4\u5e38\u89c1\u3002\u4e00\u4e9b\u6301\u6709\u6cd5\u56fd\u957f\u671f\u5c45\u7559\u8bb8\u53ef\uff08VNJ\uff09\u7684\u65c5\u5ba2\u8868\u793a\u6ca1\u6709\u9047\u5230\u95ee\u9898\uff0c\u800c\u5176\u4ed6\u4eba\u5219\u9762\u4e34\u4e86\u8be6\u7ec6\u7684\u76d8\u95ee\u3002\u76ee\u524d\u5b58\u5728\u76f8\u4e92\u77db\u76fe\u7684\u4fe1\u606f\u548c\u4e0d\u540c\u7684\u7ecf\u5386\u3002"},
+{"@type":"ListItem","position":2,"name":"\u56de\u5230\u4fc4\u7f57\u65af\u540e\uff0c\u65c5\u5ba2\u53ef\u80fd\u4f1a\u63a5\u53d7\u5ef6\u957f\u8fb9\u68c0\uff0c\u5305\u62ec\u68c0\u67e5\u624b\u673a\u3002\u4e2a\u4eba\u8bbe\u5907\u4f1a\u53d7\u5230\u5ba1\u67e5\uff0c\u4ee5\u67e5\u627e\u6f5c\u5728\u7684\u654f\u611f\u5185\u5bb9\uff0c\u4f8b\u5982\u793e\u4ea4\u5a92\u4f53\u5e16\u5b50\u6216\u4e0e\u56fd\u9645\u8d44\u91d1\u76f8\u5173\u7684\u91d1\u878d\u4ea4\u6613\u3002\u8fd9\u4e9b\u68c0\u67e5\u8017\u65f6\u53ef\u80fd\u5f88\u957f\uff0c\u5ba1\u67e5\u8303\u56f4\u4e5f\u975e\u5e38\u5168\u9762\uff0c\u5305\u62ec WhatsApp \u548c Telegram\u3002\u8fd9\u4e9b\u68c0\u67e5\u7684\u5408\u6cd5\u6027\u548c\u8303\u56f4\u7ecf\u5e38\u5f15\u53d1\u4e89\u8bae\uff0c\u4e00\u4e9b\u7528\u6237\u79f0\u8fd9\u662f\u7279\u5b9a\u6cd5\u5f8b\u4e0b\u7684\u6807\u51c6\u7a0b\u5e8f\uff0c\u800c\u53e6\u4e00\u4e9b\u4eba\u5219\u8ba4\u4e3a\u68c0\u67e5\u662f\u6b66\u65ad\u6216\u8fc7\u5ea6\u7684\u3002\u5efa\u8bae\u65c5\u5ba2\u63d0\u9ad8\u8b66\u60d5\uff0c\u7279\u522b\u662f\u5982\u679c\u4ed6\u4eec\u66fe\u5728\u7f51\u4e0a\u8868\u8fbe\u8fc7\u5f02\u89c1\u6216\u4ece\u4e8b\u8fc7\u6709\u4e89\u8bae\u7684\u6d3b\u52a8\u3002"},
+{"@type":"ListItem","position":3,"name":"\u4fc4\u7f57\u65af\u8fb9\u5883\u7ba1\u5236\u90e8\u95e8\u53ef\u80fd\u4f1a\u6839\u636e\u4e2a\u4eba\u7684\u51fa\u751f\u5730\uff08\u4e4c\u514b\u5170\u3001\u514b\u91cc\u7c73\u4e9a\u3001\u6469\u5c14\u591a\u74e6\u3001\u4e2d\u4e9a\uff09\u8fdb\u884c\u5ba1\u67e5\u3002\u62e5\u6709\u53cc\u91cd\u56fd\u7c4d\u6216\u5c45\u7559\u8bb8\u53ef\u53ef\u80fd\u4f1a\u5bfc\u81f4\u5ef6\u8bef\u3002\u624b\u673a\u68c0\u67e5\u548c\u5ba1\u8baf\u65f6\u6709\u53d1\u751f\u3002\u51fa\u751f\u4e8e\u4fc4\u7f57\u65af\u7684\u4e2a\u4eba\u901a\u5e38\u9762\u4e34\u7684\u95ee\u9898\u8f83\u5c11\u3002\u5904\u7406\u65f6\u95f4\u5dee\u5f02\u5f88\u5927\u3002\u62e5\u6709\u5916\u56fd\u56fd\u7c4d\u6709\u65f6\u53ef\u4ee5\u51cf\u8f7b\u8fd9\u4e9b\u68c0\u67e5\u3002"},
+{"@type":"ListItem","position":4,"name":"\u79bb\u5f00\u4fc4\u7f57\u65af\u65f6\uff0c\u9700\u6ce8\u610f\u8fb9\u5883\u53ef\u80fd\u4f1a\u8fdb\u884c\u624b\u673a\u68c0\u67e5\u3002\u867d\u7136\u5927\u5bb6\u62c5\u5fc3\u4e25\u683c\u7684\u68c0\u67e5\uff0c\u4f46\u8fd9\u5bf9\u666e\u901a\u65c5\u5ba2\u6765\u8bf4\u5e76\u4e0d\u5e38\u89c1\u3002\u8bf7\u51c6\u5907\u597d\u8bc1\u660e\u60a8\u7684\u8bbe\u5907\u53ef\u4ee5\u6b63\u5e38\u5de5\u4f5c\u3002\u90e8\u5206\u673a\u573a\u53ef\u80fd\u5728\u8fdb\u5165\u822a\u7ad9\u697c\u4e4b\u524d\u8981\u6c42\u60a8\u5f00\u542f\u624b\u673a\u4f5c\u4e3a\u5b89\u68c0\u7684\u4e00\u90e8\u5206\u3002"},
+{"@type":"ListItem","position":5,"name":"\u5728\u8c22\u5217\u6885\u6377\u6c83\u673a\u573a\uff0c\u4fc4\u7f57\u65af\u8fb9\u5883\u68c0\u67e5\u4eba\u5458\u5bf9\u624b\u673a\u8fdb\u884c\u68c0\u67e5\u5e76\u4e0d\u662f\u5bf9\u6240\u6709\u65c5\u5ba2\u7684\u5e38\u89c4\u64cd\u4f5c\u3002\u591a\u6b21\u6709\u65c5\u5ba2\u62a5\u544a\u624b\u673a\u672a\u88ab\u68c0\u67e5\u3002\u7136\u800c\uff0c\u6709\u4eba\u8ba4\u4e3a\uff0c\u7279\u5b9a\u56fd\u7c4d\u4eba\u58eb\uff08\u4f8b\u5982\u4e4c\u514b\u5170\u516c\u6c11\uff09\u88ab\u68c0\u67e5\u7684\u53ef\u80fd\u6027\u53ef\u80fd\u8f83\u9ad8\u3002"},
+{"@type":"ListItem","position":6,"name":"\u636e\u62a5\u9053\uff0c\u83ab\u65af\u79d1\u673a\u573a\uff08\u591a\u83ab\u6770\u591a\u6c83\u3001\u4f0f\u52aa\u79d1\u6c83\uff09\u5bf9\u5165\u5883\u56fd\u9645\u822a\u73ed\u5b9e\u65bd\u4e25\u683c\u5b89\u68c0\uff0c\u5305\u62ec\u8be6\u7ec6\u7684\u624b\u673a\u68c0\u67e5\u3002\u5f53\u5c40\u53ef\u80fd\u4f1a\u67e5\u9605\u79c1\u4eba\u6d88\u606f\u548c\u8054\u7cfb\u4eba\u5217\u8868\u3002\u5efa\u8bae\u65c5\u884c\u524d\u4fdd\u6301\u6570\u5b57\u536b\u751f\u6216\u6e05\u7406\u654f\u611f\u6570\u636e\u3002"}
+]}
+</script>
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 \u591c\u95f4", DAY="\u2600 \u65e5\u95f4";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>any：支付、换汇与取现 — 来自聊天群的真实经验 · Luky</title>
+<meta name="description" content="关于any「支付、换汇与取现」的真实经验：来自聊天群的实用技巧、案例和规定。你的具体情况 — 问 Luky。">
+<link rel="canonical" href="https://info.multyspeak.ru/zh/any/s/finance/payments-and-currency-exchange/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.ru/ru/any/s/finance/payments-and-currency-exchange/">
+<link rel="alternate" hreflang="ar" href="https://info.multyspeak.ru/ar/any/s/finance/payments-and-currency-exchange/">
+<link rel="alternate" hreflang="de" href="https://info.multyspeak.ru/de/any/s/finance/payments-and-currency-exchange/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.ru/en/any/s/finance/payments-and-currency-exchange/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.ru/es/any/s/finance/payments-and-currency-exchange/">
+<link rel="alternate" hreflang="fr" href="https://info.multyspeak.ru/fr/any/s/finance/payments-and-currency-exchange/">
+<link rel="alternate" hreflang="hi" href="https://info.multyspeak.ru/hi/any/s/finance/payments-and-currency-exchange/">
+<link rel="alternate" hreflang="it" href="https://info.multyspeak.ru/it/any/s/finance/payments-and-currency-exchange/">
+<link rel="alternate" hreflang="ja" href="https://info.multyspeak.ru/ja/any/s/finance/payments-and-currency-exchange/">
+<link rel="alternate" hreflang="ko" href="https://info.multyspeak.ru/ko/any/s/finance/payments-and-currency-exchange/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.ru/pt/any/s/finance/payments-and-currency-exchange/">
+<link rel="alternate" hreflang="th" href="https://info.multyspeak.ru/th/any/s/finance/payments-and-currency-exchange/">
+<link rel="alternate" hreflang="tr" href="https://info.multyspeak.ru/tr/any/s/finance/payments-and-currency-exchange/">
+<link rel="alternate" hreflang="zh" href="https://info.multyspeak.ru/zh/any/s/finance/payments-and-currency-exchange/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.ru/ru/any/s/finance/payments-and-currency-exchange/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+/* тег типа абзаца (хвост-антологии: lifehack/reglament/howto/risk/case/service) */
+.tag{display:inline-block;font-family:var(--font-mono);font-weight:400;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);
+  border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:2px;white-space:nowrap}
+.tag.risk{color:var(--red);border-color:var(--red)}
+.tag.reglament{color:var(--accent);border-color:var(--accent)}
+.tag.lifehack{color:var(--green);border-color:var(--green)}
+.tag.service{color:var(--yellow);border-color:var(--yellow)}
+.tag.howto{color:var(--hud);border-color:var(--hud)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">信息门户 · 任何国家 · 不掺水</span>
+    </div>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="" href="/ru/any/s/finance/payments-and-currency-exchange/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/ar/any/s/finance/payments-and-currency-exchange/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>AR</a>
+        <a class="" href="/de/any/s/finance/payments-and-currency-exchange/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>DE</a>
+        <a class="" href="/en/any/s/finance/payments-and-currency-exchange/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/any/s/finance/payments-and-currency-exchange/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/fr/any/s/finance/payments-and-currency-exchange/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>FR</a>
+        <a class="" href="/hi/any/s/finance/payments-and-currency-exchange/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>HI</a>
+        <a class="" href="/it/any/s/finance/payments-and-currency-exchange/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>IT</a>
+        <a class="" href="/ja/any/s/finance/payments-and-currency-exchange/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>JA</a>
+        <a class="" href="/ko/any/s/finance/payments-and-currency-exchange/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>KO</a>
+        <a class="" href="/pt/any/s/finance/payments-and-currency-exchange/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+        <a class="" href="/th/any/s/finance/payments-and-currency-exchange/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TH</a>
+        <a class="" href="/tr/any/s/finance/payments-and-currency-exchange/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TR</a>
+        <a class="" href="/zh/any/s/finance/payments-and-currency-exchange/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ZH</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ 夜间</span></button>
+    </div>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/zh-Hans/">首页</a> /
+    <a href="/zh-Hans/any/">any</a> /
+    <b>支付、换汇与取现</b>
+  </nav>
+
+
+  
+  <h1>any的支付、换汇与取现：真正需要知道的事</h1>
+
+  <h2>来自真实经验</h2>
+  <details open><summary><span class="sumq"><span class="tag risk">风险</span>俄罗斯银行（如 ATB/亚太银行）发行的银联卡目前可在俄罗斯境外的部分地点用于支付及从卢布账户提取欧元（包含汇率转换）。然而，ATB 连同其他俄罗斯金融机构，经常被提及是欧盟第 21 轮制裁的高概率目标。欧盟委员会已提出广泛的新限制措施，包括禁止与多家俄罗斯银行进行业务往来、冻结资产及实施交易限额。这意味着此类卡片的可用性和可靠性正面临重大且迫在眉睫的风险，建议准备替代支付方式。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">步骤</span>用户在询问在线预订的支付方式，特别是在 obilet 等平台上。他们想知道以卢布标价是否可以使用俄罗斯卡支付，以及货币兑换是如何运作的。建议包括使用其他支付方式，如“letim”（通过 SBP）或申请一张土耳其卡。已确认以土耳其里拉标价的价格为实际成本，而其他货币仅供参考。最终扣款金额取决于用户的银行及账户币种。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">风险</span>从欧盟国家前往俄罗斯时，根据欧盟制裁规定，适用严格的货币出口限制。禁止向俄罗斯出口欧元纸币。实际上，海关办事处（如波兰至加里宁格勒边境）限制旅客每人最多携带 300 欧元现金。为避免被没收或罚款，建议旅客携带美元而非欧元，同时保持在俄罗斯海关申报限额内（每人等值 10,000 美元）。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">案例</span>Tinkoff Premium提供商务休息室使用权。休息室的质量因地点而异（例如，安塔利亚的休息室被描述为逊色于谢列梅捷沃的）。用户经常寻找免费订阅的推荐链接。或者，可以在俄罗斯的Avito等平台上购买个人休息室入场券。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">窍门</span>要确定最便宜的柴油价格，请对比格鲁吉亚、亚美尼亚和土耳其的成本。燃料价格会根据各国的市场状况、税收和进口关税而波动。在旅行日期临近时研究各地的当前燃料价格，以便做出明智的决定。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">风险</span>退款到非居民虚拟卡的款项（例如 Booking.com）可能需要长达 45 个银行工作日。如果服务方确认已退款但开卡行未收到，投诉人应在要求进行手动退单处理或财务查询之前，等待银行的处理期限结束。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">步骤</span>确定在莫斯科周末将俄罗斯卢布兑换成欧元的方案。提及诸如 Tavex BG（尽管这可能是误解，因为它是保加利亚的兑换处）、Kamkombank，或者在周末营业的特定银行 ATM 和兑换处等可能性。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">案例</span>Capital Bank 的 ATM 机可以使用。对于需要验证码的在线支付，建议确保确认码通过 Telegram 机器人或应用接收，或者在使用不支持 Ucell 直接通知功能的 SIM 卡时，确保有人协助转发验证码。这对于需要短信确认的交易尤为重要。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag case">案例</span>Yesim eSIM提供可靠的移动互联网和热点功能。一个10GB的数据套餐在白俄罗斯使用两周，且该服务接受Mir卡支付。热点功能在将互联网分享给多台设备时效果良好。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">窍门</span>ATM 取款手续费可能是固定金额，无论取款多少。例如，某特定费率可能对每笔取款收取 50 元人民币的佣金，而不论金额大小。对于面临此类费用的用户来说，减少取款次数是一个更经济的选择。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">风险</span>使用银联卡在国外 ATM 取款时，请确保其兼容 Global 网络。即时银联卡有时可能会遇到问题；请向发卡行核实网络兼容性及潜在的限制。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">窍门</span>进行国际购物时，请确保选择正确的货币，以避免银行收取的不利汇率转换费用。虽然商家可能会全额退款，但汇率转换损失可能非常显著。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 条反馈 来自聊天群</div></div>
+  </details>
+
+  <h2>相关主题</h2>
+  <div class="chips">
+    <a class="chip" href="/zh/any/s/finance/using-foreign-bank-cards/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 海外银行卡使用技巧</span></a>
+    <a class="chip" href="/zh/any/s/finance/setting-up-mobile-payments-apple-google-/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 移动支付设置（Apple/Google Pay）</span></a>
+    <a class="chip" href="/zh/any/s/finance/crypto-exchanges-transfers-and-p2p/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 加密货币、转账与P2P交易</span></a>
+    <a class="chip" href="/zh/any/s/finance/russian-banking-blocks-and-issues/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 俄罗斯银行冻结与纠纷</span></a>
+    <a class="chip" href="/zh/any/s/finance/financial-statements-and-visa-support/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 财务报表与签证支持</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>到处都一样，可你的情况偏偏特殊？</h2>
+    <p>问 Luky — 告诉你现在什么方法有效 — 来自最近的反馈.</p>
+    <p>而 Luky 还是真实对话的实时语音翻译： 在店里弄清楚你到底在买什么.</p>
+    <p class="ps">PS：连一句你的语言都不会的伴侣家人也行 😄</p>
+    <a class="btn" href="https://multyspeak.ru" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>打开 Luky</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — 来自社区聊天群的真实经验，不掺水</div>
+    <nav class="f-links">
+      <a href="/zh-Hans/about/">关于</a>
+      <a href="/zh-Hans/any/">所有主题</a>
+      <a href="/zh-Hans/">国家</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">答案取自公开的社区聊天群 — 这是人们的真实经验，不是官方建议。做重要决定前请自行核实。</p>
+    <div class="f-copy">© 2026 Luky · 更新于 08.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"\u4fc4\u7f57\u65af\u94f6\u884c\uff08\u5982 ATB/\u4e9a\u592a\u94f6\u884c\uff09\u53d1\u884c\u7684\u94f6\u8054\u5361\u76ee\u524d\u53ef\u5728\u4fc4\u7f57\u65af\u5883\u5916\u7684\u90e8\u5206\u5730\u70b9\u7528\u4e8e\u652f\u4ed8\u53ca\u4ece\u5362\u5e03\u8d26\u6237\u63d0\u53d6\u6b27\u5143\uff08\u5305\u542b\u6c47\u7387\u8f6c\u6362\uff09\u3002\u7136\u800c\uff0cATB \u8fde\u540c\u5176\u4ed6\u4fc4\u7f57\u65af\u91d1\u878d\u673a\u6784\uff0c\u7ecf\u5e38\u88ab\u63d0\u53ca\u662f\u6b27\u76df\u7b2c 21 \u8f6e\u5236\u88c1\u7684\u9ad8\u6982\u7387\u76ee\u6807\u3002\u6b27\u76df\u59d4\u5458\u4f1a\u5df2\u63d0\u51fa\u5e7f\u6cdb\u7684\u65b0\u9650\u5236\u63aa\u65bd\uff0c\u5305\u62ec\u7981\u6b62\u4e0e\u591a\u5bb6\u4fc4\u7f57\u65af\u94f6\u884c\u8fdb\u884c\u4e1a\u52a1\u5f80\u6765\u3001\u51bb\u7ed3\u8d44\u4ea7\u53ca\u5b9e\u65bd\u4ea4\u6613\u9650\u989d\u3002\u8fd9\u610f\u5473\u7740\u6b64\u7c7b\u5361\u7247\u7684\u53ef\u7528\u6027\u548c\u53ef\u9760\u6027\u6b63\u9762\u4e34\u91cd\u5927\u4e14\u8feb\u5728\u7709\u776b\u7684\u98ce\u9669\uff0c\u5efa\u8bae\u51c6\u5907\u66ff\u4ee3\u652f\u4ed8\u65b9\u5f0f\u3002"},
+{"@type":"ListItem","position":2,"name":"\u7528\u6237\u5728\u8be2\u95ee\u5728\u7ebf\u9884\u8ba2\u7684\u652f\u4ed8\u65b9\u5f0f\uff0c\u7279\u522b\u662f\u5728 obilet \u7b49\u5e73\u53f0\u4e0a\u3002\u4ed6\u4eec\u60f3\u77e5\u9053\u4ee5\u5362\u5e03\u6807\u4ef7\u662f\u5426\u53ef\u4ee5\u4f7f\u7528\u4fc4\u7f57\u65af\u5361\u652f\u4ed8\uff0c\u4ee5\u53ca\u8d27\u5e01\u5151\u6362\u662f\u5982\u4f55\u8fd0\u4f5c\u7684\u3002\u5efa\u8bae\u5305\u62ec\u4f7f\u7528\u5176\u4ed6\u652f\u4ed8\u65b9\u5f0f\uff0c\u5982\u201cletim\u201d\uff08\u901a\u8fc7 SBP\uff09\u6216\u7533\u8bf7\u4e00\u5f20\u571f\u8033\u5176\u5361\u3002\u5df2\u786e\u8ba4\u4ee5\u571f\u8033\u5176\u91cc\u62c9\u6807\u4ef7\u7684\u4ef7\u683c\u4e3a\u5b9e\u9645\u6210\u672c\uff0c\u800c\u5176\u4ed6\u8d27\u5e01\u4ec5\u4f9b\u53c2\u8003\u3002\u6700\u7ec8\u6263\u6b3e\u91d1\u989d\u53d6\u51b3\u4e8e\u7528\u6237\u7684\u94f6\u884c\u53ca\u8d26\u6237\u5e01\u79cd\u3002"},
+{"@type":"ListItem","position":3,"name":"\u4ece\u6b27\u76df\u56fd\u5bb6\u524d\u5f80\u4fc4\u7f57\u65af\u65f6\uff0c\u6839\u636e\u6b27\u76df\u5236\u88c1\u89c4\u5b9a\uff0c\u9002\u7528\u4e25\u683c\u7684\u8d27\u5e01\u51fa\u53e3\u9650\u5236\u3002\u7981\u6b62\u5411\u4fc4\u7f57\u65af\u51fa\u53e3\u6b27\u5143\u7eb8\u5e01\u3002\u5b9e\u9645\u4e0a\uff0c\u6d77\u5173\u529e\u4e8b\u5904\uff08\u5982\u6ce2\u5170\u81f3\u52a0\u91cc\u5b81\u683c\u52d2\u8fb9\u5883\uff09\u9650\u5236\u65c5\u5ba2\u6bcf\u4eba\u6700\u591a\u643a\u5e26 300 \u6b27\u5143\u73b0\u91d1\u3002\u4e3a\u907f\u514d\u88ab\u6ca1\u6536\u6216\u7f5a\u6b3e\uff0c\u5efa\u8bae\u65c5\u5ba2\u643a\u5e26\u7f8e\u5143\u800c\u975e\u6b27\u5143\uff0c\u540c\u65f6\u4fdd\u6301\u5728\u4fc4\u7f57\u65af\u6d77\u5173\u7533\u62a5\u9650\u989d\u5185\uff08\u6bcf\u4eba\u7b49\u503c 10,000 \u7f8e\u5143\uff09\u3002"},
+{"@type":"ListItem","position":4,"name":"Tinkoff Premium\u63d0\u4f9b\u5546\u52a1\u4f11\u606f\u5ba4\u4f7f\u7528\u6743\u3002\u4f11\u606f\u5ba4\u7684\u8d28\u91cf\u56e0\u5730\u70b9\u800c\u5f02\uff08\u4f8b\u5982\uff0c\u5b89\u5854\u5229\u4e9a\u7684\u4f11\u606f\u5ba4\u88ab\u63cf\u8ff0\u4e3a\u900a\u8272\u4e8e\u8c22\u5217\u6885\u6377\u6c83\u7684\uff09\u3002\u7528\u6237\u7ecf\u5e38\u5bfb\u627e\u514d\u8d39\u8ba2\u9605\u7684\u63a8\u8350\u94fe\u63a5\u3002\u6216\u8005\uff0c\u53ef\u4ee5\u5728\u4fc4\u7f57\u65af\u7684Avito\u7b49\u5e73\u53f0\u4e0a\u8d2d\u4e70\u4e2a\u4eba\u4f11\u606f\u5ba4\u5165\u573a\u5238\u3002"},
+{"@type":"ListItem","position":5,"name":"\u8981\u786e\u5b9a\u6700\u4fbf\u5b9c\u7684\u67f4\u6cb9\u4ef7\u683c\uff0c\u8bf7\u5bf9\u6bd4\u683c\u9c81\u5409\u4e9a\u3001\u4e9a\u7f8e\u5c3c\u4e9a\u548c\u571f\u8033\u5176\u7684\u6210\u672c\u3002\u71c3\u6599\u4ef7\u683c\u4f1a\u6839\u636e\u5404\u56fd\u7684\u5e02\u573a\u72b6\u51b5\u3001\u7a0e\u6536\u548c\u8fdb\u53e3\u5173\u7a0e\u800c\u6ce2\u52a8\u3002\u5728\u65c5\u884c\u65e5\u671f\u4e34\u8fd1\u65f6\u7814\u7a76\u5404\u5730\u7684\u5f53\u524d\u71c3\u6599\u4ef7\u683c\uff0c\u4ee5\u4fbf\u505a\u51fa\u660e\u667a\u7684\u51b3\u5b9a\u3002"},
+{"@type":"ListItem","position":6,"name":"\u9000\u6b3e\u5230\u975e\u5c45\u6c11\u865a\u62df\u5361\u7684\u6b3e\u9879\uff08\u4f8b\u5982 Booking.com\uff09\u53ef\u80fd\u9700\u8981\u957f\u8fbe 45 \u4e2a\u94f6\u884c\u5de5\u4f5c\u65e5\u3002\u5982\u679c\u670d\u52a1\u65b9\u786e\u8ba4\u5df2\u9000\u6b3e\u4f46\u5f00\u5361\u884c\u672a\u6536\u5230\uff0c\u6295\u8bc9\u4eba\u5e94\u5728\u8981\u6c42\u8fdb\u884c\u624b\u52a8\u9000\u5355\u5904\u7406\u6216\u8d22\u52a1\u67e5\u8be2\u4e4b\u524d\uff0c\u7b49\u5f85\u94f6\u884c\u7684\u5904\u7406\u671f\u9650\u7ed3\u675f\u3002"},
+{"@type":"ListItem","position":7,"name":"\u786e\u5b9a\u5728\u83ab\u65af\u79d1\u5468\u672b\u5c06\u4fc4\u7f57\u65af\u5362\u5e03\u5151\u6362\u6210\u6b27\u5143\u7684\u65b9\u6848\u3002\u63d0\u53ca\u8bf8\u5982 Tavex BG\uff08\u5c3d\u7ba1\u8fd9\u53ef\u80fd\u662f\u8bef\u89e3\uff0c\u56e0\u4e3a\u5b83\u662f\u4fdd\u52a0\u5229\u4e9a\u7684\u5151\u6362\u5904\uff09\u3001Kamkombank\uff0c\u6216\u8005\u5728\u5468\u672b\u8425\u4e1a\u7684\u7279\u5b9a\u94f6\u884c ATM \u548c\u5151\u6362\u5904\u7b49\u53ef\u80fd\u6027\u3002"},
+{"@type":"ListItem","position":8,"name":"Capital Bank \u7684 ATM \u673a\u53ef\u4ee5\u4f7f\u7528\u3002\u5bf9\u4e8e\u9700\u8981\u9a8c\u8bc1\u7801\u7684\u5728\u7ebf\u652f\u4ed8\uff0c\u5efa\u8bae\u786e\u4fdd\u786e\u8ba4\u7801\u901a\u8fc7 Telegram \u673a\u5668\u4eba\u6216\u5e94\u7528\u63a5\u6536\uff0c\u6216\u8005\u5728\u4f7f\u7528\u4e0d\u652f\u6301 Ucell \u76f4\u63a5\u901a\u77e5\u529f\u80fd\u7684 SIM \u5361\u65f6\uff0c\u786e\u4fdd\u6709\u4eba\u534f\u52a9\u8f6c\u53d1\u9a8c\u8bc1\u7801\u3002\u8fd9\u5bf9\u4e8e\u9700\u8981\u77ed\u4fe1\u786e\u8ba4\u7684\u4ea4\u6613\u5c24\u4e3a\u91cd\u8981\u3002"},
+{"@type":"ListItem","position":9,"name":"Yesim eSIM\u63d0\u4f9b\u53ef\u9760\u7684\u79fb\u52a8\u4e92\u8054\u7f51\u548c\u70ed\u70b9\u529f\u80fd\u3002\u4e00\u4e2a10GB\u7684\u6570\u636e\u5957\u9910\u5728\u767d\u4fc4\u7f57\u65af\u4f7f\u7528\u4e24\u5468\uff0c\u4e14\u8be5\u670d\u52a1\u63a5\u53d7Mir\u5361\u652f\u4ed8\u3002\u70ed\u70b9\u529f\u80fd\u5728\u5c06\u4e92\u8054\u7f51\u5206\u4eab\u7ed9\u591a\u53f0\u8bbe\u5907\u65f6\u6548\u679c\u826f\u597d\u3002"},
+{"@type":"ListItem","position":10,"name":"ATM \u53d6\u6b3e\u624b\u7eed\u8d39\u53ef\u80fd\u662f\u56fa\u5b9a\u91d1\u989d\uff0c\u65e0\u8bba\u53d6\u6b3e\u591a\u5c11\u3002\u4f8b\u5982\uff0c\u67d0\u7279\u5b9a\u8d39\u7387\u53ef\u80fd\u5bf9\u6bcf\u7b14\u53d6\u6b3e\u6536\u53d6 50 \u5143\u4eba\u6c11\u5e01\u7684\u4f63\u91d1\uff0c\u800c\u4e0d\u8bba\u91d1\u989d\u5927\u5c0f\u3002\u5bf9\u4e8e\u9762\u4e34\u6b64\u7c7b\u8d39\u7528\u7684\u7528\u6237\u6765\u8bf4\uff0c\u51cf\u5c11\u53d6\u6b3e\u6b21\u6570\u662f\u4e00\u4e2a\u66f4\u7ecf\u6d4e\u7684\u9009\u62e9\u3002"},
+{"@type":"ListItem","position":11,"name":"\u4f7f\u7528\u94f6\u8054\u5361\u5728\u56fd\u5916 ATM \u53d6\u6b3e\u65f6\uff0c\u8bf7\u786e\u4fdd\u5176\u517c\u5bb9 Global \u7f51\u7edc\u3002\u5373\u65f6\u94f6\u8054\u5361\u6709\u65f6\u53ef\u80fd\u4f1a\u9047\u5230\u95ee\u9898\uff1b\u8bf7\u5411\u53d1\u5361\u884c\u6838\u5b9e\u7f51\u7edc\u517c\u5bb9\u6027\u53ca\u6f5c\u5728\u7684\u9650\u5236\u3002"},
+{"@type":"ListItem","position":12,"name":"\u8fdb\u884c\u56fd\u9645\u8d2d\u7269\u65f6\uff0c\u8bf7\u786e\u4fdd\u9009\u62e9\u6b63\u786e\u7684\u8d27\u5e01\uff0c\u4ee5\u907f\u514d\u94f6\u884c\u6536\u53d6\u7684\u4e0d\u5229\u6c47\u7387\u8f6c\u6362\u8d39\u7528\u3002\u867d\u7136\u5546\u5bb6\u53ef\u80fd\u4f1a\u5168\u989d\u9000\u6b3e\uff0c\u4f46\u6c47\u7387\u8f6c\u6362\u635f\u5931\u53ef\u80fd\u975e\u5e38\u663e\u8457\u3002"}
+]}
+</script>
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 \u591c\u95f4", DAY="\u2600 \u65e5\u95f4";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>

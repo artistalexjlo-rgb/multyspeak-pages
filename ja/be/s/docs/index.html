@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ベルギー：書類準備・サポート — チャットからの実際の経験 · Luky</title>
+<meta name="description" content="ベルギーの「書類準備・サポート」についての実際の経験：チャットからの実用的なコツ、事例、ルール。あなたのケースは — Luky に聞いて。">
+<link rel="canonical" href="https://info.multyspeak.ru/ja/be/s/docs/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="ru" href="https://info.multyspeak.ru/ru/be/s/docs/">
+<link rel="alternate" hreflang="ar" href="https://info.multyspeak.ru/ar/be/s/docs/">
+<link rel="alternate" hreflang="de" href="https://info.multyspeak.ru/de/be/s/docs/">
+<link rel="alternate" hreflang="en" href="https://info.multyspeak.ru/en/be/s/docs/">
+<link rel="alternate" hreflang="es" href="https://info.multyspeak.ru/es/be/s/docs/">
+<link rel="alternate" hreflang="fr" href="https://info.multyspeak.ru/fr/be/s/docs/">
+<link rel="alternate" hreflang="hi" href="https://info.multyspeak.ru/hi/be/s/docs/">
+<link rel="alternate" hreflang="it" href="https://info.multyspeak.ru/it/be/s/docs/">
+<link rel="alternate" hreflang="ja" href="https://info.multyspeak.ru/ja/be/s/docs/">
+<link rel="alternate" hreflang="ko" href="https://info.multyspeak.ru/ko/be/s/docs/">
+<link rel="alternate" hreflang="pt" href="https://info.multyspeak.ru/pt/be/s/docs/">
+<link rel="alternate" hreflang="th" href="https://info.multyspeak.ru/th/be/s/docs/">
+<link rel="alternate" hreflang="tr" href="https://info.multyspeak.ru/tr/be/s/docs/">
+<link rel="alternate" hreflang="zh" href="https://info.multyspeak.ru/zh/be/s/docs/">
+<link rel="alternate" hreflang="x-default" href="https://info.multyspeak.ru/ru/be/s/docs/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080d; --card:#0f1620; --border:#21303f; --text:#e8f1f8; --muted:#6b8299;
+  --hud:#3ad8ff; --hud-dim:rgba(58,216,255,0.42);
+  --accent:#a78bfa; --green:#4ade80; --yellow:#fbbf24; --amber-edge:#f59e0b; --red:#f87171;
+  --font-display:'Orbitron','JetBrains Mono',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --maxw:720px;
+}
+[data-theme="light"]{
+  --bg:#eef2f6; --card:#ffffff; --border:#cfdae5; --text:#16212e; --muted:#5a6b7d;
+  --hud:#0a87b8; --hud-dim:rgba(10,135,184,0.30);
+  --accent:#6d4bd8; --green:#1f9d57; --yellow:#b9760a; --amber-edge:#b9760a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);font-weight:500;line-height:1.62;
+  font-size:17px;color:var(--text);background-color:var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(58,216,255,0.10),transparent 60%),
+    radial-gradient(90% 60% at 100% 108%,rgba(124,58,237,0.08),transparent 60%),
+    repeating-linear-gradient(62deg,transparent 0 46px,rgba(58,216,255,0.035) 46px 47px,transparent 47px 92px),
+    repeating-linear-gradient(-62deg,transparent 0 60px,rgba(124,58,237,0.03) 60px 61px,transparent 61px 122px),
+    linear-gradient(180deg,#080b12,#05070b);
+  background-attachment:fixed;}
+[data-theme="light"] body{background-image:
+    radial-gradient(120% 70% at 50% -8%,rgba(10,135,184,0.06),transparent 60%),
+    linear-gradient(180deg,#eef2f6,#e7edf3);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:18px 18px 80px}
+a{color:var(--hud);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── SVG-октагон (ДС even-cant): один path fill+stroke, non-scaling-stroke, скруглён.
+   Форма перерисовывается JS под реальный размер (см. скрипт внизу). overflow:visible
+   ОБЯЗАТЕЛЕН — иначе SVG срежет внешнюю половину канта. ── */
+.oct{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;overflow:visible}
+.oct path{vector-effect:non-scaling-stroke;stroke-width:1.4;stroke-linejoin:round;fill:#0d1822;stroke:var(--hud-dim)}
+[data-theme="light"] .oct path{fill:#fff}
+
+.top{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0 18px}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand-row{display:flex;align-items:center;gap:12px}
+.brand .coin{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:8px;
+  background:radial-gradient(120% 120% at 30% 25%,#2bb6f2,#0a4f8c 70%,#063256);color:#fff;
+  font-size:1.05rem;font-weight:800;box-shadow:0 0 14px rgba(58,216,255,.45),inset 0 1px 2px rgba(255,255,255,.4)}
+.lk-name{font-family:var(--font-display);font-weight:800;font-size:1.55rem;letter-spacing:.01em}
+.lk-name b{color:var(--hud);text-shadow:0 0 12px var(--hud-dim)}
+.brand-sub{font-family:var(--font-mono);font-weight:700;font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-sub i{color:var(--hud);font-style:normal;opacity:.85}
+.toggle{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text);cursor:pointer;padding:8px 14px;
+  background:transparent;border:none}
+.toggle .oct path{fill:var(--card);stroke:var(--border)}
+.toggle:hover{color:var(--hud)} .toggle:hover .oct path{stroke:var(--hud)}
+.ctrls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.langs{display:flex;gap:5px}
+.langs a{position:relative;isolation:isolate;font-family:var(--font-mono);font-weight:700;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;cursor:pointer}
+.langs a .oct path{fill:var(--card);stroke:var(--border)}
+.langs a:hover{color:var(--hud);text-decoration:none} .langs a:hover .oct path{stroke:var(--hud)}
+.langs a.on{color:var(--hud)} .langs a.on .oct path{stroke:var(--hud);fill:#0d1f28}
+.crumbs{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:14px}
+.crumbs a{color:var(--muted)} .crumbs b{color:var(--hud)}
+h1{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1.15;
+  letter-spacing:.01em;margin:.2em 0 .4em;text-transform:uppercase}
+h2{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:2.2em 0 .7em;color:var(--text)}
+.section-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hud);margin-bottom:6px;display:block}
+.prose{font-size:1.02rem;line-height:1.7;margin:8px 0 4px}
+.prose p{margin:0 0 1em} .prose strong{color:var(--hud)}
+
+.plate{position:relative;isolation:isolate;margin:16px 0}
+.plate .pad{padding:18px 20px;position:relative}
+.answer .pad{font-size:1.05rem;line-height:1.6}
+.answer strong{color:var(--hud)}
+.num{font-family:var(--font-mono);font-weight:700;color:var(--hud)}
+details{border-bottom:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem}
+details[open] summary::after{content:'\2212'}
+details .a{padding-top:10px;color:var(--text);opacity:.92}
+details .src{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--muted);text-transform:uppercase;margin-top:8px}
+/* тег типа абзаца (хвост-антологии: lifehack/reglament/howto/risk/case/service) */
+.tag{display:inline-block;font-family:var(--font-mono);font-weight:400;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);
+  border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:2px;white-space:nowrap}
+.tag.risk{color:var(--red);border-color:var(--red)}
+.tag.reglament{color:var(--accent);border-color:var(--accent)}
+.tag.lifehack{color:var(--green);border-color:var(--green)}
+.tag.service{color:var(--yellow);border-color:var(--yellow)}
+.tag.howto{color:var(--hud);border-color:var(--hud)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.chip{position:relative;isolation:isolate;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:10px 16px;color:var(--text);background:transparent}
+.chip:hover{color:var(--hud);text-decoration:none} .chip:hover .oct path{stroke:var(--hud)}
+.chip.soon{color:var(--muted);cursor:default;pointer-events:none}
+.chip.soon::after{content:'· скоро';opacity:.7;margin-left:6px}
+.qlist{list-style:none;padding:0;margin:10px 0}
+.qlist li{padding:14px 2px 14px 28px;border-bottom:1px solid var(--border);font-size:1.04rem;
+  font-weight:600;position:relative}
+.qlist li::before{content:'«';position:absolute;left:2px;top:11px;color:var(--hud);font-size:1.3rem}
+
+/* ── Хаб-сетка (index): карточки-октагоны ── */
+.grid{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.card{position:relative;isolation:isolate;display:block;width:calc(50% - 7px);min-width:230px;flex:1 1 230px;
+  padding:18px 20px;color:var(--text)}
+.card .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.card:hover{text-decoration:none} .card:hover .oct path{stroke:var(--hud)}
+.card .ti{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.card .ds{display:block;font-size:.9rem;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.card.soon{cursor:default;pointer-events:none}
+.card.soon .ti{color:var(--muted)}
+.card.soon .ti::after{content:'· скоро';font-family:var(--font-mono);font-size:.6rem;opacity:.7}
+.card .fl{font-size:1.15rem;line-height:1}
+
+/* ── Поиск по странам (home) ── */
+.search{position:relative;isolation:isolate;margin:18px 0}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--font-body);font-size:1.05rem;padding:17px 20px}
+.search input::placeholder{color:var(--muted)}
+.search .oct path{fill:var(--card);stroke:var(--hud-dim)}
+.search:focus-within .oct path{stroke:var(--hud)}
+#sugg{margin:-6px 0 8px;display:none}
+#sugg a{display:block;padding:9px 14px;color:var(--text);font-size:.98rem;border-bottom:1px solid var(--border)}
+#sugg a:hover{color:var(--hud);text-decoration:none} #sugg a.nores{color:var(--muted);cursor:default}
+
+/* ── По регионам (home): details-аккордеон ── */
+.regions{margin:10px 0 4px}
+details.reg{border-bottom:1px solid var(--border);padding:14px 2px}
+details.reg summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1rem;
+  letter-spacing:.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:12px}
+details.reg summary::-webkit-details-marker{display:none}
+details.reg summary::after{content:'+';font-family:var(--font-mono);color:var(--hud);font-size:1.2rem;margin-left:auto}
+details.reg[open] summary::after{content:'\2212'}
+details.reg .cnt{font-family:var(--font-mono);font-weight:700;font-size:.9rem;color:var(--muted)}
+.rlist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px}
+.rlist a{color:var(--text);font-size:.98rem}
+.rlist a:hover{color:var(--hud);text-decoration:none}
+
+.cta{margin-top:34px}
+.cta .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .oct path{fill:#fdf1d8}
+.cta .pad{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0;color:var(--yellow);text-shadow:0 0 14px rgba(245,158,11,.4)}
+.cta p{margin:0;color:var(--text);opacity:.9}
+.cta .ps{opacity:.66;font-size:.92rem;font-style:italic}
+.cta .btn{position:relative;isolation:isolate;font-family:var(--font-body);font-weight:800;font-size:1rem;
+  letter-spacing:.02em;text-transform:uppercase;color:#ffe8c2;background:transparent;padding:15px 24px;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  text-shadow:0 0 12px rgba(245,158,11,.7);filter:drop-shadow(0 0 7px rgba(245,158,11,.4));transition:transform .1s}
+.cta .btn .oct path{fill:#160c02;stroke:var(--amber-edge)}
+[data-theme="light"] .cta .btn .oct path{fill:#fff3df}
+.cta .btn:hover{transform:scale(.98);text-decoration:none}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.f-brand{font-family:var(--font-display);font-weight:800;font-size:.95rem;letter-spacing:.02em;color:var(--text)}
+.f-brand b{color:var(--hud)}
+.f-links{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}
+.f-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.f-links a:hover{color:var(--hud)}
+.f-disc{font-size:.82rem;line-height:1.5;max-width:560px;margin:10px 0}
+.f-copy{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+</style>
+</head>
+<body class="luky-surface">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">
+      <span class="brand-row">
+        <span class="coin">A文</span>
+        <span class="lk-name">Lu<b>ky</b></span>
+      </span>
+      <span class="brand-sub">情報ポータル · どの国でも · 水増しなし</span>
+    </div>
+    <div class="ctrls">
+      <div class="langs">
+        <a class="" href="/ru/be/s/docs/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>RU</a>
+        <a class="" href="/ar/be/s/docs/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>AR</a>
+        <a class="" href="/de/be/s/docs/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>DE</a>
+        <a class="" href="/en/be/s/docs/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>EN</a>
+        <a class="" href="/es/be/s/docs/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ES</a>
+        <a class="" href="/fr/be/s/docs/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>FR</a>
+        <a class="" href="/hi/be/s/docs/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>HI</a>
+        <a class="" href="/it/be/s/docs/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>IT</a>
+        <a class="on" href="/ja/be/s/docs/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>JA</a>
+        <a class="" href="/ko/be/s/docs/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>KO</a>
+        <a class="" href="/pt/be/s/docs/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>PT</a>
+        <a class="" href="/th/be/s/docs/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TH</a>
+        <a class="" href="/tr/be/s/docs/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>TR</a>
+        <a class="" href="/zh/be/s/docs/"><svg class="oct" data-cant="5" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg>ZH</a>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="theme"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 80 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4.59,1.41Q6.00,0.00 8.00,0.00L72.00,0.00Q74.00,0.00 75.41,1.41L78.59,4.59Q80.00,6.00 80.00,8.00L80.00,26.00Q80.00,28.00 78.59,29.41L75.41,32.59Q74.00,34.00 72.00,34.00L8.00,34.00Q6.00,34.00 4.59,32.59L1.41,29.41Q0.00,28.00 0.00,26.00L0.00,8.00Q0.00,6.00 1.41,4.59Z"/></svg><span id="themeLbl">◐ 夜</span></button>
+    </div>
+  </div>
+
+  
+  <nav class="crumbs">
+    <a href="/ja/">ホーム</a> /
+    <a href="/ja/be/">ベルギー</a> /
+    <b>書類準備・サポート</b>
+  </nav>
+
+
+  
+  <h1>ベルギーの書類準備・サポート：本当に知っておくべきこと</h1>
+
+  <h2>実際の経験から</h2>
+  <details open><summary><span class="sumq"><span class="tag reglament">ルール</span>ベルギーで滞在許可（VNJ）を取得する場合、書類は通常、地域の公用語（地域によりオランダ語、フランス語、ドイツ語）に「ベルギーの宣誓翻訳者」が翻訳する必要があります。他国（ロシアなど）で作成された翻訳や英語への翻訳は、アールストのような小規模な自治体では地元当局（gemeente）に受け入れられないことが多くあります。ビザ申請には英語の翻訳が受け入れられることもありますが、滞在許可のための地元当局は、公式の印章と署名があるベルギー国内の認定翻訳者による翻訳を要求します。費用は高額になる可能性があり、1書類につき12,000円、5書類で55,000円などの例が挙げられており、この手続きのコストの高さが際立っています。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">リスク</span>ベルギーでは、多くの法律事務所が公式の国営企業登録簿に登録されていません。これは「非法人格」であることを示しています。法律事務所やその代理人がこの登録簿に記載されていない場合、その行動に対して責任を問われない可能性があります。特に弁護などの問題や、公的な捏造が疑われるケースで法的なサービスを利用する場合は、関与する法律専門家や事務所の法的立場と登録状況を確認することが不可欠です。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">手順</span>ロシア国籍保持者がベルギーで結婚後に姓を変更する手順：1. ロシア領事館から（ロシア家族法に基づいた）「姓変更の可能性証明書」と「婚姻状況証明書」を取得する。 2. ベルギーの結婚証明書にアポスティーユを付与する。 3. 証明書のロシア語公証翻訳を作成する。 4. 全てのロシア身分証明書（パスポート、海外用パスポート、運転免許証、保険証、納税者番号）を更新する。この手続きには約2か月を要し、多大な事務作業が発生します。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag reglament">ルール</span>EU指令2004/38 ECに基づくベルギーの短期ビザ申請（ベルギー居住のEU市民の家族向け）において、ロシアのザックス（ZAGS）が発行する、ジョージアでの結婚をロシアの登記所に登録したことを確認する証明書は、ベルギーのコミューンや外国人局（DVZ）から通常求められる書類ではありません。この書類は審査当局にはほとんど知られておらず、要求される可能性は低いため、申請プロセスにおいて必要ではないと考えられます。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag risk">リスク</span>ベルギー市民である未成年者が関わる家族呼び寄せビザ申請において、領事館は厳格に原本を要求します。もう一方の親からの旅行および滞在への同意書については、コミューンが発行したものであっても、スキャンデータは拒否されることが多いです。書類提出段階での拒否を避けるため、公的なスタンプや認証がある原本を提出してください。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">コツ</span>ベルギーからロシアへ書類を送る場合、現在のところ最も一般的な非公式ルートは、個人の直接配送サービスや「Optimists in Belgium」のような現地の日本人コミュニティグループです。公的な郵便サービスは厳しく制限されています。個人に重要な書類を渡す前には、必ず受取人の情報を確認してください。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag howto">手順</span>ソ連で生まれた申請者のためのシェンゲンビザ申請ガイドライン：1. 出生地：1991年以前の出生であれば、特定の共和国に関係なく「USSR（ソ連）」を使用してください。 2. 出生場所：パスポートのスラッシュ（/）より前のテキストを正確にコピーしてください。 3. 住所：公式書類と一致させるため、実際の居住地ではなく登録住所（プロピスカ）を使用してください。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">コツ</span>ベルギーで宣誓翻訳者（フランス語：traducteur juré / オランダ語：beëdigd vertaler）を探すには、法務省の公式登録簿を利用してください。検索クエリは「Recherche d&#39;un traducteur/interprète justice」（フランス語）または「Lijst van beëdigd vertalers/tolken」（オランダ語）です。登録簿では言語ペアと郵便番号で絞り込みが可能です。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+  <details><summary><span class="sumq"><span class="tag lifehack">コツ</span>ベルギーで公式に使用する書類（出生証明書や親の同意書など）を準備する場合、公証済みのコピーではなく、原本に翻訳を直接添付するのが一般的です。この方法は費用を最小限に抑えられ、当局にも広く受け入れられています。</span><span></span></summary>
+    <div class="a">
+    <div class="src">✓ 1 件の報告 チャットから</div></div>
+  </details>
+
+  <h2>関連テーマ</h2>
+  <div class="chips">
+    <a class="chip" href="/ja/be/s/life/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 仕事・学習・生活ガイド</span></a>
+    <a class="chip" href="/ja/be/s/visa/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• ビザ申請手続き</span></a>
+    <a class="chip" href="/ja/be/s/transport/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 交通・物流情報</span></a>
+    <a class="chip" href="/ja/be/s/border/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 入国審査・出入国管理</span></a>
+    <a class="chip" href="/ja/be/s/safety/"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 150 37" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L139.00,0.00Q142.00,0.00 144.12,2.12L147.88,5.88Q150.00,8.00 150.00,11.00L150.00,26.00Q150.00,29.00 147.88,31.12L144.12,34.88Q142.00,37.00 139.00,37.00L11.00,37.00Q8.00,37.00 5.88,34.88L2.12,31.12Q0.00,29.00 0.00,26.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>• 地域の安全とリスク管理</span></a>
+  </div>
+
+  <div class="plate cta"><svg class="oct" data-cant="12" data-round="3" viewBox="0 0 680 185" preserveAspectRatio="none" aria-hidden="true"><path d="M9.88,2.12Q12.00,0.00 15.00,0.00L665.00,0.00Q668.00,0.00 670.12,2.12L677.88,9.88Q680.00,12.00 680.00,15.00L680.00,170.00Q680.00,173.00 677.88,175.12L670.12,182.88Q668.00,185.00 665.00,185.00L15.00,185.00Q12.00,185.00 9.88,182.88L2.12,175.12Q0.00,173.00 0.00,170.00L0.00,15.00Q0.00,12.00 2.12,9.88Z"/></svg><div class="pad">
+    <h2>同じことを何度も検索するのに疲れた？</h2>
+    <p>Luky に聞いて — あなたの状況を理解して、より的確に答えようとします.</p>
+    <p>そして Luky は本当の会話のためのリアルタイム音声翻訳： 市場で地元の人のように値段を交渉する.</p>
+    <p class="ps">PS：外国語でデート中に口説く？問題なし 😏</p>
+    <a class="btn" href="https://multyspeak.ru" target="_blank" rel="noopener"><svg class="oct" data-cant="6" data-round="2" viewBox="0 0 203 56" preserveAspectRatio="none" aria-hidden="true"><path d="M5.88,2.12Q8.00,0.00 11.00,0.00L192.00,0.00Q195.00,0.00 197.12,2.12L200.88,5.88Q203.00,8.00 203.00,11.00L203.00,45.00Q203.00,48.00 200.88,50.12L197.12,53.88Q195.00,56.00 192.00,56.00L11.00,56.00Q8.00,56.00 5.88,53.88L2.12,50.12Q0.00,48.00 0.00,45.00L0.00,11.00Q0.00,8.00 2.12,5.88Z"/></svg><span>Luky を開く</span></a>
+  </div></div>
+
+
+  <footer>
+    <div class="f-brand">Lu<b>ky</b> — コミュニティのチャットからの実際の経験、水増しなし</div>
+    <nav class="f-links">
+      <a href="/ja/about/">概要</a>
+      <a href="/ja/be/">すべてのテーマ</a>
+      <a href="/ja/">国</a>
+      <a href="https://t.me/luky_channel" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="f-disc">答えは公開されたコミュニティのチャットから集めたものです — 人々の実際の経験であり、公式な助言ではありません。大事な判断の前に確認してください。</p>
+    <div class="f-copy">© 2026 Luky · 更新 08.2026</div>
+  </footer>
+
+</div>
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"\u30d9\u30eb\u30ae\u30fc\u3067\u6ede\u5728\u8a31\u53ef\uff08VNJ\uff09\u3092\u53d6\u5f97\u3059\u308b\u5834\u5408\u3001\u66f8\u985e\u306f\u901a\u5e38\u3001\u5730\u57df\u306e\u516c\u7528\u8a9e\uff08\u5730\u57df\u306b\u3088\u308a\u30aa\u30e9\u30f3\u30c0\u8a9e\u3001\u30d5\u30e9\u30f3\u30b9\u8a9e\u3001\u30c9\u30a4\u30c4\u8a9e\uff09\u306b\u300c\u30d9\u30eb\u30ae\u30fc\u306e\u5ba3\u8a93\u7ffb\u8a33\u8005\u300d\u304c\u7ffb\u8a33\u3059\u308b\u5fc5\u8981\u304c\u3042\u308a\u307e\u3059\u3002\u4ed6\u56fd\uff08\u30ed\u30b7\u30a2\u306a\u3069\uff09\u3067\u4f5c\u6210\u3055\u308c\u305f\u7ffb\u8a33\u3084\u82f1\u8a9e\u3078\u306e\u7ffb\u8a33\u306f\u3001\u30a2\u30fc\u30eb\u30b9\u30c8\u306e\u3088\u3046\u306a\u5c0f\u898f\u6a21\u306a\u81ea\u6cbb\u4f53\u3067\u306f\u5730\u5143\u5f53\u5c40\uff08gemeente\uff09\u306b\u53d7\u3051\u5165\u308c\u3089\u308c\u306a\u3044\u3053\u3068\u304c\u591a\u304f\u3042\u308a\u307e\u3059\u3002\u30d3\u30b6\u7533\u8acb\u306b\u306f\u82f1\u8a9e\u306e\u7ffb\u8a33\u304c\u53d7\u3051\u5165\u308c\u3089\u308c\u308b\u3053\u3068\u3082\u3042\u308a\u307e\u3059\u304c\u3001\u6ede\u5728\u8a31\u53ef\u306e\u305f\u3081\u306e\u5730\u5143\u5f53\u5c40\u306f\u3001\u516c\u5f0f\u306e\u5370\u7ae0\u3068\u7f72\u540d\u304c\u3042\u308b\u30d9\u30eb\u30ae\u30fc\u56fd\u5185\u306e\u8a8d\u5b9a\u7ffb\u8a33\u8005\u306b\u3088\u308b\u7ffb\u8a33\u3092\u8981\u6c42\u3057\u307e\u3059\u3002\u8cbb\u7528\u306f\u9ad8\u984d\u306b\u306a\u308b\u53ef\u80fd\u6027\u304c\u3042\u308a\u30011\u66f8\u985e\u306b\u3064\u304d12,000\u5186\u30015\u66f8\u985e\u306755,000\u5186\u306a\u3069\u306e\u4f8b\u304c\u6319\u3052\u3089\u308c\u3066\u304a\u308a\u3001\u3053\u306e\u624b\u7d9a\u304d\u306e\u30b3\u30b9\u30c8\u306e\u9ad8\u3055\u304c\u969b\u7acb\u3063\u3066\u3044\u307e\u3059\u3002"},
+{"@type":"ListItem","position":2,"name":"\u30d9\u30eb\u30ae\u30fc\u3067\u306f\u3001\u591a\u304f\u306e\u6cd5\u5f8b\u4e8b\u52d9\u6240\u304c\u516c\u5f0f\u306e\u56fd\u55b6\u4f01\u696d\u767b\u9332\u7c3f\u306b\u767b\u9332\u3055\u308c\u3066\u3044\u307e\u305b\u3093\u3002\u3053\u308c\u306f\u300c\u975e\u6cd5\u4eba\u683c\u300d\u3067\u3042\u308b\u3053\u3068\u3092\u793a\u3057\u3066\u3044\u307e\u3059\u3002\u6cd5\u5f8b\u4e8b\u52d9\u6240\u3084\u305d\u306e\u4ee3\u7406\u4eba\u304c\u3053\u306e\u767b\u9332\u7c3f\u306b\u8a18\u8f09\u3055\u308c\u3066\u3044\u306a\u3044\u5834\u5408\u3001\u305d\u306e\u884c\u52d5\u306b\u5bfe\u3057\u3066\u8cac\u4efb\u3092\u554f\u308f\u308c\u306a\u3044\u53ef\u80fd\u6027\u304c\u3042\u308a\u307e\u3059\u3002\u7279\u306b\u5f01\u8b77\u306a\u3069\u306e\u554f\u984c\u3084\u3001\u516c\u7684\u306a\u634f\u9020\u304c\u7591\u308f\u308c\u308b\u30b1\u30fc\u30b9\u3067\u6cd5\u7684\u306a\u30b5\u30fc\u30d3\u30b9\u3092\u5229\u7528\u3059\u308b\u5834\u5408\u306f\u3001\u95a2\u4e0e\u3059\u308b\u6cd5\u5f8b\u5c02\u9580\u5bb6\u3084\u4e8b\u52d9\u6240\u306e\u6cd5\u7684\u7acb\u5834\u3068\u767b\u9332\u72b6\u6cc1\u3092\u78ba\u8a8d\u3059\u308b\u3053\u3068\u304c\u4e0d\u53ef\u6b20\u3067\u3059\u3002"},
+{"@type":"ListItem","position":3,"name":"\u30ed\u30b7\u30a2\u56fd\u7c4d\u4fdd\u6301\u8005\u304c\u30d9\u30eb\u30ae\u30fc\u3067\u7d50\u5a5a\u5f8c\u306b\u59d3\u3092\u5909\u66f4\u3059\u308b\u624b\u9806\uff1a1. \u30ed\u30b7\u30a2\u9818\u4e8b\u9928\u304b\u3089\uff08\u30ed\u30b7\u30a2\u5bb6\u65cf\u6cd5\u306b\u57fa\u3065\u3044\u305f\uff09\u300c\u59d3\u5909\u66f4\u306e\u53ef\u80fd\u6027\u8a3c\u660e\u66f8\u300d\u3068\u300c\u5a5a\u59fb\u72b6\u6cc1\u8a3c\u660e\u66f8\u300d\u3092\u53d6\u5f97\u3059\u308b\u3002 2. \u30d9\u30eb\u30ae\u30fc\u306e\u7d50\u5a5a\u8a3c\u660e\u66f8\u306b\u30a2\u30dd\u30b9\u30c6\u30a3\u30fc\u30e6\u3092\u4ed8\u4e0e\u3059\u308b\u3002 3. \u8a3c\u660e\u66f8\u306e\u30ed\u30b7\u30a2\u8a9e\u516c\u8a3c\u7ffb\u8a33\u3092\u4f5c\u6210\u3059\u308b\u3002 4. \u5168\u3066\u306e\u30ed\u30b7\u30a2\u8eab\u5206\u8a3c\u660e\u66f8\uff08\u30d1\u30b9\u30dd\u30fc\u30c8\u3001\u6d77\u5916\u7528\u30d1\u30b9\u30dd\u30fc\u30c8\u3001\u904b\u8ee2\u514d\u8a31\u8a3c\u3001\u4fdd\u967a\u8a3c\u3001\u7d0d\u7a0e\u8005\u756a\u53f7\uff09\u3092\u66f4\u65b0\u3059\u308b\u3002\u3053\u306e\u624b\u7d9a\u304d\u306b\u306f\u7d042\u304b\u6708\u3092\u8981\u3057\u3001\u591a\u5927\u306a\u4e8b\u52d9\u4f5c\u696d\u304c\u767a\u751f\u3057\u307e\u3059\u3002"},
+{"@type":"ListItem","position":4,"name":"EU\u6307\u4ee42004/38 EC\u306b\u57fa\u3065\u304f\u30d9\u30eb\u30ae\u30fc\u306e\u77ed\u671f\u30d3\u30b6\u7533\u8acb\uff08\u30d9\u30eb\u30ae\u30fc\u5c45\u4f4f\u306eEU\u5e02\u6c11\u306e\u5bb6\u65cf\u5411\u3051\uff09\u306b\u304a\u3044\u3066\u3001\u30ed\u30b7\u30a2\u306e\u30b6\u30c3\u30af\u30b9\uff08ZAGS\uff09\u304c\u767a\u884c\u3059\u308b\u3001\u30b8\u30e7\u30fc\u30b8\u30a2\u3067\u306e\u7d50\u5a5a\u3092\u30ed\u30b7\u30a2\u306e\u767b\u8a18\u6240\u306b\u767b\u9332\u3057\u305f\u3053\u3068\u3092\u78ba\u8a8d\u3059\u308b\u8a3c\u660e\u66f8\u306f\u3001\u30d9\u30eb\u30ae\u30fc\u306e\u30b3\u30df\u30e5\u30fc\u30f3\u3084\u5916\u56fd\u4eba\u5c40\uff08DVZ\uff09\u304b\u3089\u901a\u5e38\u6c42\u3081\u3089\u308c\u308b\u66f8\u985e\u3067\u306f\u3042\u308a\u307e\u305b\u3093\u3002\u3053\u306e\u66f8\u985e\u306f\u5be9\u67fb\u5f53\u5c40\u306b\u306f\u307b\u3068\u3093\u3069\u77e5\u3089\u308c\u3066\u304a\u3089\u305a\u3001\u8981\u6c42\u3055\u308c\u308b\u53ef\u80fd\u6027\u306f\u4f4e\u3044\u305f\u3081\u3001\u7533\u8acb\u30d7\u30ed\u30bb\u30b9\u306b\u304a\u3044\u3066\u5fc5\u8981\u3067\u306f\u306a\u3044\u3068\u8003\u3048\u3089\u308c\u307e\u3059\u3002"},
+{"@type":"ListItem","position":5,"name":"\u30d9\u30eb\u30ae\u30fc\u5e02\u6c11\u3067\u3042\u308b\u672a\u6210\u5e74\u8005\u304c\u95a2\u308f\u308b\u5bb6\u65cf\u547c\u3073\u5bc4\u305b\u30d3\u30b6\u7533\u8acb\u306b\u304a\u3044\u3066\u3001\u9818\u4e8b\u9928\u306f\u53b3\u683c\u306b\u539f\u672c\u3092\u8981\u6c42\u3057\u307e\u3059\u3002\u3082\u3046\u4e00\u65b9\u306e\u89aa\u304b\u3089\u306e\u65c5\u884c\u304a\u3088\u3073\u6ede\u5728\u3078\u306e\u540c\u610f\u66f8\u306b\u3064\u3044\u3066\u306f\u3001\u30b3\u30df\u30e5\u30fc\u30f3\u304c\u767a\u884c\u3057\u305f\u3082\u306e\u3067\u3042\u3063\u3066\u3082\u3001\u30b9\u30ad\u30e3\u30f3\u30c7\u30fc\u30bf\u306f\u62d2\u5426\u3055\u308c\u308b\u3053\u3068\u304c\u591a\u3044\u3067\u3059\u3002\u66f8\u985e\u63d0\u51fa\u6bb5\u968e\u3067\u306e\u62d2\u5426\u3092\u907f\u3051\u308b\u305f\u3081\u3001\u516c\u7684\u306a\u30b9\u30bf\u30f3\u30d7\u3084\u8a8d\u8a3c\u304c\u3042\u308b\u539f\u672c\u3092\u63d0\u51fa\u3057\u3066\u304f\u3060\u3055\u3044\u3002"},
+{"@type":"ListItem","position":6,"name":"\u30d9\u30eb\u30ae\u30fc\u304b\u3089\u30ed\u30b7\u30a2\u3078\u66f8\u985e\u3092\u9001\u308b\u5834\u5408\u3001\u73fe\u5728\u306e\u3068\u3053\u308d\u6700\u3082\u4e00\u822c\u7684\u306a\u975e\u516c\u5f0f\u30eb\u30fc\u30c8\u306f\u3001\u500b\u4eba\u306e\u76f4\u63a5\u914d\u9001\u30b5\u30fc\u30d3\u30b9\u3084\u300cOptimists in Belgium\u300d\u306e\u3088\u3046\u306a\u73fe\u5730\u306e\u65e5\u672c\u4eba\u30b3\u30df\u30e5\u30cb\u30c6\u30a3\u30b0\u30eb\u30fc\u30d7\u3067\u3059\u3002\u516c\u7684\u306a\u90f5\u4fbf\u30b5\u30fc\u30d3\u30b9\u306f\u53b3\u3057\u304f\u5236\u9650\u3055\u308c\u3066\u3044\u307e\u3059\u3002\u500b\u4eba\u306b\u91cd\u8981\u306a\u66f8\u985e\u3092\u6e21\u3059\u524d\u306b\u306f\u3001\u5fc5\u305a\u53d7\u53d6\u4eba\u306e\u60c5\u5831\u3092\u78ba\u8a8d\u3057\u3066\u304f\u3060\u3055\u3044\u3002"},
+{"@type":"ListItem","position":7,"name":"\u30bd\u9023\u3067\u751f\u307e\u308c\u305f\u7533\u8acb\u8005\u306e\u305f\u3081\u306e\u30b7\u30a7\u30f3\u30b2\u30f3\u30d3\u30b6\u7533\u8acb\u30ac\u30a4\u30c9\u30e9\u30a4\u30f3\uff1a1. \u51fa\u751f\u5730\uff1a1991\u5e74\u4ee5\u524d\u306e\u51fa\u751f\u3067\u3042\u308c\u3070\u3001\u7279\u5b9a\u306e\u5171\u548c\u56fd\u306b\u95a2\u4fc2\u306a\u304f\u300cUSSR\uff08\u30bd\u9023\uff09\u300d\u3092\u4f7f\u7528\u3057\u3066\u304f\u3060\u3055\u3044\u3002 2. \u51fa\u751f\u5834\u6240\uff1a\u30d1\u30b9\u30dd\u30fc\u30c8\u306e\u30b9\u30e9\u30c3\u30b7\u30e5\uff08/\uff09\u3088\u308a\u524d\u306e\u30c6\u30ad\u30b9\u30c8\u3092\u6b63\u78ba\u306b\u30b3\u30d4\u30fc\u3057\u3066\u304f\u3060\u3055\u3044\u3002 3. \u4f4f\u6240\uff1a\u516c\u5f0f\u66f8\u985e\u3068\u4e00\u81f4\u3055\u305b\u308b\u305f\u3081\u3001\u5b9f\u969b\u306e\u5c45\u4f4f\u5730\u3067\u306f\u306a\u304f\u767b\u9332\u4f4f\u6240\uff08\u30d7\u30ed\u30d4\u30b9\u30ab\uff09\u3092\u4f7f\u7528\u3057\u3066\u304f\u3060\u3055\u3044\u3002"},
+{"@type":"ListItem","position":8,"name":"\u30d9\u30eb\u30ae\u30fc\u3067\u5ba3\u8a93\u7ffb\u8a33\u8005\uff08\u30d5\u30e9\u30f3\u30b9\u8a9e\uff1atraducteur jur\u00e9 / \u30aa\u30e9\u30f3\u30c0\u8a9e\uff1abe\u00ebdigd vertaler\uff09\u3092\u63a2\u3059\u306b\u306f\u3001\u6cd5\u52d9\u7701\u306e\u516c\u5f0f\u767b\u9332\u7c3f\u3092\u5229\u7528\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u691c\u7d22\u30af\u30a8\u30ea\u306f\u300cRecherche d\u0027un traducteur/interpr\u00e8te justice\u300d\uff08\u30d5\u30e9\u30f3\u30b9\u8a9e\uff09\u307e\u305f\u306f\u300cLijst van be\u00ebdigd vertalers/tolken\u300d\uff08\u30aa\u30e9\u30f3\u30c0\u8a9e\uff09\u3067\u3059\u3002\u767b\u9332\u7c3f\u3067\u306f\u8a00\u8a9e\u30da\u30a2\u3068\u90f5\u4fbf\u756a\u53f7\u3067\u7d5e\u308a\u8fbc\u307f\u304c\u53ef\u80fd\u3067\u3059\u3002"},
+{"@type":"ListItem","position":9,"name":"\u30d9\u30eb\u30ae\u30fc\u3067\u516c\u5f0f\u306b\u4f7f\u7528\u3059\u308b\u66f8\u985e\uff08\u51fa\u751f\u8a3c\u660e\u66f8\u3084\u89aa\u306e\u540c\u610f\u66f8\u306a\u3069\uff09\u3092\u6e96\u5099\u3059\u308b\u5834\u5408\u3001\u516c\u8a3c\u6e08\u307f\u306e\u30b3\u30d4\u30fc\u3067\u306f\u306a\u304f\u3001\u539f\u672c\u306b\u7ffb\u8a33\u3092\u76f4\u63a5\u6dfb\u4ed8\u3059\u308b\u306e\u304c\u4e00\u822c\u7684\u3067\u3059\u3002\u3053\u306e\u65b9\u6cd5\u306f\u8cbb\u7528\u3092\u6700\u5c0f\u9650\u306b\u6291\u3048\u3089\u308c\u3001\u5f53\u5c40\u306b\u3082\u5e83\u304f\u53d7\u3051\u5165\u308c\u3089\u308c\u3066\u3044\u307e\u3059\u3002"}
+]}
+</script>
+
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+  var NIGHT="\u25d0 \u591c", DAY="\u2600 \u663c";
+  function get(){try{return localStorage.getItem('ms-theme');}catch(e){return null;}}
+  function set(v){try{localStorage.setItem('ms-theme',v);}catch(e){}}
+  var saved=get(); if(saved){root.setAttribute('data-theme',saved);}
+  function label(){lbl.textContent = root.getAttribute('data-theme')==='light' ? DAY : NIGHT;}
+  label();
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next); set(next); label();
+  });
+})();
+</script>
+
+<script>
+/* Октагон: рисуем path под РЕАЛЬНЫЙ размер коробки (не растягиваем готовый контур).
+   Скос фикс-px + скругление строятся в настоящих px → ровный 45° на любом размере.
+   ResizeObserver ловит изменение размера от чего угодно (контент, перенос, шрифт). */
+(function(){
+  function pts(w,h,c){return[[c,0],[w-c,0],[w,c],[w,h-c],[w-c,h],[c,h],[0,h-c],[0,c]];}
+  function rp(p,r){var n=p.length,d="";function u(a,b){var dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return[dx/L,dy/L];}
+    for(var i=0;i<n;i++){var p1=p[i],p0=p[(i-1+n)%n],p2=p[(i+1)%n],u0=u(p1,p0),u2=u(p1,p2),
+      l0=Math.hypot(p0[0]-p1[0],p0[1]-p1[1]),l2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]),rr=Math.min(r,l0/2,l2/2),
+      a=[p1[0]+u0[0]*rr,p1[1]+u0[1]*rr],b=[p1[0]+u2[0]*rr,p1[1]+u2[1]*rr];
+      d+=(i?"L":"M")+a[0].toFixed(2)+","+a[1].toFixed(2)+"Q"+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" "+b[0].toFixed(2)+","+b[1].toFixed(2);}
+    return d+"Z";}
+  function draw(svg){var w=Math.round(svg.clientWidth),h=Math.round(svg.clientHeight);if(w<4||h<4)return;
+    var c=Math.min(parseFloat(svg.dataset.cant)||8,w/2-1,h/2-1),r=parseFloat(svg.dataset.round);if(isNaN(r))r=3;
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);svg.firstElementChild.setAttribute("d",rp(pts(w,h,c),r));}
+  var ro=window.ResizeObserver?new ResizeObserver(function(es){for(var i=0;i<es.length;i++)draw(es[i].target);}):null;
+  function init(){var l=document.querySelectorAll("svg.oct");for(var i=0;i<l.length;i++){draw(l[i]);if(ro)ro.observe(l[i]);}}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
+  if(!ro){window.addEventListener("load",init);var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(init,120);});}
+})();
+</script>
+
+</body>
+</html>
